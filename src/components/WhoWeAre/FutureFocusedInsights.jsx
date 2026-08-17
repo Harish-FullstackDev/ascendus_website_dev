@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import insightsCardImg1 from "@/assets/WhoWeAre/new/insightsCard_1.jpg";
-import insightsCardImg2 from "@/assets/WhoWeAre/new/insightsCard_2.jpg";
-import insightsCardImg3 from "@/assets/WhoWeAre/new/insightsCard_3.jpg";
-import insightsCardImg4 from "@/assets/WhoWeAre/new/insightsCard_4.jpg";
+import insightsCardImg1 from "@/assets/WhoWeAre/new/insightscard_1.jpg";
+import insightsCardImg2 from "@/assets/WhoWeAre/new/insightscard_2.jpg";
+import insightsCardImg3 from "@/assets/WhoWeAre/new/insightscard_3.jpg";
+import insightsCardImg4 from "@/assets/WhoWeAre/new/insightscard_4.jpg";
 import insightsArrow from "@/assets/WhoWeAre/icons/InsightsArrow.svg";
 
 const INSIGHTS = [

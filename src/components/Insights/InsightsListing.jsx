@@ -73,7 +73,7 @@ export default function InsightsListing({
           y: contentY,
           opacity,
         }}
-        className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-gradient-to-b from-sky-50 via-white to-slate-100 flex-grow max-w-7xl w-full mx-auto px-6 py-12 md:py-20"
+        className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-gradient-to-b from-sky-50 via-white to-slate-100 flex-grow w-full mx-auto px-6 py-12 md:py-20"
       >
 
         {/* Category Filter Chips */}
