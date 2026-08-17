@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import heroBg from "@/assets/Blogs.jpg";
+import heroBg from "@/assets/Insights/Blogs.jpg";
 
 export default function Hero() {
     return (

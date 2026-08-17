@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import card1 from "@/assets/career/card 1 image.jpg";
-import card2 from "@/assets/career/card 2 image.jpg";
-import card3 from "@/assets/career/card 3 image.jpg";
+import card1 from "@/assets/career/new/Benefits_Image_1.jpg";
+import card2 from "@/assets/career/new/Benefits_Image_2.jpg";
+import card3 from "@/assets/career/new/Benefits_Image_3.jpg";
 
 const CARDS = [
     {

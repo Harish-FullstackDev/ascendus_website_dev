@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Navbar from "../Navbar/Navbar";
+import bookacallimg from "@/assets/BookAcall/Book_a_Call_Image.jpg";
 
 const Header = () => {
   const containerVariants = {
@@ -73,7 +74,7 @@ const Header = () => {
         {/* Background Image with Next.js Image */}
         <div className="absolute inset-0 z-[-100]">
           <Image
-            src="/BookAcall/bookacall.png"
+            src={bookacallimg}
             alt="Header Background"
             fill
             priority

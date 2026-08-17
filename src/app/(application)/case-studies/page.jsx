@@ -3,7 +3,7 @@
 import React from "react";
 import InsightsListing from "@/components/Insights/InsightsListing";
 // import backgroundImage from "../../../../public/ServicePage/software-delivery-team.jpg";
-import backgroundImage from "@/assets/Case-Studies.jpg";
+import backgroundImage from "@/assets/Insights/Case_Studies.jpg";
 import { caseStudiesData } from "@/data/caseStudiesData";
 
 export default function CaseStudiesPage() {

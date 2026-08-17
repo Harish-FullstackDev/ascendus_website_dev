@@ -2,8 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Navbar from "../Navbar/Navbar";
-import RectangleHeader from "../../../public/blog/2807cc98147a21e2764581df7af98cfbb12fa24a.jpg";
-import contact from "src/assets/contactus/Contact.jpg";
+import contact from "src/assets/contactus/contus.jpg";
 
 
 const ContactHeader = () => {
@@ -63,7 +62,7 @@ const ContactHeader = () => {
           <Navbar />
 
           {/* Content - Left Aligned */}
-          <div className="flex-1 flex items-start justify-center px-4 sm:px-8 lg:px-16 relative z-20 pt-8 md:pt-16">
+          <div className="flex-1 flex items-start px-4 sm:px-8 lg:px-16 relative z-20 pt-8 md:pt-16">
             <div className="w-full max-w-5xl">
               <motion.div
                 initial={{ opacity: 0, y: 24 }}

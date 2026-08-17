@@ -2,14 +2,17 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import insightsCardImg from "@/assets/WhoWeAre/InsightsCard.jpg";
+import insightsCardImg1 from "@/assets/WhoWeAre/new/insightsCard_1.jpg";
+import insightsCardImg2 from "@/assets/WhoWeAre/new/insightsCard_2.jpg";
+import insightsCardImg3 from "@/assets/WhoWeAre/new/insightsCard_3.jpg";
+import insightsCardImg4 from "@/assets/WhoWeAre/new/insightsCard_4.jpg";
 import insightsArrow from "@/assets/WhoWeAre/icons/InsightsArrow.svg";
 
 const INSIGHTS = [
-    { date: "05 Nov 2026", text: "sustainability inspires us to innovate, priorites resilience and build for the future" },
-    { date: "05 Nov 2026", text: "sustainability inspires us to innovate, priorites resilience and build for the future" },
-    { date: "05 Nov 2026", text: "sustainability inspires us to innovate, priorites resilience and build for the future" },
-    { date: "05 Nov 2026", text: "sustainability inspires us to innovate, priorites resilience and build for the future" },
+    { date: "05 Nov 2026", text: "sustainability inspires us to innovate, priorites resilience and build for the future", img: insightsCardImg1 },
+    { date: "05 Nov 2026", text: "sustainability inspires us to innovate, priorites resilience and build for the future", img: insightsCardImg2 },
+    { date: "05 Nov 2026", text: "sustainability inspires us to innovate, priorites resilience and build for the future", img: insightsCardImg3 },
+    { date: "05 Nov 2026", text: "sustainability inspires us to innovate, priorites resilience and build for the future", img: insightsCardImg4 },
 ];
 
 const containerVariants = {
@@ -56,7 +59,7 @@ export default function FutureFocusedInsights() {
                             className="flex flex-col gap-5 px-6 py-9 border-b lg:border-b-0 lg:border-r border-[#d9d9d9] last:border-0"
                         >
                             <div className="relative w-full h-[170px] sm:h-[200px]">
-                                <Image src={insightsCardImg} alt="" fill className="object-cover" />
+                                s
                             </div>
                             <p className="text-base font-medium text-black">{item.date}</p>
                             <p className="text-base font-light text-[#6c6c6c]">{item.text}</p>
