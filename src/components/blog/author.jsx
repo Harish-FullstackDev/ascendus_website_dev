@@ -1,0 +1,55 @@
+"use client";
+
+import Image from "next/image";
+import authors from "@/components/blog/AuthorData";
+import bgimage from "public/blog/d315b1f54a5c717d8114b27effb0c7859d99ecb9.jpg"
+
+export default function AuthorSection() {
+    return (
+        <section className="py-10  bg-gradient-to-r from-blue-50 via-blue-50 to-blue-50" >
+            <div className="max-w-9xl mx-auto px-6">
+                <div className="rounded-3xl bg-gray-100 backdrop-blur-xl border border-white/60 shadow-lg px-8 py-10">
+
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl font-bold text-slate-900">
+                            Meet Our Authors
+                        </h2>
+                        <p className="text-slate-600 mt-3 max-w-2xl mx-auto">
+                            Our experts share practical insights on AI, ERP, CRM,
+                            cloud technologies, and digital transformation.
+                        </p>
+                    </div>
+
+                    <div className="flex flex-wrap justify-center items-center gap-12">
+                        {authors.map((author) => (
+                            <div
+                                key={author.id}
+                                className="flex items-center gap-4 min-w-[260px]"
+                            >
+                                <div className="rounded-full p-1 bg-white/50 backdrop-blur-sm border border-white/70">
+                                    <Image
+                                        src={author.image}
+                                        alt={author.name}
+                                        width={60}
+                                        height={60}
+                                        className="rounded-full object-cover"
+                                    />
+                                </div>
+
+                                <div>
+                                    <h3 className="text-lg font-semibold text-slate-900">
+                                        {author.name}
+                                    </h3>
+                                    <p className="text-sm text-blue-600 font-medium">
+                                        {author.role}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    );
+}

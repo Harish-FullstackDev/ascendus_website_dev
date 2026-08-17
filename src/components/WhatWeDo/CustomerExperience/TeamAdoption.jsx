@@ -1,0 +1,67 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+import serviceDesignPhoto from "@/assets/WhatWeDo/Customer Experience/new/Team.jpg";
+
+const BOXES = [
+    {
+        title: "CRM That Sales Teams Actually Use",
+        desc: "We design CRM implementations around how your sales and service teams actually work, not a generic template, so adoption happens naturally instead of by mandate.",
+    },
+    {
+        title: "Connected Journeys Across Every Channel",
+        desc: "We build omnichannel experiences where context follows the customer, from a marketing campaign through to a service call, so no interaction starts from zero.",
+    },
+];
+
+export default function TeamAdoption() {
+    return (
+        <section className="w-full py-10 sm:py-16 px-6 sm:px-[52px] bg-[#f5f6f6]">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="flex flex-col gap-3 max-w-[1390px] mx-auto mb-10 sm:mb-[47px]"
+            >
+                <h2 className="text-[#16171a] text-2xl font-medium">Team Adoption & Seamless Context</h2>
+                <p className="text-black text-base sm:text-lg font-light">
+                    Why our approach to customer experience drives long-term adoption.
+                </p>
+            </motion.div>
+
+            <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-10 max-w-[1390px] mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, x: -24 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="flex flex-col sm:flex-row gap-6 sm:gap-8 w-full lg:w-auto shrink-0 mt-0 md:mt-[180px]"
+                >
+                    {BOXES.map((box) => (
+                        <div
+                            key={box.title}
+                            className="bg-white w-full sm:w-[350px] min-h-[331px] p-8 flex flex-col justify-between gap-6"
+                        >
+                            <p className="text-black text-2xl font-medium">{box.title}</p>
+                            <p className="text-[#6c6c6c] text-base font-light">{box.desc}</p>
+                        </div>
+                    ))}
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, x: 24 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                    className="relative w-full lg:w-[600px] h-[300px] sm:h-[480px] lg:h-[560px] overflow-hidden"
+                >
+                    <Image src={serviceDesignPhoto} alt="" fill className="object-cover" />
+                </motion.div>
+            </div>
+        </section>
+    );
+}
+
+

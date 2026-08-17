@@ -1,0 +1,237 @@
+/* ---------------------------------------------------------------- */
+/* General Sans — Ascendus secondary font.                           */
+/* Body copy, UI, navigation, buttons, forms, captions, data labels.  */
+/* Regular is the default reading weight; Medium for in-paragraph     */
+/* emphasis. Shipped as static OTF cuts (no variable file supplied).  */
+/* ---------------------------------------------------------------- */
+@font-face {
+  font-family: 'General Sans';
+  src: url('../fonts/general-sans/GeneralSans-Extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('../fonts/general-sans/GeneralSans-ExtralightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('../fonts/general-sans/GeneralSans-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('../fonts/general-sans/GeneralSans-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('../fonts/general-sans/GeneralSans-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('../fonts/general-sans/GeneralSans-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('../fonts/general-sans/GeneralSans-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('../fonts/general-sans/GeneralSans-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('../fonts/general-sans/GeneralSans-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('../fonts/general-sans/GeneralSans-SemiboldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('../fonts/general-sans/GeneralSans-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('../fonts/general-sans/GeneralSans-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------------------------------------------------------------- */
+/* Houschka Pro — Ascendus primary font.                              */
+/* Display / hero and H1–H3 headings only. Never for body copy.       */
+/* ---------------------------------------------------------------- */
+@font-face {
+  font-family: 'Houschka Pro';
+  src: url('../fonts/houschka-pro/HouschkaPro-Thin.woff2') format('woff2'),
+       url('../fonts/houschka-pro/HouschkaPro-Thin.woff') format('woff'),
+       url('../fonts/houschka-pro/HouschkaPro-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Houschka Pro';
+  src: url('../fonts/houschka-pro/HouschkaPro-ThinItalic.woff2') format('woff2'),
+       url('../fonts/houschka-pro/HouschkaPro-ThinItalic.woff') format('woff'),
+       url('../fonts/houschka-pro/HouschkaPro-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Houschka Pro';
+  src: url('../fonts/houschka-pro/HouschkaPro-Light.woff2') format('woff2'),
+       url('../fonts/houschka-pro/HouschkaPro-Light.woff') format('woff'),
+       url('../fonts/houschka-pro/HouschkaPro-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Houschka Pro';
+  src: url('../fonts/houschka-pro/HouschkaPro-LightItalic.woff2') format('woff2'),
+       url('../fonts/houschka-pro/HouschkaPro-LightItalic.woff') format('woff'),
+       url('../fonts/houschka-pro/HouschkaPro-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Houschka Pro';
+  src: url('../fonts/houschka-pro/HouschkaPro-Medium.woff2') format('woff2'),
+       url('../fonts/houschka-pro/HouschkaPro-Medium.woff') format('woff'),
+       url('../fonts/houschka-pro/HouschkaPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Houschka Pro';
+  src: url('../fonts/houschka-pro/HouschkaPro-MediumItalic.woff2') format('woff2'),
+       url('../fonts/houschka-pro/HouschkaPro-MediumItalic.woff') format('woff'),
+       url('../fonts/houschka-pro/HouschkaPro-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Houschka Pro';
+  src: url('../fonts/houschka-pro/HouschkaPro-DemiBold.woff2') format('woff2'),
+       url('../fonts/houschka-pro/HouschkaPro-DemiBold.woff') format('woff'),
+       url('../fonts/houschka-pro/HouschkaPro-DemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Houschka Pro';
+  src: url('../fonts/houschka-pro/HouschkaPro-DemiBoldItalic.woff2') format('woff2'),
+       url('../fonts/houschka-pro/HouschkaPro-DemiBoldItalic.woff') format('woff'),
+       url('../fonts/houschka-pro/HouschkaPro-DemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Houschka Pro';
+  src: url('../fonts/houschka-pro/HouschkaPro-Bold.woff2') format('woff2'),
+       url('../fonts/houschka-pro/HouschkaPro-Bold.woff') format('woff'),
+       url('../fonts/houschka-pro/HouschkaPro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Houschka Pro';
+  src: url('../fonts/houschka-pro/HouschkaPro-BoldItalic.woff2') format('woff2'),
+       url('../fonts/houschka-pro/HouschkaPro-BoldItalic.woff') format('woff'),
+       url('../fonts/houschka-pro/HouschkaPro-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Houschka Pro';
+  src: url('../fonts/houschka-pro/HouschkaPro-ExtraBold.woff2') format('woff2'),
+       url('../fonts/houschka-pro/HouschkaPro-ExtraBold.woff') format('woff'),
+       url('../fonts/houschka-pro/HouschkaPro-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Houschka Pro';
+  src: url('../fonts/houschka-pro/HouschkaPro-ExtraBoldItalic.woff2') format('woff2'),
+       url('../fonts/houschka-pro/HouschkaPro-ExtraBoldItalic.woff') format('woff'),
+       url('../fonts/houschka-pro/HouschkaPro-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Manual override utilities, for the rare case a heading/body element
+   needs the "other" font explicitly (e.g. a non-h1/h2 title that should
+   still read as a main section title, or a heading that should stay
+   body-styled). */
+.font-houschka-pro {
+  font-family: 'Houschka Pro', sans-serif;
+}
+
+.font-general-sans {
+  font-family: 'General Sans', sans-serif;
+}
