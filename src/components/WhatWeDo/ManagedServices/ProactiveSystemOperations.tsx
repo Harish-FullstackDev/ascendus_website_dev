@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import monitoringIcon from "@/assets/WhatWeDo/Managed Services/icons/Section_24_7Monitoring.svg";
-import performanceIcon from "@/assets/WhatWeDo/Managed Services/icons/Section_PerformanceManagement.svg";
-import capacityIcon from "@/assets/WhatWeDo/Managed Services/icons/Section_CapacityManagement.svg";
-import incidentIcon from "@/assets/WhatWeDo/Managed Services/icons/Section_IncidentManagement.svg";
-import availabilityIcon from "@/assets/WhatWeDo/Managed Services/icons/Section_AvailabilityManagement.svg";
-import reportingIcon from "@/assets/WhatWeDo/Managed Services/icons/Section_OperationalReporting.svg";
+import monitoringIcon from "@/assets/WhatWeDo/Managed Services/Icons/Section_24_7Monitoring.svg";
+import performanceIcon from "@/assets/WhatWeDo/Managed Services/Icons/Section_PerformanceManagement.svg";
+import capacityIcon from "@/assets/WhatWeDo/Managed Services/Icons/Section_CapacityManagement.svg";
+import incidentIcon from "@/assets/WhatWeDo/Managed Services/Icons/Section_IncidentManagement.svg";
+import availabilityIcon from "@/assets/WhatWeDo/Managed Services/Icons/Section_AvailabilityManagement.svg";
+import reportingIcon from "@/assets/WhatWeDo/Managed Services/Icons/Section_OperationalReporting.svg";
 
 const CARDS = [
     {

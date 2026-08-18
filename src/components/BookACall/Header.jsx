@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Navbar from "../Navbar/Navbar";
-import bookacallimg from "@/assets/BookAcall/Book_a_Call_Hero.webp";
+import bookacallimg from "@/assets/bookacall/Book_a_Call_Hero.webp";
 
 const Header = () => {
   const containerVariants = {
