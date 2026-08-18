@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import cultureImage from "@/assets/career/new/Our_Culture.jpg";
+import cultureImage from "@/assets/career/webp/Careers_Cultural.webp";
 
 export default function OurCulture() {
     return (

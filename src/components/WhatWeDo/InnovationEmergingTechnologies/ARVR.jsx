@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import blockchainPhoto from "@/assets/WhatWeDo/Innovation & Emerging Technologies/new/ARVR.jpg";
+import blockchainPhoto from "@/assets/WhatWeDo/Innovation & Emerging Technologies/webp/Innovation_AR_VR.webp";
 
 const ITEMS = [
     { title: "Extended Reality (AR/VR)", desc: "Define where blockchain genuinely adds value across your business, from settlement to provenance tracking." },

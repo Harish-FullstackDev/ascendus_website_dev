@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import skylinePhoto from "@/assets/WhatWeDo/Managed Services/new/Process.jpg";
+import skylinePhoto from "@/assets/WhatWeDo/Managed Services/webp/Process_Aware_Support.webp";
 
 const TIERS = [
     {

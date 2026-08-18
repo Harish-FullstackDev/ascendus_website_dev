@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-import customBg from "@/assets/WhatWeDo/Business Advisory/new/footercta.jpg";
+import customBg from "@/assets/WhatWeDo/Business Advisory/webp/Business_CTA.webp";
 
 import Hero from "@/components/WhatWeDo/BusinessAdvisory/Hero";
 import HeroText from "@/components/WhatWeDo/BusinessAdvisory/HeroText";
@@ -14,7 +14,7 @@ import DigitalStrategy from "@/components/WhatWeDo/BusinessAdvisory/DigitalStrat
 import EnterpriseArchitecture from "@/components/WhatWeDo/BusinessAdvisory/EnterpriseArchitecture";
 import ITAdvisory from "@/components/WhatWeDo/BusinessAdvisory/ITAdvisory";
 import BusinessProcessConsulting from "@/components/WhatWeDo/BusinessAdvisory/BusinessProcessConsulting";
-import ProcessReengineering from "@/components/WhatWeDo/BusinessAdvisory/ProcessReengineering";
+import BusinessTransformationAdvisory from "@/components/WhatWeDo/BusinessAdvisory/BusinessTransformationAdvisory";
 import ChangeManagement from "@/components/WhatWeDo/BusinessAdvisory/ChangeManagement";
 import ReengineeringPMOGovernance from "@/components/WhatWeDo/BusinessAdvisory/ReengineeringPMOGovernance";
 import TechnologyAssessment from "@/components/WhatWeDo/BusinessAdvisory/TechnologyAssessment";
@@ -53,7 +53,7 @@ const page = () => {
             {/* <EnterpriseArchitecture /> */}
             {/* <ITAdvisory /> */}
             {/* <BusinessProcessConsulting /> */}
-            {/* <ProcessReengineering /> */}
+            <BusinessTransformationAdvisory />
             {/* <ChangeManagement /> */}
             <ReengineeringPMOGovernance />
             {/* <TechnologyAssessment /> */}

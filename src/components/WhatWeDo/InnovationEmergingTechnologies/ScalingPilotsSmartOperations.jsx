@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import integrationImage1 from "@/assets/WhatWeDo/Innovation & Emerging Technologies/new/Pilot.jpg";
-import integrationImage2 from "@/assets/WhatWeDo/Innovation & Emerging Technologies/new/Industry.jpg";
+import integrationImage1 from "@/assets/WhatWeDo/Innovation & Emerging Technologies/webp/Innovation_Scaling_Points_1.webp";
+import integrationImage2 from "@/assets/WhatWeDo/Innovation & Emerging Technologies/webp/Innovation_Scaling_Points_2.webp";
 
 
 

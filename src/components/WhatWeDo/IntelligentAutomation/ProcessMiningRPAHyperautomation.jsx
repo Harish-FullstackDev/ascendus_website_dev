@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import rpaStrategyPhoto from "@/assets/WhatWeDo/Intelligent Automation/new/card_1.jpg";
-import processAutomationPhoto from "@/assets/WhatWeDo/Intelligent Automation/new/card_2.jpg";
-import botDevelopmentPhoto from "@/assets/WhatWeDo/Intelligent Automation/new/card_3.jpg";
-import legacySystemPhoto from "@/assets/WhatWeDo/Intelligent Automation/new/card_4.jpg";
+import rpaStrategyPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_RPA.webp";
+import processAutomationPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_Process_Minning.webp";
+import botDevelopmentPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_Hyperautomation.webp";
+import legacySystemPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_Intelligent_Document_Processing.webp";
 
 const CARDS = [
     {

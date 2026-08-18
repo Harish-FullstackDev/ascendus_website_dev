@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-import customBg from "@/assets/WhatWeDo/Experience Design/new/footercta.jpg";
+import customBg from "@/assets/WhatWeDo/Experience Design/webp/Experience_CTA.webp";
 import Hero from "@/components/WhatWeDo/ExperienceDesign/Hero";
 import HeroText from "@/components/WhatWeDo/ExperienceDesign/HeroText";
 import UIUXDesign from "@/components/WhatWeDo/ExperienceDesign/UIUXDesign";
@@ -20,6 +20,7 @@ import DesignToolsTechnologies from "@/components/WhatWeDo/ExperienceDesign/Desi
 import UserResearchAndDesignSystems from "@/components/WhatWeDo/ExperienceDesign/UserResearchAndDesignSystems";
 import DesignPhilosophy from "@/components/WhatWeDo/ExperienceDesign/DesignPhilosophy";
 import OurDesignCapabilities from "@/components/WhatWeDo/ExperienceDesign/OurDesignCapabilities";
+import DesignOperationsExperienceOptimization from "@/components/WhatWeDo/ExperienceDesign/DesignOperationsExperienceOptimization";
 
 const page = () => {
     return (
@@ -39,6 +40,7 @@ const page = () => {
                 {/* <UIUXDesign /> */}
             </div>
             {/* <ServiceDesign /> */}
+            <DesignOperationsExperienceOptimization />
             <EnterpriseUXModernization />
             <DesignPhilosophy />
             <SpecializedDesignDisciplines />

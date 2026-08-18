@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import card1 from "@/assets/WhatWeDo/Business Advisory/new/card_1.jpg";
-import card2 from "@/assets/WhatWeDo/Business Advisory/new/card_2.jpg";
-import card3 from "@/assets/WhatWeDo/Business Advisory/new/card_3.jpg";
-import card4 from "@/assets/WhatWeDo/Business Advisory/new/card_4.jpg";
+import card1 from "@/assets/WhatWeDo/Business Advisory/webp/Business_Business_Strategy.webp";
+import card2 from "@/assets/WhatWeDo/Business Advisory/webp/Business_Enterprise_architecture.webp";
+import card3 from "@/assets/WhatWeDo/Business Advisory/webp/Business_Transformation_Roadmap.webp";
+import card4 from "@/assets/WhatWeDo/Business Advisory/webp/Business_Business_process.webp";
 
 const CARDS = [
     {

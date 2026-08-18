@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import card1 from "@/assets/career/new/Benefits_Image_1.jpg";
-import card2 from "@/assets/career/new/Benefits_Image_2.jpg";
-import card3 from "@/assets/career/new/Benefits_Image_3.jpg";
+import card1 from "@/assets/career/webp/Careers_Grow_your_career.webp";
+import card2 from "@/assets/career/webp/Careers_Flex_Work.webp";
+import card3 from "@/assets/career/webp/Careers_World_Class_Benefits.webp";
 
 const CARDS = [
     {

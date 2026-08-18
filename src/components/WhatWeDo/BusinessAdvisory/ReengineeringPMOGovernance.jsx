@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import pmoPhoto from "@/assets/WhatWeDo/Business Advisory/new/Reengineering.jpg";
+import pmoPhoto from "@/assets/WhatWeDo/Business Advisory/webp/Business_PMO.webp";
 import ProcessAssessment from "@/assets/WhatWeDo/Business Advisory/icons/ProcessAssessment.svg";
 import LeanTransformation from "@/assets/WhatWeDo/Business Advisory/icons/LeanTransformation.svg";
 import AutomationOpportunities from "@/assets/WhatWeDo/Business Advisory/icons/AutomationOpportunities.svg";

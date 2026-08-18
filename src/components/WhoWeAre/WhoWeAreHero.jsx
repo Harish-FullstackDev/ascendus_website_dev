@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar/Navbar";
-import heroBg from "@/assets/WhoWeAre/new/About_Us.jpg";
+import heroBg from "@/assets/WhoWeAre/webp/Who_We_Are_Hero.webp";
 
 export default function WhoWeAreHero() {
     return (

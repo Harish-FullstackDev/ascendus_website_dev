@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import UIUXDesign from "@/assets/WhatWeDo/Experience Design/new/UIUXDesign.jpg";
-import ProductDesign from "@/assets/WhatWeDo/Experience Design/new/Product_Design.jpg";
-import UserResearch from "@/assets/WhatWeDo/Experience Design/new/User_Research.jpg";
-import DesignSystems from "@/assets/WhatWeDo/Experience Design/new/Design_Systems.jpg";
+import UIUXDesign from "@/assets/WhatWeDo/Experience Design/webp/Experience_UI_UX.webp";
+import ProductDesign from "@/assets/WhatWeDo/Experience Design/webp/Experience_Product_Design.webp";
+import UserResearch from "@/assets/WhatWeDo/Experience Design/webp/Experience_User_Research.webp";
+import DesignSystems from "@/assets/WhatWeDo/Experience Design/webp/Experience_Design_System.webp";
 
 const TABS = [
     {

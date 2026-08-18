@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import discoverImage from "@/assets/WhoWeAre/new/Discover.jpg";
+import discoverImage from "@/assets/WhoWeAre/webp/Who_We_Are_Strategic_Expertise.webp";
 
 const CARDS = [
     {

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import serviceDesignPhoto from "@/assets/WhatWeDo/Digital Engineering/new/Longevity.jpg";
+import serviceDesignPhoto from "@/assets/WhatWeDo/Digital Engineering/webp/Digital_Longevity.webp";
 
 const BOXES = [
     {

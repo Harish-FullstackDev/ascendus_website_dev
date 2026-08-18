@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import matterPhoto from "@/assets/WhatWeDo/Intelligent Automation/new/Positioning.jpg";
+import matterPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_Statement1.webp";
 
 export default function PositioningStatement() {
     return (

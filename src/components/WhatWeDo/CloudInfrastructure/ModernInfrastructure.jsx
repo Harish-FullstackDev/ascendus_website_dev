@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import migrationBg from "@/assets/WhatWeDo/Cloud and Infrastructure/new/Modern.jpg";
+import migrationBg from "@/assets/WhatWeDo/Cloud and Infrastructure/webp/Cloud_Modern_Infrastructure.webp";
 
 const STEPS = [
     {
@@ -28,7 +28,7 @@ const STEPS = [
     },
 ];
 
-export default function CloudMigration() {
+export default function ModernInfrastructure() {
     // null = nothing hovered/focused. This is the key fix: the old code
     // defaulted to `1` and never had a path back to "no card active",
     // so the highlighted state could never turn off on mouse-out.
@@ -50,7 +50,7 @@ export default function CloudMigration() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="flex gap-4 rounded-[10px] bg-[#f3f3f3] px-5 py-4"
                     >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0061af] text-sm font-medium text-white">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#002C4F] text-sm font-medium text-white">
                             {index + 1}
                         </div>
                         <div className="flex flex-col gap-1">
@@ -102,7 +102,7 @@ export default function CloudMigration() {
                                     onMouseEnter={() => setHovered(index)}
                                     onFocus={() => setHovered(index)}
                                     onBlur={() => setHovered(null)}
-                                    className={`relative h-full w-full flex flex-col items-center justify-center text-center gap-3 px-4 lg:px-8 overflow-hidden transition-colors duration-300 ${isActive ? "bg-[#0061AF]/80" : "bg-white"
+                                    className={`relative h-full w-full flex flex-col items-center justify-center text-center gap-3 px-4 lg:px-8 overflow-hidden transition-colors duration-300 ${isActive ? "bg-[#002C4F]" : "bg-white"
                                         }`}
                                 >
                                     <p
@@ -130,4 +130,3 @@ export default function CloudMigration() {
         </section>
     );
 }
-

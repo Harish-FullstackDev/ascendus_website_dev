@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import serviceDesignPhoto from "@/assets/WhatWeDo/Customer Experience/new/Team.jpg";
+import serviceDesignPhoto from "@/assets/WhatWeDo/Customer Experience/webp/Customer_Team_Adoption.webp";
 
 const BOXES = [
     {

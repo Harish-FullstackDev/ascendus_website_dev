@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import challengeImage from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/our_Security.jpg";
+import challengeImage from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/webp/Cybersecurity_Our_Security.webp";
 
 const CHALLENGES = [
     "SAP segregation of duties expertise",

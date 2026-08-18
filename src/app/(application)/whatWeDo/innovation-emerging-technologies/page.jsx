@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-import customBg from "@/assets/WhatWeDo/Innovation & Emerging Technologies/new/footercta.jpg";
+import customBg from "@/assets/WhatWeDo/Innovation & Emerging Technologies/webp/Innovation_CTA.webp";
 
 import Hero from "@/components/WhatWeDo/InnovationEmergingTechnologies/Hero";
 import HeroText from "@/components/WhatWeDo/InnovationEmergingTechnologies/HeroText";
@@ -20,6 +20,7 @@ import SmartEnterpriseSolutions from "@/components/WhatWeDo/InnovationEmergingTe
 import OurInnovationFramework from "@/components/WhatWeDo/InnovationEmergingTechnologies/OurInnovationFramework";
 import ScalingPilotsSmartOperations from "@/components/WhatWeDo/InnovationEmergingTechnologies/ScalingPilotsSmartOperations";
 import IndustryDigitalTwins from "@/components/WhatWeDo/InnovationEmergingTechnologies/IndustryDigitalTwins";
+import EmergingTechnologyAssessment from "@/components/WhatWeDo/InnovationEmergingTechnologies/EmergingTechnologyAssessment";
 
 const page = () => {
     return (
@@ -53,8 +54,9 @@ const page = () => {
 
             {/* <DigitalTwins /> */}
             <SSTInnovatioEdge />
-            <ScalingPilotsSmartOperations />
+            <EmergingTechnologyAssessment />
             <ARVR />
+            <ScalingPilotsSmartOperations />
             {/* <ExtendedReality /> */}
             {/* <QuantumReadiness /> */}
             {/* <Industry4 /> */}

@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-import customBg from "@/assets/WhatWeDo/Artificial Intelligence/new/footercta.jpg";
 
 import Hero from "@/components/WhatWeDo/ArtificialIntelligence/Hero";
 import HeroText from "@/components/WhatWeDo/ArtificialIntelligence/HeroText";
@@ -21,6 +20,8 @@ import IndustryImpact from "@/components/WhatWeDo/ArtificialIntelligence/Industr
 import AIGovernance from "@/components/WhatWeDo/ArtificialIntelligence/AIGovernance";
 import AILifecycle from "@/components/WhatWeDo/ArtificialIntelligence/AILifecycle";
 import WhyPartnerWithUs from "@/components/WhatWeDo/ArtificialIntelligence/WhyPartnerWithUs";
+import AIUseCaseValueEnablement from "@/components/WhatWeDo/ArtificialIntelligence/AIUseCaseValueEnablement";
+import customBg from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_CTA_2560_1200.webp";
 
 const page = () => {
     return (
@@ -51,6 +52,7 @@ const page = () => {
             {/* <AILifecycle /> */}
             <AdvancedMachineLearning />
             {/* <IntelligentAssistantsBanner /> */}
+            <AIUseCaseValueEnablement />
             <WhyPartnerWithUs />
             {/* <FutureFocusedInsights /> */}
             <ReadyToTransform

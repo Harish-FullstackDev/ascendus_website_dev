@@ -3,11 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import ceaImage1 from "@/assets/WhatWeDo/Customer Experience/new/Sales_Automation.jpg";
-import ceaImage2 from "@/assets/WhatWeDo/Customer Experience/new/Customer_Service_Solutions.jpg";
-import ceaImage3 from "@/assets/WhatWeDo/Customer Experience/new/Marketing_Automation.jpg";
-import ceaImage4 from "@/assets/WhatWeDo/Customer Experience/new/Analytics.jpg";
-import ceaImage5 from "@/assets/WhatWeDo/Customer Experience/new/Loyalty_Solutions.jpg";
+import ceaImage1 from "@/assets/WhatWeDo/Customer Experience/webp/Customer_Sales_Automation.webp";
+import ceaImage2 from "@/assets/WhatWeDo/Customer Experience/webp/Customer_Customer_Service_Solutions.webp";
+import ceaImage3 from "@/assets/WhatWeDo/Customer Experience/webp/Customer_Marketing_Automation.webp";
+import ceaImage4 from "@/assets/WhatWeDo/Customer Experience/webp/Customer_Analytics.webp";
+import ceaImage5 from "@/assets/WhatWeDo/Customer Experience/webp/Customer_Loyalty.webp";
 
 const TABS = [
     {

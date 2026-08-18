@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-import customBg from "@/assets/WhatWeDo/Customer Experience/new/footercta.jpg";
+import customBg from "@/assets/WhatWeDo/Customer Experience/webp/Customer_CTA.webp";
 import Hero from "@/components/WhatWeDo/CustomerExperience/Hero";
 import HeroText from "@/components/WhatWeDo/CustomerExperience/HeroText";
 import CRMStrategy from "@/components/WhatWeDo/CustomerExperience/CRMStrategy";
@@ -19,6 +19,7 @@ import LoyaltySolutions from "@/components/WhatWeDo/CustomerExperience/LoyaltySo
 import SingleCustomerView from "@/components/WhatWeDo/CustomerExperience/SingleCustomerView";
 import SpecializedCXAutomationAnalytics from "@/components/WhatWeDo/CustomerExperience/SpecializedCXAutomationAnalytics";
 import TeamAdoption from "@/components/WhatWeDo/CustomerExperience/TeamAdoption";
+import CustomerPersonalizationEngagement from "@/components/WhatWeDo/CustomerExperience/CustomerPersonalizationEngagement";
 
 const page = () => {
     return (
@@ -40,6 +41,7 @@ const page = () => {
             </div>
             {/* <CustomerServiceSolutions /> */}
             <TeamAdoption />
+            <CustomerPersonalizationEngagement />
             <SalesforceConsulting />
             <SpecializedCXAutomationAnalytics />
             <ReadyToTransform

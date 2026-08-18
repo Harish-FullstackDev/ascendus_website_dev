@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import heroBg from "@/assets/WhatWeDo/Intelligent Automation/new/Intelligent_Automation.jpg";
+import heroBg from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_Hero.webp";
 
 export default function Hero() {
     return (

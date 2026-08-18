@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import devSecOpsBg from "@/assets/WhatWeDo/Cloud and Infrastructure/new/Architectural.jpg";
+import devSecOpsBg from "@/assets/WhatWeDo/Cloud and Infrastructure/webp/Cloud_Statement_Banner.webp";
 
 export default function ArchitecturalResilienceStrategy() {
     return (

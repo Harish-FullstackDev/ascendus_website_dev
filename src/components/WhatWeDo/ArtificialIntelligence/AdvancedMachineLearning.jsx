@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import mainImage from "@/assets/WhatWeDo/Artificial Intelligence/Section4_MachineLearning_Main.jpg";
-import sideImage1 from "@/assets/WhatWeDo/Artificial Intelligence/new/advance_machine.jpg";
-import sideImage4 from "@/assets/WhatWeDo/Artificial Intelligence/new/AI_Governance.jpg";
-import sideImage3 from "@/assets/WhatWeDo/Artificial Intelligence/new/Predictive_Intelligenve.jpg";
-import sideImage2 from "@/assets/WhatWeDo/Artificial Intelligence/new/Intelligent_Assistants.jpg";
+import sideImage1 from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_Machine_Learning.webp";
+import sideImage4 from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_AI_Governance.webp";
+import sideImage3 from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_Predictive_Intelligence.webp";
+import sideImage2 from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_Intelligent_Assistants.webp";
 
 const ITEMS = [
     {

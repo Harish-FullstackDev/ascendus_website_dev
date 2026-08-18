@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import workflowPhoto from "@/assets/WhatWeDo/Intelligent Automation/Section4_image.svg";
+import workflowPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_Why_Partner.webp";
 
 const SERVICES = [
     "Process mining before automation",

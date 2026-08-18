@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import DataEngineering from "@/assets/WhatWeDo/Data Inteligent/new/card_1.jpg";
-import DataWarehousing from "@/assets/WhatWeDo/Data Inteligent/new/card_2.jpg";
-import AdvancedAnalytics from "@/assets/WhatWeDo/Data Inteligent/new/card_3.jpg";
-import BusinessIntelligence from "@/assets/WhatWeDo/Data Inteligent/new/card_4.jpg";
+import DataEngineering from "@/assets/WhatWeDo/Data Inteligent/webp/Data_Data_Engg.webp";
+import DataWarehousing from "@/assets/WhatWeDo/Data Inteligent/webp/Data_Data_Warehouse.webp";
+import AdvancedAnalytics from "@/assets/WhatWeDo/Data Inteligent/webp/Data_Advanced_Analytics.webp";
+import BusinessIntelligence from "@/assets/WhatWeDo/Data Inteligent/webp/Data_Business_Intelligence.webp";
 
 const CARDS = [
     {

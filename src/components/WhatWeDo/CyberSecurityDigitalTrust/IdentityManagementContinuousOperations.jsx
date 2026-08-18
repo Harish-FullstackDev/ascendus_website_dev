@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import card1 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/card_1.jpg";
-import card2 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/card_2.jpg";
-import card3 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/card_3.jpg";
-import card4 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/card_4.jpg";
+import card1 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/webp/Cybersecurity_IAM.webp";
+import card2 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/webp/Cybersecurity_Security_Operations.webp";
+import card3 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/webp/Cybersecurity_Governance.webp";
+import card4 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/webp/Cybersecurity_ZTA.webp";
 
 const CARDS = [
     { image: card1, title: "Identity & Access Management", desc: "Helping businesses transform with innovative SAP solutions." },

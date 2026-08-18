@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-import customBg from "@/assets/WhatWeDo/Intelligent Automation/new/footercta.jpg";
+import customBg from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_CTA.webp";
 
 import Hero from "@/components/WhatWeDo/IntelligentAutomation/Hero";
 import HeroText from "@/components/WhatWeDo/IntelligentAutomation/HeroText";
@@ -19,6 +19,7 @@ import HyperAutomation from "@/components/WhatWeDo/IntelligentAutomation/HyperAu
 import AIPoweredAutomation from "@/components/WhatWeDo/IntelligentAutomation/AIPoweredAutomation";
 import OurAutomationApproach from "@/components/WhatWeDo/IntelligentAutomation/OurAutomationApproach";
 import CostofInefficiency from "@/components/WhatWeDo/IntelligentAutomation/CostofInefficiency";
+import AutomationOperationsControl from "@/components/WhatWeDo/IntelligentAutomation/AutomationOperationsControl";
 
 const page = () => {
     return (
@@ -41,6 +42,7 @@ const page = () => {
             </div>
 
             {/* <IntelligentDocumentProcessing /> */}
+            <AutomationOperationsControl />
             <AdvancedDecisionLogiWorkflow />
             <CostofInefficiency />
             {/* <BusinessRulesAutomationGrid /> */}

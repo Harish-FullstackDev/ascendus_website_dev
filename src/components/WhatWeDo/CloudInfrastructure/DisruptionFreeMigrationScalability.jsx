@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import dashboardsImage from "@/assets/WhatWeDo/Cloud and Infrastructure/new/Migration.jpg";
-import reportsImage from "@/assets/WhatWeDo/Cloud and Infrastructure/new/Infrastructure.jpg";
+import dashboardsImage from "@/assets/WhatWeDo/Cloud and Infrastructure/webp/Cloud_Card_1.webp";
+import reportsImage from "@/assets/WhatWeDo/Cloud and Infrastructure/webp/Cloud_Card_2.webp";
 
 const ROWS = [
     {

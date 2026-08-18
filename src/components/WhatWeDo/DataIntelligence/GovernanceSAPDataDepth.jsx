@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import hybridPhoto from "@/assets/WhatWeDo/Data Inteligent/new/Governance.jpg";
+import hybridPhoto from "@/assets/WhatWeDo/Data Inteligent/webp/Data_Governance.webp";
 import arrowIcon from "@/assets/WhatWeDo/Cloud and Infrastructure/icons/Section2_RightArrow.svg";
 import linkIcon from "@/assets/WhatWeDo/Cloud and Infrastructure/icons/Vector.svg";
 

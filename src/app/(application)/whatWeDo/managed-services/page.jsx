@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-import customBg from "@/assets/WhatWeDo/Managed Services/new/footercta.jpg";
+import customBg from "@/assets/WhatWeDo/Managed Services/webp/CTA.webp";
 
 import Hero from "@/components/WhatWeDo/ManagedServices/Hero";
 import HeroText from "@/components/WhatWeDo/ManagedServices/HeroText";
@@ -18,6 +18,7 @@ import DesignToolsTechnologies from "@/components/WhatWeDo/ManagedServices/Desig
 import ContinuousImprovement from "@/components/WhatWeDo/ManagedServices/ContinuousImprovement";
 import OurManagedCloudServices from "@/components/WhatWeDo/ManagedServices/OurManagedCloudServices";
 import WhyPartnerWithUs from "@/components/WhatWeDo/ManagedServices/WhyPartnerWithUs";
+import ProactiveSystemOperations from "@/components/WhatWeDo/ManagedServices/ProactiveSystemOperations";
 
 const page = () => {
     return (
@@ -37,6 +38,7 @@ const page = () => {
                 {/* <MonitoringIncidentManagement /> */}
                 <SAPAMSTieredSupport />
                 <ProcessAwareSupportRootCauseResolution />
+                <ProactiveSystemOperations />
                 {/* <ApplicationManagementServices /> */}
             </div>
             {/* <InfrastructureManagement /> */}

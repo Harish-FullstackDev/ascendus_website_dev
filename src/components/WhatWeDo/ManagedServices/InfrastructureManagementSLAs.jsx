@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import incidentManagementPhoto from "@/assets/WhatWeDo/Managed Services/new/card_1.jpg";
-import serviceRequestsPhoto from "@/assets/WhatWeDo/Managed Services/new/card_2.jpg";
-import userSupportPhoto from "@/assets/WhatWeDo/Managed Services/new/card_3.jpg";
-import knowledgeManagementPhoto from "@/assets/WhatWeDo/Managed Services/new/card_4.jpg";
+import incidentManagementPhoto from "@/assets/WhatWeDo/Managed Services/webp/Infrastructure_Management.webp";
+import serviceRequestsPhoto from "@/assets/WhatWeDo/Managed Services/webp/Service_Request.webp";
+import userSupportPhoto from "@/assets/WhatWeDo/Managed Services/webp/SLA_Management.webp";
+import knowledgeManagementPhoto from "@/assets/WhatWeDo/Managed Services/webp/Continous_Improvement.webp";
 
 const ITEMS = [
     {

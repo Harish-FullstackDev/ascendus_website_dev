@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import integrationImage1 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/Access.jpg";
-import integrationImage2 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/Finding.jpg";
+import integrationImage1 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/webp/Cybersecurity_Access_Control.webp";
+import integrationImage2 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/webp/Cybersecurity_Finding_Gaps.webp";
 
 
 

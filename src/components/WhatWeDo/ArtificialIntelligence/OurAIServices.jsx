@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import contentGenPhoto from "@/assets/WhatWeDo/Artificial Intelligence/new/Card_1.jpg";
-import documentIntelPhoto from "@/assets/WhatWeDo/Artificial Intelligence/new/Card_2.jpg";
-import knowledgeMgmtPhoto from "@/assets/WhatWeDo/Artificial Intelligence/new/Card_3.jpg";
-import codeGenPhoto from "@/assets/WhatWeDo/Artificial Intelligence/new/Card_4.jpg";
+import contentGenPhoto from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_Strategy.webp";
+import documentIntelPhoto from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/Generative_AI.webp";
+import knowledgeMgmtPhoto from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_Agents.webp";
+import codeGenPhoto from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_Integration.webp";
 import workflowAutoPhoto from "@/assets/WhatWeDo/Artificial Intelligence/Section3_Card5_WorkflowAutomation.jpg";
 
 const CARDS = [

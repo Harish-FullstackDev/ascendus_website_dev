@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-import customBg from "@/assets/WhatWeDo/Digital Engineering/new/footercta.jpg";
+import customBg from "@/assets/WhatWeDo/Digital Engineering/webp/Digital_CTA.webp";
 
 import Hero from "@/components/WhatWeDo/DigitalEngineering/Hero";
 import HeroText from "@/components/WhatWeDo/DigitalEngineering/HeroText";
@@ -24,6 +24,8 @@ import EnterpriseSoftware from "@/components/WhatWeDo/DigitalEngineering/Enterpr
 import LongevityLegacyRefactoring from "@/components/WhatWeDo/DigitalEngineering/LongevityLegacyRefactoring";
 import ModernStackAPIEngineering from "@/components/WhatWeDo/DigitalEngineering/ModernStackAPIEngineering";
 import SoftwareScalability from "@/components/WhatWeDo/DigitalEngineering/SoftwareScalability";
+import QualityPerformanceEngineering from "@/components/WhatWeDo/DigitalEngineering/QualityPerformanceEngineering";
+import ProductPlatformEngineering from "@/components/WhatWeDo/DigitalEngineering/ProductPlatformEngineering";
 
 const page = () => {
     return (
@@ -50,7 +52,9 @@ const page = () => {
             {/* <MobileApplications /> */}
             {/* <APIDevelopment /> */}
             {/* <MicroservicesArchitecture /> */}
+            <QualityPerformanceEngineering />
             <LongevityLegacyRefactoring />
+            <ProductPlatformEngineering />
             <ModernStackAPIEngineering />
             <CorePhilosophy />
             {/* <DevOpsSection /> */}

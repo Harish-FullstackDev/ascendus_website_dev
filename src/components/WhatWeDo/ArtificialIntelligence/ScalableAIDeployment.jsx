@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import integrationImage1 from "@/assets/WhatWeDo/Artificial Intelligence/new/Section3_image1.jpg";
-import integrationImage2 from "@/assets/WhatWeDo/Artificial Intelligence/new/Section3_image2.jpg";
+import integrationImage1 from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_Scalable_AI_1.webp";
+import integrationImage2 from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_Scalable_AI_2.webp";
 
 const STATS = [
     { value: "50+", label: "AI Solutions Delivered" },

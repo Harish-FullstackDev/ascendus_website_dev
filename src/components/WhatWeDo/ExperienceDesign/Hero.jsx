@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import heroBg from "@/assets/WhatWeDo/Experience Design/new/Experience_Design.jpg";
+import heroBg from "@/assets/WhatWeDo/Experience Design/webp/Experience_Hero.webp";
 
 export default function Hero() {
     return (

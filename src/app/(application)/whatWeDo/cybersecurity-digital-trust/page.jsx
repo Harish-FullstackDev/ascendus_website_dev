@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-import customBg from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/footercta.jpg";
+import customBg from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/webp/Cybersecurity_CTA.webp";
 
 import Hero from "@/components/WhatWeDo/CyberSecurityDigitalTrust/Hero";
 import HeroText from "@/components/WhatWeDo/CyberSecurityDigitalTrust/HeroText";
@@ -20,6 +20,8 @@ import ZeroTrustArchitecture from "@/components/WhatWeDo/CyberSecurityDigitalTru
 import CybersecurityDeliveryFramework from "@/components/WhatWeDo/CyberSecurityDigitalTrust/CybersecurityDeliveryFramework";
 import BusinessEnablementThroughSecurity from "@/components/WhatWeDo/CyberSecurityDigitalTrust/BusinessEnablementThroughSecurity";
 import AccessControlSimulatedAttacks from "@/components/WhatWeDo/CyberSecurityDigitalTrust/AccessControlSimulatedAttacks";
+import SecurityArchitectureResilience from "@/components/WhatWeDo/CyberSecurityDigitalTrust/SecurityArchitectureResilience";
+import DataProtectionPrivacy from "@/components/WhatWeDo/CyberSecurityDigitalTrust/DataProtectionPrivacy";
 
 const page = () => {
     return (
@@ -52,8 +54,10 @@ const page = () => {
 
             {/* <IdentityAccessManagement /> */}
             {/* <SecurityOperations /> */}
-            <AccessControlSimulatedAttacks />
+            <SecurityArchitectureResilience />
             <SecurityAssessmentCloudDefense />
+            <DataProtectionPrivacy />
+            <AccessControlSimulatedAttacks />
             {/* <PenetrationTesting /> */}
 
             {/* Pinned GRC background parallax, then Cloud Security curtains over it */}

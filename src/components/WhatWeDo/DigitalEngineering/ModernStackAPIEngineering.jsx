@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import changeBg from "@/assets/WhatWeDo/Digital Engineering/new/Modern.jpg";
+import changeBg from "@/assets/WhatWeDo/Digital Engineering/webp/Digital_ModernStack.webp";
 
 const STEPS = [
     { title: "Web Development", desc: "Enterprise-grade web platforms built for performance, security, and scale." },

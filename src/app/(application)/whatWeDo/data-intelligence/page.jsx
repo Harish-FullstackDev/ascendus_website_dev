@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-import customBg from "@/assets/WhatWeDo/Data Inteligent/new/footercta.jpg";
+import customBg from "@/assets/WhatWeDo/Data Inteligent/webp/Data_CTA.webp";
 
 import Hero from "@/components/WhatWeDo/DataIntelligence/Hero";
 import HeroText from "@/components/WhatWeDo/DataIntelligence/HeroText";
@@ -20,6 +20,7 @@ import GovernanceSAPDataDepth from "@/components/WhatWeDo/DataIntelligence/Gover
 import HighComplianceIndustrySolutions from "@/components/WhatWeDo/DataIntelligence/HighComplianceIndustrySolutions";
 import IndustryImpact from "@/components/WhatWeDo/DataIntelligence/IndustryImpact";
 import RealTimeAnalyticsAndMasterDataManagement from "@/components/WhatWeDo/DataIntelligence/RealTimeAnalyticsAndMasterDataManagement";
+import DataModernizationIntegration from "@/components/WhatWeDo/DataIntelligence/DataModernizationIntegration";
 
 
 const page = () => {
@@ -39,6 +40,7 @@ const page = () => {
             <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
                 {/* <IntroSection /> */}
                 <EnterpriseDataFoundations />
+                <DataModernizationIntegration />
                 <GovernanceSAPDataDepth />
             </div>
             {/* <DataWarehousing /> */}

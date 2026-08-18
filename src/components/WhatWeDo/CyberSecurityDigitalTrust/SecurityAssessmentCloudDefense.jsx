@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import assessmentImage from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/Security.jpg";
+import assessmentImage from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/webp/Cybersecurity_Security_Assessment.webp";
 
 const AREAS = [
     {

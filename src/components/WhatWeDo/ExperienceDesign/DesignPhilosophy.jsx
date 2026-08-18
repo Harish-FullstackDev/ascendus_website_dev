@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import buildingPhoto from "@/assets/WhatWeDo/Experience Design/new/Design.jpg";
+import buildingPhoto from "@/assets/WhatWeDo/Experience Design/webp/Experience_Design_Philosophy.webp";
 
 export default function DesignPhilosophy() {
     return (

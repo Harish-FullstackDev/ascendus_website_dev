@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import overviewImage from "@/assets/WhatWeDo/Data Inteligent/new/High.jpg";
+import overviewImage from "@/assets/WhatWeDo/Data Inteligent/webp/Data_High_Complaince.webp";
 
 export default function HighComplianceIndustrySolutions() {
     return (

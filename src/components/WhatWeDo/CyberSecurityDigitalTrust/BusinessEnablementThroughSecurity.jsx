@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import decisionAutomationPhoto from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/Business.jpg";
+import decisionAutomationPhoto from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/webp/Cybersecurity_Business_Enablement.webp";
 
 const ITEMS = [
     {

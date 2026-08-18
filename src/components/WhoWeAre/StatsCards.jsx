@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import card1Bg from "@/assets/WhoWeAre/new/card_1.jpg";
-import card2Bg from "@/assets/WhoWeAre/new/card_2.jpg";
-import card3Bg from "@/assets/WhoWeAre/new/card_3.jpg";
-import card4Bg from "@/assets/WhoWeAre/new/card_4.jpg";
+import card1Bg from "@/assets/WhoWeAre/webp/Who_We_Are_Card_1.webp";
+import card2Bg from "@/assets/WhoWeAre/webp/Who_We_Are_Card_2.webp";
+import card3Bg from "@/assets/WhoWeAre/webp/Who_We_Are_Card_3.webp";
+import card4Bg from "@/assets/WhoWeAre/webp/Who_We_Are_Card_4.webp";
 
 const CARDS = [
     {

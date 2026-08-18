@@ -3,7 +3,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import buildingPhoto from "@/assets/WhatWeDo/Managed Services/new/SAP.jpg";
+import buildingPhoto from "@/assets/WhatWeDo/Managed Services/webp/SAP_AMS.webp";
 
 const ITEMS = [
     {

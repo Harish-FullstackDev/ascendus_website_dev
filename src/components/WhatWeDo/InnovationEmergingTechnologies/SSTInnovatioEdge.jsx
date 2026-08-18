@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import buildingPhoto from "@/assets/WhatWeDo/Innovation & Emerging Technologies/new/Support.jpg";
+import buildingPhoto from "@/assets/WhatWeDo/Innovation & Emerging Technologies/webp/Innovation_SST_EDGE.webp";
 
 export default function SSTInnovatioEdge() {
     return (

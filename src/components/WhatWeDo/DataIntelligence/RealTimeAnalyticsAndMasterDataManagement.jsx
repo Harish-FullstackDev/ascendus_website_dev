@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import dataCenterPhoto from "@/assets/WhatWeDo/Data Inteligent/new/real.jpg";
+import dataCenterPhoto from "@/assets/WhatWeDo/Data Inteligent/webp/Data_RealTime.webp";
 
 const ITEMS = [
     {
@@ -45,7 +45,7 @@ export default function RealTimeAnalyticsAndMasterDataManagement() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative z-10 -mt-8 sm:-mt-30 mb-8 sm:mb-16 mx-4 sm:mx-auto sm:max-w-[1390px] bg-white shadow-[0px_4px_28.65px_rgba(0,0,0,0.25)] py-6 sm:py-0"
+                className="relative z-10 -mt-8 sm:-mt-35 mb-8 sm:mb-16 mx-4 sm:mx-auto sm:max-w-[1390px] bg-white shadow-[0px_4px_28.65px_rgba(0,0,0,0.25)] py-6 sm:py-0"
             >
                 <div className="hidden sm:flex items-center justify-between">
                     {ITEMS.map((item, i) => (
@@ -57,7 +57,7 @@ export default function RealTimeAnalyticsAndMasterDataManagement() {
                             <div
                                 className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[270px] group-hover:w-[265px] h-[234px] group-hover:h-[332px] group-hover:z-10 px-6 flex flex-col items-center justify-start pt-10 overflow-hidden transition-[width,height,background-color,box-shadow] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:bg-[#0A3A52] group-hover:shadow-[0px_20px_45px_rgba(10,58,82,0.3)]"
                             >
-                                <p className="text-[#16171a] text-xl font-medium text-left max-w-[180px] transition-all duration-500 ease-out group-hover:opacity-0 group-hover:-translate-y-2">
+                                <p className="text-[#16171a] text-2xl font-medium text-left max-w-[180px] transition-all duration-500 ease-out group-hover:opacity-0 group-hover:-translate-y-2">
                                     {item.title}
                                 </p>
 

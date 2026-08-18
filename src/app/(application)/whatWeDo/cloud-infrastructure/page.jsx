@@ -4,11 +4,11 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-import customBg from "@/assets/WhatWeDo/Cloud and Infrastructure/new/footercta.jpg";
+import customBg from "@/assets/WhatWeDo/Cloud and Infrastructure/webp/Cloud_CTA.webp";
 import Hero from "@/components/WhatWeDo/CloudInfrastructure/Hero";
 import HeroText from "@/components/WhatWeDo/CloudInfrastructure/HeroText";
 import CloudConsulting from "@/components/WhatWeDo/CloudInfrastructure/CloudConsulting";
-import CloudMigration from "@/components/WhatWeDo/CloudInfrastructure/CloudMigration";
+import ModernInfrastructure from "@/components/WhatWeDo/CloudInfrastructure/ModernInfrastructure";
 import CloudModernization from "@/components/WhatWeDo/CloudInfrastructure/CloudModernization";
 import HybridCloud from "@/components/WhatWeDo/CloudInfrastructure/HybridCloud";
 import CoreEngineeringPillars from "@/components/WhatWeDo/CloudInfrastructure/CoreEngineeringPillars";
@@ -18,6 +18,7 @@ import BackupDisasterRecovery from "@/components/WhatWeDo/CloudInfrastructure/Ba
 import DigitalTwins from "@/components/WhatWeDo/CloudInfrastructure/DigitalTwins";
 import DisruptionFreeMigrationScalability from "@/components/WhatWeDo/CloudInfrastructure/DisruptionFreeMigrationScalability";
 import CloudMigrationHybridStrategy from "@/components/WhatWeDo/CloudInfrastructure/CloudMigrationHybridStrategy";
+import CloudPlatformsServices from "@/components/WhatWeDo/CloudInfrastructure/CloudPlatformsServices";
 
 const page = () => {
     return (
@@ -37,9 +38,10 @@ const page = () => {
                 <CoreEngineeringPillars />
                 <ArchitecturalResilienceStrategy />
             </div>
+            <CloudPlatformsServices />
             <DisruptionFreeMigrationScalability />
             <CloudMigrationHybridStrategy />
-            <CloudMigration />
+            <ModernInfrastructure />
             <ReadyToTransform
                 title="Ready to build infrastructure that scales with you?"
                 description="Talk to our infrastructure team about the environment your business actually needs."

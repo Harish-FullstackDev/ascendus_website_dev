@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import journeyMapImg from "@/assets/WhatWeDo/Customer Experience/new/Connected.jpg";
+import journeyMapImg from "@/assets/WhatWeDo/Customer Experience/webp/Customer_Connected_CRM.webp";
 
 const ITEMS = [
     {
