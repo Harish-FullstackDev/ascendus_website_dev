@@ -16,13 +16,13 @@ const ITEMS = [
 
 export default function SingleCustomerView() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[50px] flex flex-col lg:flex-row gap-10 lg:gap-[83px] items-center">
+        <section className="w-full py-10 px-6 flex flex-col lg:flex-row gap-10 lg:gap-[83px] items-center sm:p-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col gap-4 w-full lg:w-[518px] shrink-0"
+                className="flex flex-col gap-2 w-full lg:w-[518px] shrink-0"
             >
                 <h2 className="text-black text-2xl sm:text-[32px] font-normal">Single Customer View & Evidence-Based Design
                 </h2>

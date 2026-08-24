@@ -22,23 +22,23 @@ const ROWS = [
 
 export default function DisruptionFreeMigrationScalability() {
     return (
-        <section className="w-full py-10 sm:py-16 pl-6 pr-6 sm:pl-[40px] sm:pr-0 bg-[#F5F6F6] flex flex-col gap-16 sm:gap-[70px] overflow-hidden">
+        <section className="w-full py-10 sm:py-16 pl-16 pr-6 sm:p-16  bg-[#F3F6F9] flex flex-col gap-16 sm:gap-[64px] overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="w-full px-7 pt-6 pb-8 text-left sm:px-8 sm:pt-8 sm:pb-0"
+                className="w-full text-center "
             >
-                <div className="max-w-[420px]">
+                <div className="max-w-[700px] mx-auto">
                     <h2
-                        className="text-black text-[22px] leading-[1.2] font-normal tracking-[-0.02em] sm:text-[26px] lg:text-[30px]"
+                        className="text-[#10161D] text-[22px] leading-[1.2] font-normal tracking-[-0.02em] sm:text-[28px]"
                     >
                         Disruption-Free Migration & Scalability
                     </h2>
 
                     <p
-                        className="mt-3 max-w-[430px] text-[#666666] text-[13px] leading-[1.4] font-light sm:text-[15px] lg:text-[16px]"
+                        className="mt-3 text-[#4a5568] text-[13px] leading-[1.4] font-light sm:text-[18px] "
                     >
                         How we manage cloud migrations without disrupting
                         business operations.
@@ -64,11 +64,11 @@ export default function DisruptionFreeMigrationScalability() {
                         >
                             <Image src={row.image} alt="" fill sizes="(max-width: 640px) 100vw, 54vw" className="object-cover" />
                         </div>
-                        <div className="relative sm:absolute sm:left-[56px] sm:top-1/2 sm:-translate-y-1/2 bg-white w-full sm:w-[860px] sm:h-[250px] lg:h-[290px] -mt-4 sm:mt-0 overflow-hidden flex flex-col justify-center gap-6 px-6 sm:pl-[34px] sm:pr-[60px] py-8 sm:py-0">
-                            <p className="text-black text-xl sm:text-2xl font-normal">{row.eyebrow}</p>
+                        <div className="relative sm:absolute sm:top-1/2 sm:-translate-y-1/2 bg-white w-full sm:w-[860px] sm:h-[250px] lg:h-[290px] -mt-4 sm:mt-0 overflow-hidden flex flex-col justify-center gap-6 px-6 sm:pl-[34px] sm:pr-[60px] py-8 sm:py-0">
+                            {/* <p className="text-black text-xl sm:text-2xl font-normal">{row.eyebrow}</p> */}
                             <div className="flex flex-col gap-3">
-                                <p className="text-black text-xl sm:text-2xl font-normal">{row.title}</p>
-                                <p className="text-[#515151] text-base sm:text-lg font-light w-full">
+                                <p className="text-[#10161D] text-xl sm:text-2xl font-medium">{row.title}</p>
+                                <p className="text-[#4A5568] text-base sm:text-lg font-light w-full">
                                     {row.desc}
                                 </p>
                             </div>
@@ -79,4 +79,5 @@ export default function DisruptionFreeMigrationScalability() {
         </section>
     );
 }
+
 

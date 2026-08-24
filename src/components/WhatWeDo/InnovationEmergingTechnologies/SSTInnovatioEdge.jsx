@@ -22,7 +22,7 @@ export default function SSTInnovatioEdge() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative z-10 h-full flex flex-col justify-center gap-4 sm:gap-6 px-6 sm:px-[56px] py-10 sm:py-14 max-w-[540px]"
+                className="relative z-10 h-full flex flex-col justify-center gap-4 sm:gap-6 px-6 sm:px-[64px] py-10 sm:py-14 max-w-[690px]"
             >
                 <h2 className="text-black text-2xl sm:text-[32px] font-medium">
                     Ascendus Innovation Edge
@@ -32,7 +32,7 @@ export default function SSTInnovatioEdge() {
                     Why enterprises choose Ascendus for emerging tech deployment.
                 </p>
 
-                <ul className="list-disc pl-6 text-black text-base sm:text-lg font-light leading-snug space-y-1">
+                <ul className="list-disc text-black text-base sm:text-lg font-light leading-snug space-y-1">
                     <li>SAP-integrated emerging tech deployment</li>
                     <li>Pilot-to-scale methodology</li>
                     <li>Cross-industry innovation experience</li>

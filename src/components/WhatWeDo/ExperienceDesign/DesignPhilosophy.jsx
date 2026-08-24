@@ -4,7 +4,7 @@ import buildingPhoto from "@/assets/WhatWeDo/Experience Design/webp/Experience_D
 
 export default function DesignPhilosophy() {
     return (
-        <section className="relative w-full h-[420px] sm:h-[471px] overflow-hidden bg-[#66cdf3]">
+        <section className="relative w-full h-[220px] sm:h-[271px] overflow-hidden bg-[#66cdf3]">
             {/* Fixed background image */}
             <div
                 className="absolute inset-0 bg-fixed bg-cover bg-center bg-no-repeat"
@@ -16,7 +16,7 @@ export default function DesignPhilosophy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative z-10 h-full flex flex-col  justify-center  gap-8 sm:gap-12 px-6 sm:px-[52px]"
+                className="relative z-10 h-full flex flex-col justify-center gap-8 sm:gap-8 px-6 sm:px-16"
             >
                 <div className="flex flex-col gap-2 sm:gap-3 max-w-[420px]">
                     <h2 className="text-black text-2xl font-normal">

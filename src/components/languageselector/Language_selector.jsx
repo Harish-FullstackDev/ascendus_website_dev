@@ -125,7 +125,7 @@ export default function LanguageSelector({ isNavbarLight }) {
         onClick={() => setIsOpen(!isOpen)}
         className={`
           inline-flex items-center gap-2
-          px-4 py-2 rounded-xl
+          px-4 py-2 rounded-none
           ${glassBase}
           ${themeClass1}
           hover:scale-105 active:scale-95

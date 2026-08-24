@@ -52,13 +52,13 @@ export default function GovernanceSAPDataDepth() {
     const goTo = (nextIndex, dir) => setPage([Math.max(0, Math.min(maxIndex, nextIndex)), dir]);
 
     return (
-        <section className="w-full bg-[#F5F6F6] py-10 sm:py-16 px-6 sm:px-[50px] flex flex-col items-center gap-10 sm:gap-[62px]">
+        <section className="w-full bg-[#F5F6F6] py-10 px-6 flex flex-col items-center gap-10 sm:gap-[62px] sm:p-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 max-w-[767px] text-center"
+                className="flex flex-col items-center gap-2 max-w-[767px] text-center"
             >
                 <h2 className="text-[#16171a] text-2xl font-medium">Governance & SAP Data Depth</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">

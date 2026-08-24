@@ -36,9 +36,9 @@ const ITEMS = [
 
 function CardBlock({ item }) {
     return (
-        <div className="flex w-full max-w-[420px] flex-col items-center gap-6 rounded-[32px] bg-white px-6 py-8 sm:px-8 sm:py-9 lg:min-w-[584px] lg:max-w-[700px] lg:flex-1 lg:px-10">
+        <div className="flex w-full max-w-[420px] flex-col items-center gap-6 bg-white lg:flex-1 sm:max-w-[512px] lg:max-w-none lg:basis-1/2">
             <p className="text-center text-xl font-medium text-[#111] sm:text-2xl">{item.title}</p>
-            <div className="relative aspect-[333/150] w-full max-w-[402px] overflow-hidden">
+            <div className="relative aspect-[512/200] w-full overflow-hidden">
                 <Image src={item.image} alt="" fill className="object-cover" />
             </div>
         </div>
@@ -47,7 +47,7 @@ function CardBlock({ item }) {
 
 function CompanionBlock({ item }) {
     return (
-        <div className="flex w-full max-w-[480px] items-center gap-4 px-2 sm:gap-5 sm:px-6 lg:max-w-[504px] lg:flex-1 lg:px-6">
+        <div className="flex w-full max-w-[480px] items-center gap-4 px-2 sm:gap-5 sm:px-0 lg:flex-1 lg:max-w-none lg:basis-1/2">
             <div className="w-[4px] shrink-0 self-stretch bg-[#808a99] sm:w-[8px]" />
             <div>
                 {/* <p className="text-lg leading-snug text-[#808a99] sm:text-2xl">{item.companionTitle}</p> */}
@@ -63,13 +63,13 @@ export default function InfrastructureManagementSLAs() {
             {/* Figma pads this whole section 40px on every side (not just
                 left/right), so padding lives on one wrapper here rather than
                 split across mismatched horizontal/vertical padding values. */}
-            <div className="mx-auto flex w-full sm:px-[70px] flex-col items-center gap-12 p-6 sm:gap-16 sm:p-10 lg:gap-[88px]">
+            <div className="flex w-full sm:px-[64px] flex-col items-center gap-10 sm:gap-16 px-6 py-8 sm:py-10 lg:py-[64px]">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex max-w-[772px] flex-col items-center gap-4 text-center"
+                    className="flex max-w-[772px] flex-col items-center gap-2 text-center"
                 >
                     <h2 className="font-heading text-2xl font-medium text-black sm:text-[32px]">
                         Infrastructure Management &amp; SLAs
@@ -79,7 +79,7 @@ export default function InfrastructureManagementSLAs() {
                     </p>
                 </motion.div>
 
-                <div className="flex w-full flex-col gap-12 sm:gap-16">
+                <div className="flex w-full flex-col gap-10 sm:gap-8">
                     {ITEMS.map((item, index) => {
                         const isEven = index % 2 === 1;
                         return (

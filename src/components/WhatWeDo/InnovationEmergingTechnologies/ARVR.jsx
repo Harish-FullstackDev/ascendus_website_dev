@@ -20,7 +20,7 @@ export default function ARVR() {
     const [hovered, setHovered] = useState(null);
 
     return (
-        <section className="w-full pb-10 sm:pb-0 flex flex-col items-center gap-8 sm:gap-[62px]">
+        <section className="w-full pb-10 sm:pb-0 flex flex-col items-center gap-8 sm:gap-16 pt-10 sm:pt-8">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export default function ARVR() {
             {/* Mobile: stacked list — the 5-column image banner has no room to breathe
                 this narrow, so swap it for the same card-list pattern used by
                 Cloud Migration on Cloud & Infrastructure. */}
-            <div className="flex sm:hidden w-full flex-col gap-3 px-6">
+            <div className="flex sm:hidden w-full flex-col gap-8 px-6">
                 {ITEMS.map((item, index) => (
                     <motion.div
                         key={item.title}

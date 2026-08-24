@@ -1,0 +1,70 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+import awardIcon from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/award.svg";
+import supportIcon from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/support.svg";
+import gridIcon from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/grid.svg";
+import pathEditIcon from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/path-edit.svg";
+
+const REASONS = [
+    {
+        icon: awardIcon,
+        title: "Official SAP Partner Status",
+        desc: "RISE with SAP, GROW with SAP, and S/4HANA delivery credentials are part of our standing with SAP, not something we're building toward.",
+    },
+    {
+        icon: supportIcon,
+        title: "Delivery and Support Under One Roof",
+        desc: "The team that migrates your system is the same practice that supports it afterward, not a handoff to a different vendor once the project ends.",
+    },
+    {
+        icon: gridIcon,
+        title: "Pattern Recognition Across 150+ Engagements",
+        desc: "Most of what goes wrong in an SAP migration has already gone wrong somewhere else. We've usually seen the specific failure mode before it becomes yours.",
+    },
+    {
+        icon: pathEditIcon,
+        title: "Path for Every Landscape",
+        desc: "Greenfield, brownfield, or bluefield, the right path depends on your system, not on which one we're set up to sell.",
+    },
+];
+
+export default function WhyPartnerWithUs() {
+    return (
+        <section className="w-full bg-white pt-10 pb-8 sm:pt-16 sm:pb-16 px-6 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="flex flex-col items-center gap-5 max-w-[818px] text-center"
+            >
+                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">Why Partner With Us For SAP</h2>
+                <p className="text-[#4a5568] text-lg font-light leading-[1.5]">
+                    Choose the engagement model that fits your needs, from focused projects to ongoing support and
+                    strategic guidance.
+                </p>
+            </motion.div>
+
+            <div className="w-full max-w-[1150px] grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-10 sm:gap-y-16">
+                {REASONS.map((reason, index) => (
+                    <motion.div
+                        key={reason.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: (index % 2) * 0.1 }}
+                        className="flex flex-col gap-6"
+                    >
+                        <Image src={reason.icon} alt="" className="size-12" />
+                        <div className="flex flex-col gap-3">
+                            <h3 className="text-[#10161d] text-xl font-normal leading-[1.3]">{reason.title}</h3>
+                            <p className="text-[#4a5568] text-xl font-light leading-[1.3]">{reason.desc}</p>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+        </section>
+    );
+}

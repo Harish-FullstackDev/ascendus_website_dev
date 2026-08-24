@@ -43,13 +43,13 @@ export default function EnterpriseSoftware() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-0 flex flex-col items-center gap-8 sm:gap-[45px]">
+        <section className="w-full py-10 sm:py-8 px-6 sm:px-0 flex flex-col items-center gap-8 sm:gap-[45px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 max-w-[1074px] text-center"
+                className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
             >
                 <h2 className="text-black text-2xl font-medium">Enterprise Software Development & Modernization</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
@@ -95,7 +95,7 @@ export default function EnterpriseSoftware() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.3 }}
-                            className="absolute left-6 right-6 sm:left-[55px] sm:right-auto bottom-6 sm:bottom-[46px] sm:w-[462px] text-white flex flex-col gap-3"
+                            className="absolute text-white inset-0"
                         >
                             <p className="text-2xl font-medium">{activeTab.title}</p>
                             <p className="text-white/90 text-base sm:text-lg font-light leading-relaxed">

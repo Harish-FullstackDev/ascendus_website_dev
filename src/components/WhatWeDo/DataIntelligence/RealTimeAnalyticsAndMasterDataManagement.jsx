@@ -34,7 +34,7 @@ export default function RealTimeAnalyticsAndMasterDataManagement() {
                         Real-Time Analytics &amp; Master Data Management
                     </h2>
 
-                    <p className="mt-2 sm:mt-3 max-w-3xl text-sm sm:text-lg text-gray-200">
+                    <p className="mt-2 sm:mt-2 max-w-3xl text-sm sm:text-lg text-gray-200">
                         Advanced capabilities to unify, visualize, and govern data.
                     </p>
                 </div>

@@ -32,13 +32,13 @@ const CARDS = [
 
 export default function EnterpriseDataFoundations() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[50px]">
+        <section className="w-full py-10 px-6 sm:p-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[50px]"
+                className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[50px]"
             >
                 <h2 className="text-[#16171a] text-2xl font-medium">Enterprise Data Foundations</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">

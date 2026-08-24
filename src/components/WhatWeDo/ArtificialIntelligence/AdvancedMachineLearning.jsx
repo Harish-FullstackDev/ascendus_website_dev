@@ -46,19 +46,19 @@ export default function AdvancedMachineLearning() {
     }, [active]);
 
     return (
-        <section className="w-full py-10 sm:py-10 px-6 sm:px-[0px]">
+        <section className="w-full py-10 px-6 sm:px-[0px] sm:pb-0 sm:pt-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 max-w-[780px] mx-auto text-center mb-10 sm:mb-[50px] sm:px-[50px]"
+                className="flex flex-col items-center gap-2 max-w-[780px] mx-auto text-center"
             >
                 <h2 className="text-black text-2xl font-medium">Advanced Machine Learning &amp; Governance</h2>
                 <p className="text-[#4A5568] text-base sm:text-lg font-light">Targeted AI and machine learning execution services</p>
             </motion.div>
 
-            <div className="flex flex-col lg:flex-row max-w-screen mx-auto lg:h-[500px] pt-0 md:pt-10">
+            <div className="flex flex-col lg:flex-row max-w-screen mx-auto lg:h-[500px] pt-16 md:pt-16">
                 <div className="relative w-full h-[220px] lg:h-full lg:w-[35%] shrink-0 overflow-hidden">
 
                     <AnimatePresence mode="wait">

@@ -32,14 +32,14 @@ const ITEMS = [
 
 export default function CloudMigrationHybridStrategy() {
     return (
-        <section className="w-full py-8 sm:py-[40px] px-6 sm:px-[40px]">
+        <section className="w-full py-8 px-6 sm:p-16">
             <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-12 max-w-[1390px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex flex-col gap-4 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
+                    className="flex flex-col gap-2 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
                 >
                     <h2 className="text-[#16171a] text-2xl sm:text-[28px] font-medium">Cloud Migration &amp; Hybrid Strategy</h2>
                     <p className="text-[#4A5568] text-lg font-light">

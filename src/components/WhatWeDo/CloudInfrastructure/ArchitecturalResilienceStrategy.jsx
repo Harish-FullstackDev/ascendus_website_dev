@@ -22,13 +22,13 @@ export default function ArchitecturalResilienceStrategy() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative h-full flex flex-col justify-center gap-4 sm:gap-6 max-w-full px-6 sm:px-[52px]"
+                    className="relative h-full flex flex-col justify-center gap-4 sm:gap-6 max-w-full px-6 sm:px-[64px]"
                 >
                     <p className="text-black text-2xl sm:text-[32px] font-medium max-w-[400px]">Architectural Resilience Strategy</p>
-                    <p className="text-black text-xl sm:text-2xl font-normal max-w-[500px]">
+                    <p className="text-black text-xl sm:text-2xl font-normal max-w-[600px]">
                         The principles that guide our cloud and infrastructure deployments
                     </p>
-                    <p className="text-black text-base sm:text-lg font-light max-w-[500px]">
+                    <p className="text-black text-base sm:text-lg font-light max-w-[600px]">
                         Infrastructure should be the thing your business never has to think about.
                         <br />
                         That takes deliberate design.

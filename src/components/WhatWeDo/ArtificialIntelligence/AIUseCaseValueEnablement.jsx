@@ -32,13 +32,13 @@ const CARDS = [
 
 export default function AIUseCaseValueEnablement() {
     return (
-        <section className="w-full py-10 px-6 sm:px-[50px] bg-white">
+        <section className="w-full py-10 px-6 bg-white sm:p-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-5 max-w-[767px] mx-auto text-center mb-14 sm:mb-16"
+                className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-14 sm:mb-16"
             >
                 <h2 className="text-[#0d0c22] text-2xl font-medium">AI Use Case &amp; Value Enablement</h2>
                 <p className="text-black text-base sm:text-lg font-light">
@@ -47,7 +47,7 @@ export default function AIUseCaseValueEnablement() {
                 </p>
             </motion.div>
 
-            <div className="max-w-[1300px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 sm:gap-x-8 lg:gap-x-12 gap-y-20">
+            <div className="max-w-[1300px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 sm:gap-x-8 lg:gap-x-12 gap-y-20">
                 {CARDS.map((card, index) => (
                     <motion.div
                         key={card.title}

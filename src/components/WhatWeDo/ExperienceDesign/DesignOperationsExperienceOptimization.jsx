@@ -65,7 +65,7 @@ const FeatureRow = ({ items }) => (
     <div className="w-full">
         {/* Mobile / tablet: plain stacked grid, no divider lines — the divider treatment only
             reads correctly once all 3 cards share a single row, at lg. */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-x-10 gap-y-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-x-8 gap-y-8">
             {items.map((item, index) => (
                 <Card key={item.title} {...item} index={index} />
             ))}
@@ -94,13 +94,13 @@ const FeatureRow = ({ items }) => (
 
 export default function DesignOperationsExperienceOptimization() {
     return (
-        <section className="w-full pt-10 sm:pt-16 pb-10 sm:pb-16 lg:pb-28 px-6 sm:px-[64px]">
+        <section className="w-full pt-10 sm:pt-16 pb-10 sm:pb-10 lg:pb-16 px-6 sm:px-[64px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-2 text-center mb-10 sm:mb-[45px] w-full"
+                className="flex flex-col items-center gap-2 text-center mb-10 sm:mb-16 w-full"
             >
                 <h2 className="text-[#16171A] text-2xl font-medium">
                     Design Operations &amp; Experience Optimization

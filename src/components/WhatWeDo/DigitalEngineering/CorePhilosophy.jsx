@@ -25,7 +25,7 @@ export default function CorePhilosophy() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            className="mb-4 text-[#3D3D4E] text-[18px] leading-[140%] tracking-[0%]"
+                            className="text-[#3D3D4E] text-[18px] leading-[140%] tracking-[0%] mt-2"
                         >
                             Defining the stakes of software engineering in growing businesses.
                         </motion.p>

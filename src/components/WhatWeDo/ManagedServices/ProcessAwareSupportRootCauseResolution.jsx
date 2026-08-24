@@ -44,7 +44,7 @@ export default function ProcessAwareSupportRootCauseResolution() {
                     >
                         Process-Aware Support &amp; Root-Cause Resolution
                     </motion.h2>
-                    <p className="mt-[21px] text-lg font-light leading-snug text-black">
+                    <p className="mt-2 text-lg font-light leading-snug text-black">
                         Moving beyond ticket resolution to continuous system improvement
                     </p>
                 </div>
@@ -83,7 +83,7 @@ export default function ProcessAwareSupportRootCauseResolution() {
                 <div className="relative h-[220px] w-full">
                     <Image src={skylinePhoto} alt="" fill className="object-cover" />
                 </div>
-                <div className="flex flex-col gap-4 bg-black px-6 py-8">
+                <div className="flex flex-col gap-2 bg-black px-6 py-8">
                     <h2 className="font-heading text-3xl font-medium leading-[1.2] text-white">
                         Process-Aware Support &amp; Root-Cause Resolution
                     </h2>
@@ -91,7 +91,7 @@ export default function ProcessAwareSupportRootCauseResolution() {
                         Moving beyond ticket resolution to continuous system improvement
                     </p>
                 </div>
-                <div className="flex flex-col gap-4 bg-[#f5f5f5] px-6 py-6">
+                <div className="flex flex-col gap-8 bg-[#f5f5f5] px-6 py-6">
                     {TIERS.map((tier) => (
                         <div key={tier.n} className="border border-black bg-white p-5">
                             <p className="text-lg leading-snug text-black">{tier.title}</p>

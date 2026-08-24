@@ -15,7 +15,7 @@ const SERVICES = [
 
 export default function WhyPartnerWithUs() {
     return (
-        <section className="w-full py-10 sm:py-16 flex flex-col items-center gap-8 sm:gap-[18px]">
+        <section className="w-full py-10 sm:py-16 flex flex-col items-center gap-8 sm:gap-16">
             {/* Title + description now sit above the card, centered like the
                 rest of this page's sections (see OurAutomationApproach /
                 HyperAutomation). Only this block carries horizontal padding —
@@ -25,7 +25,7 @@ export default function WhyPartnerWithUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-3 max-w-[760px] text-center px-6 sm:px-10"
+                className="flex flex-col items-center gap-2 max-w-[760px] text-center px-6 sm:px-10"
             >
                 <h2 className="font-heading text-black text-2xl sm:text-[28px] font-medium">
                     Why Partner With Us

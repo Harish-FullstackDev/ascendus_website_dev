@@ -13,7 +13,7 @@ export default function HighComplianceIndustrySolutions() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex flex-col items-center gap-4 max-w-[760px] mx-auto text-center px-6"
+                    className="flex flex-col items-center gap-2 max-w-[760px] mx-auto text-center px-6"
                 >
                     <h2 className="text-[#16171a] text-2xl font-medium">
                         High-Compliance Industry Solutions

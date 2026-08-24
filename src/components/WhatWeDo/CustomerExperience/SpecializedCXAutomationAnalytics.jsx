@@ -46,13 +46,13 @@ export default function SpecializedCXAutomationAnalytics() {
     const [active, setActive] = useState(0);
 
     return (
-        <section className=" bg-[#f4f3f9] sm:mb-5 w-full py-10 sm:py-16">
+        <section className="bg-[#f4f3f9] w-full py-10 sm:p-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[42px] px-6"
+                className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[42px] px-6"
             >
                 <h2 className="text-[#16171a] text-2xl font-medium">Specialized CX Automation & Analytics</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
@@ -60,7 +60,7 @@ export default function SpecializedCXAutomationAnalytics() {
                 </p>
             </motion.div>
 
-            <div className="bg-[#f4f3f9] w-full px-4 sm:px-[50px] py-8 sm:py-[42px]">
+            <div className="bg-[#f4f3f9] w-full px-4 sm:px-[50px] py-8 sm:py-[32px]">
                 <div className="flex flex-col gap-2.5 sm:flex-row sm:gap-[37px] h-auto sm:h-[560px] max-w-[1180px] mx-auto">
                     {TABS.map((tab, i) => {
                         const isActive = i === active;

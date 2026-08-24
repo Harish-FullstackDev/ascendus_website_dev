@@ -16,7 +16,7 @@ export default function CostofInefficiency() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative z-10 h-full flex flex-col justify-center gap-4 sm:gap-6 px-6 sm:px-[52px] max-w-[616px]"
+                className="relative z-10 h-full flex flex-col justify-center gap-4 sm:gap-6 px-6 sm:px-[52px] max-w-[716px]"
             >
                 <h2 className="text-black text-2xl sm:text-[32px] font-medium">
                     Cost of Inefficiency

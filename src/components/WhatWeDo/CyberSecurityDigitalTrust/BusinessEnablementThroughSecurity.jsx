@@ -15,7 +15,7 @@ const ITEMS = [
 
 export default function BusinessEnablementThroughSecurity() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-0 flex flex-col gap-16 sm:gap-[70px]">
+        <section className="w-full px-6 sm:px-0 flex flex-col gap-16 sm:gap-[70px] pt-10 sm:pt-16 pb-10 sm:pb-8">
             {ITEMS.map((item) => (
                 <motion.div
                     key={item.title}

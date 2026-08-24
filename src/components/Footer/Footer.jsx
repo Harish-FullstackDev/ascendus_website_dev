@@ -187,7 +187,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/services/enterpriseTransformation"
+                  href="/whatWeDo/enterprise-transformation-practice"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Enterprise Transformation

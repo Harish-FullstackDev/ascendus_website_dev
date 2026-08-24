@@ -31,7 +31,7 @@ export default function IndustryDigitalTwins() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[46px] px-6"
+                className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16 px-6 sm:px-[64px]"
             >
                 <h2 className="text-[#16171a] text-2xl font-medium">Industry 4.0, IoT & Digital Twins</h2>
                 <p className="text-black text-base sm:text-lg font-light">

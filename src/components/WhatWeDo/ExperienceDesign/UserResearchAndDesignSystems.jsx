@@ -54,13 +54,13 @@ export default function UserResearchAndDesignSystems() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-0 flex flex-col items-center gap-8 sm:gap-[45px]">
+        <section className="w-full px-6 sm:px-0 flex flex-col items-center gap-8 sm:gap-16 pt-10 sm:pt-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 max-w-[1011px] text-center"
+                className="flex flex-col items-center gap-2 max-w-[1011px] text-center"
             >
                 <h2 className="text-black text-2xl font-medium">User Research & Design Systems
                 </h2>
@@ -70,7 +70,7 @@ export default function UserResearchAndDesignSystems() {
             </motion.div>
 
             {/* Matches Figma "Frame 2147240196": justify-between, pl-14 (55px), gap 100px — row height now follows the image's own aspect ratio instead of a fixed px cap */}
-            <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-[100px] w-full lg:pl-[50px]">
+            <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-[100px] w-full lg:pl-[64px]">
                 {/* Tabs column: Figma "size-96" — w-96 h-96, items packed tight with justify-between */}
                 <div className="flex flex-col justify-between w-full lg:w-96 h-auto lg:h-96 gap-2 lg:gap-0 shrink-0">
                     {TABS.map((tab, index) => (
@@ -124,7 +124,7 @@ export default function UserResearchAndDesignSystems() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.3 }}
-                            className="absolute left-[8%] sm:left-[16%] right-[8%] sm:right-auto top-[38%] sm:top-[45%] sm:w-[61%] text-[#e4e4e4]"
+                            className="absolute left-[8%] sm:left-[13%] right-[8%] sm:right-auto top-[38%] sm:top-[60%] sm:w-[61%] text-[#e4e4e4]"
                         >
                             <p className="text-lg sm:text-2xl font-light leading-[1.4] sm:leading-[41px]">
                                 {activeTab.desc}

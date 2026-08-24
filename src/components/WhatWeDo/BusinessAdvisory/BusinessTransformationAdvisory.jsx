@@ -49,13 +49,13 @@ function Card({ title, desc, className = "" }) {
 
 export default function BusinessTransformationAdvisory() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-[71px]">
+        <section className="w-full px-6 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16 pt-10 sm:pt-8 pb-10 sm:pb-8">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 max-w-[694px] text-center"
+                className="flex flex-col items-center gap-2 max-w-[694px] text-center"
             >
                 <h2 className="text-black text-2xl font-normal">Business Transformation Advisory</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
@@ -65,12 +65,12 @@ export default function BusinessTransformationAdvisory() {
             </motion.div>
 
             <div className="w-full max-w-screen flex flex-col gap-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     {BIG_CARDS.map((card) => (
                         <Card key={card.title} {...card} className="sm:min-h-[422px]" />
                     ))}
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
                     {SMALL_CARDS.map((card) => (
                         <Card key={card.title} {...card} className="sm:min-h-[405px]" />
                     ))}

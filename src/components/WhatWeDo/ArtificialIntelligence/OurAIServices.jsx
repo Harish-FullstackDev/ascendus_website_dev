@@ -33,13 +33,13 @@ const CARDS = [
 
 export default function OurAIServices() {
     return (
-        <section className="w-full py-10 sm:py-20 px-6 sm:px-[70px]">
+        <section className="w-full py-10 px-6 sm:p-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[50px]"
+                className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[50px]"
             >
                 <h2 className="text-[#16171A] text-2xl font-medium">Our Artificial Intelligence Services</h2>
                 <p className="text-[#4A5568] text-base sm:text-lg font-light">Core areas where we deploy AI to transform enterprise workflow</p>

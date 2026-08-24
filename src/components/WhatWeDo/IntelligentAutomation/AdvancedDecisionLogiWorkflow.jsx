@@ -48,7 +48,7 @@ export default function AdvancedDecisionLogiWorkflow() {
                     top offset (44px) so they clip just the bottom sliver of the
                     blue box instead of covering it. Asymmetric side padding
                     (353px left / 64px right) matches the Figma card positions. */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-[47px] px-6 sm:px-0 sm:pl-[353px] sm:pr-[64px] pt-8 sm:pt-11 pb-35 sm:pb-16 relative z-10">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 px-6 sm:px-0 sm:pl-[353px] sm:pr-[64px] pt-8 sm:pt-11 pb-35 sm:pb-16 relative z-10">
                     {CARDS.map((card, index) => (
                         <motion.div
                             key={card.title}

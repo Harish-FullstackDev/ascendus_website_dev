@@ -17,7 +17,7 @@ const BOXES = [
 
 export default function TeamAdoption() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[52px] bg-[#f5f6f6]">
+        <section className="w-full py-10 px-6 bg-[#f5f6f6] sm:p-[64px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ export default function TeamAdoption() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="relative w-full lg:w-[600px] h-[300px] sm:h-[480px] lg:h-[560px] overflow-hidden"
+                    className="relative w-full h-[300px] sm:h-[420px] overflow-hidden lg:h-auto lg:flex-[475_1_0%] aspect-auto lg:aspect-[475/563]"
                 >
                     <Image src={serviceDesignPhoto} alt="" fill className="object-cover" />
                 </motion.div>

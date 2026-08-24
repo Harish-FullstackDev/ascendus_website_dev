@@ -9,14 +9,14 @@ import integrationImage2 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/w
 
 export default function AccessControlSimulatedAttacks() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[85px]">
-            <div className="flex flex-col gap-10 sm:gap-[70px] max-w-screen mx-auto">
+        <section className="w-full px-6 sm:px-[64px] pt-10 sm:pt-8 pb-10 sm:pb-16">
+            <div className="flex flex-col gap-10 sm:gap-16 max-w-screen mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex flex-col items-center gap-4 max-w-[560px] mx-auto text-center"
+                    className="flex flex-col items-center gap-2 max-w-[560px] mx-auto text-center"
                 >
                     <h2 className="text-black text-2xl sm:text-[28px] font-medium">
                         Access Control & Simulated Attacks

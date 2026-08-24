@@ -42,13 +42,13 @@ const itemVariants = {
 
 export default function DigitalStrategy() {
     return (
-        <div className="w-full h-full flex flex-col items-center justify-center gap-10 sm:gap-[82px] px-6 sm:px-[70px] py-10 sm:py-[40px] pb-0">
+        <div className="w-full h-full flex flex-col items-center justify-center gap-10 sm:gap-[64px] px-6 sm:px-[64px] pb-10 pt-10 sm:pt-[64px] sm:pb-[32px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 text-center"
+                className="flex flex-col items-center gap-2 text-center"
             >
                 <h2 className="font-heading text-[#16171a] text-2xl font-medium">Digital Strategy</h2>
                 <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
@@ -62,7 +62,7 @@ export default function DigitalStrategy() {
 
             {/* Mobile: simple static stacked cards — no hover, description always visible.
                 Layout/design ported from OurAIServices' mobile treatment. */}
-            <div className="flex sm:hidden flex-col gap-4 w-full max-w-[1280px] mx-auto">
+            <div className="flex sm:hidden flex-col gap-8 w-full max-w-[1280px] mx-auto">
                 {CARDS.map((card, index) => (
                     <motion.div
                         key={card.title}
@@ -88,7 +88,7 @@ export default function DigitalStrategy() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
-                className="hidden sm:grid lg:grid-cols-4 sm:grid-cols-2 gap-4 sm:gap-[18px] w-full"
+                className="hidden sm:grid lg:grid-cols-4 sm:grid-cols-2 gap-8 w-full"
             >
                 {CARDS.map((card) => (
                     <motion.div

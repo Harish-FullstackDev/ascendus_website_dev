@@ -97,7 +97,7 @@ export default function ProactiveSystemOperations() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex flex-col gap-4 w-full lg:w-[340px] shrink-0 lg:pt-8"
+                    className="flex flex-col gap-2 w-full lg:w-[340px] shrink-0 lg:pt-8"
                 >
                     <h2 className="text-[#16171A] text-2xl font-medium">Proactive System Operations</h2>
                     <p className="text-[#55595E] text-xl font-normal">

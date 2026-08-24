@@ -46,13 +46,13 @@ const ITEMS = [
 
 export default function ReengineeringPMOGovernance() {
     return (
-        <section className="w-full py-10 sm:py-[84px] px-6 sm:px-[57px] flex flex-col items-center gap-10 sm:gap-[60px]">
+        <section className="w-full px-6 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16 pt-10 sm:pt-8 pb-10 sm:pb-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 max-w-[814px] text-center"
+                className="flex flex-col items-center gap-2 max-w-[814px] text-center"
             >
                 <h2 className="text-black text-2xl font-normal">Reengineering & PMO Governance</h2>
                 <p className="text-[#515151] text-base sm:text-lg font-light">

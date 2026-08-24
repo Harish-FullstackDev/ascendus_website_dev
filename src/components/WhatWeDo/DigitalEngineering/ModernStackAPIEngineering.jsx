@@ -23,7 +23,7 @@ export default function ModernStackAPIEngineering() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 max-w-[841px] text-center px-6"
+                className="flex flex-col items-center gap-2 max-w-[841px] text-center px-6"
             >
                 <h2 className="text-black text-2xl font-normal">Modern Stack & API Engineering</h2>
                 <p className="text-[#515151] text-base sm:text-lg font-light">

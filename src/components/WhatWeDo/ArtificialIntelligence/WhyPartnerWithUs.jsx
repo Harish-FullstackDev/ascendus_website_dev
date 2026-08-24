@@ -14,11 +14,11 @@ const POINTS = [
 export default function WhyPartnerWithUs() {
     return (
         <section className="w-full">
-            <div className="w-full px-6 sm:px-[25px] py-10 lg:py-[40px]">
+            <div className="w-full px-6 py-10 sm:p-16 sm:pt-0">
                 <div className="grid w-full lg:grid-cols-[1fr_auto_1fr] items-center gap-0">
 
                     {/* Left */}
-                    <div className="lg:pr-0 pl-0 md:pl-16">
+                    <div className="flex flex-col gap-2">
                         <motion.h2
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}

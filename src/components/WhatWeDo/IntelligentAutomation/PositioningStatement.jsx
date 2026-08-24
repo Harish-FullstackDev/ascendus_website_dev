@@ -6,7 +6,7 @@ import matterPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intellige
 
 export default function PositioningStatement() {
     return (
-        <section className="w-full px-6 py-10 sm:pl-[72px] sm:pr-[40px] sm:py-[40px]">
+        <section className="w-full px-6 py-10 sm:pl-[64px] sm:pr-[64px] sm:py-[64px]">
             {/* Heading */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ export default function PositioningStatement() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="w-full lg:w-[700px] shrink-0 flex flex-col gap-5 text-[#3d3d4e]"
+                    className="w-full lg:w-[700px] shrink-0 flex flex-col gap-2 text-[#3d3d4e]"
                 >
                     <p className="text-3xl font-normal leading-normal">
                         Work Smarter. Automate Faster.

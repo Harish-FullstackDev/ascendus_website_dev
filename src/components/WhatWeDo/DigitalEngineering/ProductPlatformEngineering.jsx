@@ -23,13 +23,13 @@ const CARDS = [
 
 export default function ProductPlatformEngineering() {
     return (
-        <section className="w-full pt-10 sm:pt-14 pb-6 sm:pb-8 px-6 sm:px-[0px] flex flex-col items-center gap-10 sm:gap-12">
+        <section className="w-full pt-10 sm:pt-16 pb-6 sm:pb-0 px-6 sm:px-[0px] flex flex-col items-center gap-10 sm:gap-12">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-3 max-w-[767px] text-center px-6 sm:px-0"
+                className="flex flex-col items-center gap-2 max-w-[767px] text-center px-6 sm:px-0"
             >
                 <h2 className="text-black text-2xl font-medium">Product &amp; Platform Engineering</h2>
                 <p className="text-[#55595E] text-lg font-light">
@@ -68,7 +68,7 @@ export default function ProductPlatformEngineering() {
                             transition={{ duration: 0.4, delay: index * 0.06 }}
                             className="flex flex-col"
                         >
-                            <div className="bg-white border border-[#A1A5AA] min-h-[121px] flex items-center px-8">
+                            <div className="bg-white border border-[#A1A5AA] min-h-[121px] flex items-center px-13">
                                 <p className="text-black text-xl font-medium leading-tight">{card.title}</p>
                             </div>
                             <p className="text-[#55595E] text-lg font-light pt-6 pb-10 pr-4">{card.desc}</p>

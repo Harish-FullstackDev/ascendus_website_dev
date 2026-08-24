@@ -32,13 +32,13 @@ const CARDS = [
 
 export default function CustomerPersonalizationEngagement() {
     return (
-        <section className="w-full py-10 px-6 sm:px-[50px] bg-white">
+        <section className="w-full py-10 px-6 bg-white sm:p-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-5 max-w-[767px] mx-auto text-center mb-14 sm:mb-16"
+                className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-14 sm:mb-16"
             >
                 <h2 className="text-[#16171A] text-2xl font-medium">Customer Personalization &amp; Engagement</h2>
                 <p className="text-black text-base sm:text-lg font-light">

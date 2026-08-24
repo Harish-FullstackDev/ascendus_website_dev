@@ -6,13 +6,13 @@ import codeBg from "@/assets/WhatWeDo/Business Advisory/webp/Business_Software_S
 
 export default function SoftwareScalability() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-0">
+        <section className="w-full py-10 sm:py-8 px-6 sm:px-0">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[42px]"
+                className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16"
             >
                 <h2 className="text-[#16171a] text-2xl font-medium">
                     Software Scalability
@@ -35,7 +35,7 @@ export default function SoftwareScalability() {
                 completely. A flex row can't overlap its children by construction, and `flex-1`
                 on the image lets it fill whatever width the text column doesn't use at any
                 size, so there's nothing left to keep manually in sync across breakpoints. */}
-            <div className="w-full flex flex-col sm:flex-row sm:items-stretch gap-8 sm:gap-16 lg:gap-[100px] sm:px-[70px]">
+            <div className="w-full flex flex-col sm:flex-row sm:items-stretch gap-8 sm:gap-16 lg:gap-[100px] sm:px-[64px]">
                 <motion.div
                     initial={{ opacity: 0, y: 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ export default function SoftwareScalability() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="relative w-full sm:flex-1 aspect-[4/3] sm:aspect-auto"
+                    className="relative w-full sm:flex-1 aspect-[4/3] sm:self-start sm:aspect-[27/29]"
                 >
                     <Image
                         src={codeBg}

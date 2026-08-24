@@ -23,13 +23,13 @@ const CARDS = [
 
 export default function SecurityArchitectureResilience() {
     return (
-        <section className="w-full pt-10 sm:pt-14 pb-6 sm:pb-8 px-6 sm:px-[0px] flex flex-col items-center gap-10 sm:gap-12">
+        <section className="w-full pt-10 sm:pt-8 pb-6 sm:pb-8 px-6 sm:px-[0px] flex flex-col items-center gap-10 sm:gap-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-3 max-w-[767px] text-center px-6 sm:px-0"
+                className="flex flex-col items-center gap-2 max-w-[767px] text-center px-6 sm:px-0"
             >
                 <h2 className="text-black text-2xl font-medium">Security Architecture &amp; Resilience</h2>
                 <p className="text-[#55595E] text-lg font-light">
@@ -39,7 +39,7 @@ export default function SecurityArchitectureResilience() {
             </motion.div>
 
             {/* Mobile / tablet layout */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-6 w-full px-6 sm:px-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-8 w-full px-6 sm:px-0">
                 {CARDS.map((card, index) => (
                     <motion.div
                         key={card.title}
@@ -59,7 +59,7 @@ export default function SecurityArchitectureResilience() {
             <div className="hidden lg:block relative w-full lg:min-h-[303px]">
                 <div className="absolute inset-x-0 top-[99px] bottom-0 bg-[#F5F6F6]" />
 
-                <div className="relative z-10 max-w-full mx-auto px-6 sm:px-[64px] grid grid-cols-4 gap-x-6 lg:gap-x-[50px]">
+                <div className="relative z-10 max-w-full mx-auto px-6 sm:px-[64px] grid grid-cols-4 gap-x-6 lg:gap-x-8">
                     {CARDS.map((card, index) => (
                         <motion.div
                             key={card.title}

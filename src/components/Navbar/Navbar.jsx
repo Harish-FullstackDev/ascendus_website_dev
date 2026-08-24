@@ -114,7 +114,7 @@ const Navbar = () => {
 
   const servicesMenu = {
     capabilities: [
-      { name: "Enterprise Transformation", href: "/services/enterpriseTransformation" },
+      { name: "Enterprise Transformation", href: "/whatWeDo/enterprise-transformation-practice" },
       { name: "Artificial Intelligence", href: "/whatWeDo/artificial-intelligence" },
       { name: "Cloud & Infrastructure", href: "/whatWeDo/cloud-infrastructure" },
       { name: "Data & Intelligence", href: "/whatWeDo/data-intelligence" },
@@ -196,9 +196,9 @@ const Navbar = () => {
                     <Image
                       src={logo3}
                       alt="Ascendus Icon"
-                      width={48}
-                      height={48}
-                      className="w-10.5 h-10.5 transition-all duration-300 ease-out"
+                      width={124}
+                      height={101}
+                      className="h-8.5 w-auto object-contain transition-all duration-300 ease-out"
                     />
                   </div>
 
@@ -218,9 +218,9 @@ const Navbar = () => {
                     <Image
                       src={isNavbarLight ? logo5 : logo4}
                       alt="Support Studio Technologies"
-                      width={230}
-                      height={40}
-                      className="block w-[210px] h-10 max-w-none object-contain"
+                      width={359}
+                      height={75}
+                      className="block h-8.5 w-auto max-w-none object-contain"
                     />
                   </div>
                 </Link>
@@ -470,9 +470,9 @@ const Navbar = () => {
               <Image
                 src={isNavbarLight ? logo2 : logo}
                 alt="Ascendus Logo"
-                className="h-8 sm:h-10 w-auto"
-                width={160}
-                height={40}
+                className="h-8 sm:h-10 w-auto object-contain"
+                width={502}
+                height={100}
               />
             </Link>
 
@@ -502,9 +502,9 @@ const Navbar = () => {
             <Image
               src={logo2}
               alt="Ascendus Logo"
-              className="h-8 sm:h-10 w-auto"
-              width={160}
-              height={40}
+              className="h-8 sm:h-10 w-auto object-contain"
+              width={502}
+              height={100}
             />
           </Link>
           {/* Right side controls (Language Selector and Close Menu button) */}

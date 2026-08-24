@@ -73,7 +73,7 @@ export default function ModernInfrastructure() {
                         Modern Infrastructure & Security Operations
                     </h2>
 
-                    <p className="mt-2 sm:mt-3 max-w-3xl text-sm sm:text-lg ">
+                    <p className="mt-2 sm:mt-2 max-w-3xl text-sm sm:text-lg">
                         Extended technical services including DevSecOps, automation, and recovery
                     </p>
                 </div>

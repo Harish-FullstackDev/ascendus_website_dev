@@ -1,121 +1,60 @@
 "use client";
-import Image from "next/image";
-import Home from "./../components/Home/Home";
-import Footer from "./../components/Footer/Footer";
-import TestimonialsPage from "./../components/Home/Testinomials";
-import HowItWork from "./../components/Home/HowItWork";
-import OurProject from "./../components/Home/OurProject";
-import WhoWeAre from "./../components/Home/WhoWeAre";
-import Feauture from "./../components/Home/OurFeatures";
-import OurSolutions from "../components/Home/OurSolutions";
-import Navbar from "../components/Navbar/Navbar";
-import { motion } from "framer-motion";
-import CyclingMarquee from "../components/Home/MarqueContainer";
-import FAQ from "../components/Home/FAQ";
-import HomeCard from "../components/Cards/MeetingCard";
-import Animation from "../components/Home/Logo";
-export default function Page() {
-  const partnerLogos = [
-    { src: "/PartnerLogos/sap.png", alt: "SAP" },
-    { src: "/PartnerLogos/appian.png", alt: "Appian" },
-    { src: "/PartnerLogos/automation.png", alt: "Automation Anywhere" },
-    { src: "/PartnerLogos/confluence.png", alt: "Confluence" },
-    { src: "/PartnerLogos/couchbase.png", alt: "Couchbase" },
-    { src: "/PartnerLogos/databricks.png", alt: "Databricks" },
-    { src: "/PartnerLogos/google.png", alt: "Google" },
-    { src: "/PartnerLogos/kafka.png", alt: "Kafka" },
-    { src: "/PartnerLogos/mcafee.png", alt: "McAfee" },
-    { src: "/PartnerLogos/microsoft.png", alt: "Microsoft" },
-    { src: "/PartnerLogos/mongo.png", alt: "MongoDB" },
-    { src: "/PartnerLogos/odoo.png", alt: "Odoo" },
-    { src: "/PartnerLogos/opon.png", alt: "OpenText" },
-    { src: "/PartnerLogos/redis.png", alt: "Redis" },
-    { src: "/PartnerLogos/salesforce.png", alt: "Salesforce" },
-    { src: "/PartnerLogos/sophos.png", alt: "Sophos" },
-    { src: "/PartnerLogos/uipath.png", alt: "UiPath" },
-  ];
 
-  return (
-    <div className="relative overflow-x-hidden">
-      <div className=" relative overflow-hidden">
-        <div className="relative h-screen w-full flex flex-col">
-          <Image
-            src="/Home/Hero-Section-BG.jpg"
-            alt="Background"
-            fill
-            priority
-            className="object-cover object-top z-0"
-          />
+// Standalone preview page, not linked from the Navbar or Footer per request —
+// reachable only by navigating directly to /ascendus.
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+import FutureFocusedInsights from "@/components/HomePage/FutureFocusedInsights";
+import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
+import ProofInNumbers from "@/components/HomePage/ProofInNumbers";
+import customBg from "@/assets/HomePage/Homepage_CTA.webp";
 
-          <div
-            className="absolute inset-0 z-10"
-          />
+import Hero from "@/components/Ascendus/Hero";
+import HeroText from "@/components/Ascendus/HeroText";
+import AboutPartner from "@/components/Ascendus/AboutPartner";
+import Services from "@/components/Ascendus/Services";
+import WhyUs from "@/components/Ascendus/WhyUs";
+import WhatWeDo from "@/components/Ascendus/WhatWeDo";
+import Hiring from "@/components/Ascendus/Hiring";
+import Industries from "@/components/Ascendus/Industries";
+import HowWeWork from "@/components/Ascendus/HowWeWork";
 
-          <Navbar />
+const page = () => {
+    return (
+        <div className="min-h-screen bg-white flex flex-col font-sans">
+            <Navbar />
 
-          <div className="flex min-h-screen items-center justify-center px-4 sm:px-8 lg:px-16 relative z-20 mt-8">
-            <div className="flex-1 flex flex-col md:flex-row items-start justify-center">
-              {/* Text Content */}
-              <div className="flex-1 flex items-start justify-center py-8 md:py-0 -mt-0 md:-mt-30">
-                <div className="text-center md:text-left max-w-5xl mx-auto">
-                  <motion.h1
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-white
-                                text-[clamp(1.6rem,3vw,2.4rem)]
-                                md:text-[clamp(2rem,3.5vw,2.8rem)]
-                                lg:text-[clamp(2.4rem,4vw,3.2rem)]
-                                xl:text-[clamp(2.8rem,4.5vw,3.6rem)]
-                                tracking-wide md:leading-tight
-                                drop-shadow-[0_4px_10px_rgba(0,0,0,0.4)]"
-                  >
-                    <span>From</span>{" "}
-                    <span className="font-semibold">Challenges</span> to
-                    <br />
-                    Solutions - <span className="font-semibold">SAP </span>{" "}
-                    Services Perfected
-                  </motion.h1>
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    className="mt-4 text-white text-[clamp(1.0rem,1.5vw,1.1rem)] md:text-[clamp(1rem,1.6vw,1.2rem)] lg:text-[clamp(1.1rem,1.7vw,1.3rem)] xl:text-[clamp(1.2rem,1.8vw,1.4rem)]
-            drop-shadow-[0_4px_10px_rgba(0,0,0,0.3)]"
-                  >
-                    From innovative marketing strategies to operational
-                    excellence, we provide expert guidance to help your business
-                    grow, scale, and thrive.
-                  </motion.p>
+            <div className="relative -mt-[64px] lg:-mt-[68px] h-[680px] sm:h-[200vh]">
+                <div className="sticky top-0 h-[340px] sm:h-screen z-0">
+                    <Hero />
                 </div>
-              </div>
 
-              {/* Home Card */}
-              <div className="flex-1 flex justify-center items-start py-5 md:py-0 -mt-2 md:-mt-30">
-                <HomeCard />
-              </div>
+                <div className="absolute inset-x-0 top-0 h-[340px] sm:h-screen z-[5]">
+                    <HeroText />
+                </div>
             </div>
-          </div>
+
+            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
+                <AboutPartner />
+                <Services />
+                <WhyUs />
+                <WhatWeDo />
+            </div>
+
+            <ProofInNumbers />
+            <Hiring />
+            <Industries />
+            <HowWeWork />
+            <FutureFocusedInsights />
+            <ReadyToTransform
+                title="Ready to Transform Your Business?"
+                description="Let's talk about where your technology is holding you back and what it would take to fix it for good."
+                bgImage={customBg}
+                hasOverlapAbove
+            />
+            <Footer />
         </div>
-      </div>
-      {/* <Animation /> */}
-      <Home />
-      <CyclingMarquee
-        logos={partnerLogos}
-        logosPerSet={6}
-        intervalTime={2000}
-      />
-      <OurSolutions />
-      <Feauture />
-      {/* <WhoWeAre /> */}
-      {/* <OurProject /> */}
-      {/* <HowItWork /> */}
-      <TestimonialsPage />
-      <FAQ />
-      <div className="h-4 bg-white"></div>
-      <Footer />
-    </div>
-  );
-}
+    );
+};
 
-
+export default page;

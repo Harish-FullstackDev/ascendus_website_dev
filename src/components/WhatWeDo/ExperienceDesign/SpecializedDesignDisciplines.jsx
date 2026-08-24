@@ -25,13 +25,13 @@ const COLUMNS = [
 
 export default function SpecializedDesignDisciplines() {
     return (
-        <section className="w-full py-10 sm:py-16">
+        <section className="w-full pt-10 sm:pt-16 pb-10 sm:pb-8">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 w-full mx-auto text-center mb-10 sm:mb-[46px] px-6"
+                className="flex flex-col items-center gap-2 w-full mx-auto text-center mb-10 sm:mb-16 px-6"
             >
                 <h2 className="text-[#16171A] text-2xl sm:text-[40px] leading-tight">
                     Specialized Design Disciplines

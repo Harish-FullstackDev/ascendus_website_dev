@@ -33,14 +33,14 @@ export default function SecurityAssessmentCloudDefense() {
         // colored block below — so it's preserved. The colored block itself is w-full with
         // no horizontal constraint, so it now runs edge-to-edge like the Figma frame instead
         // of leaving page-white gutters on either side.
-        <section className="w-full py-10 sm:py-[82px]">
-            <div className="w-full bg-[#f5f6f6] flex flex-col items-center gap-10 sm:gap-[39px] px-6 sm:px-[70px] py-8 sm:py-[40px]">
+        <section className="w-full py-10 sm:py-[32px]">
+            <div className="w-full bg-[#f5f6f6] flex flex-col items-center gap-10 sm:gap-16 px-6 sm:px-[64px] py-8 sm:py-[32px]">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex flex-col items-center gap-4 max-w-[1074px] text-center"
+                    className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
                 >
                     <h2 className="font-heading text-black text-2xl font-medium">Security Assessment & Cloud Defense</h2>
                     <p className="text-[#6c6c6c] text-base sm:text-lg font-light">

@@ -22,12 +22,12 @@ const POINTS = [
 
 export default function WhyPartnerWithUsMetrix() {
     return (
-        <section className="w-full py-10 sm:pt-16 sm:pb-0">
-            <div className="w-full px-6 sm:px-[25px] py-10 lg:py-[40px]">
+        <section className="w-full py-10 sm:pt-8 sm:pb-0">
+            <div className="w-full px-6 sm:px-[64px] py-10 lg:py-[32px]">
                 <div className="grid w-full lg:grid-cols-[1fr_auto_1fr] items-center gap-0">
 
                     {/* Left */}
-                    <div className="lg:pr-0 pl-0 md:pl-16">
+                    <div className="lg:pr-0 pl-0">
                         <motion.h2
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -62,7 +62,7 @@ export default function WhyPartnerWithUsMetrix() {
             </div>
 
 
-            <div className="bg-[#F5F6F6] w-full py-10 sm:py-[71px] px-6 sm:px-[86px] flex flex-col items-center ">
+            <div className="bg-[#F5F6F6] w-full py-10 px-6 flex flex-col items-center sm:p-16">
                 <motion.h3
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}

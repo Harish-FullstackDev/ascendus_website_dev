@@ -29,13 +29,13 @@ const ITEMS = [
 
 export default function ConnectedCRMAndOmnichannelStrategy() {
     return (
-        <section className="w-full py-14 sm:py-20 px-6 sm:px-[50px] bg-[#F5F6F6] flex flex-col gap-12 sm:gap-16">
+        <section className="w-full py-14 px-6 bg-[#F5F6F6] flex flex-col gap-12 sm:gap-16 sm:p-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 max-w-[1074px] mx-auto  text-center"
+                className="flex flex-col items-center gap-2 max-w-[1074px] mx-auto text-center"
             >
                 <h2 className="text-black text-2xl font-medium">Connected CRM & Omnichannel Strategy
                 </h2>

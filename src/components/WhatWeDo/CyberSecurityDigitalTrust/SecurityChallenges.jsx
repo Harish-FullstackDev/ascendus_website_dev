@@ -19,7 +19,7 @@ export default function SecurityChallenges() {
         // edge with zero gap, so any container padding here would reproduce the exact gap the
         // design doesn't have. Vertical rhythm only (py-10/16); the previous py-[-55px] was an
         // invalid negative value that would've been dropped by the browser anyway.
-        <section className="w-full py-10 sm:py-16">
+        <section className="w-full">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export default function SecurityChallenges() {
                     page-level heading above this row), and the blue accent bar Figma doesn't
                     have has been removed. */}
                 <div className="relative w-full lg:absolute lg:top-[13.5%] lg:left-[37.7%] lg:h-[76.3%] lg:w-[62.3%] bg-[#F5F6F6] overflow-hidden flex items-center px-6 sm:pl-[7.5%] sm:pr-[15%] py-8 sm:py-10">
-                    <div className="flex flex-col gap-8 sm:gap-[49px] w-full sm:max-w-[58.5%]">
+                    <div className="flex flex-col gap-8 sm:gap-16 w-full sm:max-w-[58.5%]">
                         <p className="font-heading text-black text-xl sm:text-2xl font-medium">Our Security Advantages</p>
                         <div className="flex flex-col gap-4">
                             <p className="text-black text-xl sm:text-2xl font-light">

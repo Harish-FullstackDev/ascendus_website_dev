@@ -106,8 +106,8 @@ export default function CloudPlatformsServices() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full bg-white py-10 sm:py-20 px-6 sm:px-[50px]">
-            <div className="max-w-[1300px] mx-auto flex flex-col items-center gap-10 sm:gap-16 lg:gap-20">
+        <section className="w-full bg-white py-10 px-6 sm:p-16">
+            <div className="flex flex-col items-center gap-10 sm:gap-16 lg:gap-20 w-full">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +140,7 @@ export default function CloudPlatformsServices() {
                                     <Image
                                         src={tab.logo}
                                         alt={`${tab.name} logo`}
-                                        className="max-h-[60px] sm:max-h-[70px] lg:max-h-[78px] w-auto max-w-[75%] object-contain"
+                                        className="max-h-[60px] sm:max-h-[55px] lg:max-h-[55px] w-auto max-w-[75%] object-contain"
                                     />
                                 </button>
                             );

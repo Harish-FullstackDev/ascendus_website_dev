@@ -15,7 +15,7 @@ const capabilities = [
 
 export default function OurDesignCapabilities() {
     return (
-        <section className="w-full px-6 py-10 sm:pl-[72px] sm:pr-[70px] sm:py-[40px]">
+        <section className="w-full px-6 pt-8 pb-16 sm:px-[64px]">
 
             {/* Heading */}
             <motion.div
@@ -23,7 +23,7 @@ export default function OurDesignCapabilities() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 text-center mb-10 sm:mb-16"
+                className="flex flex-col items-center gap-2 text-center mb-10 sm:mb-16"
             >
                 <h2 className="text-black text-2xl font-medium">
                     Our Design Capabilities

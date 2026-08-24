@@ -119,7 +119,7 @@ export default function SAPAMSTieredSupport() {
     }, [revealed]);
 
     return (
-        <section className="w-full bg-[#efefef] pb-10 sm:pb-16 pt-10 sm:pt-16">
+        <section className="w-full bg-[#efefef] pb-10 sm:pb-16 pt-10 sm:pt-16 overflow-x-hidden">
             <div className="relative mx-auto max-w-[1280px] px-6 sm:px-10">
 
                 {/* =====================================================

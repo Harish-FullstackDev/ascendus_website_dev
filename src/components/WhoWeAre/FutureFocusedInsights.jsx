@@ -37,7 +37,7 @@ export default function FutureFocusedInsights() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center max-w-3xl mx-auto mb-12"
                 >
-                    <h2 className="text-2xl font-medium text-[#16171a]">Future Focused Insights</h2>
+                    <h2 className="text-2xl font-medium text-[#0d0c22]">Future Focused Insights</h2>
                     <p className="mt-2 text-base sm:text-lg font-light text-[#3d3d4e]">
                         We are passionate about empowering individuals and businesses to take control of their finances
                         and achieve their financial goals.
@@ -59,13 +59,13 @@ export default function FutureFocusedInsights() {
                             className="flex flex-col gap-5 px-6 py-9 border-b lg:border-b-0 lg:border-r border-[#d9d9d9] last:border-0"
                         >
                             <div className="relative w-full h-[170px] sm:h-[200px]">
-                                s
+                                <Image src={item.img} alt={item.text} fill className="object-cover" />
                             </div>
                             <p className="text-base font-medium text-black">{item.date}</p>
                             <p className="text-base font-light text-[#6c6c6c]">{item.text}</p>
                             <button
                                 type="button"
-                                className="flex items-center justify-between w-[118px] text-[#0061af] text-base font-light"
+                                className="flex items-center justify-between w-[118px] text-[#2d8ec5] text-base font-light"
                             >
                                 Read More
                                 <Image src={insightsArrow} alt="" width={25} height={25} />
