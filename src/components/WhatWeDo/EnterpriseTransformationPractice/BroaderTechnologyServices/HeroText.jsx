@@ -24,7 +24,7 @@ export default function HeroText() {
                     sync.
                 </h1>
 
-                <div className="flex flex-wrap items-center gap-4 mt-8 sm:mt-10">
+                {/* <div className="flex flex-wrap items-center gap-4 mt-8 sm:mt-10">
                     <button
                         type="button"
                         onClick={() => setShowCalendly(true)}
@@ -32,7 +32,7 @@ export default function HeroText() {
                     >
                         Schedule a Consultation
                     </button>
-                </div>
+                </div> */}
             </motion.div>
 
             <CalendlyModal

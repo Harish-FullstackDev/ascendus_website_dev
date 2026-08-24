@@ -27,7 +27,7 @@ export default function HeroText() {
                     Rebuild the enterprise as one connected system
                 </h1>
 
-                <div className="flex flex-wrap items-center gap-4 mt-8 sm:mt-10">
+                {/* <div className="flex flex-wrap items-center gap-4 mt-8 sm:mt-10">
                     <button
                         type="button"
                         onClick={() => setShowCalendly(true)}
@@ -42,7 +42,7 @@ export default function HeroText() {
                     >
                         View Engagement Models
                     </button>
-                </div>
+                </div> */}
             </motion.div>
 
             <CalendlyModal

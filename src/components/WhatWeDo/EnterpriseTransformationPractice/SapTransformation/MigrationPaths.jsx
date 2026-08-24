@@ -1,11 +1,16 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
+import greenfieldImg from "@/assets/WhatWeDo/Enterprise Transformation Practice/SAP Transformation/SAP_Greenfield.webp";
+import brownfieldImg from "@/assets/WhatWeDo/Enterprise Transformation Practice/SAP Transformation/SAP_Brownfield.webp";
+import bluefieldImg from "@/assets/WhatWeDo/Enterprise Transformation Practice/SAP Transformation/SAP_Bluefield.webp";
 
-// Figma renders these three as flat #1C5F85 placeholders (skeleton design, no
-// imagery yet) — kept as solid-color cards rather than inventing photography
-// that isn't in the source.
-const PATHS = ["Greenfield", "Brownfield", "Bluefield"];
+const PATHS = [
+    { name: "Greenfield", image: greenfieldImg },
+    { name: "Brownfield", image: brownfieldImg },
+    { name: "Bluefield", image: bluefieldImg },
+];
 
 export default function MigrationPaths() {
     return (
@@ -27,14 +32,24 @@ export default function MigrationPaths() {
             <div className="flex flex-col sm:flex-row gap-6 w-full sm:flex-[3_0_0]">
                 {PATHS.map((path, index) => (
                     <motion.div
-                        key={path}
+                        key={path.name}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
-                        className="bg-[#1c5f85] flex-1 min-h-[240px] sm:min-h-[368px] flex flex-col justify-end p-6"
+                        className="group relative flex-1 min-h-[240px] sm:min-h-[368px] flex flex-col justify-end p-6 overflow-hidden"
                     >
-                        <p className="text-white text-2xl sm:text-[28px] font-medium leading-[1.4]">{path}</p>
+                        <Image
+                            src={path.image}
+                            alt=""
+                            fill
+                            sizes="(max-width: 640px) 100vw, 33vw"
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                        <p className="relative z-10 text-white text-2xl sm:text-[28px] font-medium leading-[1.4]">
+                            {path.name}
+                        </p>
                     </motion.div>
                 ))}
             </div>
