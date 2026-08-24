@@ -2,7 +2,7 @@
 
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
+import ReadyToTransform from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/ReadyToTransform";
 
 import Hero from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/Hero";
 import HeroText from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/HeroText";
