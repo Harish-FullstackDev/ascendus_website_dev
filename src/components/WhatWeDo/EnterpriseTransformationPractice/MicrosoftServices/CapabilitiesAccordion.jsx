@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import panelImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/MicrosoftServices/capabilities-panel.png";
 
 // All 5 items have real Figma copy this time (unlike the SAP Transformation
 // page, where only item 1 was filled in) — the other 4 panels were laid out
@@ -108,9 +110,11 @@ export default function CapabilitiesAccordion() {
                     })}
                 </div>
 
-                {/* Solid #1C5F85 panel (Figma has no photo here, unlike the SAP
-                    Transformation page's equivalent section). */}
+                {/* Shared background image behind all 5 items, not per-item
+                    photography — same pattern as the SAP Transformation page's
+                    equivalent section. */}
                 <div className="relative bg-[#1c5f85] w-full lg:w-[60%] aspect-[825/587] mt-6 lg:mt-0 overflow-hidden">
+                    <Image src={panelImage} alt="" fill className="object-cover" />
                     <AnimatePresence mode="wait">
                         {/* Bottom-flush against the panel (Figma: card bottom = panel
                             bottom exactly), inset from the left/top/right. */}

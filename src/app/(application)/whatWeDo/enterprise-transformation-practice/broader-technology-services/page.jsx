@@ -7,8 +7,8 @@ import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
 import Hero from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/Hero";
 import HeroText from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/HeroText";
 import Overview from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/Overview";
-import Capabilities from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/Capabilities";
-import WorkSequence from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/WorkSequence";
+import GovernanceSAPDataDepth from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/GovernanceSAPDataDepth";
+import HowWorkGetsSequenced from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/HowWorkGetsSequenced";
 import WhyItMatters from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/WhyItMatters";
 import WhyPartnerWithUs from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/WhyPartnerWithUs";
 import ProofInNumbers from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/ProofInNumbers";
@@ -34,8 +34,8 @@ const page = () => {
 
             <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
                 <Overview />
-                <Capabilities />
-                <WorkSequence />
+                <GovernanceSAPDataDepth />
+                <HowWorkGetsSequenced />
                 <WhyItMatters />
                 <WhyPartnerWithUs />
                 <ProofInNumbers />

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import heroBg from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/hero-bg.png";
+import heroBg from "@/assets/WhatWeDo/Enterprise Transformation Practice/SAP Transformation/SAP_Hero.webp";
 
 export default function Hero() {
     return (
