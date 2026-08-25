@@ -62,10 +62,10 @@ function IndustryCard({ item }) {
             {/* Desktop/tablet: title + description share the card face, description
                 fades and slides in on hover as the image fades out. */}
             <div className="hidden sm:flex relative z-10 h-full flex-col justify-between p-8">
-                <p className="text-2xl font-medium leading-normal text-white transition-colors duration-500 group-hover:text-[#10161d]">
+                <p className="text-2xl font-medium leading-normal text-white transition-colors duration-500 group-hover:text-[#2E3033]">
                     {item.title}
                 </p>
-                <p className="text-lg font-light leading-normal text-[#4a5568] opacity-0 translate-y-2 transition-all duration-500 delay-100 group-hover:opacity-100 group-hover:translate-y-0">
+                <p className="text-lg font-light leading-normal text-[#55595E] opacity-0 translate-y-2 transition-all duration-500 delay-100 group-hover:opacity-100 group-hover:translate-y-0">
                     {item.desc}
                 </p>
             </div>
@@ -114,7 +114,7 @@ function ArrowButton({ direction, disabled, onClick }) {
             aria-label={direction === -1 ? "Previous" : "Next"}
             onClick={onClick}
             disabled={disabled}
-            className={`flex items-center justify-center size-10 rounded-full border border-[#8794a3] transition-opacity duration-300 ${disabled ? "opacity-30 cursor-not-allowed" : "hover:bg-[#10161d] hover:border-[#10161d] group/arrow"
+            className={`flex items-center justify-center size-10 rounded-full border border-[#8794a3] transition-opacity duration-300 ${disabled ? "opacity-30 cursor-not-allowed" : "hover:bg-[#2E3033] hover:border-[#2E3033] group/arrow"
                 }`}
         >
             <Image

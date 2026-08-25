@@ -32,7 +32,7 @@ const ITEMS = [
 
 export default function AutomationOperationsControl() {
     return (
-        <section className="w-full px-6 sm:px-[64px] flex flex-col lg:flex-row gap-10 lg:gap-[72px] items-center pt-10 sm:pt-8 pb-10 sm:pb-16">
+        <section className="w-full pt-10 sm:pt-8 pb-10 sm:pb-16 px-6 sm:px-[64px] flex flex-col lg:flex-row gap-10 lg:gap-[72px] items-center">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ export default function AutomationOperationsControl() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-2 w-full lg:flex-1"
             >
-                <h2 className="text-black text-2xl font-medium">Automation Operations &amp; Control</h2>
+                <h2 className="text-[#2E3033] text-[28px] font-medium">Automation Operations &amp; Control</h2>
                 <p className="text-[#55595E] text-lg font-light">
                     Capabilities that keep enterprise automation reliable, measurable, and manageable at scale.
                 </p>
@@ -57,7 +57,7 @@ export default function AutomationOperationsControl() {
                         className="flex flex-col gap-6"
                     >
                         <Image src={item.icon} alt="" width={48} height={48} />
-                        <p className="text-black text-xl sm:text-2xl font-light">{item.title}</p>
+                        <p className="text-[#2E3033] text-xl sm:text-2xl font-light">{item.title}</p>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                     </motion.div>
                 ))}

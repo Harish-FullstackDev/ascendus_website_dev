@@ -57,7 +57,7 @@ export default function MachineLearning() {
             <div className="flex flex-col lg:flex-row max-w-screen mx-auto lg:h-[466px]">
                 <div className="relative w-full h-[220px] lg:h-full lg:w-[35%] shrink-0 overflow-hidden">
                     <Image src={mainImage} alt="" fill className="object-cover" />
-                    <div className="absolute inset-0 bg-[#2E3033] mix-blend-hue" />
+                    <div className="absolute inset-0 bg-[#003756] mix-blend-hue" />
                     <Image src={sideImage} alt="" fill className="object-cover opacity-60" />
                 </div>
 

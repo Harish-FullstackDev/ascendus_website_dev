@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import customimg from "@/assets/WhatWeDo/Enterprise Transformation Practice/Enterprise_Industries.webp";
+import bgImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/IndustriesWeServe/bg.png";
 
 const INDUSTRIES = [
     "Manufacturing & Industrial",
@@ -15,27 +15,24 @@ const INDUSTRIES = [
 
 export default function IndustriesWeServe() {
     return (
-        <section className="relative w-full px-6 py-10 sm:px-[64px] sm:py-16 flex flex-col items-center gap-10 sm:gap-14 overflow-hidden">
-            <Image
-                src={customimg}
-                alt=""
-                fill
-                className="object-cover -z-20"
-            />
-            <div className="absolute inset-0 bg-black/45 -z-10" />
+        // Figma now uses a real photo behind a 70% black overlay here, replacing
+        // the flat #1C5F85 placeholder this was originally built against.
+        <section className="relative w-full overflow-hidden px-6 py-10 sm:px-[64px] sm:py-16 flex flex-col items-center gap-10 sm:gap-14">
+            <Image src={bgImage} alt="" fill className="object-cover pointer-events-none" />
+            <div className="absolute inset-0 bg-black/70 pointer-events-none" />
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 text-center"
+                className="relative z-10 flex flex-col items-center gap-4 text-center"
             >
                 <h2 className="text-white text-2xl sm:text-[28px] font-medium">Industries</h2>
                 <p className="text-white text-lg font-light">Built for the sectors running SAP at scale</p>
             </motion.div>
 
-            <div className="w-full max-w-[1152px] grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-6 sm:gap-y-10">
+            <div className="relative z-10 w-full max-w-[1152px] grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-6 sm:gap-y-10">
                 {INDUSTRIES.map((industry, index) => (
                     <motion.div
                         key={industry}

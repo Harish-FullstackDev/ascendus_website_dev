@@ -28,7 +28,7 @@ export default function PenetrationTesting() {
 
                     {/* Middle Line */}
                     <div className="hidden lg:flex justify-center">
-                        <div className="w-0.5 h-40 bg-gradient-to-b from-[#58d2ff] via-[#0061af] to-[#1e6ea1]" />
+                        <div className="w-0.5 h-40 bg-gradient-to-b from-[#58d2ff] via-[#2d8ec5] to-[#1e6ea1]" />
                     </div>
 
                     {/* Right */}
@@ -67,7 +67,7 @@ export default function PenetrationTesting() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="text-[#0061af] text-2xl font-medium text-center"
+                    className="text-[#2d8ec5] text-2xl font-medium text-center"
                 >
                     Enterprise &amp; Technical
                 </motion.h3>
@@ -81,7 +81,7 @@ export default function PenetrationTesting() {
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
                             className="bg-[#FFFFFF] aspect-[233/161] flex flex-col items-center justify-center gap-2"
                         >
-                            <p className="text-[#0061af] text-xl sm:text-2xl font-medium">{stat.value}</p>
+                            <p className="text-[#2d8ec5] text-xl sm:text-2xl font-medium">{stat.value}</p>
                             <p className="text-black text-sm sm:text-lg font-light text-center px-2">{stat.label}</p>
                         </motion.div>
                     ))}

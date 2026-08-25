@@ -34,14 +34,14 @@ export default function HeroText() {
                     <button
                         type="button"
                         onClick={() => setShowCalendly(true)}
-                        className="rounded-[54px] border border-[#d0d0d0] bg-[#10161d] px-8 py-3 text-base sm:text-lg font-light text-white transition-colors hover:bg-white hover:text-[#10161d]"
+                        className="rounded-[54px] border border-[#d0d0d0] bg-[#2E3033] px-8 py-3 text-base sm:text-lg font-light text-white transition-colors hover:bg-white hover:text-[#2E3033]"
                     >
                         Book a Consultation
                     </button>
                     <button
                         type="button"
                         onClick={scrollToServices}
-                        className="rounded-[54px] border border-[#d0d0d0] px-8 py-3 text-base sm:text-lg font-light text-white transition-colors hover:bg-white hover:text-[#10161d]"
+                        className="rounded-[54px] border border-[#d0d0d0] px-8 py-3 text-base sm:text-lg font-light text-white transition-colors hover:bg-white hover:text-[#2E3033]"
                     >
                         See What We Do
                     </button>

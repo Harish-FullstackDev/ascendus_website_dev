@@ -42,7 +42,7 @@ const itemVariants = {
 
 export default function DigitalStrategy() {
     return (
-        <div className="w-full h-full flex flex-col items-center justify-center gap-10 sm:gap-[64px] px-6 sm:px-[64px] pb-10 pt-10 sm:pt-[64px] sm:pb-[32px]">
+        <div className="w-full h-full flex flex-col items-center justify-center gap-10 sm:gap-[64px] px-6 sm:px-[64px] pt-10 sm:pt-[64px] pb-10 sm:pb-[32px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -50,13 +50,9 @@ export default function DigitalStrategy() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 text-center"
             >
-                <h2 className="font-heading text-[#16171a] text-2xl font-medium">Digital Strategy</h2>
-                <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
-                    Accelerate Your Digital Transformation
-                    <br />
-                    <br />
-                    Create comprehensive digital strategies that leverage modern technologies to improve customer
-                    experiences, operational efficiency, and business agility.
+                <h2 className="font-heading text-[#2E3033] text-[28px] font-medium">Strategic Planning & Architecture</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
+                    Defining transformation roadmaps, business architecture, and process change.
                 </p>
             </motion.div>
 
@@ -75,7 +71,7 @@ export default function DigitalStrategy() {
                         <Image src={card.image} alt="" fill className="object-cover" />
                         <div className="absolute inset-0 bg-black/60" />
                         <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
-                            <p className="text-white text-xl font-normal">{card.title}</p>
+                            <h2 className="text-white text-xl font-medium">{card.title}</h2>
                             <p className="text-white/85 text-sm font-light max-w-[280px]">{card.desc}</p>
                         </div>
                     </motion.div>
@@ -102,7 +98,7 @@ export default function DigitalStrategy() {
                             Anchoring to `bottom` instead of `top` means the block grows upward as the
                             description expands, matching the Identity Management card behavior. */}
                         <div className="absolute left-[12%] right-[12%] bottom-[12%] flex flex-col text-white">
-                            <p className="text-2xl font-light">{card.title}</p>
+                            <h2 className="text-2xl font-medium">{card.title}</h2>
                             <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out">
                                 <div className="overflow-hidden">
                                     <p className="text-base font-light pt-2">{card.desc}</p>

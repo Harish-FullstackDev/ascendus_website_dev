@@ -72,7 +72,7 @@ export default function TechnologyAssessment() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] text-center"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">Technology Assessment</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-medium">Technology Assessment</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Turn Data into Intelligent Decisions
                     <br />
@@ -93,7 +93,7 @@ export default function TechnologyAssessment() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.4 }}
-                        className="bg-[#16171a] w-full sm:w-[439px] sm:h-[377px] flex flex-col justify-between px-7 py-6 sm:py-[48px] gap-6"
+                        className="bg-[#0a2b3e] w-full sm:w-[439px] sm:h-[377px] flex flex-col justify-between px-7 py-6 sm:py-[48px] gap-6"
                     >
                         <div className="flex flex-col gap-3">
                             <p className="text-white text-lg font-light">{CARDS[active].eyebrow}</p>
@@ -145,7 +145,7 @@ export default function TechnologyAssessment() {
                                 aria-label={`Go to slide ${index + 1}`}
                                 onClick={() => setActive(index)}
                                 className={`size-[8px] rounded-full border-[0.5px] transition-colors ${index === active
-                                    ? "bg-[#0061af] border-[#0061af]"
+                                    ? "bg-[#2d8ec5] border-[#2d8ec5]"
                                     : "border-black"
                                     }`}
                             />

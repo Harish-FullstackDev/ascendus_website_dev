@@ -4,7 +4,7 @@ import buildingPhoto from "@/assets/WhatWeDo/Business Advisory/Section6_Bg.svg";
 
 export default function ITAdvisory() {
     return (
-        <section className="relative w-full h-[420px] sm:h-[471px] overflow-hidden bg-[#66cdf3]">
+        <section className="relative w-full h-[420px] sm:h-[471px] overflow-hidden bg-[#cfe3f2]">
             {/* Fixed background image */}
             <div
                 className="absolute inset-0 bg-fixed bg-cover bg-center bg-no-repeat"

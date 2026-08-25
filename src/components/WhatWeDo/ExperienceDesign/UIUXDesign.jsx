@@ -54,7 +54,7 @@ export default function UIUXDesign() {
                 transition={{ duration: 0.6 }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[49px]"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">
+                <h2 className="text-[#0d0c22] text-2xl font-medium">
                     UIUX Design
                 </h2>
 
@@ -94,7 +94,7 @@ export default function UIUXDesign() {
                                     onClick={() => setActiveIndex(index)}
                                     className={`flex items-center h-[52px] pl-4 text-left border-l-[3px]
           ${isActive
-                                            ? "border-[#0061AF]"
+                                            ? "border-[#2D8EC5]"
                                             : "border-[#BDBDBD]"
                                         }`}
                                 >

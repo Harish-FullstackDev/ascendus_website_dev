@@ -13,32 +13,33 @@ export default function SoftwareScalability() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-2 text-center mb-10 sm:mb-16"
+                className="mb-10 flex flex-col items-center gap-2 text-center sm:mb-16"
             >
-                <h2 className="text-black text-2xl font-medium">
+                <h2 className="text-[28px] font-medium text-[#2E3033]">
                     Software Scalability
                 </h2>
 
-                <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
-                    Positioning enterprise software as a driver of agility rather than operational constraint.
+                <p className="text-base font-light text-[#55595E] sm:text-lg">
+                    Positioning enterprise software as a driver of agility
+                    rather than operational constraint.
                 </p>
             </motion.div>
 
-            <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-[143px] lg:items-center">
+            <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-[143px]">
                 {/* Content */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="w-full flex-1 flex-col gap-5 text-[#3d3d4e]"
+                    className="flex w-full flex-1 flex-col gap-5 text-[#3d3d4e]"
                 >
-                    <p className="text-3xl font-normal leading-normal">
+                    <h2 className="text-2xl font-medium leading-normal text-[#2E3033]">
                         Positioning enterprise software as a driver of agility
                         rather than operational constraint.
-                    </p>
+                    </h2>
 
-                    <p className="text-xl font-light leading-[1.3]">
+                    <p className="text-lg font-light leading-normal text-[#55595E]">
                         Introductory Focus: Enterprise applications age fast
                         when they are built without architecture discipline. We
                         engineer software, from customer-facing platforms to
@@ -58,17 +59,17 @@ export default function SoftwareScalability() {
                         ease: "easeOut",
                         delay: 0.1,
                     }}
-                    className="relative w-full lg:w-[567px] shrink-0 overflow-hidden lg:flex-none"
+                    className="relative w-full shrink-0 overflow-hidden lg:w-[567px] lg:flex-none"
                 >
                     <Image
                         src={scalabilityPhoto}
                         alt=""
-                        fill
-                        className="object-cover"
+                        width={467}
+                        height={357}
+                        className="h-auto w-full object-cover sm:h-full"
                     />
                 </motion.div>
             </div>
         </section>
     );
 }
-

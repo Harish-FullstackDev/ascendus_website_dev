@@ -51,7 +51,7 @@ export default function Industry4() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[880px] mx-auto text-center mb-10 sm:mb-[100px]"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">Industry 4.0</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-medium">Industry 4.0</h2>
                 <p className="text-black text-lg font-light">Build Intelligent Manufacturing Operations</p>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Modernize manufacturing with connected technologies, automation, AI, IoT, and advanced analytics
@@ -77,7 +77,7 @@ export default function Industry4() {
                                 transition={{ duration: 0.5, ease: "easeInOut" }}
                                 className="flex flex-col sm:flex-row gap-4 sm:gap-[21px]"
                             >
-                                <div className="bg-[#16171a] w-full sm:w-[439px] h-[300px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-center gap-4 sm:gap-6 text-white">
+                                <div className="bg-[#0a2b3e] w-full sm:w-[439px] h-[300px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-center gap-4 sm:gap-6 text-white">
                                     <p className="text-xl sm:text-2xl font-medium">{active.title}</p>
                                     <p className="text-white/80 text-sm sm:text-base font-light leading-relaxed">
                                         {active.desc}
@@ -112,7 +112,7 @@ export default function Industry4() {
                                 type="button"
                                 aria-label={`Go to slide ${dotIndex + 1}`}
                                 onClick={() => goTo(dotIndex, dotIndex > index ? 1 : -1)}
-                                className={`size-[8px] rounded-full border-[0.5px] transition-colors ${dotIndex === index ? "bg-[#0061af] border-[#0061af]" : "border-black"
+                                className={`size-[8px] rounded-full border-[0.5px] transition-colors ${dotIndex === index ? "bg-[#2d8ec5] border-[#2d8ec5]" : "border-black"
                                     }`}
                             />
                         ))}

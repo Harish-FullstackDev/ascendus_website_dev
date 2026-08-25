@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import blockchainPhoto from "@/assets/WhatWeDo/Innovation & Emerging Technologies/webp/Innovation_AR_VR.webp";
+import blockchainPhoto from "@/assets/WhatWeDo/Innovation & Emerging Technologies/new/ARVR.jpg";
 
 const ITEMS = [
     { title: "Extended Reality (AR/VR)", desc: "Define where blockchain genuinely adds value across your business, from settlement to provenance tracking." },
@@ -20,7 +20,7 @@ export default function ARVR() {
     const [hovered, setHovered] = useState(null);
 
     return (
-        <section className="w-full pb-10 sm:pb-0 flex flex-col items-center gap-8 sm:gap-16 pt-10 sm:pt-8">
+        <section className="w-full pt-10 sm:pt-8 pb-10 sm:pb-0 flex flex-col items-center gap-8 sm:gap-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export default function ARVR() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center px-6"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">AR/VR, Blockchain & Quantum Readiness</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-medium">AR/VR, Blockchain & Quantum Readiness</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Forward-looking technology applications for specialized use cases.
                 </p>
@@ -47,7 +47,7 @@ export default function ARVR() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="flex gap-4 rounded-[10px] bg-[#f3f3f3] px-5 py-4"
                     >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0061af] text-sm font-medium text-white">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2d8ec5] text-sm font-medium text-white">
                             {index + 1}
                         </div>
                         <div className="flex flex-col gap-1">
@@ -83,7 +83,7 @@ export default function ARVR() {
                                     onMouseEnter={() => setHovered(index)}
                                     onFocus={() => setHovered(index)}
                                     onBlur={() => setHovered(null)}
-                                    className={`relative h-full w-full flex flex-col items-center justify-center text-center gap-3 px-4 lg:px-8 overflow-hidden transition-colors duration-300 ${isActive ? "bg-[#0061AF]/80" : "bg-white"
+                                    className={`relative h-full w-full flex flex-col items-center justify-center text-center gap-3 px-4 lg:px-8 overflow-hidden transition-colors duration-300 ${isActive ? "bg-[#2D8EC5]/80" : "bg-white"
                                         }`}
                                 >
                                     <p

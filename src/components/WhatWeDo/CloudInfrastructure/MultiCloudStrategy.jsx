@@ -137,7 +137,7 @@ export default function MultiCloudStrategy() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[880px] text-center"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">Multi-Cloud Strategy</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-medium">Multi-Cloud Strategy</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Avoid vendor lock-in and maximize flexibility by distributing workloads across the providers
                     that serve them best.
@@ -185,7 +185,7 @@ export default function MultiCloudStrategy() {
                         aria-label={`Go to ${item.title}`}
                         onClick={() => goTo(index)}
                         className={`size-[8px] rounded-full border-[0.5px] transition-colors ${
-                            index === active ? "bg-[#0061af] border-[#0061af]" : "border-black"
+                            index === active ? "bg-[#2d8ec5] border-[#2d8ec5]" : "border-black"
                         }`}
                     />
                 ))}

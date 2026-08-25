@@ -39,9 +39,9 @@ function Card({ title, desc, className = "" }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className={`border border-[#D4D6D8] bg-[#F5F6F6] flex flex-col gap-3 px-6 py-7 sm:px-8 sm:py-8 ${className}`}
+            className={`border border-[#d3d5d8] bg-[#e8ebef] flex flex-col gap-3 px-6 py-7 sm:px-8 sm:py-8 ${className}`}
         >
-            <p className="text-[#16171A] text-xl sm:text-2xl font-medium">{title}</p>
+            <p className="text-[#041527] text-xl sm:text-2xl font-medium">{title}</p>
             <p className="text-[#55595E] text-base sm:text-lg font-light">{desc}</p>
         </motion.div>
     );
@@ -49,7 +49,7 @@ function Card({ title, desc, className = "" }) {
 
 export default function BusinessTransformationAdvisory() {
     return (
-        <section className="w-full px-6 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16 pt-10 sm:pt-8 pb-10 sm:pb-8">
+        <section className="w-full pt-10 sm:pt-8 pb-10 sm:pb-8 px-6 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ export default function BusinessTransformationAdvisory() {
                 className="flex flex-col items-center gap-2 max-w-[694px] text-center"
             >
                 <h2 className="text-black text-2xl font-normal">Business Transformation Advisory</h2>
-                <p className="text-[#55595E] text-base sm:text-lg font-light">
+                <p className="text-[#515151] text-base sm:text-lg font-light">
                     Advisory services that connect business priorities, technology decisions, and transformation
                     outcomes.
                 </p>

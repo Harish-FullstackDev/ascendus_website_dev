@@ -33,10 +33,10 @@ export default function WhatWeDo() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="flex-1 flex flex-col gap-2 order-1 lg:order-2"
                 >
-                    <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium leading-[1.4] max-w-[356px]">
+                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-medium leading-[1.4] max-w-[356px]">
                         Technology built around your business.
                     </h2>
-                    <p className="mt-4 text-[#4a5568] text-lg font-light leading-[1.5]">
+                    <p className="mt-4 text-[#55595E] text-lg font-light leading-[1.5]">
                         We help enterprises plan, build, secure, and manage their technology with one
                         connected team. From strategy and implementation to cloud, data, cybersecurity,
                         automation, and ongoing support, we make complex technology simpler, smarter, and
@@ -44,7 +44,7 @@ export default function WhatWeDo() {
                     </p>
                     <Link
                         href="/whatWeDo"
-                        className="mt-6 self-start rounded-[54px] border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#10161d] transition-colors hover:bg-[#2d8ec5] hover:text-white"
+                        className="mt-6 self-start rounded-[54px] border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#2d8ec5] hover:text-white"
                     >
                         What We Do
                     </Link>

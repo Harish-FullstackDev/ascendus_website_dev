@@ -1,14 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import bgImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/BroaderTechnologyServices/hero-bg.png";
 
 export default function WhyItMatters() {
     return (
-        <section className="w-full px-6 py-10 sm:px-[64px] sm:py-16 flex flex-col gap-8 sm:gap-10">
-            <Image src={bgImage} alt="" fill className="object-cover -z-20" />
-            <div className="absolute inset-0 bg-[#1c5f85]/80 -z-10" />
+        <section className="w-full bg-[#1c5f85] px-6 py-10 sm:px-[64px] sm:py-16 flex flex-col gap-8 sm:gap-10">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -42,4 +38,3 @@ export default function WhyItMatters() {
         </section>
     );
 }
-

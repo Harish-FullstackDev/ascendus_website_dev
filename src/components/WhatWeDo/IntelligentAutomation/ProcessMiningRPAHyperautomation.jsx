@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import rpaStrategyPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_RPA.webp";
-import processAutomationPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_Process_Minning.webp";
-import botDevelopmentPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_Hyperautomation.webp";
-import legacySystemPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_Intelligent_Document_Processing.webp";
+import rpaStrategyPhoto from "@/assets/WhatWeDo/Intelligent Automation/new/card_1.jpg";
+import processAutomationPhoto from "@/assets/WhatWeDo/Intelligent Automation/new/card_2.jpg";
+import botDevelopmentPhoto from "@/assets/WhatWeDo/Intelligent Automation/new/card_3.jpg";
+import legacySystemPhoto from "@/assets/WhatWeDo/Intelligent Automation/new/card_4.jpg";
 
 const CARDS = [
     {
@@ -33,7 +33,7 @@ const CARDS = [
 
 export default function ProcessMiningRPAHyperautomation() {
     return (
-        <section className="w-full px-6 sm:px-[64px] pt-10 sm:pt-16 pb-10 sm:pb-8">
+        <section className="w-full pt-10 sm:pt-16 pb-10 sm:pb-8 px-6 sm:px-[64px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -41,8 +41,8 @@ export default function ProcessMiningRPAHyperautomation() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[1055px] mx-auto text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-black text-2xl font-medium">Process Mining, RPA & Hyperautomation</h2>
-                <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
+                <h2 className="text-[#2E3033] text-[28px] font-medium">Process Mining, RPA & Hyperautomation</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Primary technologies for modernizing enterprise processes.
                 </p>
             </motion.div>
@@ -56,7 +56,7 @@ export default function ProcessMiningRPAHyperautomation() {
                 and fill the row like the rest of the page, keeping the same
                 tight x-axis padding relationship Figma shows rather than
                 leaving a big unused margin on typical desktop widths. */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 mx-auto gap-6 sm:gap-8 max-w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-full mx-auto">
                 {CARDS.map((card, index) => {
 
                     return (
@@ -66,13 +66,18 @@ export default function ProcessMiningRPAHyperautomation() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, ease: "easeOut", delay: (index % 3) * 0.08 }}
-                            className="bg-[#e8ebef] flex flex-col gap-8 sm:gap-12 p-6 h-[340px] sm:h-[400px]">
-                            <div className="relative w-full flex-1 min-h-0">
-                                <Image src={card.image} alt="" fill className="object-cover" />
+                            className="bg-[#f3f6f9] flex flex-col gap-8 sm:gap-12 p-6 h-[340px] sm:h-[400px]">
+                            <div className="relative w-full flex-1 min-h-0 border-[0.5px] border-[#1c5f85]">
+                                <Image
+                                    src={card.image}
+                                    alt=""
+                                    fill
+                                    className={`object-cover ${index === 0 ? "object-bottom" : ""}`}
+                                />
                             </div>
-                            <div className="border border-[#d4d3d3] flex flex-col gap-6 flex shrink-0">
-                                <p className="text-black text-xl sm:text-2xl font-normal max-w-[268px]">{card.title}</p>
-                                <p className="text-[#7f7f7f] text-sm sm:text-base font-light">{card.desc}</p>
+                            <div className="flex flex-col gap-6 shrink-0">
+                                <h2 className="text-[#2E3033] text-xl sm:text-2xl font-medium">{card.title}</h2>
+                                <p className="text-[#55595E] text-base sm:text-lg font-light">{card.desc}</p>
                             </div>
                         </motion.div>
                     );
@@ -81,3 +86,4 @@ export default function ProcessMiningRPAHyperautomation() {
         </section>
     );
 }
+

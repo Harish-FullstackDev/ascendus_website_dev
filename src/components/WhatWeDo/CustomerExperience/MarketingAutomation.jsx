@@ -24,9 +24,9 @@ export default function MarketingAutomation() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex gap-5 max-w-[400px] shrink-0"
                 >
-                    <div className="w-1 shrink-0 bg-[#0061af]" />
+                    <div className="w-1 shrink-0 bg-[#2d8ec5]" />
                     <div className="flex flex-col gap-4">
-                        <h2 className="text-[#16171a] text-2xl font-medium">Marketing Automation</h2>
+                        <h2 className="text-[#0d0c22] text-2xl font-medium">Marketing Automation</h2>
                         <p className="text-[#3d3d4e] text-lg font-normal">
                             Engage Customers with Personalized Campaigns
                         </p>

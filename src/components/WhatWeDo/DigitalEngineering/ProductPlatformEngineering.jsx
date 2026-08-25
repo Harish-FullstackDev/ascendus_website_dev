@@ -31,7 +31,7 @@ export default function ProductPlatformEngineering() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center px-6 sm:px-0"
             >
-                <h2 className="text-black text-2xl font-medium">Product &amp; Platform Engineering</h2>
+                <h2 className="text-[#2E3033] text-[28px] font-medium">Product &amp; Platform Engineering</h2>
                 <p className="text-[#55595E] text-lg font-light">
                     Engineering capabilities that help enterprises build scalable digital products and platforms.
                 </p>
@@ -46,9 +46,9 @@ export default function ProductPlatformEngineering() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.4, delay: index * 0.06 }}
-                        className="border border-[#A1A5AA] bg-[#F5F6F6] flex flex-col gap-4 px-6 py-8"
+                        className="border border-[#a5a5a5] bg-[#f3f6f9] flex flex-col gap-4 px-6 py-8"
                     >
-                        <p className="text-black text-lg font-medium">{card.title}</p>
+                        <h2 className="text-[#2E3033] text-lg font-medium">{card.title}</h2>
                         <p className="text-[#55595E] text-sm font-light">{card.desc}</p>
                     </motion.div>
                 ))}
@@ -56,7 +56,7 @@ export default function ProductPlatformEngineering() {
 
             {/* Desktop layout — white title cards floating on top of a full-bleed Neutral/100 band that holds the descriptions */}
             <div className="hidden lg:block relative w-full lg:min-h-[303px]">
-                <div className="absolute inset-x-0 top-[99px] bottom-0 bg-[#F5F6F6]" />
+                <div className="absolute inset-x-0 top-[99px] bottom-0 bg-[#f3f6f9]" />
 
                 <div className="relative z-10 max-w-full mx-auto px-6 sm:px-[64px] grid grid-cols-4 gap-x-6 lg:gap-x-[50px]">
                     {CARDS.map((card, index) => (
@@ -68,8 +68,8 @@ export default function ProductPlatformEngineering() {
                             transition={{ duration: 0.4, delay: index * 0.06 }}
                             className="flex flex-col"
                         >
-                            <div className="bg-white border border-[#A1A5AA] min-h-[121px] flex items-center px-13">
-                                <p className="text-black text-xl font-medium leading-tight">{card.title}</p>
+                            <div className="bg-white border border-[#a5a5a5] min-h-[121px] flex items-center px-13">
+                                <h2 className="text-[#2E3033] text-2xl font-medium ">{card.title}</h2>
                             </div>
                             <p className="text-[#55595E] text-lg font-light pt-6 pb-10 pr-4">{card.desc}</p>
                         </motion.div>

@@ -117,7 +117,7 @@ export default function CRMStrategy() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-4 max-w-[374px] shrink-0"
                 >
-                    <h2 className="text-[#16171a] text-2xl font-medium">CRM Strategy</h2>
+                    <h2 className="text-[#0d0c22] text-2xl font-medium">CRM Strategy</h2>
                     <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                         Develop customer relationship management strategies that align sales, marketing, and
                         service operations to deliver consistent customer experiences.
@@ -188,7 +188,7 @@ export default function CRMStrategy() {
                 <div className="absolute inset-y-0 left-[45.16%] right-0 bg-[#DBDBDB] overflow-hidden" />
 
                 {/* Blue accent bar, pinned to the true left edge */}
-                <div className="absolute left-0 top-[240px] w-[28px] h-[384px] bg-[#0061af]" />
+                <div className="absolute left-0 top-[240px] w-[28px] h-[384px] bg-[#2d8ec5]" />
 
                 {/* Heading + description, indented slightly from the edge */}
                 <motion.div
@@ -198,7 +198,7 @@ export default function CRMStrategy() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="absolute left-6 lg:left-[50px] top-0 md:top-[40px] w-[374px] flex flex-col gap-4"
                 >
-                    <h2 className="text-[#16171a] text-2xl font-medium">CRM Strategy</h2>
+                    <h2 className="text-[#0d0c22] text-2xl font-medium">CRM Strategy</h2>
                     <p className="text-[#3d3d4e] text-lg font-light">
                         Develop customer relationship management strategies that align sales, marketing, and
                         service operations to deliver consistent customer experiences.

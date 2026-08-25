@@ -177,7 +177,7 @@ export default function Industries() {
                     </div>
                     <Link
                         href="/who-we-are"
-                        className="shrink-0 border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#10161d] text-center transition-colors hover:bg-[#2d8ec5] hover:text-white whitespace-nowrap"
+                        className="shrink-0 border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] text-center transition-colors hover:bg-[#2d8ec5] hover:text-white whitespace-nowrap"
                     >
                         Find Your Industry Solution
                     </Link>

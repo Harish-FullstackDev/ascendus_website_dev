@@ -25,8 +25,8 @@ export default function HeroText() {
                 <p className="text-white/90 text-sm sm:text-lg lg:text-xl uppercase tracking-wide font-light">
                     Enterprise Technology &amp; SAP Consulting
                 </p>
-                <div className="mt-3 sm:mt-4 h-px w-full bg-white/40" />
-                <h1 className="text-white text-2xl sm:text-4xl lg:text-5xl font-medium capitalize mt-6 sm:mt-8 leading-tight">
+                <div className="mt-3 sm:mt-1 h-px w-full bg-white/40" />
+                <h1 className="text-white text-2xl sm:text-4xl lg:text-5xl font-medium capitalize mt-6 sm:mt-6 leading-tight">
                     Enterprise technology that moves your business forward, not just your systems.
                 </h1>
 
@@ -34,14 +34,14 @@ export default function HeroText() {
                     <button
                         type="button"
                         onClick={() => setShowCalendly(true)}
-                        className="rounded-[54px] border border-[#d0d0d0] bg-[#10161d] px-8 py-3 text-base sm:text-lg font-light text-white transition-colors hover:bg-white hover:text-[#10161d]"
+                        className="rounded-[54px] border border-[#d0d0d0] bg-[#2E3033] px-8 py-3 text-base sm:text-lg font-light text-white transition-colors hover:bg-white hover:text-[#2E3033]"
                     >
                         Book a Consultation
                     </button>
                     <button
                         type="button"
                         onClick={scrollToServices}
-                        className="rounded-[54px] border border-[#d0d0d0] px-8 py-3 text-base sm:text-lg font-light text-white transition-colors hover:bg-white hover:text-[#10161d]"
+                        className="rounded-[54px] border border-[#d0d0d0] px-8 py-3 text-base sm:text-lg font-light text-white transition-colors hover:bg-white hover:text-[#2E3033]"
                     >
                         See What We Do
                     </button>

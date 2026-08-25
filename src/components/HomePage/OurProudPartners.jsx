@@ -32,7 +32,7 @@ export default function OurProudPartners() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-8 w-full"
             >
-                <p className="text-[#4a5568] text-lg font-light text-center max-w-[818px]">Our Proud Partners</p>
+                <p className="text-[#55595E] text-lg font-light text-center max-w-[818px]">Our Proud Partners</p>
 
                 <div className="flex flex-wrap items-center justify-center gap-x-12 sm:gap-x-16 gap-y-6 w-full max-w-[1152px]">
                     {PARTNERS.map((partner) => (

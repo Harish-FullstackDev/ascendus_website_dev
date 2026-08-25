@@ -71,7 +71,7 @@ export default function DevOpsSection() {
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/40" />
-                    <div className="absolute inset-0 bg-[#0061af]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
+                    <div className="absolute inset-0 bg-[#2d8ec5]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
                     <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 sm:gap-5 px-6 sm:px-10 pb-6 sm:pb-10 text-white">
                         <h2 className="text-2xl sm:text-[32px] font-medium drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)] transition-transform duration-500 ease-out group-hover:-translate-y-1">
                             CI/CD Pipeline Development
@@ -100,7 +100,7 @@ export default function DevOpsSection() {
                                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-black/40" />
-                            <div className="absolute inset-0 bg-[#0061af]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
+                            <div className="absolute inset-0 bg-[#2d8ec5]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
                             <div className="absolute inset-x-6 sm:inset-x-8 bottom-6 sm:bottom-8 flex flex-col gap-3">
                                 <p className="text-white text-xl sm:text-[28px] font-medium drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)] transition-transform duration-500 ease-out group-hover:-translate-y-1">
                                     {card.title}

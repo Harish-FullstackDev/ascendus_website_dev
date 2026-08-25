@@ -54,10 +54,10 @@ export default function EnterpriseBuyerFAQ() {
                 className="flex flex-col gap-2 w-full"
             >
                 <h2 className="text-[28px] font-medium">
-                    <span className="text-[#10161d]">Questions Enterprise Buyers </span>
+                    <span className="text-[#2E3033]">Questions Enterprise Buyers </span>
                     <span className="text-[#0061AF]">Actually Ask</span>
                 </h2>
-                <p className="text-[#4a5568] text-lg font-light leading-[1.4] max-w-[954px]">
+                <p className="text-[#55595E] text-lg font-light leading-[1.4] max-w-[954px]">
                     Research-led design capabilities that connect user needs, business objectives, and digital
                     product requirements.
                 </p>
@@ -74,7 +74,7 @@ export default function EnterpriseBuyerFAQ() {
                                 className="flex w-full items-center justify-between gap-6 py-5 sm:py-[26px] text-left"
                                 aria-expanded={isOpen}
                             >
-                                <span className="text-[#10161d] text-lg sm:text-2xl font-light leading-[1.6]">
+                                <span className="text-[#2E3033] text-lg sm:text-2xl font-light leading-[1.6]">
                                     {item.q}
                                 </span>
                                 <span className="relative shrink-0 size-8 sm:size-[37px] flex items-center justify-center">
@@ -97,7 +97,7 @@ export default function EnterpriseBuyerFAQ() {
                                         transition={{ duration: 0.35, ease: "easeInOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <p className="pb-5 sm:pb-6 pr-10 sm:pr-16 text-[#4a5568] text-base sm:text-lg font-light leading-[1.4]">
+                                        <p className="pb-5 sm:pb-6 pr-10 sm:pr-16 text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">
                                             {item.a}
                                         </p>
                                     </motion.div>

@@ -46,7 +46,7 @@ export default function SpecializedCXAutomationAnalytics() {
     const [active, setActive] = useState(0);
 
     return (
-        <section className="bg-[#f4f3f9] w-full py-10 sm:p-16">
+        <section className=" bg-[#F3F6F9] w-full py-10 sm:p-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -54,8 +54,8 @@ export default function SpecializedCXAutomationAnalytics() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[42px] px-6"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">Specialized CX Automation & Analytics</h2>
-                <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
+                <h2 className="text-[##2E3033] text-[28px] font-medium">Specialized CX Automation & Analytics</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Automation, analytics, and loyalty tools for customer retention.
                 </p>
             </motion.div>
@@ -84,12 +84,12 @@ export default function SpecializedCXAutomationAnalytics() {
                                         <div className="relative w-full h-[180px] sm:h-[243px] bg-black shrink-0">
                                             <Image src={tab.image} alt="" fill className="object-cover" />
                                         </div>
-                                        <p className="text-[#6c6c6c] text-base sm:text-lg font-light">{tab.desc}</p>
-                                        <p className="text-[#0061af] text-xl sm:text-2xl font-medium">{tab.title}</p>
+                                        <p className="text-[#55595E] text-base sm:text-lg font-light">{tab.desc}</p>
+                                        <h2 className="text-[#2D8EC5] text-xl sm:text-2xl font-medium">{tab.title}</h2>
                                     </motion.div>
                                 ) : (
                                     <div className="flex h-full w-full items-center justify-center px-2 transition-colors group-hover:bg-white/50">
-                                        <span className="whitespace-nowrap text-[#0061af] text-sm font-normal sm:-rotate-90 sm:text-[32px]">
+                                        <span className="whitespace-nowrap text-[#2d8ec5] text-sm font-medium sm:-rotate-90 sm:text-[32px]">
                                             {tab.title}
                                         </span>
                                     </div>

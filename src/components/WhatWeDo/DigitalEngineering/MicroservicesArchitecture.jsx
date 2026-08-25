@@ -30,7 +30,7 @@ export default function MicroservicesArchitecture() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[650px] mx-auto text-center mb-10 sm:-mb-[90px]"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">Microservices Architecture</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-medium">Microservices Architecture</h2>
                 <div className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     <p className="text-black">Build Flexible, Cloud-Native Applications</p>
                     <p>

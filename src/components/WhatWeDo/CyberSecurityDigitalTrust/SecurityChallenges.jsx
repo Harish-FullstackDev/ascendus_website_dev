@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import challengeImage from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/webp/Cybersecurity_Our_Security.webp";
+import challengeImage from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/our_Security.jpg";
 
 const CHALLENGES = [
     "SAP segregation of duties expertise",
@@ -19,7 +19,7 @@ export default function SecurityChallenges() {
         // edge with zero gap, so any container padding here would reproduce the exact gap the
         // design doesn't have. Vertical rhythm only (py-10/16); the previous py-[-55px] was an
         // invalid negative value that would've been dropped by the browser anyway.
-        <section className="w-full">
+        <section className="w-full ">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -40,14 +40,14 @@ export default function SecurityChallenges() {
                     description + list now live inside the card itself (Figma has no separate
                     page-level heading above this row), and the blue accent bar Figma doesn't
                     have has been removed. */}
-                <div className="relative w-full lg:absolute lg:top-[13.5%] lg:left-[37.7%] lg:h-[76.3%] lg:w-[62.3%] bg-[#F5F6F6] overflow-hidden flex items-center px-6 sm:pl-[7.5%] sm:pr-[15%] py-8 sm:py-10">
+                <div className="relative w-full lg:absolute lg:top-[13.5%] lg:left-[37.7%] lg:h-[76.3%] lg:w-[62.3%] bg-[#F3F6F9] overflow-hidden flex items-center px-6 sm:pl-[7.5%] sm:pr-[15%] py-8 sm:py-10">
                     <div className="flex flex-col gap-8 sm:gap-16 w-full sm:max-w-[58.5%]">
                         <p className="font-heading text-black text-xl sm:text-2xl font-medium">Our Security Advantages</p>
                         <div className="flex flex-col gap-4">
-                            <p className="text-black text-xl sm:text-2xl font-light">
+                            <p className="text-[#2E3033] text-xl sm:text-2xl font-medium">
                                 Regional compliance depth and SAP security expertise.
                             </p>
-                            <ul className="list-disc marker:text-[#6c6c6c] pl-[27px] text-[#6c6c6c] text-lg font-light [&>li]:leading-[34px]">
+                            <ul className="list-disc marker:text-[#6c6c6c] pl-[27px] text-[#6c6c6c] text-lg font-light leading-relaxed">
                                 {CHALLENGES.map((item) => (
                                     <li key={item}>{item}</li>
                                 ))}

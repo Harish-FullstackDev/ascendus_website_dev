@@ -65,7 +65,7 @@ export default function HybridCloud() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] text-center"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">Hybrid Cloud</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-medium">Hybrid Cloud</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Blend private, public, and on-premise infrastructure into one unified, seamlessly orchestrated
                     environment.
@@ -89,7 +89,7 @@ export default function HybridCloud() {
                             transition={{ duration: 0.5, ease: "easeInOut" }}
                             className="flex flex-col sm:flex-row gap-4 sm:gap-[21px]"
                         >
-                            <div className="bg-[#16171a] w-full sm:w-[380px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-between gap-4 text-white">
+                            <div className="bg-[#0a2b3e] w-full sm:w-[380px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-between gap-4 text-white">
                                 <div className="flex flex-col gap-4 sm:gap-6">
                                     <p className="text-xl sm:text-2xl font-medium">{active.title}</p>
                                     <p className="text-[#ce9d9d] text-sm sm:text-base font-light leading-relaxed">
@@ -129,7 +129,7 @@ export default function HybridCloud() {
                                 aria-label={`Go to slide ${dotIndex + 1}`}
                                 onClick={() => goTo(dotIndex, dotIndex > index ? 1 : -1)}
                                 className={`size-[8px] rounded-full border-[0.5px] transition-colors ${
-                                    dotIndex === index ? "bg-[#0061af] border-[#0061af]" : "border-black"
+                                    dotIndex === index ? "bg-[#2d8ec5] border-[#2d8ec5]" : "border-black"
                                 }`}
                             />
                         ))}

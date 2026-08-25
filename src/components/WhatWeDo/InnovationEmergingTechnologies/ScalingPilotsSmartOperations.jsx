@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import integrationImage1 from "@/assets/WhatWeDo/Innovation & Emerging Technologies/webp/Innovation_Scaling_Points_1.webp";
-import integrationImage2 from "@/assets/WhatWeDo/Innovation & Emerging Technologies/webp/Innovation_Scaling_Points_2.webp";
+import integrationImage1 from "@/assets/WhatWeDo/Innovation & Emerging Technologies/new/Pilot.jpg";
+import integrationImage2 from "@/assets/WhatWeDo/Innovation & Emerging Technologies/new/Industry.jpg";
 
 
 
@@ -35,7 +35,7 @@ export default function ScalingPilotsSmartOperations() {
                 >
                     <div className="flex flex-col gap-5 w-full">
                         <p className="text-black text-lg sm:text-2xl font-light">Access Control That Actually Holds</p>
-                        <p className="text-[#4a5568] text-base sm:text-lg font-light">
+                        <p className="text-[#55595E] text-base sm:text-lg font-light">
                             We design identity and access management, including
                             SAP segregation of duties, so the right people have the right access and nothing more,
                             closing the gaps that generic access reviews miss
@@ -61,7 +61,7 @@ export default function ScalingPilotsSmartOperations() {
                             <p className="text-black text-lg sm:text-2xl font-light">
                                 Industry 4.0 for the Operations That Need It Most
                             </p>
-                            <p className="text-[#4a5568] text-base sm:text-lg font-light">
+                            <p className="text-[#55595E] text-base sm:text-lg font-light">
                                 We help manufacturing and industrial
                                 operators connect equipment, sensors, and enterprise systems into a responsive, datadriven operation that improves throughput and reduces downtime
                             </p>

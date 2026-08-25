@@ -16,7 +16,8 @@ export default function HeroText() {
                 </p>
                 <div className="mt-3 sm:mt-1 h-px w-full bg-white/40" />
                 <h1 className="text-white text-2xl sm:text-4xl lg:text-5xl font-medium capitalize mt-6 sm:mt-6 leading-tight">
-                    AI that moves enterprise decisions,not just enterprise data.
+                    AI that moves enterprise decisions,
+                    <br />not just enterprise data.
                 </h1>
             </motion.div>
         </div>

@@ -47,7 +47,7 @@ export default function ExtendedReality() {
                     >
                         <div className="flex items-start justify-between gap-3">
                             <p className="text-black text-xl font-medium">{card.title}</p>
-                            <span className="flex items-center justify-center size-9 shrink-0 rounded-full border border-[#0061af] text-[#0061af] text-base">
+                            <span className="flex items-center justify-center size-9 shrink-0 rounded-full border border-[#2d8ec5] text-[#2d8ec5] text-base">
                                 ↗
                             </span>
                         </div>

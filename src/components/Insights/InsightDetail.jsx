@@ -419,7 +419,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                 >
                                     {sec.heading}
                                 </h2>
-                                <div className="text-[#4A5568] dark:text-neutral-350 text-base md:text-lg leading-relaxed whitespace-pre-wrap font-normal">
+                                <div className="text-[#55595E] dark:text-neutral-350 text-base md:text-lg leading-relaxed whitespace-pre-wrap font-normal">
                                     {sec.content}
                                 </div>
 

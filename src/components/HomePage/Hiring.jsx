@@ -43,7 +43,7 @@ export default function Hiring() {
                         </div>
                         <Link
                             href="/careers"
-                            className="self-start rounded-[54px] border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#10161d] transition-colors hover:bg-[#2d8ec5] hover:text-white"
+                            className="self-start rounded-[54px] border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#2d8ec5] hover:text-white"
                         >
                             View Open Roles
                         </Link>

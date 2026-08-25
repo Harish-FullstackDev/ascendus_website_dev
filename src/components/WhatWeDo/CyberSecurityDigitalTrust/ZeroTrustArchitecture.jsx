@@ -135,7 +135,7 @@ export default function ZeroTrustArchitecture() {
                                     type="button"
                                     aria-label={`Go to slide ${dotIndex + 1}`}
                                     onClick={() => goTo(dotIndex)}
-                                    className={`size-[8px] rounded-full border-[0.5px] transition-colors ${dotIndex === index ? "bg-[#0061af] border-[#0061af]" : "border-black"
+                                    className={`size-[8px] rounded-full border-[0.5px] transition-colors ${dotIndex === index ? "bg-[#2d8ec5] border-[#2d8ec5]" : "border-black"
                                         }`}
                                 />
                             ))}

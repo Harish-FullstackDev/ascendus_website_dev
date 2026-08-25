@@ -108,7 +108,7 @@ function CapabilityCard({ item }) {
         >
             <div className="flex flex-col gap-6 p-6">
                 <div className="flex items-start justify-between gap-2">
-                    <h2 className="flex-1 text-[#10161d] text-xl font-medium leading-[1.4]">
+                    <h2 className="flex-1 text-[#2E3033] text-xl font-medium leading-[1.4]">
                         {item.title}
                     </h2>
                     <div className="shrink-0 -rotate-45 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-110">
@@ -117,7 +117,7 @@ function CapabilityCard({ item }) {
                         </div>
                     </div>
                 </div>
-                <p className="text-[#4a5568] text-base font-light leading-[1.5]">
+                <p className="text-[#55595E] text-base font-light leading-[1.5]">
                     {item.desc}
                 </p>
             </div>
@@ -174,7 +174,7 @@ function ArrowButton({ direction, disabled, onClick }) {
             <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className={`size-6 text-[#10161d] ${direction === -1 ? "-scale-x-100" : ""}`}
+                className={`size-6 text-[#2E3033] ${direction === -1 ? "-scale-x-100" : ""}`}
             >
                 <path
                     d="M4 12H20M20 12L14 6M20 12L14 18"
@@ -202,7 +202,7 @@ export default function CoreCapabilities() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-1 w-full mx-auto text-center mb-8"
             >
-                <h2 className="text-[#10161d] text-[28px] font-medium">
+                <h2 className="text-[#2E3033] text-[28px] font-medium">
                     Everything an Enterprise Technology Estate Needs, Under <br />
                     <span className="text-[#0061AF]">One Roof</span>
                 </h2>

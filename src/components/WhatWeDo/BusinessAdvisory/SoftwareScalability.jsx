@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import codeBg from "@/assets/WhatWeDo/Business Advisory/webp/Business_Software_Scalability.webp";
+import codeBg from "@/assets/WhatWeDo/Business Advisory/new/Software.jpg";
 
 export default function SoftwareScalability() {
     return (
@@ -14,11 +14,11 @@ export default function SoftwareScalability() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">
+                <h2 className="text-[#2E3033] text-[28px] font-medium">
                     Software Scalability
                 </h2>
 
-                <div className="text-[#3d3d4e] text-base sm:text-lg font-light">
+                <div className="text-[#55595E] text-base sm:text-lg font-light">
                     <p>
                         Defining transformation roadmaps, business architecture, and process change.
                     </p>
@@ -46,21 +46,21 @@ export default function SoftwareScalability() {
                     }}
                     className="w-full sm:w-[59.5%] bg-white flex items-center  py-10"
                 >
-                    <div className="flex flex-col gap-5 sm:gap-[34px] text-black w-full">
-                        <p className="text-xl sm:text-[32px] font-normal">
+                    <div className="flex flex-col gap-5 sm:gap-[34px] text-[#2E3033] w-full">
+                        <h2 className="text-xl sm:text-2xl font-medium">
                             Strategy That Becomes a Roadmap, Not a Deck
-                        </p>
+                        </h2>
 
-                        <p className="text-sm sm:text-lg font-light">
+                        <p className="text-sm sm:text-lg text-[#55595E] font-light">
                             We translate business and digital strategy
                             into a sequenced transformation roadmap with clear ownership, dependencies, and
                             milestones, so it survives the handoff from strategy to delivery.
                         </p>
-                        <p className="text-xl sm:text-[32px] font-normal">
+                        <h2 className="text-xl sm:text-2xl text-[#2E3033] font-medium">
                             Process Change People Actually Adopt
-                        </p>
+                        </h2>
 
-                        <p className="text-sm sm:text-lg font-light">
+                        <p className="text-sm sm:text-lg text-[#55595E] font-light">
                             We pair process reengineering with structured
                             change management, because a redesigned process that nobody follows delivers zero value,
                             no matter how sound the design.
@@ -68,16 +68,19 @@ export default function SoftwareScalability() {
                     </div>
                 </motion.div>
 
-                {/* aspect-[4/3] gives the image a sensible height while it's stacked full-width
-                    on mobile; sm:aspect-auto cancels that once the row layout kicks in, letting
-                    it stretch (via sm:items-stretch on the parent) to match the text column's
-                    own content-driven height instead. */}
+                {/* Figma's image is ~432x464 — a portrait-leaning box, not a landscape one.
+                    sm:items-stretch on the row parent stretches a flexible-width item to the
+                    row's full height *before* aspect-ratio gets a say, which silently defeated
+                    aspect-[27/29] below (the box was still being sized off the text column's
+                    height, just with a different symptom: awkward object-cover cropping).
+                    sm:self-start opts this item out of that stretch so aspect-ratio actually
+                    drives its height from its own resolved width. */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="relative w-full sm:flex-1 aspect-[4/3] sm:self-start sm:aspect-[27/29]"
+                    className="relative w-full sm:flex-1 sm:self-start aspect-[4/3] sm:aspect-[27/29]"
                 >
                     <Image
                         src={codeBg}

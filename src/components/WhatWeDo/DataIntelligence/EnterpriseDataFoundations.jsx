@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import DataEngineering from "@/assets/WhatWeDo/Data Inteligent/webp/Data_Data_Engg.webp";
@@ -31,6 +32,20 @@ const CARDS = [
 ];
 
 export default function EnterpriseDataFoundations() {
+    // Auto open/close: cycles the "active" (hover-revealed) card every few
+    // seconds, pausing whenever the grid is actually hovered/focused so
+    // manual interaction always takes over.
+    const [active, setActive] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
+
+    useEffect(() => {
+        if (isPaused) return;
+        const id = setInterval(() => {
+            setActive((prev) => (prev + 1) % CARDS.length);
+        }, 3000);
+        return () => clearInterval(id);
+    }, [isPaused]);
+
     return (
         <section className="w-full py-10 px-6 sm:p-16">
             <motion.div
@@ -40,8 +55,8 @@ export default function EnterpriseDataFoundations() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[50px]"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">Enterprise Data Foundations</h2>
-                <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
+                <h2 className="text-[#2E3033] text-[28px] font-medium">Enterprise Data Foundations</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Core engineering capabilities for data platforms and business intelligence
                 </p>
             </motion.div>
@@ -68,34 +83,58 @@ export default function EnterpriseDataFoundations() {
                 ))}
             </div>
 
-            {/* Desktop: unchanged hover-reveal grid */}
-            <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-[43px] w-full">
-                {CARDS.map((card, index) => (
-                    <motion.div
-                        key={card.title}
-                        initial={{ opacity: 0, y: 24 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
-                        className="group relative aspect-[258/335] overflow-hidden"
-                    >
-                        <Image
-                            src={card.image}
-                            alt=""
-                            fill
-                            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/70" />
-                        <div className="absolute inset-0 flex items-top justify-right px-6 py-10 text-left">
-                            <p className="text-white text-xl sm:text-3xl font-normal">{card.title}</p>
-                        </div>
-                        <div className="absolute inset-x-0 bottom-0 px-6 pb-6 grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out group-hover:grid-rows-[1fr]">
-                            <div className="overflow-hidden">
-                                <p className="text-white/85 text-xl font-light pt-2">{card.desc}</p>
+            {/* Desktop: hover-reveal grid — auto-cycles the active card every few
+                seconds, and still responds to real hover/focus (which also
+                pauses the auto-cycle). Same visuals as the old group-hover
+                version, just driven by state instead of CSS :hover. */}
+            <div
+                className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-[43px] w-full"
+                onMouseLeave={() => setIsPaused(false)}
+            >
+                {CARDS.map((card, index) => {
+                    const isActive = active === index;
+                    return (
+                        <motion.div
+                            key={card.title}
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
+                            onMouseEnter={() => {
+                                setIsPaused(true);
+                                setActive(index);
+                            }}
+                            onFocus={() => {
+                                setIsPaused(true);
+                                setActive(index);
+                            }}
+                            className="relative aspect-[258/335] overflow-hidden"
+                        >
+                            <Image
+                                src={card.image}
+                                alt=""
+                                fill
+                                className={`object-cover transition-transform duration-700 ease-out ${isActive ? "scale-105" : ""
+                                    }`}
+                            />
+                            <div
+                                className={`absolute inset-0 transition-colors duration-500 ${isActive ? "bg-black/70" : "bg-black/20"
+                                    }`}
+                            />
+                            <div className="absolute inset-0 flex items-top justify-right px-6 py-10 text-left">
+                                <h2 className="text-white text-xl sm:text-2xl font-medium">{card.title}</h2>
                             </div>
-                        </div>
-                    </motion.div>
-                ))}
+                            <div
+                                className={`absolute inset-x-0 bottom-0 px-6 pb-6 grid transition-[grid-template-rows] duration-500 ease-out ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                                    }`}
+                            >
+                                <div className="overflow-hidden">
+                                    <p className="text-white/85 text-xl font-light leading-relaxed pt-2">{card.desc}</p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    );
+                })}
             </div>
         </section>
     );

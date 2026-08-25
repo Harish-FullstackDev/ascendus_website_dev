@@ -67,7 +67,7 @@ export default function DigitalTwins() {
                                 key={item.title}
                                 type="button"
                                 onClick={() => setActive(index)}
-                                className={`text-left flex flex-col justify-center px-3 transition-all ${isActive ? "border-l-[5px] border-[#0061af] py-4 gap-1" : "border-l-0 py-2"
+                                className={`text-left flex flex-col justify-center px-3 transition-all ${isActive ? "border-l-[5px] border-[#2d8ec5] py-4 gap-1" : "border-l-0 py-2"
                                     }`}
                             >
                                 <span className={`text-black ${isActive ? "text-xl sm:text-2xl font-medium" : "text-[#515151] text-lg font-light"}`}>

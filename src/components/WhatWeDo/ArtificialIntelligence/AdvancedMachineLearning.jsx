@@ -5,9 +5,9 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import mainImage from "@/assets/WhatWeDo/Artificial Intelligence/Section4_MachineLearning_Main.jpg";
 import sideImage1 from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_Machine_Learning.webp";
-import sideImage4 from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_AI_Governance.webp";
-import sideImage3 from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_Predictive_Intelligence.webp";
 import sideImage2 from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_Intelligent_Assistants.webp";
+import sideImage3 from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_Predictive_Intelligence.webp";
+import sideImage4 from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_AI_Governance.webp";
 
 const ITEMS = [
     {
@@ -46,7 +46,7 @@ export default function AdvancedMachineLearning() {
     }, [active]);
 
     return (
-        <section className="w-full py-10 px-6 sm:px-[0px] sm:pb-0 sm:pt-16">
+        <section className="w-full py-10 sm:pb-0 sm:pt-16 px-6 sm:px-[0px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -54,8 +54,8 @@ export default function AdvancedMachineLearning() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[780px] mx-auto text-center"
             >
-                <h2 className="text-black text-2xl font-medium">Advanced Machine Learning &amp; Governance</h2>
-                <p className="text-[#4A5568] text-base sm:text-lg font-light">Targeted AI and machine learning execution services</p>
+                <h2 className="text-[#2E3033] text-2xl font-medium">Advanced Machine Learning &amp; Governance</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">Targeted AI and machine learning execution services</p>
             </motion.div>
 
             <div className="flex flex-col lg:flex-row max-w-screen mx-auto lg:h-[500px] pt-16 md:pt-16">
@@ -100,7 +100,7 @@ export default function AdvancedMachineLearning() {
                                     />
                                 )}
                                 <div className="relative flex flex-col gap-3 ">
-                                    <p className="text-black text-xl sm:text-2xl font-medium">{item.title}</p>
+                                    <p className="text-[#2E3033] text-xl sm:text-2xl font-medium">{item.title}</p>
                                     <AnimatePresence initial={false}>
                                         {isActive && (
                                             <motion.p
@@ -108,7 +108,7 @@ export default function AdvancedMachineLearning() {
                                                 animate={{ opacity: 1, height: "auto" }}
                                                 exit={{ opacity: 0, height: 0 }}
                                                 transition={{ duration: 0.35, ease: "easeInOut" }}
-                                                className="overflow-hidden text-[#4A5568] text-base w-[80%] font-normal"
+                                                className="overflow-hidden text-[#55595E] text-base w-[80%] font-normal"
                                             >
                                                 {item.desc}
                                             </motion.p>

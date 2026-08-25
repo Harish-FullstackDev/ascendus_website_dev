@@ -56,7 +56,7 @@ const Card = ({ icon, title, desc, index }) => (
         <div className="relative size-10 shrink-0">
             <Image src={icon} alt="" fill className="object-contain" />
         </div>
-        <p className="text-black text-2xl font-medium">{title}</p>
+        <h2 className="text-[#2E3033] text-2xl font-medium">{title}</h2>
         <p className="text-[#55595E] text-lg font-light leading-[1.4]">{desc}</p>
     </motion.div>
 );
@@ -83,7 +83,7 @@ const FeatureRow = ({ items }) => (
                     </div>
                     {index < items.length - 1 && (
                         <div className="w-[144px] shrink-0 flex justify-center">
-                            <div className="w-px self-stretch bg-[#A1A5AA]/30" />
+                            <div className="w-px self-stretch bg-[#8794A3]/30" />
                         </div>
                     )}
                 </div>
@@ -102,7 +102,7 @@ export default function DesignOperationsExperienceOptimization() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 text-center mb-10 sm:mb-16 w-full"
             >
-                <h2 className="text-[#16171A] text-2xl font-medium">
+                <h2 className="text-[#2E3033] text-[28px] font-medium">
                     Design Operations &amp; Experience Optimization
                 </h2>
                 <p className="text-[#55595E] text-lg font-light">
@@ -118,4 +118,3 @@ export default function DesignOperationsExperienceOptimization() {
         </section>
     );
 }
-

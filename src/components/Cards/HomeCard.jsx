@@ -125,7 +125,7 @@ border-bottom: none;
         }
 
         .card .description {
-          color: #4a5568;
+          color: #55595E;
           font-size: clamp(0.875rem, 3vw, 0.875rem);
           line-height: 1.4;
           flex: 1;

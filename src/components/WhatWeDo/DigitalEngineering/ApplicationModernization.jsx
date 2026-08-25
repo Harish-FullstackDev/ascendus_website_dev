@@ -65,7 +65,7 @@ export default function ApplicationModernization() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[93px] sm:px-[50px]"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">Application Modernization</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-medium">Application Modernization</h2>
                 <div className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     <p className="text-black">Automate, Deploy, and Scale with Confidence</p>
                     <p>
@@ -129,7 +129,7 @@ export default function ApplicationModernization() {
                         disabled={index === 0}
                         className={`size-[32px] sm:size-[50px] shrink-0 transition-colors ${index === 0
                             ? "text-[#a4a7a5] cursor-not-allowed"
-                            : "text-black hover:text-[#0061af]"
+                            : "text-black hover:text-[#2d8ec5]"
                             }`}
                     >
                         <ArrowIcon className="size-full -rotate-90" />
@@ -141,7 +141,7 @@ export default function ApplicationModernization() {
                         disabled={index === maxIndex}
                         className={`size-[32px] sm:size-[50px] shrink-0 transition-colors ${index === maxIndex
                             ? "text-[#a4a7a5] cursor-not-allowed"
-                            : "text-black hover:text-[#0061af]"
+                            : "text-black hover:text-[#2d8ec5]"
                             }`}
                     >
                         <ArrowIcon className="size-full rotate-90" />

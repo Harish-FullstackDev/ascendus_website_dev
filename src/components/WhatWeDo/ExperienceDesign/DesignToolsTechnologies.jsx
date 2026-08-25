@@ -28,7 +28,7 @@ export default function DesignToolsTechnologies() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-[#16171a] text-2xl font-medium text-center mb-10 sm:mb-12"
+                className="text-[#0d0c22] text-2xl font-medium text-center mb-10 sm:mb-12"
             >
                 Design Tools &amp; Technologies
             </motion.h2>

@@ -46,7 +46,7 @@ export default function IoT() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
-                        className="bg-[#16171a] h-[237px] flex flex-col justify-end px-6 pb-8"
+                        className="bg-[#0a2b3e] h-[237px] flex flex-col justify-end px-6 pb-8"
                     >
                         <p className="text-white text-lg sm:text-xl font-medium">{card.title}</p>
                         <p className="text-white/70 text-sm font-light mt-3">{card.desc}</p>

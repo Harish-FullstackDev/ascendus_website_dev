@@ -15,7 +15,7 @@ export default function CorePhilosophy() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="text-2xl font-medium text-black"
+                            className="text-[28px] font-medium text-[#2E3033]"
                         >
                             Core Philosophy
                         </motion.h2>
@@ -25,7 +25,7 @@ export default function CorePhilosophy() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            className="text-[#3D3D4E] text-[18px] leading-[140%] tracking-[0%] mt-2"
+                            className="mt-2 text-[#55595E] text-[18px] leading-[140%] tracking-[0%]"
                         >
                             Defining the stakes of software engineering in growing businesses.
                         </motion.p>
@@ -33,7 +33,7 @@ export default function CorePhilosophy() {
 
                     {/* Middle Line */}
                     <div className="hidden lg:flex justify-center px-10">
-                        <div className="w-0.5 h-60 bg-[#0061AF]" />
+                        <div className="w-0.5 h-60 bg-[#2D8EC5]" />
                     </div>
 
                     {/* Right */}
@@ -44,7 +44,7 @@ export default function CorePhilosophy() {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="justify-self-start max-w-[467px] pl-16"
                     >
-                        <p className="text-[#3D3D4E] text-base sm:text-lg font-light">
+                        <p className="text-[#55595E] text-base sm:text-lg font-light">
                             Software that cannot scale with the business becomes the business's next constraint.
                         </p>
                     </motion.div>

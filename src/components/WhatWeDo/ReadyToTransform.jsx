@@ -23,7 +23,7 @@ export default function ReadyToTransform({
         <>
             <section className="relative z-0 w-full overflow-hidden">
                 <Image src={bgImage} alt="" fill className="object-cover" />
-                <div className="absolute inset-0 bg-black/20" />
+
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -59,8 +59,8 @@ export default function ReadyToTransform({
                 calendlyUrl={process.env.NEXT_PUBLIC_CALENDLY_URL}
                 pageSettings={{
                     backgroundColor: "ffffff",
-                    primaryColor: "#0061af",
-                    textColor: "#2E3033",
+                    primaryColor: "#2d8ec5",
+                    textColor: "#003756",
                 }}
             />
         </>

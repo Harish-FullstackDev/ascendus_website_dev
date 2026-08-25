@@ -51,7 +51,7 @@ export default function AIGovernance() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[60px]"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">AI Governance</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-medium">AI Governance</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Turn Data into Intelligent Decisions
                 </p>
@@ -78,7 +78,7 @@ export default function AIGovernance() {
                                 transition={{ duration: 0.5, ease: "easeInOut" }}
                                 className="flex flex-col sm:flex-row gap-4 sm:gap-[21px]"
                             >
-                                <div className="bg-[#16171a] w-full sm:w-[380px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-center gap-4 sm:gap-6 text-white">
+                                <div className="bg-[#0a2b3e] w-full sm:w-[380px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-center gap-4 sm:gap-6 text-white">
                                     <p className="text-sm sm:text-lg font-light">AI Governance</p>
                                     <p className="text-xl sm:text-2xl font-medium">{active.title}</p>
                                     <p className="text-[#ce9d9d] text-sm sm:text-base font-light leading-relaxed">
@@ -115,7 +115,7 @@ export default function AIGovernance() {
                                 type="button"
                                 aria-label={`Go to slide ${dotIndex + 1}`}
                                 onClick={() => goTo(dotIndex, dotIndex > index ? 1 : -1)}
-                                className={`size-[8px] rounded-full border-[0.5px] transition-colors ${dotIndex === index ? "bg-[#0061af] border-[#0061af]" : "border-black"
+                                className={`size-[8px] rounded-full border-[0.5px] transition-colors ${dotIndex === index ? "bg-[#2d8ec5] border-[#2d8ec5]" : "border-black"
                                     }`}
                             />
                         ))}

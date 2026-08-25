@@ -11,7 +11,7 @@ const AREAS = [
     },
     {
         title: "Cybersecurity Consulting",
-        desc: ":Systematic identification of weaknesses across your infrastructure, applications, and SAP landscape.",
+        desc: "Systematic identification of weaknesses across your infrastructure, applications, and SAP landscape.",
     },
     {
         title: "Vulnerability Assessment",
@@ -34,7 +34,7 @@ export default function SecurityAssessmentCloudDefense() {
         // no horizontal constraint, so it now runs edge-to-edge like the Figma frame instead
         // of leaving page-white gutters on either side.
         <section className="w-full py-10 sm:py-[32px]">
-            <div className="w-full bg-[#f5f6f6] flex flex-col items-center gap-10 sm:gap-16 px-6 sm:px-[64px] py-8 sm:py-[32px]">
+            <div className="w-full bg-[#f3f6f9] flex flex-col items-center gap-10 sm:gap-16 px-6 sm:px-[64px] py-8 sm:py-[32px]">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +58,6 @@ export default function SecurityAssessmentCloudDefense() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-col gap-4 sm:gap-[15px] w-full lg:flex-1"
                     >
-                        <h3 className="font-heading text-black text-2xl font-medium">Assessment Areas</h3>
                         {/* aspect-[546/806] keeps Figma's portrait ratio intact as the column's
                             width scales, instead of a fixed 750px height that only matched at one
                             specific viewport width. */}
@@ -83,8 +82,8 @@ export default function SecurityAssessmentCloudDefense() {
                                 className="flex flex-col gap-4 sm:gap-[23px] w-full"
                             >
                                 <div className="flex flex-col gap-3 sm:gap-5">
-                                    <h4 className="font-heading text-black text-2xl font-medium">{area.title}</h4>
-                                    <p className="text-[#3d3d4e] text-base sm:text-lg font-light">{area.desc}</p>
+                                    <h2 className="text-[#2E3033] text-2xl font-medium">{area.title}</h2>
+                                    <p className="text-[#55595E] text-base sm:text-lg font-light">{area.desc}</p>
                                 </div>
                                 <div className="h-px w-[139px] bg-[#3d3d4e]/40" />
                             </motion.div>

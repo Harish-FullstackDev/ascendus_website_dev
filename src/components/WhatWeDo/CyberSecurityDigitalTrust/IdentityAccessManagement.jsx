@@ -87,11 +87,11 @@ export default function IdentityAccessManagement() {
                                     <Image src={circleIcon} alt="" fill className="object-contain" />
 
                                     {/* Horizontal line */}
-                                    <span className="absolute w-[14px] h-[2px] bg-[#0061AF] rounded-full" />
+                                    <span className="absolute w-[14px] h-[2px] bg-[#2D8EC5] rounded-full" />
 
                                     {/* Vertical line */}
                                     <motion.span
-                                        className="absolute w-[2px] h-[14px] bg-[#0061AF] rounded-full"
+                                        className="absolute w-[2px] h-[14px] bg-[#2D8EC5] rounded-full"
                                         animate={{
                                             rotate: isOpen ? 90 : 0,
                                         }}

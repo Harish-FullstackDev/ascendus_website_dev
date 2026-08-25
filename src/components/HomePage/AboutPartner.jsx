@@ -18,10 +18,10 @@ export default function AboutPartner() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex-1 flex flex-col gap-2 max-w-[646px]"
                 >
-                    <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium leading-[1.4] max-w-[482px]">
+                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-medium leading-[1.4] max-w-[482px]">
                         A Technology Partner Built for Enterprise Complexity
                     </h2>
-                    <p className="mt-4 text-[#4a5568] text-lg font-light leading-[1.5]">
+                    <p className="mt-4 text-[#55595E] text-lg font-light leading-[1.5]">
                         Most enterprise technology programs don&apos;t fail on strategy — they fail on
                         execution. Systems that don&apos;t talk to each other. Projects that lose momentum
                         after go-live. Compliance bolted on instead of built in. We exist to close that
@@ -29,7 +29,7 @@ export default function AboutPartner() {
                     </p>
                     <Link
                         href="/who-we-are"
-                        className="mt-6 self-start rounded-[54px] border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#10161d] transition-colors hover:bg-[#2d8ec5] hover:text-white"
+                        className="mt-6 self-start rounded-[54px] border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#2d8ec5] hover:text-white"
                     >
                         Who We Are
                     </Link>

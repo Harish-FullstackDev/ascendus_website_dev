@@ -66,7 +66,7 @@ export default function LegacyModernization() {
                             style={{ width: `${100 / ITEMS.length}%` }}
                         >
                             <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[234px] group-hover:h-[450px] group-hover:z-10 px-6 flex flex-col justify-center overflow-hidden transition-all duration-500 ease-out group-hover:bg-black group-hover:shadow-[0px_10px_30px_rgba(0,0,0,0.35)]">
-                                <p className="text-[#16171a] text-xl lg:text-3xl font-light text-left transition-opacity duration-300 group-hover:opacity-0">
+                                <p className="text-[#0d0c22] text-xl lg:text-3xl font-light text-left transition-opacity duration-300 group-hover:opacity-0">
                                     {item.title}
                                 </p>
                                 <div className="absolute inset-x-6 bottom-8 flex flex-col opacity-0 transition-opacity duration-500 delay-100 group-hover:opacity-100">
@@ -81,7 +81,7 @@ export default function LegacyModernization() {
                 <div className="flex sm:hidden flex-col divide-y divide-[#e5e5e5] px-4">
                     {ITEMS.map((item, i) => (
                         <div key={i} className="py-5 first:pt-0 last:pb-0">
-                            <p className="text-[#16171a] text-lg font-light">{item.title}</p>
+                            <p className="text-[#0d0c22] text-lg font-light">{item.title}</p>
                             <p className="text-[#6c6c6c] text-sm font-light leading-relaxed mt-2">{item.desc}</p>
                         </div>
                     ))}

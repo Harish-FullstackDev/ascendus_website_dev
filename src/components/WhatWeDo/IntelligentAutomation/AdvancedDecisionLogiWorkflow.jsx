@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import processMiningPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_Advanced_Decision_Logic.webp";
+import processMiningPhoto from "@/assets/WhatWeDo/Intelligent Automation/new/Advanced_Decision.jpg";
 
 const CARDS = [
     { title: "Workflow Automation", desc: "Automated approval and routing workflows that eliminate delays across departments." },
@@ -37,10 +37,10 @@ export default function AdvancedDecisionLogiWorkflow() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="absolute left-0 bottom-0 sm:bottom-auto sm:top-[267px] w-[85%] sm:w-[477px] sm:h-60 bg-[#0061af]/90 text-white flex flex-col justify-center gap-2 px-6 sm:px-[76px] py-6 sm:py-0 z-0"
+                        className="absolute left-0 bottom-0 sm:bottom-auto sm:top-[267px] w-[85%] sm:w-[477px] sm:h-60 bg-[#2d8ec5]/90 text-white flex flex-col justify-center gap-2 px-6 sm:px-[76px] py-6 sm:py-0 z-0"
                     >
-                        <p className="text-2xl sm:text-3xl font-medium">Advanced Decision Logic & Workflow</p>
-                        <p className="text-lg sm:text-2xl font-light">Extended automation capabilities for complex business rules.</p>
+                        <h2 className="text-2xl sm:text-[28px] font-medium">Advanced Decision Logic & Workflow</h2>
+                        <p className="text-lg sm:text-lg font-light">Extended automation capabilities for complex business rules.</p>
                     </motion.div>
                 </div>
 
@@ -58,8 +58,8 @@ export default function AdvancedDecisionLogiWorkflow() {
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
                             className="bg-white px-8 py-10 flex flex-col gap-8 sm:h-64"
                         >
-                            <p className="text-black text-xl font-medium">{card.title}</p>
-                            <p className="text-[#7f7f7f] text-lg font-light">{card.desc}</p>
+                            <h2 className="text-[#2E3033] text-xl font-medium">{card.title}</h2>
+                            <p className="text-[#55595E] text-lg font-light">{card.desc}</p>
                         </motion.div>
                     ))}
                 </div>

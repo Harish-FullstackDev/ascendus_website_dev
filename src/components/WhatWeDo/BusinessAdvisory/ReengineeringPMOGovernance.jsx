@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import pmoPhoto from "@/assets/WhatWeDo/Business Advisory/webp/Business_PMO.webp";
+import pmoPhoto from "@/assets/WhatWeDo/Business Advisory/new/Reengineering.jpg";
 import ProcessAssessment from "@/assets/WhatWeDo/Business Advisory/icons/ProcessAssessment.svg";
 import LeanTransformation from "@/assets/WhatWeDo/Business Advisory/icons/LeanTransformation.svg";
 import AutomationOpportunities from "@/assets/WhatWeDo/Business Advisory/icons/AutomationOpportunities.svg";
@@ -46,7 +46,7 @@ const ITEMS = [
 
 export default function ReengineeringPMOGovernance() {
     return (
-        <section className="w-full px-6 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16 pt-10 sm:pt-8 pb-10 sm:pb-16">
+        <section className="w-full pt-10 sm:pt-8 pb-10 sm:pb-16 px-6 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

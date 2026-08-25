@@ -42,7 +42,7 @@ export default function DesignProcess() {
                                 key={stage.title}
                                 type="button"
                                 onClick={() => setActive(index)}
-                                className={`flex-1 min-w-[50%] sm:min-w-0 h-[60px] sm:h-[79px] flex items-center justify-center px-2 text-base sm:text-2xl font-light transition-colors ${isActive ? "bg-[#efefef] border-t-4 border-[#0061af] text-black" : "bg-[#efefef] text-black/70"
+                                className={`flex-1 min-w-[50%] sm:min-w-0 h-[60px] sm:h-[79px] flex items-center justify-center px-2 text-base sm:text-2xl font-light transition-colors ${isActive ? "bg-[#efefef] border-t-4 border-[#2d8ec5] text-black" : "bg-[#efefef] text-black/70"
                                     }`}
                             >
                                 {stage.title}

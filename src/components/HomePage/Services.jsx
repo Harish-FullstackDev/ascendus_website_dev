@@ -26,10 +26,10 @@ export default function Services() {
                     className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
                 >
                     <div className="flex flex-col gap-2 max-w-[808px]">
-                        <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium leading-[1.4] tracking-[0.28px]">
+                        <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-medium leading-[1.4] tracking-[0.28px]">
                             Everything an Enterprise Needs to Run on Modern Technology
                         </h2>
-                        <p className="text-[#4a5568] text-lg font-light leading-[1.5] max-w-[600px]">
+                        <p className="text-[#55595E] text-lg font-light leading-[1.5] max-w-[600px]">
                             A complete technology foundation that connects strategy, systems, security, data, and
                             operations to help enterprises scale with confidence.
                         </p>
@@ -38,7 +38,7 @@ export default function Services() {
                     <div className="hidden md:flex items-center gap-1 bg-white border border-gray-100 shadow-[0_2px_12px_rgba(0,0,0,0.08)] rounded-[61px] px-3 py-2 shrink-0">
                         <button type="button" className="size-10 flex items-center justify-center" aria-label="Previous">
                             <svg className="-scale-y-100 rotate-90" width="24" height="24" viewBox="0 0 40 40" fill="none">
-                                <path d="M20 27V11M14 17L20 11L26 17" stroke="#4A5568" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M20 27V11M14 17L20 11L26 17" stroke="#55595E" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </button>
                         <button type="button" className="size-10 flex items-center justify-center" aria-label="Next">

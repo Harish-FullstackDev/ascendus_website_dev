@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import hybridPhoto from "@/assets/WhatWeDo/Data Inteligent/webp/Data_Governance.webp";
@@ -45,14 +45,28 @@ function LinkArrow({ light }) {
 
 export default function GovernanceSAPDataDepth() {
     const [[index, direction], setPage] = useState([0, 1]);
+    const [isPaused, setIsPaused] = useState(false);
     const maxIndex = ITEMS.length - 1;
     const active = ITEMS[index];
     const next = ITEMS[index + 1] ?? ITEMS[0];
 
     const goTo = (nextIndex, dir) => setPage([Math.max(0, Math.min(maxIndex, nextIndex)), dir]);
 
+    // Auto scroll: advances to the next slide every few seconds and loops
+    // back to the start, pausing while the slider is hovered/focused so
+    // manual interaction (arrows/dots) always takes over.
+    useEffect(() => {
+        if (isPaused) return;
+        const id = setInterval(() => {
+            setPage(([currentIndex]) =>
+                currentIndex >= maxIndex ? [0, 1] : [currentIndex + 1, 1]
+            );
+        }, 3500);
+        return () => clearInterval(id);
+    }, [isPaused, maxIndex]);
+
     return (
-        <section className="w-full bg-[#F5F6F6] py-10 px-6 flex flex-col items-center gap-10 sm:gap-[62px] sm:p-16">
+        <section className="w-full bg-[#F3F6F9] py-10 sm:p-16 px-6  flex flex-col items-center gap-10 sm:gap-[62px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -60,13 +74,19 @@ export default function GovernanceSAPDataDepth() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">Governance & SAP Data Depth</h2>
-                <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
+                <h2 className="text-[#2E3033] text-[28px] font-medium">Governance & SAP Data Depth</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The principles that shape our data architecture approach.
                 </p>
             </motion.div>
 
-            <div className="relative w-full h-[520px] sm:h-[592px] overflow-hidden">
+            <div
+                className="relative w-full h-[520px] sm:h-[592px] overflow-hidden"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                onFocus={() => setIsPaused(true)}
+                onBlur={() => setIsPaused(false)}
+            >
                 <div className="absolute inset-y-0 left-0 w-full sm:w-1/2 bg-[#5c5c5c]">
                     <Image src={hybridPhoto} alt="" fill className="object-cover" />
                 </div>
@@ -83,10 +103,10 @@ export default function GovernanceSAPDataDepth() {
                             transition={{ duration: 0.5, ease: "easeInOut" }}
                             className="flex flex-col sm:flex-row gap-4 sm:gap-[21px]"
                         >
-                            <div className="bg-[#16171A] w-full sm:w-[439px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-between gap-4 text-white">
+                            <div className="bg-[#0A2B3E] w-full sm:w-[439px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-between gap-4 text-white">
                                 <div className="flex flex-col gap-4 sm:gap-6">
-                                    <p className="text-xl sm:text-2xl font-medium">{active.title}</p>
-                                    <p className="text-white sm:mt-25 text-sm sm:text-base font-light leading-relaxed">
+                                    <h2 className="text-xl sm:text-2xl font-medium">{active.title}</h2>
+                                    <p className="text-white sm:mt-25 text-sm sm:text-lg font-light leading-relaxed">
                                         {active.desc}
                                     </p>
                                 </div>
@@ -94,8 +114,8 @@ export default function GovernanceSAPDataDepth() {
                             </div>
                             <div className="hidden sm:flex bg-white w-full sm:w-[439px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex-col justify-between gap-4 text-black">
                                 <div className="flex flex-col gap-4 sm:gap-6">
-                                    <p className="text-xl sm:text-2xl font-medium">{next.title}</p>
-                                    <p className="text-[#3D3D4E] sm:mt-25 text-sm sm:text-base font-light leading-relaxed">
+                                    <h2 className="text-xl text-[#2E3033] sm:text-2xl font-medium">{next.title}</h2>
+                                    <p className="text-[#55595E] sm:mt-25 text-sm sm:text-lg font-light leading-relaxed">
                                         {next.desc}
                                     </p>
                                 </div>
@@ -123,7 +143,7 @@ export default function GovernanceSAPDataDepth() {
                                 type="button"
                                 aria-label={`Go to slide ${dotIndex + 1}`}
                                 onClick={() => goTo(Math.min(dotIndex, maxIndex), dotIndex > index ? 1 : -1)}
-                                className={`size-[8px] rounded-full border-[0.5px] transition-colors ${dotIndex === index ? "bg-[#0061af] border-[#0061af]" : "border-black"
+                                className={`size-[8px] rounded-full border-[0.5px] transition-colors ${dotIndex === index ? "bg-[#2d8ec5] border-[#2d8ec5]" : "border-black"
                                     }`}
                             />
                         ))}

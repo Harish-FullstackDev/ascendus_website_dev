@@ -49,7 +49,7 @@ const FULL_TEXT = WORDS.map((w) => w.text).join(" ");
 const REVEAL_START = 0.05;
 const REVEAL_END = 0.95;
 const DIM_COLOR = [199, 204, 209]; // #c7ccd1
-const FINAL_COLOR = [74, 85, 104]; // #4a5568
+const FINAL_COLOR = [74, 85, 104]; // #55595E
 const HIGHLIGHT_COLOR = [45, 142, 197]; // #2d8ec5
 
 function mixColor(a, b, t) {
@@ -119,7 +119,7 @@ export default function TechnologyPartner() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
-                            className="text-[#10161D] text-[28px] font-medium leading-[1.4]"
+                            className="text-[#2E3033] text-[28px] font-medium leading-[1.4]"
                         >
                             A Technology Partner Built for Enterprise Complexity
                         </motion.h2>
@@ -147,12 +147,12 @@ export default function TechnologyPartner() {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                         className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 sm:gap-10 max-w-[1280px]"
                     >
-                        <h3 className="text-[#10161d] text-[28px] font-medium leading-[1.4] shrink-0">
+                        <h3 className="text-[#2E3033] text-[28px] font-medium leading-[1.4] shrink-0">
                             Built for Enterprise Execution
                         </h3>
 
                         <div className="flex flex-col gap-6 w-full sm:max-w-[403px]">
-                            <p className="text-[#4a5568] text-lg font-light leading-[1.6] tracking-[0.18px]">
+                            <p className="text-[#55595E] text-lg font-light leading-[1.6] tracking-[0.18px]">
                                 We bring SAP, cloud, data, AI, and digital solutions together to help businesses
                                 simplify operations, stay compliant, and scale with confidence.
                             </p>

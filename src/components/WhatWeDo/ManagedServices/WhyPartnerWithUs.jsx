@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import buildingImg from "@/assets/WhatWeDo/Managed Services/webp/Why_Partner.webp";
+import buildingImg from "@/assets/WhatWeDo/Managed Services/new/why.jpg";
 
 const BENEFITS = [
     "SAP-certified support teams",
@@ -15,7 +15,7 @@ const BENEFITS = [
 
 export default function WhyPartnerWithUs() {
     return (
-        <section className="relative z-10 w-full pt-10 pb-10 sm:pb-0">
+        <section className="relative z-10 w-full pt-10 sm:pt:16 pb-10 sm:pb-0">
             {/* The image is a full-bleed element like the photo bands in the
                 other Managed Services sections — it must reach the real
                 browser edge, not just the edge of a centered/padded container,
@@ -60,7 +60,7 @@ export default function WhyPartnerWithUs() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full lg:max-w-[800px] self-center min-h-[400px] lg:h-[480px] bg-white shadow-[2px_2px_46px_rgba(0,0,0,0.15)] flex flex-col justify-center px-6 sm:px-12 py-12" >
 
-                    <ul className="list-disc pl-5 text-lg font-light leading-[48px] text-black sm:pl-6">
+                    <ul className="list-disc pl-5 text-lg font-light leading-[48px] text-[#55595E] sm:pl-6">
                         {BENEFITS.map((benefit) => (
                             <li key={benefit}>{benefit}</li>
                         ))}

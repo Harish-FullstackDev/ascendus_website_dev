@@ -26,7 +26,7 @@ export default function DataWarehousing() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[60px]"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">Data Warehousing</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-medium">Data Warehousing</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Consolidate data from across the business into a single, high-performance warehouse
                     engineered for fast, reliable reporting and analytics at scale.
@@ -52,7 +52,7 @@ export default function DataWarehousing() {
                     className="w-full lg:absolute lg:top-[6.4%] lg:left-[35.1%] lg:h-[85.5%] lg:w-[63.4%] bg-[#f4f3f9] flex items-center px-6 sm:px-10 lg:px-[40px] py-10 sm:py-12"
                 >
                     <div className="flex gap-6 sm:gap-[69px] items-stretch w-full">
-                        <div className="w-[3px] shrink-0 rounded-full bg-[#0061af]" />
+                        <div className="w-[3px] shrink-0 rounded-full bg-[#2d8ec5]" />
                         <ul className="list-disc marker:text-[#7f7f7f] pl-5 space-y-3 sm:space-y-4 text-[#7f7f7f] text-base sm:text-xl font-light">
                             {ITEMS.map((item) => (
                                 <li key={item}>{item}</li>

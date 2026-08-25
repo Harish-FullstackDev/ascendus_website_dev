@@ -35,11 +35,11 @@ export default function Hiring() {
 
                     <div className="relative sm:absolute sm:top-1/2 sm:right-0 sm:-translate-y-1/2 bg-[#f3f6f9] w-full sm:w-[860px] -mt-4 sm:mt-0 flex flex-col justify-center gap-6 px-6 sm:pl-[60px] sm:pr-[34px] py-8 sm:py-10">
                         <div className="flex flex-col gap-3 max-w-[512px]">
-                            <p className="text-[#10161d] text-lg font-light">We&apos;re Hiring</p>
-                            <h2 className="text-[#10161d] text-xl sm:text-2xl font-medium leading-[1.35]">
+                            <p className="text-[#2E3033] text-lg font-light">We&apos;re Hiring</p>
+                            <h2 className="text-[#2E3033] text-xl sm:text-2xl font-medium leading-[1.35]">
                                 Building the Team Behind Enterprise Technology That Lasts
                             </h2>
-                            <p className="text-[#4a5568] text-base sm:text-lg font-light leading-[1.5]">
+                            <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                                 We&apos;re growing — and looking for people who care about doing enterprise
                                 technology right. If you want to build systems that actually work long after
                                 launch day, we want to hear from you.
@@ -47,7 +47,7 @@ export default function Hiring() {
                         </div>
                         <Link
                             href="/careers"
-                            className="self-start rounded-none border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#10161d] transition-colors hover:bg-[#2d8ec5] hover:text-white"
+                            className="self-start rounded-none border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#2d8ec5] hover:text-white"
                         >
                             View Open Roles
                         </Link>

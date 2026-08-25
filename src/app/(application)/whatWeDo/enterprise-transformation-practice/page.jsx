@@ -39,8 +39,8 @@ const page = () => {
                 <EngagementModelsOverview />
                 <Capabilities />
                 <EngagementModelsComparison />
-                <WhyEnterprisePartnerWithUs />
                 <IndustriesWeServe />
+                <WhyEnterprisePartnerWithUs />
             </div>
 
             <ReadyToTransform

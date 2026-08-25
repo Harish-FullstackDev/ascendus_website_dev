@@ -53,7 +53,7 @@ export default function MobileApplications() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[60px]"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">Mobile Applications</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-medium">Mobile Applications</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Build native and cross-platform mobile applications that provide exceptional performance, security,
                     and user engagement.
@@ -81,9 +81,9 @@ export default function MobileApplications() {
                                 <div className="absolute inset-0 bg-black/50" />
                             </>
                         ) : (
-                            <div className="absolute inset-0 bg-[#16171a]" />
+                            <div className="absolute inset-0 bg-[#0a2b3e]" />
                         )}
-                        <div className="absolute inset-0 bg-[#16171A] opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100" />
+                        <div className="absolute inset-0 bg-[#0A2B3E] opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100" />
                         <div className="absolute inset-x-0 bottom-0 flex flex-col px-8 sm:px-10 pb-6 sm:pb-10">
                             <p className="text-white text-xl sm:text-2xl font-normal">{card.title}</p>
                             <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out group-hover:grid-rows-[1fr]">

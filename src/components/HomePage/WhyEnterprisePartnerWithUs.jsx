@@ -41,10 +41,10 @@ export default function WhyEnterprisePartnerWithUs() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[38%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <h2 className="text-[#10161d] text-[28px] font-medium">
+                    <h2 className="text-[#2E3033] text-[28px] font-medium">
                         A Partnership Built on <span className="text-[#0061AF]">Delivery Discipline</span>
                     </h2>
-                    <p className="text-[#4a5568] text-lg font-light">
+                    <p className="text-[#55595E] text-lg font-light">
                         Everything an enterprise technology estate needs,under one roof
                     </p>
                 </motion.div>
@@ -63,8 +63,8 @@ export default function WhyEnterprisePartnerWithUs() {
                                     <Image src={item.icon} alt="" fill className="object-contain" />
                                 </div>
                                 <div className="flex-1 min-w-0 flex flex-col gap-3">
-                                    <h2 className="text-[#10161d] text-xl sm:text-2xl font-medium">{item.title}</h2>
-                                    <p className="text-[#4a5568] text-base sm:text-lg font-light">{item.desc}</p>
+                                    <h2 className="text-[#2E3033] text-xl sm:text-2xl font-medium">{item.title}</h2>
+                                    <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                                 </div>
                             </div>
                             {index < ITEMS.length - 1 && <div className="h-px w-full bg-[#d3dae2]" />}

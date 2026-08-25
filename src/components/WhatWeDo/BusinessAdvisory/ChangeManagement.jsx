@@ -43,7 +43,7 @@ export default function ChangeManagement() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="flex gap-4 rounded-[10px] bg-[#eef6fb] px-5 py-4"
                     >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0061af] text-sm font-medium text-white">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2d8ec5] text-sm font-medium text-white">
                             {index + 1}
                         </div>
                         <div className="flex flex-col gap-1">
@@ -68,7 +68,7 @@ export default function ChangeManagement() {
                                 onMouseEnter={() => setHoveredIndex(index)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 className={`relative flex-1 flex flex-col items-center justify-center gap-5 px-4 text-center transition-colors duration-300 ${
-                                    isHovered ? "bg-[#0061af]/75 cursor-pointer" : "cursor-pointer"
+                                    isHovered ? "bg-[#2d8ec5]/75 cursor-pointer" : "cursor-pointer"
                                 }`}
                             >
                                 <p className="text-white text-xl font-medium">{step.title}</p>

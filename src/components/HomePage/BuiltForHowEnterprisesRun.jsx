@@ -47,10 +47,10 @@ export default function BuiltForHowEnterprisesRun() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-1 max-w-[714px] mx-auto text-center mb-10 sm:mb-14"
             >
-                <h2 className="text-[#10161d] text-[28px] font-medium">
+                <h2 className="text-[#2E3033] text-[28px] font-medium">
                     Built for How Enterprises <span className="text-[#0061AF]">Actually Run</span>
                 </h2>
-                <p className="text-[#4a5568] text-lg font-light">
+                <p className="text-[#55595E] text-lg font-light">
                     The details that keep an engagement predictable long after the contract is signed.
                 </p>
             </motion.div>
@@ -99,11 +99,11 @@ export default function BuiltForHowEnterprisesRun() {
 
                                 <div
                                     aria-hidden={!isActive}
-                                    className={`hidden sm:flex flex-1 min-w-0 basis-0 flex-col justify-between gap-8 overflow-hidden p-6 sm:p-8 text-[#4a5568] text-base sm:text-lg leading-[1.6] transition-opacity duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]
+                                    className={`hidden sm:flex flex-1 min-w-0 basis-0 flex-col justify-between gap-8 overflow-hidden p-6 sm:p-8 text-[#55595E] text-base sm:text-lg leading-[1.6] transition-opacity duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]
                                         ${isActive ? "opacity-100" : "opacity-0 pointer-events-none"}`}
                                 >
                                     <p className="font-light">{card.body}</p>
-                                    <p className="font-medium text-[#10161d]">{card.summary}</p>
+                                    <p className="font-medium text-[#2E3033]">{card.summary}</p>
                                 </div>
 
                                 {isActive && (
@@ -111,10 +111,10 @@ export default function BuiltForHowEnterprisesRun() {
                                         initial={{ opacity: 0, y: 8 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
-                                        className="flex sm:hidden flex-col gap-4 p-6 text-[#4a5568] text-base leading-[1.6]"
+                                        className="flex sm:hidden flex-col gap-4 p-6 text-[#55595E] text-base leading-[1.6]"
                                     >
                                         <p className="font-light">{card.body}</p>
-                                        <p className="font-medium text-[#10161d]">{card.summary}</p>
+                                        <p className="font-medium text-[#2E3033]">{card.summary}</p>
                                     </motion.div>
                                 )}
                             </button>

@@ -51,7 +51,7 @@ export default function FutureFocusedInsights() {
                     className="max-w-[700px] mb-12"
                 >
                     <p className="text-sm text-[#6c6c6c] pb-2 border-b border-[#d9d9d9] w-fit">Articles</p>
-                    <h2 className="mt-4 text-[#10161d] text-2xl sm:text-[32px] font-medium leading-[1.3]">
+                    <h2 className="mt-4 text-[#2E3033] text-2xl sm:text-[32px] font-medium leading-[1.3]">
                         Perspectives on Enterprise Technology That Matter to Your Business
                     </h2>
                 </motion.div>
@@ -69,7 +69,7 @@ export default function FutureFocusedInsights() {
                                 <Image src={item.img} alt="" fill className="object-cover" />
                             </div>
                             <p className="text-sm text-[#6c6c6c]">{item.date}</p>
-                            <h3 className="text-[#10161d] text-lg font-medium leading-[1.4]">{item.title}</h3>
+                            <h3 className="text-[#2E3033] text-lg font-medium leading-[1.4]">{item.title}</h3>
                             <button
                                 type="button"
                                 className="group flex items-center gap-2 text-[#2d8ec5] text-base font-light"

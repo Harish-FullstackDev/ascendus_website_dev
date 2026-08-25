@@ -32,7 +32,7 @@ const ITEMS = [
 
 export default function EmergingTechnologyAssessment() {
     return (
-        <section className="w-full px-6 sm:px-[64px] pt-10 sm:pt-16 pb-10 sm:pb-8">
+        <section className="w-full pt-10 sm:pt-16 pb-10 sm:pb-8 px-6 sm:px-[64px]">
             <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-12 max-w-[1390px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}
@@ -41,7 +41,7 @@ export default function EmergingTechnologyAssessment() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <h2 className="text-[#16171A] text-2xl sm:text-2xl font-medium">Emerging Technology Assessment</h2>
+                    <h2 className="text-[#2E3033] text-2xl sm:text-2xl font-medium">Emerging Technology Assessment</h2>
                     <p className="text-[#55595E] text-lg font-light">
                         Practical assessment services that help enterprises understand where emerging technologies
                         can create business value.
@@ -62,11 +62,11 @@ export default function EmergingTechnologyAssessment() {
                                     <Image src={item.icon} alt="" fill className="object-contain" />
                                 </div>
                                 <div className="flex-1 min-w-0 flex flex-col gap-2 sm:gap-3">
-                                    <p className="text-[#16171A] text-xl sm:text-2xl font-medium">{item.title}</p>
+                                    <p className="text-[#2E3033] text-xl sm:text-2xl font-medium">{item.title}</p>
                                     <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                                 </div>
                             </div>
-                            <div className="h-px w-full bg-[#D4D6D8]" />
+                            <div className="h-px w-full bg-[#E2E5EA]" />
                         </div>
                     ))}
                 </motion.div>

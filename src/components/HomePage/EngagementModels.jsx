@@ -41,10 +41,10 @@ export default function EngagementModels() {
                 className="flex flex-col items-center gap-5 max-w-[818px] mx-auto text-center mb-10 sm:mb-14"
             >
                 <h2 className="text-[28px] font-medium">
-                    <span className="text-[#10161d]">An Engagement Model Built Around </span>
+                    <span className="text-[#2E3033]">An Engagement Model Built Around </span>
                     <span className="text-[#0061AF]">Flexibility</span>
                 </h2>
-                <p className="text-[#4a5568] text-lg font-light">
+                <p className="text-[#55595E] text-lg font-light">
                     Choose the engagement model that fits your needs, from focused projects to ongoing support and
                     strategic guidance.
                 </p>
@@ -62,8 +62,8 @@ export default function EngagementModels() {
                         <div className="relative size-12 shrink-0">
                             <Image src={model.icon} alt="" fill className="object-contain" />
                         </div>
-                        <p className="text-[#10161d] text-xl font-normal">{model.title}</p>
-                        <p className="text-[#4a5568] text-base font-extralight">{model.desc}</p>
+                        <p className="text-[#2E3033] text-xl font-normal">{model.title}</p>
+                        <p className="text-[#55595E] text-base font-extralight">{model.desc}</p>
                     </div>
                 ))}
             </motion.div>

@@ -15,7 +15,7 @@ export default function InfrastructureServices() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center lg:items-start gap-4 text-center lg:text-left w-full lg:w-[647px] pl-6 sm:pl-[100px]"
                 >
-                    <h2 className="text-[#16171a] text-2xl font-medium">Infrastructure Services</h2>
+                    <h2 className="text-[#0d0c22] text-2xl font-medium">Infrastructure Services</h2>
                     <p className="text-black text-lg font-normal">Build a Reliable Technology Foundation</p>
                     <p className="text-[#3d3d4e] text-lg font-light">
                         Design, deploy, and manage enterprise infrastructure that supports business-critical

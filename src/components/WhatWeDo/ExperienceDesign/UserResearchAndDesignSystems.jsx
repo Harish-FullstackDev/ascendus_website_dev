@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import UIUXDesign from "@/assets/WhatWeDo/Experience Design/webp/Experience_UI_UX.webp";
-import ProductDesign from "@/assets/WhatWeDo/Experience Design/webp/Experience_Product_Design.webp";
-import UserResearch from "@/assets/WhatWeDo/Experience Design/webp/Experience_User_Research.webp";
-import DesignSystems from "@/assets/WhatWeDo/Experience Design/webp/Experience_Design_System.webp";
+import UIUXDesign from "@/assets/WhatWeDo/Experience Design/new/UIUXDesign.jpg";
+import ProductDesign from "@/assets/WhatWeDo/Experience Design/new/Product_Design.jpg";
+import UserResearch from "@/assets/WhatWeDo/Experience Design/new/User_Research.jpg";
+import DesignSystems from "@/assets/WhatWeDo/Experience Design/new/Design_Systems.jpg";
 
 const TABS = [
     {
@@ -54,7 +54,7 @@ export default function UserResearchAndDesignSystems() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full px-6 sm:px-0 flex flex-col items-center gap-8 sm:gap-16 pt-10 sm:pt-16">
+        <section className="w-full pt-10 sm:pt-16 px-6 sm:px-0 flex flex-col items-center gap-8 sm:gap-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -62,9 +62,9 @@ export default function UserResearchAndDesignSystems() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[1011px] text-center"
             >
-                <h2 className="text-black text-2xl font-medium">User Research & Design Systems
+                <h2 className="text-[#2E3033] text-[28px] font-medium">User Research & Design Systems
                 </h2>
-                <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Flagship UX/UI, product, and design system capabilities
                 </p>
             </motion.div>
@@ -86,11 +86,11 @@ export default function UserResearchAndDesignSystems() {
                             }}
                             onClick={() => setActive(index)}
                             className={`text-left border-l-[3px] flex items-center h-12 px-3.5 transition-colors ${index === active
-                                ? "border-[#0061af] text-black"
+                                ? "border-[#2d8ec5] text-black"
                                 : "border-[#6c6c6c] text-[#6c6c6c] opacity-70"
                                 }`}
                         >
-                            <span className="text-base sm:text-2xl font-light">{tab.label}</span>
+                            <h2 className="text-base sm:text-2xl font-light">{tab.label}</h2>
                         </button>
                     ))}
                 </div>

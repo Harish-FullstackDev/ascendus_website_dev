@@ -89,7 +89,7 @@ export default function CybersecurityDeliveryFramework() {
                         <motion.div
                             animate={{ top: `${progress * (346 - 42)}px` }}
                             transition={{ duration: 0.4, ease: "easeOut" }}
-                            className="absolute w-[3px] h-[42px] rounded-full bg-[#0061af]"
+                            className="absolute w-[3px] h-[42px] rounded-full bg-[#2d8ec5]"
                         />
                         <button
                             type="button"

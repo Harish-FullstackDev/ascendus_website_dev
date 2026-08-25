@@ -41,7 +41,7 @@ export default function QualityPerformanceEngineering() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[900px] text-center"
                 >
-                    <h2 className="text-black text-2xl font-medium">Quality &amp; Performance Engineering</h2>
+                    <h2 className="text-#2E3033 text-[28px] font-medium">Quality &amp; Performance Engineering</h2>
                     <p className="text-[#55595E] text-lg font-light">
                         Engineering capabilities focused on software quality, performance, security, and
                         long-term reliability.
@@ -59,7 +59,7 @@ export default function QualityPerformanceEngineering() {
                             className="flex flex-col items-center gap-6 text-center"
                         >
                             <Image src={item.icon} alt="" width={48} height={48} />
-                            <p className="text-black text-xl font-normal">{item.title}</p>
+                            <p className="text-[#2E3033] text-xl font-normal">{item.title}</p>
                             <p className="text-[#55595E] text-lg font-light">{item.desc}</p>
                         </motion.div>
                     ))}

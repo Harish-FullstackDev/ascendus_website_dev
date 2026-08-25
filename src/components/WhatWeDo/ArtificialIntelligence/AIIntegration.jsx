@@ -40,7 +40,7 @@ export default function AIIntegration() {
                 >
                     <div className="flex flex-col gap-5 w-full">
                         <p className="text-black text-lg sm:text-2xl font-light">From Pilot to Production:</p>
-                        <p className="text-[#4a5568] text-base sm:text-lg font-light">
+                        <p className="text-[#55595E] text-base sm:text-lg font-light">
                             Most AI initiatives stall between proof of concept and enterprise rollout. We close that
                             gap with implementation discipline: data readiness, integration architecture, and change
                             management planned from the start, so pilots become platforms, not shelf ware.
@@ -70,7 +70,7 @@ export default function AIIntegration() {
                             <p className="text-black text-lg sm:text-2xl font-light">
                                 AI Agents That Work Inside Your Processes:
                             </p>
-                            <p className="text-[#4a5568] text-base sm:text-lg font-light">
+                            <p className="text-[#55595E] text-base sm:text-lg font-light">
                                 We design agents around real business workflows: approvals, exceptions,
                                 reconciliations, service requests, with clear boundaries for what they execute
                                 autonomously and what they escalate to your teams.

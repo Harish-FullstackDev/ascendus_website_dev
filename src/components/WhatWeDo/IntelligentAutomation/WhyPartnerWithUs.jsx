@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import workflowPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_Why_Partner.webp";
+import workflowPhoto from "@/assets/WhatWeDo/Intelligent Automation/Section4_image.svg";
 
 const SERVICES = [
     "Process mining before automation",
@@ -27,10 +27,10 @@ export default function WhyPartnerWithUs() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[760px] text-center px-6 sm:px-10"
             >
-                <h2 className="font-heading text-black text-2xl sm:text-[28px] font-medium">
+                <h2 className="text-[#2E3033] text-[28px] sm:text-[28px] font-medium">
                     Why Partner With Us
                 </h2>
-                <p className="text-[#4a5568] text-base sm:text-lg font-light">
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Our proven methods for building automation that remains maintainable at scale.
                 </p>
             </motion.div>
@@ -49,13 +49,13 @@ export default function WhyPartnerWithUs() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="absolute left-[32%] right-0 top-[5%] h-[85%] bg-[#f5f6f6] overflow-hidden flex items-center pl-[clamp(2rem,7vw,6.5rem)] pr-6 lg:pr-10"
+                    className="absolute left-[32%] right-0 top-[5%] h-[85%] bg-[#f3f6f9] overflow-hidden flex items-center pl-[clamp(2rem,7vw,6.5rem)] pr-6 lg:pr-10"
                 >
                     <ul className="w-full max-w-[620px]">
                         {SERVICES.map((item) => (
                             <li
                                 key={item}
-                                className="ms-9 list-disc text-[#4a5568] text-lg lg:text-2xl font-light leading-[1.9]"
+                                className="ms-9 list-disc text-[#55595E] text-lg lg:text-2xl font-light leading-[1.9]"
                             >
                                 {item}
                             </li>
@@ -82,8 +82,8 @@ export default function WhyPartnerWithUs() {
                     same as the original design. Fixed px width/offset since
                     it's a small decorative divider anchored to the image,
                     which itself is still flush with the true left edge. */}
-                <div className="absolute left-[8.5%] top-0 w-px h-[33%] bg-[#0061af] z-20" />
-                <div className="absolute left-[100px] top-[93%] w-[555px] h-px bg-[#0061af]" />
+                <div className="absolute left-[8.5%] top-0 w-px h-[33%] bg-[#2d8ec5] z-20" />
+                <div className="absolute left-[100px] top-[93%] w-[555px] h-px bg-[#2d8ec5]" />
             </div>
 
             {/* ===== Mobile: simple stacked layout, still edge-to-edge ===== */}
@@ -96,13 +96,13 @@ export default function WhyPartnerWithUs() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="w-full bg-[#f5f6f6] px-6 py-10"
+                    className="w-full bg-[#f3f6f9] px-6 py-10"
                 >
                     <ul>
                         {SERVICES.map((item) => (
                             <li
                                 key={item}
-                                className="ms-6 list-disc text-[#4a5568] text-base font-light leading-[1.9]"
+                                className="ms-6 list-disc text-[#55595E] text-base font-light leading-relaxed"
                             >
                                 {item}
                             </li>

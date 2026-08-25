@@ -106,8 +106,8 @@ export default function CloudPlatformsServices() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full bg-white py-10 px-6 sm:p-16">
-            <div className="flex flex-col items-center gap-10 sm:gap-16 lg:gap-20 w-full">
+        <section className="w-full bg-white py-10 sm:p-16 px-6">
+            <div className="w-full flex flex-col items-center gap-10 sm:gap-16 lg:gap-20">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -115,7 +115,7 @@ export default function CloudPlatformsServices() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-3 text-center"
                 >
-                    <h2 className="text-black text-2xl font-medium">Cloud Platforms &amp; Services</h2>
+                    <h2 className="text-[#2E3033] text-[28px] font-medium">Cloud Platforms &amp; Services</h2>
                     <p className="text-[#55595E] text-lg font-light max-w-[700px]">
                         Cloud solutions built around the right platform, workload, security requirements, and
                         business objectives.
@@ -132,9 +132,9 @@ export default function CloudPlatformsServices() {
                                     type="button"
                                     aria-pressed={isActive}
                                     onClick={() => setActive(index)}
-                                    className={`bg-white border h-[93px] flex items-center justify-center transition-all duration-300 ${isActive
-                                        ? "border-black shadow-[2px_4px_20px_0px_rgba(0,0,0,0.25)]"
-                                        : "border-black/40 hover:border-black/70"
+                                    className={`bg-white h-[93px] flex items-center justify-center transition-all duration-300 ${isActive
+                                        ? "shadow-[2px_4px_20px_0px_rgba(0,0,0,0.25)]"
+                                        : ""
                                         }`}
                                 >
                                     <Image
@@ -156,13 +156,20 @@ export default function CloudPlatformsServices() {
                             transition={{ duration: 0.35, ease: "easeOut" }}
                             className="flex flex-col gap-4 sm:gap-5"
                         >
-                            <p className="text-black text-lg sm:text-xl lg:text-2xl font-medium">{activeTab.intro}</p>
-                            {activeTab.categories.map((cat) => (
-                                <p key={cat.label} className="text-lg sm:text-xl lg:text-2xl font-light">
-                                    <span className="font-medium text-black">{cat.label}:</span>{" "}
-                                    <span className="text-[#55595E]">{cat.desc}</span>
-                                </p>
-                            ))}
+                            <h2 className="text-[#2E3033] text-lg sm:text-xl lg:text-2xl font-medium">{activeTab.intro}</h2>
+                            <ul className="flex flex-col gap-4 sm:gap-5 list-disc pl-6">
+                                {activeTab.categories.map((cat) => (
+                                    <li
+                                        key={cat.label}
+                                        className="text-lg font-light text-[#55595E] pl-2"
+                                    >
+                                        <span className="font-medium text-[#2E3033]">
+                                            {cat.label}:
+                                        </span>{" "}
+                                        {cat.desc}
+                                    </li>
+                                ))}
+                            </ul>
                         </motion.div>
                     </AnimatePresence>
                 </div>
@@ -170,4 +177,5 @@ export default function CloudPlatformsServices() {
         </section>
     );
 }
+
 

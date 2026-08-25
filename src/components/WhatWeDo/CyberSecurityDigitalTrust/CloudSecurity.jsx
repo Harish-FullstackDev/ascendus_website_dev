@@ -98,7 +98,7 @@ export default function CloudSecurity() {
                 <div className="flex items-center gap-4 sm:gap-6 w-full">
                     <div className="relative flex-1 h-[10px] rounded-full bg-[#d9d9d9] overflow-hidden">
                         <div
-                            className="absolute inset-y-0 left-0 rounded-full bg-[#0061af] transition-all duration-300"
+                            className="absolute inset-y-0 left-0 rounded-full bg-[#2d8ec5] transition-all duration-300"
                             style={{ width: `${Math.max(progress * 100, 8)}%` }}
                         />
                     </div>

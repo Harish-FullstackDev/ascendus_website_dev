@@ -93,7 +93,7 @@ export default function SecurityOperations() {
                                 key={tab.title}
                                 type="button"
                                 onClick={() => setActiveIndex(index)}
-                                className={`flex items-center text-left h-[50px] px-4 border-l-[3px] transition-colors duration-300 ${isActive ? "border-[#0061af] opacity-100" : "border-[#6c6c6c] opacity-70"
+                                className={`flex items-center text-left h-[50px] px-4 border-l-[3px] transition-colors duration-300 ${isActive ? "border-[#2d8ec5] opacity-100" : "border-[#6c6c6c] opacity-70"
                                     }`}
                             >
                                 <span className={`text-base sm:text-lg font-light transition-colors duration-300 ${isActive ? "text-black" : "text-[#6c6c6c]"}`}>

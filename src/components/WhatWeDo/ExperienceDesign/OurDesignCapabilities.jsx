@@ -1,22 +1,19 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import introPhoto from "@/assets/WhatWeDo/Experience Design/Section2_Image.jpg";
 
-const capabilities = [
-    "Research-led design process",
-    "Enterprise UX specialization",
-    "Reusable design systems",
-    "Accessibility built in",
-    "Engineering-ready handoff",
-    "Cross-platform design capability",
+// Hardcoded as two rows (matching Figma's exact 3-and-3 grouping) rather than
+// a single auto-wrapping list — a plain flex-wrap here is width-sensitive and
+// can silently reflow to 2-per-row or let a 4th pill sneak into row one.
+// Each row still wraps further on its own if the viewport is too narrow.
+const CAPABILITY_ROWS = [
+    ["Research-Led Design Process", "Enterprise UX Specialization", "Reusable Design Systems"],
+    ["Accessibility Built In", "Engineering-Ready Handoff", "Cross-Platform Design Capability"],
 ];
 
 export default function OurDesignCapabilities() {
     return (
         <section className="w-full px-6 pt-8 pb-16 sm:px-[64px]">
-
             {/* Heading */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -25,58 +22,37 @@ export default function OurDesignCapabilities() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-black text-2xl font-medium">
-                    Our Design Capabilities
-                </h2>
-
-                <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
+                <h2 className="text-[#2E3033] text-[28px] font-medium">Our Design Capabilities</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Key differentiators of our design practice
                 </p>
             </motion.div>
 
-            {/* Content */}
-            <div className="flex flex-col lg:flex-row items-center lg:justify-between sm:px- gap-10 lg:gap-[143px]">
-
-                {/* Capabilities List */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{
-                        duration: 0.6,
-                        ease: "easeOut",
-                        delay: 0.1,
-                    }}
-                    className="flex flex-col gap-7 w-full lg:flex-[623] lg:max-w-[623px] min-w-0"
-                >
-                    <ul className="text-[#3d3d4e] text-lg sm:text-xl font-light list-disc pl-5 space-y-4">
-                        {capabilities.map((item) => (
-                            <li key={item}>{item}</li>
+            {/* Capability pills — sized to their own text, packed with a fixed minimal gap,
+                each row centered independently (matches Figma's flex-wrap + justify-center).
+                Grey border by default, blue on hover on every pill — Figma's node just shows
+                the first one mid-hover as an example, not a distinct default state. */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                className="flex flex-col items-center gap-6 sm:gap-10 max-w-[1300px] mx-auto"
+            >
+                {CAPABILITY_ROWS.map((row, rowIndex) => (
+                    <div key={rowIndex} className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+                        {row.map((item) => (
+                            <div
+                                key={item}
+                                className="border border-[#d3dae2] hover:border-[#2d8ec5] rounded-2xl px-4 py-3 transition-colors duration-300"
+                            >
+                                <p className="text-[#55595E] text-lg sm:text-2xl font-light whitespace-normal sm:whitespace-nowrap text-center">{item}</p>
+                            </div>
                         ))}
-                    </ul>
-                </motion.div>
-
-                {/* Image */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{
-                        duration: 0.6,
-                        ease: "easeOut",
-                        delay: 0.2,
-                    }}
-                    className="relative w-full lg:flex-[560] lg:max-w-[560px] aspect-[467/357] overflow-hidden bg-black"
-                >
-                    <Image
-                        src={introPhoto}
-                        alt=""
-                        fill
-                        className="object-cover"
-                    />
-                </motion.div>
-
-            </div>
+                    </div>
+                ))}
+            </motion.div>
         </section>
     );
 }
+

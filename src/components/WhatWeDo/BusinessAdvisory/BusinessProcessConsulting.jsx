@@ -99,7 +99,7 @@ export default function BusinessProcessConsulting() {
             <div className="flex items-center justify-between w-full max-w-[1163px] gap-4">
                 <div className="relative flex-1 h-[8px] rounded-full bg-[#ebebeb] overflow-hidden">
                     <div
-                        className="absolute inset-y-0 left-0 rounded-full bg-[#0061af] transition-all duration-300"
+                        className="absolute inset-y-0 left-0 rounded-full bg-[#2d8ec5] transition-all duration-300"
                         style={{ width: `${((active + 1) / SLIDES.length) * 100}%` }}
                     />
                 </div>
@@ -110,7 +110,7 @@ export default function BusinessProcessConsulting() {
                         onClick={handlePrev}
                         disabled={active === 0}
                         className={`text-2xl transition-colors ${
-                            active === 0 ? "text-black/30 cursor-not-allowed" : "text-black hover:text-[#0061af]"
+                            active === 0 ? "text-black/30 cursor-not-allowed" : "text-black hover:text-[#2d8ec5]"
                         }`}
                     >
                         ←
@@ -124,7 +124,7 @@ export default function BusinessProcessConsulting() {
                         onClick={handleNext}
                         disabled={active === SLIDES.length - 1}
                         className={`text-2xl transition-colors ${
-                            active === SLIDES.length - 1 ? "text-black/30 cursor-not-allowed" : "text-black hover:text-[#0061af]"
+                            active === SLIDES.length - 1 ? "text-black/30 cursor-not-allowed" : "text-black hover:text-[#2d8ec5]"
                         }`}
                     >
                         →

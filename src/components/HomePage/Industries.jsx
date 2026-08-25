@@ -30,16 +30,16 @@ export default function Industries() {
                     className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6"
                 >
                     <div className="flex flex-col gap-2">
-                        <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">
+                        <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-medium">
                             Industry-Specific Solutions
                         </h2>
-                        <p className="text-[#4a5568] text-lg font-light leading-[1.4]">
+                        <p className="text-[#55595E] text-lg font-light leading-[1.4]">
                             Built for Your Industry, Not Just Enterprise in General
                         </p>
                     </div>
                     <Link
                         href="/who-we-are"
-                        className="shrink-0 rounded-[54px] border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#10161d] text-center transition-colors hover:bg-[#2d8ec5] hover:text-white whitespace-nowrap"
+                        className="shrink-0 rounded-[54px] border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] text-center transition-colors hover:bg-[#2d8ec5] hover:text-white whitespace-nowrap"
                     >
                         Find Your Industry Solution
                     </Link>

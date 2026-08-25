@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import monitoringIcon from "@/assets/WhatWeDo/Managed Services/Icons/Section_24_7Monitoring.svg";
-import performanceIcon from "@/assets/WhatWeDo/Managed Services/Icons/Section_PerformanceManagement.svg";
-import capacityIcon from "@/assets/WhatWeDo/Managed Services/Icons/Section_CapacityManagement.svg";
-import incidentIcon from "@/assets/WhatWeDo/Managed Services/Icons/Section_IncidentManagement.svg";
-import availabilityIcon from "@/assets/WhatWeDo/Managed Services/Icons/Section_AvailabilityManagement.svg";
-import reportingIcon from "@/assets/WhatWeDo/Managed Services/Icons/Section_OperationalReporting.svg";
+import monitoringIcon from "@/assets/WhatWeDo/Managed Services/icons/Section_24_7Monitoring.svg";
+import performanceIcon from "@/assets/WhatWeDo/Managed Services/icons/Section_PerformanceManagement.svg";
+import capacityIcon from "@/assets/WhatWeDo/Managed Services/icons/Section_CapacityManagement.svg";
+import incidentIcon from "@/assets/WhatWeDo/Managed Services/icons/Section_IncidentManagement.svg";
+import availabilityIcon from "@/assets/WhatWeDo/Managed Services/icons/Section_AvailabilityManagement.svg";
+import reportingIcon from "@/assets/WhatWeDo/Managed Services/icons/Section_OperationalReporting.svg";
 
 const CARDS = [
     {
@@ -99,7 +99,7 @@ export default function ProactiveSystemOperations() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[340px] shrink-0 lg:pt-8"
                 >
-                    <h2 className="text-[#16171A] text-2xl font-medium">Proactive System Operations</h2>
+                    <h2 className="text-[#2E3033] text-[28px] font-medium">Proactive System Operations</h2>
                     <p className="text-[#55595E] text-xl font-normal">
                         Ongoing operational capabilities that help enterprise systems remain stable, available, and
                         performant.
@@ -127,7 +127,7 @@ export default function ProactiveSystemOperations() {
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.2 }}
                         variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
-                        className="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden pb-2"
+                        className="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden pb-2"
                     >
                         {CARDS.map((card, index) => (
                             <motion.div
@@ -138,7 +138,7 @@ export default function ProactiveSystemOperations() {
                                 className="snap-start shrink-0 w-[260px] sm:w-[335px] h-[280px] sm:h-[360px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-center text-center px-6 sm:px-7 py-7 sm:py-8"
                             >
                                 <Image src={card.icon} alt="" width={44} height={44} className="mb-5" />
-                                <p className="text-black text-xl sm:text-2xl font-normal">{card.title}</p>
+                                <p className="text-[#2E3033] text-xl sm:text-2xl font-normal">{card.title}</p>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light mt-5">{card.desc}</p>
                             </motion.div>
                         ))}
@@ -150,7 +150,7 @@ export default function ProactiveSystemOperations() {
                             aria-label="Previous"
                             onClick={() => scrollByCard(-1)}
                             disabled={!canScrollLeft}
-                            className={`flex items-center justify-center size-9 sm:size-[46px] transition-[color,transform] disabled:cursor-not-allowed ${canScrollLeft ? "text-black hover:scale-110" : "text-[#D4D6D8]"
+                            className={`flex items-center justify-center size-9 sm:size-[46px] transition-[color,transform] disabled:cursor-not-allowed ${canScrollLeft ? "text-black hover:scale-110" : "text-[#c7c7c7]"
                                 }`}
                         >
                             <ArrowIcon direction="left" />
@@ -160,7 +160,7 @@ export default function ProactiveSystemOperations() {
                             aria-label="Next"
                             onClick={() => scrollByCard(1)}
                             disabled={!canScrollRight}
-                            className={`flex items-center justify-center size-9 sm:size-[46px] transition-[color,transform] disabled:cursor-not-allowed ${canScrollRight ? "text-black hover:scale-110" : "text-[#D4D6D8]"
+                            className={`flex items-center justify-center size-9 sm:size-[46px] transition-[color,transform] disabled:cursor-not-allowed ${canScrollRight ? "text-black hover:scale-110" : "text-[#c7c7c7]"
                                 }`}
                         >
                             <ArrowIcon direction="right" />

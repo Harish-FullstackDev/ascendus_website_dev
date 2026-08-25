@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import integrationImage1 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/webp/Cybersecurity_Access_Control.webp";
-import integrationImage2 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/webp/Cybersecurity_Finding_Gaps.webp";
+import integrationImage1 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/Access.jpg";
+import integrationImage2 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/Finding.jpg";
 
 
 
 export default function AccessControlSimulatedAttacks() {
     return (
-        <section className="w-full px-6 sm:px-[64px] pt-10 sm:pt-8 pb-10 sm:pb-16">
+        <section className="w-full pt-10 sm:pt-8 pb-10 sm:pb-16 px-6 sm:px-[64px]">
             <div className="flex flex-col gap-10 sm:gap-16 max-w-screen mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -18,10 +18,10 @@ export default function AccessControlSimulatedAttacks() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[560px] mx-auto text-center"
                 >
-                    <h2 className="text-black text-2xl sm:text-[28px] font-medium">
+                    <h2 className="text-[#2E3033] text-[28px] sm:text-[28px] font-medium">
                         Access Control & Simulated Attacks
                     </h2>
-                    <p className="text-[#515151] text-base sm:text-lg font-light">
+                    <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Securing SAP permissions and testing environments against real-world threats.
                     </p>
                 </motion.div>
@@ -34,8 +34,8 @@ export default function AccessControlSimulatedAttacks() {
                     className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[100px]"
                 >
                     <div className="flex flex-col gap-5 w-full">
-                        <p className="text-black text-lg sm:text-2xl font-light">Access Control That Actually Holds</p>
-                        <p className="text-[#4a5568] text-base sm:text-lg font-light">
+                        <p className="text-[#2E3033] text-lg sm:text-2xl font-light">Access Control That Actually Holds</p>
+                        <p className="text-[#55595E] text-base sm:text-lg font-light">
                             We design identity and access management, including
                             SAP segregation of duties, so the right people have the right access and nothing more,
                             closing the gaps that generic access reviews miss.
@@ -58,10 +58,10 @@ export default function AccessControlSimulatedAttacks() {
                             <Image src={integrationImage2} alt="" fill className="object-cover" />
                         </div>
                         <div className="flex flex-col gap-5 w-full">
-                            <p className="text-black text-lg sm:text-2xl font-light">
+                            <p className="text-[#2E3033] text-lg sm:text-2xl font-light">
                                 Finding the Gaps Before Attackers Do
                             </p>
-                            <p className="text-[#4a5568] text-base sm:text-lg font-light">
+                            <p className="text-[#55595E] text-base sm:text-lg font-light">
                                 We run vulnerability assessments and penetration
                                 testing that go beyond automated scans, simulating real attack paths across your
                                 infrastructure, applications, and SAP environment

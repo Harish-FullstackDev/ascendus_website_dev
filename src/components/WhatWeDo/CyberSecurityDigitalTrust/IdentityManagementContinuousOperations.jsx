@@ -26,7 +26,7 @@ const itemVariants = {
 
 export default function IdentityManagementContinuousOperations() {
     return (
-        <div className="w-full h-full flex flex-col items-center justify-center gap-10 sm:gap-16 px-6 sm:px-[64px] pb-10 pt-10 sm:pt-8 sm:pb-8">
+        <div className="w-full h-full flex flex-col items-center justify-center gap-10 sm:gap-16 px-6 sm:px-[64px] pt-10 sm:pt-8 pb-10 sm:pb-8">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -34,8 +34,8 @@ export default function IdentityManagementContinuousOperations() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 text-center"
             >
-                <h2 className="font-heading text-[#16171a] text-2xl font-medium">Identity Management & Continuous Operations</h2>
-                <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
+                <h2 className="text-[#2E3033] text-[28px] font-medium">Identity Management & Continuous Operations</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Core protective pillars including IAM, GRC, SOC, and Zero Trust.
                 </p>
             </motion.div>
@@ -55,7 +55,7 @@ export default function IdentityManagementContinuousOperations() {
                         <Image src={card.image} alt="" fill className="object-cover" />
                         <div className="absolute inset-0 bg-black/60" />
                         <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
-                            <p className="text-white text-xl font-normal">{card.title}</p>
+                            <h2 className="text-white text-xl font-medium">{card.title}</h2>
                             <p className="text-white/85 text-sm font-light max-w-[280px]">{card.desc}</p>
                         </div>
                     </motion.div>
@@ -84,12 +84,12 @@ export default function IdentityManagementContinuousOperations() {
                             Anchoring to `bottom` instead of `top` means the block grows upward as the
                             description expands, reproducing that shift without hand-tuned positions
                             per state. text-2xl/text-lg + font-light match Figma's actual type spec
-                            (24px/18px, General Sans Light). */}
+                            (24px/18px, Manrope Light). */}
                         <div className="absolute left-[12%] right-[12%] bottom-[12%] flex flex-col text-white">
                             <p className="text-2xl font-light">{card.title}</p>
                             <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out">
                                 <div className="overflow-hidden">
-                                    <p className="text-base font-light pt-2">{card.desc}</p>
+                                    <p className="text-lg font-light pt-2">{card.desc}</p>
                                 </div>
                             </div>
                         </div>

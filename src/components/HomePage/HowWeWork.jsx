@@ -57,7 +57,7 @@ export default function HowWeWork() {
                     {STEPS.map((step) => (
                         <div key={step.num} className="flex flex-col items-center gap-6 text-center">
                             <div className="w-[60px] h-[60px] bg-white rounded-full flex items-center justify-center shrink-0">
-                                <span className="text-[#10161d] text-3xl font-light">{step.num}</span>
+                                <span className="text-[#2E3033] text-3xl font-light">{step.num}</span>
                             </div>
                             <div className="flex flex-col gap-3 text-white">
                                 <h3 className="text-lg font-medium">{step.title}</h3>

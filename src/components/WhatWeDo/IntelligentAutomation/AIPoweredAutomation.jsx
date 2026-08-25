@@ -55,7 +55,7 @@ export default function AIPoweredAutomation() {
                         type="button"
                         aria-label="Previous"
                         onClick={() => step(-1)}
-                        className="shrink-0 text-white text-2xl sm:text-3xl hover:text-[#0061af] transition-colors -translate-x-0 sm:-translate-x-20"
+                        className="shrink-0 text-white text-2xl sm:text-3xl hover:text-[#2d8ec5] transition-colors -translate-x-0 sm:-translate-x-20"
                     >
                         <Image src={leftArrow} alt="" width={32} height={32} />
                     </button>
@@ -78,7 +78,7 @@ export default function AIPoweredAutomation() {
                         type="button"
                         aria-label="Next"
                         onClick={() => step(1)}
-                        className="shrink-0 text-white text-2xl sm:text-3xl hover:text-[#0061af] transition-colors translate-x-0 sm:translate-x-20"
+                        className="shrink-0 text-white text-2xl sm:text-3xl hover:text-[#2d8ec5] transition-colors translate-x-0 sm:translate-x-20"
                     >
                         <Image src={rightArrow} alt="" width={32} height={32} />
                     </button>

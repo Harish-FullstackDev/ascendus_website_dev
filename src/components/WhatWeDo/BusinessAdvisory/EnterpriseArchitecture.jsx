@@ -95,7 +95,7 @@ export default function EnterpriseArchitecture() {
                             onClick={() => setActive(index)}
                             className={`text-left border-l-[3px] flex items-center h-12 px-3.5 transition-colors ${
                                 index === active
-                                    ? "border-[#0061af] text-black"
+                                    ? "border-[#2d8ec5] text-black"
                                     : "border-[#6c6c6c] text-[#6c6c6c] opacity-70"
                             }`}
                         >

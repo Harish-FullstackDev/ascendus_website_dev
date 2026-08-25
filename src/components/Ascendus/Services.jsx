@@ -46,8 +46,11 @@ function ServiceCard({ item }) {
     );
 }
 
+const AUTOPLAY_INTERVAL = 4000;
+
 export default function Services() {
     const scrollerRef = useRef(null);
+    const autoplayRef = useRef(null);
     const [canPrev, setCanPrev] = useState(false);
     const [canNext, setCanNext] = useState(true);
 
@@ -71,6 +74,35 @@ export default function Services() {
         el.scrollBy({ left: direction * step, behavior: "smooth" });
     };
 
+    // Auto-advance the carousel, looping back to the start once it reaches
+    // the end. Paused on hover/touch so it doesn't fight a user mid-scroll.
+    const stopAutoplay = () => {
+        if (autoplayRef.current) {
+            clearInterval(autoplayRef.current);
+            autoplayRef.current = null;
+        }
+    };
+
+    const startAutoplay = () => {
+        stopAutoplay();
+        autoplayRef.current = setInterval(() => {
+            const el = scrollerRef.current;
+            if (!el) return;
+            const atEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth - 4;
+            if (atEnd) {
+                el.scrollTo({ left: 0, behavior: "smooth" });
+            } else {
+                scroll(1);
+            }
+        }, AUTOPLAY_INTERVAL);
+    };
+
+    useEffect(() => {
+        startAutoplay();
+        return stopAutoplay;
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
         <section id="ascendus-services" className="w-full bg-white pt-8 pb-8 sm:p-16 px-6">
             <div className="w-full flex flex-col gap-16">
@@ -82,10 +114,10 @@ export default function Services() {
                     className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
                 >
                     <div className="flex flex-col gap-2 max-w-[808px]">
-                        <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium leading-[1.4] tracking-[0.28px]">
+                        <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-medium leading-[1.4] tracking-[0.28px]">
                             Everything an Enterprise Needs to Run on Modern Technology
                         </h2>
-                        <p className="text-[#4a5568] text-lg font-light leading-[1.5] max-w-[600px]">
+                        <p className="text-[#55595E] text-lg font-light leading-[1.5] max-w-[600px]">
                             A complete technology foundation that connects strategy, systems, security, data, and
                             operations to help enterprises scale with confidence.
                         </p>
@@ -93,8 +125,24 @@ export default function Services() {
 
                     {/* Same arrow control as CoreCapabilities — no pill wrapper */}
                     <div className="flex items-center gap-2 shrink-0 self-start md:self-auto">
-                        <ArrowButton direction={-1} disabled={!canPrev} onClick={() => scroll(-1)} />
-                        <ArrowButton direction={1} disabled={!canNext} onClick={() => scroll(1)} />
+                        <ArrowButton
+                            direction={-1}
+                            disabled={!canPrev}
+                            onClick={() => {
+                                stopAutoplay();
+                                scroll(-1);
+                                startAutoplay();
+                            }}
+                        />
+                        <ArrowButton
+                            direction={1}
+                            disabled={!canNext}
+                            onClick={() => {
+                                stopAutoplay();
+                                scroll(1);
+                                startAutoplay();
+                            }}
+                        />
                     </div>
                 </motion.div>
 
@@ -105,6 +153,10 @@ export default function Services() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     ref={scrollerRef}
                     onScroll={updateArrows}
+                    onMouseEnter={stopAutoplay}
+                    onMouseLeave={startAutoplay}
+                    onTouchStart={stopAutoplay}
+                    onTouchEnd={startAutoplay}
                     className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory p-1 -m-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
                 >
                     {CAPABILITIES.map((item) => (

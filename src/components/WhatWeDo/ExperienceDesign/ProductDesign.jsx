@@ -41,7 +41,7 @@ export default function ProductDesign() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-4 w-full lg:w-[405px] shrink-0"
                 >
-                    <h2 className="text-[#16171a] text-2xl font-medium">Product Design</h2>
+                    <h2 className="text-[#0d0c22] text-2xl font-medium">Product Design</h2>
                     <p className="text-black text-lg font-light">Transform Ideas into Digital Products</p>
                     <p className="text-black text-lg font-light">
                         From concept to launch, we design scalable digital products that align user expectations with

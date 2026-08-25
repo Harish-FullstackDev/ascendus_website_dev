@@ -21,7 +21,7 @@ export default function IntroSection() {
 
                     <p className="text-[#3d3d4e] text-base sm:text-lg font-light leading-relaxed">
                         Modern businesses need digital platforms that are scalable, secure, resilient, and built for
-                        continuous innovation. At Ascendus (Ascendus), we design, develop, and modernize
+                        continuous innovation. At Support Studio Technology (SST), we design, develop, and modernize
                         enterprise-grade applications that power business transformation. From custom web and mobile
                         applications to cloud-native platforms, microservices, DevOps, and system integration, we
                         deliver high-performance digital solutions that accelerate growth and enhance operational

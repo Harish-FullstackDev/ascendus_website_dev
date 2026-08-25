@@ -16,7 +16,7 @@ const ITEMS = [
 
 export default function SingleCustomerView() {
     return (
-        <section className="w-full py-10 px-6 flex flex-col lg:flex-row gap-10 lg:gap-[83px] items-center sm:p-16">
+        <section className="w-full py-10  px-6 sm:p-16 flex flex-col lg:flex-row gap-10 lg:gap-[83px] items-center">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -24,9 +24,9 @@ export default function SingleCustomerView() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-2 w-full lg:w-[518px] shrink-0"
             >
-                <h2 className="text-black text-2xl sm:text-[32px] font-normal">Single Customer View & Evidence-Based Design
+                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-medium">Single Customer View & Evidence-Based Design
                 </h2>
-                <p className="text-[#6c6c6c] text-lg font-light">
+                <p className="text-[#55595E] text-lg font-light">
                     Why our approach to customer experience drives long-term adoption.
                 </p>
             </motion.div>
@@ -43,7 +43,7 @@ export default function SingleCustomerView() {
                     >
                         <Image src={item.icon} alt="" width={48} height={48} />
                         <p className="text-black text-xl font-light">{item.title}</p>
-                        <p className="text-[#4a5568] text-lg font-light">{item.desc}</p>
+                        <p className="text-[#55595E] text-lg font-light">{item.desc}</p>
                     </motion.div>
                 ))}
             </div>

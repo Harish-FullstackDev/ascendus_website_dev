@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import dataCenterPhoto from "@/assets/WhatWeDo/Data Inteligent/webp/Data_RealTime.webp";
@@ -24,17 +25,31 @@ const ITEMS = [
 ];
 
 export default function RealTimeAnalyticsAndMasterDataManagement() {
+    // Auto open/close: cycles the "active" (hover-revealed) card every few
+    // seconds, pausing whenever the row is actually hovered/focused so
+    // manual interaction always takes over.
+    const [active, setActive] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
+
+    useEffect(() => {
+        if (isPaused) return;
+        const id = setInterval(() => {
+            setActive((prev) => (prev + 1) % ITEMS.length);
+        }, 3000);
+        return () => clearInterval(id);
+    }, [isPaused]);
+
     return (
         <section className="relative w-full">
             <div className="relative w-full h-[280px] sm:h-[500px] overflow-hidden">
                 <Image src={dataCenterPhoto} alt="" fill className="object-cover" />
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute top-6 sm:top-10 left-1/2 -translate-x-1/2 text-center text-white z-20 px-4 sm:px-0">
-                    <h2 className="text-xl sm:text-2xl font-medium">
+                    <h2 className="text-xl sm:text-[28px] font-medium">
                         Real-Time Analytics &amp; Master Data Management
                     </h2>
 
-                    <p className="mt-2 sm:mt-2 max-w-3xl text-sm sm:text-lg text-gray-200">
+                    <p className="mt-2 sm:mt-2 max-w-3xl text-sm sm:text-lg font-light ">
                         Advanced capabilities to unify, visualize, and govern data.
                     </p>
                 </div>
@@ -47,34 +62,57 @@ export default function RealTimeAnalyticsAndMasterDataManagement() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative z-10 -mt-8 sm:-mt-35 mb-8 sm:mb-16 mx-4 sm:mx-auto sm:max-w-[1390px] bg-white shadow-[0px_4px_28.65px_rgba(0,0,0,0.25)] py-6 sm:py-0"
             >
-                <div className="hidden sm:flex items-center justify-between">
-                    {ITEMS.map((item, i) => (
-                        <div
-                            key={item.title}
-                            className="group relative shrink-0 h-[250px]"
-                            style={{ width: `${100 / ITEMS.length}%` }}
-                        >
+                <div
+                    className="hidden sm:flex items-center justify-between"
+                    onMouseLeave={() => setIsPaused(false)}
+                >
+                    {ITEMS.map((item, i) => {
+                        const isActive = active === i;
+                        return (
                             <div
-                                className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[270px] group-hover:w-[265px] h-[234px] group-hover:h-[332px] group-hover:z-10 px-6 flex flex-col items-center justify-start pt-10 overflow-hidden transition-[width,height,background-color,box-shadow] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:bg-[#0A3A52] group-hover:shadow-[0px_20px_45px_rgba(10,58,82,0.3)]"
+                                key={item.title}
+                                className="relative shrink-0 h-[250px]"
+                                style={{ width: `${100 / ITEMS.length}%` }}
+                                onMouseEnter={() => {
+                                    setIsPaused(true);
+                                    setActive(i);
+                                }}
+                                onFocus={() => {
+                                    setIsPaused(true);
+                                    setActive(i);
+                                }}
                             >
-                                <p className="text-[#16171a] text-2xl font-medium text-left max-w-[180px] transition-all duration-500 ease-out group-hover:opacity-0 group-hover:-translate-y-2">
-                                    {item.title}
-                                </p>
-
-                                <div className="absolute inset-x-6 top-1/2 -translate-y-[calc(50%+8px)] flex flex-col items-start opacity-0 transition-all duration-500 delay-150 ease-out group-hover:opacity-100 group-hover:-translate-y-1/2">
-                                    <p className="text-[#e6e6e6] text-base sm:text-lg font-light leading-relaxed text-left">
-                                        {item.desc}
+                                <div
+                                    className={`absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 px-6 flex flex-col items-center justify-start pt-10 overflow-hidden transition-[width,height,background-color,box-shadow] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive
+                                        ? "w-[265px] h-[332px] z-10 bg-[#0A3A52] shadow-[0px_20px_45px_rgba(10,58,82,0.3)]"
+                                        : "w-[270px] h-[234px]"
+                                        }`}
+                                >
+                                    <p
+                                        className={`text-[#2E3033] text-2xl font-medium text-left max-w-[180px] transition-all duration-500 ease-out ${isActive ? "opacity-0 -translate-y-2" : ""
+                                            }`}
+                                    >
+                                        {item.title}
                                     </p>
+
+                                    <div
+                                        className={`absolute inset-x-6 top-1/2 -translate-y-[calc(50%+8px)] flex flex-col items-start opacity-0 transition-all duration-500 delay-150 ease-out ${isActive ? "opacity-100 -translate-y-1/2" : ""
+                                            }`}
+                                    >
+                                        <p className="text-[#FFFFFF] text-base sm:text-lg font-light leading-relaxed text-left">
+                                            {item.desc}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
 
                 <div className="flex sm:hidden flex-col divide-y divide-[#e5e5e5] px-4">
                     {ITEMS.map((item) => (
                         <div key={item.title} className="py-5 first:pt-0 last:pb-0">
-                            <p className="text-[#16171a] text-lg font-light">{item.title}</p>
+                            <p className="text-[#0d0c22] text-lg font-light">{item.title}</p>
                             <p className="text-[#6c6c6c] text-sm font-light leading-relaxed mt-2">{item.desc}</p>
                         </div>
                     ))}

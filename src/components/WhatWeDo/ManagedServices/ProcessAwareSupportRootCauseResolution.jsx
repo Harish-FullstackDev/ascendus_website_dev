@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import skylinePhoto from "@/assets/WhatWeDo/Managed Services/webp/Process_Aware_Support.webp";
+import skylinePhoto from "@/assets/WhatWeDo/Managed Services/new/Process.jpg";
 
 const TIERS = [
     {
@@ -40,11 +40,11 @@ export default function ProcessAwareSupportRootCauseResolution() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="font-heading text-[32px] font-normal leading-tight text-black"
+                        className="text-[28px] font-medium leading-tight text-white"
                     >
                         Process-Aware Support &amp; Root-Cause Resolution
                     </motion.h2>
-                    <p className="mt-2 text-lg font-light leading-snug text-black">
+                    <p className="mt-2 text-lg font-light leading-snug text-white">
                         Moving beyond ticket resolution to continuous system improvement
                     </p>
                 </div>

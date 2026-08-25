@@ -78,7 +78,7 @@ export default function ProofInNumbers() {
                             className="flex flex-1 flex-col gap-2 items-start sm:px-10 first:sm:pl-0 last:sm:pr-0"
                         >
                             <AnimatedStat value={stat.value} />
-                            <p className="text-[#4a5568] text-lg font-light whitespace-nowrap">
+                            <p className="text-[#55595E] text-lg font-light whitespace-nowrap">
                                 {stat.label}
                             </p>
                         </div>

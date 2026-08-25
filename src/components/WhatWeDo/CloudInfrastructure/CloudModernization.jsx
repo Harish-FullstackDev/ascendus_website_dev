@@ -56,7 +56,7 @@ export default function CloudModernization() {
                     className="flex flex-col gap-12 sm:gap-16 lg:gap-[178px] w-full lg:w-[421px] shrink-0"
                 >
                     <div className="flex flex-col gap-4">
-                        <h2 className="text-[#16171a] text-2xl font-medium">Cloud Modernization</h2>
+                        <h2 className="text-[#0d0c22] text-2xl font-medium">Cloud Modernization</h2>
                         <p className="text-[#3d3d4e] text-lg font-normal">Modernize Legacy Systems for the Cloud Era</p>
                         <p className="text-[#3d3d4e] text-lg font-light">
                             Transform legacy applications into cloud-native solutions that improve performance,
@@ -66,8 +66,8 @@ export default function CloudModernization() {
 
                     <div className="flex flex-col gap-10 lg:gap-[78px]">
                         {PANELS.map((panel) => (
-                            <div key={panel.title} className="border-l-[3px] border-[#0061af] pl-9 flex flex-col gap-4">
-                                <p className="text-[#16171a] text-2xl font-medium">{panel.title}</p>
+                            <div key={panel.title} className="border-l-[3px] border-[#2d8ec5] pl-9 flex flex-col gap-4">
+                                <p className="text-[#0d0c22] text-2xl font-medium">{panel.title}</p>
                                 <div className="text-[#3d3d4e] text-lg font-light flex flex-col gap-3">
                                     <p>{panel.subtitle}</p>
                                     <p>{panel.desc}</p>

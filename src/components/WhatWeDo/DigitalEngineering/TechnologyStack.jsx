@@ -52,7 +52,7 @@ export default function TechnologyStack() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-[#16171a] text-2xl font-medium">Technology Stack</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-medium">Technology Stack</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     A curated set of proven technologies powering resilient, scalable digital products.
                 </p>
@@ -67,7 +67,7 @@ export default function TechnologyStack() {
                             onClick={() => setActive(i)}
                             aria-pressed={active === i}
                             className={`shrink-0 bg-[#f7f7f7] h-[56px] sm:h-[76px] px-6 sm:px-4 flex items-center justify-center text-lg sm:text-2xl lg:text-[32px] font-normal transition-colors border-b-2 ${
-                                active === i ? "border-[#0061af] text-[#16171a]" : "border-transparent text-[#16171a]/70 hover:text-[#16171a]"
+                                active === i ? "border-[#2d8ec5] text-[#0d0c22]" : "border-transparent text-[#0d0c22]/70 hover:text-[#0d0c22]"
                             }`}
                             style={{ minWidth: 214 }}
                         >

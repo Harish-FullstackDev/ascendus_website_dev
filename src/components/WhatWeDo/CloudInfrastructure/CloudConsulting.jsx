@@ -65,7 +65,7 @@ export default function CloudConsulting() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-4 w-full lg:w-[285px] shrink-0"
                 >
-                    <h2 className="text-[#16171a] text-2xl font-medium">Cloud Consulting</h2>
+                    <h2 className="text-[#0d0c22] text-2xl font-medium">Cloud Consulting</h2>
                     <p className="text-black text-lg font-light">Develop a Cloud Strategy That Drives Growth</p>
                     <p className="text-[#6c6c6c] text-lg font-light">
                         Create a cloud adoption roadmap aligned with your business goals, technology landscape, and

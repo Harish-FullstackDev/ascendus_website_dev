@@ -3,7 +3,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import sapImg from "@/assets/WhatWeDo/Enterprise Transformation Practice/Capabilities/sap-transformation.png";
 import microsoftImg from "@/assets/WhatWeDo/Enterprise Transformation Practice/Capabilities/microsoft-services.png";
 import broaderTechImg from "@/assets/WhatWeDo/Enterprise Transformation Practice/Capabilities/broader-technology.png";
@@ -69,13 +69,19 @@ const REVEAL_EASE = [0.22, 1, 0.36, 1];
 // the brief is "the last hovered stays open," not "reverts when the pointer
 // leaves," so activeIndex only ever changes on the next hover/tap, never on
 // hover-out.
-function CapabilityCard({ number, title, description, image, href, services, isActive, onActivate }) {
+function CapabilityCard({ number, title, description, image, href, services, isActive, isLast, onActivate }) {
     return (
         <div
             onMouseEnter={onActivate}
             onFocus={onActivate}
             onClick={onActivate}
-            className={`flex flex-col md:flex-row w-full gap-6 md:gap-10 items-start cursor-pointer py-6 ${isActive ? "" : "border-b border-black"
+            // The divider is tied to position (every card but the last), not to
+            // active state — it used to only show on collapsed cards, which meant
+            // an open card had no line separating it from the closed card right
+            // below it (only that next card's own bottom edge did, one row too
+            // late). A line between an open card and whatever's below it is exactly
+            // what was missing.
+            className={`flex flex-col md:flex-row w-full gap-6 md:gap-10 items-start cursor-pointer py-6 ${isLast ? "" : "border-b border-black"
                 }`}
         >
             {/* grid-template-rows 0fr→1fr (plain CSS transition, no JS-measured
@@ -88,90 +94,89 @@ function CapabilityCard({ number, title, description, image, href, services, isA
                 anything, so there's nothing to get wrong. Number and title sit in
                 this same fixed-width column, so their horizontal position never
                 changes between open and closed — only the row's own height does.
- 
-                Open and close now share the exact same duration/easing (they used
-                to be 900ms open / 300ms close). That asymmetry was what pulled the
-                section below up and down: at any moment exactly one card is
-                growing and one is shrinking by the same amount, so with matched
-                timing the two changes cancel out and the section's total height
-                barely moves — with mismatched timing there was a ~600ms window
-                where the closing card had already shrunk but the opening one
-                hadn't finished growing, so the whole section visibly dipped in
-                height and everything below it jumped. Slower (800ms) than the
-                original 500ms per "make it look premium," just no longer skewed
-                between the two directions. */}
-            <div
-                className={`grid w-full md:w-[272px] shrink-0 self-start transition-[grid-template-rows] duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                    }`}
+
+                Open and close share the exact same duration/easing on purpose
+                (asymmetric timing here pulls the section below up and down — see
+                the min-height note below for the full explanation). Slowed further
+                to 1100ms (was 800ms, originally 500ms) since 800ms still read as
+                too quick for a premium feel. */}
+            <motion.div
+                initial={false}
+                animate={{
+                    height: isActive ? "auto" : 0,
+                    opacity: isActive ? 1 : 0
+                }}
+                transition={{
+                    duration: 0.8,
+                    ease: REVEAL_EASE
+                }}
+                className="overflow-hidden w-full md:w-[272px] shrink-0 self-start"
             >
-                <div className="overflow-hidden">
-                    <div
-                        className={`relative w-full aspect-[272/459] transition-[opacity,transform] ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive
-                            ? "duration-[850ms] delay-[150ms] opacity-100 scale-100"
-                            : "duration-[400ms] opacity-0 scale-[0.97]"
-                            }`}
-                    >
-                        <Image src={image} alt="" fill className="object-cover" />
-                    </div>
+                <div
+                    className={`relative w-full aspect-[272/459] transition-[transform] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                        isActive ? "duration-[800ms] delay-[100ms] scale-100" : "duration-[400ms] scale-[0.97]"
+                    }`}
+                >
+                    <Image src={image} alt="" fill className="object-cover" />
                 </div>
-            </div>
+            </motion.div>
 
             <div className="flex flex-col sm:flex-row w-full gap-8 sm:gap-10 md:gap-16">
                 {/* number + title always show, collapsed or open; description + button
-                    reveal in place below them while open — same grid-rows technique
-                    and same matched-duration timing (for the same layout-shift
-                    reason above), staggered a beat after the image so the reveal
-                    feels sequenced rather than everything popping in at once. */}
+                    reveal in place below them while open — using Framer Motion for a 
+                    perfectly synchronized smooth collapse/expand transition. */}
                 <div className="flex flex-col sm:w-[410px] gap-3 shrink-0">
                     <span className="text-[#8794a3] text-2xl sm:text-[28px] font-medium leading-[1.5]">
                         {number}
                     </span>
                     <p className="text-[#10161d] text-lg font-medium leading-[1.5]">{title}</p>
 
-                    <div
-                        className={`grid transition-[grid-template-rows] duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                            }`}
+                    <motion.div
+                        initial={false}
+                        animate={{
+                            height: isActive ? "auto" : 0,
+                            opacity: isActive ? 1 : 0
+                        }}
+                        transition={{
+                            duration: 0.8,
+                            ease: REVEAL_EASE
+                        }}
+                        className="overflow-hidden"
                     >
-                        <div className="overflow-hidden">
-                            <div
-                                className={`flex flex-col gap-8 pt-5 transition-[opacity,transform] ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive
-                                    ? "duration-[750ms] delay-[250ms] opacity-100 translate-y-0"
-                                    : "duration-[400ms] opacity-0 translate-y-2"
-                                    }`}
+                        <div className="flex flex-col gap-8 pt-5">
+                            <p className="text-[#4a5568] text-lg font-light leading-normal">{description}</p>
+                            <Link
+                                href={href}
+                                onClick={(event) => event.stopPropagation()}
+                                className="inline-flex h-11 w-[175px] items-center justify-center border border-[#d0d0d0] bg-[#0a3a52] px-6 text-lg font-light text-white text-center transition-colors hover:bg-white hover:text-[#0a3a52]"
                             >
-                                <p className="text-[#4a5568] text-lg font-light leading-normal">{description}</p>
-                                <Link
-                                    href={href}
-                                    onClick={(event) => event.stopPropagation()}
-                                    className="inline-flex h-11 w-[175px] items-center justify-center border border-[#d0d0d0] bg-[#0a3a52] px-6 text-lg font-light text-white text-center transition-colors hover:bg-white hover:text-[#0a3a52]"
-                                >
-                                    View More
-                                </Link>
-                            </div>
+                                View More
+                            </Link>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
 
-                <AnimatePresence initial={false}>
-                    {isActive && (
-                        <motion.div
-                            key="services"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1, transition: { duration: 0.6, ease: REVEAL_EASE, delay: 0.35 } }}
-                            exit={{ opacity: 0, transition: { duration: 0.2 } }}
-                            className="flex flex-col gap-3 sm:gap-4 sm:flex-1"
+                <motion.div
+                    initial={false}
+                    animate={{
+                        height: isActive ? "auto" : 0,
+                        opacity: isActive ? 1 : 0
+                    }}
+                    transition={{
+                        duration: 0.8,
+                        ease: REVEAL_EASE
+                    }}
+                    className="overflow-hidden flex flex-col gap-3 sm:gap-4 sm:flex-1"
+                >
+                    {services.map((service) => (
+                        <p
+                            key={service}
+                            className="text-[#4a5568] text-base font-light leading-[1.5] whitespace-nowrap"
                         >
-                            {services.map((service) => (
-                                <p
-                                    key={service}
-                                    className="text-[#4a5568] text-base font-light leading-[1.5] whitespace-nowrap"
-                                >
-                                    {service}
-                                </p>
-                            ))}
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                            {service}
+                        </p>
+                    ))}
+                </motion.div>
             </div>
         </div>
     );
@@ -238,6 +243,7 @@ export default function Capabilities() {
                         key={cap.title}
                         {...cap}
                         isActive={index === activeIndex}
+                        isLast={index === CAPABILITIES.length - 1}
                         onActivate={() => setActiveIndex(index)}
                     />
                 ))}
@@ -245,4 +251,3 @@ export default function Capabilities() {
         </section>
     );
 }
-

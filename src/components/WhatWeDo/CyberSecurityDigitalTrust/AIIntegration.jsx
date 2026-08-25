@@ -34,7 +34,7 @@ export default function AIIntegration() {
                 >
                     <div className="flex flex-col gap-5 w-full">
                         <p className="text-black text-lg sm:text-2xl font-light">Access Control That Actually Holds</p>
-                        <p className="text-[#4a5568] text-base sm:text-lg font-light">
+                        <p className="text-[#55595E] text-base sm:text-lg font-light">
                             We design identity and access management, including
                             SAP segregation of duties, so the right people have the right access and nothing more,
                             closing the gaps that generic access reviews miss.
@@ -60,7 +60,7 @@ export default function AIIntegration() {
                         <div className="flex flex-col gap-5 w-full">
                             <p className="text-black text-lg sm:text-2xl font-light">
                                 Finding the Gaps Before Attackers Do                            </p>
-                            <p className="text-[#4a5568] text-base sm:text-lg font-light">
+                            <p className="text-[#55595E] text-base sm:text-lg font-light">
 
                                 We run vulnerability assessments and penetration
                                 testing that go beyond automated scans, simulating real attack paths across your
