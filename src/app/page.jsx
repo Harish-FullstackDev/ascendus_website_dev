@@ -45,7 +45,7 @@ const page = () => {
             <Hiring />
             <HowWeWork />
             <Industries />
-            <FutureFocusedInsights />
+            {/* <FutureFocusedInsights /> */}
             <ReadyToTransform
                 title="Ready to Transform Your Business?"
                 description="Let's talk about where your technology is holding you back and what it would take to fix it for good."

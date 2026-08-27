@@ -30,7 +30,7 @@ const ContactInfo = () => {
 
         <div className="space-y-6 lg:space-y-8">
           {/* Phone */}
-          <div className="flex items-center space-x-4">
+          {/* <div className="flex items-center space-x-4">
             <div className="w-6 h-6 flex-shrink-0">
               <Image
                 src={careercall}
@@ -42,10 +42,10 @@ const ContactInfo = () => {
             </div>
             <span className="text-gray-700 text-base">
               <a className="hover:text-blue-500 transition-colors duration-200" href="tel:+0413–2191301" target="_blank">0413-2191301</a></span>
-          </div>
+          </div> */}
 
           {/* Email */}
-          <div className="flex items-center space-x-4">
+          {/* <div className="flex items-center space-x-4">
             <div className="w-6 h-6 flex-shrink-0">
               <Image
                 src={careermsg}
@@ -59,12 +59,11 @@ const ContactInfo = () => {
               <div>
                 <a className="hover:text-blue-500 transition-colors duration-200" href="mailto:info@isupportz.com" target="_blank">info@isupportz.com</a></div>
             </div>
-          </div>
+          </div> */}
 
-          {/* Address with Interactive Location Preview */}
-          <InteractiveLocationPreview />
 
-          {/* delivary center */}
+
+          {/* regional headquarters */}
           <div className="flex items-start gap-4">
             {/* Location Pin */}
             <div className="relative w-6 h-6 flex-shrink-0 mt-1">
@@ -98,13 +97,15 @@ const ContactInfo = () => {
               aria-haspopup="true"
               aria-expanded={isOpen || isBottomSheetOpen}
             >
-              <p className="text-black font-semibold">Delivery center</p>
+              <p className="text-black font-semibold">Regional Headquarter</p>
               <p>
                 Riyadh, KSA
               </p>
 
             </div>
           </div>
+          {/* Address with Interactive Location Preview */}
+          <InteractiveLocationPreview />
 
         </div>
       </div>

@@ -96,19 +96,23 @@ export default function CoreServices() {
     const [mobilePage, setMobilePage] = useState(0);
 
     return (
-        <section className="w-full bg-[#f3f6f9] px-6 py-10 sm:px-[64px] sm:py-[64px] flex flex-col gap-8 sm:gap-[54px]">
+        <section className="w-full bg-[#f3f6f9] px-6 py-10 sm:px-[64px] sm:py-[64px] flex flex-col gap-8 sm:gap-[4px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="w-full flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4"
+                className="w-full flex flex-col sm:flex-col sm:items-start sm:justify-between gap-4"
             >
-                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium shrink-0">Core Services</h2>
-                <p className="text-[#4a5568] text-lg sm:text-2xl font-light sm:tracking-[0.24px] w-full sm:max-w-[518px]">
-                    SAP is our core — deliberately. Microsoft and adjacent platforms extend that core so the enterprise
-                    moves as a system, not a set of silos.
-                </p>
+                <div className="w-full flex flex-col sm:flex-col sm:items-start sm:justify-between gap-4">
+                    <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-semibold shrink-0">Core Services</h2>
+                    <p className="text-[#4a5568] text-lg sm:text-2xl font-light sm:tracking-[0.24px] w-full sm:max-w-[618px]">
+                        SAP is our core  deliberately. Microsoft and adjacent platforms extend that core so the enterprise
+                        moves as a system, not a set of silos.
+                    </p>
+                </div>
+
+
             </motion.div>
 
             {/* Mobile: one card in view at a time (its own page/state, 6 pages),

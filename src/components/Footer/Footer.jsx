@@ -431,23 +431,32 @@ const Footer = () => {
               Get In Touch
             </h3>
             <ul className="space-y-2">
-              <li>
+              {/* <li>
                 <a
                   href="tel:+04132191301"
                   className="hover:text-white transition-colors duration-200"
                 >
                   0413-2191301
                 </a>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <a
                   href="mailto:info@isupportz.com"
                   className="hover:text-white transition-colors duration-200"
                 >
                   info@isupportz.com
                 </a>
+              </li> */}
+              <li>
+                <a
+                  href="https://isupportz.com"
+                  className="hover:text-white transition-colors duration-200 sm:mt-1"
+                >
+                  Ascendus Powder by <br /> Support Studio Technologies
+                </a>
               </li>
               <li>
+                <p>Regional Office (India)</p>
                 <a
                   href="https://maps.app.goo.gl/pHCzqbb6vXihYvjn6"
                   className="hover:text-white transition-colors duration-200"

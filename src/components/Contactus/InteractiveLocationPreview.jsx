@@ -189,7 +189,7 @@ const InteractiveLocationPreview = () => {
                         aria-haspopup="true"
                         aria-expanded={isOpen || isBottomSheetOpen}
                     >
-                        <p className="text-black font-semibold"> Regional Headquaters </p>
+                        <p className="text-black font-semibold"> Regional Office (India) </p>
                         <p>
                             #192, Kamaraj Salai, Puducherry, India,
                             Pin Code - 605013

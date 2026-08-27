@@ -38,8 +38,8 @@ const page = () => {
         <DiscoverWhatSetsUsApart />
         <MissionVision />
         <OurStrength />
-        <ClientTestimonials />
-        <FutureFocusedInsights />
+        {/* <ClientTestimonials /> */}
+        {/* <FutureFocusedInsights /> */}
         <ReadyToTransform />
       </div>
 

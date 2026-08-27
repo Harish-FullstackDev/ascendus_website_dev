@@ -14,6 +14,7 @@ import EngagementModelsComparison from "@/components/WhatWeDo/EnterpriseTransfor
 import WhyEnterprisePartnerWithUs from "@/components/WhatWeDo/EnterpriseTransformationPractice/WhyEnterprisePartnerWithUs";
 import WhyPartnerProofInNumbers from "@/components/WhatWeDo/EnterpriseTransformationPractice/WhyPartnerProofInNumbers";
 import IndustriesWeServe from "@/components/WhatWeDo/EnterpriseTransformationPractice/IndustriesWeServe";
+import TrustedByBand from "@/components/WhatWeDo/EnterpriseTransformationPractice/TrustedByBand";
 
 import ctaBg from "@/assets/WhatWeDo/Enterprise Transformation Practice/CTA/cta-bg.png";
 
@@ -37,10 +38,11 @@ const page = () => {
                 <CoreServices />
                 <ChooseHowYouWantToWorkWithUs />
                 <Capabilities />
+                <TrustedByBand />
                 <EngagementModelsComparison />
                 <IndustriesWeServe />
                 <WhyEnterprisePartnerWithUs />
-                <WhyPartnerProofInNumbers />
+                {/* <WhyPartnerProofInNumbers /> */}
             </div>
 
             <ReadyToTransform
