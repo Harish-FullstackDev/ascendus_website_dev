@@ -48,8 +48,8 @@ export default function CleanPrinciples() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center max-w-3xl mx-auto"
                 >
-                    <h2 className="text-2xl font-medium text-[#0d0c22]">What shapes how we deliver</h2>
-                    <p className="mt-2 text-base sm:text-lg font-light text-[#3d3d4e]">
+                    <h2 className="text-[28px] font-semibold text-[#2E3033]">What shapes how we deliver</h2>
+                    <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
                         Four principles carried into every engagement, not values printed on a wall and left there.
                     </p>
                 </motion.div>
@@ -67,10 +67,10 @@ export default function CleanPrinciples() {
                             variants={itemVariants}
                             whileHover={{ y: -4 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="bg-[#0a2b3e] shadow-[0px_2px_8px_rgba(0,0,0,0.19)] flex flex-col justify-end p-6 h-[220px] sm:h-[237px]"
+                            className="bg-[#EDEDED] flex flex-col justify-start p-6 h-[220px] sm:h-[237px]"
                         >
-                            <p className="text-lg font-medium text-white">{item.title}</p>
-                            <p className="text-xs font-light text-white/80 mt-4 leading-relaxed">
+                            <h2 className="text-2xl text-[#2E3033] font-semibold ">{item.title}</h2>
+                            <p className="text-lg  text-[#55595E] font-light mt-4 leading-relaxed">
                                 {item.description}
                             </p>
                         </motion.div>

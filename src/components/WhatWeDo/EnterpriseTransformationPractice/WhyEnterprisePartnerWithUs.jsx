@@ -61,8 +61,8 @@ function ReasonItem({ icon, title, desc, delay }) {
         >
             <Image src={icon} alt="" className="size-12" />
             <div className="flex flex-col gap-4">
-                <h2 className="text-[#2E3033] text-2xl font-semibold">{title}</h2>
-                <p className="text-[#55595E] text-lg font-light leading-normal">{desc}</p>
+                <h3 className="text-[#10161d] text-2xl font-medium">{title}</h3>
+                <p className="text-[#4a5568] text-lg font-light leading-normal">{desc}</p>
             </div>
         </motion.div>
     );
@@ -78,8 +78,8 @@ export default function WhyEnterprisePartnerWithUs() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-3 sm:gap-5 max-w-[818px] text-center"
             >
-                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Why Partner With Us</h2>
-                <p className="text-[#55595E] text-lg font-light leading-[1.5]">
+                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">Why Partner With Us</h2>
+                <p className="text-[#4a5568] text-lg font-light leading-[1.5]">
                     Expertise, flexibility, and measurable outcomes—built around your business needs.
                 </p>
             </motion.div>

@@ -14,8 +14,8 @@ export default function JoinUsPanel() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="max-w-5xl mx-auto text-center"
             >
-                <h2 className="text-xl sm:text-4xl font-medium text-black">Join us</h2>
-                <p className="mt-3 text-sm sm:text-xl font-thin text-[#6c6c6c] leading-relaxed">
+                <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">Join us</h2>
+                <p className="mt-3 text-sm sm:text-lg font-light text-[#55595E] leading-relaxed">
                     Work alongside specialists solving complex technology challenges across SAP, cloud, data,
                     cybersecurity and digital transformation, with the opportunity to see your work move from
                     strategy into production.

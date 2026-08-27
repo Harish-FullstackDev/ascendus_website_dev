@@ -14,15 +14,12 @@ export default function AboutUsPanel() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="max-w-5xl mx-auto text-center"
             >
-                <h2 className="text-xl sm:text-4xl font-medium text-black">Started around a gap, not a product</h2>
-                <p className="mt-3 text-sm sm:text-xl font-thin text-[#3d3d4e] leading-relaxed">
+                <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">Started around a gap, not a product</h2>
+                <p className="mt-3 text-sm sm:text-lg font-light text-[#55595E] leading-relaxed">
                     Most enterprise technology providers specialize in one layer of the stack: the SAP
                     implementation, the cloud migration, or the support that follows once a system is live. We
                     were built to close the space between those layers, which is where most transformations
-                    actually stall.
-                </p>
-                <p className="mt-3 text-sm sm:text-xl font-thin text-[#3d3d4e] leading-relaxed">
-                    That has grown into a practice covering SAP transformation, cloud and data engineering, digital
+                    actually stall. That has grown into a practice covering SAP transformation, cloud and data engineering, digital
                     and customer experience, and the compliance work that comes with operating across the GCC.
                     What hasn&apos;t changed is the reason the practice exists: enterprises need a partner who is
                     still accountable long after the project plan says the work is done.

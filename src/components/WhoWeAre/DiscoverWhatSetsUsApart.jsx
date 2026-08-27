@@ -22,8 +22,8 @@ const CARDS = [
 
 export default function DiscoverWhatSetsUsApart() {
     return (
-        <section className="w-full py-16 sm:py-2 px-4 sm:px-6 lg:px-8">
-            <div className="w-full h-px bg-[#c7cbcd] max-w-[1300px] mx-auto mb-16 sm:mb-20" />
+        <section className="w-full py-16 sm:py-16 px-4 sm:px-6 lg:px-8">
+            {/* <div className="w-full h-px bg-[#c7cbcd] max-w-[1300px] mx-auto mb-16 sm:mb-20" /> */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -31,8 +31,8 @@ export default function DiscoverWhatSetsUsApart() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-12"
             >
-                <h2 className="text-2xl font-medium text-[#0d0c22]">Discover What Set Us apart</h2>
-                <p className="mt-2 text-base sm:text-lg font-light text-[#3d3d4e]">
+                <h2 className="text-[28px] font-semibold text-[#2E3033]">Discover What Set Us apart</h2>
+                <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
                     We are passionate about empowering individuals and businesses to take control of their finances
                     and achieve their financial goals.
                 </p>
@@ -61,10 +61,10 @@ export default function DiscoverWhatSetsUsApart() {
                                 }`}
                         >
                             <div>
-                                <p className="text-lg text-black">{card.title}</p>
-                                <h3 className="text-2xl font-medium text-black mt-1">{card.heading}</h3>
+                                <p className="text-lg font-light text-[#2E3033]">{card.title}</p>
+                                <h2 className="text-2xl font-semibold text-[#2E3033] mt-1">{card.heading}</h2>
                             </div>
-                            <div className="text-sm sm:text-base text-[#6c6c6c] leading-relaxed space-y-1">
+                            <div className="text-sm sm:text-base text-[#55595E] leading-relaxed space-y-1">
                                 <p>{card.description}</p>
                             </div>
                         </motion.div>

@@ -84,9 +84,9 @@ function AnimatedBorderCard({ title, description }) {
                 style={{ ...bottomStyle(isHovered), transform: isHovered ? "scaleX(1)" : "scaleX(0)" }}
             />
 
-            <p className={`${cardFont.className} relative text-4xl font-light text-white`}>{title}</p>
+            <h2 className={`${cardFont.className} relative text-2xl font-semibold text-white`}>{title}</h2>
             <p
-                className={`${cardFont.className} relative text-base font-extralight mt-10 leading-relaxed origin-left transition-all ease-in-out ${isHovered ? "text-white scale-105" : "text-white/50"
+                className={`${cardFont.className} relative text-lg font-light mt-10 leading-relaxed origin-left transition-all ease-in-out ${isHovered ? "text-white scale-105" : "text-white/50"
                     }`}
                 style={{ transitionDuration: `${SEGMENT_MS}ms` }}
             >
@@ -106,8 +106,8 @@ export default function MissionVision() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-12 px-4 sm:px-6 lg:px-8"
             >
-                <h2 className="text-2xl font-medium text-[#0d0c22]">Where we&apos;re headed, and why</h2>
-                <p className="mt-2 text-base sm:text-lg font-light text-[#3d3d4e]">
+                <h2 className="text-[28px] font-semibold text-[#2E3033]">Where we&apos;re headed, and why</h2>
+                <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
                     Everything we build ties back to two commitments: what we exist to do for clients today, and
                     where we intend to take the practice next.
                 </p>

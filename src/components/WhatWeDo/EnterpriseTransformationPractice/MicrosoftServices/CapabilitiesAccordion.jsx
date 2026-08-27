@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import panelImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/MicrosoftServices/capabilities-panel.png";
@@ -63,11 +64,27 @@ const ITEMS = [
 ];
 
 export default function CapabilitiesAccordion() {
+    const searchParams = useSearchParams();
+    const sectionRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const active = ITEMS[activeIndex];
 
+    // Deep-link from the Enterprise page's Capabilities service list — see the
+    // matching effect in SapTransformation/SAPS4HANAMigrationImplementation.jsx.
+    useEffect(() => {
+        const service = searchParams.get("service");
+        if (!service) return;
+        const index = ITEMS.findIndex((item) => item.title === service);
+        if (index === -1) return;
+        setActiveIndex(index);
+        sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, [searchParams]);
+
     return (
-        <section className="w-full bg-[#f3f6f9] pt-10 pb-10 sm:pt-16 sm:pb-16 flex flex-col items-center gap-10 sm:gap-20">
+        <section
+            ref={sectionRef}
+            className="w-full bg-[#f3f6f9] pt-10 pb-10 sm:pt-16 sm:pb-16 flex flex-col items-center gap-10 sm:gap-20 scroll-mt-24"
+        >
             <div className="w-full px-6 sm:px-[64px] flex justify-center">
                 <motion.div
                     key={active.title}
@@ -85,15 +102,23 @@ export default function CapabilitiesAccordion() {
                 stretched height with visible gaps between each item's own border
                 segment. items-stretch on the row makes this column match the
                 image panel's height exactly, so the first item's top lines up
-                with the panel's top edge and the last with its bottom edge. */}
+                with the panel's top edge and the last with its bottom edge.
+                gap-2 lg:gap-0, matching EnterpriseSoftware.jsx (Digital
+                Engineering) and the SAP Transformation page's equivalent list:
+                below lg there's no items-stretch-driven extra height for
+                justify-between to distribute (the outer row is flex-col there,
+                not flex-row), so without an explicit gap the items sit flush and
+                their border-l-3px segments visually merge into one continuous
+                line. Dropped again at lg where justify-between takes back over. */}
             <div className="w-full pl-6 pr-6 sm:pl-[64px] sm:pr-0 flex flex-col lg:flex-row items-stretch">
-                <div className="flex flex-col justify-between w-full lg:w-[40%] shrink-0">
+                <div className="flex flex-col justify-between w-full lg:w-[40%] gap-2 lg:gap-0 shrink-0">
                     {ITEMS.map((item, index) => {
                         const isActive = index === activeIndex;
                         return (
                             <button
                                 key={item.title}
                                 type="button"
+                                onMouseEnter={() => setActiveIndex(index)}
                                 onClick={() => setActiveIndex(index)}
                                 aria-pressed={isActive}
                                 className={`text-left w-full py-[12.5px] px-[15px] border-l-[3px] transition-colors ${isActive ? "border-[#2d8ec5]" : "border-[#6c6c6c]/60"
@@ -113,37 +138,65 @@ export default function CapabilitiesAccordion() {
                 {/* Shared background image behind all 5 items, not per-item
                     photography — same pattern as the SAP Transformation page's
                     equivalent section. */}
-                <div className="relative bg-[#1c5f85] w-full lg:w-[60%] aspect-[825/587] mt-6 lg:mt-0 overflow-hidden">
-                    <Image src={panelImage} alt="" fill className="object-cover" />
+                <div className="w-full lg:w-[60%] flex flex-col mt-6 lg:mt-0">
+                    <div className="relative bg-[#1c5f85] w-full aspect-[825/587] overflow-hidden">
+                        <Image src={panelImage} alt="" fill className="object-cover" />
+                        {/* Card overlay: sm and up only — see the matching fix and full
+                            explanation in SapTransformation/SAPS4HANAMigrationImplementation.jsx.
+                            Below sm, the same copy renders as a normal in-flow block after
+                            the image instead (see the sibling block below), since the
+                            fixed-aspect-ratio image gets too short on a narrow phone to hold
+                            this content overlaid without clipping it. */}
+                        <AnimatePresence mode="wait">
+                            {/* Card footprint (position/size against the image) stays
+                                bottom-flush, top-31%, inset from the left/right — matching
+                                Figma's card bottom = panel bottom. The sibling item frames
+                                on the SAP Transformation page's equivalent section (which
+                                this list+panel component is shared with) share one spec for
+                                the content inside that footprint: a 462×256 box centered
+                                inside the 571×403 card — i.e. equal insets on every side
+                                (54.5/571 ≈ 9.55% left+right, 73.5/403 ≈ 18.24% top+bottom),
+                                with justify-between spreading the desc and bullets inside
+                                that box rather than a flat padding value stretched across
+                                the whole footprint (which pushes them far apart once the
+                                copy is shorter than the card). */}
+                            <motion.div
+                                key={active.title}
+                                initial={{ opacity: 0, y: 12 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -12 }}
+                                transition={{ duration: 0.35, ease: "easeOut" }}
+                                className="hidden sm:block absolute left-[25%] right-[6%] top-[31%] bottom-0 bg-white"
+                            >
+                                <div className="absolute left-[9.55%] right-[9.55%] top-[18.24%] bottom-[18.24%] flex flex-col justify-between gap-6">
+                                    <h3 className="text-[#10161d] text-lg font-medium leading-[1.4]">{active.desc}</h3>
+                                    <ul className="list-disc pl-5 flex flex-col gap-1 text-[#3d3d4e] text-lg font-light leading-[1.4]">
+                                        {active.bullets.map((bullet) => (
+                                            <li key={bullet}>{bullet}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </motion.div>
+                        </AnimatePresence>
+                    </div>
+
+                    {/* Mobile only: same content as the overlay above, but as a plain
+                        in-flow block below the image instead of stacked on top of it. */}
                     <AnimatePresence mode="wait">
-                        {/* Card footprint (position/size against the image) stays
-                            bottom-flush, top-31%, inset from the left/right — matching
-                            Figma's card bottom = panel bottom. The sibling item frames
-                            on the SAP Transformation page's equivalent section (which
-                            this list+panel component is shared with) share one spec for
-                            the content inside that footprint: a 462×256 box centered
-                            inside the 571×403 card — i.e. equal insets on every side
-                            (54.5/571 ≈ 9.55% left+right, 73.5/403 ≈ 18.24% top+bottom),
-                            with justify-between spreading the desc and bullets inside
-                            that box rather than a flat padding value stretched across
-                            the whole footprint (which pushes them far apart once the
-                            copy is shorter than the card). */}
                         <motion.div
                             key={active.title}
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -12 }}
                             transition={{ duration: 0.35, ease: "easeOut" }}
-                            className="absolute left-6 right-6 bottom-0 sm:left-[25%] sm:right-[6%] sm:top-[31%] bg-white"
+                            className="sm:hidden bg-white p-6 flex flex-col gap-6"
                         >
-                            <div className="absolute inset-6 sm:inset-auto sm:left-[9.55%] sm:right-[9.55%] sm:top-[18.24%] sm:bottom-[18.24%] flex flex-col justify-between gap-6">
-                                <h3 className="text-[#10161d] text-lg font-medium leading-[1.4]">{active.desc}</h3>
-                                <ul className="list-disc pl-5 flex flex-col gap-1 text-[#3d3d4e] text-lg font-light leading-[1.4]">
-                                    {active.bullets.map((bullet) => (
-                                        <li key={bullet}>{bullet}</li>
-                                    ))}
-                                </ul>
-                            </div>
+                            <h3 className="text-[#10161d] text-lg font-medium leading-[1.4]">{active.desc}</h3>
+                            <ul className="list-disc pl-5 flex flex-col gap-1 text-[#3d3d4e] text-lg font-light leading-[1.4]">
+                                {active.bullets.map((bullet) => (
+                                    <li key={bullet}>{bullet}</li>
+                                ))}
+                            </ul>
                         </motion.div>
                     </AnimatePresence>
                 </div>

@@ -52,8 +52,8 @@ export default function FutureFocusedInsights({
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center max-w-3xl mx-auto mb-12"
                 >
-                    <h2 className="text-2xl font-medium text-[#0d0c22]">{title}</h2>
-                    <p className="mt-2 text-base sm:text-lg font-light text-[#3d3d4e]">
+                    <h2 className="text-2xl font-semibold text-[#2E3033]">{title}</h2>
+                    <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
                         {description}
                     </p>
                 </motion.div>
@@ -79,8 +79,8 @@ export default function FutureFocusedInsights({
                             <div className="relative w-full h-[170px] sm:h-[200px]">
                                 <Image src={item.img} alt={item.text} fill className="object-cover" />
                             </div>
-                            <p className="text-base font-medium text-black">{item.date}</p>
-                            <p className="text-base font-light text-[#6c6c6c]">{item.text}</p>
+                            <p className="text-base font-light text-[#55595E]">{item.date}</p>
+                            <h2 className="text-lg font-medium text-[#55595E]">{item.text}</h2>
                             <button
                                 type="button"
                                 className="flex items-center justify-between w-[118px] text-[#2d8ec5] text-base font-light"

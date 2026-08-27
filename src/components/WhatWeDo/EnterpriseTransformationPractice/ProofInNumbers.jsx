@@ -47,7 +47,7 @@ function AnimatedStat({ value }) {
     }, [isInView, number]);
 
     return (
-        <p ref={ref} className=" text-[#1c5f85] text-2xl sm:text-[28px] font-medium leading-normal">
+        <p ref={ref} className="font-urbane text-[#1c5f85] text-2xl sm:text-[28px] font-medium leading-normal">
             {prefix}
             {display.toFixed(decimals)}
             {suffix}
@@ -69,9 +69,9 @@ export default function ProofInNumbers() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="w-full bg-white px-6 py-8 sm:px-[64px] sm:py-[32px] shadow-[0px_4px_11.2px_rgba(0,0,0,0.25)]"
             >
-                <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 sm:items-stretch sm:divide-x sm:divide-[#d3dae2] w-full">
+                <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:flex sm:flex-row sm:flex-nowrap sm:items-stretch sm:justify-between sm:divide-x sm:divide-[#d3dae2] w-full">
                     {STATS.map((stat) => (
-                        <div key={stat.label} className="flex flex-col gap-2 items-center sm:justify-center sm:px-10 first:sm:pl-0 last:sm:pr-0">
+                        <div key={stat.label} className="flex flex-col gap-2 items-start sm:justify-center sm:px-10 first:sm:pl-0 last:sm:pr-0">
                             <AnimatedStat value={stat.value} />
                             <p className="text-[#4a5568] text-lg font-light whitespace-nowrap">{stat.label}</p>
                         </div>

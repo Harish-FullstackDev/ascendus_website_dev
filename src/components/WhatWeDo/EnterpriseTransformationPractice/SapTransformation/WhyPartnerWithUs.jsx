@@ -38,10 +38,10 @@ export default function WhyPartnerWithUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-2 max-w-[818px] pb-0 sm:pb-16 text-center"
+                className="flex flex-col items-center gap-5 max-w-[818px] text-center"
             >
-                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Why Partner With Us For SAP</h2>
-                <p className="text-[#55595E] text-lg font-light leading-[1.5]">
+                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">Why Partner With Us For SAP</h2>
+                <p className="text-[#4a5568] text-lg font-light leading-[1.5]">
                     Choose the engagement model that fits your needs, from focused projects to ongoing support and
                     strategic guidance.
                 </p>
@@ -69,8 +69,8 @@ export default function WhyPartnerWithUs() {
                         className="flex flex-col gap-6 sm:min-h-[240px]"
                     >
                         <Image src={reason.icon} alt="" className="size-12" />
-                        <h2 className="text-[#2E3033] text-xl font-semibold leading-[1.3]">{reason.title}</h2>
-                        <p className="text-[#55595E] text-lg font-light leading-[1.3]">{reason.desc}</p>
+                        <h3 className="text-[#10161d] text-xl font-medium leading-[1.3]">{reason.title}</h3>
+                        <p className="text-[#4a5568] text-lg font-light leading-[1.3]">{reason.desc}</p>
                     </motion.div>
                 ))}
             </div>

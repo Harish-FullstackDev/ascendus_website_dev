@@ -213,21 +213,23 @@ const Navbar = () => {
                   <div
                     className="
                     w-0
+                    ml-0
                     opacity-0
                     overflow-hidden
                     transition-all
                     duration-500
                     ease-out
-                    group-hover:w-[200px]
+                    group-hover:w-[140px]
+                    group-hover:ml-2.5
                     group-hover:opacity-100
                   "
                   >
                     <Image
                       src={isNavbarLight ? logo5 : logo4}
                       alt="Support Studio Technologies"
-                      width={359}
-                      height={75}
-                      className="block h-8.5 w-auto max-w-none object-contain"
+                      width={344}
+                      height={60}
+                      className="block h-6 w-auto max-w-none object-contain"
                     />
                   </div>
                 </Link>
@@ -469,7 +471,7 @@ const Navbar = () => {
 
             {/* Mobile menu toggle button */}
             <button
-              className={`lg:hidden transition-colors duration-300 flex items-center justify-center p-1.5 rounded-lg ${isNavbarLight
+              className={`lg:hidden transition-colors duration-300 flex items-center justify-center p-1.5 ${isNavbarLight
                 ? "text-black hover:bg-gray-100"
                 : "text-white hover:bg-neutral-800"
                 }`}
@@ -514,7 +516,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
@@ -526,7 +528,7 @@ const Navbar = () => {
 
             <li>
               <div
-                className={`w-full flex items-center justify-between rounded-lg ${pathname.startsWith("/services") ? "bg-gray-100" : ""
+                className={`w-full flex items-center justify-between ${pathname.startsWith("/services") ? "bg-gray-100" : ""
                   }`}
               >
                 <div
@@ -566,115 +568,30 @@ const Navbar = () => {
                   }`}
               >
 
-                <div className="rounded-2xl bg-gray-50 border border-gray-200 overflow-hidden">
-
-                  {/* Header */}
-                  {/* <div className="px-4 py-3 border-b border-gray-200">
-                    <p className="text-xs uppercase tracking-wider text-gray-500 font-semibold">
-                      Explore Services
-                    </p>
-                  </div> */}
-
-                  {/* Capabilities */}
-                  <div>
-
-                    <button
-                      onClick={() => setIsCapabilitiesOpen(!isCapabilitiesOpen)}
-                      className="w-full flex items-center justify-between px-4 py-4 hover:bg-white transition"
-                    >
-                      <span className="font-medium text-gray-800">
-                        Capabilities
-                      </span>
-
-                      <svg
-                        className={`w-5 h-5 transition-transform duration-300 ${isCapabilitiesOpen ? "rotate-180" : ""
-                          }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </button>
-
-                    <div
-                      className={`overflow-hidden transition-all duration-300 ${isCapabilitiesOpen ? "max-h-[800px]" : "max-h-0"
-                        }`}
-                    >
-                      <div className="mx-4 border-t border-gray-200" />
-                      <ul className="pb-3">
-                        {servicesMenu.capabilities.map((item) => (
-                          <li key={item.name}>
-                            <Link
-                              href={item.href}
-                              onClick={closeMenu}
-                              className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#2d8ec5]"
-                            >
-                              {item.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
+                <div className="bg-gray-50 border border-gray-200 overflow-hidden">
+                  {/* Capabilities is the only category left now that Industries is
+                      removed, so it no longer needs its own nested open/close toggle —
+                      it just shows directly as soon as "What we do" itself is expanded. */}
+                  <div className="px-4 py-4">
+                    <span className="font-medium text-gray-800">
+                      Capabilities
+                    </span>
                   </div>
 
-                  <div className="border-t border-gray-200" />
-
-                  {/* Industries */}
-                  <div>
-
-                    <button
-                      onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
-                      className="w-full flex items-center justify-between px-4 py-4 hover:bg-white transition"
-                    >
-                      <span className="font-medium text-gray-800">
-                        Industries
-                      </span>
-
-                      <svg
-                        className={`w-5 h-5 transition-transform duration-300 ${isIndustriesOpen ? "rotate-180" : ""
-                          }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </button>
-
-                    <div
-                      className={`overflow-hidden transition-all duration-300 ${isIndustriesOpen ? "max-h-[800px]" : "max-h-0"
-                        }`}
-                    >
-                      <div className="mx-4 border-t border-gray-200" />
-                      <ul className="pb-3">
-                        {servicesMenu.industries.map((item) => (
-                          <li key={item.name}>
-                            <Link
-                              href={item.href}
-                              onClick={closeMenu}
-                              className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#2d8ec5]"
-                            >
-                              {item.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                  </div>
-
+                  <div className="mx-4 border-t border-gray-200" />
+                  <ul className="pb-3">
+                    {servicesMenu.capabilities.map((item) => (
+                      <li key={item.name}>
+                        <Link
+                          href={item.href}
+                          onClick={closeMenu}
+                          className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#2d8ec5]"
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </li>
@@ -682,7 +599,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/who-we-are"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/who-we-are"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/who-we-are"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
@@ -695,7 +612,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/contact-us"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/contact-us"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/contact-us"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
@@ -707,7 +624,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/careers"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/career"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/career"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}

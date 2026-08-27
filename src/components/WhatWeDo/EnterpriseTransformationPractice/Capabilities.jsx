@@ -63,13 +63,13 @@ const CAPABILITIES = [
 // feel mechanical rather than polished.
 const REVEAL_EASE = [0.22, 1, 0.36, 1];
 
-// Open/close accordion per Figma: card 1 is open on load; the row itself no
-// longer opens on hover — that reads as accidental on a fast scroll past
-// this section. Every closed card now shows its own "View Details" button
-// (Figma node 2620:20, the new alteration), and clicking THAT button is the
-// only thing that activates a card and closes whichever one was open
-// before. The open card doesn't need that button — its own "View More"
-// (below) already replaces it once expanded.
+// Open/close accordion per Figma: card 1 is open on load, and every closed card
+// shows its own "View Details" button (Figma node 2620:20) — that button's
+// onClick is the only way to activate a card, on touch and desktop alike. Click
+// only, deliberately — this section is meant to be browsed on scroll, and
+// hover-to-open read as accidental activation while scrolling past it. The open
+// card doesn't need that button — its own "View More" (below) already replaces
+// it once expanded.
 function CapabilityCard({ number, title, description, image, href, services, isActive, isLast, onActivate }) {
     return (
         <div
@@ -124,6 +124,19 @@ function CapabilityCard({ number, title, description, image, href, services, isA
                 the min-height note below for the full explanation). Slowed further
                 to 1100ms (was 800ms, originally 500ms) since 800ms still read as
                 too quick for a premium feel. */}
+
+            {/* Mobile-only duplicate of the number+title below (which is hidden below lg
+                for exactly this reason) — on mobile the image should sit below the
+                number/title instead of above them, but desktop needs them grouped with
+                the description in a single column (see that block's own comment), so
+                splitting them into their own top-level flex item is the only way to
+                reorder just this one piece without disturbing the desktop layout or the
+                description's collapse-height animation. */}
+            <div className="flex flex-col gap-3 lg:hidden">
+                <span className="text-[#8794a3] text-2xl font-medium leading-[1.5]">{number}</span>
+                <p className="text-[#10161d] text-lg font-medium leading-[1.5]">{title}</p>
+            </div>
+
             <motion.div
                 initial={false}
                 animate={{
@@ -134,11 +147,12 @@ function CapabilityCard({ number, title, description, image, href, services, isA
                     duration: 0.8,
                     ease: REVEAL_EASE
                 }}
-                className="overflow-hidden w-full lg:w-[272px] shrink-0 self-start"
+                className="overflow-hidden w-[200px] sm:w-[240px] lg:w-[272px] shrink-0 self-start"
             >
                 <div
-                    className={`relative w-full aspect-[272/459] transition-[transform] ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive ? "duration-[800ms] delay-[100ms] scale-100" : "duration-[400ms] scale-[0.97]"
-                        }`}
+                    className={`relative w-full aspect-[272/459] transition-[transform] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                        isActive ? "duration-[800ms] delay-[100ms] scale-100" : "duration-[400ms] scale-[0.97]"
+                    }`}
                 >
                     <Image src={image} alt="" fill className="object-cover" />
                 </div>
@@ -168,10 +182,10 @@ function CapabilityCard({ number, title, description, image, href, services, isA
                     reveal in place below them while open — using Framer Motion for a
                     perfectly synchronized smooth collapse/expand transition. */}
                 <div className="flex flex-col sm:w-[320px] gap-3 shrink-0">
-                    <span className="text-[#8794a3] text-2xl sm:text-[28px] font-medium leading-[1.5]">
+                    <span className="hidden lg:inline text-[#8794a3] text-2xl sm:text-[28px] font-medium leading-[1.5]">
                         {number}
                     </span>
-                    <h2 className="text-[#2E3033] text-2xl font-semibold leading-[1.5]">{title}</h2>
+                    <p className="hidden lg:block text-[#10161d] text-lg font-medium leading-[1.5]">{title}</p>
 
                     <motion.div
                         initial={false}
@@ -186,7 +200,7 @@ function CapabilityCard({ number, title, description, image, href, services, isA
                         className="overflow-hidden"
                     >
                         <div className="flex flex-col gap-8 pt-5">
-                            <p className="text-[#55595E] text-lg font-light leading-normal">{description}</p>
+                            <p className="text-[#4a5568] text-lg font-light leading-normal">{description}</p>
                             <Link
                                 href={href}
                                 onClick={(event) => event.stopPropagation()}
@@ -299,13 +313,20 @@ function CapabilityCard({ number, title, description, image, href, services, isA
                             child — padding included — away to nothing while
                             closed. */}
                         <div className="flex flex-col gap-3 sm:gap-4 pt-12 sm:pt-[54px]">
+                            {/* Each service links to its own sub-page with a ?service=
+                                query param, so that page's own accordion/carousel can
+                                open on the matching item and scroll itself into view —
+                                see the useSearchParams effect on each destination
+                                component (SAPS4HANAMigrationImplementation.jsx,
+                                CapabilitiesAccordion.jsx, GovernanceSAPDataDepth.jsx). */}
                             {services.map((service) => (
-                                <h2
+                                <Link
                                     key={service}
-                                    className="text-[#55595E] text-base font-light leading-[1.5]"
+                                    href={`${href}?service=${encodeURIComponent(service)}`}
+                                    className="w-fit text-[#4a5568] text-base font-light leading-[1.5] transition-colors hover:text-[#2d8ec5]"
                                 >
                                     {service}
-                                </h2>
+                                </Link>
                             ))}
                         </div>
                     </motion.div>
@@ -355,8 +376,8 @@ export default function Capabilities() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-3 sm:gap-[24px] max-w-[855px] text-center"
             >
-                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Capabilities</h2>
-                <p className="text-[#55595E] text-lg font-light">
+                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">Capabilities</h2>
+                <p className="text-[#4a5568] text-lg font-light">
                     SAP is our core — deliberately. Microsoft and adjacent platforms extend that core so the
                     enterprise moves as a system, not a set of silos.
                 </p>

@@ -33,8 +33,8 @@ export default function OurStrength() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-12"
             >
-                <h2 className="text-2xl font-medium text-[#0d0c22]">The scale behind the practice</h2>
-                <p className="mt-2 text-base sm:text-lg font-light text-[#3d3d4e]">
+                <h2 className="text-[28px] font-semibold text-[#2E3033]">The scale behind the practice</h2>
+                <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
                     Numbers that describe reach, not just size.
                 </p>
             </motion.div>
@@ -51,14 +51,14 @@ export default function OurStrength() {
                         {index > 0 && <div className="hidden sm:block w-px bg-[#cdcdcd] shrink-0" />}
                         <motion.div
                             variants={itemVariants}
-                            className="flex-1 flex flex-col justify-center gap-7 py-8 px-6 sm:px-10"
+                            className="flex-1 flex flex-col justify-center items-center text-center gap-7 py-8 px-6 sm:px-10"
                         >
-                            <p className="text-3xl sm:text-4xl text-black">{item.value}</p>
+                            <p className="text-3xl sm:text-4xl text-[#2E3033]">{item.value}</p>
                             <div>
-                                <p className="text-xl text-black">{item.title}</p>
-                                <p className="text-sm font-light text-black mt-3 leading-relaxed">
+                                <p className="text-xl text-[#55595E]">{item.title}</p>
+                                {/* <p className="text-sm font-light text-black mt-3 leading-relaxed">
                                     {item.description}
-                                </p>
+                                </p> */}
                             </div>
                         </motion.div>
                     </React.Fragment>

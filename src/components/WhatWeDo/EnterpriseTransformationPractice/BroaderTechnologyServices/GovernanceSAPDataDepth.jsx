@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import panelImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/BroaderTechnologyServices/governance-panel.png";
@@ -42,6 +43,8 @@ const slideVariants = {
 };
 
 export default function GovernanceSAPDataDepth() {
+    const searchParams = useSearchParams();
+    const sectionRef = useRef(null);
     const [[index, direction], setPage] = useState([0, 1]);
     const maxIndex = ITEMS.length - 1;
     const active = ITEMS[index];
@@ -49,8 +52,22 @@ export default function GovernanceSAPDataDepth() {
 
     const goTo = (nextIndex, dir) => setPage([Math.max(0, Math.min(maxIndex, nextIndex)), dir]);
 
+    // Deep-link from the Enterprise page's Capabilities service list — see the
+    // matching effect in SapTransformation/SAPS4HANAMigrationImplementation.jsx.
+    useEffect(() => {
+        const service = searchParams.get("service");
+        if (!service) return;
+        const matchedIndex = ITEMS.findIndex((item) => item.title === service);
+        if (matchedIndex === -1) return;
+        setPage([matchedIndex, 1]);
+        sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, [searchParams]);
+
     return (
-        <section className="w-full bg-[#F3F6F9] py-10 sm:py-16 px-6 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16">
+        <section
+            ref={sectionRef}
+            className="w-full bg-[#F3F6F9] py-10 sm:py-16 px-6 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16 scroll-mt-24"
+        >
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

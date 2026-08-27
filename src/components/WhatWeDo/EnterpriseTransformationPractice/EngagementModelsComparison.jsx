@@ -62,19 +62,47 @@ export default function EngagementModelsComparison() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-5 max-w-[818px] text-center"
             >
-                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Engagement Models</h2>
-                <p className="text-[#55595E] text-lg font-light leading-[1.5]">
+                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">Engagement Models</h2>
+                <p className="text-[#4a5568] text-lg font-light leading-[1.5]">
                     Choose the engagement model that fits your needs, from focused projects to ongoing support and
                     strategic guidance.
                 </p>
             </motion.div>
 
-            {/* Horizontal scroll on narrow viewports so the comparison stays a real
-                table instead of being crushed into unreadable columns. No max-width
-                cap — w-full within the section's own px-[64px] padding keeps the
-                side gap at exactly 64px on any viewport. 4 equal-width columns
-                (Figma: 268px each) with a single uniform gap-x-[28px] between all
-                of them.
+            {/* Mobile: the hover-driven column table below doesn't translate to touch
+                (no hover, and the horizontal scrollbar it needs at min-w-[760px] just
+                pushed content out of view) — so under sm this pivots into one static
+                card per engagement model instead, each listing all 4 rows as
+                label/value pairs. No active-column highlight here; there's no hover
+                to justify it. */}
+            <div className="w-full flex flex-col gap-6 sm:hidden">
+                {COLUMNS.filter((column) => column.key !== "workingModel").map((column) => (
+                    <div
+                        key={column.key}
+                        className="w-full bg-white flex flex-col gap-5 p-6 shadow-[2px_4px_8.4px_0px_rgba(0,0,0,0.1)]"
+                    >
+                        <p className="text-xl font-medium text-[#1c5f85]">{column.title}</p>
+                        <div className="flex flex-col gap-4">
+                            {ROWS.map((row) => (
+                                <div key={row.workingModel} className="flex flex-col gap-1">
+                                    <p className="font-urbane text-sm font-medium text-[#8794a3]">
+                                        {row.workingModel}
+                                    </p>
+                                    <p className="text-base font-light text-[#10161d]">{row[column.key]}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* sm and up: the original hover-driven comparison table, unchanged.
+                Horizontal scroll on narrower desktop viewports so the comparison
+                stays a real table instead of being crushed into unreadable columns.
+                No max-width cap — w-full within the section's own px-[64px] padding
+                keeps the side gap at exactly 64px on any viewport. 4 equal-width
+                columns (Figma: 268px each) with a single uniform gap-x-[28px]
+                between all of them.
 
                 3 explicit stacking layers, not left to accident: the divider lines
                 (z-0), one continuous active-column highlight spanning the whole
@@ -93,7 +121,7 @@ export default function EngagementModelsComparison() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="w-full overflow-x-auto"
+                className="hidden sm:block w-full overflow-x-auto"
             >
                 <div className="relative min-w-[760px]">
                     {/* Header row. Every cell is left-aligned (pl-8/pr-4) —
@@ -109,7 +137,7 @@ export default function EngagementModelsComparison() {
                             if (isWorkingModel) {
                                 return (
                                     <div key={column.key} className="relative z-20 py-8 pl-8 pr-4 flex items-center justify-start text-left">
-                                        <p className="text-xl sm:text-2xl font-semibold text-[#1c5f85]">{column.title}</p>
+                                        <p className="text-xl sm:text-2xl font-medium text-[#1c5f85]">{column.title}</p>
                                     </div>
                                 );
                             }
@@ -156,7 +184,7 @@ export default function EngagementModelsComparison() {
                                 if (isWorkingModel) {
                                     return (
                                         <div key={column.key} className="relative z-20 py-8 pl-8 pr-4 flex items-center justify-start text-left">
-                                            <p className=" text-2xl font-medium text-[#10161d]">{row[column.key]}</p>
+                                            <p className="font-urbane text-2xl font-medium text-[#10161d]">{row[column.key]}</p>
                                         </div>
                                     );
                                 }

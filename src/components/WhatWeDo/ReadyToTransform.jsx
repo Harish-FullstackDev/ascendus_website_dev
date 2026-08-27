@@ -45,7 +45,7 @@ export default function ReadyToTransform({
                     <button
                         type="button"
                         onClick={handleContactClick}
-                        className="rounded-full border border-[#d0d0d0] px-4 py-2 text-sm sm:text-lg font-light text-white transition-colors hover:bg-white hover:text-black"
+                        className="rounded-none border border-[#d0d0d0] px-4 py-2 text-sm sm:text-lg font-light text-white transition-colors hover:bg-white hover:text-black"
                     >
                         {buttonLabel}
                     </button>

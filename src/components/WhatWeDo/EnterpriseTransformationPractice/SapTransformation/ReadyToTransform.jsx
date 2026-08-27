@@ -39,7 +39,7 @@ export default function ReadyToTransform({
                         }`}
                 >
                     <div className="flex flex-col w-full md:gap-12">
-                        <h2 className="text-2xl sm:text-4xl font-semibold text-white">
+                        <h2 className="text-2xl sm:text-4xl font-light text-white">
                             {title}
                         </h2>
 
