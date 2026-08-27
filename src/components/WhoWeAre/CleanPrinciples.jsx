@@ -4,24 +4,24 @@ import { motion } from "framer-motion";
 
 const PRINCIPLES = [
     {
-        title: "Client-Centric Approach",
+        title: "Ownership",
         description:
-            "Minimize custom code in the SAP core to ensure seamless upgrades and innovations.",
+            "We stay accountable for outcomes after go-live, not just the milestones written into a statement of work.",
     },
     {
-        title: "Innovation with Purpose",
+        title: "Precision",
         description:
-            "Build extensions on SAP Business Technology Platform to stay upgrade-safe.",
+            "Every recommendation is built around your landscape and your compliance obligations, not a generic playbook applied regardless of fit.",
     },
     {
-        title: "Excellence in Delivery",
+        title: "Transparency",
         description:
-            "Use standard APIs and integration suites instead of direct system modifications.",
+            "Clients see the plan, the risks, and the trade-offs early, so decisions get made on full information rather than after the fact.",
     },
     {
-        title: "Integrity & Trust",
+        title: "Regional Fluency",
         description:
-            "Adopt cloud-native practices for scalability, agility, and continuous innovation.",
+            "We operate inside the regulatory and operational realities of the GCC, not at a distance from them, and design accordingly.",
     },
 ];
 
@@ -48,10 +48,9 @@ export default function CleanPrinciples() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center max-w-3xl mx-auto"
                 >
-                    <h2 className="text-[28px] font-semibold text-[#2E3033]">Our Clean Principles</h2>
-                    <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
-                        We are passionate about empowering individuals and businesses to take control of their
-                        finances and achieve their financial goals.
+                    <h2 className="text-2xl font-medium text-[#0d0c22]">What shapes how we deliver</h2>
+                    <p className="mt-2 text-base sm:text-lg font-light text-[#3d3d4e]">
+                        Four principles carried into every engagement, not values printed on a wall and left there.
                     </p>
                 </motion.div>
 
@@ -68,10 +67,10 @@ export default function CleanPrinciples() {
                             variants={itemVariants}
                             whileHover={{ y: -4 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="bg-[#EDEDED]  rounded-none flex flex-col justify-end p-6 h-[220px] sm:h-[237px]"
+                            className="bg-[#0a2b3e] shadow-[0px_2px_8px_rgba(0,0,0,0.19)] flex flex-col justify-end p-6 h-[220px] sm:h-[237px]"
                         >
-                            <h2 className="text-2xl font-semibold text-[#2E3033]">{item.title}</h2>
-                            <p className="text-lg font-light text-[#55595E] mt-4 leading-relaxed">
+                            <p className="text-lg font-medium text-white">{item.title}</p>
+                            <p className="text-xs font-light text-white/80 mt-4 leading-relaxed">
                                 {item.description}
                             </p>
                         </motion.div>

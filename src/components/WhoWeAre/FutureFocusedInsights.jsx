@@ -25,11 +25,26 @@ const itemVariants = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-export default function FutureFocusedInsights() {
+export default function FutureFocusedInsights({
+    showTopDivider = true,
+    overlapCTA = true,
+    title = "Future Focused Insights",
+    description = "We are passionate about empowering individuals and businesses to take control of their finances and achieve their financial goals.",
+}) {
     return (
         <>
-            <div className="w-full h-px bg-gray-200 max-w-[1300px] mx-auto mt-16 sm:mt-10" />
-            <section className="relative z-10 w-full pt-16 sm:pt-20 px-4 sm:px-6 lg:px-8 bg-white">
+            {showTopDivider && (
+                <div className="w-full h-px bg-gray-200 max-w-[1300px] mx-auto mt-16 sm:mt-10" />
+            )}
+            {/* No bg-white here (deliberately) when overlapCTA is on: with a negative
+                bottom margin on the last child and no bottom padding/border on this
+                section, the child's margin collapses through and drags the *next*
+                sibling up underneath — but this section's own box still renders at its
+                un-shrunk auto height, so a bg-white here would paint solid white across
+                the full width all the way down to the cards' bottom edge, hiding the
+                overlap entirely. Leaving it transparent lets the CTA's dark background
+                show through beside the (narrower, its own bg-white) card grid instead. */}
+            <section className="relative z-10 w-full pt-16 sm:pt-16 px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -37,20 +52,23 @@ export default function FutureFocusedInsights() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center max-w-3xl mx-auto mb-12"
                 >
-                    <h2 className="text-2xl font-medium text-[#0d0c22]">Future Focused Insights</h2>
+                    <h2 className="text-2xl font-medium text-[#0d0c22]">{title}</h2>
                     <p className="mt-2 text-base sm:text-lg font-light text-[#3d3d4e]">
-                        We are passionate about empowering individuals and businesses to take control of their finances
-                        and achieve their financial goals.
+                        {description}
                     </p>
                 </motion.div>
 
-                {/* Card overlaps the CTA background below it, matching the Figma layout */}
+                {/* overlapCTA: cards bleed into the CTA section below (used on /who-we-are,
+                    which pads its CTA top enough to clear it). When false, the cards stay
+                    fully within this section and hand off a normal white→colored boundary
+                    gap instead (full 64px, not halved — see design system padding rule). */}
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
-                    className="relative z-20 bg-white max-w-[1300px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 -mb-0 sm:-mb-30 lg:-mb-[180px]"
+                    className={`relative z-20 bg-white max-w-[1300px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 ${overlapCTA ? "-mb-0 sm:-mb-30 lg:-mb-[206px]" : "mb-10 sm:mb-16"
+                        }`}
                 >
                     {INSIGHTS.map((item, index) => (
                         <motion.div

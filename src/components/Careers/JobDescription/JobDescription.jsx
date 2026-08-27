@@ -354,7 +354,7 @@ export default function JobDescription({ job, otherJobs = [] }) {
                             href={`/careers/apply?position=${encodeURIComponent(job.title)}`}
                             className="w-full h-9 border border-black/10 bg-white text-[#0a0a0a] text-sm font-medium flex items-center justify-center transition-colors hover:bg-slate-50"
                         >
-                            Apply for This Job
+                            Manual Apply
                         </Link>
                     </div>
                 </div>

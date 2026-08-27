@@ -14,14 +14,18 @@ export default function AboutUsPanel() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="max-w-5xl mx-auto text-center"
             >
-                <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">About Us</h2>
-                <p className="mt-3 text-sm sm:text-lg font-light text-[#55595E] leading-relaxed">
-                    We are passionate about empowering individuals and businesses to take control of their finances
-                    and achieve their financial goals.At Ascendus, we believe that the future of technology is shaped by
-                    people. As we move towards becoming the world&apos;s largest AI‑led technology services, we
-                    foster a culture built on long‑term trust, collective growth, and purposeful innovation—where
-                    individuals are empowered to learn continuously, collaborate globally, and create meaningful
-                    impact with integrity.
+                <h2 className="text-xl sm:text-4xl font-medium text-black">Started around a gap, not a product</h2>
+                <p className="mt-3 text-sm sm:text-xl font-thin text-[#3d3d4e] leading-relaxed">
+                    Most enterprise technology providers specialize in one layer of the stack: the SAP
+                    implementation, the cloud migration, or the support that follows once a system is live. We
+                    were built to close the space between those layers, which is where most transformations
+                    actually stall.
+                </p>
+                <p className="mt-3 text-sm sm:text-xl font-thin text-[#3d3d4e] leading-relaxed">
+                    That has grown into a practice covering SAP transformation, cloud and data engineering, digital
+                    and customer experience, and the compliance work that comes with operating across the GCC.
+                    What hasn&apos;t changed is the reason the practice exists: enterprises need a partner who is
+                    still accountable long after the project plan says the work is done.
                 </p>
                 <div className="w-full h-px bg-[#c7cbcd] max-w-[1300px] mx-auto mt-16 sm:mb-10" />
             </motion.div>

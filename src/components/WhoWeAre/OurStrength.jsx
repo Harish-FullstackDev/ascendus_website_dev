@@ -3,11 +3,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Per the copy deck: only ship stats we can confirm. The deck lists a 4th
+// ("[X] years operating across the region") but flags it explicitly as
+// unconfirmed and says to drop to a 3-stat row rather than publish a
+// placeholder number — so there are 3 here, not 4.
 const STRENGTHS = [
-    { value: "150+", title: "Successful Projects", description: "" },
-    { value: "1000+", title: "Expert Consultants", description: "" },
-    { value: "1000+", title: "Client Satisfaction", description: "" },
-    { value: "1000+", title: "Industries Served", description: "" },
+    { value: "150+", title: "SAP engagements delivered", description: "" },
+    { value: "400+", title: "Specialists across the practice", description: "" },
+    { value: "6", title: "Delivery locations across the GCC", description: "" },
 ];
 
 const containerVariants = {
@@ -30,10 +33,9 @@ export default function OurStrength() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-12"
             >
-                <h2 className="text-2xl font-medium text-[#16171a]">Our Strength</h2>
+                <h2 className="text-2xl font-medium text-[#0d0c22]">The scale behind the practice</h2>
                 <p className="mt-2 text-base sm:text-lg font-light text-[#3d3d4e]">
-                    We are passionate about empowering individuals and businesses to take control of their finances
-                    and achieve their financial goals.
+                    Numbers that describe reach, not just size.
                 </p>
             </motion.div>
 

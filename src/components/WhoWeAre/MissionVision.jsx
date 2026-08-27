@@ -36,12 +36,12 @@ const CARDS = [
     {
         title: "Mission",
         description:
-            "To empower businesses through innovative technology, strategic consulting, and tailored digital solutions that drive sustainable growth, operational excellence, and long-term success.",
+            "To give enterprises across the GCC a single, accountable partner for the technology their operations depend on, from the first SAP assessment through years of live production support. We measure our work by whether systems keep running the way they were designed to, long after the project team has moved on.",
     },
     {
         title: "Vision",
         description:
-            "To be a trusted global technology and consulting partner, helping organizations transform, innovate, and lead confidently in an ever-evolving digital world.",
+            "To be the enterprise technology practice GCC organizations turn to first, not because we cover every capability on a page, but because our SAP foundation, cloud engineering, and compliance fluency operate as one coordinated practice instead of five separate vendor relationships.",
     },
     {
         title: "Culture & Values",
@@ -99,19 +99,19 @@ function AnimatedBorderCard({ title, description }) {
 export default function MissionVision() {
     return (
         <section className="w-full py-16 sm:py-20">
-            {/* <motion.div
+            <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-12 px-4 sm:px-6 lg:px-8"
             >
-                <h2 className="text-2xl font-medium text-[#16171a]">Mission and Vision</h2>
+                <h2 className="text-2xl font-medium text-[#0d0c22]">Where we&apos;re headed, and why</h2>
                 <p className="mt-2 text-base sm:text-lg font-light text-[#3d3d4e]">
-                    We are passionate about empowering individuals and businesses to take control of their finances
-                    and achieve their financial goals.
+                    Everything we build ties back to two commitments: what we exist to do for clients today, and
+                    where we intend to take the practice next.
                 </p>
-            </motion.div> */}
+            </motion.div>
 
             <div className="relative w-full sm:h-[800px]">
                 {/* Fixed Background */}
@@ -121,7 +121,7 @@ export default function MissionVision() {
                         backgroundImage: `url(${missionBg.src})`,
                     }}
                 />
-                <div className="absolute inset-0 bg-black/40" />
+                {/* <div className="absolute inset-0 bg-black/40" /> */}
                 <div className="relative flex flex-col sm:flex-row sm:h-full sm:items-center px-5">
                     {CARDS.map((card) => (
                         <AnimatedBorderCard key={card.title} {...card} />

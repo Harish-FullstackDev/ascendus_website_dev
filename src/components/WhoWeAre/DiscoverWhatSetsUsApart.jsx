@@ -31,8 +31,8 @@ export default function DiscoverWhatSetsUsApart() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-12"
             >
-                <h2 className="text-2xl font-medium text-[#2E3033]">Discover What Set Us apart</h2>
-                <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
+                <h2 className="text-2xl font-medium text-[#0d0c22]">Discover What Set Us apart</h2>
+                <p className="mt-2 text-base sm:text-lg font-light text-[#3d3d4e]">
                     We are passionate about empowering individuals and businesses to take control of their finances
                     and achieve their financial goals.
                 </p>

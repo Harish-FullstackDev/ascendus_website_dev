@@ -1,20 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar/Navbar";
+import Image from "next/image";
 import heroBg from "@/assets/WhoWeAre/webp/Who_We_Are_Hero.webp";
 
 export default function WhoWeAreHero() {
     return (
-        <section
-            className="relative w-full h-[340px] sm:h-screen bg-cover bg-center bg-fixed overflow-hidden"
-            style={{ backgroundImage: `url(${heroBg.src})` }}
-        >
-            <div className="absolute inset-0 " />
-
-            <Navbar />
-
-
-        </section>
+        <div className="relative w-full h-full overflow-hidden bg-black">
+            <Image src={heroBg} alt="" fill priority className="object-cover object-center" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+        </div>
     );
 }
