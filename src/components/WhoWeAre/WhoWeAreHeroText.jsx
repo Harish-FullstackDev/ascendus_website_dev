@@ -14,9 +14,9 @@ export default function WhoWeAreHeroText() {
                 <p className="text-white/90 text-sm sm:text-lg lg:text-xl uppercase tracking-wide font-light">
                     Who we are</p>
 
-                <div className="mt-3 sm:mt-4 h-px w-full bg-white/40" />
+                <div className="mt-3 sm:mt- h-px w-full bg-white/40" />
 
-                <h1 className="text-white text-2xl sm:text-4xl lg:text-5xl font-medium capitalize mt-6 sm:mt-8 leading-tight">
+                <h1 className="text-white text-2xl sm:text-4xl lg:text-5xl font-medium capitalize mt-6 sm:mt-6 leading-tight">
                     An enterprise technology partner built to stay in the room after go-live.
                 </h1>
             </motion.div>

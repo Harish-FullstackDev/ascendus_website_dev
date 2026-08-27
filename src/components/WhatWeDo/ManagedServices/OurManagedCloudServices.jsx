@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 import cardBg from "@/assets/WhatWeDo/Managed Services/Section10_Card_Bg.svg";
 import arrowImg from "@/assets/WhatWeDo/Managed Services/Section10_Arrow.png";
-import discoverIcon from "@/assets/WhatWeDo/Managed Services/Icons/Section10_Icon.svg";
+import discoverIcon from "@/assets/WhatWeDo/Managed Services/icons/Section10_Icon.svg";
 
 // Fixed design canvas — matches the Figma frame (916x1013) exactly, then the
 // whole canvas scales as one rigid unit so cards and connectors never drift
