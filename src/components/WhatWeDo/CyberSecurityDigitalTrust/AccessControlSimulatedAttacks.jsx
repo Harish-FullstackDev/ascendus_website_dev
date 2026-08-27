@@ -18,7 +18,7 @@ export default function AccessControlSimulatedAttacks() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[560px] mx-auto text-center"
                 >
-                    <h2 className="text-[#2E3033] text-[28px] sm:text-[28px] font-medium">
+                    <h2 className="text-[#2E3033] text-[28px] sm:text-[28px] font-semibold">
                         Access Control & Simulated Attacks
                     </h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
@@ -34,7 +34,7 @@ export default function AccessControlSimulatedAttacks() {
                     className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[100px]"
                 >
                     <div className="flex flex-col gap-5 w-full">
-                        <p className="text-[#2E3033] text-lg sm:text-2xl font-light">Access Control That Actually Holds</p>
+                        <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">Access Control That Actually Holds</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             We design identity and access management, including
                             SAP segregation of duties, so the right people have the right access and nothing more,
@@ -58,9 +58,9 @@ export default function AccessControlSimulatedAttacks() {
                             <Image src={integrationImage2} alt="" fill className="object-cover" />
                         </div>
                         <div className="flex flex-col gap-5 w-full">
-                            <p className="text-[#2E3033] text-lg sm:text-2xl font-light">
+                            <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">
                                 Finding the Gaps Before Attackers Do
-                            </p>
+                            </h2>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">
                                 We run vulnerability assessments and penetration
                                 testing that go beyond automated scans, simulating real attack paths across your

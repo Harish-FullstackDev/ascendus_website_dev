@@ -60,6 +60,7 @@ export default function StatsCards() {
                         className={`relative aspect-[258/335] flex flex-col justify-between p-6 ${card.textColor}`}
                     >
                         <Image src={card.bg} alt="" fill className="object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/50" />
 
                         <p className="relative text-base sm:text-lg font-light max-w-[196px]">
                             {card.description}

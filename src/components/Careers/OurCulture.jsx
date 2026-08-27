@@ -27,19 +27,19 @@ export default function OurCulture() {
                     className="w-full lg:absolute lg:top-[12.104%] lg:left-[44.766%] lg:h-[77.467%] lg:w-[50.547%] bg-[#f4f3f9] flex flex-col justify-center gap-6 px-6 sm:px-10 py-10 sm:py-14"
                 >
                     <div>
-                        <p className="text-lg text-black">Our Culture</p>
-                        <h2 className="text-2xl font-medium text-black mt-1">Cultivating collaboration beyond work</h2>
+                        <p className="text-lg text-black">Life Here</p>
+                        <h2 className="text-2xl font-medium text-black mt-1">A team built around how the work gets done.</h2>
                     </div>
                     <p className="text-sm sm:text-base text-[#6c6c6c] leading-relaxed">
-                        Our culture at Ascendus is driven by people, purpose, and progress. We
-                        cultivate an inclusive workplace where learning is continuous, collaboration is natural, and
-                        innovation is part of our everyday work. By empowering our people to grow, lead, and create
-                        meaningful impact, we are building a future where both individuals and our organization
-                        succeed together.
+                        We value clarity, accountability and collaboration because complex work demands all three.
+                        People are expected to contribute, challenge assumptions and take responsibility for the
+                        quality of what they deliver. There is no single profile for success here. What matters is
+                        curiosity, technical discipline, a willingness to learn and the ability to work well with
+                        people across different disciplines.
                     </p>
                     <button
                         type="button"
-                        aria-label="Learn more about Our Culture"
+                        aria-label="Meet our team"
                         className="flex items-center justify-center size-9 rounded-full border border-[#6c6c6c] text-[#6c6c6c] transition-colors hover:bg-black hover:text-white hover:border-black"
                     >
                         <ArrowRight className="w-4 h-4" />

@@ -18,10 +18,10 @@ export default function ScalingPilotsSmartOperations() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[560px] mx-auto text-center"
                 >
-                    <h2 className="text-black text-2xl sm:text-[28px] font-medium">
+                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
                         Scaling Pilots & Smart Operations
                     </h2>
-                    <p className="text-[#515151] text-base sm:text-lg font-light">
+                    <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Transforming technology proofs-of-concept into full operational platforms.
                     </p>
                 </motion.div>
@@ -34,7 +34,7 @@ export default function ScalingPilotsSmartOperations() {
                     className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[100px]"
                 >
                     <div className="flex flex-col gap-5 w-full">
-                        <p className="text-black text-lg sm:text-2xl font-light">Access Control That Actually Holds</p>
+                        <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">Access Control That Actually Holds</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             We design identity and access management, including
                             SAP segregation of duties, so the right people have the right access and nothing more,
@@ -58,9 +58,9 @@ export default function ScalingPilotsSmartOperations() {
                             <Image src={integrationImage2} alt="" fill className="object-cover" />
                         </div>
                         <div className="flex flex-col gap-5 w-full">
-                            <p className="text-black text-lg sm:text-2xl font-light">
+                            <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">
                                 Industry 4.0 for the Operations That Need It Most
-                            </p>
+                            </h2>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">
                                 We help manufacturing and industrial
                                 operators connect equipment, sensors, and enterprise systems into a responsive, datadriven operation that improves throughput and reduces downtime

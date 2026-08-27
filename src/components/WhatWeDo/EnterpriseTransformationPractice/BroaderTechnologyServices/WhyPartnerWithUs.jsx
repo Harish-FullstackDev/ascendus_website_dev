@@ -52,7 +52,7 @@ export default function WhyPartnerWithUs() {
             >
                 <h2 className="text-[#0d0c22] text-2xl sm:text-[28px] font-medium">Why Partner With Us For This</h2>
                 <p className="text-[#3d3d4e] text-lg font-light">
-                    The same practice that runs your SAP core also builds and secures everything connected to it.
+                    Core engineering capabilities for data platforms and business intelligence
                 </p>
             </motion.div>
 

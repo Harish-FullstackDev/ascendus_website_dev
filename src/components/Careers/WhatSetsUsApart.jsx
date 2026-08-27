@@ -31,7 +31,7 @@ export default function WhatSetsUsApart() {
                     className="text-center max-w-[1500px] mx-auto"
                 >
                     <h2 className="text-2xl font-medium text-black">What sets us apart</h2>
-                    <p className="mt-3 text-base text-black">At Ascendus, people are at the heart of everything we do.</p>
+                    <p className="mt-3 text-base text-black">At SST, people are at the heart of everything we do.</p>
                     <p className="mt-2 text-sm sm:text-base text-[#6c6c6c] leading-relaxed">
                         We empower our teams through continuous learning and innovation. Our collaborative culture
                         encourages creativity and shared success.
@@ -51,7 +51,7 @@ export default function WhatSetsUsApart() {
                             variants={itemVariants}
                             whileHover={{ y: -4 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="bg-[#16171a] shadow-[0px_2px_8px_rgba(0,0,0,0.19)] flex flex-col justify-end gap-4 p-6 h-[220px] sm:h-[237px]"
+                            className="bg-[#0a2b3e] shadow-[0px_2px_8px_rgba(0,0,0,0.19)] flex flex-col justify-end gap-4 p-6 h-[220px] sm:h-[237px]"
                         >
                             <p className="text-2xl text-white">{stat.value}</p>
                             <div>

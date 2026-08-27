@@ -14,7 +14,7 @@ export default function SoftwareScalability() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-medium">
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">
                     Software Scalability
                 </h2>
 
@@ -47,7 +47,7 @@ export default function SoftwareScalability() {
                     className="w-full sm:w-[59.5%] bg-white flex items-center  py-10"
                 >
                     <div className="flex flex-col gap-5 sm:gap-[34px] text-[#2E3033] w-full">
-                        <h2 className="text-xl sm:text-2xl font-medium">
+                        <h2 className="text-xl sm:text-2xl font-semibold">
                             Strategy That Becomes a Roadmap, Not a Deck
                         </h2>
 
@@ -56,7 +56,7 @@ export default function SoftwareScalability() {
                             into a sequenced transformation roadmap with clear ownership, dependencies, and
                             milestones, so it survives the handoff from strategy to delivery.
                         </p>
-                        <h2 className="text-xl sm:text-2xl text-[#2E3033] font-medium">
+                        <h2 className="text-xl sm:text-2xl text-[#2E3033] font-semibold">
                             Process Change People Actually Adopt
                         </h2>
 

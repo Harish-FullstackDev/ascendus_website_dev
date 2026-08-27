@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import workflowPhoto from "@/assets/WhatWeDo/Intelligent Automation/Section4_image.svg";
+import workflowPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_Why_Partner.webp";
 
 const SERVICES = [
     "Process mining before automation",
@@ -27,7 +27,7 @@ export default function WhyPartnerWithUs() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[760px] text-center px-6 sm:px-10"
             >
-                <h2 className="text-[#2E3033] text-[28px] sm:text-[28px] font-medium">
+                <h2 className="text-[#2E3033] text-[28px] sm:text-[28px] font-semibold">
                     Why Partner With Us
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">

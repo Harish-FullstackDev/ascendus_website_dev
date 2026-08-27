@@ -32,22 +32,33 @@ const REASONS = [
 
 export default function WhyPartnerWithUs() {
     return (
-        <section className="w-full bg-white pt-10 pb-8 sm:pt-16 sm:pb-16 px-6 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16">
+        <section className="w-full bg-white pt-10 pb-8 sm:pt-16 sm:pb-[32px] px-6 sm:px-[64px] flex flex-col items-center gap-8">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-5 max-w-[818px] text-center"
+                className="flex flex-col items-center gap-2 max-w-[818px] pb-0 sm:pb-16 text-center"
             >
-                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">Why Partner With Us For SAP</h2>
-                <p className="text-[#4a5568] text-lg font-light leading-[1.5]">
+                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Why Partner With Us For SAP</h2>
+                <p className="text-[#55595E] text-lg font-light leading-[1.5]">
                     Choose the engagement model that fits your needs, from focused projects to ongoing support and
                     strategic guidance.
                 </p>
             </motion.div>
 
-            <div className="w-full max-w-[1150px] grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-10 sm:gap-y-16">
+            {/* Figma: no extra max-w on the grid beyond the section's own 64px
+                padding (max-w-[1150px] here was double-constraining it, leaving
+                unwanted whitespace past the true padded edge on wide screens).
+                Column gap is ~180px at the 1150px reference width (≈15.6%,
+                implemented as a fluid %), row gap is 32px. Every card cell is
+                also a fixed 240px tall in Figma regardless of its own text
+                length (the shortest card, "Path for Every Landscape", still
+                gets the full 240px) — without that min-height, CSS Grid sizes
+                each row to only as tall as its shortest content, which is what
+                was reading as cramped even though the 32px gap itself was
+                already correct. */}
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-y-8 sm:gap-x-[15.6%]">
                 {REASONS.map((reason, index) => (
                     <motion.div
                         key={reason.title}
@@ -55,13 +66,11 @@ export default function WhyPartnerWithUs() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.6, ease: "easeOut", delay: (index % 2) * 0.1 }}
-                        className="flex flex-col gap-6"
+                        className="flex flex-col gap-6 sm:min-h-[240px]"
                     >
                         <Image src={reason.icon} alt="" className="size-12" />
-                        <div className="flex flex-col gap-3">
-                            <h3 className="text-[#10161d] text-xl font-normal leading-[1.3]">{reason.title}</h3>
-                            <p className="text-[#4a5568] text-xl font-light leading-[1.3]">{reason.desc}</p>
-                        </div>
+                        <h2 className="text-[#2E3033] text-xl font-semibold leading-[1.3]">{reason.title}</h2>
+                        <p className="text-[#55595E] text-lg font-light leading-[1.3]">{reason.desc}</p>
                     </motion.div>
                 ))}
             </div>

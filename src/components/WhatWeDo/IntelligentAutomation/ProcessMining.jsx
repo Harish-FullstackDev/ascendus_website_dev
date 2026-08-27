@@ -29,7 +29,7 @@ export default function ProcessMining() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="absolute left-0 bottom-0 sm:bottom-auto sm:top-[267px] w-[85%] sm:w-[477px] sm:h-60 bg-[#2d8ec5]/90 text-white flex flex-col justify-center gap-2 px-6 sm:px-[76px] py-6 sm:py-0 z-0"
                 >
-                    <p className="text-2xl sm:text-3xl font-medium">Advanced Decision Logic & Workflow</p>
+                    <p className="text-2xl sm:text-3xl font-semibold">Advanced Decision Logic & Workflow</p>
                     <p className="text-lg sm:text-2xl font-light">Extended automation capabilities for complex business rules.</p>
                 </motion.div>
 
@@ -47,7 +47,7 @@ export default function ProcessMining() {
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
                             className="bg-white px-8 py-10 flex flex-col gap-8 sm:h-64"
                         >
-                            <p className="text-black text-xl font-medium">{card.title}</p>
+                            <p className="text-black text-xl font-semibold">{card.title}</p>
                             <p className="text-[#7f7f7f] text-lg font-light">{card.desc}</p>
                         </motion.div>
                     ))}

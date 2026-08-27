@@ -24,7 +24,7 @@ export default function WhyPartnerWithUs() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="text-2xl font-medium text-[#2E3033]"
+                            className="text-2xl font-semibold text-[#2E3033]"
                         >
                             Why Partner With Us
                         </motion.h2>

@@ -86,7 +86,7 @@ export default function JobListingSection() {
                     type="text"
                     value={search}
                     onChange={(event) => setSearch(event.target.value)}
-                    placeholder="Search Area of Interest"
+                    placeholder="Search roles"
                     className="w-full bg-transparent text-[10px] font-thin text-[#6c6c6c] outline-none placeholder:text-[#6c6c6c]"
                 />
             </label>
@@ -108,7 +108,7 @@ export default function JobListingSection() {
                                     checked={selectedCategories.includes(category)}
                                     onChange={() => toggleCategory(category)}
                                     disabled={disabled}
-                                    className="size-3.5 accent-[#0061af]"
+                                    className="size-3.5 accent-[#2d8ec5]"
                                 />
                                 <span className="flex-1">{category}</span>
                                 <span className="text-black font-light">{count}</span>
@@ -129,8 +129,8 @@ export default function JobListingSection() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center mb-8"
             >
-                <p className="text-lg text-black">Join our Team</p>
-                <h2 className="text-2xl sm:text-3xl font-medium text-black mt-1">Explore Opportunities</h2>
+                <p className="text-lg text-black">Opportunities</p>
+                <h2 className="text-2xl sm:text-3xl font-medium text-black mt-1">Find work that matches your expertise.</h2>
             </motion.div>
 
             <motion.div
@@ -176,7 +176,8 @@ export default function JobListingSection() {
                         <div className="flex flex-col gap-3">
                             {paginatedJobs.length === 0 ? (
                                 <p className="text-sm text-[#5c5c5c] py-10 text-center">
-                                    No open positions match your filters right now.
+                                    No roles match your current filters. Adjust your search criteria or check back
+                                    as new opportunities become available.
                                 </p>
                             ) : (
                                 paginatedJobs.map((job, index) => (
@@ -187,7 +188,7 @@ export default function JobListingSection() {
                                         viewport={{ once: true, amount: 0.3 }}
                                         transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
                                         whileHover={{ scale: 1.015 }}
-                                        className="group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white border-l-4 border-transparent px-5 py-4 transition-all duration-300 hover:border-[#0061af] hover:shadow-[1px_3px_12px_rgba(0,0,0,0.18)]"
+                                        className="group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white border-l-4 border-transparent px-5 py-4 transition-all duration-300 hover:border-[#2d8ec5] hover:shadow-[1px_3px_12px_rgba(0,0,0,0.18)]"
                                     >
                                         <div>
                                             <p className="text-[16px] text-black">{job.title}</p>
@@ -197,10 +198,10 @@ export default function JobListingSection() {
                                         </div>
                                         <Link
                                             href={`/careers/${job.slug}`}
-                                            className="inline-flex w-full sm:w-auto justify-center items-center gap-2 rounded-full border border-[#7f7f7f] px-4 py-2 text-sm text-[#0061af]"
+                                            className="inline-flex w-full sm:w-auto justify-center items-center gap-2 rounded-full border border-[#7f7f7f] px-4 py-2 text-sm text-[#2d8ec5]"
                                         >
                                             <Image src={viewJobDetailsIcon} alt="" width={13} height={13} />
-                                            View Details
+                                            View Role
                                         </Link>
                                     </motion.div>
                                 ))
@@ -224,7 +225,7 @@ export default function JobListingSection() {
                                         type="button"
                                         onClick={() => setPage(pageNumber)}
                                         className={`flex items-center justify-center size-6 rounded text-sm font-semibold transition-colors ${pageNumber === page
-                                            ? "border border-[#0061af] text-[#0061af]"
+                                            ? "border border-[#2d8ec5] text-[#2d8ec5]"
                                             : "text-black opacity-50 hover:opacity-80"
                                             }`}
                                     >

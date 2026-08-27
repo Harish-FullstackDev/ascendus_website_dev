@@ -15,7 +15,7 @@ export default function CorePhilosophy() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="text-[28px] font-medium text-[#2E3033]"
+                            className="text-[28px] font-semibold text-[#2E3033]"
                         >
                             Core Philosophy
                         </motion.h2>

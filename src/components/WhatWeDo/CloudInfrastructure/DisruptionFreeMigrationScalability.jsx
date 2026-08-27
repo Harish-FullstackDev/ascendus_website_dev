@@ -32,7 +32,7 @@ export default function DisruptionFreeMigrationScalability() {
             >
                 <div className="max-w-[700px] mx-auto">
                     <h2
-                        className="text-[#2E3033] text-[22px] leading-[1.2] font-normal tracking-[-0.02em] sm:text-[28px]"
+                        className="text-[#2E3033] text-[22px] leading-[1.2] font-semibold tracking-[-0.02em] sm:text-[28px]"
                     >
                         Disruption-Free Migration & Scalability
                     </h2>
@@ -67,7 +67,7 @@ export default function DisruptionFreeMigrationScalability() {
                         <div className="relative sm:absolute sm:top-1/2 sm:-translate-y-1/2 bg-white w-full sm:w-[860px] sm:h-[250px] lg:h-[290px] -mt-4 sm:mt-0 overflow-hidden flex flex-col justify-center gap-6 px-6 sm:pl-[34px] sm:pr-[60px] py-8 sm:py-0">
                             {/* <p className="text-black text-xl sm:text-2xl font-normal">{row.eyebrow}</p> */}
                             <div className="flex flex-col gap-3">
-                                <p className="text-[#2E3033] text-xl sm:text-2xl font-medium">{row.title}</p>
+                                <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{row.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light w-full">
                                     {row.desc}
                                 </p>

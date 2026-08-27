@@ -42,7 +42,7 @@ export default function SecurityAssessmentCloudDefense() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
                 >
-                    <h2 className="font-heading text-black text-2xl font-medium">Security Assessment & Cloud Defense</h2>
+                    <h2 className="font-heading text-black text-2xl font-semibold">Security Assessment & Cloud Defense</h2>
                     <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
                         Targeted security assessments and cloud protection services.
                     </p>
@@ -82,7 +82,7 @@ export default function SecurityAssessmentCloudDefense() {
                                 className="flex flex-col gap-4 sm:gap-[23px] w-full"
                             >
                                 <div className="flex flex-col gap-3 sm:gap-5">
-                                    <h2 className="text-[#2E3033] text-2xl font-medium">{area.title}</h2>
+                                    <h2 className="text-[#2E3033] text-2xl font-semibold">{area.title}</h2>
                                     <p className="text-[#55595E] text-base sm:text-lg font-light">{area.desc}</p>
                                 </div>
                                 <div className="h-px w-[139px] bg-[#3d3d4e]/40" />

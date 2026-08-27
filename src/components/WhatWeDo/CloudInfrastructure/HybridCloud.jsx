@@ -65,7 +65,7 @@ export default function HybridCloud() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] text-center"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-medium">Hybrid Cloud</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-semibold">Hybrid Cloud</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Blend private, public, and on-premise infrastructure into one unified, seamlessly orchestrated
                     environment.
@@ -91,7 +91,7 @@ export default function HybridCloud() {
                         >
                             <div className="bg-[#0a2b3e] w-full sm:w-[380px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-between gap-4 text-white">
                                 <div className="flex flex-col gap-4 sm:gap-6">
-                                    <p className="text-xl sm:text-2xl font-medium">{active.title}</p>
+                                    <p className="text-xl sm:text-2xl font-semibold">{active.title}</p>
                                     <p className="text-[#ce9d9d] text-sm sm:text-base font-light leading-relaxed">
                                         {active.desc}
                                     </p>
@@ -100,7 +100,7 @@ export default function HybridCloud() {
                             </div>
                             <div className="hidden sm:flex bg-white w-full sm:w-[380px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex-col justify-between gap-4 text-black">
                                 <div className="flex flex-col gap-4 sm:gap-6">
-                                    <p className="text-xl sm:text-2xl font-medium">{next.title}</p>
+                                    <p className="text-xl sm:text-2xl font-semibold">{next.title}</p>
                                     <p className="text-[#6c6c6c] text-sm sm:text-base font-light leading-relaxed">
                                         {next.desc}
                                     </p>

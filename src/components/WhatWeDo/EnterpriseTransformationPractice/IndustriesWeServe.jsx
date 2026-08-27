@@ -28,7 +28,7 @@ export default function IndustriesWeServe() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative z-10 flex flex-col items-center gap-4 text-center"
             >
-                <h2 className="text-white text-2xl sm:text-[28px] font-medium">Industries</h2>
+                <h2 className="text-white text-2xl sm:text-[28px] font-semibold">Industries</h2>
                 <p className="text-white text-lg font-light">Built for the sectors running SAP at scale</p>
             </motion.div>
 
@@ -42,7 +42,7 @@ export default function IndustriesWeServe() {
                         transition={{ duration: 0.6, ease: "easeOut", delay: (index % 3) * 0.08 }}
                         className="border-b border-white/50 pb-4 flex items-center justify-center"
                     >
-                        <p className="text-[#f3f6f9] text-xl sm:text-2xl font-extralight text-center">{industry}</p>
+                        <p className="text-[#f3f6f9] text-xl sm:text-2xl font-light text-center">{industry}</p>
                     </motion.div>
                 ))}
             </div>

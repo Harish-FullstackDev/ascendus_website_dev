@@ -28,7 +28,7 @@ export default function QuantumReadiness() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[45px]"
             >
-                <h2 className="text-black text-2xl font-medium">Quantum Readiness</h2>
+                <h2 className="text-black text-2xl font-semibold">Quantum Readiness</h2>
                 <p className="text-black text-lg font-light">Turn Data into Intelligent Decisions</p>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Assess your current technology landscape to identify opportunities for modernization,
@@ -47,7 +47,7 @@ export default function QuantumReadiness() {
                         className="flex flex-col gap-4"
                     >
                         <Image src={item.icon} alt="" width={37} height={37} />
-                        <p className="text-black text-lg font-medium">{item.title}</p>
+                        <p className="text-black text-lg font-semibold">{item.title}</p>
                         <p className="text-[#6c6c6c] text-sm font-light">{item.desc}</p>
                     </motion.div>
                 ))}

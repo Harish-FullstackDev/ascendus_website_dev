@@ -28,7 +28,7 @@ export default function ExtendedReality() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[45px]"
             >
-                <h2 className="text-black text-2xl font-medium">Extended Reality (AR/VR)</h2>
+                <h2 className="text-black text-2xl font-semibold">Extended Reality (AR/VR)</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Blend digital and physical experiences to train faster, collaborate remotely, and visualize what
                     hasn&apos;t been built yet.
@@ -46,7 +46,7 @@ export default function ExtendedReality() {
                         className="border border-[#e2e2e2] flex flex-col px-6 pt-8 pb-6"
                     >
                         <div className="flex items-start justify-between gap-3">
-                            <p className="text-black text-xl font-medium">{card.title}</p>
+                            <p className="text-black text-xl font-semibold">{card.title}</p>
                             <span className="flex items-center justify-center size-9 shrink-0 rounded-full border border-[#2d8ec5] text-[#2d8ec5] text-base">
                                 ↗
                             </span>

@@ -17,12 +17,12 @@ export default function PositioningStatement() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="w-full lg:w-[700px] shrink-0 flex flex-col gap-2 text-[#3d3d4e]"
                 >
-                    <h2 className="text-[28px] text-[#2E3033] font-medium leading-normal">
-                        Smart Automation
+                    <h2 className="text-[28px] text-[#2E3033] font-semibold leading-normal">
+                        Positioning Statement
                     </h2>
 
                     <p className="text-lg text-[#55595E] font-light leading-relaxed">
-                        Enterprise teams lose valuable time to manual, repetitive work. We identify high-impact opportunities for automation and transform them into intelligent RPA, workflow, and AI-powered solutions that improve efficiency, reduce costs, and scale with your business—without creating a complex ecosystem of fragile bots.
+                        Manual, repetitive processes quietly drain enterprise capacity. We identify where automation delivers real time and cost savings, then build the RPA, workflow, and AI-powered automation to capture it, without adding fragile, unmanageable bots to your environment.
                     </p>
                 </motion.div>
 

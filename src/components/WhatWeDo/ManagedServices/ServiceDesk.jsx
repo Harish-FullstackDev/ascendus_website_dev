@@ -43,8 +43,8 @@ function CardBlock({ item }) {
     return (
         <div className="bg-white  flex-1 flex flex-col items-center gap-5 px-6 py-8 sm:px-10 sm:py-10">
             <div className="flex flex-col items-center gap-2 text-center">
-                <p className="text-[#111] text-xl sm:text-2xl font-medium">{item.title}</p>
-                <p className="text-[#111]/60 text-sm sm:text-base font-medium max-w-[420px]">{item.desc}</p>
+                <p className="text-[#111] text-xl sm:text-2xl font-semibold">{item.title}</p>
+                <p className="text-[#111]/60 text-sm sm:text-base font-semibold max-w-[420px]">{item.desc}</p>
             </div>
             <div className="relative w-full max-w-[333px] aspect-[333/150] overflow-hidden">
                 <Image src={item.image} alt="" fill className="object-cover" />
@@ -75,7 +75,7 @@ export default function ServiceDesk() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[736px] mx-auto text-center mb-12 sm:mb-[60px]"
             >
-                <h2 className="text-black text-2xl font-medium">Infrastructure Management & SLAs</h2>
+                <h2 className="text-black text-2xl font-semibold">Infrastructure Management & SLAs</h2>
                 <p className="text-[#515151] text-base sm:text-lg font-light">
                     Extended support capabilities, desk management, and clear SLAs.
                 </p>

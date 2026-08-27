@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 // Column order + key matches Figma: Working Model (row labels), Time &
 // Materials, Fixed-Price, AMS. "workingModel" isn't a real comparable option
-// in the design (it's just the row-label column, never highlighted in
-// Figma), but it hovers/highlights the same as the other 3 per explicit
-// request.
+// in the design (it's just the row-label column) — per explicit request it
+// does NOT participate in the hover/active highlight at all (no handlers, no
+// color transition, can never be `activeColumn`); only the other 3 do.
 const COLUMNS = [
     { key: "workingModel", title: "Working Model" },
     { key: "timeAndMaterials", title: "Time & Materials" },
@@ -62,8 +62,8 @@ export default function EngagementModelsComparison() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-5 max-w-[818px] text-center"
             >
-                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">Engagement Models</h2>
-                <p className="text-[#4a5568] text-lg font-light leading-[1.5]">
+                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Engagement Models</h2>
+                <p className="text-[#55595E] text-lg font-light leading-[1.5]">
                     Choose the engagement model that fits your needs, from focused projects to ongoing support and
                     strategic guidance.
                 </p>
@@ -96,10 +96,23 @@ export default function EngagementModelsComparison() {
                 className="w-full overflow-x-auto"
             >
                 <div className="relative min-w-[760px]">
-                    {/* Header row */}
+                    {/* Header row. Every cell is left-aligned (pl-8/pr-4) —
+                        this row is the reference the data rows below match, so
+                        it has to carry that alignment itself, uniformly across
+                        all 4 columns. Working Model gets no hover handlers /
+                        cursor-pointer / active-color transition — it's plain
+                        static text; only the other 3 columns are interactive. */}
                     <div className="relative grid grid-cols-4 gap-x-[28px]">
                         <div className="absolute inset-x-0 bottom-0 h-px bg-[#8794a3] z-0" />
                         {COLUMNS.map((column) => {
+                            const isWorkingModel = column.key === "workingModel";
+                            if (isWorkingModel) {
+                                return (
+                                    <div key={column.key} className="relative z-20 py-8 pl-8 pr-4 flex items-center justify-start text-left">
+                                        <p className="text-xl sm:text-2xl font-semibold text-[#1c5f85]">{column.title}</p>
+                                    </div>
+                                );
+                            }
                             const isActive = column.key === activeColumn;
                             return (
                                 <div
@@ -108,7 +121,7 @@ export default function EngagementModelsComparison() {
                                     onFocus={() => setActiveColumn(column.key)}
                                     onClick={() => setActiveColumn(column.key)}
                                     tabIndex={0}
-                                    className="relative z-20 py-8 px-[10px] flex items-center justify-center text-center cursor-pointer"
+                                    className="relative z-20 py-8 pl-8 pr-4 flex items-center justify-start text-left cursor-pointer"
                                 >
                                     <p
                                         className={`text-xl sm:text-2xl font-medium transition-colors duration-300 ${isActive ? "text-white" : "text-[#1c5f85]"
@@ -124,7 +137,29 @@ export default function EngagementModelsComparison() {
                     {ROWS.map((row) => (
                         <div key={row.workingModel} className="relative grid grid-cols-4 gap-x-[28px]">
                             <div className="absolute inset-x-0 bottom-0 h-px bg-[#8794a3] z-0" />
+                            {/* Working Model's label (Billing basis, Scope, ...) reads
+                                as a heading, not as data — Figma (2597:2064 etc.)
+                                sets it in the same primary/heading font family as
+                                the "Working Model" header itself (24px, just a
+                                lighter weight than the header's demibold), not the
+                                body font the other 3 columns' answers use. Same
+                                .font-urbane / text-2xl pairing already used for this
+                                pattern elsewhere on this project (e.g.
+                                ProofInNumbers.jsx). It's also plain static text —
+                                no hover handlers, no active-color transition — same
+                                as its header cell above; only the other 3 columns
+                                are interactive. Every cell here (including Working
+                                Model) shares the same left alignment (pl-8/pr-4),
+                                matching the header row. */}
                             {COLUMNS.map((column) => {
+                                const isWorkingModel = column.key === "workingModel";
+                                if (isWorkingModel) {
+                                    return (
+                                        <div key={column.key} className="relative z-20 py-8 pl-8 pr-4 flex items-center justify-start text-left">
+                                            <p className=" text-2xl font-medium text-[#10161d]">{row[column.key]}</p>
+                                        </div>
+                                    );
+                                }
                                 const isActive = column.key === activeColumn;
                                 return (
                                     <div
@@ -133,13 +168,10 @@ export default function EngagementModelsComparison() {
                                         onFocus={() => setActiveColumn(column.key)}
                                         onClick={() => setActiveColumn(column.key)}
                                         tabIndex={0}
-                                        // pl-8 (32px), matching Figma's own left inset for these
-                                        // labels — px-[10px] on its own left the text sitting
-                                        // almost flush against the column edge.
                                         className="relative z-20 py-8 pl-8 pr-4 flex items-center justify-start text-left cursor-pointer"
                                     >
                                         <p
-                                            className={`text-base sm:text-lg font-medium transition-colors duration-300 ${isActive ? "text-white" : "text-[#10161d]"
+                                            className={`text-base sm:text-lg font-light transition-colors duration-300 ${isActive ? "text-white" : "text-[#10161d]"
                                                 }`}
                                         >
                                             {row[column.key]}

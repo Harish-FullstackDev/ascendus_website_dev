@@ -34,7 +34,7 @@ export default function SalesAutomation() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-14 sm:mb-16"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-medium">Sales Automation</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-semibold">Sales Automation</h2>
                 <p className="text-black text-base sm:text-lg font-light">
                     Automate repetitive sales activities, manage leads efficiently, and improve pipeline
                     visibility to help sales teams focus on closing more deals.

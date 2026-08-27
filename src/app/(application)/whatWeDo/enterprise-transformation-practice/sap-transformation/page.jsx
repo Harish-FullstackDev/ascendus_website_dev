@@ -3,14 +3,14 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
+import ReadyToTransform from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/ReadyToTransform";
 
 import Hero from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/Hero";
 import HeroText from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/HeroText";
-import Overview from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/Overview";
-import CapabilitiesAccordion from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/CapabilitiesAccordion";
-import MigrationPaths from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/MigrationPaths";
-import WhyItMatters from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/WhyItMatters";
+import OnepracticeTheWholeSAPLifecycle from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/OnepracticeTheWholeSAPLifecycle";
+import SAPS4HANAMigrationImplementation from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/SAPS4HANAMigrationImplementation";
+import ChoosingYourMigrationPath from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/ChoosingYourMigrationPath";
+import EndToEndMigration from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/EndToEndMigration";
 import WhyPartnerWithUs from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/WhyPartnerWithUs";
 import ProofInNumbers from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/ProofInNumbers";
 
@@ -34,10 +34,10 @@ const page = () => {
             </div>
 
             <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
-                <Overview />
-                <CapabilitiesAccordion />
-                <MigrationPaths />
-                <WhyItMatters />
+                <OnepracticeTheWholeSAPLifecycle />
+                <SAPS4HANAMigrationImplementation />
+                <ChoosingYourMigrationPath />
+                <EndToEndMigration />
                 <WhyPartnerWithUs />
                 <ProofInNumbers />
             </div>

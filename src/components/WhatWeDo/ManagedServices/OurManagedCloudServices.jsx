@@ -59,7 +59,7 @@ const StepCard = ({ step, index }) => (
         <Image src={cardBg} alt="" fill className="object-fill" />
 
         <span
-            className="absolute -translate-x-1/2 -translate-y-1/2 text-xl font-medium text-black"
+            className="absolute -translate-x-1/2 -translate-y-1/2 text-xl font-semibold text-black"
             style={{ left: `${PILL_CENTER_X}%`, top: "50%" }}
         >
             {step.n}
@@ -73,7 +73,7 @@ const StepCard = ({ step, index }) => (
         </div>
 
         <p
-            className="absolute -translate-y-1/2 whitespace-nowrap text-lg font-medium text-black sm:text-xl"
+            className="absolute -translate-y-1/2 whitespace-nowrap text-lg font-semibold text-black sm:text-xl"
             style={{ left: `${TITLE_LEFT}%`, top: `${CIRCLE_CENTER_Y}%` }}
         >
             {step.title}
@@ -131,7 +131,7 @@ const OurManagedCloudServices = () => {
                     transition={{ duration: 0.6 }}
                     className="max-w-2xl text-center"
                 >
-                    <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-medium text-black mb-4">
+                    <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-semibold text-black mb-4">
                         How We Manage Your Cloud
                     </h2>
                     <p className="text-lg sm:text-xl font-light text-[#515151]">
@@ -151,7 +151,7 @@ const OurManagedCloudServices = () => {
                             transition={{ duration: 0.5, delay: index * 0.08 }}
                             className="flex gap-4 rounded-[10px] bg-[#E1E4E5] px-6 py-4"
                         >
-                            <div className="flex h-12 w-11 flex-shrink-0 items-center justify-center rounded-full bg-white text-lg font-medium text-black">
+                            <div className="flex h-12 w-11 flex-shrink-0 items-center justify-center rounded-full bg-white text-lg font-semibold text-black">
                                 {step.n}
                             </div>
                             <div className="flex flex-col gap-3">
@@ -159,7 +159,7 @@ const OurManagedCloudServices = () => {
                                     <div className="flex h-[44px] w-[44px] flex-shrink-0 items-center justify-center rounded-full bg-white shadow-sm">
                                         <Image src={discoverIcon} alt="" width={20} height={20} />
                                     </div>
-                                    <p className="text-lg font-medium text-black">{step.title}</p>
+                                    <p className="text-lg font-semibold text-black">{step.title}</p>
                                 </div>
                                 <p className="text-base font-light text-black">{step.desc}</p>
                             </div>

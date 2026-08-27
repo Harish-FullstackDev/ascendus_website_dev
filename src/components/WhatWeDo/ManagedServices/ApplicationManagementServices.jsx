@@ -52,7 +52,7 @@ export default function ApplicationManagementServices() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[750px] mx-auto text-center mb-10 sm:mb-[45px]"
             >
-                <h2 className="font-heading text-black text-2xl font-medium">Application Management Services (AMS)</h2>
+                <h2 className="font-heading text-black text-2xl font-semibold">Application Management Services (AMS)</h2>
                 <p className="text-black text-base sm:text-lg font-light">Maximize Application Performance & Reliability</p>
                 <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
                     Ensure your enterprise applications remain secure, optimized, and aligned with evolving business
@@ -74,7 +74,7 @@ export default function ApplicationManagementServices() {
                             <Image src={card.image} alt="" fill className="object-cover" />
                         </div>
                         <div className="w-full text-center px-4 pt-3">
-                            <p className="text-black text-base font-medium">{card.title}</p>
+                            <p className="text-black text-base font-semibold">{card.title}</p>
                             <p className="text-[#6c6c6c] text-sm font-light mt-1">{card.desc}</p>
                         </div>
                     </motion.div>

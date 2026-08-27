@@ -26,7 +26,7 @@ export default function MarketingAutomation() {
                 >
                     <div className="w-1 shrink-0 bg-[#2d8ec5]" />
                     <div className="flex flex-col gap-4">
-                        <h2 className="text-[#0d0c22] text-2xl font-medium">Marketing Automation</h2>
+                        <h2 className="text-[#0d0c22] text-2xl font-semibold">Marketing Automation</h2>
                         <p className="text-[#3d3d4e] text-lg font-normal">
                             Engage Customers with Personalized Campaigns
                         </p>

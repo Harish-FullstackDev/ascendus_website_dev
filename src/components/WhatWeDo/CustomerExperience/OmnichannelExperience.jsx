@@ -58,7 +58,7 @@ export default function OmnichannelExperience() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-col gap-4 max-w-[400px]"
                     >
-                        <h2 className="text-black text-2xl font-medium">Omnichannel Experience</h2>
+                        <h2 className="text-black text-2xl font-semibold">Omnichannel Experience</h2>
                         <p className="text-black text-base sm:text-lg font-light">
                             Create connected customer journeys across web, mobile, social media, email, contact
                             centers, and physical locations.
@@ -94,7 +94,7 @@ export default function OmnichannelExperience() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="absolute left-0 top-0 z-10 flex flex-col gap-4 w-[400px]"
                     >
-                        <h2 className="text-black text-2xl font-medium">Omnichannel Experience</h2>
+                        <h2 className="text-black text-2xl font-semibold">Omnichannel Experience</h2>
                         <p className="text-black text-lg font-light">
                             Create connected customer journeys across web, mobile, social media, email, contact
                             centers, and physical locations.

@@ -17,7 +17,7 @@ export default function Prototyping() {
                 transition={{ duration: 0.7, ease: "easeOut" }}
                 className="absolute inset-y-0 left-0 flex flex-col justify-center gap-4 sm:gap-6 max-w-[620px] px-6 sm:px-[60px]"
             >
-                <h2 className="text-white text-2xl sm:text-[32px] font-medium">Prototyping</h2>
+                <h2 className="text-white text-2xl sm:text-[32px] font-semibold">Prototyping</h2>
                 <p className="text-white text-lg sm:text-2xl font-normal">From Concept to Clickable Reality</p>
                 <div className="text-white/80 text-base sm:text-2xl font-light space-y-3 sm:space-y-4">
                     <p>

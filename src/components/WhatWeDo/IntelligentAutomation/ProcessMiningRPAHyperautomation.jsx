@@ -41,7 +41,7 @@ export default function ProcessMiningRPAHyperautomation() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[1055px] mx-auto text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-medium">Process Mining, RPA & Hyperautomation</h2>
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">Process Mining, RPA & Hyperautomation</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Primary technologies for modernizing enterprise processes.
                 </p>
@@ -66,7 +66,7 @@ export default function ProcessMiningRPAHyperautomation() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, ease: "easeOut", delay: (index % 3) * 0.08 }}
-                            className="bg-[#f3f6f9] flex flex-col gap-8 sm:gap-12 p-6 h-[340px] sm:h-[400px]">
+                            className="bg-[#F5F6F6] flex flex-col gap-8 sm:gap-12 p-6 h-[340px] sm:h-[400px]">
                             <div className="relative w-full flex-1 min-h-0 border-[0.5px] border-[#1c5f85]">
                                 <Image
                                     src={card.image}
@@ -76,7 +76,7 @@ export default function ProcessMiningRPAHyperautomation() {
                                 />
                             </div>
                             <div className="flex flex-col gap-6 shrink-0">
-                                <h2 className="text-[#2E3033] text-xl sm:text-2xl font-medium">{card.title}</h2>
+                                <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{card.desc}</p>
                             </div>
                         </motion.div>

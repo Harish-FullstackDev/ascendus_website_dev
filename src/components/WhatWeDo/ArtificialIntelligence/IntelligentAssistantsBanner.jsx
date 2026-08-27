@@ -20,7 +20,7 @@ export default function IntelligentAssistantsBanner() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-5 sm:gap-6 max-w-[620px] text-white"
                 >
-                    <h2 className="text-2xl sm:text-4xl font-medium">Intelligent Assistants</h2>
+                    <h2 className="text-2xl sm:text-4xl font-semibold">Intelligent Assistants</h2>
                     <p className="text-base sm:text-lg font-light text-white/90">
                         Deploy AI-powered assistants that understand context, execute multi-step tasks, and
                         continuously learn from every interaction — extending your team&apos;s capacity without

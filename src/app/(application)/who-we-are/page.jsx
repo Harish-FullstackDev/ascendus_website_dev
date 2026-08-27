@@ -33,8 +33,8 @@ const page = () => {
       <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
         <AboutUsPanel />
         <StatsCards />
-        <TrustedByBand />
         <CleanPrinciples />
+        <TrustedByBand />
         <DiscoverWhatSetsUsApart />
         <MissionVision />
         <OurStrength />

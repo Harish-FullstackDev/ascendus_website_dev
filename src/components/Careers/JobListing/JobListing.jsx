@@ -109,7 +109,7 @@ export default function JobListing() {
                                     checked={selectedCategories.includes(category)}
                                     onChange={() => toggleCategory(category)}
                                     disabled={disabled}
-                                    className="size-3.5 accent-[#0061af]"
+                                    className="size-3.5 accent-[#2d8ec5]"
                                 />
                                 <span className="flex-1">{category}</span>
                                 <span className="text-[#5d5d5c]">{count}</span>
@@ -165,7 +165,7 @@ export default function JobListing() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, amount: 0.3 }}
                                     transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
-                                    className="flex items-center justify-between gap-4 border-l-4 border-[#0061af] px-4 py-4"
+                                    className="flex items-center justify-between gap-4 border-l-4 border-[#2d8ec5] px-4 py-4"
                                 >
                                     <div>
                                         <p className="text-sm font-medium text-[#0a0a0a]">{job.title}</p>
@@ -175,7 +175,7 @@ export default function JobListing() {
                                     </div>
                                     <Link
                                         href={`/careers/${job.slug}`}
-                                        className="inline-flex items-center gap-1.5 rounded-full border border-[#7f7f7f] px-3 py-1.5 text-xs text-[#0061af] whitespace-nowrap transition-colors hover:bg-[#0061af] hover:text-white hover:border-[#0061af]"
+                                        className="inline-flex items-center gap-1.5 rounded-full border border-[#7f7f7f] px-3 py-1.5 text-xs text-[#2d8ec5] whitespace-nowrap transition-colors hover:bg-[#2d8ec5] hover:text-white hover:border-[#2d8ec5]"
                                     >
                                         View Job Details
                                         <Image src={viewJobDetailsIcon} alt="" width={8} height={8} />
@@ -203,7 +203,7 @@ export default function JobListing() {
                                     onClick={() => setPage(pageNumber)}
                                     className={`flex items-center justify-center size-6 rounded text-sm font-semibold transition-colors ${
                                         pageNumber === page
-                                            ? "border border-[#0061af] text-[#0061af]"
+                                            ? "border border-[#2d8ec5] text-[#2d8ec5]"
                                             : "text-black opacity-50 hover:opacity-80"
                                     }`}
                                 >

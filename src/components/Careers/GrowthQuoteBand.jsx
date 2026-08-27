@@ -27,25 +27,23 @@ export default function GrowthQuoteBand() {
                             className="rounded-full object-cover size-[94px] bg-[#d8d8d8]"
                         />
                         <div>
-                            <p className="font-bold text-[#16171a] text-lg">Bhuvaneshwari</p>
+                            <p className="font-bold text-[#0d0c22] text-lg">Bhuvaneshwari</p>
                             <p className="text-[#3d3d4e] text-sm opacity-60 mt-1">
                                 Chief Human Resources Officer (CHRO)
                                 <br />
-                                Ascendus
+                                Support Studio Technology
                             </p>
                         </div>
                     </div>
 
                     <div className="relative">
-                        <span className="hidden sm:block absolute -top-8 -left-2 text-[80px] leading-none text-[#0061af]/30 font-serif select-none">
+                        <span className="hidden sm:block absolute -top-8 -left-2 text-[80px] leading-none text-[#2d8ec5]/30 font-serif select-none">
                             &ldquo;
                         </span>
                         <p className="relative text-base sm:text-lg text-[#6c6c6c] leading-relaxed text-center lg:text-left">
-                            Our vision is to build a workplace where talent meets opportunity and innovation drives
-                            growth. At Ascendus, we empower our people through continuous learning,
-                            collaboration, and a culture of excellence. Together, we are shaping the future of SAP
-                            consulting by inspiring individuals to grow, lead, and make a lasting impact for our
-                            clients and communities.
+                            Good work gets better when the right people stay close to it. From the first problem
+                            definition to the final delivery, we believe people do their best work when they have
+                            context, ownership and access to the expertise around them.
                         </p>
                     </div>
                 </motion.div>

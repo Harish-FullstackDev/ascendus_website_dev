@@ -137,7 +137,7 @@ export default function MultiCloudStrategy() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[880px] text-center"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-medium">Multi-Cloud Strategy</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-semibold">Multi-Cloud Strategy</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Avoid vendor lock-in and maximize flexibility by distributing workloads across the providers
                     that serve them best.

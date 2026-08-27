@@ -115,7 +115,7 @@ export default function CloudPlatformsServices() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-3 text-center"
                 >
-                    <h2 className="text-[#2E3033] text-[28px] font-medium">Cloud Platforms &amp; Services</h2>
+                    <h2 className="text-[#2E3033] text-[28px] font-semibold">Cloud Platforms &amp; Services</h2>
                     <p className="text-[#55595E] text-lg font-light max-w-[700px]">
                         Cloud solutions built around the right platform, workload, security requirements, and
                         business objectives.
@@ -156,14 +156,14 @@ export default function CloudPlatformsServices() {
                             transition={{ duration: 0.35, ease: "easeOut" }}
                             className="flex flex-col gap-4 sm:gap-5"
                         >
-                            <h2 className="text-[#2E3033] text-lg sm:text-xl lg:text-2xl font-medium">{activeTab.intro}</h2>
+                            <h2 className="text-[#2E3033] text-lg sm:text-xl lg:text-2xl font-semibold">{activeTab.intro}</h2>
                             <ul className="flex flex-col gap-4 sm:gap-5 list-disc pl-6">
                                 {activeTab.categories.map((cat) => (
                                     <li
                                         key={cat.label}
                                         className="text-lg font-light text-[#55595E] pl-2"
                                     >
-                                        <span className="font-medium text-[#2E3033]">
+                                        <span className="font-['Houschka_Pro'] font-semibold text-[#2E3033]">
                                             {cat.label}:
                                         </span>{" "}
                                         {cat.desc}

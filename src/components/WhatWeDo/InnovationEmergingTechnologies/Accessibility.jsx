@@ -33,7 +33,7 @@ export default function Accessibility() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[46px] px-6"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-medium">Industry 4.0, IoT & Digital Twins</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-semibold">Industry 4.0, IoT & Digital Twins</h2>
                 <p className="text-black text-base sm:text-lg font-light">
                     Core emerging tech capabilities for real-world enterprise application.
 

@@ -8,7 +8,8 @@ const STATS = [
     { value: "400+", label: "SAP specialists on the team" },
 ];
 
-// Splits e.g. "150+" into { prefix: "", number: 150, suffix: "+", decimals: 0 } so the
+
+// Splits e.g. "40+" into { prefix: "", number: 40, suffix: "+", decimals: 0 } so the
 // count-up below can animate just the numeric part while reproducing the original
 // formatting exactly once the animation finishes.
 function parseStatValue(raw) {
@@ -55,23 +56,28 @@ function AnimatedStat({ value }) {
 
 export default function ProofInNumbers() {
     return (
-        <section className="w-full bg-white px-6 py-8 sm:px-[64px] sm:py-8">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="w-full bg-white px-6 py-8 sm:px-[64px] sm:py-[32px] shadow-[0px_4px_11.2px_rgba(0,0,0,0.25)]"
-            >
-                <div className="flex flex-col gap-8 sm:flex-row sm:flex-nowrap sm:items-stretch sm:justify-center sm:gap-10 sm:divide-x sm:divide-[#d3dae2] w-full">
-                    {STATS.map((stat) => (
-                        <div key={stat.label} className="flex flex-col gap-2 items-start sm:justify-center sm:px-10 first:sm:pl-0 last:sm:pr-0">
-                            <AnimatedStat value={stat.value} />
-                            <p className="text-[#4a5568] text-lg font-light whitespace-nowrap">{stat.label}</p>
-                        </div>
-                    ))}
-                </div>
-            </motion.div>
-        </section>
+        // Figma (node 2740:1150) has no floating shadow-card here, unlike the
+        // ETP page's ProofInNumbers this was based on — the stats sit directly
+        // inset in the section (single px-64/py-32 padding, no nested box).
+        // What it does have is a subtle shadow along the section's own top
+        // edge (a soft elevation line separating it from WhyPartnerWithUs
+        // above), not a shadow wrapping a card — a negative-Y, low-opacity
+        // box-shadow on the section itself reproduces that.
+        <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative z-10 w-full bg-white px-6 py-8 sm:px-[64px] sm:py-[32px] shadow-[0px_-4px_10px_rgba(0,0,0,0.08)]"
+        >
+            <div className="flex flex-col gap-8 sm:flex-row sm:flex-nowrap sm:items-stretch sm:justify-center sm:gap-10 sm:divide-x sm:divide-[#d3dae2] w-full">
+                {STATS.map((stat) => (
+                    <div key={stat.label} className="flex flex-col gap-2 items-center sm:justify-center sm:px-10 first:sm:pl-0 last:sm:pr-0">
+                        <AnimatedStat value={stat.value} />
+                        <p className="text-[#55595E] text-lg font-light whitespace-nowrap">{stat.label}</p>
+                    </div>
+                ))}
+            </div>
+        </motion.section>
     );
 }

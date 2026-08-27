@@ -99,8 +99,8 @@ export default function ProactiveSystemOperations() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[340px] shrink-0 lg:pt-8"
                 >
-                    <h2 className="text-[#2E3033] text-[28px] font-medium">Proactive System Operations</h2>
-                    <p className="text-[#55595E] text-xl font-normal">
+                    <h2 className="text-[#2E3033] text-[28px] font-semibold">Proactive System Operations</h2>
+                    <p className="text-[#55595E] text-xl font-light">
                         Ongoing operational capabilities that help enterprise systems remain stable, available, and
                         performant.
                     </p>
@@ -138,7 +138,7 @@ export default function ProactiveSystemOperations() {
                                 className="snap-start shrink-0 w-[260px] sm:w-[335px] h-[280px] sm:h-[360px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-center text-center px-6 sm:px-7 py-7 sm:py-8"
                             >
                                 <Image src={card.icon} alt="" width={44} height={44} className="mb-5" />
-                                <p className="text-[#2E3033] text-xl sm:text-2xl font-normal">{card.title}</p>
+                                <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light mt-5">{card.desc}</p>
                             </motion.div>
                         ))}

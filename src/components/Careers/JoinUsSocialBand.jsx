@@ -9,7 +9,7 @@ import twitterIcon from "@/assets/career/icons/Twitter.svg";
 import footerBanner from "@/assets/career/Footer image banner.png";
 
 const SOCIALS = [
-    { icon: linkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/company/ascendus/" },
+    { icon: linkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/company/supportstudiotechnologies/" },
     { icon: instagramIcon, label: "Instagram", href: "https://www.instagram.com/isupportz.official?igsh=MWF5Z3M2MXFrbXI3cg==" },
     { icon: twitterIcon, label: "Twitter", href: "https://x.com/isupportz?s=11" },
 ];
@@ -26,23 +26,24 @@ export default function JoinUsSocialBand() {
                     className="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-end justify-between gap-10"
                 >
                     <div className="flex flex-col sm:flex-row items-start sm:items-end gap-8 sm:gap-10">
-                        {/* <div className="hidden sm:block w-px h-[142px] bg-[#c9c9c9]" /> */}
                         <div className="flex flex-col gap-6">
-                            {/* <div>
-                                <p className="text-2xl text-black">Join US</p>
+                            <div>
+                                <p className="text-2xl text-black">Your Next Opportunity</p>
                                 <p className="mt-2 text-base sm:text-lg text-black">
-                                    Explore career opportunities at Ascendus
+                                    Ready to work on problems worth solving? Explore our current openings and find
+                                    an opportunity where your expertise can contribute to work that matters to
+                                    enterprise organisations.
                                 </p>
                             </div>
                             <a
                                 href="#job-listings"
-                                className="inline-flex items-center gap-3 text-sm text-[#0061af] font-medium group"
+                                className="inline-flex items-center gap-3 text-sm text-[#2d8ec5] font-medium group"
                             >
                                 <span className="flex items-center justify-center size-8 rounded-full bg-black text-white transition-transform group-hover:scale-105">
                                     <ArrowUpRight className="w-4 h-4" />
                                 </span>
-                                Click Here
-                            </a> */}
+                                View Open Positions
+                            </a>
                         </div>
                     </div>
 

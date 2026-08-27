@@ -43,7 +43,7 @@ export default function OurIntelligentAutomationServices() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1055px] mx-auto text-center mb-10 sm:mb-[45px]"
             >
-                <h2 className="text-black text-2xl font-medium">Process Mining, RPA & Hyperautomation</h2>
+                <h2 className="text-black text-2xl font-semibold">Process Mining, RPA & Hyperautomation</h2>
                 <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
                     Primary technologies for modernizing enterprise processes.
                 </p>

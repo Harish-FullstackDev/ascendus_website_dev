@@ -26,7 +26,7 @@ export default function DataWarehousing() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[60px]"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-medium">Data Warehousing</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-semibold">Data Warehousing</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Consolidate data from across the business into a single, high-performance warehouse
                     engineered for fast, reliable reporting and analytics at scale.

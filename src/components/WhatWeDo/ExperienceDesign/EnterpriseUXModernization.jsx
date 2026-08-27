@@ -31,7 +31,7 @@ export default function EnterpriseUXModernization() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-col gap-2"
                     >
-                        <h2 className="text-[#2E3033] text-[28px] font-medium">Enterprise UX Modernization</h2>
+                        <h2 className="text-[#2E3033] text-[28px] font-semibold">Enterprise UX Modernization</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             Eliminating unnecessary complexity in software and scaling interface standards.
                         </p>
@@ -49,7 +49,7 @@ export default function EnterpriseUXModernization() {
                                 key={box.title}
                                 className="bg-white w-full sm:flex-1 lg:h-full flex flex-col items-start gap-12 lg:gap-16 px-6 py-8"
                             >
-                                <h2 className="text-[#2E3033] text-2xl font-medium">{box.title}</h2>
+                                <h2 className="text-[#2E3033] text-2xl font-semibold">{box.title}</h2>
                                 <p className="text-[#55595E] text-lg font-light">{box.desc}</p>
                             </div>
                         ))}

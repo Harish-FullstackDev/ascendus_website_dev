@@ -61,7 +61,7 @@ export default function InfrastructureManagement() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1116px] mx-auto text-center mb-10 sm:mb-[45px]"
             >
-                <h2 className="font-heading text-black text-2xl font-medium">Infrastructure Management</h2>
+                <h2 className="font-heading text-black text-2xl font-semibold">Infrastructure Management</h2>
                 <p className="text-[#515151] text-base sm:text-lg font-light">
                     Transformation shouldn&apos;t end at Go-Live. The real impact begins afterward.
                 </p>

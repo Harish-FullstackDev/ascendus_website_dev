@@ -47,9 +47,9 @@ function AnimatedStat({ value }) {
     }, [isInView]);
 
     return (
-        <p ref={ref} className="text-[#2E3033] text-xl sm:text-2xl font-medium">
+        <h2 ref={ref} className="text-[#2E3033] text-xl sm:text-2xl font-semibold">
             {match ? `${display}${suffix}` : value}
-        </p>
+        </h2>
     );
 }
 
@@ -66,7 +66,7 @@ export default function WhyPartnerWithUsMetrix() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="text-[28px] font-medium text-[#2E3033]"
+                            className="text-[28px] font-semibold text-[#2E3033]"
                         >
                             Why Partner With Us
                         </motion.h2>
@@ -101,7 +101,7 @@ export default function WhyPartnerWithUsMetrix() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="text-[#2d8ec5] text-2xl font-medium text-center"
+                    className="text-[#2d8ec5] text-2xl font-semibold text-center"
                 >
 
                 </motion.h3>

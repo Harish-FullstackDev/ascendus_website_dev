@@ -5,10 +5,11 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import panelImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/capabilities-panel.png";
 
-// Figma only fills in real copy for item 1's expanded panel (a skeleton-design
-// artifact, same pattern noted elsewhere on this site) — items 2–7 keep the
-// same title Figma gives, with a description and bullet list written to match
-// that first item's tone and length rather than being left blank.
+// Figma only fills in real copy for item 1's expanded panel — item 1's own
+// panel frame is still an empty skeleton placeholder there, so its copy below
+// is written to match the site's tone rather than sourced from Figma. Items
+// 2–7 now have real desc/bullet copy in Figma (get_design_context on each
+// item's panel frame) and are transcribed verbatim below.
 const ITEMS = [
     {
         title: "SAP S/4HANA Migration & Implementation",
@@ -24,65 +25,65 @@ const ITEMS = [
         title: "RISE with SAP",
         desc: "Full RISE with SAP delivery: infrastructure, migration, and managed operations bundled under a single SAP-backed contract.",
         bullets: [
-            "Infrastructure and hyperscaler setup",
-            "Migration and technical delivery",
-            "Application management after go-live",
-            "One accountable contract with SAP",
+            "Contract and scope planning",
+            "Infrastructure provisioning",
+            "Migration execution",
+            "Ongoing operations under the RISE model",
         ],
     },
     {
         title: "GROW with SAP",
         desc: "Cloud-native S/4HANA on SAP's best-practice reference architecture, built for organizations without legacy customization to carry over.",
         bullets: [
-            "Best-practice reference architecture",
-            "Rapid, templated deployment",
-            "Built-in analytics and AI",
-            "Minimal custom code to maintain",
+            "Fit-to-standard workshops",
+            "Rapid configuration against best-practice processes",
+            "Process adoption support",
+            "Go-live support",
         ],
     },
     {
         title: "SAP Business Technology Platform",
-        desc: "Extend and integrate your SAP core with the BTP services that connect it to the rest of your technology estate.",
+        desc: "Extend SAP without touching the core: integration, automation, and app development on BTP, upgrade safe by design.",
         bullets: [
-            "Integration Suite for system connectivity",
-            "Extension apps that don't touch the core",
-            "Low-code/no-code development tools",
-            "A unified data and analytics layer",
+            "Integration Suite setup",
+            "Low-code app development",
+            "Workflow automation",
+            "API management and governance",
         ],
     },
     {
         title: "SAP Analytics Cloud",
-        desc: "Planning, prediction, and reporting on live SAP data, without exporting it into a separate BI stack.",
+        desc: "Planning, forecasting, and reporting built directly on your SAP data, no separate BI layer to maintain.",
         bullets: [
-            "Live connectivity to SAP data sources",
-            "Predictive and augmented analytics",
-            "Integrated planning and forecasting",
-            "Self-service dashboards for business teams",
+            "Planning model design",
+            "Predictive forecasting",
+            "Live connections to S/4HANA",
+            "Dashboard and report build",
         ],
     },
     {
         title: "SAP BW/4HANA",
-        desc: "A modernized data warehouse layer for enterprises that still need structured, governed reporting at scale.",
+        desc: "Data warehousing built for SAP-native reporting at enterprise scale, migrated or built fresh on HANA.",
         bullets: [
-            "Migration from legacy BW versions",
-            "Simplified data modeling",
-            "High-performance HANA-native queries",
-            "Governed, auditable reporting",
+            "Migration from legacy BW",
+            "Data model design",
+            "Performance tuning",
+            "Reporting layer build",
         ],
     },
     {
         title: "Application Managed Services (AMS)",
-        desc: "Ongoing support, monitoring, and enhancement for your SAP landscape after go-live, from the same team that built it.",
+        desc: "Ongoing support, monitoring, and continuous improvement for SAP environments already live, not just the ones we implement.",
         bullets: [
-            "24/7 monitoring and incident response",
-            "Regular patching and compliance updates",
-            "A continuous improvement backlog",
-            "One team across build and run",
+            "Incident and problem management",
+            "Basis and functional support",
+            "Regulatory and compliance updates",
+            "SLA-backed reporting",
         ],
     },
 ];
 
-export default function CapabilitiesAccordion() {
+export default function SAPS4HANAMigrationImplementation() {
     const [activeIndex, setActiveIndex] = useState(0);
     const active = ITEMS[activeIndex];
 
@@ -94,10 +95,10 @@ export default function CapabilitiesAccordion() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="flex flex-col items-center gap-5 max-w-[1074px] text-center"
+                    className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
                 >
-                    <h2 className="text-[#10161d] text-2xl sm:text-[24px] font-medium">{active.title}</h2>
-                    <p className="text-[#6c6c6c] text-lg font-light leading-[1.4]">{active.desc}</p>
+                    <h2 className="text-[#2E3033] text-2xl sm:text-[24px] font-semibold">{active.title}</h2>
+                    <p className="text-[#55595E] text-lg font-light leading-[1.4]">{active.desc}</p>
                 </motion.div>
             </div>
 
@@ -123,7 +124,7 @@ export default function CapabilitiesAccordion() {
                                     }`}
                             >
                                 <span
-                                    className={`text-lg font-light leading-[1.4] transition-colors ${isActive ? "text-[#10161d]" : "text-[#6c6c6c]/70"
+                                    className={`text-2xl font-['Houschka_Pro'] font-semibold leading-[1.4] transition-colors ${isActive ? "text-[#2E3033]" : "text-[#6c6c6c]/70"
                                         }`}
                                 >
                                     {item.title}
@@ -139,25 +140,34 @@ export default function CapabilitiesAccordion() {
                 <div className="relative bg-[#1c5f85] w-full lg:w-[60%] aspect-[825/587] mt-6 lg:mt-0 overflow-hidden">
                     <Image src={panelImage} alt="" fill className="object-cover" />
                     <AnimatePresence mode="wait">
-                        {/* Bottom-flush against the image (Figma: card bottom = panel
-                            bottom exactly), inset from the left/top/right rather than
-                            padded on every side. Mobile keeps a simpler, fully-inset
-                            card since the asymmetric figma proportions only read well
-                            once the panel is wide enough. */}
+                        {/* Card footprint (position/size against the image) is unchanged —
+                            still bottom-flush, top-31%, inset from the left/right. Figma's
+                            sibling item frames (e.g. "RISE with SAP") all share the same
+                            spec for this content: a 462×256 box centered inside the 571×403
+                            card — i.e. equal insets on every side (54.5/571 ≈ 9.55% left+right,
+                            73.5/403 ≈ 18.24% top+bottom), with justify-between spreading the
+                            title and bullets inside that box rather than a flat padding value.
+                            That symmetric inset is what reads as "centered" — a flat padding
+                            with top-anchored content always pools leftover space at the
+                            bottom once the copy is shorter than the card. Mobile keeps a
+                            simple inset-6 since the asymmetric figma proportions only read
+                            well once the panel is wide enough. */}
                         <motion.div
                             key={active.title}
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -12 }}
                             transition={{ duration: 0.35, ease: "easeOut" }}
-                            className="absolute left-6 right-6 bottom-0 sm:left-[25%] sm:right-[6%] sm:top-[31%] bg-white p-6 sm:p-10 flex flex-col gap-6 sm:justify-between"
+                            className="absolute left-6 right-6 bottom-0 sm:left-[25%] sm:right-[6%] sm:top-[31%] bg-white"
                         >
-                            <h3 className="text-[#10161d] text-lg font-medium leading-[1.4]">{active.desc}</h3>
-                            <ul className="list-disc pl-5 flex flex-col gap-1 text-[#3d3d4e] text-base font-light leading-[1.4]">
-                                {active.bullets.map((bullet) => (
-                                    <li key={bullet}>{bullet}</li>
-                                ))}
-                            </ul>
+                            <div className="absolute inset-6 sm:inset-auto sm:left-[9.55%] sm:right-[9.55%] sm:top-[18.24%] sm:bottom-[18.24%] flex flex-col justify-between gap-6">
+                                <h2 className="text-[#2E3033] text-lg font-semibold leading-[1.4]">{active.desc}</h2>
+                                <ul className="list-disc pl-5 flex flex-col gap-1 text-[#55595E] text-lg font-light leading-[1.4]">
+                                    {active.bullets.map((bullet) => (
+                                        <li key={bullet}>{bullet}</li>
+                                    ))}
+                                </ul>
+                            </div>
                         </motion.div>
                     </AnimatePresence>
                 </div>

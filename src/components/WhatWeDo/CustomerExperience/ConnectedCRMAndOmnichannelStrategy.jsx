@@ -6,17 +6,17 @@ import journeyMapImg from "@/assets/WhatWeDo/Customer Experience/webp/Customer_C
 
 const ITEMS = [
     {
-        title: " CRM Strategy",
+        title: "CRM Strategy",
         desc: "Modern cyber threats require continuous monitoring supported by advanced analytics, automation, and threat intelligence.",
     },
     {
-        title: " Salesforce Consulting",
+        title: "Salesforce Consulting",
         desc: "We define the customer engagement model and platform architecture before a single system gets configured",
     },
-    {
-        title: "Experience Optimization",
-        desc: "We implement and optimize Salesforce to match how your sales, service, and marketing teams actually work",
-    },
+    // {
+    //     title: "Experience Optimization",
+    //     desc: "We implement and optimize Salesforce to match how your sales, service, and marketing teams actually work",
+    // },
     {
         title: "Omnichannel Experience",
         desc: "We connect every customer touchpoint, web, mobile, call center, in-store, into one consistent journey",
@@ -37,7 +37,7 @@ export default function ConnectedCRMAndOmnichannelStrategy() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[1074px] mx-auto  text-center"
             >
-                <h2 className="text-#2E3033 text-[28px] font-medium">Connected CRM & Omnichannel Strategy
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">Connected CRM & Omnichannel Strategy
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Primary capabilities across CRM platforms, Salesforce, and journey execution.
@@ -45,7 +45,7 @@ export default function ConnectedCRMAndOmnichannelStrategy() {
             </motion.div>
 
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-[111px] items-center w-full pl-0 lg:pl-[50px]">
-                <div className="flex flex-col gap-8 sm:gap-10 w-full lg:w-[546px]  shrink-0">
+                <div className="flex flex-col gap-8 sm:gap-10 w-full lg:w-[546px] lg:h-[803px] justify-between shrink-0">
                     {ITEMS.map((item, index) => (
                         <motion.div
                             key={item.title}
@@ -53,13 +53,22 @@ export default function ConnectedCRMAndOmnichannelStrategy() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, delay: index * 0.08 }}
-                            className="flex flex-col gap-5"
+                            className="group flex flex-col gap-5"
                         >
                             <div className="flex flex-col gap-3">
-                                <h2 className="text-#2E3033 text-xl sm:text-2xl font-medium">{item.title}</h2>
+                                <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                             </div>
-                            <div className="h-px w-[139px] bg-[#3d3d4e]/40" />
+                            <div className="relative w-[139px] h-[2px]">
+                                {/* Base line */}
+                                <div className="absolute left-0 top-1/2 w-full h-px -translate-y-1/2 bg-[#3d3d4e]/40" />
+
+                                {/* Hover line */}
+                                <div
+                                    className="absolute left-0 top-1/2 w-full h-[2px] -translate-y-1/2 origin-left bg-[#0061AF] scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100 "
+                                />
+                            </div>
+
                         </motion.div>
                     ))}
                 </div>

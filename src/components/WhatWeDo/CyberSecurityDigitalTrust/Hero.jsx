@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 // import heroBg from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Cybersecurity_Hero_Bg.svg";
-import heroBg from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/Cybersecurity.jpg";
+import heroBg from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/webp/Cybersecurity_Hero.webp";
 
 export default function Hero() {
     return (

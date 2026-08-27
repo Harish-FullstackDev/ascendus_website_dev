@@ -20,17 +20,17 @@ export default function SSTInnovatioEdge() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative z-10 h-full flex flex-col justify-center gap-4 sm:gap-6 px-6 sm:px-[64px] py-10 sm:py-14 max-w-[690px]"
+                className="relative z-10 h-full flex flex-col justify-center gap-4 sm:gap-6 px-6 sm:px-[64px] py-10 sm:py-14 "
             >
-                <h2 className="text-white text-2xl sm:text-[32px] font-medium">
+                <h2 className="text-white text-2xl sm:text-[32px] font-semibold">
                     Support Studio Technologies Innovation Edge
                 </h2>
 
-                <p className="text-white text-lg sm:text-lg font-light">
+                <p className="text-white text-lg sm:text-lg font-light sm:pb-6">
                     Why enterprises choose Support Studio Technologies for emerging tech deployment.
                 </p>
 
-                <ul className="text-white text-base sm:text-lg font-light space-y-1">
+                <ul className="text-white text-base list-disc font-['Houschka_Pro'] sm:text-lg sm:pl-5 font-light space-y-1">
                     <li>SAP-integrated emerging tech deployment</li>
                     <li>Pilot-to-scale methodology</li>
                     <li>Cross-industry innovation experience</li>

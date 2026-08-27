@@ -46,7 +46,7 @@ export default function OurExpertise() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/40" />
                     <div className="absolute inset-x-6 bottom-6 flex flex-col gap-2 sm:bottom-8 lg:inset-x-auto lg:bottom-[24%] lg:left-[20.8%] lg:right-[14.5%]">
-                        <h2 className="text-white text-[28px] font-medium">Our Expertise</h2>
+                        <h2 className="text-white text-[28px] font-semibold">Our Expertise</h2>
                         <p className="text-white/90 text-base sm:text-lg font-light">
                             Strategic advantages in delivering enterprise-grade CX.
                         </p>

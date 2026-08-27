@@ -27,11 +27,11 @@ export default function ArchitecturalResilienceStrategy() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative h-full flex flex-col justify-center gap-4 sm:gap-6 max-w-full px-6 sm:px-[64px]"
                 >
-                    <h2 className="text-white text-[28px] font-medium max-w-[400px]">Architectural Resilience Strategy</h2>
-                    <p className="text-white text-base sm:text-lg font-light max-w-[600px]">
+                    <h2 className="text-white text-[48px] font-semibold max-w-[600px] sm:mb-5">Architectural Resilience Strategy</h2>
+                    <p className="text-white text-base sm:text-2xl font-light ">
                         The principles that guide our cloud and infrastructure deployments
                     </p>
-                    <p className="text-white text-base sm:text-lg font-light max-w-[600px]">
+                    <p className="text-white text-base sm:text-2xl font-light">
                         Infrastructure should be the thing your business never has to think about.
                         <br />
                         That takes deliberate design.

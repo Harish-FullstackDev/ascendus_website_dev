@@ -100,7 +100,7 @@ export default function SAPAMSTieredSupport() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
-                            className="text-[28px] font-medium leading-tight text-[#2E3033]"
+                            className="text-[28px] font-semibold leading-tight text-[#2E3033]"
                         >
                             SAP AMS &amp; Tiered Support
                         </motion.h2>
@@ -149,15 +149,15 @@ export default function SAPAMSTieredSupport() {
                                         style={{ minHeight: ITEM_MIN_HEIGHT }}
                                         className="flex flex-col justify-center py-4 pl-6 text-left"
                                     >
-                                        <p
-                                            className={`text-xl font-normal leading-tight text-black transition-all duration-500 ease-out sm:text-2xl ${isRevealed ? "translate-y-0 opacity-100" : "translate-y-3 opacity-40"
+                                        <h2
+                                            className={`text-xl font-semibold leading-tight text-[#2E3033] transition-all duration-500 ease-out sm:text-2xl ${isRevealed ? "translate-y-0 opacity-100" : "translate-y-3 opacity-40"
                                                 }`}
                                         >
                                             {item.n}. {item.title}
-                                        </p>
+                                        </h2>
 
                                         <p
-                                            className={`mt-3 text-sm leading-6 text-[#515151] transition-all delay-100 duration-500 ease-out sm:text-lg sm:leading-snug ${isRevealed ? "translate-y-0 opacity-100" : "translate-y-3 opacity-40"
+                                            className={`mt-3 text-sm leading-6 text-[#55595E] transition-all delay-100 duration-500 ease-out sm:text-lg sm:leading-snug ${isRevealed ? "translate-y-0 opacity-100" : "translate-y-3 opacity-40"
                                                 }`}
                                         >
                                             {item.desc}

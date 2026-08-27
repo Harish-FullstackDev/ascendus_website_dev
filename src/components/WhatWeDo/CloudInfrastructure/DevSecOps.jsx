@@ -18,7 +18,7 @@ export default function DevSecOps() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative h-full flex flex-col justify-center gap-4 sm:gap-6 max-w-[500px] px-6 sm:px-[52px]"
                 >
-                    <p className="text-black text-2xl sm:text-[32px] font-medium">Architectural Resilience Strategy</p>
+                    <p className="text-black text-2xl sm:text-[32px] font-semibold">Architectural Resilience Strategy</p>
                     <p className="text-black text-xl sm:text-2xl font-normal">
                         The principles that guide our cloud and infrastructure deployments
                     </p>

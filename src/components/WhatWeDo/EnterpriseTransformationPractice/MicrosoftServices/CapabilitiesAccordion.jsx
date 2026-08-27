@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import panelImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/MicrosoftServices/capabilities-panel.png";
 
 // All 5 items have real Figma copy this time (unlike the SAP Transformation
 // page, where only item 1 was filled in) — the other 4 panels were laid out
@@ -108,26 +110,40 @@ export default function CapabilitiesAccordion() {
                     })}
                 </div>
 
-                {/* Solid #1C5F85 panel (Figma has no photo here, unlike the SAP
-                    Transformation page's equivalent section). */}
+                {/* Shared background image behind all 5 items, not per-item
+                    photography — same pattern as the SAP Transformation page's
+                    equivalent section. */}
                 <div className="relative bg-[#1c5f85] w-full lg:w-[60%] aspect-[825/587] mt-6 lg:mt-0 overflow-hidden">
+                    <Image src={panelImage} alt="" fill className="object-cover" />
                     <AnimatePresence mode="wait">
-                        {/* Bottom-flush against the panel (Figma: card bottom = panel
-                            bottom exactly), inset from the left/top/right. */}
+                        {/* Card footprint (position/size against the image) stays
+                            bottom-flush, top-31%, inset from the left/right — matching
+                            Figma's card bottom = panel bottom. The sibling item frames
+                            on the SAP Transformation page's equivalent section (which
+                            this list+panel component is shared with) share one spec for
+                            the content inside that footprint: a 462×256 box centered
+                            inside the 571×403 card — i.e. equal insets on every side
+                            (54.5/571 ≈ 9.55% left+right, 73.5/403 ≈ 18.24% top+bottom),
+                            with justify-between spreading the desc and bullets inside
+                            that box rather than a flat padding value stretched across
+                            the whole footprint (which pushes them far apart once the
+                            copy is shorter than the card). */}
                         <motion.div
                             key={active.title}
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -12 }}
                             transition={{ duration: 0.35, ease: "easeOut" }}
-                            className="absolute left-6 right-6 bottom-0 sm:left-[25%] sm:right-[6%] sm:top-[31%] bg-white p-6 sm:p-10 flex flex-col gap-6 sm:justify-between"
+                            className="absolute left-6 right-6 bottom-0 sm:left-[25%] sm:right-[6%] sm:top-[31%] bg-white"
                         >
-                            <h3 className="text-[#10161d] text-lg font-medium leading-[1.4]">{active.desc}</h3>
-                            <ul className="list-disc pl-5 flex flex-col gap-1 text-[#3d3d4e] text-base font-light leading-[1.4]">
-                                {active.bullets.map((bullet) => (
-                                    <li key={bullet}>{bullet}</li>
-                                ))}
-                            </ul>
+                            <div className="absolute inset-6 sm:inset-auto sm:left-[9.55%] sm:right-[9.55%] sm:top-[18.24%] sm:bottom-[18.24%] flex flex-col justify-between gap-6">
+                                <h3 className="text-[#10161d] text-lg font-medium leading-[1.4]">{active.desc}</h3>
+                                <ul className="list-disc pl-5 flex flex-col gap-1 text-[#3d3d4e] text-lg font-light leading-[1.4]">
+                                    {active.bullets.map((bullet) => (
+                                        <li key={bullet}>{bullet}</li>
+                                    ))}
+                                </ul>
+                            </div>
                         </motion.div>
                     </AnimatePresence>
                 </div>

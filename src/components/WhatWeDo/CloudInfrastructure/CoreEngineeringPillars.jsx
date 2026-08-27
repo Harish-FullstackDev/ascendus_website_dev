@@ -173,7 +173,7 @@ export default function CoreEngineeringPillars() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[880px] text-center"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-medium">Core Engineering Pillars</h2>
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">Core Engineering Pillars</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     What sets our cloud and infrastructure delivery apart
                 </p>
@@ -195,15 +195,15 @@ export default function CoreEngineeringPillars() {
                         <div
                             key={`slide-${index}`}
                             aria-hidden={isClone || undefined}
-                            className="shrink-0 w-[80%] sm:w-[40%] flex flex-col gap-6 py-4 [scroll-snap-align:start] px-10"
+                            className="shrink-0 w-[80%] sm:w-[40%] flex flex-col gap-6 py-4 [scroll-snap-align:start] px-5"
                         >
                             <div className="flex items-start gap-10">
                                 <div className="relative shrink-0 size-[50px] sm:size-[60px]">
                                     <Image src={item.icon} alt="" fill className="object-contain" draggable={false} />
                                 </div>
-                                <div className="w-px h-[50px] sm:h-[60px] shrink-0 bg-[#7F7F7F]" />
+                                <div className="w-px h-[50px] sm:h-[180px] shrink-0 bg-[#7F7F7F]" />
                                 <div className="flex flex-col gap-3">
-                                    <p className="text-[#0D0C22] text-xl sm:text-2xl font-medium">{item.title}</p>
+                                    <h2 className="text-[#0D0C22] text-xl sm:text-2xl font-semibold">{item.title}</h2>
                                     <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                                 </div>
                             </div>

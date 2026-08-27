@@ -62,7 +62,7 @@ export default function UserResearchAndDesignSystems() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[1011px] text-center"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-medium">User Research & Design Systems
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">User Research & Design Systems
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Flagship UX/UI, product, and design system capabilities
@@ -115,7 +115,7 @@ export default function UserResearchAndDesignSystems() {
                         </motion.div>
                     </AnimatePresence>
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
 
                     <AnimatePresence mode="wait">
                         <motion.div
@@ -126,9 +126,9 @@ export default function UserResearchAndDesignSystems() {
                             transition={{ duration: 0.3 }}
                             className="absolute left-[8%] sm:left-[13%] right-[8%] sm:right-auto top-[38%] sm:top-[60%] sm:w-[61%] text-[#e4e4e4]"
                         >
-                            <p className="text-lg sm:text-2xl font-light leading-[1.4] sm:leading-[41px]">
+                            <h2 className="text-lg sm:text-2xl font-semibold leading-[1.4] sm:leading-[41px]">
                                 {activeTab.desc}
-                            </p>
+                            </h2>
                         </motion.div>
                     </AnimatePresence>
                 </div>

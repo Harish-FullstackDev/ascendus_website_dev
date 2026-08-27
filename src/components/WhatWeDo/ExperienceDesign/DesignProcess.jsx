@@ -65,7 +65,7 @@ export default function DesignProcess() {
                                 transition={{ duration: 0.4, ease: "easeOut" }}
                                 className="flex flex-col gap-4 sm:gap-6"
                             >
-                                <h3 className="text-white text-3xl sm:text-5xl  font-medium">{STAGES[active].title}</h3>
+                                <h3 className="text-white text-3xl sm:text-5xl  font-semibold">{STAGES[active].title}</h3>
                                 <p className="text-white/90 text-lg sm:text-[32px] font-light leading-snug">
                                     {STAGES[active].desc}
                                 </p>

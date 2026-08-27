@@ -9,21 +9,21 @@ import card3 from "@/assets/career/webp/Careers_World_Class_Benefits.webp";
 const CARDS = [
     {
         image: card1,
-        title: "Grow your career",
+        title: "Work That Reaches Production",
         description:
-            "From developers and designers to strategists and SAP pros, there are endless opportunities for you to learn, grow and make a difference.",
+            "Your work is connected to real enterprise environments, real operational challenges and outcomes that continue beyond implementation.",
     },
     {
         image: card2,
-        title: "Flex work",
+        title: "Learn From Specialists",
         description:
-            "Enjoy flexible work options tailored to support both productivity and work-life balance.",
+            "Work alongside experienced practitioners who bring depth across SAP, cloud, data, cybersecurity and digital transformation. Build expertise through delivery, not theory alone.",
     },
     {
         image: card3,
-        title: "World-class benefits",
+        title: "Take Ownership Early",
         description:
-            "Access top-tier benefits designed to enhance your health, well-being, and financial security.",
+            "We give capable people responsibility for meaningful parts of an engagement, with the support and context needed to make sound decisions.",
     },
 ];
 
@@ -50,11 +50,10 @@ export default function WhatYouWantToDo() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="max-w-3xl mx-auto text-center mb-12"
             >
-                <h2 className="text-2xl sm:text-3xl font-medium text-black">Whatever you want to do</h2>
+                <h2 className="text-2xl sm:text-3xl font-medium text-black">Work where expertise has room to grow.</h2>
                 <p className="mt-4 text-sm sm:text-base text-[#4a5565] leading-relaxed">
-                    No matter your experience level, all Ascendus employees get opportunities, support, and resources to
-                    pursue their career goals, balance work-life commitments, and strengthen their health and
-                    well-being.
+                    The strongest careers are built through meaningful work, experienced teams and opportunities to
+                    take ownership. That is how we structure the work here.
                 </p>
             </motion.div>
 

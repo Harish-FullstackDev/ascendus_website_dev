@@ -22,7 +22,7 @@ export default function ServiceDesign() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-3 max-w-[1390px] mx-auto mb-10 sm:mb-[47px]"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-medium">Enterprise UX Modernization</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-semibold">Enterprise UX Modernization</h2>
                 <p className="text-black text-base sm:text-lg font-light">
                     Eliminating unnecessary complexity in software and scaling interface standards.
                 </p>

@@ -47,7 +47,7 @@ function PlainCard({ title, desc, index }) {
             transition={{ duration: 0.5, delay: index * 0.08 }}
             className="flex flex-col gap-8 bg-[#dfdfdf] px-8 py-10 sm:py-12 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
         >
-            <p className="text-black text-2xl font-medium">{title}</p>
+            <p className="text-black text-2xl font-semibold">{title}</p>
             <p className="text-[#3d3d4e] text-base sm:text-lg font-light">{desc}</p>
         </motion.div>
     );
@@ -75,7 +75,7 @@ function HoverCard({ title, desc, image, index }) {
 
             {/* Content */}
             <div className="relative h-full flex flex-col justify-end p-8">
-                <h3 className="text-2xl font-medium transition-colors duration-500 group-hover:text-white">
+                <h3 className="text-2xl font-semibold transition-colors duration-500 group-hover:text-white">
                     {title}
                 </h3>
 
@@ -96,7 +96,7 @@ export default function CustomerAnalytics() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center px-6 mb-12 sm:mb-16"
             >
-                <h2 className="text-black text-2xl font-medium">Customer Analytics</h2>
+                <h2 className="text-black text-2xl font-semibold">Customer Analytics</h2>
                 <p className="text-black text-base sm:text-lg font-light">
                     Analyze customer behavior, preferences, and interactions to make informed business
                     decisions and improve customer engagement.

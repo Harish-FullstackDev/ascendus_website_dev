@@ -281,7 +281,7 @@ export default function JobDescription({ job, otherJobs = [] }) {
             <div className="bg-white border border-black/10 p-5 sm:p-6">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                     <div className="flex gap-4">
-                        <div className="border-l-5 border-[#0061af] pl-4">
+                        <div className="border-l-5 border-[#2d8ec5] pl-4">
                             <h1 className="text-base font-semibold text-[#0a0a0a]">{job.title}</h1>
                             <p className="text-base text-[#4a5565] mt-1">{job.company}</p>
                             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2">
@@ -368,7 +368,7 @@ export default function JobDescription({ job, otherJobs = [] }) {
                         {otherJobs.map((other) => (
                             <div
                                 key={other.slug}
-                                className="flex items-center justify-between gap-4 border-l-4 border-[#0061af] px-3 py-3"
+                                className="flex items-center justify-between gap-4 border-l-4 border-[#2d8ec5] px-3 py-3"
                             >
                                 <div>
                                     <p className="text-sm text-[#5c5c5c]">{other.title}</p>
@@ -378,7 +378,7 @@ export default function JobDescription({ job, otherJobs = [] }) {
                                 </div>
                                 <Link
                                     href={`/careers/${other.slug}`}
-                                    className="inline-flex items-center gap-1.5 border border-[#7f7f7f] px-3 py-1.5 text-xs text-[#0061af] whitespace-nowrap transition-colors hover:bg-slate-50"
+                                    className="inline-flex items-center gap-1.5 border border-[#7f7f7f] px-3 py-1.5 text-xs text-[#2d8ec5] whitespace-nowrap transition-colors hover:bg-slate-50"
                                 >
                                     View Job Details
                                     <Image src={viewJobDetailsIcon} alt="" width={8} height={8} />

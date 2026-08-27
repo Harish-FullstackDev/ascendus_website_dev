@@ -39,9 +39,9 @@ function Card({ title, desc, className = "" }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className={`border border-[#d3d5d8] bg-[#e8ebef] flex flex-col gap-3 px-6 py-7 sm:px-8 sm:py-8 ${className}`}
+            className={`border border-[#d3d5d8] bg-[#E4E6E7] flex flex-col gap-3 px-6 py-7 sm:px-8 sm:py-8 ${className}`}
         >
-            <p className="text-[#041527] text-xl sm:text-2xl font-medium">{title}</p>
+            <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{title}</h2>
             <p className="text-[#55595E] text-base sm:text-lg font-light">{desc}</p>
         </motion.div>
     );
@@ -57,8 +57,8 @@ export default function BusinessTransformationAdvisory() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[694px] text-center"
             >
-                <h2 className="text-black text-2xl font-normal">Business Transformation Advisory</h2>
-                <p className="text-[#515151] text-base sm:text-lg font-light">
+                <h2 className="text-[#2E3033] text-2xl font-semibold">Business Transformation Advisory</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Advisory services that connect business priorities, technology decisions, and transformation
                     outcomes.
                 </p>
@@ -67,12 +67,12 @@ export default function BusinessTransformationAdvisory() {
             <div className="w-full max-w-screen flex flex-col gap-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     {BIG_CARDS.map((card) => (
-                        <Card key={card.title} {...card} className="sm:min-h-[422px]" />
+                        <Card key={card.title} {...card} className="sm:min-h-[280px]" />
                     ))}
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
                     {SMALL_CARDS.map((card) => (
-                        <Card key={card.title} {...card} className="sm:min-h-[405px]" />
+                        <Card key={card.title} {...card} className="sm:min-h-[320px]" />
                     ))}
                 </div>
             </div>

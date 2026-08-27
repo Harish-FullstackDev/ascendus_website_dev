@@ -47,7 +47,7 @@ export default function IntelligentDocumentProcessing() {
                         className="flex flex-col gap-4"
                     >
                         <Image src={item.icon} alt="" width={48} height={48} />
-                        <p className="text-black text-lg font-medium">{item.title}</p>
+                        <p className="text-black text-lg font-semibold">{item.title}</p>
                         <p className="text-[#6c6c6c] text-sm font-light">{item.desc}</p>
                     </motion.div>
                 ))}

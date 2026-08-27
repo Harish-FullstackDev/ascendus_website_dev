@@ -38,7 +38,7 @@ export default function ModernStackAPIEngineering() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[841px] text-center px-6"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-medium">Modern Stack & API Engineering</h2>
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">Modern Stack & API Engineering</h2>
                 <p className="text-[#55595E] text-lg sm:text-lg font-light">
                     Specialized engineering services from mobile to microservices.
                 </p>
@@ -55,11 +55,11 @@ export default function ModernStackAPIEngineering() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="flex gap-4 rounded-[10px] bg-[#eef6fb] px-5 py-4"
                     >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2d8ec5] text-sm font-medium text-white">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2d8ec5] text-sm font-semibold text-white">
                             {index + 1}
                         </div>
                         <div className="flex flex-col gap-1">
-                            <p className="text-[#2E3033] text-base font-medium">{step.title}</p>
+                            <p className="text-[#2E3033] text-base font-semibold">{step.title}</p>
                             <p className="text-[#55595E] text-sm font-light leading-snug">{step.desc}</p>
                         </div>
                     </motion.div>
@@ -87,7 +87,7 @@ export default function ModernStackAPIEngineering() {
                                 className={`relative flex-1 flex flex-col items-center justify-center gap-5 px-4 text-left transition-colors duration-300 ${isHovered ? "bg-[#2d8ec5]/75 cursor-pointer" : "cursor-pointer"
                                     }`}
                             >
-                                <h2 className="text-white text-2xl font-medium w-[240px]">{step.title}</h2>
+                                <h2 className="text-white text-2xl font-semibold w-[240px]">{step.title}</h2>
                                 {isHovered && (
                                     <motion.p
                                         initial={{ opacity: 0, y: 8 }}

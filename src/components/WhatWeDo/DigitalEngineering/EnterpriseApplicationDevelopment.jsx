@@ -58,7 +58,7 @@ export default function EnterpriseApplicationDevelopment() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[42px] px-6"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-medium">Enterprise Application Development</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-semibold">Enterprise Application Development</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     We develop secure, scalable enterprise applications tailored to your business processes, enabling
                     greater efficiency, collaboration, and long-term growth.

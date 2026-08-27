@@ -62,7 +62,7 @@ export default function EnterpriseSoftware() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-medium">
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">
                     Enterprise Software Development & Modernization
                 </h2>
 
@@ -93,7 +93,7 @@ export default function EnterpriseSoftware() {
                                 : "border-[#6c6c6c] text-[#6c6c6c] opacity-70"
                                 }`}
                         >
-                            <h2 className="text-base sm:text-lg font-medium">
+                            <h2 className="text-base sm:text-2xl font-semibold">
                                 {tab.label}
                             </h2>
                         </button>
@@ -129,7 +129,7 @@ export default function EnterpriseSoftware() {
                                 transition={{ duration: 0.3, delay: 0.1 }}
                                 className="absolute left-6 right-6 sm:left-[55px] sm:right-auto bottom-6 sm:bottom-[46px] sm:w-[462px] text-white flex flex-col gap-3"
                             >
-                                <h2 className="text-2xl font-medium">
+                                <h2 className="text-2xl font-semibold">
                                     {activeTab.title}
                                 </h2>
 

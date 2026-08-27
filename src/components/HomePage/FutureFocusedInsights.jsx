@@ -42,7 +42,7 @@ const itemVariants = {
 export default function FutureFocusedInsights() {
     return (
         <section className="w-full bg-white pt-16 pb-16 sm:pt-20 sm:pb-20 px-6 sm:px-[64px]">
-            <div className="max-w-[1280px] mx-auto">
+            <div className="w-full">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -50,10 +50,12 @@ export default function FutureFocusedInsights() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="max-w-[700px] mb-12"
                 >
-                    <p className="text-sm text-[#6c6c6c] pb-2 border-b border-[#d9d9d9] w-fit">Articles</p>
-                    <h2 className="mt-4 text-[#2E3033] text-2xl sm:text-[32px] font-medium leading-[1.3]">
-                        Perspectives on Enterprise Technology That Matter to Your Business
+                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
+                        Articles
                     </h2>
+                    <p className="text-[#55595E] text-lg font-light leading-[1.4]">
+                        Perspectives on Enterprise Technology That Matter to Your Business
+                    </p>
                 </motion.div>
 
                 <motion.div
@@ -68,8 +70,8 @@ export default function FutureFocusedInsights() {
                             <div className="relative w-full aspect-[4/3] overflow-hidden">
                                 <Image src={item.img} alt="" fill className="object-cover" />
                             </div>
-                            <p className="text-sm text-[#6c6c6c]">{item.date}</p>
-                            <h3 className="text-[#2E3033] text-lg font-medium leading-[1.4]">{item.title}</h3>
+                            <p className="text-sm text-[#55595E]">{item.date}</p>
+                            <h2 className="text-[#2E3033] text-lg font-semibold leading-[1.4]">{item.title}</h2>
                             <button
                                 type="button"
                                 className="group flex items-center gap-2 text-[#2d8ec5] text-base font-light"

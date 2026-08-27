@@ -33,7 +33,7 @@ export default function SpecializedDesignDisciplines() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 w-full mx-auto text-center mb-10 sm:mb-16 px-6"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-medium">
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">
                     Specialized Design Disciplines
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
@@ -66,10 +66,10 @@ export default function SpecializedDesignDisciplines() {
                             aria-hidden
                             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                         >
-                            <div className="absolute inset-0 bg-[#0A3A52]" />
+                            <div className="absolute inset-0 bg-[#002C4F]" />
                         </div>
                         <div className="relative flex flex-col gap-8 sm:gap-10 text-left">
-                            <h2 className="text-2xl sm:text-[32px] font-medium">{col.title}</h2>
+                            <h2 className="text-2xl sm:text-[32px] font-semibold">{col.title}</h2>
                             <div className="flex flex-col gap-2 text-sm sm:text-lg font-light">
                                 {col.items.map((item) => (
                                     <p key={item}>{item}</p>

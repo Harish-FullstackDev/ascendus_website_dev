@@ -31,7 +31,7 @@ export default function TeamAdoption() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-col gap23"
                     >
-                        <h2 className="text-[#2E3033] text-[28px] font-medium">Team Adoption &amp; Seamless Context</h2>
+                        <h2 className="text-[#2E3033] text-[28px] font-semibold">Team Adoption &amp; Seamless Context</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             Why our approach to customer experience drives long-term adoption.
                         </p>
@@ -49,8 +49,8 @@ export default function TeamAdoption() {
                                 key={box.title}
                                 className="bg-white w-full sm:flex-1 lg:h-full flex flex-col items-start gap-12 lg:gap-16 px-6 py-8"
                             >
-                                <h2 className="text-[#2E3033] text-2xl font-medium">{box.title}</h2>
-                                <p className="text-[#55595E] text-lg font-light">{box.desc}</p>
+                                <h2 className="text-[#2E3033] text-2xl font-semibold">{box.title}</h2>
+                                <p className="text-[#55595E] text-lg font-light leading-relaxed tracking-relaxed ">{box.desc}</p>
                             </div>
                         ))}
                     </motion.div>

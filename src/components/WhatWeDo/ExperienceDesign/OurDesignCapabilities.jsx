@@ -22,7 +22,7 @@ export default function OurDesignCapabilities() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-medium">Our Design Capabilities</h2>
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">Our Design Capabilities</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Key differentiators of our design practice
                 </p>
@@ -37,10 +37,10 @@ export default function OurDesignCapabilities() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="flex flex-col items-center gap-6 sm:gap-10 max-w-[1300px] mx-auto"
+                className="flex flex-col items-center gap-6 sm:gap-10  mx-auto"
             >
                 {CAPABILITY_ROWS.map((row, rowIndex) => (
-                    <div key={rowIndex} className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+                    <div key={rowIndex} className="flex flex-wrap items-center justify-center gap-6 sm:gap-16">
                         {row.map((item) => (
                             <div
                                 key={item}

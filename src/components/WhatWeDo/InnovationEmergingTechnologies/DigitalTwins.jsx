@@ -51,7 +51,7 @@ export default function DigitalTwins() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center"
             >
-                <h2 className="text-black text-2xl font-medium">Digital Twins</h2>
+                <h2 className="text-black text-2xl font-semibold">Digital Twins</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Create living digital replicas of physical assets and processes to simulate, predict, and
                     optimize before committing real-world resources.
@@ -70,7 +70,7 @@ export default function DigitalTwins() {
                                 className={`text-left flex flex-col justify-center px-3 transition-all ${isActive ? "border-l-[5px] border-[#2d8ec5] py-4 gap-1" : "border-l-0 py-2"
                                     }`}
                             >
-                                <span className={`text-black ${isActive ? "text-xl sm:text-2xl font-medium" : "text-[#515151] text-lg font-light"}`}>
+                                <span className={`text-black ${isActive ? "text-xl sm:text-2xl font-semibold" : "text-[#515151] text-lg font-light"}`}>
                                     {item.title}
                                 </span>
                                 {isActive && (

@@ -55,7 +55,7 @@ export default function EnterpriseDataFoundations() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[50px]"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-medium">Enterprise Data Foundations</h2>
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">Enterprise Data Foundations</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Core engineering capabilities for data platforms and business intelligence
                 </p>
@@ -122,7 +122,7 @@ export default function EnterpriseDataFoundations() {
                                     }`}
                             />
                             <div className="absolute inset-0 flex items-top justify-right px-6 py-10 text-left">
-                                <h2 className="text-white text-xl sm:text-2xl font-medium">{card.title}</h2>
+                                <h2 className="text-white text-xl sm:text-2xl font-semibold">{card.title}</h2>
                             </div>
                             <div
                                 className={`absolute inset-x-0 bottom-0 px-6 pb-6 grid transition-[grid-template-rows] duration-500 ease-out ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"

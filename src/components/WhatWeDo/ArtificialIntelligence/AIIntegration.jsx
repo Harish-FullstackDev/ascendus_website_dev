@@ -23,7 +23,7 @@ export default function AIIntegration() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-4 max-w-[560px] mx-auto text-center"
                 >
-                    <h2 className="text-black text-2xl sm:text-[28px] font-medium">
+                    <h2 className="text-black text-2xl sm:text-[28px] font-semibold">
                         Scalable AI Deployment &amp; Operational Workflows
                     </h2>
                     <p className="text-[#515151] text-base sm:text-lg font-light">

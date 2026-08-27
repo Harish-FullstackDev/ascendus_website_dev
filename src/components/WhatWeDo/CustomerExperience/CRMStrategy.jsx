@@ -117,7 +117,7 @@ export default function CRMStrategy() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-4 max-w-[374px] shrink-0"
                 >
-                    <h2 className="text-[#0d0c22] text-2xl font-medium">CRM Strategy</h2>
+                    <h2 className="text-[#0d0c22] text-2xl font-semibold">CRM Strategy</h2>
                     <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                         Develop customer relationship management strategies that align sales, marketing, and
                         service operations to deliver consistent customer experiences.
@@ -150,7 +150,7 @@ export default function CRMStrategy() {
                                         />
                                     </div>
                                     <div className="flex flex-col gap-2 px-6 py-6">
-                                        <p className="text-black text-lg font-medium">{card.title}</p>
+                                        <p className="text-black text-lg font-semibold">{card.title}</p>
                                         <p className="text-[#3d3d4e] text-base font-light">{card.desc}</p>
                                     </div>
                                 </motion.div>
@@ -198,7 +198,7 @@ export default function CRMStrategy() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="absolute left-6 lg:left-[50px] top-0 md:top-[40px] w-[374px] flex flex-col gap-4"
                 >
-                    <h2 className="text-[#0d0c22] text-2xl font-medium">CRM Strategy</h2>
+                    <h2 className="text-[#0d0c22] text-2xl font-semibold">CRM Strategy</h2>
                     <p className="text-[#3d3d4e] text-lg font-light">
                         Develop customer relationship management strategies that align sales, marketing, and
                         service operations to deliver consistent customer experiences.
@@ -231,7 +231,7 @@ export default function CRMStrategy() {
                                 />
                             </div>
                             <div className="flex flex-col gap-2 px-6 py-6">
-                                <p className="text-black text-lg font-medium">{card.title}</p>
+                                <p className="text-black text-lg font-semibold">{card.title}</p>
                                 <p className="text-[#3d3d4e] text-base font-light">{card.desc}</p>
                             </div>
                         </motion.div>

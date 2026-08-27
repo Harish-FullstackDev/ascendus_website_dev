@@ -59,7 +59,7 @@ function AnimatedStat({ value }) {
 
 export default function ProofInNumbers() {
     return (
-        <section className="w-full bg-[#F3F6F9] px-6 py-10 sm:px-[64px] sm:py-[64px]">
+        <section className="w-full bg-[#F3F6F9] px-6 py-10 sm:p-[64px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ export default function ProofInNumbers() {
                     {STATS.map((stat) => (
                         <div
                             key={stat.label}
-                            className="flex flex-1 flex-col gap-2 items-start sm:px-10 first:sm:pl-0 last:sm:pr-0"
+                            className="flex flex-1 flex-col gap-2 items-center sm:px-10 first:sm:pl-0 last:sm:pr-0"
                         >
                             <AnimatedStat value={stat.value} />
                             <p className="text-[#55595E] text-lg font-light whitespace-nowrap">

@@ -54,7 +54,7 @@ export default function SpecializedCXAutomationAnalytics() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[42px] px-6"
             >
-                <h2 className="text-[##2E3033] text-[28px] font-medium">Specialized CX Automation & Analytics</h2>
+                <h2 className="text-[##2E3033] text-[28px] font-semibold">Specialized CX Automation & Analytics</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Automation, analytics, and loyalty tools for customer retention.
                 </p>
@@ -85,11 +85,11 @@ export default function SpecializedCXAutomationAnalytics() {
                                             <Image src={tab.image} alt="" fill className="object-cover" />
                                         </div>
                                         <p className="text-[#55595E] text-base sm:text-lg font-light">{tab.desc}</p>
-                                        <h2 className="text-[#2D8EC5] text-xl sm:text-2xl font-medium">{tab.title}</h2>
+                                        <h2 className="text-[#2D8EC5] text-xl sm:text-2xl font-semibold">{tab.title}</h2>
                                     </motion.div>
                                 ) : (
                                     <div className="flex h-full w-full items-center justify-center px-2 transition-colors group-hover:bg-white/50">
-                                        <span className="whitespace-nowrap text-[#2d8ec5] text-sm font-medium sm:-rotate-90 sm:text-[32px]">
+                                        <span className="whitespace-nowrap font-['Houschka_Pro'] text-[#2d8ec5] text-sm font-semibold sm:-rotate-90 sm:text-[32px]">
                                             {tab.title}
                                         </span>
                                     </div>

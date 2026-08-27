@@ -46,7 +46,7 @@ export default function MachineLearning() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[780px] mx-auto text-center mb-10 sm:mb-[50px] sm:px-[50px]"
             >
-                <h2 className="text-black text-2xl font-medium">Machine Learning</h2>
+                <h2 className="text-black text-2xl font-semibold">Machine Learning</h2>
                 <p className="text-black text-base sm:text-lg font-light">Turn Data into Intelligent Decisions</p>
                 <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
                     Build machine learning models that analyze historical data, identify patterns, and generate
@@ -79,7 +79,7 @@ export default function MachineLearning() {
                                     />
                                 )}
                                 <div className="relative flex flex-col gap-3">
-                                    <p className="text-black text-xl sm:text-2xl font-medium">{item.title}</p>
+                                    <p className="text-black text-xl sm:text-2xl font-semibold">{item.title}</p>
                                     <AnimatePresence initial={false}>
                                         {isActive && (
                                             <motion.p

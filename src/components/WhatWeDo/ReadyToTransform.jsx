@@ -33,7 +33,7 @@ export default function ReadyToTransform({
                     className="relative z-10 flex flex-col items-center text-center gap-6 md:gap-12 px-4 pt-32 pb-16 sm:pt-30 sm:pb-24 lg:pt-32 lg:pb-32"
                 >
                     <div className="flex flex-col w-full md:gap-12">
-                        <h2 className="text-2xl sm:text-4xl font-light text-white">
+                        <h2 className="text-2xl sm:text-5xl font-semibold text-white">
                             {title}
                         </h2>
 
@@ -45,7 +45,7 @@ export default function ReadyToTransform({
                     <button
                         type="button"
                         onClick={handleContactClick}
-                        className="rounded-full border border-[#d0d0d0] px-8 py-2 text-sm sm:text-base font-light text-white transition-colors hover:bg-white hover:text-black"
+                        className="rounded-full border border-[#d0d0d0] px-4 py-2 text-sm sm:text-lg font-light text-white transition-colors hover:bg-white hover:text-black"
                     >
                         {buttonLabel}
                     </button>

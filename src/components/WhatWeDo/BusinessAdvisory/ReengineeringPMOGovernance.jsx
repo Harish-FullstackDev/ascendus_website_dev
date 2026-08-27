@@ -54,8 +54,8 @@ export default function ReengineeringPMOGovernance() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[814px] text-center"
             >
-                <h2 className="text-black text-2xl font-normal">Reengineering & PMO Governance</h2>
-                <p className="text-[#515151] text-base sm:text-lg font-light">
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">Reengineering & PMO Governance</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Targeted advisory domains including PMO, digital strategy, and IT evaluation
                 </p>
             </motion.div>
@@ -69,9 +69,9 @@ export default function ReengineeringPMOGovernance() {
                     className="relative w-full lg:w-[550px] lg:h-auto min-h-[700px] overflow-hidden bg-black shrink-0"
                 >
                     <Image src={pmoPhoto} alt="" fill className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
-                    <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 px-6 sm:px-[47px] py-8 sm:pb-10">
-                        <p className="text-white text-2xl sm:text-[32px] font-normal">PMO Advisory</p>
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30" />
+                    <div className="absolute inset-x-0 bottom-30 flex flex-col gap-4 px-6 sm:px-[47px] py-8 sm:pb-10">
+                        <h2 className="text-white text-2xl sm:text-[32px] font-semibold">PMO Advisory</h2>
                         <p className="text-white text-lg sm:text-2xl font-light">Deliver Projects with Confidence</p>
                         <p className="text-white text-sm sm:text-base font-light leading-snug max-w-[424px]">
                             Strengthen project governance, portfolio management, and execution through a structured
@@ -94,8 +94,8 @@ export default function ReengineeringPMOGovernance() {
                                 <Image src={item.icon} alt="" width={40} height={40} className="object-contain" />
                             </div>
                             <div className="flex flex-col gap-2 sm:gap-3">
-                                <p className="text-black text-lg sm:text-xl font-normal">{item.title}</p>
-                                <p className="text-[#6c6c6c] text-base sm:text-lg font-light">{item.desc}</p>
+                                <h2 className="text-[#2E3033] text-lg sm:text-xl font-semibold">{item.title}</h2>
+                                <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                             </div>
                         </motion.div>
                     ))}

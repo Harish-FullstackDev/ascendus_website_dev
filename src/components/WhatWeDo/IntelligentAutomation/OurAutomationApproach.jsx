@@ -22,7 +22,7 @@ export default function OurAutomationApproach() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[736px] text-center"
             >
-                <h2 className="text-black text-2xl font-medium">Our Automation Approach</h2>
+                <h2 className="text-black text-2xl font-semibold">Our Automation Approach</h2>
                 <p className="text-[#515151] text-base sm:text-lg font-light">
                     A structured path from opportunity discovery to a live, running automation.
                 </p>
@@ -43,10 +43,10 @@ export default function OurAutomationApproach() {
                             className="flex gap-6 sm:gap-[70px] items-center py-3 sm:py-[18px]"
                         >
                             <div className="w-[42px] h-[42px] shrink-0 bg-black rounded-[6px] flex items-center justify-center">
-                                <span className="text-white text-2xl font-medium">{step.n}</span>
+                                <span className="text-white text-2xl font-semibold">{step.n}</span>
                             </div>
                             <div>
-                                <p className="text-black text-xl sm:text-2xl font-medium">{step.title}</p>
+                                <p className="text-black text-xl sm:text-2xl font-semibold">{step.title}</p>
                                 <p className="text-black text-sm sm:text-base font-light mt-2 leading-snug">{step.desc}</p>
                             </div>
                         </motion.div>

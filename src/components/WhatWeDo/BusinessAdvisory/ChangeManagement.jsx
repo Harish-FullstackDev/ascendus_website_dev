@@ -43,11 +43,11 @@ export default function ChangeManagement() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="flex gap-4 rounded-[10px] bg-[#eef6fb] px-5 py-4"
                     >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2d8ec5] text-sm font-medium text-white">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2d8ec5] text-sm font-semibold text-white">
                             {index + 1}
                         </div>
                         <div className="flex flex-col gap-1">
-                            <p className="text-black text-base font-medium">{step.title}</p>
+                            <p className="text-black text-base font-semibold">{step.title}</p>
                             <p className="text-[#515151] text-sm font-light leading-snug">{step.desc}</p>
                         </div>
                     </motion.div>
@@ -71,7 +71,7 @@ export default function ChangeManagement() {
                                     isHovered ? "bg-[#2d8ec5]/75 cursor-pointer" : "cursor-pointer"
                                 }`}
                             >
-                                <p className="text-white text-xl font-medium">{step.title}</p>
+                                <p className="text-white text-xl font-semibold">{step.title}</p>
                                 {isHovered && (
                                     <motion.p
                                         initial={{ opacity: 0, y: 8 }}

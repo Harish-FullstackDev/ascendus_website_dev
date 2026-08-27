@@ -74,7 +74,7 @@ export default function GovernanceSAPDataDepth() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-medium">Governance & SAP Data Depth</h2>
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">Governance & SAP Data Depth</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The principles that shape our data architecture approach.
                 </p>
@@ -103,9 +103,9 @@ export default function GovernanceSAPDataDepth() {
                             transition={{ duration: 0.5, ease: "easeInOut" }}
                             className="flex flex-col sm:flex-row gap-4 sm:gap-[21px]"
                         >
-                            <div className="bg-[#0A2B3E] w-full sm:w-[439px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-between gap-4 text-white">
+                            <div className="bg-[#002C4F] w-full sm:w-[439px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-between gap-4 text-white">
                                 <div className="flex flex-col gap-4 sm:gap-6">
-                                    <h2 className="text-xl sm:text-2xl font-medium">{active.title}</h2>
+                                    <h2 className="text-xl sm:text-2xl font-semibold">{active.title}</h2>
                                     <p className="text-white sm:mt-25 text-sm sm:text-lg font-light leading-relaxed">
                                         {active.desc}
                                     </p>
@@ -114,7 +114,7 @@ export default function GovernanceSAPDataDepth() {
                             </div>
                             <div className="hidden sm:flex bg-white w-full sm:w-[439px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex-col justify-between gap-4 text-black">
                                 <div className="flex flex-col gap-4 sm:gap-6">
-                                    <h2 className="text-xl text-[#2E3033] sm:text-2xl font-medium">{next.title}</h2>
+                                    <h2 className="text-xl text-[#2E3033] sm:text-2xl font-semibold">{next.title}</h2>
                                     <p className="text-[#55595E] sm:mt-25 text-sm sm:text-lg font-light leading-relaxed">
                                         {next.desc}
                                     </p>

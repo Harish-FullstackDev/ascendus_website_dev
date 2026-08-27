@@ -24,7 +24,7 @@ export default function ProcessAwareSupportRootCauseResolution() {
                 frame's own 1281:829 ratio, and the header + white card panel are
                 positioned as percentages of that same box, so both track the
                 image proportionally instead of drifting at other widths. */}
-            <div className="relative hidden w-full overflow-hidden sm:block sm:aspect-[1281/829]">
+            <div className="relative hidden w-full overflow-hidden sm:block sm:aspect-[1281/809]">
                 <Image
                     src={skylinePhoto}
                     alt=""
@@ -40,7 +40,7 @@ export default function ProcessAwareSupportRootCauseResolution() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="text-[28px] font-medium leading-tight text-white"
+                        className="text-[28px] font-semibold leading-tight text-white"
                     >
                         Process-Aware Support &amp; Root-Cause Resolution
                     </motion.h2>
@@ -52,7 +52,7 @@ export default function ProcessAwareSupportRootCauseResolution() {
                 {/* White panel — a fixed window onto the frame (top 29.3% / height
                     61.8%, matching the Figma proportions), so it scales with the
                     image instead of being sized off the cards' content. */}
-                <div className="absolute inset-x-0 top-[29.3%] flex h-[61.8%] items-center justify-center bg-white/[0.94]">
+                <div className="absolute inset-x-0 top-[29.3%] flex h-[55%] items-center justify-center bg-white/[0.94]">
                     <div className="grid w-full sm:px-[70px] grid-cols-2 gap-[3.7%]">
                         {TIERS.map((tier, index) => (
                             <motion.div
@@ -64,12 +64,12 @@ export default function ProcessAwareSupportRootCauseResolution() {
                                     duration: 0.5,
                                     delay: index * 0.15,
                                 }}
-                                className="aspect-[580/313] border border-black px-[clamp(1rem,2.4vw,2.5rem)] py-[clamp(1.25rem,2.6vw,2.5rem)]"
+                                className="aspect-[580/300] border border-black px-[clamp(1rem,2.4vw,2.5rem)] py-[clamp(1.25rem,2.6vw,2.5rem)]"
                             >
-                                <h3 className="text-2xl sm:w-[90%] font-normal leading-snug text-black">
+                                <h2 className="text-2xl sm:w-[60%] font-semibold leading-snug text-[#2E3033]">
                                     {tier.title}
-                                </h3>
-                                <p className="mt-8 text-lg sm:w-[90%] font-light leading-snug text-black">
+                                </h2>
+                                <p className="mt-8 text-lg sm:w-[90%] font-light leading-snug text-[#55595E]">
                                     {tier.desc}
                                 </p>
                             </motion.div>
@@ -84,7 +84,7 @@ export default function ProcessAwareSupportRootCauseResolution() {
                     <Image src={skylinePhoto} alt="" fill className="object-cover" />
                 </div>
                 <div className="flex flex-col gap-2 bg-black px-6 py-8">
-                    <h2 className="font-heading text-3xl font-medium leading-[1.2] text-white">
+                    <h2 className="font-heading text-3xl font-semibold leading-[1.2] text-white">
                         Process-Aware Support &amp; Root-Cause Resolution
                     </h2>
                     <p className="text-lg font-light leading-[1.2] text-white">

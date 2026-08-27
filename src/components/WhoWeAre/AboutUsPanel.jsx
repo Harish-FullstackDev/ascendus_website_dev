@@ -14,8 +14,8 @@ export default function AboutUsPanel() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="max-w-5xl mx-auto text-center"
             >
-                <h2 className="text-xl sm:text-4xl font-medium text-black">About Us</h2>
-                <p className="mt-3 text-sm sm:text-xl font-thin text-[#3d3d4e] leading-relaxed">
+                <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">About Us</h2>
+                <p className="mt-3 text-sm sm:text-lg font-light text-[#55595E] leading-relaxed">
                     We are passionate about empowering individuals and businesses to take control of their finances
                     and achieve their financial goals.At Ascendus, we believe that the future of technology is shaped by
                     people. As we move towards becoming the world&apos;s largest AI‑led technology services, we

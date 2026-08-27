@@ -48,7 +48,7 @@ function CountUpStat({ value }) {
     }, [isInView, numeric, hasComma]);
 
     return (
-        <p ref={ref} className="font-bold text-[#16171a] text-4xl sm:text-5xl">
+        <p ref={ref} className="font-bold text-[#0d0c22] text-4xl sm:text-5xl">
             {display}
             {suffix}
         </p>
@@ -66,7 +66,7 @@ export default function WeAreEverywhere() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center mb-12"
                 >
-                    <h2 className="text-2xl sm:text-3xl font-semibold text-[#16171a] capitalize">We Are Everywhere</h2>
+                    <h2 className="text-2xl sm:text-3xl font-semibold text-[#0d0c22] capitalize">We Are Everywhere</h2>
                     <p className="mt-4 text-sm sm:text-base text-[#3d3d4e]">
                         You might want to hear from some of our team on their unique expeditions
                     </p>
@@ -83,7 +83,7 @@ export default function WeAreEverywhere() {
                             className="flex flex-col items-center text-center gap-2"
                         >
                             <CountUpStat value={stat.value} />
-                            <p className="text-sm text-[#16171a] leading-relaxed max-w-xs">{stat.description}</p>
+                            <p className="text-sm text-[#0d0c22] leading-relaxed max-w-xs">{stat.description}</p>
                         </motion.div>
                     ))}
                 </div>

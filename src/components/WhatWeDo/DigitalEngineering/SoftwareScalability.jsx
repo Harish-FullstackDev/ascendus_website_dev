@@ -15,7 +15,7 @@ export default function SoftwareScalability() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="mb-10 flex flex-col items-center gap-2 text-center sm:mb-16"
             >
-                <h2 className="text-[28px] font-medium text-[#2E3033]">
+                <h2 className="text-[28px] font-semibold text-[#2E3033]">
                     Software Scalability
                 </h2>
 
@@ -34,7 +34,7 @@ export default function SoftwareScalability() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex w-full flex-1 flex-col gap-5 text-[#3d3d4e]"
                 >
-                    <h2 className="text-2xl font-medium leading-normal text-[#2E3033]">
+                    <h2 className="text-2xl font-semibold text-[#2E3033]">
                         Positioning enterprise software as a driver of agility
                         rather than operational constraint.
                     </h2>

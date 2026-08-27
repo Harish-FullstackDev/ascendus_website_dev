@@ -57,7 +57,7 @@ export default function IdentityAccessManagement() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-5 max-w-[990px] text-center"
             >
-                <h2 className="font-heading text-black text-2xl font-medium">Identity &amp; Access Management</h2>
+                <h2 className="font-heading text-black text-2xl font-semibold">Identity &amp; Access Management</h2>
                 <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
                     Identity has become the primary security perimeter within modern organizations. Effective identity
                     management ensures that every user, application, device, and workload receives only the access

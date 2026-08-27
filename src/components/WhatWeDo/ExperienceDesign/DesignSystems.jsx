@@ -75,7 +75,7 @@ export default function DesignSystems() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[42px]"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-medium">Design Systems</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-semibold">Design Systems</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Scalable design systems that keep every product consistent, accessible, and easy to build on.
                 </p>
@@ -135,7 +135,7 @@ export default function DesignSystems() {
                                         {left.tag}
                                     </p>
 
-                                    <h3 className="text-3xl font-medium text-white mt-6">
+                                    <h3 className="text-3xl font-semibold text-white mt-6">
                                         {left.title}
                                     </h3>
                                 </div>
@@ -178,7 +178,7 @@ export default function DesignSystems() {
                                         {right.tag}
                                     </p>
 
-                                    <h3 className="text-3xl font-medium text-black mt-6">
+                                    <h3 className="text-3xl font-semibold text-black mt-6">
                                         {right.title}
                                     </h3>
                                 </div>

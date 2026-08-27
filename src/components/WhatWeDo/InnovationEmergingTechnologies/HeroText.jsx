@@ -14,9 +14,9 @@ export default function HeroText() {
                 <p className="text-white/90 text-sm sm:text-lg lg:text-xl uppercase tracking-wide font-light">
                     Innovation &amp; Emerging Technologies
                 </p>
-                <div className="mt-3 sm:mt-4 h-px w-full bg-white/40" />
-                <h1 className="text-white text-2xl sm:text-4xl lg:text-5xl font-medium capitalize mt-6 sm:mt-8 leading-tight">
-                    Next-generation technology, evaluated for real enterprise value.                </h1>
+                <div className="mt-3 sm:mt-1 h-px w-full bg-white/40" />
+                <h1 className="text-white text-2xl sm:text-4xl lg:text-5xl font-semibold capitalize mt-6 sm:mt-6 leading-tight">
+                    Next-generation technology, evaluated for real enterprise value.</h1>
             </motion.div>
         </div>
     );

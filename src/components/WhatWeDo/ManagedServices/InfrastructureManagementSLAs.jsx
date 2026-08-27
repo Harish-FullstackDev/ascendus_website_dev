@@ -37,7 +37,7 @@ const ITEMS = [
 function CardBlock({ item }) {
     return (
         <div className="flex w-full max-w-[420px] flex-col items-center gap-6 sm:max-w-[512px] lg:max-w-none lg:flex-1 lg:basis-1/2">
-            <p className="text-center text-lg font-medium text-[#2E3033] sm:text-2xl">{item.title}</p>
+            <h2 className="text-center text-lg font-semibold text-[#2E3033] sm:text-2xl">{item.title}</h2>
             <div className="relative aspect-[512/200] w-full overflow-hidden">
                 <Image src={item.image} alt="" fill className="object-cover" />
             </div>
@@ -69,7 +69,7 @@ export default function InfrastructureManagementSLAs() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex max-w-[772px] flex-col items-center gap-2 text-center"
                 >
-                    <h2 className="font-heading text-2xl font-medium text-[#2E3033] sm:text-[28px]">
+                    <h2 className="text-2xl font-semibold text-[#2E3033] sm:text-[28px]">
                         Infrastructure Management &amp; SLAs
                     </h2>
                     <p className="text-base font-light text-[#55595E] sm:text-lg">

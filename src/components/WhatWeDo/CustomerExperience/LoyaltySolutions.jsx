@@ -28,7 +28,7 @@ export default function LoyaltySolutions() {
                     className="flex flex-col gap-8 max-w-[478px]"
                 >
                     <div className="flex flex-col gap-3">
-                        <h2 className="text-black text-2xl sm:text-3xl font-medium">Loyalty Solutions</h2>
+                        <h2 className="text-black text-2xl sm:text-3xl font-semibold">Loyalty Solutions</h2>
                         <p className="text-black text-xl sm:text-2xl font-normal">
                             Build Long-Term Customer Relationships
                         </p>

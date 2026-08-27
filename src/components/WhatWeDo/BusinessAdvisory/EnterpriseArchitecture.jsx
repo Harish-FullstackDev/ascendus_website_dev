@@ -67,7 +67,7 @@ export default function EnterpriseArchitecture() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1011px] text-center"
             >
-                <h2 className="text-black text-2xl font-medium">Enterprise Architecture</h2>
+                <h2 className="text-black text-2xl font-semibold">Enterprise Architecture</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Align Technology with Business Goals
                     <br />
@@ -117,7 +117,7 @@ export default function EnterpriseArchitecture() {
                             transition={{ duration: 0.3 }}
                             className="absolute left-6 sm:left-[40px] right-6 sm:right-[40px] bottom-6 sm:bottom-[40px] text-white flex flex-col gap-2"
                         >
-                            <p className="text-white text-2xl sm:text-3xl font-medium">{activeTab.title}</p>
+                            <p className="text-white text-2xl sm:text-3xl font-semibold">{activeTab.title}</p>
                             <p className="text-white text-xl sm:text-2xl font-normal">{activeTab.subtitle}</p>
                             <p className="text-white/95 text-sm sm:text-lg font-light leading-relaxed max-w-[580px]">
                                 {activeTab.desc}

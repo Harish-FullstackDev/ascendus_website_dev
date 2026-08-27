@@ -31,7 +31,7 @@ export default function LongevityLegacyRefactoring() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-col gap-2"
                     >
-                        <h2 className="text-[#2E3033] text-[28px] font-medium">Longevity &amp; Legacy Refactoring</h2>
+                        <h2 className="text-[#2E3033] text-[28px] font-semibold">Longevity &amp; Legacy Refactoring</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             How we engineer software for scale and long-term stability.
                         </p>
@@ -49,7 +49,7 @@ export default function LongevityLegacyRefactoring() {
                                 key={box.title}
                                 className="bg-white w-full sm:flex-1 lg:h-full flex flex-col items-start gap-12 lg:gap-16 px-6 py-8"
                             >
-                                <p className="text-[#2E3033] text-2xl font-medium">{box.title}</p>
+                                <h2 className="text-[#2E3033] text-2xl font-semibold">{box.title}</h2>
                                 <p className="text-[#55595E] text-lg font-light">{box.desc}</p>
                             </div>
                         ))}

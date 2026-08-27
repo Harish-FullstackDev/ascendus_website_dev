@@ -45,7 +45,7 @@ export default function RealTimeAnalyticsAndMasterDataManagement() {
                 <Image src={dataCenterPhoto} alt="" fill className="object-cover" />
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute top-6 sm:top-10 left-1/2 -translate-x-1/2 text-center text-white z-20 px-4 sm:px-0">
-                    <h2 className="text-xl sm:text-[28px] font-medium">
+                    <h2 className="text-xl sm:text-[28px] font-semibold">
                         Real-Time Analytics &amp; Master Data Management
                     </h2>
 
@@ -88,12 +88,12 @@ export default function RealTimeAnalyticsAndMasterDataManagement() {
                                         : "w-[270px] h-[234px]"
                                         }`}
                                 >
-                                    <p
-                                        className={`text-[#2E3033] text-2xl font-medium text-left max-w-[180px] transition-all duration-500 ease-out ${isActive ? "opacity-0 -translate-y-2" : ""
+                                    <h2
+                                        className={`text-[#2E3033] text-2xl font-semibold text-left max-w-[180px] transition-all duration-500 ease-out ${isActive ? "opacity-0 -translate-y-2" : ""
                                             }`}
                                     >
                                         {item.title}
-                                    </p>
+                                    </h2>
 
                                     <div
                                         className={`absolute inset-x-6 top-1/2 -translate-y-[calc(50%+8px)] flex flex-col items-start opacity-0 transition-all duration-500 delay-150 ease-out ${isActive ? "opacity-100 -translate-y-1/2" : ""

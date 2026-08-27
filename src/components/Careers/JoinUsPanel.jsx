@@ -16,10 +16,9 @@ export default function JoinUsPanel() {
             >
                 <h2 className="text-xl sm:text-4xl font-medium text-black">Join us</h2>
                 <p className="mt-3 text-sm sm:text-xl font-thin text-[#6c6c6c] leading-relaxed">
-                    At TCS, we believe that the future of technology is shaped by people. As we move towards
-                    becoming the world&apos;s largest AI‑led technology services, we foster a culture built on
-                    long‑term trust, collective growth, and purposeful innovation—where individuals are empowered
-                    to learn continuously, collaborate globally, and create meaningful impact with integrity.
+                    Work alongside specialists solving complex technology challenges across SAP, cloud, data,
+                    cybersecurity and digital transformation, with the opportunity to see your work move from
+                    strategy into production.
                 </p>
                 <div className="relative w-full max-w-3xl h-px mt-8 mx-auto opacity-30">
                     <Image

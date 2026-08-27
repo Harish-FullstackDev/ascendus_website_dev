@@ -38,7 +38,7 @@ export default function L1L2L3Support() {
                     transition={{ duration: 0.6 }}
                     className="absolute left-0 top-[0%] w-[38%] h-[42%] bg-black/90 z-30 px-[5%] py-[5%] flex flex-col justify-center"
                 >
-                    <h2 className="text-white text-[42px] leading-tight font-medium">
+                    <h2 className="text-white text-[42px] leading-tight font-semibold">
                         L1 / L2 / L3
                         <br />
                         Support
@@ -86,7 +86,7 @@ export default function L1L2L3Support() {
                         <Image src={skylinePhoto} alt="" fill className="object-cover" />
                     </div>
                     <div className="bg-black px-6 py-8 flex flex-col gap-4">
-                        <h2 className="text-white text-3xl font-medium leading-[1.2]">
+                        <h2 className="text-white text-3xl font-semibold leading-[1.2]">
                             Process-Aware Support & Root-Cause Resolution
                         </h2>
                         <p className="text-white text-lg font-light leading-[1.2]">

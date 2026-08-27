@@ -61,11 +61,11 @@ export default function ModernInfrastructure() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="flex gap-4 rounded-[10px] bg-[#f3f3f3] px-5 py-4"
                     >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0A3A52] text-sm font-medium text-white">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0A3A52] text-sm font-semibold text-white">
                             {index + 1}
                         </div>
                         <div className="flex flex-col gap-1">
-                            <p className="text-[#2E3033] text-base font-medium">{step.title}</p>
+                            <p className="text-[#2E3033] text-base font-semibold">{step.title}</p>
                             <p className="text-[#55595E] text-sm font-light ">{step.desc}</p>
                         </div>
                     </motion.div>
@@ -80,7 +80,7 @@ export default function ModernInfrastructure() {
             <div className="relative hidden sm:block w-full aspect-[1280/682] min-h-[460px] overflow-hidden">
                 <Image src={migrationBg} alt="" fill className="object-cover" priority />
                 <div className="absolute top-6 sm:top-10 left-1/2 -translate-x-1/2 text-center text-white z-20 px-4 sm:px-0">
-                    <h2 className="text-xl sm:text-[28px] font-medium">
+                    <h2 className="text-xl sm:text-[28px] font-semibold">
                         Modern Infrastructure & Security Operations
                     </h2>
 
@@ -130,14 +130,14 @@ export default function ModernInfrastructure() {
                                     className={`relative h-full w-full flex flex-col items-center justify-center text-center gap-3 px-4 lg:px-8 overflow-hidden transition-colors duration-500 ease-in-out ${isActive ? "bg-[#0A3A52]" : "bg-white"
                                         }`}
                                 >
-                                    <motion.p
+                                    <motion.h2
                                         layout
                                         transition={{ layout: { duration: 0.35, ease: "easeInOut" } }}
-                                        className={`relative z-10 text-lg lg:text-xl font-medium leading-tight transition-colors duration-500 ease-in-out ${isActive ? "text-white" : "text-black"
+                                        className={`relative z-10 text-lg lg:text-2xl font-semibold leading-tight transition-colors duration-500 ease-in-out ${isActive ? "text-white" : "text-black"
                                             }`}
                                     >
                                         {step.title}
-                                    </motion.p>
+                                    </motion.h2>
                                     <AnimatePresence>
                                         {isActive && (
                                             <motion.p
@@ -146,7 +146,7 @@ export default function ModernInfrastructure() {
                                                 animate={{ opacity: 1, y: 0 }}
                                                 exit={{ opacity: 0, y: -6 }}
                                                 transition={{ duration: 0.3, ease: "easeOut" }}
-                                                className="relative z-10 text-white text-sm font-light leading-snug"
+                                                className="relative z-10 text-white text-lg font-light leading-snug"
                                             >
                                                 {step.desc}
                                             </motion.p>

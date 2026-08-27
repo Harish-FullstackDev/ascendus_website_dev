@@ -27,7 +27,7 @@ export default function IndustryImpact() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[780px] mx-auto text-center"
                 >
-                    <h2 className="text-[#2E3033] text-2xl font-medium">Industry Impact</h2>
+                    <h2 className="text-[#2E3033] text-2xl font-semibold">Industry Impact</h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Sectors where we deploy enterprise-grade AI solutions
                     </p>

@@ -54,7 +54,7 @@ export default function AdvancedMachineLearning() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[780px] mx-auto text-center"
             >
-                <h2 className="text-[#2E3033] text-2xl font-medium">Advanced Machine Learning &amp; Governance</h2>
+                <h2 className="text-[#2E3033] text-2xl font-semibold">Advanced Machine Learning &amp; Governance</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">Targeted AI and machine learning execution services</p>
             </motion.div>
 
@@ -100,7 +100,7 @@ export default function AdvancedMachineLearning() {
                                     />
                                 )}
                                 <div className="relative flex flex-col gap-3 ">
-                                    <p className="text-[#2E3033] text-xl sm:text-2xl font-medium">{item.title}</p>
+                                    <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h2>
                                     <AnimatePresence initial={false}>
                                         {isActive && (
                                             <motion.p

@@ -45,8 +45,8 @@ export default function SalesforceConsulting() {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/40" />
-                    <div className="absolute top-8 sm:top-[32px] left-6 sm:left-[35px] flex flex-col gap-4 max-w-[374px] px-2">
-                        <h2 className="text-white text-2xl font-medium">Why Partner With Us</h2>
+                    <div className="absolute inset-x-6 bottom-6 flex flex-col gap-2 sm:bottom-8 lg:inset-x-auto lg:bottom-[24%] lg:left-[20.8%] lg:right-[14.5%]">
+                        <h2 className="text-white text-2xl font-semibold">Why Partner With Us</h2>
                         <p className="text-white/90 text-base sm:text-lg font-light">
                             Core operational standards driving our managed delivery..
                         </p>

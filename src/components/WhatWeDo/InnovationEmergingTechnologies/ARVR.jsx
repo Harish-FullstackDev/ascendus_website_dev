@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import blockchainPhoto from "@/assets/WhatWeDo/Innovation & Emerging Technologies/new/ARVR.jpg";
+import blockchainPhoto from "@/assets/WhatWeDo/Innovation & Emerging Technologies/webp/Innovation_AR_VR.webp";
 
 const ITEMS = [
     { title: "Extended Reality (AR/VR)", desc: "Define where blockchain genuinely adds value across your business, from settlement to provenance tracking." },
@@ -14,10 +14,27 @@ const ITEMS = [
 ];
 
 export default function ARVR() {
-    // null = nothing hovered/focused. This is the key fix: the old code
-    // defaulted to `1` and never had a path back to "no card active",
-    // so the highlighted state could never turn off on mouse-out.
+    // Manual hover/focus still drives `hovered` directly (kept nullable so
+    // mouse-out/blur can turn the highlight off, same fix as before). Autoplay
+    // layers on top: while nothing is being hovered/focused and the row itself
+    // isn't hovered, it cycles the active card on its own; entering the row
+    // pauses it, and it resumes cycling from wherever it left off on leave.
     const [hovered, setHovered] = useState(null);
+    const [autoIndex, setAutoIndex] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
+    const autoplayRef = useRef(null);
+
+    useEffect(() => {
+        if (isPaused) return undefined;
+
+        autoplayRef.current = setInterval(() => {
+            setAutoIndex((prev) => (prev + 1) % ITEMS.length);
+        }, 3500);
+
+        return () => clearInterval(autoplayRef.current);
+    }, [isPaused]);
+
+    const activeIndex = hovered !== null ? hovered : (isPaused ? null : autoIndex);
 
     return (
         <section className="w-full pt-10 sm:pt-8 pb-10 sm:pb-0 flex flex-col items-center gap-8 sm:gap-16">
@@ -28,8 +45,8 @@ export default function ARVR() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center px-6"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-medium">AR/VR, Blockchain & Quantum Readiness</h2>
-                <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
+                <h2 className="text-[#2E3033] text-2xl font-semibold">AR/VR, Blockchain & Quantum Readiness</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Forward-looking technology applications for specialized use cases.
                 </p>
             </motion.div>
@@ -47,12 +64,12 @@ export default function ARVR() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="flex gap-4 rounded-[10px] bg-[#f3f3f3] px-5 py-4"
                     >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2d8ec5] text-sm font-medium text-white">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#00447A] text-sm font-semibold text-white">
                             {index + 1}
                         </div>
                         <div className="flex flex-col gap-1">
-                            <p className="text-black text-base font-medium">{item.title}</p>
-                            <p className="text-[#3d3d4e] text-sm font-light leading-snug">{item.desc}</p>
+                            <h2 className="text-[#2E3033] text-base font-semibold">{item.title}</h2>
+                            <p className="text-[#55595E] text-sm font-light leading-snug">{item.desc}</p>
                         </div>
                     </motion.div>
                 ))}
@@ -70,10 +87,14 @@ export default function ARVR() {
                     edge to edge with no side gutters. */}
                 <div
                     className="absolute inset-x-0 top-[35.8%] bottom-[20.2%] flex"
-                    onMouseLeave={() => setHovered(null)}
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => {
+                        setHovered(null);
+                        setIsPaused(false);
+                    }}
                 >
                     {ITEMS.map((item, index) => {
-                        const isActive = hovered === index;
+                        const isActive = activeIndex === index;
                         return (
                             <div key={item.title} className="relative h-full flex-1">
 
@@ -81,17 +102,23 @@ export default function ARVR() {
                                 <button
                                     type="button"
                                     onMouseEnter={() => setHovered(index)}
-                                    onFocus={() => setHovered(index)}
-                                    onBlur={() => setHovered(null)}
-                                    className={`relative h-full w-full flex flex-col items-center justify-center text-center gap-3 px-4 lg:px-8 overflow-hidden transition-colors duration-300 ${isActive ? "bg-[#2D8EC5]/80" : "bg-white"
+                                    onFocus={() => {
+                                        setHovered(index);
+                                        setIsPaused(true);
+                                    }}
+                                    onBlur={() => {
+                                        setHovered(null);
+                                        setIsPaused(false);
+                                    }}
+                                    className={`relative h-full w-full flex flex-col items-center justify-center text-center gap-3 px-4 lg:px-8 overflow-hidden transition-colors duration-300 ${isActive ? "bg-[#00447A]/80" : "bg-white"
                                         }`}
                                 >
-                                    <p
-                                        className={`relative z-10 text-lg lg:text-xl font-medium leading-tight ${isActive ? "text-white" : "text-black"
+                                    <h2
+                                        className={`relative z-10 text-lg lg:text-xl font-semibold leading-tight ${isActive ? "text-white" : "text-black"
                                             }`}
                                     >
                                         {item.title}
-                                    </p>
+                                    </h2>
                                     {isActive && (
                                         <motion.p
                                             initial={{ opacity: 0, y: 6 }}

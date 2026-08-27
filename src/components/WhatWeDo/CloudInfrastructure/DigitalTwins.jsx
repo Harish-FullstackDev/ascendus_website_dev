@@ -53,7 +53,7 @@ export default function DigitalTwins() {
         transition={{ duration: 0.6 }}
         className="max-w-[760px] mx-auto text-center mb-16"
       >
-        <h2 className="text-[38px] font-medium text-black">
+        <h2 className="text-[38px] font-semibold text-black">
           Digital Twins
         </h2>
 
@@ -83,7 +83,7 @@ export default function DigitalTwins() {
                 <h3
                   className={`transition-all ${
                     isActive
-                      ? "text-[18px] font-medium text-black"
+                      ? "text-[18px] font-semibold text-black"
                       : "text-[18px] font-normal text-[#5A5A5A]"
                   }`}
                 >

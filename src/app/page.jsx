@@ -5,19 +5,19 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FutureFocusedInsights from "@/components/HomePage/FutureFocusedInsights";
-import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
+import ReadyToTransform from "@/components/HomePage/ReadyToTransform";
 import ProofInNumbers from "@/components/HomePage/ProofInNumbers";
 import customBg from "@/assets/HomePage/Homepage_CTA.webp";
 
-import Hero from "@/components/Ascendus/Hero";
-import HeroText from "@/components/Ascendus/HeroText";
-import AboutPartner from "@/components/Ascendus/AboutPartner";
-import Services from "@/components/Ascendus/Services";
-import WhyUs from "@/components/Ascendus/WhyUs";
-import WhatWeDo from "@/components/Ascendus/WhatWeDo";
-import Hiring from "@/components/Ascendus/Hiring";
-import Industries from "@/components/Ascendus/Industries";
-import HowWeWork from "@/components/Ascendus/HowWeWork";
+import Hero from "@/components/HomePage/Hero";
+import HeroText from "@/components/HomePage/HeroText";
+import AboutPartner from "@/components/HomePage/AboutPartner";
+import Services from "@/components/HomePage/Services";
+import WhyUs from "@/components/HomePage/WhyUs";
+import WhatWeDo from "@/components/HomePage/WhatWeDo";
+import Hiring from "@/components/HomePage/Hiring";
+import Industries from "@/components/HomePage/Industries";
+import HowWeWork from "@/components/HomePage/HowWeWork";
 
 const page = () => {
     return (
@@ -43,8 +43,8 @@ const page = () => {
 
             <ProofInNumbers />
             <Hiring />
-            <Industries />
             <HowWeWork />
+            <Industries />
             <FutureFocusedInsights />
             <ReadyToTransform
                 title="Ready to Transform Your Business?"

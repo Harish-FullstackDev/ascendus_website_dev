@@ -1,22 +1,21 @@
 "use client";
 
-import Image from "next/image";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
+import ReadyToTransform from "@/components/WhatWeDo/EnterpriseTransformationPractice/ReadyToTransform";
 
 import Hero from "@/components/WhatWeDo/EnterpriseTransformationPractice/Hero";
 import HeroText from "@/components/WhatWeDo/EnterpriseTransformationPractice/HeroText";
 import ProofInNumbers from "@/components/WhatWeDo/EnterpriseTransformationPractice/ProofInNumbers";
 import CoreServices from "@/components/WhatWeDo/EnterpriseTransformationPractice/CoreServices";
-import EngagementModelsOverview from "@/components/WhatWeDo/EnterpriseTransformationPractice/EngagementModelsOverview";
+import ChooseHowYouWantToWorkWithUs from "@/components/WhatWeDo/EnterpriseTransformationPractice/ChooseHowYouWantToWorkWithUs";
 import Capabilities from "@/components/WhatWeDo/EnterpriseTransformationPractice/Capabilities";
 import EngagementModelsComparison from "@/components/WhatWeDo/EnterpriseTransformationPractice/EngagementModelsComparison";
 import WhyEnterprisePartnerWithUs from "@/components/WhatWeDo/EnterpriseTransformationPractice/WhyEnterprisePartnerWithUs";
+import WhyPartnerProofInNumbers from "@/components/WhatWeDo/EnterpriseTransformationPractice/WhyPartnerProofInNumbers";
 import IndustriesWeServe from "@/components/WhatWeDo/EnterpriseTransformationPractice/IndustriesWeServe";
 
 import ctaBg from "@/assets/WhatWeDo/Enterprise Transformation Practice/CTA/cta-bg.png";
-import closingBand from "@/assets/WhatWeDo/Enterprise Transformation Practice/CTA/closing-band.png";
 
 const page = () => {
     return (
@@ -36,11 +35,12 @@ const page = () => {
             <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
                 <ProofInNumbers />
                 <CoreServices />
-                <EngagementModelsOverview />
+                <ChooseHowYouWantToWorkWithUs />
                 <Capabilities />
                 <EngagementModelsComparison />
                 <IndustriesWeServe />
                 <WhyEnterprisePartnerWithUs />
+                <WhyPartnerProofInNumbers />
             </div>
 
             <ReadyToTransform

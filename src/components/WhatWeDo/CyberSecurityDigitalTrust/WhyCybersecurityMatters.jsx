@@ -34,7 +34,7 @@ export default function WhyCybersecurityMatters() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1073px] text-center"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-medium">Identity Management & Continuous Operations</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-semibold">Identity Management & Continuous Operations</h2>
                 <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
                     Core protective pillars including IAM, GRC, SOC, and Zero Trust.
                 </p>
@@ -56,7 +56,7 @@ export default function WhyCybersecurityMatters() {
                         <Image src={card.image} alt="" fill className="object-cover" />
                         {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" /> */}
                         <div className="absolute left-[12%] right-[12%] bottom-[18%] flex flex-col gap-2 text-white">
-                            <p className="text-base sm:text-lg font-medium">{card.title}</p>
+                            <p className="text-base sm:text-lg font-semibold">{card.title}</p>
                             <p className="text-xs font-light">{card.desc}</p>
                         </div>
                     </motion.div>

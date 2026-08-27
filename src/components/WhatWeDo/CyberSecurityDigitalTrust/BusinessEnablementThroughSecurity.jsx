@@ -39,7 +39,7 @@ export default function BusinessEnablementThroughSecurity() {
                         the panel stays proportional at any viewport and self-adjusts to the panel's
                         height instead of a fixed 918x313 box pinned to a magic top offset. */}
                     <div className="relative sm:absolute sm:left-[4.5%] sm:top-1/2 sm:-translate-y-1/2 bg-[#F3F6F9] w-full sm:w-[60%] -mt-4 sm:mt-0 overflow-hidden flex flex-col justify-center gap-6 px-6 py-8 sm:pl-[10%] sm:pr-[20%] sm:pt-[49px] sm:pb-8">
-                        <h2 className="font-heading text-[#2E3033] text-xl sm:text-2xl font-medium">{item.eyebrow}</h2>
+                        <h2 className="font-heading text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.eyebrow}</h2>
                         <div className="flex flex-col gap-3">
                             <p className="text-[#2E3033] text-base sm:text-lg font-light">{item.title}</p>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>

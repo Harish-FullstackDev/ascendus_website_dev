@@ -66,7 +66,7 @@ export default function CloudSecurity() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1011px] text-center"
             >
-                <h2 className="font-heading text-black text-2xl font-medium">Cloud Security</h2>
+                <h2 className="font-heading text-black text-2xl font-semibold">Cloud Security</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Securing Cloud-First and Hybrid Enterprise Environments
                     <br />

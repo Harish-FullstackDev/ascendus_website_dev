@@ -40,7 +40,6 @@ const Navbar = () => {
                           after:-bottom-1
                           after:h-[2px]
                           after:w-full
-                          after:bg-[#0061af]
                           after:scale-x-0
                           after:origin-left
                           after:transition-transform
@@ -48,8 +47,16 @@ const Navbar = () => {
                           after:content-['']
  
                           hover:after:scale-x-100
-                          hover:text-[#0061af]
                         `;
+
+  // No blue anywhere, active or hover — the underline is always after:bg-current,
+  // so it (and the text above it) just match whatever color the link already is
+  // in each navbar state (white on the dark/top-of-page navbar, black on the
+  // scrolled/bright navbar). Active links show that line permanently
+  // (after:scale-x-100); inactive links reveal the same line on hover only
+  // (via navLinkClass's hover:after:scale-x-100).
+  const activeLinkClass = "after:scale-x-100 after:bg-current";
+  const inactiveLinkClass = "after:bg-current";
 
   const isLight = lightThemeRoutes.includes(pathname) || !validRoutes.includes(pathname);
   const isNavbarLight = isLight || isScrolled;
@@ -248,11 +255,7 @@ const Navbar = () => {
                 <ul className="flex items-center gap-3">
                   <Link
                     href="/"
-                    className={`${navLinkClass} ${pathname === "/"
-                      ? "text-[#0061af] after:w-full"
-                      : isNavbarLight
-                        ? "text-black"
-                        : "text-white"
+                    className={`${navLinkClass} ${pathname === "/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                       }`}
                   >
                     Home
@@ -261,7 +264,7 @@ const Navbar = () => {
                   <li className="relative group">
                     <button
                       type="button"
-                      className={`${navLinkClass} flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
+                      className={`${navLinkClass} after:content-none flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       What we do
@@ -302,9 +305,9 @@ const Navbar = () => {
                         //   ? "bg-white/80 border-gray-200/30 text-gray-800"
                         //   : "bg-neutral-900/80 border-white/20 text-white"
                         //   }`}
-                        className={`rounded-3xl shadow-2xl min-w-[990px] p-8 pl-20 border transition-colors duration-500 backdrop-blur-md ${isNavbarLight
+                        className={`shadow-2xl min-w-[990px] p-8 pl-20 border transition-colors duration-500 backdrop-blur-xl ${isNavbarLight
                           ? "bg-white/80 border-gray-200/30 text-gray-800"
-                          : "bg-neutral-900/80 border-white/20 text-white"
+                          : "bg-white/10 border-white/20 text-white"
                           }`}
                       >
                         {/* <div className="grid grid-cols-4 gap-10"> */}
@@ -363,7 +366,7 @@ const Navbar = () => {
                             >
                               Industries
                             </h3>
-
+ 
                             <ul className="space-y-2">
                               {industryColumns[0].map((item) => (
                                 <li key={item.name}>
@@ -409,11 +412,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/who-we-are"
-                      className={`${navLinkClass} ${pathname === "/who-we-are"
-                        ? "text-[#0061af] after:w-full"
-                        : isNavbarLight
-                          ? "text-black"
-                          : "text-white"
+                      className={`${navLinkClass} ${pathname === "/who-we-are" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Who we are
@@ -423,11 +422,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/contact-us"
-                      className={`${navLinkClass} ${pathname === "/contact-us"
-                        ? "text-[#0061af] after:w-full"
-                        : isNavbarLight
-                          ? "text-black"
-                          : "text-white"
+                      className={`${navLinkClass} ${pathname === "/contact-us" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Contact
@@ -436,11 +431,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/careers"
-                      className={`${navLinkClass} ${pathname === "/careers"
-                        ? "text-[#0061af] after:w-full"
-                        : isNavbarLight
-                          ? "text-black"
-                          : "text-white"
+                      className={`${navLinkClass} ${pathname === "/careers" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Careers
@@ -469,10 +460,10 @@ const Navbar = () => {
             <Link href="/" onClick={closeMenu} className="flex items-center">
               <Image
                 src={isNavbarLight ? logo2 : logo}
-                alt="Ascendus Logo"
-                className="h-8 sm:h-10 w-auto object-contain"
-                width={502}
-                height={100}
+                alt="SST Logo"
+                className="h-8 sm:h-10 w-auto"
+                width={160}
+                height={40}
               />
             </Link>
 
@@ -501,10 +492,10 @@ const Navbar = () => {
           <Link href="/" onClick={closeMenu}>
             <Image
               src={logo2}
-              alt="Ascendus Logo"
-              className="h-8 sm:h-10 w-auto object-contain"
-              width={502}
-              height={100}
+              alt="SST Logo"
+              className="h-8 sm:h-10 w-auto"
+              width={160}
+              height={40}
             />
           </Link>
           {/* Right side controls (Language Selector and Close Menu button) */}
@@ -524,8 +515,8 @@ const Navbar = () => {
               <Link
                 href="/"
                 className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/"
-                  ? "text-[#0061af] bg-gray-100"
-                  : "text-gray-800 hover:text-[#0061af]"
+                  ? "text-[#2d8ec5] bg-gray-100"
+                  : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
                 onClick={closeMenu}
               >
@@ -540,7 +531,7 @@ const Navbar = () => {
               >
                 <div
                   className={`flex-1 py-3 px-4 text-2xl sm:text-3xl font-medium rounded-lg ${pathname.startsWith("/services")
-                    ? "text-[#0061af]"
+                    ? "text-[#2d8ec5]"
                     : "text-gray-800"
                     }`}
                 >
@@ -549,7 +540,7 @@ const Navbar = () => {
 
                 <button
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
-                  className="py-3 px-4 text-gray-800 hover:text-[#0061af] transition-colors duration-300 flex items-center justify-center"
+                  className="py-3 px-4 text-gray-800 hover:text-[#2d8ec5] transition-colors duration-300 flex items-center justify-center"
                   aria-label="Toggle Services dropdown"
                 >
                   <svg
@@ -622,7 +613,7 @@ const Navbar = () => {
                             <Link
                               href={item.href}
                               onClick={closeMenu}
-                              className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#0061af]"
+                              className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#2d8ec5]"
                             >
                               {item.name}
                             </Link>
@@ -673,7 +664,7 @@ const Navbar = () => {
                             <Link
                               href={item.href}
                               onClick={closeMenu}
-                              className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#0061af]"
+                              className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#2d8ec5]"
                             >
                               {item.name}
                             </Link>
@@ -692,8 +683,8 @@ const Navbar = () => {
               <Link
                 href="/who-we-are"
                 className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/who-we-are"
-                  ? "text-[#0061af] bg-gray-100"
-                  : "text-gray-800 hover:text-[#0061af]"
+                  ? "text-[#2d8ec5] bg-gray-100"
+                  : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
                 onClick={closeMenu}
               >
@@ -705,8 +696,8 @@ const Navbar = () => {
               <Link
                 href="/contact-us"
                 className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/contact-us"
-                  ? "text-[#0061af] bg-gray-100"
-                  : "text-gray-800 hover:text-[#0061af]"
+                  ? "text-[#2d8ec5] bg-gray-100"
+                  : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
                 onClick={closeMenu}
               >
@@ -717,8 +708,8 @@ const Navbar = () => {
               <Link
                 href="/careers"
                 className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/career"
-                  ? "text-[#0061af] bg-gray-100"
-                  : "text-gray-800 hover:text-[#0061af]"
+                  ? "text-[#2d8ec5] bg-gray-100"
+                  : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
                 onClick={closeMenu}
               >
@@ -744,8 +735,8 @@ const Navbar = () => {
         calendlyUrl={process.env.NEXT_PUBLIC_CALENDLY_URL}
         pageSettings={{
           backgroundColor: "ffffff",
-          primaryColor: "#0061af",
-          textColor: "#0061af",
+          primaryColor: "#2d8ec5",
+          textColor: "#2d8ec5",
         }}
       />
     </>
@@ -753,4 +744,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

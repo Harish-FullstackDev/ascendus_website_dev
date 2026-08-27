@@ -37,8 +37,8 @@ const FEATURES = [
 export default function WhyUs() {
     return (
         // Colored section bordered by white sections on both edges — full 64 on each.
-        <section className="w-full bg-[#f3f6f9] pt-10 pb-10 sm:pt-16 sm:pb-16 px-6 sm:px-[64px]">
-            <div className="max-w-[1280px] mx-auto flex flex-col gap-10 sm:gap-16">
+        <section className="w-full bg-[#f3f6f9] pt-10 pb-10 sm:p-16 px-6 ">
+            <div className="w-full flex flex-col gap-10 sm:gap-16">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export default function WhyUs() {
                     className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6"
                 >
                     <div className="flex flex-col gap-2 max-w-[910px]">
-                        <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-medium capitalize leading-[1.4] tracking-[0.28px]">
+                        <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold capitalize leading-[1.4] tracking-[0.28px]">
                             Everything an enterprise technology estate needs, under one roof
                         </h2>
                         <p className="text-[#55595E] text-lg font-light leading-[1.5] max-w-[600px]">
@@ -57,7 +57,7 @@ export default function WhyUs() {
                     </div>
                     <Link
                         href="/who-we-are"
-                        className="shrink-0 rounded-[54px] border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] text-center transition-colors hover:bg-[#2d8ec5] hover:text-white whitespace-nowrap"
+                        className="shrink-0 rounded-none border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] text-center transition-colors hover:bg-[#2d8ec5] hover:text-white whitespace-nowrap"
                     >
                         Who We Are
                     </Link>
@@ -71,12 +71,12 @@ export default function WhyUs() {
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#55595E]/30"
                 >
                     {FEATURES.map((feat) => (
-                        <div key={feat.title} className="flex flex-col justify-between gap-6 p-6 first:pl-0 first:pt-0 lg:first:pl-0">
+                        <div key={feat.title} className="flex flex-col items-start gap-6 p-6 first:pl-0">
                             <div className="relative size-10 sm:size-12 shrink-0">
                                 <Image src={feat.icon} alt="" fill className="object-contain" />
                             </div>
-                            <div className="flex flex-col gap-4 mt-auto">
-                                <h3 className="text-[#2E3033] text-xl sm:text-2xl font-medium leading-normal">{feat.title}</h3>
+                            <div className="flex flex-col gap-4">
+                                <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold leading-normal">{feat.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-normal">{feat.desc}</p>
                             </div>
                         </div>

@@ -48,8 +48,8 @@ export default function CleanPrinciples() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center max-w-3xl mx-auto"
                 >
-                    <h2 className="text-2xl font-medium text-[#16171a]">Our Clean Principles</h2>
-                    <p className="mt-2 text-base sm:text-lg font-light text-[#3d3d4e]">
+                    <h2 className="text-[28px] font-semibold text-[#2E3033]">Our Clean Principles</h2>
+                    <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
                         We are passionate about empowering individuals and businesses to take control of their
                         finances and achieve their financial goals.
                     </p>
@@ -68,10 +68,10 @@ export default function CleanPrinciples() {
                             variants={itemVariants}
                             whileHover={{ y: -4 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="bg-[#16171a] shadow-[0px_2px_8px_rgba(0,0,0,0.19)] flex flex-col justify-end p-6 h-[220px] sm:h-[237px]"
+                            className="bg-[#EDEDED]  rounded-none flex flex-col justify-end p-6 h-[220px] sm:h-[237px]"
                         >
-                            <p className="text-lg font-medium text-white">{item.title}</p>
-                            <p className="text-xs font-light text-white/80 mt-4 leading-relaxed">
+                            <h2 className="text-2xl font-semibold text-[#2E3033]">{item.title}</h2>
+                            <p className="text-lg font-light text-[#55595E] mt-4 leading-relaxed">
                                 {item.description}
                             </p>
                         </motion.div>

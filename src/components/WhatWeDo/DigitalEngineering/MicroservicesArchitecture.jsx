@@ -30,7 +30,7 @@ export default function MicroservicesArchitecture() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[650px] mx-auto text-center mb-10 sm:-mb-[90px]"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-medium">Microservices Architecture</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-semibold">Microservices Architecture</h2>
                 <div className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     <p className="text-black">Build Flexible, Cloud-Native Applications</p>
                     <p>
@@ -81,7 +81,7 @@ export default function MicroservicesArchitecture() {
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.06 }}
                             className="flex flex-col items-center text-center gap-1"
                         >
-                            <p className="text-black text-xl sm:text-2xl font-medium">{stat.value}</p>
+                            <p className="text-black text-xl sm:text-2xl font-semibold">{stat.value}</p>
                             <p className="text-[#3d3d4e] text-sm sm:text-lg font-light">{stat.label}</p>
                         </motion.div>
                     ))}

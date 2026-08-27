@@ -37,7 +37,7 @@ function Card({ title, desc, className = "" }) {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className={`border border-[#d3d5d8] bg-gradient-to-b from-[#f3f9ff] to-[#c4e0fd] flex flex-col gap-3 px-6 py-7 sm:px-8 sm:py-8 ${className}`}
         >
-            <p className="text-[#041527] text-xl sm:text-2xl font-medium">{title}</p>
+            <p className="text-[#041527] text-xl sm:text-2xl font-semibold">{title}</p>
             <p className="text-[#515151] text-base sm:text-lg font-light">{desc}</p>
         </motion.div>
     );

@@ -3,14 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import serverRoomImg from "@/assets/Ascendus/images/server-room.png";
+import serverRoomImg from "@/assets/HomePage/Homepage_Business_built_around.webp";
 
 export default function WhatWeDo() {
     return (
         // Bordering the colored WhyUs section above (full 64 top); the section
         // below (Stats) is white too, so the bottom half of that boundary lives here.
         <section className="w-full bg-white pt-10 pb-8 sm:pt-16 sm:pb-8 px-6 sm:px-[64px]">
-            <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-16 justify-end">
+            <div className="w-full flex flex-col lg:flex-row items-center gap-10 lg:gap-16 justify-end">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -33,7 +33,7 @@ export default function WhatWeDo() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="flex-1 flex flex-col gap-2 order-1 lg:order-2"
                 >
-                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-medium leading-[1.4] max-w-[356px]">
+                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold leading-[1.4] max-w-[356px]">
                         Technology built around your business.
                     </h2>
                     <p className="mt-4 text-[#55595E] text-lg font-light leading-[1.5]">
@@ -43,8 +43,8 @@ export default function WhatWeDo() {
                         ready to scale.
                     </p>
                     <Link
-                        href="/whatWeDo"
-                        className="mt-6 self-start rounded-[54px] border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#2d8ec5] hover:text-white"
+                        href="/whatWeDo/en"
+                        className="mt-6 self-start rounded-none border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#2d8ec5] hover:text-white"
                     >
                         What We Do
                     </Link>

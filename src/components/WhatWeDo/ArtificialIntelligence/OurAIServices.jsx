@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import contentGenPhoto from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_Strategy.webp";
@@ -39,6 +39,24 @@ export default function OurAIServices() {
     // the first card — whichever card was hovered last stays open/active.
     const [activeIndex, setActiveIndex] = useState(0);
 
+    // Autoplay: cycles the active card automatically so the effect is visible
+    // even if the user never hovers the row. It pauses the instant the mouse
+    // enters the row (so manual hover-control from above still works exactly
+    // as before) and resumes cycling from wherever the user left off once the
+    // mouse leaves — it does not reset back to the first card.
+    const [isPaused, setIsPaused] = useState(false);
+    const autoplayRef = useRef(null);
+
+    useEffect(() => {
+        if (isPaused) return undefined;
+
+        autoplayRef.current = setInterval(() => {
+            setActiveIndex((prev) => (prev + 1) % CARDS.length);
+        }, 2500);
+
+        return () => clearInterval(autoplayRef.current);
+    }, [isPaused]);
+
     return (
         <section className="w-full py-10 sm:p-16 px-6 ">
             <motion.div
@@ -48,7 +66,7 @@ export default function OurAIServices() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[50px]"
             >
-                <h2 className="text-[#0D0C22] text-2xl font-medium">Our Artificial Intelligence Services</h2>
+                <h2 className="text-[#2E3033] text-2xl font-semibold">Our Artificial Intelligence Services</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">Core areas where we deploy AI to transform enterprise workflow</p>
 
             </motion.div>
@@ -65,9 +83,9 @@ export default function OurAIServices() {
                         className="relative w-full h-[220px] overflow-hidden"
                     >
                         <Image src={card.image} alt="" fill className="object-cover" />
-                        {/* <div className="absolute inset-0 bg-black/60" /> */}
+                        <div className="absolute inset-0 bg-black/60" />
                         <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
-                            <p className="text-white text-xl font-normal">{card.title}</p>
+                            <h2 className="text-white text-xl font-semibold">{card.title}</h2>
                             <p className="text-white/85 text-sm font-light max-w-[280px]">{card.desc}</p>
                         </div>
                     </motion.div>
@@ -92,7 +110,11 @@ export default function OurAIServices() {
                 any card width. min-h-[280px] is a floor under that ratio so the open card's title
                 + description never run out of vertical room on narrower desktop widths, where a
                 pure aspect-ratio height would otherwise get too short for the copy to fit. */}
-            <div className="hidden sm:flex sm:items-end gap-[clamp(12px,3.7%,42.67px)] w-full">
+            <div
+                className="hidden sm:flex sm:items-end gap-[clamp(12px,3.7%,42.67px)] w-full"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+            >
                 {CARDS.map((card, index) => {
                     const isActive = index === activeIndex;
                     return (
@@ -119,7 +141,7 @@ export default function OurAIServices() {
                                 />
 
                                 <div className="absolute inset-0 flex flex-col justify-start gap-3 p-6">
-                                    <p className="text-white text-xl sm:text-2xl font-normal ">{card.title}</p>
+                                    <h2 className="text-white text-xl sm:text-2xl font-semibold ">{card.title}</h2>
                                     <p
                                         className={`text-white/85 text-lg font-light  overflow-hidden transition-all duration-300 ease-out ${isActive ? "max-h-64 opacity-100 delay-500" : "max-h-0 opacity-0"
                                             }`}

@@ -74,7 +74,7 @@ export default function SecurityOperations() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1074px] mx-auto text-center"
             >
-                <h2 className="font-heading text-black text-2xl font-medium">Security Operations</h2>
+                <h2 className="font-heading text-black text-2xl font-semibold">Security Operations</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Modern cyber threats require continuous monitoring supported by advanced analytics, automation, and threat intelligence.
                     <br className="hidden sm:block" />
@@ -134,7 +134,7 @@ export default function SecurityOperations() {
                                     transition={{ duration: 0.4, ease: "easeOut" }}
                                     className="flex flex-col gap-4 sm:gap-5"
                                 >
-                                    <h3 className="text-black text-2xl sm:text-[32px] font-medium">{TABS[activeIndex].title}</h3>
+                                    <h3 className="text-black text-2xl sm:text-[32px] font-semibold">{TABS[activeIndex].title}</h3>
                                     <p className="text-[#3d3d4e] text-base sm:text-xl font-light leading-relaxed">
                                         {TABS[activeIndex].desc}
                                     </p>

@@ -25,7 +25,7 @@ export default function ScenarioAnalysis() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center px-6"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-medium">Scenario Analysis</h2>
+                <h2 className="text-[#0d0c22] text-2xl font-semibold">Scenario Analysis</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Implement blockchain solutions that improve transparency, security, traceability, and trust
                     across business transactions and digital processes.
@@ -43,12 +43,12 @@ export default function ScenarioAnalysis() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="flex gap-4 rounded-[10px] bg-[#EEF6FB] px-5 py-4"
                     >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2D8EC5] text-sm font-medium text-white">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2D8EC5] text-sm font-semibold text-white">
                             {index + 1}
                         </div>
 
                         <div className="flex flex-col gap-1">
-                            <p className="text-black text-base font-medium">
+                            <p className="text-black text-base font-semibold">
                                 {item.title}
                             </p>
 
@@ -88,7 +88,7 @@ export default function ScenarioAnalysis() {
                                         }`}
                                 >
                                     <h3
-                                        className={`font-medium flex items-center justify-center text-center text-xl leading-tight ${isHovered ? "text-white" : "text-black"
+                                        className={`font-semibold flex items-center justify-center text-center text-xl leading-tight ${isHovered ? "text-white" : "text-black"
                                             }`}
                                     >
                                         {item.title}

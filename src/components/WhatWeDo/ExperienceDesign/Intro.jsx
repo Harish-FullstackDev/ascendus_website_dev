@@ -25,7 +25,7 @@ export default function Intro() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1011px] text-center mx-auto"
             >
-                <h2 className="text-black text-2xl font-medium">
+                <h2 className="text-black text-2xl font-semibold">
                     Our Design Capabilities
                 </h2>
 

@@ -97,7 +97,7 @@ export default function IntelligentAssistantsCards() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1153px] mx-auto text-center mb-10 sm:mb-[54px]"
             >
-                <h2 className="text-black text-2xl font-medium">Intelligent Assistants</h2>
+                <h2 className="text-black text-2xl font-semibold">Intelligent Assistants</h2>
                 <p className="text-black text-base sm:text-lg font-light">Turn Data into Intelligent Decisions</p>
                 <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
                     Build machine learning models that analyze historical data, identify patterns, and generate

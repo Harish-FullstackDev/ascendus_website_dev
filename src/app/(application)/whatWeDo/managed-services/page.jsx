@@ -39,6 +39,7 @@ const page = () => {
                 <SAPAMSTieredSupport />
                 <ProcessAwareSupportRootCauseResolution />
                 <ProactiveSystemOperations />
+                <WhyPartnerWithUs />
                 {/* <ApplicationManagementServices /> */}
             </div>
             {/* <InfrastructureManagement /> */}
@@ -48,7 +49,6 @@ const page = () => {
             {/* <OurManagedCloudServices /> */}
 
             {/* <FutureFocusedInsights /> */}
-            <WhyPartnerWithUs />
             <ReadyToTransform
                 title="Ready for systems that just keep working?"
                 description="Talk to our advisory team about the roadmap your transformation needs."

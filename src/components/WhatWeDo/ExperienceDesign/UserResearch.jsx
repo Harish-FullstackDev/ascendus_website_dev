@@ -52,7 +52,7 @@ export default function UserResearch() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[750px] mx-auto text-center mb-10 sm:mb-[45px]"
             >
-                <h2 className="text-black text-2xl font-medium">User Research</h2>
+                <h2 className="text-black text-2xl font-semibold">User Research</h2>
                 <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
                     No matter the challenge, we apply proven research methods to understand real users and validate
                     decisions before a single line of code is written.
@@ -73,7 +73,7 @@ export default function UserResearch() {
                             <Image src={card.image} alt="" fill className="object-cover" />
                         </div>
                         <div className="w-full text-center px-4 pt-3">
-                            <p className="text-black text-base font-medium">{card.title}</p>
+                            <p className="text-black text-base font-semibold">{card.title}</p>
                             <p className="text-[#6c6c6c] text-sm font-light mt-1">{card.desc}</p>
                         </div>
                     </motion.div>

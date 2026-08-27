@@ -69,7 +69,7 @@ export default function CybersecurityDeliveryFramework() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-6 w-full lg:w-[424px] shrink-0"
                 >
-                    <h2 className="font-heading text-black text-2xl sm:text-[32px] font-medium">Cybersecurity Delivery Framework</h2>
+                    <h2 className="font-heading text-black text-2xl sm:text-[32px] font-semibold">Cybersecurity Delivery Framework</h2>
                     <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                         Effective cybersecurity is achieved through a structured lifecycle that integrates governance, technology,
                         operations, and continuous improvement.

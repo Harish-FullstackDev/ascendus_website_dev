@@ -21,6 +21,7 @@ import UserResearchAndDesignSystems from "@/components/WhatWeDo/ExperienceDesign
 import DesignPhilosophy from "@/components/WhatWeDo/ExperienceDesign/DesignPhilosophy";
 import OurDesignCapabilities from "@/components/WhatWeDo/ExperienceDesign/OurDesignCapabilities";
 import DesignOperationsExperienceOptimization from "@/components/WhatWeDo/ExperienceDesign/DesignOperationsExperienceOptimization";
+import DesignStrategyValidation from "@/components/WhatWeDo/ExperienceDesign/DesignStrategyValidation";
 
 const page = () => {
     return (
@@ -42,6 +43,7 @@ const page = () => {
             {/* <ServiceDesign /> */}
             <DesignOperationsExperienceOptimization />
             <EnterpriseUXModernization />
+            <DesignStrategyValidation />
             <DesignPhilosophy />
             <SpecializedDesignDisciplines />
             <OurDesignCapabilities />

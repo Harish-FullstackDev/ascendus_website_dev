@@ -49,7 +49,7 @@ export default function BusinessIntelligence() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="border border-black/10 flex flex-col gap-4 px-6 py-8"
                     >
-                        <p className="text-black text-lg font-medium">{card.title}</p>
+                        <p className="text-black text-lg font-semibold">{card.title}</p>
                         <p className="text-[#6c6c6c] text-sm font-light">{card.desc}</p>
                     </motion.div>
                 ))}

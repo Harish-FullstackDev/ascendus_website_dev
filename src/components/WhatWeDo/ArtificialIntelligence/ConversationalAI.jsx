@@ -33,7 +33,7 @@ export default function ConversationalAI() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[50px]"
             >
-                <h2 className="text-black text-2xl font-medium">Conversational AI</h2>
+                <h2 className="text-black text-2xl font-semibold">Conversational AI</h2>
                 <p className="text-black text-base sm:text-lg font-light">Deliver Intelligent Conversations at Scale</p>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Create natural, engaging conversational experiences through AI-powered chatbots and virtual
@@ -45,7 +45,7 @@ export default function ConversationalAI() {
                 <div className="flex flex-col gap-8 sm:gap-[54px] px-6 sm:px-[54px] py-8 sm:py-[54px] w-full lg:w-[850px] shrink-0">
                     {ITEMS.map((item) => (
                         <div key={item.title} className="flex flex-col gap-4">
-                            <p className="text-black text-xl sm:text-2xl font-medium">{item.title}</p>
+                            <p className="text-black text-xl sm:text-2xl font-semibold">{item.title}</p>
                             <p className="text-[#3d3d4e] text-base sm:text-lg font-light">{item.desc}</p>
                             <div className="h-px w-[140px] bg-[#8f8f8f]" />
                         </div>

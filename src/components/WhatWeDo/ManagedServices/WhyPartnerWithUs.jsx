@@ -44,7 +44,7 @@ export default function WhyPartnerWithUs() {
                         image itself (not the viewport) so it stays proportionally
                         placed as the image scales between breakpoints. */}
                     <div className="absolute inset-x-6 bottom-6 flex flex-col gap-2 sm:bottom-8 lg:inset-x-auto lg:bottom-[24%] lg:left-[20.8%] lg:right-[14.5%]">
-                        <h2 className="font-heading text-2xl font-medium text-white">
+                        <h2 className="font-heading text-2xl font-semibold text-white">
                             Why Partner With Us
                         </h2>
                         <p className="text-base font-light leading-snug text-white/90 sm:text-lg">

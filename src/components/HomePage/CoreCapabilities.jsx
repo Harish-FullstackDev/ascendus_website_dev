@@ -5,11 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import cardArrowIcon from "@/assets/HomePage/CoreCapabilities/card-arrow-icon.svg";
+
 import enterpriseTransformationImg from "@/assets/HomePage/CoreCapabilities/card-enterprise-transformation.png";
 import artificialIntelligenceImg from "@/assets/HomePage/CoreCapabilities/card-artificial-intelligence.png";
 import cloudInfrastructureImg from "@/assets/HomePage/CoreCapabilities/card-cloud-infrastructure.png";
-import cardArrowIcon from "@/assets/HomePage/CoreCapabilities/card-arrow-icon.svg";
-
 import dataIntelligenceImg from "@/assets/WhatWeDo/Data Inteligent/new/hero_bg.jpg";
 import digitalEngineeringImg from "@/assets/WhatWeDo/Digital Engineering/new/hero_bg.jpg";
 import customerExperienceImg from "@/assets/WhatWeDo/Customer Experience/new/hero_bg.jpg";
@@ -22,11 +22,13 @@ import innovationImg from "@/assets/WhatWeDo/Innovation & Emerging Technologies/
 
 // Same 12 entries, same order, as the "What We Do" navbar dropdown
 // (Navbar.jsx) — that list is the source of truth for hrefs here.
-const CAPABILITIES = [
+// Exported so other Ascendus sections (e.g. Services.jsx) can reuse the same
+// content/card count instead of maintaining a second copy.
+export const CAPABILITIES = [
     {
         title: "Enterprise Transformation",
         desc: "Infrastructure that scales with the business, not against it.",
-        href: "/services/enterpriseTransformation",
+        href: "/whatWeDo/enterprise-transformation-practice",
         image: enterpriseTransformationImg,
     },
     {
@@ -161,7 +163,7 @@ function scrollByOneCard(ref, direction) {
     el.scrollBy({ left: direction * step, behavior: "smooth" });
 }
 
-function ArrowButton({ direction, disabled, onClick }) {
+export function ArrowButton({ direction, disabled, onClick }) {
     return (
         <button
             type="button"

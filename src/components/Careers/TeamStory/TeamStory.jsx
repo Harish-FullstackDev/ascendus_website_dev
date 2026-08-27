@@ -51,7 +51,7 @@ export default function TeamStory() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center mb-12"
                 >
-                    <h2 className="text-2xl sm:text-3xl font-semibold text-[#16171a] capitalize">Our Team Story</h2>
+                    <h2 className="text-2xl sm:text-3xl font-semibold text-[#0d0c22] capitalize">Our Team Story</h2>
                     <p className="mt-4 text-sm sm:text-base text-[#3d3d4e]">
                         You might want to hear from some of our team on their unique expeditions
                     </p>
@@ -78,10 +78,10 @@ export default function TeamStory() {
                                 className="rounded-full object-cover size-[70px] bg-[#d8d8d8]"
                             />
                             <div>
-                                <p className="font-bold text-[#16171a] text-base">{item.name}</p>
+                                <p className="font-bold text-[#0d0c22] text-base">{item.name}</p>
                                 <p className="text-[#3d3d4e] text-sm opacity-60">{item.role}</p>
                             </div>
-                            <p className="text-sm text-[#16171a] px-10 leading-relaxed">{item.quote}</p>
+                            <p className="text-sm text-[#0d0c22] px-10 leading-relaxed">{item.quote}</p>
                         </motion.div>
                     ))}
                 </motion.div>

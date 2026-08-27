@@ -56,7 +56,7 @@ export default function BackupDisasterRecovery() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-5 max-w-[954px] text-center"
             >
-                <h2 className="text-black text-2xl font-medium">Backup &amp; Disaster Recovery</h2>
+                <h2 className="text-black text-2xl font-semibold">Backup &amp; Disaster Recovery</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Protect business continuity with resilient backup, replication, and recovery strategies that
                     keep critical systems running no matter what.

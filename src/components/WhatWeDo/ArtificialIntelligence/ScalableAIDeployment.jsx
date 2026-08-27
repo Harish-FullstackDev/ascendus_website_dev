@@ -75,7 +75,7 @@ export default function ScalableAIDeployment() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 w-full mx-auto text-center mb-16"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-2xl font-medium">
+                    <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">
                         Scalable AI Deployment & Operational Workflows
                     </h2>
 
@@ -96,9 +96,9 @@ export default function ScalableAIDeployment() {
                         className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[100px]"
                     >
                         <div className="flex flex-col gap-5 w-full">
-                            <p className="text-[#2E3033] text-lg sm:text-2xl font-light">
+                            <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">
                                 From Pilot to Production
-                            </p>
+                            </h2>
 
                             <p className="text-[#55595E] text-base sm:text-lg font-light">
                                 Most AI initiatives stall between proof of concept and enterprise rollout. We close that gap with implementation discipline: data readiness, integration architecture, and change management planned from the start, so pilots become platforms, not shelf ware.
@@ -135,9 +135,9 @@ export default function ScalableAIDeployment() {
                         </div>
 
                         <div className="flex flex-col gap-5 w-full">
-                            <p className="text-[#2E3033] text-lg sm:text-2xl font-light">
+                            <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">
                                 AI Agents That Work Inside Your Processes
-                            </p>
+                            </h2>
 
                             <p className="text-[#55595E] text-base sm:text-lg font-light">
                                 We design agents around real business workflows: approvals, exceptions, reconciliations, service requests, with clear boundaries for what they execute autonomously and what they escalate to your teams.
@@ -151,11 +151,8 @@ export default function ScalableAIDeployment() {
                             <div
                                 key={stat.label}
                                 className={`
-                                    flex flex-col items-center justify-center
-                                    text-center
-                                    px-4
-                                    py-2
-                                    min-h-[85px]
+                                    flex flex-col items-center justify-center text-center
+                                    px-4 py-2 min-h-[85px] text-[#2E3033]
                                     ${index % 2 !== 0 ? "border-l border-black" : ""}
                                     ${index > 1 ? "border-t border-black lg:border-t-0" : ""}
                                     ${index > 0 ? "lg:border-l lg:border-black" : ""}
@@ -163,7 +160,7 @@ export default function ScalableAIDeployment() {
                             >
                                 <AnimatedStat value={stat.value} />
 
-                                <p className="text-black text-sm sm:text-base font-normal leading-tight mt-2">
+                                <p className="text-[#55595E] text-sm sm:text-lg font-light leading-tight mt-2">
                                     {stat.label}
                                 </p>
                             </div>

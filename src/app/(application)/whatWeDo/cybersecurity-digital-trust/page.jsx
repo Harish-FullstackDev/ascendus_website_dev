@@ -56,8 +56,8 @@ const page = () => {
             {/* <SecurityOperations /> */}
             <SecurityArchitectureResilience />
             <SecurityAssessmentCloudDefense />
-            <DataProtectionPrivacy />
             <AccessControlSimulatedAttacks />
+            <DataProtectionPrivacy />
             {/* <PenetrationTesting /> */}
 
             {/* Pinned GRC background parallax, then Cloud Security curtains over it */}

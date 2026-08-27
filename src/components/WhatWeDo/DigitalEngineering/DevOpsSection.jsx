@@ -45,7 +45,7 @@ export default function DevOpsSection() {
             >
                 <Image src={platformGovernance} alt="" fill className="object-cover" />
                 <div className="relative flex flex-col items-center gap-4 max-w-[767px] text-center text-white">
-                    <h2 className="text-2xl font-medium">DevOps</h2>
+                    <h2 className="text-2xl font-semibold">DevOps</h2>
                     <div className="text-base sm:text-lg font-light">
                         <p>Automate, Deploy, and Scale with Confidence</p>
                         <p className="text-white/80">
@@ -73,7 +73,7 @@ export default function DevOpsSection() {
                     <div className="absolute inset-0 bg-black/40" />
                     <div className="absolute inset-0 bg-[#2d8ec5]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
                     <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 sm:gap-5 px-6 sm:px-10 pb-6 sm:pb-10 text-white">
-                        <h2 className="text-2xl sm:text-[32px] font-medium drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)] transition-transform duration-500 ease-out group-hover:-translate-y-1">
+                        <h2 className="text-2xl sm:text-[32px] font-semibold drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)] transition-transform duration-500 ease-out group-hover:-translate-y-1">
                             CI/CD Pipeline Development
                         </h2>
                         <p className="text-base sm:text-lg font-light max-h-0 opacity-0 -translate-y-2 overflow-hidden transition-all duration-500 ease-out group-hover:max-h-40 group-hover:opacity-100 group-hover:translate-y-0">
@@ -102,7 +102,7 @@ export default function DevOpsSection() {
                             <div className="absolute inset-0 bg-black/40" />
                             <div className="absolute inset-0 bg-[#2d8ec5]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
                             <div className="absolute inset-x-6 sm:inset-x-8 bottom-6 sm:bottom-8 flex flex-col gap-3">
-                                <p className="text-white text-xl sm:text-[28px] font-medium drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)] transition-transform duration-500 ease-out group-hover:-translate-y-1">
+                                <p className="text-white text-xl sm:text-[28px] font-semibold drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)] transition-transform duration-500 ease-out group-hover:-translate-y-1">
                                     {card.title}
                                 </p>
                                 <p className="text-white text-sm sm:text-base font-light max-h-0 opacity-0 -translate-y-2 overflow-hidden transition-all duration-500 ease-out group-hover:max-h-32 group-hover:opacity-100 group-hover:translate-y-0">

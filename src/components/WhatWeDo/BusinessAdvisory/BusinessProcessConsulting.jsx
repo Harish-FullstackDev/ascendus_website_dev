@@ -54,7 +54,7 @@ export default function BusinessProcessConsulting() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1011px] text-center"
             >
-                <h2 className="text-black text-2xl font-medium">Business Process Consulting</h2>
+                <h2 className="text-black text-2xl font-semibold">Business Process Consulting</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Streamline Operations, Elevate Performance
                     <br />
@@ -73,8 +73,8 @@ export default function BusinessProcessConsulting() {
                         transition={{ duration: 0.4 }}
                         className="bg-white flex flex-col justify-center gap-6 w-full px-2 lg:px-[29px]"
                     >
-                        <p className="text-black text-2xl font-medium">{slide.title}</p>
-                        <p className="text-black text-2xl font-medium">{slide.subtitle}</p>
+                        <p className="text-black text-2xl font-semibold">{slide.title}</p>
+                        <p className="text-black text-2xl font-semibold">{slide.subtitle}</p>
                         <p className="text-[#515151] text-lg font-light leading-relaxed">{slide.desc}</p>
                     </motion.div>
                 </div>

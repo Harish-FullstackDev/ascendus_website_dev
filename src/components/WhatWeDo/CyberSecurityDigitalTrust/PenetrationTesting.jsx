@@ -21,7 +21,7 @@ export default function PenetrationTesting() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="font-heading justify-self-start text-2xl font-medium text-black"
+                        className="font-heading justify-self-start text-2xl font-semibold text-black"
                     >
                         Penetration Testing
                     </motion.h2>
@@ -67,7 +67,7 @@ export default function PenetrationTesting() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="text-[#2d8ec5] text-2xl font-medium text-center"
+                    className="text-[#2d8ec5] text-2xl font-semibold text-center"
                 >
                     Enterprise &amp; Technical
                 </motion.h3>
@@ -81,7 +81,7 @@ export default function PenetrationTesting() {
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
                             className="bg-[#FFFFFF] aspect-[233/161] flex flex-col items-center justify-center gap-2"
                         >
-                            <p className="text-[#2d8ec5] text-xl sm:text-2xl font-medium">{stat.value}</p>
+                            <p className="text-[#2d8ec5] text-xl sm:text-2xl font-semibold">{stat.value}</p>
                             <p className="text-black text-sm sm:text-lg font-light text-center px-2">{stat.label}</p>
                         </motion.div>
                     ))}

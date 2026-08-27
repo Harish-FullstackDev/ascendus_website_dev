@@ -42,12 +42,12 @@ export default function SecurityChallenges() {
                     have has been removed. */}
                 <div className="relative w-full lg:absolute lg:top-[13.5%] lg:left-[37.7%] lg:h-[76.3%] lg:w-[62.3%] bg-[#F3F6F9] overflow-hidden flex items-center px-6 sm:pl-[7.5%] sm:pr-[15%] py-8 sm:py-10">
                     <div className="flex flex-col gap-8 sm:gap-16 w-full sm:max-w-[58.5%]">
-                        <p className="font-heading text-black text-xl sm:text-2xl font-medium">Our Security Advantages</p>
+                        <h2 className="font-heading text-black text-xl sm:text-[28px] font-semibold">Our Security Advantages</h2>
                         <div className="flex flex-col gap-4">
-                            <p className="text-[#2E3033] text-xl sm:text-2xl font-medium">
+                            <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">
                                 Regional compliance depth and SAP security expertise.
-                            </p>
-                            <ul className="list-disc marker:text-[#6c6c6c] pl-[27px] text-[#6c6c6c] text-lg font-light leading-relaxed">
+                            </h2>
+                            <ul className="list-disc marker:text-[#6c6c6c] pl-[27px] text-[#6c6c6c] text-lg font-light leading-relaxed space-y-3">
                                 {CHALLENGES.map((item) => (
                                     <li key={item}>{item}</li>
                                 ))}

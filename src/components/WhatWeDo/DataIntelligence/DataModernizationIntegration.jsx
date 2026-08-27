@@ -41,7 +41,7 @@ export default function DataModernizationIntegration() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:max-w-[430px] shrink-0"
                 >
-                    <h2 className="text-[#2E3033] text-[28px] font-medium">Data Modernization &amp; Integration</h2>
+                    <h2 className="text-[#2E3033] text-[28px] font-semibold">Data Modernization &amp; Integration</h2>
                     <p className="text-[#55595E] text-lg font-light">
                         Modern data capabilities that bring fragmented enterprise information together for
                         analytics, reporting, and AI.

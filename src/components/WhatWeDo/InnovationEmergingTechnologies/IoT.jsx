@@ -31,7 +31,7 @@ export default function IoT() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[1011px] mx-auto text-center mb-10 sm:mb-[45px]"
             >
-                <h2 className="text-black text-2xl font-medium">Internet of Things (IoT)</h2>
+                <h2 className="text-black text-2xl font-semibold">Internet of Things (IoT)</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Connect physical assets and operations to real-time data so decisions happen closer to where work
                     actually gets done.
@@ -48,7 +48,7 @@ export default function IoT() {
                         transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
                         className="bg-[#0a2b3e] h-[237px] flex flex-col justify-end px-6 pb-8"
                     >
-                        <p className="text-white text-lg sm:text-xl font-medium">{card.title}</p>
+                        <p className="text-white text-lg sm:text-xl font-semibold">{card.title}</p>
                         <p className="text-white/70 text-sm font-light mt-3">{card.desc}</p>
                     </motion.div>
                 ))}
