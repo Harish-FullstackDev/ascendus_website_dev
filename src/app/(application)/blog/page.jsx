@@ -14,6 +14,7 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import AuthorsSection from "@/components/blog/author";
 import Hero from "@/components/blog/Hero";
 import HeroText from "@/components/blog/HeroText";
+import { staticBlogsData } from "@/data/blogsData";
 
 export default function BlogPage() {
     const router = useRouter();
@@ -50,7 +51,7 @@ export default function BlogPage() {
         fetchAuthors();
     }, []);
 
-    // Fetch blogs from Supabase
+    // Fetch blogs: prepend static entries, then append DB posts
     const fetchBlogs = async () => {
         try {
             setLoading(true);
@@ -62,9 +63,17 @@ export default function BlogPage() {
             if (error) {
                 throw error;
             }
-            setBlogs(data || []);
+
+            // Merge: static blogs first (newest first by publish_date), then DB posts
+            const dbBlogs = data || [];
+            const staticSlugs = new Set(staticBlogsData.map((b) => b.slug));
+            const filteredDb = dbBlogs.filter((b) => !staticSlugs.has(b.slug));
+            const merged = [...staticBlogsData, ...filteredDb];
+            setBlogs(merged);
         } catch (err) {
             console.error("Error fetching blogs:", err.message);
+            // Show static blogs even if Supabase fails
+            setBlogs(staticBlogsData);
         } finally {
             setLoading(false);
         }
@@ -73,6 +82,7 @@ export default function BlogPage() {
     useEffect(() => {
         fetchBlogs();
     }, []);
+
 
     // Escape key to close expanded modal
     useEffect(() => {

@@ -8,6 +8,7 @@ import { ArrowLeft, Calendar, User, ChevronDown, Check, Mail, Link2 } from "luci
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { supabase } from "@/lib/supabaseClient";
+import { getStaticBlogBySlug } from "@/data/blogsData";
 
 export default function BlogPostClient() {
     const params = useParams();
@@ -23,11 +24,23 @@ export default function BlogPostClient() {
     const [scrollDirection, setScrollDirection] = useState("up");
     const [copied, setCopied] = useState(false);
 
-    // Fetch blog post from Supabase
+    // Fetch blog post – static first, then Supabase fallback
     useEffect(() => {
         const fetchBlogPost = async () => {
             try {
                 setLoading(true);
+
+                // 1. Check static data first
+                const staticBlog = getStaticBlogBySlug(slug);
+                if (staticBlog) {
+                    setBlog(staticBlog);
+                    if (staticBlog.sections?.length > 0) {
+                        setActiveSectionId("section-0");
+                    }
+                    return;
+                }
+
+                // 2. Fall back to Supabase for DB-backed posts
                 const { data, error: fetchError } = await supabase
                     .from("blogs")
                     .select("*")
@@ -60,6 +73,7 @@ export default function BlogPostClient() {
             fetchBlogPost();
         }
     }, [slug]);
+
 
     // Scroll Direction Tracking (to adjust mobile sticky TOC bar relative to sliding Navbar)
     useEffect(() => {
@@ -237,7 +251,7 @@ export default function BlogPostClient() {
                                     <User className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <span className="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Author</span>
+                                    <span className="block text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Author</span>
                                     <span className=" text-slate-800 text-sm">{blog.author}</span>
                                 </div>
                             </div>
@@ -246,7 +260,7 @@ export default function BlogPostClient() {
                                     <Calendar className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <span className="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Published</span>
+                                    <span className="block text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Published</span>
                                     <span className="font-semibold text-slate-800 text-sm">
                                         {new Date(blog.publish_date).toLocaleDateString("en-US", {
                                             year: "numeric",
@@ -347,7 +361,7 @@ export default function BlogPostClient() {
                                                 setIsDropdownOpen(false);
                                             }}
                                             className={`flex items-center justify-between px-6 py-2.5 text-left text-sm transition-colors cursor-pointer ${isActive
-                                                ? "text-blue-500 bg-blue-50/50 dark:bg-blue-900/10 font-bold"
+                                                ? "text-blue-500 bg-blue-50/50 dark:bg-blue-900/10 font-semibold"
                                                 : "text-slate-655 dark:text-slate-350 hover:bg-slate-50 dark:hover:bg-neutral-800"
                                                 }`}
                                         >
@@ -369,7 +383,7 @@ export default function BlogPostClient() {
                     {/* Left Sticky Sidebar (Desktop only) */}
                     <aside className="hidden lg:block lg:col-span-3">
                         <div className="sticky top-28 space-y-6">
-                            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                                 Table of Contents
                             </h3>
                             <ul className="relative border-l border-slate-300 ml-2">
@@ -413,11 +427,11 @@ export default function BlogPostClient() {
                             <section key={idx} className="space-y-4 border-b border-slate-100 pb-8 last:border-none last:pb-0">
                                 <p
                                     id={`section-${idx}`}
-                                    className="text-2xl md:text-2xl font-black scroll-mt-28 pt-2"
+                                    className="text-2xl md:text-2xl font-semibold scroll-mt-28 pt-2"
                                 >
                                     {sec.heading}
                                 </p>
-                                <div className="text-slate-655 dark:text-neutral-350 text-base md:text-lg leading-relaxed whitespace-pre-wrap font-normal">
+                                <div className="text-slate-655 dark:text-neutral-350 text-base md:text-lg leading-relaxed whitespace-pre-wrap font-light">
                                     {sec.content}
                                 </div>
 
@@ -433,7 +447,7 @@ export default function BlogPostClient() {
                                             </div>
                                         </div>
                                         {sec.caption && (
-                                            <p className="text-center text-xs md:text-sm text-slate-500 dark:text-neutral-450 italic">
+                                            <p className="text-center text-xs md:text-sm text-slate-500 dark:text-neutral-450 font-light">
                                                 {sec.caption}
                                             </p>
                                         )}

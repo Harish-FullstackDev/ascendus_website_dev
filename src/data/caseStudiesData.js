@@ -1,225 +1,86 @@
-// Local mock data for the Case Studies page.
-// TODO: replace with a database-backed fetch (see src/app/api/blog/route.js for the Supabase pattern).
+// Static data for the Case Studies page.
+// Schema intentionally mirrors the Supabase blogs shape for rendering compatibility.
 
 export const caseStudiesData = [
   {
     id: 1,
-    slug: "global-manufacturer-s4hana-migration",
-    title: "Global Manufacturing Leader Cuts Order-to-Cash Cycle by 40% with SAP S/4HANA Migration",
+    slug: "fintech-ux-wireframing-accelerator",
+    title: "How Ascendus Slashed a FinTech Client's Development Rework by 60% Through UX-First Wireframing",
     type: "Case Study",
-    category: "Manufacturing",
+    category: "Financial Technology",
     summary:
-      "A multinational industrial equipment manufacturer partnered with Ascendus to migrate from SAP ECC to S/4HANA, streamlining its order-to-cash process across 14 countries.",
+      "A fast-growing FinTech startup engaged Ascendus to bring structure to a product that had stalled in development. By introducing a disciplined, UX-first wireframing process before any code was written, the team eliminated the root cause of scope creep and expensive late-stage rework.",
     cover_image: "/ServicePage/software-delivery-team.jpg",
-    publish_date: "2026-02-18",
-    author: "Ascendus Enterprise Transformation Team",
-    metaLine: "Manufacturing · 9-month engagement",
-    tags: ["SAP S/4HANA", "ERP Migration", "Manufacturing", "Clean Core"],
+    publish_date: "2026-08-15",
+    author: "Ascendus Product Engineering Team",
+    metaLine: "Financial Technology · 10-week engagement",
+    tags: ["UX Design", "Wireframing", "Product Engineering", "FinTech", "Agile"],
     highlights: [
-      { label: "Order-to-Cash Cycle", value: "-40%" },
-      { label: "Countries Live", value: "14" },
-      { label: "Downtime During Cutover", value: "0 hrs" },
+      { label: "Development Rework", value: "-60%" },
+      { label: "Time to Prototype", value: "3 weeks" },
+      { label: "Stakeholder Approval Rounds", value: "1 (vs. 6 previously)" },
     ],
     sections: [
       {
         heading: "The Challenge",
         content:
-          "The client was running a heavily customized SAP ECC 6.0 landscape that had accumulated over a decade of bespoke code across 14 country instances. Order-to-cash processing was inconsistent between regions, month-end close took up to nine business days, and the IT team was spending most of its time keeping legacy customizations alive rather than enabling new capabilities.",
+          "The client had been building a personal finance management app for nearly eight months. Despite a capable development team and a clear product vision at the executive level, the project had delivered only 40% of its planned feature set and was burning through sprint capacity fixing features that had already shipped. Stakeholder reviews were exposing structural navigation problems that required reworking screens that had taken weeks to build.\n\nWhen Ascendus was brought in, the root diagnosis was immediate: the team had moved from brief requirements documents directly into code, skipping the wireframing and user flow design phase entirely. Every misaligned assumption about user behaviour was coded, tested, and released before it was caught.",
       },
       {
         heading: "The Approach",
         content:
-          "Ascendus ran a six-week Clean Core assessment to classify every custom object as retain, retire, or re-platform to the SAP BTP side-by-side extension model. We then executed a phased brownfield-to-greenfield hybrid migration, standardizing order-to-cash, procure-to-pay, and record-to-report processes on a single global template while preserving the handful of customizations that delivered genuine competitive advantage.",
+          "Ascendus introduced a four-stage wireframing methodology before any new feature entered development.\n\nFirst, we ran a one-week discovery sprint to define the target users, their core jobs-to-be-done, and the critical user flows that the app needed to serve. This gave us a shared vocabulary between product, design, and engineering.\n\nSecond, the team produced low-fidelity paper and whiteboard sketches of every key screen. These were reviewed and iterated in two days—a process that would have taken six weeks if done with coded interfaces.\n\nThird, we built mid-fidelity digital wireframes in Figma, capturing layout, navigation hierarchy, and interaction patterns without investing time in visual design. These were tested with five representative users to identify friction points before any development decision was committed.\n\nFinally, the approved wireframes became the single source of truth for sprint planning. Every story was scoped against the wireframe. Developers knew exactly what they were building before the sprint began.",
       },
       {
         heading: "The Results",
         content:
-          "Within two quarters of go-live, the order-to-cash cycle time dropped 40% as manual approval steps were replaced with embedded workflow and real-time credit checks. Month-end close fell from nine days to four. The reduction in custom code also cut the client's regression testing effort for future SAP updates by more than half.",
+          "The first feature set built under the new process shipped with zero structural rework requests from stakeholders—a first for the project. Development velocity increased by 35% because engineers were no longer context-switching to respond to design changes mid-sprint.\n\nOver the ten-week engagement, the client reduced development rework by 60% compared to the previous eight-month average. The wireframing investment—three weeks of designer and product time—saved an estimated fourteen weeks of engineering rework. Time to prototype dropped from an informal, unpredictable process to a repeatable three-week cycle.",
       },
       {
-        heading: "Looking Ahead",
+        heading: "Key Lessons",
         content:
-          "With a clean core in place, the client is now piloting SAP's embedded AI recommendations for demand planning and has asked Ascendus to scope a follow-on program to extend the template to two recently acquired subsidiaries.",
+          "The engagement reinforced a principle that Ascendus applies across every product engagement: the cost of fixing a problem scales exponentially with how late in the development cycle it is discovered. A structure problem caught on a paper sketch costs thirty minutes. The same problem caught after a sprint of coding costs days.\n\nWireframing is not a design luxury—it is the most cost-efficient quality gate available to any software team. For FinTech clients in particular, where regulatory requirements demand precise UI behaviour and user trust depends on clear, intuitive interfaces, a UX-first wireframing process is not optional. It is the foundation that everything else is built on.",
       },
     ],
   },
   {
     id: 2,
-    slug: "retail-chain-unified-commerce-platform",
-    title: "Retail Chain Unifies 200+ Stores on a Single SAP Commerce Platform",
+    slug: "healthcare-mobile-security-architecture",
+    title: "Securing a Healthcare Mobile Platform: Ascendus Implements Zero-Compromise Security Architecture",
     type: "Case Study",
-    category: "Retail & Consumer Goods",
+    category: "Healthcare & Life Sciences",
     summary:
-      "A regional retail chain consolidated fragmented point-of-sale and e-commerce systems onto SAP Commerce Cloud, enabling a true omnichannel experience.",
-    cover_image: "/SolutionPage/CUSTOMEREXPERIENCE2.png",
-    publish_date: "2025-11-05",
-    author: "Ascendus Customer Experience Team",
-    metaLine: "Retail & Consumer Goods · 7-month engagement",
-    tags: ["SAP Commerce Cloud", "Omnichannel", "Retail"],
-    highlights: [
-      { label: "Stores Unified", value: "200+" },
-      { label: "Cart Abandonment", value: "-18%" },
-      { label: "Time to Launch New Store", value: "-60%" },
-    ],
-    sections: [
-      {
-        heading: "The Challenge",
-        content:
-          "Following three acquisitions, the retailer was operating four separate point-of-sale systems and two disconnected e-commerce storefronts. Inventory visibility across channels was unreliable, and customers frequently found different prices and promotions online versus in-store.",
-      },
-      {
-        heading: "The Solution",
-        content:
-          "Ascendus designed and implemented a single SAP Commerce Cloud instance integrated with SAP S/4HANA for real-time inventory and pricing, alongside a unified customer profile service so loyalty points and order history followed the shopper across every channel.",
-      },
-      {
-        heading: "The Results",
-        content:
-          "Store-level inventory accuracy improved to 98.5%, buy-online-pickup-in-store adoption tripled in the first two quarters, and the marketing team gained the ability to launch consistent promotions across web, mobile, and in-store simultaneously.",
-      },
-    ],
-  },
-  {
-    id: 3,
-    slug: "pharma-distributor-clean-core-traceability",
-    title: "Pharmaceutical Distributor Achieves Full Regulatory Traceability with Clean Core SAP Architecture",
-    type: "Case Study",
-    category: "Life Sciences",
-    summary:
-      "A national pharmaceutical distributor rebuilt its serialization and batch traceability processes on SAP S/4HANA to meet tightening regulatory requirements.",
+      "A regional healthcare provider needed to launch a patient-facing mobile application that handled sensitive medical records and prescription data. Ascendus designed and implemented an end-to-end mobile security architecture that ensured regulatory compliance, protected patient data, and passed a third-party penetration test with zero critical findings.",
     cover_image: "/ServicePage/HANA.png",
-    publish_date: "2025-09-22",
-    author: "Ascendus Data Intelligence Team",
-    metaLine: "Life Sciences · 12-month engagement",
-    tags: ["Clean Core", "Compliance", "Life Sciences", "SAP S/4HANA"],
+    publish_date: "2026-07-28",
+    author: "Ascendus Cybersecurity & Mobile Engineering Team",
+    metaLine: "Healthcare & Life Sciences · 14-week engagement",
+    tags: ["Mobile Security", "Healthcare", "Compliance", "Encryption", "Penetration Testing"],
     highlights: [
-      { label: "Batch Trace Time", value: "Minutes, not days" },
-      { label: "Audit Findings", value: "Zero critical" },
-      { label: "SKUs Serialized", value: "45,000+" },
+      { label: "Critical Pen Test Findings", value: "0" },
+      { label: "Security Vulnerabilities Remediated", value: "23" },
+      { label: "Compliance Frameworks Met", value: "HIPAA + ISO 27001" },
     ],
     sections: [
       {
         heading: "The Challenge",
         content:
-          "New track-and-trace regulations required the distributor to prove end-to-end chain of custody for every serialized unit within hours of a regulator's request. The existing landscape stored serialization data across three disconnected systems, making audits a multi-week manual exercise.",
+          "The client, a regional healthcare network operating across four states, had developed a patient portal mobile application that allowed users to view lab results, manage prescriptions, and communicate with clinical staff. Before launch, an internal review flagged significant security gaps: data was being stored unencrypted in local device storage, API tokens were embedded in the application binary, session management had no timeout enforcement, and the app requested twelve device permissions—most of which were unnecessary for its core functionality.\n\nA failed internal security review delayed the launch by three months. Ascendus was engaged to design and implement a production-ready security architecture and bring the application to a state where it could pass independent third-party penetration testing.",
       },
       {
-        heading: "The Solution",
+        heading: "The Security Architecture",
         content:
-          "Ascendus consolidated serialization, batch management, and quality data into SAP S/4HANA using standard SAP Advanced Track and Trace functionality, keeping all customizations on the BTP extension layer to preserve upgradability.",
-      },
-      {
-        heading: "The Results",
-        content:
-          "The distributor can now produce a complete chain-of-custody report for any batch in minutes. Its most recent regulatory audit closed with zero critical findings, and internal quality teams have reclaimed the equivalent of three full-time roles previously spent reconciling data across systems.",
-      },
-    ],
-  },
-  {
-    id: 4,
-    slug: "logistics-provider-invoice-automation",
-    title: "Logistics Provider Automates Freight Invoicing with Intelligent Automation",
-    type: "Case Study",
-    category: "Logistics & Transportation",
-    summary:
-      "A freight and logistics operator deployed intelligent automation to eliminate manual invoice matching across thousands of monthly shipments.",
-    cover_image: "/ServicePage/GrowthToday5.png",
-    publish_date: "2025-08-14",
-    author: "Ascendus Intelligent Automation Team",
-    metaLine: "Logistics & Transportation · 5-month engagement",
-    tags: ["Intelligent Automation", "Finance Operations", "Logistics"],
-    highlights: [
-      { label: "Invoices Auto-Matched", value: "92%" },
-      { label: "Processing Time", value: "-75%" },
-      { label: "Disputed Invoices", value: "-30%" },
-    ],
-    sections: [
-      {
-        heading: "The Challenge",
-        content:
-          "The finance team manually matched roughly 40,000 freight invoices per month against carrier contracts and shipment records, a process prone to error and routinely causing payment delays that strained carrier relationships.",
-      },
-      {
-        heading: "The Solution",
-        content:
-          "Ascendus implemented an intelligent automation pipeline combining OCR document extraction, rules-based contract matching, and machine-learning exception scoring, integrated directly with the client's SAP finance module.",
+          "Ascendus structured the remediation programme around five pillars:\n\n1. Data Encryption and Secure Storage: All patient data persisted on-device was encrypted using AES-256 via the platform's secure enclave APIs. Keychain (iOS) and Android Keystore were used for credential storage, replacing the plain-text SharedPreferences implementation.\n\n2. Secure API Communication: The hardcoded API tokens were replaced with a short-lived JWT authentication flow backed by OAuth 2.0. All API calls were enforced over TLS 1.3 with certificate pinning to prevent man-in-the-middle interception.\n\n3. Code Obfuscation and Tamper Detection: ProGuard and R8 were applied to the Android build. Runtime integrity checks were added to detect rooted or jailbroken devices and warn users before sensitive operations were performed.\n\n4. Principle of Least Privilege: The permission manifest was reduced from twelve to four permissions—camera (for document upload), biometric authentication, push notifications, and secure storage—with clear user-facing rationale for each.\n\n5. Continuous Security Testing: SAST scanning was integrated into the CI/CD pipeline using a static analysis tool configured with OWASP Mobile Top 10 rules. Every pull request was gated on a clean scan result before merging.",
       },
       {
         heading: "The Results",
         content:
-          "92% of invoices are now matched and approved without human intervention. Average processing time per invoice fell by 75%, and carrier-disputed invoices dropped 30% as pricing discrepancies are now caught automatically before payment.",
-      },
-    ],
-  },
-  {
-    id: 5,
-    slug: "financial-services-zero-downtime-migration",
-    title: "Financial Services Firm Modernizes Legacy ERP with Zero-Downtime Migration",
-    type: "Case Study",
-    category: "Financial Services",
-    summary:
-      "A regional financial services firm migrated core finance and treasury operations to SAP S/4HANA Cloud without a single hour of unplanned downtime.",
-    cover_image: "/SolutionPage/FINANCECONTROLLING.png",
-    publish_date: "2025-06-02",
-    author: "Ascendus Enterprise Transformation Team",
-    metaLine: "Financial Services · 8-month engagement",
-    tags: ["SAP S/4HANA Cloud", "Treasury", "Financial Services"],
-    highlights: [
-      { label: "Unplanned Downtime", value: "0 hrs" },
-      { label: "Close Cycle", value: "-3 days" },
-      { label: "Reconciliation Effort", value: "-55%" },
-    ],
-    sections: [
-      {
-        heading: "The Challenge",
-        content:
-          "A 20-year-old on-premise ERP system could no longer support the firm's treasury reporting requirements, but any migration downtime risked breaching same-day settlement obligations with regulators and counterparties.",
+          "The application passed independent third-party penetration testing with zero critical or high-severity findings—a result the testing firm noted was uncommon for healthcare mobile apps at first engagement. Twenty-three pre-existing vulnerabilities identified in the initial assessment were fully remediated.\n\nThe application was granted approval to handle Protected Health Information under HIPAA, and the security architecture was also independently verified against ISO 27001 controls. The client launched on schedule and has had no security incidents in the six months since deployment.",
       },
       {
-        heading: "The Approach",
+        heading: "Why Security Cannot Be an Afterthought",
         content:
-          "Ascendus designed a parallel-run cutover strategy, running the legacy and new SAP S/4HANA Cloud environments simultaneously for two full closing cycles before decommissioning the old system, with automated reconciliation checks validating every transaction between the two.",
-      },
-      {
-        heading: "The Results",
-        content:
-          "The firm completed the migration with zero unplanned downtime and no missed settlement windows. Financial close time dropped by three days, and the treasury team now operates from a single, auditable source of truth.",
-      },
-    ],
-  },
-  {
-    id: 6,
-    slug: "energy-utility-field-service-cloud",
-    title: "Energy Utility Improves Field Service Efficiency with Cloud-Based Asset Management",
-    type: "Case Study",
-    category: "Energy & Utilities",
-    summary:
-      "A regional energy utility moved asset maintenance planning to a cloud-based SAP solution, cutting technician travel time and unplanned outages.",
-    cover_image: "/SolutionPage/erpSolution.png",
-    publish_date: "2025-04-11",
-    author: "Ascendus Cloud Infrastructure Team",
-    metaLine: "Energy & Utilities · 6-month engagement",
-    tags: ["Cloud Infrastructure", "Asset Management", "Energy & Utilities"],
-    highlights: [
-      { label: "Technician Travel Time", value: "-22%" },
-      { label: "Unplanned Outages", value: "-15%" },
-      { label: "Work Orders Digitized", value: "100%" },
-    ],
-    sections: [
-      {
-        heading: "The Challenge",
-        content:
-          "Field technicians relied on paper work orders and a maintenance planning system that could not account for real-time equipment condition data, leading to inefficient routing and reactive rather than predictive maintenance.",
-      },
-      {
-        heading: "The Solution",
-        content:
-          "Ascendus deployed a cloud-based SAP Asset Performance Management solution integrated with IoT sensor feeds from substation equipment, alongside a mobile work order app for field crews.",
-      },
-      {
-        heading: "The Results",
-        content:
-          "Predictive alerts now flag at-risk equipment before failure, contributing to a 15% reduction in unplanned outages. Optimized routing cut technician travel time by 22%, and every work order is now digitized end to end.",
+          "The cost of the remediation programme—fourteen weeks of specialist effort—was approximately four times what a Secure by Design approach from the project's inception would have cost. This is the consistent pattern Ascendus observes across healthcare and financial services mobile projects: security bolted on at the end requires expensive architectural changes, not just configuration updates.\n\nFor any application that touches sensitive personal data, our recommendation is to embed security requirements into the product definition phase, run SAST from the first sprint, and treat penetration testing as a confirmation step—not a discovery step. The goal is to reach the pen test already knowing what the testers will find, because your process has already found and fixed it.",
       },
     ],
   },
