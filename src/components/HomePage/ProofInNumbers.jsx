@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 const STATS = [
-    { value: "400+", label: "Team of SAP Specialists" },
+    { value: "300+", label: "Team of SAP Specialists" },
     { value: "200+", label: "SAP Engagements Delivered" },
     { value: "12+", label: "Industries Served" },
     { value: "5+", label: "Years of Experience" },

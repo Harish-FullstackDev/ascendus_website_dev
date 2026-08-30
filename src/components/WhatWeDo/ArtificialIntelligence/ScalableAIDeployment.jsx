@@ -8,8 +8,8 @@ import integrationImage2 from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs
 
 const STATS = [
     { value: "50+", label: "AI Solutions Delivered" },
-    { value: "40%", label: "Faster Decision Cycles" },
-    { value: "60%", label: "Processes Automated" },
+    { value: "70%", label: "Faster Decision Cycles" },
+    { value: "80%", label: "Processes Automated" },
     { value: "99.9%", label: "AI Operations Availability" },
 ];
 
@@ -101,7 +101,7 @@ export default function ScalableAIDeployment() {
                             </h2>
 
                             <p className="text-[#55595E] text-base sm:text-lg font-light">
-                                Most AI initiatives stall between proof of concept and enterprise rollout. We close that gap with implementation discipline: data readiness, integration architecture, and change management planned from the start, so pilots become platforms, not shelf ware.
+                                Most AI initiatives stall between proof of concept and enterprise rollout. We close that gap with implementation discipline, data readiness, integration architecture, and change management planned from the start, so pilots become platforms, not shelf ware.
                             </p>
 
 
@@ -140,7 +140,7 @@ export default function ScalableAIDeployment() {
                             </h2>
 
                             <p className="text-[#55595E] text-base sm:text-lg font-light">
-                                We design agents around real business workflows: approvals, exceptions, reconciliations, service requests, with clear boundaries for what they execute autonomously and what they escalate to your teams.
+                                We design agents around real business workflows, approvals, exceptions, reconciliations, service requests, with clear boundaries for what they execute autonomously and what they escalate to your teams.
                             </p>
                         </div>
                     </motion.div>

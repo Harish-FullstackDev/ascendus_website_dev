@@ -63,7 +63,7 @@ export default function HowWeWork() {
                 </div>
             </div>
 
-            <div className="relative z-10 -mt-12 sm:-mt-16 bg-[#0a3a52] pb-20 sm:pb-28 px-6 sm:px-[64px]">
+            <div className="relative z-10 -mt-12 sm:-mt-16 bg-[#002C4F] pb-20 sm:pb-28 px-6 sm:px-[64px]">
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -87,8 +87,8 @@ export default function HowWeWork() {
                                 <span className="text-[#2E3033] text-3xl font-light">{step.num}</span>
                             </div>
                             <div className="flex flex-col gap-3 text-white">
-                                <h3 className="text-lg font-medium">{step.title}</h3>
-                                <p className="text-base font-light leading-[1.5]">{step.desc}</p>
+                                <h2 className="text-lg font-semibold">{step.title}</h2>
+                                <p className="text-base font-extralight leading-[1.5]">{step.desc}</p>
                             </div>
                         </div>
                     ))}

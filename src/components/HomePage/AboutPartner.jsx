@@ -26,7 +26,7 @@ export default function AboutPartner() {
                     </p>
                     <Link
                         href="/who-we-are"
-                        className="mt-6 self-start rounded-none border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#2d8ec5] hover:text-white"
+                        className="mt-6 self-start rounded-none border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#00447A] hover:text-white"
                     >
                         Who We Are
                     </Link>

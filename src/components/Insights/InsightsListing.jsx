@@ -54,7 +54,7 @@ export default function InsightsListing({
   }, [items, activeCategory]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-50 via-white to-slate-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-white flex flex-col font-sans">
       <Navbar />
 
       <div className="relative -mt-[64px] lg:-mt-[68px] h-[680px] sm:h-[200vh]">
@@ -73,7 +73,7 @@ export default function InsightsListing({
           y: contentY,
           opacity,
         }}
-        className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-gradient-to-b from-sky-50 via-white to-slate-100 flex-grow w-full mx-auto px-6 py-12 md:py-20"
+        className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-gradient-to-b from-sky-50 via-white to-slate-100 flex-grow w-full mx-auto px-6 py-12 md:p-16 md:pb-30"
       >
 
         {/* Category Filter Chips */}
@@ -83,7 +83,7 @@ export default function InsightsListing({
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-sm border transition-all cursor-pointer ${activeCategory === cat
+                className={`px-4 py-2 rounded-none text-sm border transition-all cursor-pointer ${activeCategory === cat
                   ? "bg-blue-500 border-blue-500 text-white shadow-md shadow-blue-500/20"
                   : "bg-white border-neutral-200 text-neutral-600 hover:border-blue-300 hover:text-blue-600"
                   }`}
@@ -95,7 +95,7 @@ export default function InsightsListing({
         )}
 
         {filteredItems.length === 0 ? (
-          <div className="text-center py-40 border border-dashed border-neutral-200 rounded-3xl p-8 bg-white">
+          <div className="text-center py-40 border border-dashed border-neutral-200 rounded-none p-8 bg-white">
             <p className="text-slate-600 text-lg">{emptyStateText}</p>
           </div>
         ) : (
@@ -117,7 +117,7 @@ export default function InsightsListing({
               >
 
                 <CardContainer className="inter-var w-full h-full" containerClassName="py-0 flex-grow">
-                  <CardBody className="bg-white relative shadow-md hover:shadow-2xl group/card dark:hover:shadow-2xl dark:hover:shadow-blue-500/[0.1] dark:bg-neutral-900 dark:border-neutral-850 border-neutral-100 w-full h-full rounded-sm p-6 border flex flex-col justify-between">
+                  <CardBody className="bg-[#F5F6F6] relative shadow-md hover:shadow-2xl group/card dark:hover:shadow-2xl dark:hover:shadow-blue-500/[0.1] dark:bg-neutral-900 dark:border-neutral-850 border-neutral-100 w-full h-full rounded-none p-6 border flex flex-col justify-between">
 
                     <div className="flex flex-col flex-grow">
                       <CardItem translateZ="50" className="w-full mt-4 relative">
@@ -134,7 +134,7 @@ export default function InsightsListing({
 
                       <CardItem
                         translateZ="0"
-                        className="text-lg  text-neutral-900 dark:text-neutral-100 mt-4 line-clamp-2 group-hover/card:text-blue-500 transition-colors"
+                        className="text-lg  text-neutral-900 dark:text-neutral-100 mt-4 line-clamp-2"
                       >
                         {item.title}
                       </CardItem>

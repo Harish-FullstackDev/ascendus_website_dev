@@ -33,7 +33,7 @@ export default function WhatWeDo() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="flex-1 flex flex-col gap-2 order-1 lg:order-2"
                 >
-                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold leading-[1.4] max-w-[356px]">
+                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold leading-[1.4] ">
                         Technology built around your business.
                     </h2>
                     <p className="mt-4 text-[#55595E] text-lg font-light leading-[1.5]">
@@ -42,12 +42,12 @@ export default function WhatWeDo() {
                         automation, and ongoing support, we make complex technology simpler, smarter, and
                         ready to scale.
                     </p>
-                    <Link
+                    {/* <Link
                         href="/whatWeDo/en"
                         className="mt-6 self-start rounded-none border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#2d8ec5] hover:text-white"
                     >
                         What We Do
-                    </Link>
+                    </Link> */}
                 </motion.div>
             </div>
         </section>

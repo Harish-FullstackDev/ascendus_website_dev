@@ -15,7 +15,7 @@ export default function Hero() {
                 preload="none"
                 className="absolute inset-0 w-full h-full object-cover object-center"
             >
-                <source src="/Ascendus/Homepage_hero.mp4" type="video/mp4" />
+                <source src="/Ascendus/Hero_rou.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-transparent" />
         </div>

@@ -9,6 +9,8 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { supabase } from "@/lib/supabaseClient";
 import { getStaticBlogBySlug } from "@/data/blogsData";
+import ReactMarkdown from "react-markdown";
+
 
 export default function BlogPostClient() {
     const params = useParams();
@@ -431,10 +433,9 @@ export default function BlogPostClient() {
                                 >
                                     {sec.heading}
                                 </p>
-                                <div className="text-slate-655 dark:text-neutral-350 text-base md:text-lg leading-relaxed whitespace-pre-wrap font-light">
-                                    {sec.content}
+                                <div className="text-slate-655 dark:text-neutral-350 text-base md:text-lg leading-relaxed whitespace-pre-wrap font-light [&_strong]:font-bold">
+                                    <ReactMarkdown>{sec.content}</ReactMarkdown>
                                 </div>
-
                                 {sec.image && (
                                     <div className="my-6 space-y-2">
                                         <div className="flex justify-center">

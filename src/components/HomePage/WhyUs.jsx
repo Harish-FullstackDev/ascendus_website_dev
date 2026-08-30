@@ -47,7 +47,7 @@ export default function WhyUs() {
                     className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6"
                 >
                     <div className="flex flex-col gap-2 max-w-[910px]">
-                        <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold capitalize leading-[1.4] tracking-[0.28px]">
+                        <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold capitalize leading-relaxed ">
                             Everything an enterprise technology estate needs, under one roof
                         </h2>
                         <p className="text-[#55595E] text-lg font-light leading-[1.5] max-w-[600px]">
@@ -57,7 +57,7 @@ export default function WhyUs() {
                     </div>
                     <Link
                         href="/who-we-are"
-                        className="shrink-0 rounded-none border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] text-center transition-colors hover:bg-[#2d8ec5] hover:text-white whitespace-nowrap"
+                        className="shrink-0 rounded-none border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] text-center transition-colors hover:bg-[#00447A] hover:text-white whitespace-nowrap"
                     >
                         Who We Are
                     </Link>

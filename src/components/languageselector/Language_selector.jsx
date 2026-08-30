@@ -107,7 +107,7 @@ export default function LanguageSelector({ isNavbarLight }) {
 
   const themeClass = isNavbarLight
     ? "bg-white/80 border-gray-200/30 text-gray-800 shadow-md backdrop-blur-md"
-    : "bg-neutral-900/80 border-white/20 text-white backdrop-blur-md";
+    : "bg-white/10 border-white/20 text-white backdrop-blur-md";
 
   const themeClass1 = isNavbarLight
     ? "bg-white/80 border-gray-200/30 text-gray-800 shadow-md backdrop-blur-md"
@@ -155,10 +155,9 @@ export default function LanguageSelector({ isNavbarLight }) {
       {/* Dropdown */}
       <div
         className={`
-                      absolute right-[-52px] sm:right-0 z-50 mt-3
+                      absolute left-1/2 -translate-x-1/2 z-50 mt-3
                       w-[300px] sm:w-[380px]
                       overflow-hidden
-                      rounded-2xl
                       transition-all duration-300
                       backdrop-blur-md
                       ${glassBase}
@@ -276,4 +275,3 @@ export default function LanguageSelector({ isNavbarLight }) {
     </div>
   );
 }
-

@@ -219,7 +219,7 @@ export default function BlogPage() {
                     "Security & Compliance",
                 ]}
             /> */}
-            <div className="relative z-10 -mt-[340px] sm:-mt-[90vh] bg-white">
+            <div className="relative z-10 -mt-[340px] sm:-mt-[80vh] bg-white">
                 {/* Main Container */}
                 <main className="flex-grow max-w-7xl w-full mx-auto px-6 py-12 md:py-20">
 
@@ -327,6 +327,7 @@ export default function BlogPage() {
                         </div>
                     )}
                 </main>
+
             </div>
 
             {/* Creation Modal Dialog */}
