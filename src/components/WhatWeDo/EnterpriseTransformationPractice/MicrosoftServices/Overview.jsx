@@ -14,10 +14,10 @@ export default function Overview() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-4 w-full sm:flex-1"
             >
-                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">
+                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
                     Microsoft, running next to SAP, not instead of it
                 </h2>
-                <p className="text-[#4a5568] text-lg font-light leading-[1.5]">
+                <p className="text-[#55595E] text-lg font-light leading-[1.5]">
                     Most enterprises we work with run Microsoft and SAP side by side already, Microsoft handling
                     productivity, subsidiary operations, or reporting that doesn&apos;t need full SAP weight behind
                     it. Microsoft Services covers the cloud, collaboration, low-code, CRM, and analytics work on

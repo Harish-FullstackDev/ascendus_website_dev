@@ -93,8 +93,8 @@ export default function CapabilitiesAccordion() {
                     transition={{ duration: 0.4, ease: "easeOut" }}
                     className="flex flex-col items-center gap-5 max-w-[1074px] text-center"
                 >
-                    <h2 className="text-[#10161d] text-2xl sm:text-[24px] font-medium">{active.title}</h2>
-                    <p className="text-[#6c6c6c] text-lg font-light leading-[1.4]">{active.desc}</p>
+                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">{active.title}</h2>
+                    <p className="text-[#55595E] text-lg font-light leading-[1.4]">{active.desc}</p>
                 </motion.div>
             </div>
 
@@ -169,8 +169,8 @@ export default function CapabilitiesAccordion() {
                                 className="hidden sm:block absolute left-[25%] right-[6%] top-[31%] bottom-0 bg-white"
                             >
                                 <div className="absolute left-[9.55%] right-[9.55%] top-[18.24%] bottom-[18.24%] flex flex-col justify-between gap-6">
-                                    <h3 className="text-[#10161d] text-lg font-medium leading-[1.4]">{active.desc}</h3>
-                                    <ul className="list-disc pl-5 flex flex-col gap-1 text-[#3d3d4e] text-lg font-light leading-[1.4]">
+                                    <h2 className="text-[#2E3033] text-lg font-semibold leading-[1.4]">{active.desc}</h2>
+                                    <ul className="list-disc pl-5 flex flex-col gap-1 text-[#55595E] text-lg font-light leading-[1.4]">
                                         {active.bullets.map((bullet) => (
                                             <li key={bullet}>{bullet}</li>
                                         ))}
@@ -191,8 +191,8 @@ export default function CapabilitiesAccordion() {
                             transition={{ duration: 0.35, ease: "easeOut" }}
                             className="sm:hidden bg-white p-6 flex flex-col gap-6"
                         >
-                            <h3 className="text-[#10161d] text-lg font-medium leading-[1.4]">{active.desc}</h3>
-                            <ul className="list-disc pl-5 flex flex-col gap-1 text-[#3d3d4e] text-lg font-light leading-[1.4]">
+                            <h2 className="text-[#2E3033] text-lg font-semibold leading-[1.4]">{active.desc}</h2>
+                            <ul className="list-disc pl-5 flex flex-col gap-1 text-[#55595E] text-lg font-light leading-[1.4]">
                                 {active.bullets.map((bullet) => (
                                     <li key={bullet}>{bullet}</li>
                                 ))}

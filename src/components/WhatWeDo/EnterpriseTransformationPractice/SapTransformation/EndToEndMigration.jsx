@@ -29,11 +29,11 @@ export default function EndToEndMigration() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="flex flex-col gap-8 sm:gap-16 w-full sm:flex-1"
             >
-                <h2 className="text-[#10161d] text-2xl font-medium leading-[1.4]">
+                <h2 className="text-[#2E3033] text-2xl font-semibold leading-[1.4]">
                     End-to-end migration from ECC to S/4HANA, planned around your compliance deadlines and cutover
                     windows, not a generic timeline.
                 </h2>
-                <div className="flex flex-col gap-4 text-[#4a5568] text-lg font-light leading-[1.5]">
+                <div className="flex flex-col gap-4 text-[#55595E] text-lg font-light leading-[1.5]">
                     <p>
                         Every year an ECC system runs past its maintenance window adds risk: security patches, tax
                         and legal updates, and vendor support all get harder to get and more expensive to buy.

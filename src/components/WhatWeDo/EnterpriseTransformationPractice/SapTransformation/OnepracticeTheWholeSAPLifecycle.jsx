@@ -15,10 +15,10 @@ export default function OnepracticeTheWholeSAPLifecycle() {
                 className="flex flex-col gap-2 w-full sm:flex-1"
             >
 
-                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">
+                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
                     One practice, the whole SAP lifecycle
                 </h2>
-                <p className="text-[#4a5568] text-lg font-light leading-[1.5]">
+                <p className="text-[#55595E] text-lg font-light leading-[1.5]">
                     From the first landscape assessment to the system still running years into production, SAP work
                     sits in one practice here, not scattered across a project team and a separate support vendor. SAP
                     Transformation covers migration, platform extension, analytics, data warehousing, and the managed

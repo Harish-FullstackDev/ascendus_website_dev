@@ -14,7 +14,7 @@ import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
 export default function ReadyToTransform({
     title = "Ready to Transform Your Business?",
     description = "Let's Build innovative Solution that drive growth efficiency for your Business",
-    buttonLabel = "Book a Consultation",
+    buttonLabel = "Book a Call",
     bgImage = ctaBg,
     hasOverlapAbove = false,
 }) {

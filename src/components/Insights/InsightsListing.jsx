@@ -120,7 +120,7 @@ export default function InsightsListing({
                   <CardBody className="bg-[#F5F6F6] relative shadow-md hover:shadow-2xl group/card dark:hover:shadow-2xl dark:hover:shadow-blue-500/[0.1] dark:bg-neutral-900 dark:border-neutral-850 border-neutral-100 w-full h-full rounded-none p-6 border flex flex-col justify-between">
 
                     <div className="flex flex-col flex-grow">
-                      <CardItem translateZ="50" className="w-full mt-4 relative">
+                      <CardItem translateZ="0" className="w-full mt-4 relative">
                         <img
                           src={item.cover_image}
                           className="h-60 w-full object-cover group-hover/card:shadow-xl"

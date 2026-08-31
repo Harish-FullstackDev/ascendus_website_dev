@@ -105,8 +105,8 @@ export default function CoreServices() {
                 className="w-full flex flex-col sm:flex-col sm:items-start sm:justify-between gap-4"
             >
                 <div className="w-full flex flex-col sm:flex-col sm:items-start sm:justify-between gap-4">
-                    <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-semibold shrink-0">Core Services</h2>
-                    <p className="text-[#4a5568] text-lg sm:text-2xl font-light sm:tracking-[0.24px] w-full sm:max-w-[618px]">
+                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold shrink-0">Core Services</h2>
+                    <p className="text-[#55595E] text-lg sm:text-2xl font-light sm:tracking-[0.24px] w-full sm:max-w-[618px]">
                         SAP is our core  deliberately. Microsoft and adjacent platforms extend that core so the enterprise
                         moves as a system, not a set of silos.
                     </p>

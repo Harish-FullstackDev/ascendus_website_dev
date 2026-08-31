@@ -75,8 +75,8 @@ export default function GovernanceSAPDataDepth() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] text-center"
             >
-                <h2 className="text-[#0d0c22] text-2xl sm:text-[28px] font-medium">Governance &amp; SAP Data Depth</h2>
-                <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
+                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Governance &amp; SAP Data Depth</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The principles that shape our data architecture approach.
                 </p>
             </motion.div>
@@ -100,16 +100,16 @@ export default function GovernanceSAPDataDepth() {
                         >
                             <div className="bg-[#0A2B3E] w-full sm:w-[439px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-between gap-4 text-white">
                                 <div className="flex flex-col gap-4 sm:gap-6">
-                                    <p className="text-xl sm:text-2xl font-medium">{active.title}</p>
-                                    <p className="text-white sm:mt-25 text-sm sm:text-base font-light leading-relaxed">
+                                    <h2 className="text-xl sm:text-2xl font-semibold">{active.title}</h2>
+                                    <p className="text-white sm:mt-25 text-sm sm:text-lg font-light leading-relaxed">
                                         {active.desc}
                                     </p>
                                 </div>
                             </div>
                             <div className="hidden sm:flex bg-white w-full sm:w-[439px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex-col justify-between gap-4 text-black">
                                 <div className="flex flex-col gap-4 sm:gap-6">
-                                    <p className="text-xl sm:text-2xl font-medium">{next.title}</p>
-                                    <p className="text-[#3D3D4E] sm:mt-25 text-sm sm:text-base font-light leading-relaxed">
+                                    <h2 className="text-xl sm:text-2xl font-semibold">{next.title}</h2>
+                                    <p className="text-[#55595E] sm:mt-25 text-sm sm:text-lg font-light leading-relaxed">
                                         {next.desc}
                                     </p>
                                 </div>

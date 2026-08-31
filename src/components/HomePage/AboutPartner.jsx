@@ -18,7 +18,7 @@ export default function AboutPartner() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex-1 flex flex-col gap-2"
                 >
-                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold leading-[1.4] w-full">
+                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold w-full">
                         A Technology Partner Built for Enterprise Complexity
                     </h2>
                     <p className="mt-4 text-[#55595E] text-lg font-light leading-[1.5]">

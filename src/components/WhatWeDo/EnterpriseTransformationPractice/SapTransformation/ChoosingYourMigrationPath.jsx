@@ -34,8 +34,8 @@ const PATHS = [
 function IntroText() {
     return (
         <>
-            <h2 className="text-[#10161d] text-2xl sm:text-[27px] font-medium">Choosing Your Migration Path</h2>
-            <p className="text-[#4a5568] text-lg font-light leading-[1.4]">
+            <h2 className="text-[#2E3033] text-2xl sm:text-[27px] font-semibold">Choosing Your Migration Path</h2>
+            <p className="text-[#55595E] text-lg font-light leading-[1.4]">
                 End-to-end migration from ECC to S/4HANA, planned around your compliance deadlines and cutover
                 windows, not a generic timeline.
             </p>
@@ -86,7 +86,7 @@ export default function ChoosingYourMigrationPath() {
                             <Image src={path.image} alt="" fill className="object-cover" />
                             <div className="absolute inset-0 bg-black/60" />
                             <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
-                                <p className="text-white text-2xl font-medium">{path.title}</p>
+                                <h2 className="text-white text-2xl font-semibold">{path.title}</h2>
                                 <p className="text-white/85 text-base font-light leading-[1.4]">{path.desc}</p>
                             </div>
                         </motion.div>

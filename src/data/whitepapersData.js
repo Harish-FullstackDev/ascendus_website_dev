@@ -12,7 +12,7 @@ export const whitepapersData = [
       "A practical framework for leadership teams to classify, retain, or retire SAP customizations before migrating to S/4HANA — without losing competitive differentiation.",
     cover_image: "/blog/2807cc98147a21e2764581df7af98cfbb12fa24a.jpg",
     publish_date: "2026-01-20",
-    author: "Ascendus Advisory Research",
+    author: "Harish, Fullstack developer",
     metaLine: "18 pages · PDF",
     tags: ["Clean Core", "SAP S/4HANA", "Enterprise Transformation"],
     fileInfo: "18 pages · PDF · Updated January 2026",

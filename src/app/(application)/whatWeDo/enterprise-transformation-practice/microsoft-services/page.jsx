@@ -44,7 +44,7 @@ const page = () => {
             <ReadyToTransform
                 title="Running Microsoft and SAP side by side?"
                 description="We can show you where the two are working against each other, and where they should be working together."
-                buttonLabel="Book a Consultation"
+                buttonLabel="Book a Call"
                 bgImage={ctaBg}
             />
 

@@ -2,8 +2,54 @@
 // Schema intentionally mirrors the Supabase blogs shape for rendering compatibility.
 
 export const caseStudiesData = [
-  {
+   {
     id: 1,
+    slug: "sap-s4hana-migration-gcc",
+    title: "SAP S/4HANA Migration in the GCC: Turning ZATCA E-Invoicing Compliance into a Digital Transformation Advantage",
+    type: "Case Study",
+    category: "Enterprise Software",
+    summary:
+      "Saudi Arabia's ZATCA e-invoicing mandate changed how finance and IT teams inside SAP-run enterprises talk to each other. What started as a tax compliance requirement is now forcing a harder look at core ERP data, invoice workflows, and system architecture. Enterprises in the UAE, Qatar, and Bahrain are watching closely, since similar real-time reporting requirements are following the same trajectory across the region.",
+    cover_image: "/ServicePage/HANA.png",
+    publish_date: "2026-04-27",
+    author: "Tharanidharen, Graphic Designer",
+    metaLine: "Enterprise Software · 7 minute read",
+    tags: ["SAP S/4HANA", "ZATCA", "E-Invoicing", "GCC", "Digital Transformation", "ERP"],
+    highlights: [
+      { label: "Target Region", value: "GCC" },
+      { label: "Compliance Focus", value: "ZATCA E-Invoicing" },
+      { label: "Core Technology", value: "SAP S/4HANA" },
+    ],
+    sections: [
+      {
+        heading: "Why Compliance Projects Alone Don't Solve the Underlying Problem",
+        content:
+          "Most SAP landscapes across the GCC were built up over a decade or more, often across separate instances for different countries or business units. E-invoicing mandates simply surface problems that were already there. Common patterns include:\n\n- Vendor, material, and tax master data maintained inconsistently across business units and country instances\n- Manual reconciliation between invoicing, tax reporting, and the finance close process\n- Heavy custom code layered onto SAP ECC over ten or more years of use\n- Separate localized instances for Saudi Arabia, the UAE, and other GCC markets, each patched on its own schedule\n- Limited real-time visibility into tax exposure and compliance status at the group level\n\nThese issues don't go away once ZATCA compliance is achieved. They resurface with the next mandate, the next audit, or the next attempt to consolidate reporting across markets. This is the case for treating the current moment as an opportunity to move to SAP S/4HANA, rather than as a reason to add another layer on top of ECC.\n\nThree forces are converging at the same time driving SAP S/4HANA adoption:\n\n- SAP's mainstream maintenance for ECC 6.0 ends in 2027, with extended maintenance available afterward at additional cost and reduced innovation\n- National digital transformation strategies, including Saudi Arabia's Vision 2030, are pushing government and private-sector enterprises toward modern, cloud-capable systems\n- Tax authorities such as ZATCA in Saudi Arabia and the Federal Tax Authority in the UAE are moving toward real-time or near real-time invoice and tax reporting\n\nTogether, they make a stronger case for planning the move to SAP S/4HANA now, with compliance built into the design rather than added after go-live.",
+      },
+      {
+        heading: "What SAP S/4HANA Changes at the Core",
+        content:
+          "SAP S/4HANA is SAP's next-generation ERP suite, built on an in-memory database (SAP HANA) that processes transactions and analytics in the same system, instead of moving data between separate operational and reporting layers.\n\nFor a finance or tax team, this means invoice status, VAT position, and reporting obligations can be checked in real time rather than reconstructed at month-end. For an IT team, it means a smaller technical footprint, standardized data models, and a platform SAP continues to invest in for the next decade.",
+      },
+      {
+        heading: "Building Compliance Into the Migration",
+        content:
+          "Start With a Clean Core: A clean core keeps custom code out of the standard SAP system and pushes extensions to a separate layer, using SAP's Business Technology Platform where needed. This makes future upgrades, including the next mandate SAP or a regulator introduces, far less disruptive.\n\nTreat Localization as Configuration, Not Custom Code: ZATCA e-invoicing, VAT reporting, and similar GCC requirements are increasingly available through SAP's standard localization and Document and Reporting Compliance capabilities. Configuring these as intended, instead of building bespoke ABAP around them, keeps the system upgradeable and audit-ready.\n\nConnect Tax Reporting to the Migration Roadmap Early: E-invoicing and VAT reporting requirements should sit inside the functional design of the migration from day one, not arrive as a parallel workstream managed by a different team. This avoids rework and keeps the go-live date realistic.",
+      },
+      {
+        heading: "A Practical Framework for GCC Enterprises Considering the Move",
+        content:
+          "- Assess: review current ECC customizations, master data quality, and country-specific compliance gaps\n- Clean: retire unused custom code and standardize master data before migration, not after\n- Migrate: move to SAP S/4HANA using the conversion path suited to the current landscape, whether greenfield, brownfield, or a hybrid selective approach\n- Localize: configure ZATCA, VAT, and other GCC-specific reporting using standard SAP capabilities\n- Optimize: use the improved data foundation for real-time reporting, analytics, and future automation\n\nPlanning the Move: Compliance mandates like ZATCA e-invoicing are a forcing function, not the goal. Enterprises that treat the mandate as a reason to fix master data, retire technical debt, and move to SAP S/4HANA end up with a platform that can absorb the next regulatory change with configuration, not another emergency project.",
+      },
+      {
+        heading: "FAQ's",
+        content:
+          "1. Does an SAP S/4HANA migration automatically ensure ZATCA compliance?\nNo. SAP S/4HANA provides the platform and standard localization tools, including Document and Reporting Compliance, but ZATCA compliance still requires correct configuration, master data quality, and integration with an accredited e-invoicing solution provider.\n\n2. Can existing ECC customizations be carried over to SAP S/4HANA?\nSome can, but a straight lift-and-shift of old custom code usually recreates the same maintenance burden in the new system. Most migrations use the move as an opportunity to review which customizations are still needed and which can be retired or replaced with standard functionality.\n\n3. How long does a typical SAP S/4HANA migration take for a mid-size GCC enterprise?\nTimelines vary with scope and landscape complexity, but a mid-size enterprise migrating a single-country instance typically plans for nine to eighteen months from assessment through go-live, with compliance localization run as a parallel workstream.\n\n4. Is a full greenfield reimplementation always the right approach?\nNot always. Enterprises with heavily customized, stable ECC environments sometimes benefit more from a brownfield conversion or a selective data transition, which preserves historical data and proven processes while still moving to the new platform.",
+      },
+    ],
+  },
+  {
+    id: 2,
     slug: "fintech-ux-wireframing-accelerator",
     title: "How Ascendus Slashed a FinTech Client's Development Rework by 60% Through UX First Wireframing",
     type: "Case Study",
@@ -12,7 +58,7 @@ export const caseStudiesData = [
       "A fast growing FinTech startup engaged Ascendus to bring structure to a product that had stalled in development. By introducing a disciplined, UX first wireframing process before any code was written, the team eliminated the root cause of scope creep and expensive late stage rework.",
     cover_image: "/ServicePage/software-delivery-team.jpg",
     publish_date: "2026-05-12",
-    author: "Harish D",
+    author: "Harish, Fullstack developer",
     metaLine: "Financial Technology · 10 week engagement",
     tags: ["UX Design", "Wireframing", "Product Engineering", "FinTech", "Agile"],
     highlights: [
@@ -44,16 +90,16 @@ export const caseStudiesData = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     slug: "healthcare-mobile-security-architecture",
     title: "Securing a Healthcare Mobile Platform: Ascendus Implements Zero Compromise Security Architecture",
     type: "Case Study",
     category: "Healthcare & Life Sciences",
     summary:
       "A regional healthcare provider needed to launch a patient facing mobile application that handled sensitive medical records and prescription data. Ascendus designed and implemented an end to end mobile security architecture that ensured regulatory compliance, protected patient data, and passed a third party penetration test with zero critical findings.",
-    cover_image: "/ServicePage/HANA.png",
+    cover_image: "/trustcenter/BackgroundImage.png",
     publish_date: "2026-07-21",
-    author: "Dhanoosh P",
+    author: "Dhanoosh, Frontend Developer",
     metaLine: "Healthcare & Life Sciences · 14 week engagement",
     tags: ["Mobile Security", "Healthcare", "Compliance", "Encryption", "Penetration Testing"],
     highlights: [
@@ -84,6 +130,7 @@ export const caseStudiesData = [
       },
     ],
   },
+ 
 ];
 
 export const getCaseStudyBySlug = (slug) =>

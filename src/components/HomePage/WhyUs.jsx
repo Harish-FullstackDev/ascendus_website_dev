@@ -20,7 +20,7 @@ const FEATURES = [
     {
         icon: fullDeliveryIcon,
         title: "Full Delivery Capability",
-        desc: "One team owns strategy, implementation, and support — no vendor handoffs, no lost context.",
+        desc: "One team owns strategy, implementation, and support no vendor handoffs, no lost context.",
     },
     {
         icon: regionalComplianceIcon,
@@ -30,7 +30,7 @@ const FEATURES = [
     {
         icon: executionDisciplineIcon,
         title: "Execution Discipline",
-        desc: "Flexible, standards-based architectures that minimize vendor lock-in and protect your long-term roadmap.",
+        desc: "Flexible, standards-based architectures that minimize vendor lock-in and protect your longterm roadmap.",
     },
 ];
 
@@ -47,8 +47,8 @@ export default function WhyUs() {
                     className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6"
                 >
                     <div className="flex flex-col gap-2 max-w-[910px]">
-                        <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold capitalize leading-relaxed ">
-                            Everything an enterprise technology estate needs, under one roof
+                        <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold  leading-relaxed ">
+                            Everything an Enterprise Technology Estate Needs, Under One Roof
                         </h2>
                         <p className="text-[#55595E] text-lg font-light leading-[1.5] max-w-[600px]">
                             Strategy, implementation, integration, security, and managed operations delivered by

@@ -14,10 +14,10 @@ export default function ChooseHowYouWantToWorkWithUs() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-4 w-full sm:flex-1 pr-0 sm:pr-[80px]"
             >
-                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">
+                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
                     Choose how you want to work with us
                 </h2>
-                <p className="text-[#4a5568] text-xl font-light leading-[1.5]">
+                <p className="text-[#55595E] text-xl font-light leading-[1.5]">
                     Enterprise technology rarely fails on ambition. It fails on execution: systems that don&apos;t talk
                     to each other, projects that stall after go-live, compliance treated as an afterthought instead
                     of a starting point. Closing that gap is the work.

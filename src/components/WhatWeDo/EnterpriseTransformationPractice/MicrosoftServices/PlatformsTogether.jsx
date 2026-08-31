@@ -47,10 +47,10 @@ export default function PlatformsTogether() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center"
             >
-                <h2 className="text-[#0d0c22] text-2xl sm:text-[28px] font-medium">
+                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
                     How the Two Platforms Work Together
                 </h2>
-                <p className="text-[#3d3d4e] text-lg font-light">
+                <p className="text-[#55595E] text-lg font-light">
                     Designed as one landscape, not negotiated between two vendors
                 </p>
             </motion.div>
@@ -69,7 +69,7 @@ export default function PlatformsTogether() {
                         <Image src={step.image} alt="" fill className="object-cover" />
                         <div className="absolute inset-0 bg-black/60" />
                         <div className="absolute inset-0 flex flex-col justify-end gap-3 p-6">
-                            <p className="text-white text-2xl font-medium leading-normal">{step.title}</p>
+                            <h2 className="text-white text-2xl font-semibold leading-normal">{step.title}</h2>
                             {step.desc && (
                                 <p className="text-white text-base font-light leading-[1.6]">{step.desc}</p>
                             )}
@@ -114,12 +114,12 @@ export default function PlatformsTogether() {
                                     className={`absolute inset-0 flex flex-col justify-between gap-3 transition-[padding] duration-500 ${isActive ? "p-6" : "p-4"
                                         }`}
                                 >
-                                    <p className="text-white text-2xl font-medium leading-normal">{step.title}</p>
+                                    <h2 className="text-white text-2xl font-semibold leading-normal">{step.title}</h2>
                                     {step.desc && (
                                         <p
                                             className={`text-white/85 text-lg font-light leading-[1.6] overflow-hidden transition-all duration-300 ease-out ${isActive
-                                                    ? "max-h-40 opacity-100 delay-500"
-                                                    : "max-h-0 opacity-0"
+                                                ? "max-h-40 opacity-100 delay-500"
+                                                : "max-h-0 opacity-0"
                                                 }`}
                                         >
                                             {step.desc}

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import codeBg from "@/assets/WhatWeDo/Business Advisory/new/Software.jpg";
+import codeBg from "@/assets/WhatWeDo/Business Advisory/webp/Business_Software_Scalability.webp";
 
 export default function SoftwareScalability() {
     return (

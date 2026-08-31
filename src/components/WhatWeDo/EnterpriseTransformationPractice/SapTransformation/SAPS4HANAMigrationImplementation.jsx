@@ -116,7 +116,7 @@ export default function SAPS4HANAMigrationImplementation() {
                     transition={{ duration: 0.4, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
                 >
-                    <h2 className="text-[#10161d] text-2xl sm:text-[24px] font-medium">{active.title}</h2>
+                    <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-semibold">{active.title}</h2>
                     <p className="text-[#6c6c6c] text-lg font-light leading-[1.4]">{active.desc}</p>
                 </motion.div>
             </div>

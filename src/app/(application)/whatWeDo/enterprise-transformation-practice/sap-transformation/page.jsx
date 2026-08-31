@@ -45,7 +45,7 @@ const page = () => {
             <ReadyToTransform
                 title="Not sure where your SAP landscape stands?"
                 description="A landscape assessment shows exactly what migration path fits, and how much runway you actually have left."
-                buttonLabel="Book a Consultation"
+                buttonLabel="Book a Call"
                 bgImage={ctaBg}
             />
 

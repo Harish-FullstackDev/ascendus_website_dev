@@ -45,7 +45,7 @@ export default function WhyPartnerWithUs() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-4 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">Why Partner With Us For This</h2>
+                    <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-semibold">Why Partner With Us For This</h2>
                 </motion.div>
 
                 <motion.div
@@ -62,8 +62,8 @@ export default function WhyPartnerWithUs() {
                                     <Image src={reason.icon} alt="" fill className="object-contain" />
                                 </div>
                                 <div className="flex-1 min-w-0 flex flex-col gap-2 sm:gap-3">
-                                    <p className="text-[#10161d] text-xl sm:text-2xl font-medium">{reason.title}</p>
-                                    <p className="text-[#4a5568] text-base sm:text-lg font-light">{reason.desc}</p>
+                                    <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{reason.title}</h2>
+                                    <p className="text-[#55595E] text-base sm:text-lg font-light">{reason.desc}</p>
                                 </div>
                             </div>
                             <div className="h-px w-full bg-[#d3dae2]" />
