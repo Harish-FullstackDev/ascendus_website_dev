@@ -28,9 +28,9 @@ export default function LearningDevelopment() {
                 >
                     <div>
                         <p className="text-lg text-black">Growth & Development</p>
-                        <h2 className="text-2xl font-medium text-black mt-1">Build depth through the work you deliver.</h2>
+                        <h2 className="text-2xl font-semibold text-[#2E3033] mt-1">Build depth through the work you deliver.</h2>
                     </div>
-                    <div className="text-sm sm:text-base text-[#6c6c6c] leading-relaxed space-y-1">
+                    <div className="text-sm sm:text-lg text-[#55595E] leading-relaxed space-y-1">
                         <p>
                             We believe professional growth happens when people are trusted with increasingly
                             complex problems.
@@ -41,13 +41,13 @@ export default function LearningDevelopment() {
                             delivery judgement.
                         </p>
                     </div>
-                    <button
+                    {/* <button
                         type="button"
                         aria-label="Learn more about growth and development"
                         className="flex items-center justify-center size-9 rounded-full border border-[#6c6c6c] text-[#6c6c6c] transition-colors hover:bg-black hover:text-white hover:border-black"
                     >
                         <ArrowRight className="w-4 h-4" />
-                    </button>
+                    </button> */}
                 </motion.div>
             </div>
         </section>

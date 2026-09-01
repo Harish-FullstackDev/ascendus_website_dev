@@ -28,7 +28,7 @@ export default function ReadyToTransform({
         <>
             <section className="relative z-0 w-full overflow-hidden">
                 <Image src={bgImage} alt="" fill className="object-cover" />
-                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute inset-0 bg-black/70" />
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ export default function ReadyToTransform({
                         }`}
                 >
                     <div className="flex flex-col w-full md:gap-12">
-                        <h2 className="text-2xl sm:text-4xl font-light text-white">
+                        <h2 className="text-2xl sm:text-5xl font-semibold text-white">
                             {title}
                         </h2>
 

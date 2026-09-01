@@ -74,10 +74,10 @@ const ContactHeader = () => {
                   Contact Us
                 </p>
                 <div className="mt-3 sm:mt-4 h-px w-full bg-white/40" />
-                <h1 className="text-white text-2xl sm:text-4xl lg:text-5xl font-medium capitalize mt-6 sm:mt-8 leading-tight">
+                <h2 className="text-white text-2xl sm:text-4xl lg:text-5xl font-semibold capitalize mt-6 sm:mt-8 leading-tight">
                   Get in touch with us. We're <br />
                   here to assist you.
-                </h1>
+                </h2>
               </motion.div>
             </div>
           </div>

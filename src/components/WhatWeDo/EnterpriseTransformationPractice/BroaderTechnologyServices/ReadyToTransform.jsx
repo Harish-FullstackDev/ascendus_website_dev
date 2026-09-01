@@ -15,7 +15,7 @@ import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
 export default function ReadyToTransform({
     title = "Ready to Transform Your Business?",
     description = "Let's Build innovative Solution that drive growth efficiency for your Business",
-    buttonLabel = "Book a Consultation",
+    buttonLabel = "Book a call",
     bgImage = ctaBg,
     hasOverlapAbove = false,
 }) {
@@ -29,7 +29,7 @@ export default function ReadyToTransform({
         <>
             <section className="relative z-0 w-full overflow-hidden">
                 <Image src={bgImage} alt="" fill className="object-cover" />
-                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute inset-0 bg-black/40" />
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -45,7 +45,7 @@ export default function ReadyToTransform({
                         full screen on one line, which is what was actually making it read
                         as "too big": it's the missing width cap, not the type scale itself. */}
                     <div className="flex flex-col w-full gap-3 md:gap-6">
-                        <h2 className="max-w-[1099px] mx-auto text-3xl sm:text-4xl font-medium text-white">
+                        <h2 className="max-w-[1099px] mx-auto text-3xl sm:text-5xl font-semibold text-white">
                             {title}
                         </h2>
 

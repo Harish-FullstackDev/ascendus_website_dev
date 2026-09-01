@@ -45,8 +45,8 @@ export default function WorkSequence() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-4 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">How This Work Gets Sequenced</h2>
-                    <p className="text-[#4a5568] text-lg font-light">
+                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">How This Work Gets Sequenced</h2>
+                    <p className="text-[#55595E] text-lg font-light">
                         Every engagement follows the same order, so nothing that surrounds SAP gets built before the
                         landscape it depends on is understood.
                     </p>
@@ -66,7 +66,7 @@ export default function WorkSequence() {
                                     <Image src={step.icon} alt="" fill className="object-contain" />
                                 </div>
                                 <div className="flex-1 min-w-0 flex flex-col gap-2 sm:gap-3">
-                                    <p className="text-[#10161d] text-xl sm:text-2xl font-medium">{step.title}</p>
+                                    <h2 className="text-[#10161d] text-xl sm:text-2xl font-semibold">{step.title}</h2>
                                     <p className="text-[#4a5568] text-base sm:text-lg font-light">{step.desc}</p>
                                 </div>
                             </div>

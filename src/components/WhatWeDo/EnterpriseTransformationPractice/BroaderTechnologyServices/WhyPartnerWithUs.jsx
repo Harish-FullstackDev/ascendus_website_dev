@@ -50,8 +50,8 @@ export default function WhyPartnerWithUs() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-[#0d0c22] text-2xl sm:text-[28px] font-medium">Why Partner With Us For This</h2>
-                <p className="text-[#3d3d4e] text-lg font-light">
+                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Why Partner With Us For This</h2>
+                <p className="text-[#55595E] text-lg font-light">
                     Core engineering capabilities for data platforms and business intelligence
                 </p>
             </motion.div>
@@ -70,7 +70,7 @@ export default function WhyPartnerWithUs() {
                         <Image src={reason.image} alt="" fill className="object-cover" />
                         <div className="absolute inset-0 bg-black/60" />
                         <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
-                            <p className="text-white text-xl font-normal">{reason.title}</p>
+                            <h2 className="text-white text-xl font-semibold">{reason.title}</h2>
                             <p className="text-white/85 text-sm font-light max-w-[280px]">{reason.desc}</p>
                         </div>
                     </motion.div>
@@ -96,7 +96,7 @@ export default function WhyPartnerWithUs() {
                         />
                         <div className="absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/70" />
                         <div className="absolute inset-0 flex items-start justify-start px-6 py-10 text-left">
-                            <p className="text-white text-xl sm:text-3xl font-normal">{reason.title}</p>
+                            <h2 className="text-white text-xl sm:text-3xl font-semibold">{reason.title}</h2>
                         </div>
                         <div className="absolute inset-x-0 bottom-0 px-6 pb-6 grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out group-hover:grid-rows-[1fr]">
                             <div className="overflow-hidden">

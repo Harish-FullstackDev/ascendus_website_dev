@@ -28,22 +28,22 @@ export default function OurCulture() {
                 >
                     <div>
                         <p className="text-lg text-black">Life Here</p>
-                        <h2 className="text-2xl font-medium text-black mt-1">A team built around how the work gets done.</h2>
+                        <h2 className="text-2xl font-semibold text-[#2E3033] mt-1">A team built around how the work gets done.</h2>
                     </div>
-                    <p className="text-sm sm:text-base text-[#6c6c6c] leading-relaxed">
+                    <p className="text-sm sm:text-lg text-[#55595E] font-light leading-relaxed">
                         We value clarity, accountability and collaboration because complex work demands all three.
                         People are expected to contribute, challenge assumptions and take responsibility for the
                         quality of what they deliver. There is no single profile for success here. What matters is
                         curiosity, technical discipline, a willingness to learn and the ability to work well with
                         people across different disciplines.
                     </p>
-                    <button
+                    {/* <button
                         type="button"
                         aria-label="Meet our team"
                         className="flex items-center justify-center size-9 rounded-full border border-[#6c6c6c] text-[#6c6c6c] transition-colors hover:bg-black hover:text-white hover:border-black"
                     >
                         <ArrowRight className="w-4 h-4" />
-                    </button>
+                    </button> */}
                 </motion.div>
             </div>
         </section>

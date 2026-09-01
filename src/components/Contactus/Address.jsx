@@ -21,10 +21,10 @@ const ContactInfo = () => {
   return (
     <div className="bg-white p-8 lg:p-12">
       <div className="max-w-md">
-        <h2 className="text-2xl lg:text-2xl text-gray-900 mb-2">
+        <h2 className="text-2xl lg:text-2xl text-[#2E3033] font-semibold mb-2">
           Contact Information
         </h2>
-        <p className="text-gray-600 mb-8 lg:mb-12">
+        <p className="text-[#55595E] font-light mb-8 lg:mb-12">
           We're here to help. Reach out using the details below.
         </p>
 
@@ -97,7 +97,7 @@ const ContactInfo = () => {
               aria-haspopup="true"
               aria-expanded={isOpen || isBottomSheetOpen}
             >
-              <p className="text-black font-semibold">Regional Headquarter</p>
+              <p className="text-[#2E3033] font-semibold">Regional Headquarter</p>
               <p>
                 Riyadh, KSA
               </p>

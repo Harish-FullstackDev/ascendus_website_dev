@@ -43,7 +43,7 @@ const page = () => {
             <ReadyToTransform
                 title="A short technical review shows where integration, data, or security work is quietly adding risk."
                 description="A focused technical review of your surrounding landscape — integration, data, and security — shows exactly where the risk sits and what to fix first."
-                buttonLabel="Book a Consultation"
+                buttonLabel="Book a Call"
                 bgImage={ctaBg}
             />
 

@@ -71,9 +71,9 @@ export default function InsightsListing({
         ref={containerRef}
         style={{
           y: contentY,
-          opacity,
+          // opacity,
         }}
-        className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-gradient-to-b from-sky-50 via-white to-slate-100 flex-grow w-full mx-auto px-6 py-12 md:p-16 md:pb-30"
+        className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white flex-grow w-full mx-auto px-6 py-12 md:p-16 md:pb-30"
       >
 
         {/* Category Filter Chips */}

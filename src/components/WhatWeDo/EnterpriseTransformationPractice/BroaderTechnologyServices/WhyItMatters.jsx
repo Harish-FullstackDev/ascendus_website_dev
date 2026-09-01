@@ -33,7 +33,7 @@ export default function WhyItMatters() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative flex flex-col gap-2 max-w-[767px]"
             >
-                <h2 className="text-white text-2xl sm:text-[28px] font-medium">Why It Matters</h2>
+                <h2 className="text-white text-2xl sm:text-[28px] font-semibold">Why It Matters</h2>
                 <p className="text-white/90 text-lg font-light">
                     Integration is where most transformations actually fail
                 </p>

@@ -81,7 +81,7 @@ export default function WhatYouWantToDo() {
                             />
                         </div>
                         <div className="p-5 text-center">
-                            <h2 className="text-2xl font-semibold font-medium text-[#2E3033]">{card.title}</h2>
+                            <h2 className="text-2xl font-semibold text-[#2E3033]">{card.title}</h2>
                             <p className="mt-2 text-lg font-light text-[#55595E]">{card.description}</p>
                         </div>
                     </motion.div>
