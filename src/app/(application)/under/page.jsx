@@ -1,67 +1,9 @@
-"use client";
+import PageClient from "./PageClient";
 
-import Link from "next/link";
-import { FaLinkedinIn, FaInstagram, FaXTwitter } from "react-icons/fa6";
+export const metadata = {
+  robots: { index: false, follow: false },
+};
 
-export default function MaintenancePage() {
-  return (
-    <main className="min-h-screen bg-white flex items-center justify-center px-6">
-      <div className="max-w-4xl text-center">
-        {/* Heading */}
-        <h1 className="text-3xl md:text-3xl font-semibold text-gray-900 mb-6">
-          We're sorry! The site is under maintenance right now.
-        </h1>
-
-        {/* Description */}
-        <div className="space-y-1 text-gray-600 text-base md:text-lg">
-          <p>
-            Our website is currently down for scheduled maintenance.
-            We'll return shortly. We appreciate your patience.
-          </p>
-
-          <p>Contact us for further information.</p>
-
-          <Link
-            href="mailto:admin@isupportz.com"
-            className="text-sky-600 hover:text-sky-700 transition-colors font-medium"
-          >
-            admin@isupportz.com
-          </Link>
-        </div>
-
-        {/* Social Section */}
-        <div className="mt-20">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8">
-            Follow Us!
-          </h2>
-
-          <div className="flex justify-center items-center gap-4">
-            <Link
-              href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
-              target="_blank"
-              className="w-11 h-11 rounded-full bg-[#05649A] hover:scale-110 transition-all duration-300 flex items-center justify-center text-white"
-            >
-              <FaLinkedinIn size={18} />
-            </Link>
-
-            <Link
-              href="https://www.instagram.com/isupportz.official?igsh=MWF5Z3M2MXFrbXI3cg=="
-              target="_blank"
-              className="w-11 h-11 rounded-full bg-[#05649A] hover:scale-110 transition-all duration-300 flex items-center justify-center text-white"
-            >
-              <FaInstagram size={18} />
-            </Link>
-
-            <Link
-              href="https://x.com/isupportz"
-              target="_blank"
-              className="w-11 h-11 rounded-full bg-[#05649A] hover:scale-110 transition-all duration-300 flex items-center justify-center text-white"
-            >
-              <FaXTwitter size={16} />
-            </Link>
-          </div>
-        </div>
-      </div>
-    </main>
-  );
+export default function Page() {
+  return <PageClient />;
 }

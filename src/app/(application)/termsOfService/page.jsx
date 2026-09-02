@@ -5,6 +5,8 @@ import React from 'react'
 
 export const metadata = {
   alternates: { canonical: "/termsOfService" },
+  title: "Terms & Conditions",
+  description: "The terms governing your use of the Ascendus website, including acceptable use, intellectual property and limitation of liability.",
 }
 
 const page = () => {
