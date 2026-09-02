@@ -55,7 +55,7 @@ export default function MicroservicesArchitecture() {
                         {panel.image ? (
                             <Image
                                 src={panel.image}
-                                alt=""
+                                alt={panel.title}
                                 fill
                                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                             />

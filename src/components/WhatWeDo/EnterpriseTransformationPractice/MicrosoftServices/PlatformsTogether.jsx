@@ -66,7 +66,7 @@ export default function PlatformsTogether() {
                         transition={{ duration: 0.5, delay: index * 0.08 }}
                         className="relative w-full h-[220px] overflow-hidden"
                     >
-                        <Image src={step.image} alt="" fill className="object-cover" />
+                        <Image src={step.image} alt={step.title} fill className="object-cover" />
                         <div className="absolute inset-0 bg-black/60" />
                         <div className="absolute inset-0 flex flex-col justify-end gap-3 p-6">
                             <h2 className="text-white text-2xl font-semibold leading-normal">{step.title}</h2>
@@ -103,7 +103,7 @@ export default function PlatformsTogether() {
                                 className={`absolute bottom-0 inset-x-0 overflow-hidden transition-[height] duration-500 ease-out ${isActive ? "h-[458px] z-20" : "h-[320px] z-10"
                                     }`}
                             >
-                                <Image src={step.image} alt="" fill className="object-cover" />
+                                <Image src={step.image} alt={step.title} fill className="object-cover" />
 
                                 <div
                                     className={`absolute inset-0 transition-colors duration-500 ${isActive ? "bg-black/70" : "bg-black/50"

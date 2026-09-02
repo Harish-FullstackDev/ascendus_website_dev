@@ -83,7 +83,7 @@ export default function GovernanceSAPDataDepth() {
 
             <div className="relative w-full h-[520px] sm:h-[592px] overflow-hidden">
                 <div className="absolute inset-y-0 left-0 w-full sm:w-1/2 bg-[#5c5c5c]">
-                    <Image src={panelImage} alt="" fill className="object-cover" />
+                    <Image src={panelImage} alt="SAP data governance panel screenshot" fill className="object-cover" />
                 </div>
 
                 <div className="absolute inset-x-4 sm:inset-x-auto sm:right-0 top-1/2 -translate-y-1/2 flex flex-col sm:flex-row gap-4 sm:gap-[21px]">

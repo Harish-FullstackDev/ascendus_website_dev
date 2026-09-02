@@ -83,7 +83,7 @@ export default function ChoosingYourMigrationPath() {
                             transition={{ duration: 0.5, delay: index * 0.08 }}
                             className="relative w-full h-[220px] overflow-hidden"
                         >
-                            <Image src={path.image} alt="" fill className="object-cover" />
+                            <Image src={path.image} alt={`${path.title} SAP migration path`} fill className="object-cover" />
                             <div className="absolute inset-0 bg-black/60" />
                             <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
                                 <h2 className="text-white text-2xl font-semibold">{path.title}</h2>
@@ -134,7 +134,7 @@ export default function ChoosingYourMigrationPath() {
                         >
                             <Image
                                 src={path.image}
-                                alt=""
+                                alt={`${path.title} SAP migration path`}
                                 fill
                                 className={`object-cover transition-transform duration-700 ease-out ${isActive ? "scale-105" : ""
                                     }`}

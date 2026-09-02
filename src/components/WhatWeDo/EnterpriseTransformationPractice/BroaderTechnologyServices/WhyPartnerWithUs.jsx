@@ -81,7 +81,7 @@ export default function WhyPartnerWithUs() {
                         transition={{ duration: 0.5, delay: index * 0.08 }}
                         className="relative w-full h-[220px] overflow-hidden"
                     >
-                        <Image src={reason.image} alt="" fill className="object-cover" />
+                        <Image src={reason.image} alt={reason.title} fill className="object-cover" />
                         <div className="absolute inset-0 bg-black/60" />
                         <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
                             <h2 className="text-white text-xl font-semibold">{reason.title}</h2>
@@ -108,7 +108,7 @@ export default function WhyPartnerWithUs() {
                         >
                             <Image
                                 src={reason.image}
-                                alt=""
+                                alt={reason.title}
                                 fill
                                 className={`object-cover transition-transform duration-700 ease-out ${isActive ? "scale-105" : ""}`}
                             />

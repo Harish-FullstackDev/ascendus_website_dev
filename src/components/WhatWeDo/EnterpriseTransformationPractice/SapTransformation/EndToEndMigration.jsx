@@ -14,7 +14,7 @@ export default function EndToEndMigration() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative w-full sm:w-[442px] aspect-[442/417] shrink-0 self-start overflow-hidden"
             >
-                <Image src={whyItMattersImage} alt="" fill className="object-cover" />
+                <Image src={whyItMattersImage} alt="Why timely SAP migration matters" fill className="object-cover" />
             </motion.div>
 
             {/* Figma: no eyebrow label above the heading here (unlike Overview),

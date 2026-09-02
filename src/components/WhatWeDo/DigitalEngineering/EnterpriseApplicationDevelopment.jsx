@@ -96,7 +96,7 @@ export default function EnterpriseApplicationDevelopment() {
                                     >
                                         <p className="text-black text-xl sm:text-2xl font-light">{tab.title}</p>
                                         <div className="relative w-full h-[180px] sm:h-[243px] bg-black shrink-0">
-                                            <Image src={tab.image} alt="" fill className="object-cover" />
+                                            <Image src={tab.image} alt={tab.title} fill className="object-cover" />
                                         </div>
                                         <p className="text-[#6c6c6c] text-base sm:text-lg font-light">{tab.desc}</p>
                                     </motion.div>

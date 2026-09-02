@@ -88,7 +88,7 @@ export default function DigitalStrategy() {
                         transition={{ duration: 0.5, delay: index * 0.08 }}
                         className="relative w-full h-[220px] overflow-hidden"
                     >
-                        <Image src={card.image} alt="" fill className="object-cover" />
+                        <Image src={card.image} alt={card.title} fill className="object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30" />
                         <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
                             <h2 className="text-white text-xl font-semibold">{card.title}</h2>
@@ -119,7 +119,7 @@ export default function DigitalStrategy() {
                             onMouseEnter={() => setActiveIndex(index)}
                             className="relative w-full aspect-[278/290] overflow-hidden shadow-[0px_2px_8px_rgba(0,0,0,0.19)]"
                         >
-                            <Image src={card.image} alt="" fill className="object-cover" />
+                            <Image src={card.image} alt={card.title} fill className="object-cover" />
                             <div
                                 className={`absolute inset-0 transition-colors duration-500 ${isActive ? "bg-black/70" : "bg-black/20"
                                     }`}

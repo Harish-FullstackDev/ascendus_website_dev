@@ -53,7 +53,7 @@ export default function ExtendedReality() {
                         </div>
                         <p className="text-[#6c6c6c] text-sm font-light mt-3">{card.desc}</p>
                         <div className="relative w-full h-[185px] mt-8">
-                            <Image src={card.image} alt="" fill className="object-cover" />
+                            <Image src={card.image} alt={card.title} fill className="object-cover" />
                         </div>
                     </motion.div>
                 ))}

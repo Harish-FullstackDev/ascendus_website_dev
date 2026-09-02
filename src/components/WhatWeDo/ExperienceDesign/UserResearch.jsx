@@ -70,7 +70,7 @@ export default function UserResearch() {
                         className="bg-white shadow-[0px_2px_7.5px_rgba(0,0,0,0.19)] flex flex-col items-center pb-3"
                     >
                         <div className="relative w-full aspect-[470/263]">
-                            <Image src={card.image} alt="" fill className="object-cover" />
+                            <Image src={card.image} alt={card.title} fill className="object-cover" />
                         </div>
                         <div className="w-full text-center px-4 pt-3">
                             <p className="text-black text-base font-semibold">{card.title}</p>

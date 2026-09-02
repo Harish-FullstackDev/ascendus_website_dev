@@ -140,7 +140,7 @@ export default function CapabilitiesAccordion() {
                     equivalent section. */}
                 <div className="w-full lg:w-[60%] flex flex-col mt-6 lg:mt-0">
                     <div className="relative bg-[#1c5f85] w-full aspect-[825/587] overflow-hidden">
-                        <Image src={panelImage} alt="" fill className="object-cover" />
+                        <Image src={panelImage} alt="Microsoft Services capabilities panel diagram" fill className="object-cover" />
                         {/* Card overlay: sm and up only — see the matching fix and full
                             explanation in SapTransformation/SAPS4HANAMigrationImplementation.jsx.
                             Below sm, the same copy renders as a normal in-flow block after

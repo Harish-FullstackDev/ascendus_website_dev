@@ -73,7 +73,7 @@ export default function EnterpriseDataFoundations() {
                         transition={{ duration: 0.5, delay: index * 0.08 }}
                         className="relative w-full h-[220px] overflow-hidden"
                     >
-                        <Image src={card.image} alt="" fill className="object-cover" />
+                        <Image src={card.image} alt={`${card.title} capability illustration`} fill className="object-cover" />
                         <div className="absolute inset-0 bg-black/60" />
                         <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
                             <p className="text-white text-xl font-normal">{card.title}</p>
@@ -112,7 +112,7 @@ export default function EnterpriseDataFoundations() {
                         >
                             <Image
                                 src={card.image}
-                                alt=""
+                                alt={`${card.title} capability illustration`}
                                 fill
                                 className={`object-cover transition-transform duration-700 ease-out ${isActive ? "scale-105" : ""
                                     }`}

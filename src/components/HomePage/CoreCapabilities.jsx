@@ -126,7 +126,7 @@ function CapabilityCard({ item }) {
             <div className="relative w-full aspect-[11/6] overflow-hidden">
                 <Image
                     src={item.image}
-                    alt=""
+                    alt={`${item.title} capability illustration`}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />

@@ -16,7 +16,7 @@ export default function OurCulture() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative w-full h-[280px] sm:h-[380px] lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-[65.078%] bg-[#5c5c5c]"
                 >
-                    <Image src={cultureImage} alt="" fill className="object-cover" />
+                    <Image src={cultureImage} alt="Team members collaborating in the workplace" fill className="object-cover" />
                 </motion.div>
 
                 <motion.div

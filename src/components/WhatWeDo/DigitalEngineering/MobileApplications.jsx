@@ -74,7 +74,7 @@ export default function MobileApplications() {
                             <>
                                 <Image
                                     src={card.image}
-                                    alt=""
+                                    alt={card.title}
                                     fill
                                     className="object-cover transition-transform duration-700 ease-out"
                                 />

@@ -46,7 +46,7 @@ export default function DiscoverWhatSetsUsApart() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative w-full h-[280px] sm:h-[380px] lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-[49.75%] bg-[#5c5c5c]"
                 >
-                    <Image src={discoverImage} alt="" fill className="object-cover" />
+                    <Image src={discoverImage} alt="Team collaborating on strategy and innovation" fill className="object-cover" />
                 </motion.div>
 
                 <div className="flex flex-col lg:contents gap-5">

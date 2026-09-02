@@ -97,7 +97,7 @@ const CapabilityCard = forwardRef(function CapabilityCard(
                         className={`relative w-full aspect-[272/459] transition-[transform] ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive ? "duration-[800ms] delay-[100ms] scale-100" : "duration-[400ms] scale-[0.97]"
                             }`}
                     >
-                        <Image src={image} alt="" fill className="object-cover" />
+                        <Image src={image} alt={`${title} capability`} fill className="object-cover" />
                     </div>
                 </motion.div>
 

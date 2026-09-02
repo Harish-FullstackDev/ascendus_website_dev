@@ -33,7 +33,7 @@ export default function OnepracticeTheWholeSAPLifecycle() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="relative w-full sm:w-[518px] aspect-[518/325] shrink-0 self-start overflow-hidden"
             >
-                <Image src={overviewImage} alt="" fill className="object-cover" />
+                <Image src={overviewImage} alt="SAP lifecycle overview diagram" fill className="object-cover" />
             </motion.div>
         </section>
     );

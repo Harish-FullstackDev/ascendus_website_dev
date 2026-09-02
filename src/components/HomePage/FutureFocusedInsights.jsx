@@ -68,7 +68,7 @@ export default function FutureFocusedInsights() {
                     {ARTICLES.map((item) => (
                         <motion.article key={item.title} variants={itemVariants} className="flex flex-col gap-4">
                             <div className="relative w-full aspect-[4/3] overflow-hidden">
-                                <Image src={item.img} alt="" fill className="object-cover" />
+                                <Image src={item.img} alt={item.title} fill className="object-cover" />
                             </div>
                             <p className="text-sm text-[#55595E]">{item.date}</p>
                             <h2 className="text-[#2E3033] text-lg font-semibold leading-[1.4]">{item.title}</h2>

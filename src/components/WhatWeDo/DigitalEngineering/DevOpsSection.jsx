@@ -66,7 +66,7 @@ export default function DevOpsSection() {
                 >
                     <Image
                         src={idpPhoto}
-                        alt=""
+                        alt="CI/CD pipeline development"
                         fill
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
@@ -95,7 +95,7 @@ export default function DevOpsSection() {
                         >
                             <Image
                                 src={card.image}
-                                alt=""
+                                alt={card.title}
                                 fill
                                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                             />
