@@ -30,7 +30,7 @@ const FEATURES = [
     {
         icon: executionDisciplineIcon,
         title: "Execution Discipline",
-        desc: "Flexible, standards-based architectures that minimize vendor lock-in and protect your longterm roadmap.",
+        desc: "Flexible, standards-based architectures that minimize vendor lock-in and protect your long-term roadmap.",
     },
 ];
 
