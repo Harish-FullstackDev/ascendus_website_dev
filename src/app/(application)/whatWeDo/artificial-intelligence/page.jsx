@@ -1,69 +1,9 @@
-"use client";
+import PageClient from "./PageClient";
 
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
-import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
-import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-
-import Hero from "@/components/WhatWeDo/ArtificialIntelligence/Hero";
-import HeroText from "@/components/WhatWeDo/ArtificialIntelligence/HeroText";
-import WhyAIMatters from "@/components/WhatWeDo/ArtificialIntelligence/WhyAIMatters";
-import OurAIServices from "@/components/WhatWeDo/ArtificialIntelligence/OurAIServices";
-import AdvancedMachineLearning from "@/components/WhatWeDo/ArtificialIntelligence/AdvancedMachineLearning";
-import IntelligentAssistantsCards from "@/components/WhatWeDo/ArtificialIntelligence/IntelligentAssistantsCards";
-import AIStrategy from "@/components/WhatWeDo/ArtificialIntelligence/AIStrategy";
-import IntelligentAssistantsBanner from "@/components/WhatWeDo/ArtificialIntelligence/IntelligentAssistantsBanner";
-import ScalableAIDeployment from "@/components/WhatWeDo/ArtificialIntelligence/ScalableAIDeployment";
-import PredictiveIntelligence from "@/components/WhatWeDo/ArtificialIntelligence/PredictiveIntelligence";
-import ConversationalAI from "@/components/WhatWeDo/ArtificialIntelligence/ConversationalAI";
-import IndustryImpact from "@/components/WhatWeDo/ArtificialIntelligence/IndustryImpact";
-import AIGovernance from "@/components/WhatWeDo/ArtificialIntelligence/AIGovernance";
-import AILifecycle from "@/components/WhatWeDo/ArtificialIntelligence/AILifecycle";
-import WhyPartnerWithUs from "@/components/WhatWeDo/ArtificialIntelligence/WhyPartnerWithUs";
-import AIUseCaseValueEnablement from "@/components/WhatWeDo/ArtificialIntelligence/AIUseCaseValueEnablement";
-import customBg from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_CTA_2560_1200.webp";
-
-const page = () => {
-    return (
-        <div className="min-h-screen bg-white flex flex-col font-sans">
-            <Navbar />
-
-            <div className="relative -mt-[64px] lg:-mt-[68px] h-[680px] sm:h-[200vh]">
-                <div className="sticky top-0 h-[340px] sm:h-screen z-0">
-                    <Hero />
-                </div>
-
-                <div className="absolute inset-x-0 top-0 h-[340px] sm:h-screen z-[5]">
-                    <HeroText />
-                </div>
-            </div>
-
-            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
-                {/* <WhyAIMatters /> */}
-                <OurAIServices />
-                <ScalableAIDeployment />
-            </div>
-            {/* <IntelligentAssistantsCards /> */}
-            {/* <AIStrategy /> */}
-            {/* <PredictiveIntelligence /> */}
-            {/* <ConversationalAI /> */}
-            <IndustryImpact />
-            {/* <AIGovernance /> */}
-            {/* <AILifecycle /> */}
-            <AdvancedMachineLearning />
-            {/* <IntelligentAssistantsBanner /> */}
-            <AIUseCaseValueEnablement />
-            <WhyPartnerWithUs />
-            {/* <FutureFocusedInsights /> */}
-            <ReadyToTransform
-                title="Ready to put AI to work in your enterprise?"
-                description="Talk to our AI advisory team about where intelligence can move your business forward."
-                bgImage={customBg}
-            />
-            <Footer />
-        </div>
-    );
+export const metadata = {
+  alternates: { canonical: "/whatWeDo/artificial-intelligence" },
 };
 
-export default page;
-
+export default function Page() {
+  return <PageClient />;
+}

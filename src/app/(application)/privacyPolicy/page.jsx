@@ -1,18 +1,9 @@
-"use client";
+import PageClient from "./PageClient";
 
-import PrivacyPolicy from "@/components/PrivacyPolicy/Content";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
-import React from "react";
-
-const page = () => {
-  return (
-    <div>
-      <Navbar />
-      <PrivacyPolicy />
-      <Footer />
-    </div>
-  );
+export const metadata = {
+  alternates: { canonical: "/privacyPolicy" },
 };
 
-export default page;
+export default function Page() {
+  return <PageClient />;
+}

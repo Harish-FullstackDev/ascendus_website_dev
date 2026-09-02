@@ -1,13 +1,9 @@
-"use client";
-import ContactUs from '@/components/Contactus/Contact'
-import React from 'react'
+import PageClient from "./PageClient";
 
-const page = () => {
-  return (
-    <div>
-        <ContactUs/>
-    </div>
-  )
+export const metadata = {
+  alternates: { canonical: "/contact-us" },
+};
+
+export default function Page() {
+  return <PageClient />;
 }
-
-export default page
