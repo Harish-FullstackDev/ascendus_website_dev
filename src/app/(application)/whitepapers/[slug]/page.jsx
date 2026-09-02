@@ -25,12 +25,6 @@ export async function generateMetadata({ params }) {
                 ? [{ url: whitepaper.cover_image, width: 1200, height: 630, alt: whitepaper.title }]
                 : undefined,
         },
-        twitter: {
-            card: "summary_large_image",
-            title: whitepaper.title,
-            description: whitepaper.summary,
-            images: whitepaper.cover_image ? [whitepaper.cover_image] : undefined,
-        },
     };
 }
 

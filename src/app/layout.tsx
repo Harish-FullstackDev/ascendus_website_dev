@@ -21,15 +21,6 @@ export const metadata: Metadata = {
     template: "%s | Ascendus"
   },
   description: "Ascendus provides premium SAP consulting, IT managed services, and digital transformation solutions for enterprises in the UAE, Saudi Arabia, and the wider GCC region.",
-  keywords: [
-    "SAP Consulting GCC",
-    "IT Services UAE",
-    "Digital Transformation Saudi Arabia",
-    "Enterprise Software Solutions",
-    "Cloud Managed Services",
-    "S/4HANA Migration Dubai",
-    "IT Strategy Riyadh"
-  ],
   authors: [{ name: "Ascendus", url: "https://www.ascendus.com" }],
   creator: "Ascendus Engineering",
   publisher: "Ascendus",
@@ -49,25 +40,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.ascendus.com",
+    url: "/",
     siteName: "Ascendus",
-    title: "Ascendus | Enterprise SAP & IT Consulting GCC",
-    description: "Leading SAP and IT consulting firm specializing in enterprise digital transformation across the GCC region.",
+    title: "Ascendus | Enterprise Technology, SAP and Managed Services",
+    description: "Ascendus designs, builds and runs enterprise technology — SAP, cloud, data, AI, engineering, security and managed operations — under one accountable team.",
     images: [
       {
-        url: "/og-image.png", // Asset request tracking in pending_assets.md
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Ascendus Enterprise Solutions",
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ascendus | SAP & IT Experts",
-    description: "Enterprise SAP and IT consulting services for the GCC market.",
-    images: ["/twitter-image.png"], // Asset request tracking in pending_assets.md
-    creator: "@AscendusTech", // TODO: confirm real handle
   },
   robots: {
     index: true,
