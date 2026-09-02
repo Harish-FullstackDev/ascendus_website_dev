@@ -1,15 +1,9 @@
 import PageClient from "./PageClient";
 
 export const metadata = {
-  alternates: { canonical: "/" },
+    alternates: { canonical: "/" },
 };
 
 export default function Page() {
-  return <PageClient />;
+    return <PageClient />;
 }
-
-
-
-
-
-// just checking if this is working or not
