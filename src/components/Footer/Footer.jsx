@@ -447,18 +447,17 @@ const Footer = () => {
                   info@isupportz.com
                 </a>
               </li> */}
-              <li className="sm:mt-1">
-                Ascendus Powered by <br /> Support Studio Technologies
-              </li>
+
               <li>
-                <p>Regional Office (India)</p>
+
                 <a
-                  href="https://maps.app.goo.gl/pHCzqbb6vXihYvjn6"
+                  href="https://maps.app.goo.gl/r13crYbGJBBuQiSE7"
                   className="hover:text-white transition-colors duration-200"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  #192, Kamaraj Salai, Puducherry, India, <br /> Pin Code - 605013
+                  7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., <br /> Riyadh 12624, KSA
+
                 </a>
               </li>
             </ul>

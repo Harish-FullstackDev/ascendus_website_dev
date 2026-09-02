@@ -89,23 +89,20 @@ const ContactInfo = () => {
             </div>
 
             {/* Address */}
-            <div
-              ref={triggerRef}
-              className="text-gray-700 text-base leading-relaxed hover:text-blue-500 transition-colors duration-200"
-              role="button"
-              tabIndex={0}
-              aria-haspopup="true"
-              aria-expanded={isOpen || isBottomSheetOpen}
+            <a
+              href="https://maps.app.goo.gl/r13crYbGJBBuQiSE7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-gray-700 text-base leading-relaxed hover:text-blue-500 transition-colors duration-200"
             >
-              <p className="text-[#2E3033] font-semibold">Regional Headquarter</p>
+              <p className="text-[#2E3033] font-semibold">Headquarters</p>
               <p>
-                Riyadh, KSA
+                7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., <br /> Riyadh 12624, KSA
               </p>
-
-            </div>
+            </a>
           </div>
           {/* Address with Interactive Location Preview */}
-          <InteractiveLocationPreview />
+          {/* <InteractiveLocationPreview /> */}
 
         </div>
       </div>
