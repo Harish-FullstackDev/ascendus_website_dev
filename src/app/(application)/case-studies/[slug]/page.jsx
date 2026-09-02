@@ -25,12 +25,6 @@ export async function generateMetadata({ params }) {
                 ? [{ url: caseStudy.cover_image, width: 1200, height: 630, alt: caseStudy.title }]
                 : undefined,
         },
-        twitter: {
-            card: "summary_large_image",
-            title: caseStudy.title,
-            description: caseStudy.summary,
-            images: caseStudy.cover_image ? [caseStudy.cover_image] : undefined,
-        },
     };
 }
 

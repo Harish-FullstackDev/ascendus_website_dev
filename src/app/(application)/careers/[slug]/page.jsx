@@ -18,6 +18,12 @@ export async function generateMetadata({ params }) {
     title: job.title,
     description,
     alternates: { canonical: `/careers/${slug}` },
+    openGraph: {
+      title: `${job.title} | Ascendus`,
+      description,
+      url: `/careers/${slug}`,
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ascendus" }],
+    },
   };
 }
 

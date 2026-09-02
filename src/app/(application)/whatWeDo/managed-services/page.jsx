@@ -3,6 +3,12 @@ import PageClient from "./PageClient";
 export const metadata = {
   alternates: { canonical: "/whatWeDo/managed-services" },
   description: "Managed operations covering incident and problem management, release support, service reporting and systematic root-cause elimination.",
+  openGraph: {
+    title: "Application Managed Services | Ascendus",
+    description: "Managed operations covering incident and problem management, release support, service reporting and systematic root-cause elimination.",
+    url: "/whatWeDo/managed-services",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ascendus" }],
+  },
   title: "Application Managed Services",
 };
 

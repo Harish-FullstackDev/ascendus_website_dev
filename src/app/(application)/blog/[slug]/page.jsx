@@ -28,12 +28,6 @@ export async function generateMetadata({ params }) {
                     ? [{ url: staticBlog.cover_image, width: 1200, height: 630, alt: staticBlog.title }]
                     : undefined,
             },
-            twitter: {
-                card: "summary_large_image",
-                title: staticBlog.title,
-                description,
-                images: staticBlog.cover_image ? [staticBlog.cover_image] : undefined,
-            },
         };
     }
 
@@ -68,12 +62,6 @@ export async function generateMetadata({ params }) {
             images: blog.cover_image
                 ? [{ url: blog.cover_image, width: 1200, height: 630, alt: blog.title }]
                 : undefined,
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: blog.title,
-            description,
-            images: blog.cover_image ? [blog.cover_image] : undefined,
         },
     };
 }
