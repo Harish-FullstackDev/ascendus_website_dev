@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const SERVICES = [
@@ -36,12 +36,44 @@ const SERVICES = [
     },
 ];
 
-const PAGE_SIZE = 3;
-const PAGE_COUNT = Math.ceil(SERVICES.length / PAGE_SIZE);
+// sm and up shows 3 cards at a time, but arrows step one card per click
+// (a sliding window) rather than jumping a whole page of 3.
+const VISIBLE_COUNT = 3;
+const MAX_INDEX = SERVICES.length - VISIBLE_COUNT;
 
 // Mobile pages one card at a time instead of 3 — its own page count/size so it
-// doesn't share state with the sm+ 3-per-page carousel below.
+// doesn't share state with the sm+ sliding carousel below.
 const MOBILE_PAGE_COUNT = SERVICES.length;
+
+// Measures the pixel offset between two adjacent cards (width + gap) so the
+// carousel can step by exactly one card regardless of breakpoint, instead of
+// relying on percentage math that would drift once gaps are involved.
+function useCardStep(trackRef) {
+    const [step, setStep] = useState(0);
+
+    useLayoutEffect(() => {
+        const measure = () => {
+            const track = trackRef.current;
+            if (!track || track.children.length < 2) return;
+            const first = track.children[0];
+            const second = track.children[1];
+            setStep(second.offsetLeft - first.offsetLeft);
+        };
+
+        measure();
+        window.addEventListener("resize", measure);
+
+        const observer = new ResizeObserver(measure);
+        if (trackRef.current) observer.observe(trackRef.current);
+
+        return () => {
+            window.removeEventListener("resize", measure);
+            observer.disconnect();
+        };
+    }, [trackRef]);
+
+    return step;
+}
 
 // Copied from HomePage/CoreCapabilities.jsx's ArrowButton — same chevron, same
 // enabled/disabled visual treatment, kept as its own copy since the two carousels
@@ -92,8 +124,10 @@ function ServiceCard({ service }) {
 }
 
 export default function CoreServices() {
-    const [page, setPage] = useState(0);
+    const [index, setIndex] = useState(0);
     const [mobilePage, setMobilePage] = useState(0);
+    const trackRef = useRef(null);
+    const step = useCardStep(trackRef);
 
     return (
         <section className="w-full bg-[#f3f6f9] px-6 py-10 sm:px-[64px] sm:py-[64px] flex flex-col gap-8 sm:gap-[4px]">
@@ -148,34 +182,30 @@ export default function CoreServices() {
                 </div>
             </div>
 
-            {/* sm and up: original 3-per-page carousel, unchanged — arrows (copied
-                from HomePage/CoreCapabilities.jsx) reveal services 4-6 on the next page. */}
+            {/* sm and up: 3 cards visible at a time, sliding one card per arrow
+                click (measured via useCardStep) instead of jumping a whole page. */}
             <div className="hidden sm:flex flex-col gap-4">
                 <div className="flex items-center justify-end gap-2">
-                    <ArrowButton direction={-1} disabled={page === 0} onClick={() => setPage((p) => Math.max(0, p - 1))} />
+                    <ArrowButton direction={-1} disabled={index === 0} onClick={() => setIndex((i) => Math.max(0, i - 1))} />
                     <ArrowButton
                         direction={1}
-                        disabled={page === PAGE_COUNT - 1}
-                        onClick={() => setPage((p) => Math.min(PAGE_COUNT - 1, p + 1))}
+                        disabled={index === MAX_INDEX}
+                        onClick={() => setIndex((i) => Math.min(MAX_INDEX, i + 1))}
                     />
                 </div>
 
                 <div className="w-full overflow-hidden">
                     <div
-                        className="flex transition-transform duration-700 ease-in-out"
-                        style={{ width: `${PAGE_COUNT * 100}%`, transform: `translateX(-${page * (100 / PAGE_COUNT)}%)` }}
+                        ref={trackRef}
+                        className="flex gap-6 sm:gap-[29px] items-stretch transition-transform duration-700 ease-in-out"
+                        style={{ transform: `translateX(-${index * step}px)` }}
                     >
-                        {Array.from({ length: PAGE_COUNT }).map((_, pageIndex) => (
+                        {SERVICES.map((service) => (
                             <div
-                                key={pageIndex}
-                                className="flex gap-6 sm:gap-[29px] items-stretch shrink-0"
-                                style={{ width: `${100 / PAGE_COUNT}%` }}
+                                key={service.title}
+                                className="shrink-0 w-[calc((100%-48px)/3)] sm:w-[calc((100%-58px)/3)]"
                             >
-                                {SERVICES.slice(pageIndex * PAGE_SIZE, pageIndex * PAGE_SIZE + PAGE_SIZE).map((service) => (
-                                    <div key={service.title} className="flex-1 min-w-0">
-                                        <ServiceCard service={service} />
-                                    </div>
-                                ))}
+                                <ServiceCard service={service} />
                             </div>
                         ))}
                     </div>

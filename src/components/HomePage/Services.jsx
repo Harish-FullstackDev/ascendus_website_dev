@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-// Reuse CoreCapabilities.jsx as the reference for content, card count, and
-// the arrow button — same 12 items and same arrow control as that section,
-// instead of maintaining a second, out-of-sync copy here.
-import { CAPABILITIES, ArrowButton } from "./CoreCapabilities";
+// Reuse CoreCapabilities.jsx as the reference for content and card count —
+// same 12 items as that section, instead of maintaining a second,
+// out-of-sync copy here.
+import { CAPABILITIES } from "./CoreCapabilities";
 
 const CARD_WIDTH_CLASSES = "w-[85%] sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)]";
 
@@ -46,74 +46,57 @@ function ServiceCard({ item }) {
     );
 }
 
-const AUTOPLAY_INTERVAL = 4000;
-
+// Scroll-locked horizontal reel: the section pins to the viewport for the
+// height of `scrollDistance` extra vertical scroll, during which that scroll
+// input is remapped to horizontal movement of the 12-card track. Once the
+// track has fully panned, the section unpins and the page continues
+// scrolling normally — the same sticky-wrapper idiom already used for the
+// Hero section in app/page.jsx, but driven by scroll progress instead of a
+// fixed offset.
 export default function Services() {
-    const scrollerRef = useRef(null);
-    const autoplayRef = useRef(null);
-    const [canPrev, setCanPrev] = useState(false);
-    const [canNext, setCanNext] = useState(true);
+    const containerRef = useRef(null);
+    const viewportRef = useRef(null);
+    const trackRef = useRef(null);
+    const [scrollDistance, setScrollDistance] = useState(0);
 
-    const updateArrows = () => {
-        const el = scrollerRef.current;
-        if (!el) return;
-        setCanPrev(el.scrollLeft > 4);
-        setCanNext(el.scrollLeft < el.scrollWidth - el.clientWidth - 4);
-    };
+    useLayoutEffect(() => {
+        const measure = () => {
+            const viewport = viewportRef.current;
+            const track = trackRef.current;
+            if (!viewport || !track) return;
+            setScrollDistance(Math.max(0, track.scrollWidth - viewport.clientWidth));
+        };
 
-    useEffect(() => {
-        updateArrows();
+        measure();
+        window.addEventListener("resize", measure);
+
+        const observer = new ResizeObserver(measure);
+        if (trackRef.current) observer.observe(trackRef.current);
+        if (viewportRef.current) observer.observe(viewportRef.current);
+
+        return () => {
+            window.removeEventListener("resize", measure);
+            observer.disconnect();
+        };
     }, []);
 
-    const scroll = (direction) => {
-        const el = scrollerRef.current;
-        if (!el) return;
-        const first = el.children[0];
-        const second = el.children[1];
-        const step = first && second ? second.offsetLeft - first.offsetLeft : el.clientWidth;
-        el.scrollBy({ left: direction * step, behavior: "smooth" });
-    };
-
-    // Auto-advance the carousel, looping back to the start once it reaches
-    // the end. Paused on hover/touch so it doesn't fight a user mid-scroll.
-    const stopAutoplay = () => {
-        if (autoplayRef.current) {
-            clearInterval(autoplayRef.current);
-            autoplayRef.current = null;
-        }
-    };
-
-    const startAutoplay = () => {
-        stopAutoplay();
-        autoplayRef.current = setInterval(() => {
-            const el = scrollerRef.current;
-            if (!el) return;
-            const atEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth - 4;
-            if (atEnd) {
-                el.scrollTo({ left: 0, behavior: "smooth" });
-            } else {
-                scroll(1);
-            }
-        }, AUTOPLAY_INTERVAL);
-    };
-
-    useEffect(() => {
-        startAutoplay();
-        return stopAutoplay;
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"],
+    });
+    const x = useTransform(scrollYProgress, [0, 1], [0, -scrollDistance]);
 
     return (
-        <section id="ascendus-services" className="w-full bg-white pt-8 pb-8 sm:p-16 px-6">
-            <div className="w-full flex flex-col gap-16">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
-                >
-                    <div className="flex flex-col gap-2 max-w-[808px]">
+        <section id="ascendus-services" className="w-full bg-white">
+            <div ref={containerRef} className="relative" style={{ height: `calc(100vh + ${scrollDistance}px)` }}>
+                <div className="sticky top-0 h-screen flex flex-col justify-center gap-16 py-8 sm:py-16 px-6 sm:px-16 overflow-hidden">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="flex flex-col gap-2 max-w-[808px]"
+                    >
                         <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold leading-[1.4] tracking-[0.28px]">
                             Everything an Enterprise Needs to Run on Modern Technology
                         </h2>
@@ -121,50 +104,18 @@ export default function Services() {
                             A complete technology foundation that connects strategy, systems, security, data, and
                             operations to help enterprises scale with confidence.
                         </p>
-                    </div>
+                    </motion.div>
 
-                    {/* Same arrow control as CoreCapabilities — no pill wrapper */}
-                    <div className="flex items-center gap-2 shrink-0 self-start md:self-auto">
-                        <ArrowButton
-                            direction={-1}
-                            disabled={!canPrev}
-                            onClick={() => {
-                                stopAutoplay();
-                                scroll(-1);
-                                startAutoplay();
-                            }}
-                        />
-                        <ArrowButton
-                            direction={1}
-                            disabled={!canNext}
-                            onClick={() => {
-                                stopAutoplay();
-                                scroll(1);
-                                startAutoplay();
-                            }}
-                        />
+                    <div ref={viewportRef} className="w-full overflow-hidden">
+                        <motion.div ref={trackRef} style={{ x }} className="flex gap-4">
+                            {CAPABILITIES.map((item) => (
+                                <div key={item.title} className={`shrink-0 ${CARD_WIDTH_CLASSES}`}>
+                                    <ServiceCard item={item} />
+                                </div>
+                            ))}
+                        </motion.div>
                     </div>
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    ref={scrollerRef}
-                    onScroll={updateArrows}
-                    onMouseEnter={stopAutoplay}
-                    onMouseLeave={startAutoplay}
-                    onTouchStart={stopAutoplay}
-                    onTouchEnd={startAutoplay}
-                    className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory p-1 -m-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-                >
-                    {CAPABILITIES.map((item) => (
-                        <div key={item.title} className={`snap-start shrink-0 ${CARD_WIDTH_CLASSES}`}>
-                            <ServiceCard item={item} />
-                        </div>
-                    ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     );

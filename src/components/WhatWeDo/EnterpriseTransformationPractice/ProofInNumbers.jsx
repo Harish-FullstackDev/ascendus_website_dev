@@ -61,7 +61,7 @@ export default function ProofInNumbers() {
         // card reads as "floating" against the image, matching Figma's overlapping
         // stats panel — a drop-shadow card straddling the hero/content boundary
         // rather than a plain in-flow section.
-        <section className="relative z-10 w-full px-6 sm:px-[77px] pb-8 sm:pb-[38px] -mt-16 sm:-mt-30 lg:-mt-22">
+        <section className="relative z-10 w-full px-6 sm:px-[77px] pb-8 sm:pb-[38px] -mt-16 sm:-mt-[71px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
