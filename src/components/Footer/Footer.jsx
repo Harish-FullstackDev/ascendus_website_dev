@@ -187,7 +187,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/whatWeDo/enterprise-transformation-practice"
+                  href="/whatWeDo/enterprise-transformation"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Enterprise Transformation
@@ -447,13 +447,8 @@ const Footer = () => {
                   info@isupportz.com
                 </a>
               </li> */}
-              <li>
-                <a
-                  href="https://isupportz.com"
-                  className="hover:text-white transition-colors duration-200 sm:mt-1"
-                >
-                  Ascendus Powered by <br /> Support Studio Technologies
-                </a>
+              <li className="sm:mt-1">
+                Ascendus Powered by <br /> Support Studio Technologies
               </li>
               <li>
                 <p>Regional Office (India)</p>
@@ -501,7 +496,7 @@ const Footer = () => {
                 />
               </a>
               <a
-                href="https://www.instagram.com/isupportz.official?igsh=MWF5Z3M2MXFrbXI3cg=="
+                href="https://www.instagram.com/ascendus.official?igsh=MWF5Z3M2MXFrbXI3cg=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"

@@ -25,8 +25,8 @@ export const validRoutes = [
   "/whatWeDo/intelligent-automation",
   "/whatWeDo/cloud-infrastructure",
   "/whatWeDo/data-intelligence",
-  "/whatWeDo/enterprise-transformation-practice",
-  "/whatWeDo/enterprise-transformation-practice/sap-transformation",
-  "/whatWeDo/enterprise-transformation-practice/microsoft-services",
-  "/whatWeDo/enterprise-transformation-practice/broader-technology-services",
+  "/whatWeDo/enterprise-transformation",
+  "/whatWeDo/enterprise-transformation/sap-transformation",
+  "/whatWeDo/enterprise-transformation/microsoft-services",
+  "/whatWeDo/enterprise-transformation/broader-technology-services",
 ];

@@ -28,7 +28,7 @@ export const CAPABILITIES = [
     {
         title: "Enterprise Transformation",
         desc: "Infrastructure that scales with the business, not against it.",
-        href: "/whatWeDo/enterprise-transformation-practice",
+        href: "/whatWeDo/enterprise-transformation",
         image: enterpriseTransformationImg,
     },
     {

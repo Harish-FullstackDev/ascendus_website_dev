@@ -22,7 +22,7 @@ export default function AboutPartner() {
                         A Technology Partner Built for Enterprise Complexity
                     </h2>
                     <p className="mt-4 text-[#55595E] text-lg font-light leading-[1.5]">
-                        Most enterprise technology programs don't fail on strategy  they fail on execution. Systems that don't talk to each other. Projects that lose momentum after go-live. Compliance bolted on instead of built in. We exists to close that gap , we design, build, and run technology that keeps working long after launch day.
+                        Most enterprise programs are not lost on strategy. They are lost in the handoffs: between the firm that designed the architecture and the firm that built it, between the project that went live and the team that has to run it, between a compliance requirement and the system that was already in production when it arrived. Ascendus keeps design, build and run under one accountable team, so architecture context is not re-learned at every stage.
                     </p>
                     <Link
                         href="/who-we-are"

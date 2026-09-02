@@ -22,7 +22,7 @@ const CAPABILITIES = [
             "We help businesses build, modernize, and manage their SAP landscape across S/4HANA, RISE with SAP, GROW with SAP, BTP, analytics, data, and ongoing support. Our focus is on creating a strong SAP foundation that simplifies operations, improves visibility, and supports business growth. Microsoft, cloud, and adjacent technologies extend that core where they bring additional value — keeping your enterprise connected, flexible, and ready for what's next.",
         ],
         image: sapImg,
-        href: "/whatWeDo/enterprise-transformation-practice/sap-transformation",
+        href: "/whatWeDo/enterprise-transformation/sap-transformation",
     },
     {
         number: "02",
@@ -33,7 +33,7 @@ const CAPABILITIES = [
             "Our capabilities include Microsoft Azure, Microsoft 365, Power Platform, Dynamics 365, and Power BI — working together with SAP to create a connected and scalable technology environment.",
         ],
         image: microsoftImg,
-        href: "/whatWeDo/enterprise-transformation-practice/microsoft-services",
+        href: "/whatWeDo/enterprise-transformation/microsoft-services",
     },
     {
         number: "03",
@@ -43,7 +43,7 @@ const CAPABILITIES = [
             "Our services include Cloud & Infrastructure Modernization, Data Migration & Governance, Change Management & Adoption, and Cybersecurity & Compliance — helping create a secure, connected, and efficient technology environment.",
         ],
         image: broaderTechImg,
-        href: "/whatWeDo/enterprise-transformation-practice/broader-technology-services",
+        href: "/whatWeDo/enterprise-transformation/broader-technology-services",
     },
 ];
 
