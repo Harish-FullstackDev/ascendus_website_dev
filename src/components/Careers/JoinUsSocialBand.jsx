@@ -9,7 +9,7 @@ import twitterIcon from "@/assets/career/icons/Twitter.svg";
 import footerBanner from "@/assets/career/Footer image banner.png";
 
 const SOCIALS = [
-    { icon: linkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/company/supportstudiotechnologies/" },
+    { icon: linkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/company/ascendus-company/?viewAsMember=true" },
     { icon: instagramIcon, label: "Instagram", href: "https://www.instagram.com/isupportz.official?igsh=MWF5Z3M2MXFrbXI3cg==" },
     { icon: twitterIcon, label: "Twitter", href: "https://x.com/isupportz?s=11" },
 ];

@@ -226,7 +226,7 @@ const Navbar = () => {
                   >
                     <Image
                       src={isNavbarLight ? logo5 : logo4}
-                      alt="Support Studio Technologies"
+                      alt="Ascendus"
                       width={344}
                       height={60}
                       className="block h-6 w-auto max-w-none object-contain"
@@ -462,7 +462,7 @@ const Navbar = () => {
             <Link href="/" onClick={closeMenu} className="flex items-center">
               <Image
                 src={isNavbarLight ? logo2 : logo}
-                alt="SST Logo"
+                alt="Ascendus Logo"
                 className="h-8 sm:h-10 w-auto"
                 width={160}
                 height={40}
@@ -494,7 +494,7 @@ const Navbar = () => {
           <Link href="/" onClick={closeMenu}>
             <Image
               src={logo2}
-              alt="SST Logo"
+              alt="Ascendus Logo"
               className="h-8 sm:h-10 w-auto"
               width={160}
               height={40}

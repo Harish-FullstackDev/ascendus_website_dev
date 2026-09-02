@@ -13,7 +13,7 @@ export function generateOrganizationSchema() {
       "availableLanguage": ["en", "ar"]
     },
     "sameAs": [
-      "https://www.linkedin.com/company/ascendus", // TODO: confirm real handle
+      "https://www.linkedin.com/company/ascendus-company/?viewAsMember=true",
       "https://twitter.com/AscendusTech" // TODO: confirm real handle
     ]
   };

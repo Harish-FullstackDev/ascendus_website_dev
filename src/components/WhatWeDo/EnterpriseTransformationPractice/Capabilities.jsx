@@ -1,371 +1,338 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import { forwardRef, useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import sapImg from "@/assets/WhatWeDo/Enterprise Transformation Practice/Capabilities/sap-transformation.png";
 import microsoftImg from "@/assets/WhatWeDo/Enterprise Transformation Practice/Capabilities/microsoft-services.png";
 import broaderTechImg from "@/assets/WhatWeDo/Enterprise Transformation Practice/Capabilities/broader-technology.png";
 
-// Redesigned per the new Figma card layout (3 capability groups, each with its
-// own sub-service list) replacing the previous 6-item accordion. The Figma
-// source repeated the same "SAP is our core..." description on all three
-// cards (a skeleton-design artifact, same pattern noted elsewhere on this
-// page) — each card gets its own description here instead. The three
-// per-capability photos are the real Figma assets (node 2620:20).
+// Per Figma nodes 2620:32, 2776:136, 2776:161. Each card is image + number +
+// title + description + "View More" — no per-service link list. `description`
+// is an array of paragraphs (cards 02/03 carry more than one); Figma sets them
+// with no gap between lines, so they render as separate <p> with no spacing.
 const CAPABILITIES = [
     {
         number: "01",
         title: "SAP Transformation",
-        description:
-            "SAP is our core — deliberately built around S/4HANA, RISE, and GROW so the enterprise runs on one reliable foundation.",
+        description: [
+            "We help businesses build, modernize, and manage their SAP landscape across S/4HANA, RISE with SAP, GROW with SAP, BTP, analytics, data, and ongoing support. Our focus is on creating a strong SAP foundation that simplifies operations, improves visibility, and supports business growth. Microsoft, cloud, and adjacent technologies extend that core where they bring additional value — keeping your enterprise connected, flexible, and ready for what's next.",
+        ],
         image: sapImg,
         href: "/whatWeDo/enterprise-transformation-practice/sap-transformation",
-        services: [
-            "SAP S/4HANA Migration & Implementation",
-            "RISE with SAP",
-            "GROW with SAP",
-            "SAP Business Technology Platform",
-            "SAP Analytics Cloud",
-            "SAP BW/4HANA",
-            "Application Managed Services (AMS)",
-        ],
     },
     {
         number: "02",
         title: "Microsoft Services",
-        description:
-            "Microsoft and adjacent platforms extend that core, connecting productivity, data, and low-code tools into the same enterprise system.",
+        description: [
+            "Microsoft & Cloud Services",
+            "Microsoft extends our SAP core — deliberately. We use Microsoft technologies to connect and enhance SAP, helping businesses improve cloud operations, collaboration, automation, customer management, and analytics.",
+            "Our capabilities include Microsoft Azure, Microsoft 365, Power Platform, Dynamics 365, and Power BI — working together with SAP to create a connected and scalable technology environment.",
+        ],
         image: microsoftImg,
         href: "/whatWeDo/enterprise-transformation-practice/microsoft-services",
-        services: ["Microsoft Azure", "Microsoft 365", "Power Platform", "Dynamics 365", "Power BI"],
     },
     {
         number: "03",
         title: "Broader Technology Services",
-        description:
-            "The infrastructure, integration, and governance layer that keeps the whole technology estate secure, connected, and change-ready.",
+        description: [
+            "SAP is our core — deliberately. Microsoft and adjacent platforms extend that core. We help businesses modernize infrastructure, manage data, support change, and strengthen security and compliance.",
+            "Our services include Cloud & Infrastructure Modernization, Data Migration & Governance, Change Management & Adoption, and Cybersecurity & Compliance — helping create a secure, connected, and efficient technology environment.",
+        ],
         image: broaderTechImg,
         href: "/whatWeDo/enterprise-transformation-practice/broader-technology-services",
-        services: [
-            "Cloud & Infrastructure Modernization",
-            "Systems Integration & API Management",
-            "Data Migration & Governance",
-            "Change Management & Adoption",
-            "Cybersecurity & Compliance",
-        ],
     },
 ];
 
-// Premium, smooth easing (an "ease-out-expo" curve) used for every reveal
-// below — no linear/default easing, which is what made the earlier version
-// feel mechanical rather than polished.
 const REVEAL_EASE = [0.22, 1, 0.36, 1];
 
-// Open/close accordion per Figma: card 1 is open on load, and every closed card
-// shows its own "View Details" button (Figma node 2620:20) — that button's
-// onClick is the only way to activate a card, on touch and desktop alike. Click
-// only, deliberately — this section is meant to be browsed on scroll, and
-// hover-to-open read as accidental activation while scrolling past it. The open
-// card doesn't need that button — its own "View More" (below) already replaces
-// it once expanded.
-function CapabilityCard({ number, title, description, image, href, services, isActive, isLast, onActivate }) {
+// Scroll budget (px) for the card1→2→3 scroll-driven switching, shared by the
+// ScrollTrigger setup and the recenter() effect below so neither drifts out
+// of sync with the other.
+const INTERACTIVE_DISTANCE = 2400;
+
+const CapabilityCard = forwardRef(function CapabilityCard(
+    { number, title, description, image, href, isActive, isPassed, showDivider, onActivate },
+    ref
+) {
     return (
-        <div
-            // The divider is tied to position (every card but the last), not to
-            // active state — it used to only show on collapsed cards, which meant
-            // an open card had no line separating it from the closed card right
-            // below it (only that next card's own bottom edge did, one row too
-            // late). A line between an open card and whatever's below it is exactly
-            // what was missing.
-            // gap-6/lg:gap-[184px] between the image and the title+services
-            // block is a real, fixed gap now — not a floor. It used to also
-            // carry `lg:justify-between`, which absorbed ALL of the row's
-            // leftover width into this one gap, making it much wider than
-            // the title↔services gap below it. lg:gap-[184px] isn't an
-            // arbitrary rounder value (like the design system's usual
-            // 64px/gap-16 step) — it's deliberately set to exactly what the
-            // inner row's own justify-between (see below) computes for the
-            // title↔services gap at this component's reference width: image
-            // 272px + title 320px + services 320px = 912px fixed content
-            // inside the max-w-[1280px] row, leaving 368px of leftover width
-            // total; split evenly between the two gaps, that's 184px each.
-            // Matching it here by number, rather than re-deriving it from
-            // the same flex distribution (e.g. by flattening both gaps into
-            // one 3-item justify-between), is deliberate: title and services
-            // need to stay in their own isolated flex context so their
-            // height-stretch pairing (see the inner row's own comment below)
-            // isn't pulled taller by the image's much taller aspect-ratio
-            // box — folding all three into one row would make that stretch
-            // computation include the image's height too. This only holds
-            // exactly at the row's full 1280px width (viewports ≳1408px
-            // once the 64px side padding is added) — below that, both gaps
-            // drift apart somewhat before the services column's own
-            // allowed-to-shrink/wrap safety net (see the inner row comment)
-            // takes over, same tolerance this layout already accepted before
-            // gap1 existed as its own concept.
-            className={`flex flex-col lg:flex-row w-full gap-6 lg:gap-[184px] items-start py-6 ${isLast ? "" : "border-b border-black"
-                }`}
+        // isPassed cards (scrolled past, above the active one) collapse to zero
+        // height. That keeps the active card always at offset 0 in the stack —
+        // exactly like card 1, which is what makes its centering shift ~0 and
+        // its pin release seamless with no unwind needed.
+        <motion.div
+            ref={ref}
+            initial={false}
+            animate={{ height: isPassed ? 0 : "auto", opacity: isPassed ? 0 : 1 }}
+            transition={{ duration: 0.8, ease: REVEAL_EASE }}
+            className="w-full overflow-hidden"
         >
-            {/* grid-template-rows 0fr→1fr (plain CSS transition, no JS-measured
-                height: "auto") is what actually fixed the earlier glitch — Framer's
-                height:"auto" animation measures the target height once via JS and
-                animates to that fixed px value; if the image hadn't finished
-                affecting layout yet when it measured, it would animate to a
-                too-small height and then visibly jump again once the real size
-                was known. A pure CSS fr-unit transition never needs to measure
-                anything, so there's nothing to get wrong. Number and title sit in
-                this same fixed-width column, so their horizontal position never
-                changes between open and closed — only the row's own height does.
-
-                Open and close share the exact same duration/easing on purpose
-                (asymmetric timing here pulls the section below up and down — see
-                the min-height note below for the full explanation). Slowed further
-                to 1100ms (was 800ms, originally 500ms) since 800ms still read as
-                too quick for a premium feel. */}
-
-            {/* Mobile-only duplicate of the number+title below (which is hidden below lg
-                for exactly this reason) — on mobile the image should sit below the
-                number/title instead of above them, but desktop needs them grouped with
-                the description in a single column (see that block's own comment), so
-                splitting them into their own top-level flex item is the only way to
-                reorder just this one piece without disturbing the desktop layout or the
-                description's collapse-height animation. */}
-            <div className="flex flex-col gap-3 lg:hidden">
-                <span className="text-[#8794a3] text-2xl font-medium leading-[1.5]">{number}</span>
-                <p className="text-[#10161d] text-lg font-medium leading-[1.5]">{title}</p>
-            </div>
-
-            <motion.div
-                initial={false}
-                animate={{
-                    height: isActive ? "auto" : 0,
-                    opacity: isActive ? 1 : 0
-                }}
-                transition={{
-                    duration: 0.8,
-                    ease: REVEAL_EASE
-                }}
-                className="overflow-hidden w-[200px] sm:w-[240px] lg:w-[272px] shrink-0 self-start"
-            >
-                <div
-                    className={`relative w-full aspect-[272/459] transition-[transform] ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                        isActive ? "duration-[800ms] delay-[100ms] scale-100" : "duration-[400ms] scale-[0.97]"
+            {/* Dividers are TOP borders (every card but the first), not bottom —
+                same pixel position since the cards are adjacent, but a bottom
+                border gets clipped away by the fold animation's overflow:hidden
+                (which cuts from the bottom) as soon as the card starts closing. */}
+            <div
+                className={`flex flex-col lg:flex-row w-full items-start lg:justify-between gap-6 lg:gap-10 py-6 ${showDivider ? "border-t border-[#8794a3]" : ""
                     }`}
-                >
-                    <Image src={image} alt="" fill className="object-cover" />
+            >
+                {/* Mobile-only duplicate of the number+title below (hidden below lg) —
+                    on mobile the image sits below the number/title rather than above. */}
+                <div className="flex flex-col gap-5 lg:hidden">
+                    <span className="text-[#8794a3] text-2xl font-medium leading-[1.5]">{number}</span>
+                    <p className="text-[#10161d] text-lg font-medium leading-[1.5]">{title}</p>
                 </div>
-            </motion.div>
 
-            {/* justify-between on THIS gap (title vs. services) used to be
-                reverted in favor of a fixed gap, with the flexible space
-                living one level up between the image and this whole block.
-                That's now inverted: the image↔title gap needed to become a
-                small, fixed value (see the outer row above), so this inner
-                gap is what absorbs the row's leftover width instead — title
-                stays pinned to this block's left edge, services stays pinned
-                to its right edge, exactly where it already was, while only
-                the image↔title spacing tightens up.
-                lg:flex-1 (replacing the old lg:w-auto lg:shrink-0) is what
-                makes that possible — this block now grows to claim the
-                entire remaining row width after the image, instead of only
-                being as wide as its own fixed-width children (320 + gap +
-                320). Without that, justify-between here would have nothing
-                beyond that fixed content width to distribute, and the
-                services column would land well short of the row's right
-                edge instead of flush against it. Below lg the row is still
-                stacked (image on top), so w-full there is unchanged and
-                correct. */}
-            <div className="flex flex-col sm:flex-row w-full lg:flex-1 gap-8 sm:gap-10 md:gap-16 lg:justify-between">
-                {/* number + title always show, collapsed or open; description + button
-                    reveal in place below them while open — using Framer Motion for a
-                    perfectly synchronized smooth collapse/expand transition. */}
-                <div className="flex flex-col sm:w-[320px] gap-3 shrink-0">
+                {/* 272x459 in Figma, kept as an aspect ratio on a responsive width
+                    so it scales with the viewport instead of distorting. */}
+                <motion.div
+                    initial={false}
+                    animate={{ height: isActive ? "auto" : 0, opacity: isActive ? 1 : 0 }}
+                    transition={{ duration: 0.8, ease: REVEAL_EASE }}
+                    className="overflow-hidden w-[200px] sm:w-[240px] lg:w-[272px] shrink-0 self-start"
+                >
+                    <div
+                        className={`relative w-full aspect-[272/459] transition-[transform] ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive ? "duration-[800ms] delay-[100ms] scale-100" : "duration-[400ms] scale-[0.97]"
+                            }`}
+                    >
+                        <Image src={image} alt="" fill className="object-cover" />
+                    </div>
+                </motion.div>
+
+                <div className="flex flex-col w-full lg:w-auto lg:flex-1 lg:max-w-[773px]">
+                    {/* Number and title stay outside the collapsible — a closed card
+                        still reads as "02 Microsoft Services"; only the description
+                        and button fold away. */}
                     <span className="hidden lg:inline text-[#8794a3] text-2xl sm:text-[28px] font-medium leading-[1.5]">
                         {number}
                     </span>
-                    <p className="hidden lg:block text-[#10161d] text-lg font-medium leading-[1.5]">{title}</p>
+                    <p className="hidden lg:block mt-5 text-[#10161d] text-lg font-medium leading-[1.5]">{title}</p>
 
                     <motion.div
                         initial={false}
-                        animate={{
-                            height: isActive ? "auto" : 0,
-                            opacity: isActive ? 1 : 0
-                        }}
-                        transition={{
-                            duration: 0.8,
-                            ease: REVEAL_EASE
-                        }}
+                        animate={{ height: isActive ? "auto" : 0, opacity: isActive ? 1 : 0 }}
+                        transition={{ duration: 0.8, ease: REVEAL_EASE }}
                         className="overflow-hidden"
                     >
-                        <div className="flex flex-col gap-8 pt-5">
-                            <p className="text-[#4a5568] text-lg font-light leading-normal">{description}</p>
+                        <div className="flex flex-col gap-8 pt-2.5">
+                            <div className="text-[#4a5568] text-lg font-light leading-normal">
+                                {description.map((paragraph) => (
+                                    <p key={paragraph}>{paragraph}</p>
+                                ))}
+                            </div>
                             <Link
                                 href={href}
                                 onClick={(event) => event.stopPropagation()}
-                                className="inline-flex h-11 w-[175px] items-center justify-center border border-[#d0d0d0] bg-[#0a3a52] px-6 text-lg font-light text-white text-center transition-colors hover:bg-white hover:text-[#0a3a52]"
+                                className="inline-flex h-11 w-[175px] shrink-0 items-center justify-center border border-[#d0d0d0] bg-[#0a3a52] px-6 text-lg font-light text-white text-center transition-colors hover:bg-white hover:text-[#0a3a52]"
                             >
                                 View More
                             </Link>
                         </div>
                     </motion.div>
                 </div>
-
-                {/* Third column is either the "View Details" trigger (closed) or the
-                    services list (open) — never both, so no extra height/motion
-                    logic is needed to keep them from colliding. The row above
-                    (title column + this one) still has no items-* class, so the
-                    browser default of align-items: stretch applies — this column's
-                    box is already exactly as tall as the number/title column next
-                    to it, which is what lets justify-center below vertically
-                    center the button against that stack instead of pinning it to
-                    the top. */}
-                {/* justify-center only applies while collapsed (centers the "View
-                    Details" button against the number+title stack, per the note
-                    above). Once open, the services list already carries its own
-                    pt-12/pt-[54px] offset tuned to line its first row up with the
-                    title text — that only holds if this column is pinned to the
-                    top, so centering has to switch off here. Left as justify-center
-                    for every card, a card whose services list (fewer items, e.g.
-                    Microsoft Services' 5) is shorter than its own title+description
-                    block got extra space split top/bottom by the centering, pushing
-                    the list down and out of alignment with cards whose services
-                    column happens to fill the row (SAP's 7 items, Broader Tech's
-                    wrapped title) — that's what made card 2 sit differently from 1
-                    and 3.
-
-                    sm:w-[320px] fixes a second, independent bug: the services list
-                    below is always mounted — only its height/opacity animate
-                    closed, Framer Motion never touches width — so even while
-                    collapsed its natural (max-content) text width was still sizing
-                    this column. That width differs per card (SAP's/Broader Tech's
-                    longest line is much wider than the 175px "View Details" button;
-                    Microsoft Services' longest line is narrower than the button, so
-                    its column collapsed to just the button's width). Since the
-                    inner row pins this column's right edge via justify-between, a
-                    narrower column reads as "pushed right" — exactly the
-                    card-2-only drift. Giving the column one fixed width regardless
-                    of card/state removes the dependency on content length
-                    entirely. No shrink-0 here on purpose — deliberately left able
-                    to shrink (default flex-shrink: 1) so the ~1024px safety net
-                    described below (services list wrapping instead of overflowing)
-                    still works; a hard shrink-0 floor would just reintroduce that
-                    overflow at tight viewports. */}
-                <div className={`flex flex-col sm:w-[320px] ${isActive ? "justify-start" : "justify-center"}`}>
-                    {!isActive && (
-                        <button
-                            type="button"
-                            onClick={(event) => {
-                                event.stopPropagation();
-                                onActivate();
-                            }}
-                            className="inline-flex h-11 w-[175px] items-center justify-center self-start border border-[#d0d0d0] bg-white px-6 text-lg font-light text-[#0a3a52] text-center transition-colors hover:bg-[#0a3a52] hover:text-white"
-                        >
-                            View Details
-                        </button>
-                    )}
-
-                    <motion.div
-                        initial={false}
-                        animate={{
-                            height: isActive ? "auto" : 0,
-                            opacity: isActive ? 1 : 0
-                        }}
-                        transition={{
-                            duration: 0.8,
-                            ease: REVEAL_EASE
-                        }}
-                        // Sized to its own content rather than stretched (the old
-                        // flex-1 bug), but still allowed to shrink/wrap (no
-                        // shrink-0, no min-w-0 override) rather than forced
-                        // nowrap — the fixed-width image + gap + title column
-                        // budget doesn't leave enough room for every nowrap
-                        // phrase around ~1024px, so this is the safety net that
-                        // wraps gracefully there instead of overflowing the
-                        // viewport. At Figma's own ~1280px+ reference width there
-                        // is enough room and every line still renders on one row.
-                        // No padding lives directly on THIS element on purpose —
-                        // see the inner wrapper below for why. */}
-                        className="overflow-hidden flex flex-col"
-                    >
-                        {/* pt-12/sm:pt-[54px] offsets the list down to align with
-                            the title row below the number+gap-3 above it (28px
-                            number line at 1.5 leading + 12px gap ≈ 54px at
-                            desktop, 24px number line + 12px gap ≈ 48px on
-                            mobile), per Figma — not the number. It has to live on
-                            this inner div rather than the motion.div above:
-                            box-sizing is border-box, and a padding-top larger
-                            than an explicit `height` can't be shrunk away — the
-                            browser renders at least the padding's own size
-                            regardless. Framer was setting the motion.div's height
-                            to a literal 0px while closed, but with the padding on
-                            that same element the box still rendered at 54px (its
-                            padding-top), which is what was silently eating all of
-                            the closed "View Details" button's centering space —
-                            measured directly in the browser: the third column
-                            stretched to a 98px content height it should never
-                            have had (44px button + that phantom 54px), leaving
-                            justify-center nothing left to center. Padding on this
-                            separate, un-animated child instead means it's the
-                            motion.div's real height driving the collapse, and
-                            overflow-hidden on the motion.div clips this whole
-                            child — padding included — away to nothing while
-                            closed. */}
-                        <div className="flex flex-col gap-3 sm:gap-4 pt-12 sm:pt-[54px]">
-                            {/* Each service links to its own sub-page with a ?service=
-                                query param, so that page's own accordion/carousel can
-                                open on the matching item and scroll itself into view —
-                                see the useSearchParams effect on each destination
-                                component (SAPS4HANAMigrationImplementation.jsx,
-                                CapabilitiesAccordion.jsx, GovernanceSAPDataDepth.jsx). */}
-                            {services.map((service) => (
-                                <Link
-                                    key={service}
-                                    href={`${href}?service=${encodeURIComponent(service)}`}
-                                    className="w-fit text-[#4a5568] text-base font-light leading-[1.5] transition-colors hover:text-[#2d8ec5]"
-                                >
-                                    {service}
-                                </Link>
-                            ))}
-                        </div>
-                    </motion.div>
-                </div>
             </div>
-        </div>
+        </motion.div>
     );
-}
+});
 
 export default function Capabilities() {
     const [activeIndex, setActiveIndex] = useState(0);
-    const listRef = useRef(null);
-    const [listHeight, setListHeight] = useState(null);
+    // windowRef is the pinned stage — always naturally sized, never clipped.
+    // trackRef (the card stack) is what gets shifted to keep the active card
+    // centered.
+    const windowRef = useRef(null);
+    const trackRef = useRef(null);
+    const cardRefs = useRef([]);
+    const activeIndexRef = useRef(activeIndex);
+    // True only while ScrollTrigger is actively pinned.
+    const pinnedRef = useRef(false);
+    // Index recenter() last targeted — detects the exact moment activeIndex
+    // switches, as opposed to a merely large per-frame scroll delta.
+    const lastRecenteredIndexRef = useRef(activeIndex);
+    // performance.now() timestamp until which recenter() should tween toward
+    // its target instead of snapping instantly — set on each activeIndex
+    // switch, held for roughly the card's own open/close duration.
+    const transitionUntilRef = useRef(0);
+    // True once the pin has been scrolled all the way through and released at
+    // its end (as opposed to not yet reached) — the spacer correction in
+    // syncSpacerHeight is only valid in that state.
+    const pastPinRef = useRef(false);
+    const syncSpacerRef = useRef(() => { });
+    // Last scrolled-pixels value from onUpdate, reused by ResizeObserver-driven
+    // recenter() calls so a mid-scroll accordion animation stays consistent.
+    const lastScrolledRef = useRef(0);
+    const recenterRef = useRef(() => { });
+    // Unwind value frozen at the instant an index transition starts, so it
+    // doesn't oscillate against the centering tween as cards resize mid-animation.
+    const frozenUnwindRef = useRef(0);
 
-    // The card list's total height is the same regardless of which card is
-    // open — always exactly one open row + two collapsed rows — so the
-    // open/close transitions are supposed to cancel out and never move
-    // anything below this section. In practice, clicking a different card's
-    // "View Details" before the previous transition finishes interrupts it
-    // mid-flight and breaks that cancellation for a moment (a partially-open
-    // row reversing direction doesn't shrink by the same amount the newly
-    // active row is growing). Measuring the list's natural height once and
-    // locking it as a min-height makes that a non-issue regardless of
-    // timing — the section below is anchored to a fixed floor no
-    // interrupted animation can move.
-    useLayoutEffect(() => {
-        const measure = () => {
-            const node = listRef.current;
-            if (!node) return;
-            const previousMinHeight = node.style.minHeight;
-            node.style.minHeight = "0px";
-            const height = node.scrollHeight;
-            node.style.minHeight = previousMinHeight;
-            setListHeight(height);
-        };
-        measure();
-        window.addEventListener("resize", measure);
-        return () => window.removeEventListener("resize", measure);
+    useEffect(() => {
+        activeIndexRef.current = activeIndex;
+    }, [activeIndex]);
+
+    useEffect(() => {
+        if (typeof window === "undefined") return;
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            // card1→2→3 switching keeps the same 2400px budget, and the pin
+            // ends right there — no trailing unwind distance. Cards above the
+            // active one collapse to nothing (isPassed), so the active card
+            // always sits at offset 0 and needs ~0 shift to center, exactly
+            // like card 1 — nothing left to unwind at release.
+            const TOTAL_DISTANCE = INTERACTIVE_DISTANCE;
+
+            // Trigger is card 1 itself (not the whole stage), so "center
+            // center" engages exactly when card 1's own middle crosses the
+            // viewport's middle — not the combined stack's much lower midpoint.
+            ScrollTrigger.create({
+                trigger: cardRefs.current[0],
+                pin: windowRef.current,
+                start: "center center",
+                end: "+=" + TOTAL_DISTANCE,
+                pinSpacing: true,
+                scrub: true,
+                onToggle: (self) => {
+                    pinnedRef.current = self.isActive;
+                    if (!self.isActive) {
+                        pastPinRef.current = self.progress > 0.5;
+                        // Run after GSAP restores the released element's own
+                        // styles, so we don't measure it mid-handoff.
+                        requestAnimationFrame(() => syncSpacerRef.current());
+                        // Safety cleanup — by the time GSAP releases, the
+                        // unwind has already eased the shift to 0.
+                        gsap.killTweensOf(trackRef.current);
+                        gsap.set(trackRef.current, { clearProps: "transform" });
+                    }
+                },
+                onUpdate: (self) => {
+                    const scrolled = self.progress * TOTAL_DISTANCE;
+                    lastScrolledRef.current = scrolled;
+                    // Even thirds — card 3's threshold (1600px) isn't rescaled
+                    // by TOTAL_DISTANCE, so it lands at the same scroll amount.
+                    let newIndex = 0;
+                    if (scrolled < INTERACTIVE_DISTANCE / 3) {
+                        newIndex = 0;
+                    } else if (scrolled < (2 * INTERACTIVE_DISTANCE) / 3) {
+                        newIndex = 1;
+                    } else {
+                        newIndex = 2;
+                    }
+                    setActiveIndex((prev) => (prev === newIndex ? prev : newIndex));
+                    // Called directly, not gated by pinnedRef — onUpdate only
+                    // ever fires while GSAP itself considers this in-range.
+                    recenterRef.current(scrolled);
+                }
+            });
+        });
+
+        return () => ctx.revert();
     }, []);
+
+    // Keeps the active card's vertical center pinned to the viewport's
+    // vertical center by translating the whole track. Re-measures continuously
+    // (ResizeObserver on every card) because Framer Motion's height animation
+    // reflows the stack frame-by-frame for the whole ~800ms open/close.
+    useEffect(() => {
+        if (typeof window === "undefined") return;
+
+        const recenter = (scrolled = lastScrolledRef.current) => {
+            const win = windowRef.current;
+            const track = trackRef.current;
+            const activeCard = cardRefs.current[activeIndexRef.current];
+            if (!win || !track || !activeCard) return;
+
+            // offsetTop/offsetHeight are transform-immune, unlike
+            // getBoundingClientRect, which would reflect track's own
+            // in-flight transform.
+            const winTop = win.getBoundingClientRect().top;
+            const cardOffsetTop = activeCard.offsetTop;
+            const cardHeight = activeCard.offsetHeight;
+            const centeredY = window.innerHeight / 2 - winTop - cardOffsetTop - cardHeight / 2;
+
+            // Linear, additive unwind: past INTERACTIVE_DISTANCE, the shift
+            // moves toward 0 at exactly 1px per 1px of extra scroll, matching
+            // natural scroll's own rate by construction.
+            const extra = Math.max(0, scrolled - INTERACTIVE_DISTANCE);
+            const unwind = Math.min(extra, Math.abs(centeredY));
+
+            const now = performance.now();
+            if (lastRecenteredIndexRef.current !== activeIndexRef.current) {
+                lastRecenteredIndexRef.current = activeIndexRef.current;
+                transitionUntilRef.current = now + 900;
+                // Freeze the unwind value so it doesn't fight the centering
+                // tween while the card is animating open/closed.
+                frozenUnwindRef.current = unwind;
+            }
+
+            const inTransition = now < transitionUntilRef.current;
+            const effectiveUnwind = inTransition ? frozenUnwindRef.current : unwind;
+            const shift = centeredY - Math.sign(centeredY) * effectiveUnwind;
+
+            gsap.killTweensOf(track);
+            if (inTransition) {
+                gsap.to(track, { y: shift, duration: 0.4, ease: "power2.out" });
+            } else {
+                gsap.set(track, { y: shift });
+            }
+        };
+
+        // GSAP freezes the pinned element's own height at pin time, so once
+        // cards above the active one collapse (isPassed), the track shrinks
+        // but the window doesn't — leaving dead space below the active card.
+        // Clearing the inline height lets the window re-hug the track, and the
+        // pin-spacer has to be resized to match or the same dead space just
+        // reappears one level up.
+        const syncSpacerHeight = () => {
+            const win = windowRef.current;
+            const track = trackRef.current;
+            if (!win || !track) return;
+            win.style.height = "";
+            const spacer = win.parentElement;
+            if (!spacer || !spacer.classList.contains("pin-spacer")) return;
+            if (pinnedRef.current) {
+                // While pinned the window is position:fixed, so its rect says
+                // nothing about where it sits in the spacer's flow — use the
+                // nominal size. Any small error is invisible here since the
+                // content below the spacer is off-screen during the pin.
+                spacer.style.height = `${win.offsetHeight + INTERACTIVE_DISTANCE}px`;
+            } else if (pastPinRef.current) {
+                // Released, past the pin: size the spacer to end exactly at
+                // the window's real position, so only the section's own
+                // bottom padding is left below card 3.
+                const offsetInSpacer =
+                    win.getBoundingClientRect().top - spacer.getBoundingClientRect().top;
+                spacer.style.height = `${Math.round(offsetInSpacer + win.offsetHeight)}px`;
+            }
+            // Before the pin is ever reached, the spacer's extra height is
+            // GSAP's reserved scroll room — leave it alone.
+        };
+
+        recenterRef.current = recenter;
+        syncSpacerRef.current = syncSpacerHeight;
+        if (pinnedRef.current) recenter();
+
+        // Wrapped in a no-arg call: ResizeObserver/`resize` invoke their
+        // callback with a truthy first argument, which would otherwise be
+        // read as the scroll position.
+        const handleChange = () => {
+            syncSpacerHeight();
+            if (!pinnedRef.current) return;
+            recenter();
+        };
+        const ro = new ResizeObserver(handleChange);
+        cardRefs.current.forEach((el) => el && ro.observe(el));
+        window.addEventListener("resize", handleChange);
+        syncSpacerHeight();
+
+        return () => {
+            ro.disconnect();
+            window.removeEventListener("resize", handleChange);
+        };
+    }, [activeIndex]);
 
     return (
         <section className="w-full bg-[#f3f6f9] px-6 py-8 sm:px-[64px] sm:py-[32px] flex flex-col items-center gap-10 sm:gap-[86px]">
@@ -383,36 +350,31 @@ export default function Capabilities() {
                 </p>
             </motion.div>
 
-            {/* max-w-[1280px] mx-auto matches the container width already used
-                across the rest of the WhatWeDo section components (see e.g.
-                InnovationEmergingTechnologies/OurInnovationFramework.jsx,
-                IntelligentAutomation/WhyIntelligentAutomationMatters.jsx).
-                Without it, this row's own width is unbounded on a wide
-                desktop — the fixed-width image/title/services chunks don't
-                come close to filling it, and the outer row's justify-between
-                (above, in CapabilityCard) has nowhere to stop growing the
-                image↔text gap into. Capping the row here is what turns that
-                growth into "comfortable breathing room" instead of "a
-                half-empty section." */}
             <motion.div
-                ref={listRef}
+                ref={windowRef}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                style={listHeight ? { minHeight: `${listHeight}px` } : undefined}
-                className="w-full max-w-[1280px] mx-auto flex flex-col"
+                className="relative w-full max-w-[1280px] mx-auto"
             >
-                {CAPABILITIES.map((cap, index) => (
-                    <CapabilityCard
-                        key={cap.title}
-                        {...cap}
-                        isActive={index === activeIndex}
-                        isLast={index === CAPABILITIES.length - 1}
-                        onActivate={() => setActiveIndex(index)}
-                    />
-                ))}
+                <div ref={trackRef} className="flex flex-col w-full">
+                    {CAPABILITIES.map((cap, index) => (
+                        <CapabilityCard
+                            key={cap.title}
+                            ref={(el) => {
+                                cardRefs.current[index] = el;
+                            }}
+                            {...cap}
+                            isActive={index === activeIndex}
+                            isPassed={index < activeIndex}
+                            showDivider={index > 0}
+                            onActivate={() => setActiveIndex(index)}
+                        />
+                    ))}
+                </div>
             </motion.div>
         </section>
     );
 }
+

@@ -150,7 +150,7 @@ const Footer = () => {
 
             {/* <div className="flex space-x-3 md:col-span-1">
               {/* <a
-              href="https://www.linkedin.com/company/ascendus/"
+              href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
@@ -486,7 +486,7 @@ const Footer = () => {
             </div> */}
             <div className="flex space-x-3 md:col-span-1 min-h-[50px] mb-2 mt-4">
               <a
-                href="https://www.linkedin.com/company/ascendus/"
+                href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
@@ -564,7 +564,7 @@ const Footer = () => {
 
 
           {/* <a
-              href="https://www.linkedin.com/company/ascendus/"
+              href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
@@ -625,7 +625,7 @@ const Footer = () => {
             </a> */}
 
             {/* <a
-              href="https://www.linkedin.com/company/ascendus/"
+              href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
@@ -659,7 +659,7 @@ const Footer = () => {
           <div className="md:col-span-1"></div>
           {/* <div className="flex space-x-3 md:col-span-1 min-h-[50px] mb-2">
             <a
-              href="https://www.linkedin.com/company/ascendus/"
+              href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"

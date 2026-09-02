@@ -2,14 +2,12 @@ import { MetadataRoute } from 'next';
 import { supabase } from '@/lib/supabaseClient';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.ascendus.com'; // TODO: swap for the real Ascendus domain
+  const baseUrl = 'https://www.ascendus.tech'; // TODO: swap for the real Ascendus domain
 
   // 1. Core Corporate Directory (Static)
   const staticRoutes: MetadataRoute.Sitemap = [
     '',
     '/aboutus',
-    '/services',
-    '/solutions',
     '/contact-us',
     '/careers',
     '/bookacall',

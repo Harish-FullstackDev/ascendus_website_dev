@@ -37,7 +37,7 @@ export default function MaintenancePage() {
 
           <div className="flex justify-center items-center gap-4">
             <Link
-              href="https://www.linkedin.com/company/ascendus/"
+              href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
               target="_blank"
               className="w-11 h-11 rounded-full bg-[#05649A] hover:scale-110 transition-all duration-300 flex items-center justify-center text-white"
             >
