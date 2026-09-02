@@ -20,6 +20,7 @@ export default function InsightsListing({
   description,
   highlights,
   emptyStateText = "No entries found yet. Please check back soon.",
+  loading = false,
 }) {
   const router = useRouter();
   const containerRef = useRef(null);
@@ -94,7 +95,11 @@ export default function InsightsListing({
           </div>
         )}
 
-        {filteredItems.length === 0 ? (
+        {loading ? (
+          <div className="flex items-center justify-center py-40">
+            <div className="w-12 h-12 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" />
+          </div>
+        ) : filteredItems.length === 0 ? (
           <div className="text-center py-40 border border-dashed border-neutral-200 rounded-none p-8 bg-white">
             <p className="text-slate-600 text-lg">{emptyStateText}</p>
           </div>

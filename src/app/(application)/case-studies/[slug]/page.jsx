@@ -1,9 +1,9 @@
 import InsightDetail from "@/components/Insights/InsightDetail";
-import { caseStudiesData, getCaseStudyBySlug } from "@/data/caseStudiesData";
+import { getCaseStudyBySlug } from "@/lib/caseStudies";
 
 export async function generateMetadata({ params }) {
     const { slug } = await params;
-    const caseStudy = getCaseStudyBySlug(slug);
+    const caseStudy = await getCaseStudyBySlug(slug);
 
     if (!caseStudy) {
         return { title: "Case Study Not Found" };
@@ -34,13 +34,9 @@ export async function generateMetadata({ params }) {
     };
 }
 
-export function generateStaticParams() {
-    return caseStudiesData.map((item) => ({ slug: item.slug }));
-}
-
 export default async function CaseStudyDetailPage({ params }) {
     const { slug } = await params;
-    const caseStudy = getCaseStudyBySlug(slug);
+    const caseStudy = await getCaseStudyBySlug(slug);
 
     return (
         <InsightDetail item={caseStudy} basePath="/case-studies" backLabel="Back to Case Studies" />

@@ -452,7 +452,7 @@ const Footer = () => {
                   href="https://isupportz.com"
                   className="hover:text-white transition-colors duration-200 sm:mt-1"
                 >
-                  Ascendus Powder by <br /> Support Studio Technologies
+                  Ascendus Powered by <br /> Support Studio Technologies
                 </a>
               </li>
               <li>

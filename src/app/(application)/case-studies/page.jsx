@@ -1,15 +1,39 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import InsightsListing from "@/components/Insights/InsightsListing";
-// import backgroundImage from "../../../../public/ServicePage/software-delivery-team.jpg";
 import backgroundImage from "@/assets/Insights/CaseStudies_Hero.webp";
-import { caseStudiesData } from "@/data/caseStudiesData";
+import { getAllCaseStudies } from "@/lib/caseStudies";
 
 export default function CaseStudiesPage() {
+    const [caseStudies, setCaseStudies] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        let isMounted = true;
+
+        const fetchCaseStudies = async () => {
+            try {
+                const data = await getAllCaseStudies();
+                if (isMounted) setCaseStudies(data);
+            } catch (err) {
+                console.error("Error fetching case studies:", err.message);
+                if (isMounted) setCaseStudies([]);
+            } finally {
+                if (isMounted) setLoading(false);
+            }
+        };
+
+        fetchCaseStudies();
+        return () => {
+            isMounted = false;
+        };
+    }, []);
+
     return (
         <InsightsListing
-            items={caseStudiesData}
+            items={caseStudies}
+            loading={loading}
             basePath="/case-studies"
             backgroundImage={backgroundImage}
             subtitle="Proven Outcomes"

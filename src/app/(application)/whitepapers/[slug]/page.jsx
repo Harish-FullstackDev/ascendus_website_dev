@@ -1,9 +1,9 @@
 import InsightDetail from "@/components/Insights/InsightDetail";
-import { whitepapersData, getWhitepaperBySlug } from "@/data/whitepapersData";
+import { getWhitepaperBySlug } from "@/lib/whitepapers";
 
 export async function generateMetadata({ params }) {
     const { slug } = await params;
-    const whitepaper = getWhitepaperBySlug(slug);
+    const whitepaper = await getWhitepaperBySlug(slug);
 
     if (!whitepaper) {
         return { title: "Whitepaper Not Found" };
@@ -34,13 +34,9 @@ export async function generateMetadata({ params }) {
     };
 }
 
-export function generateStaticParams() {
-    return whitepapersData.map((item) => ({ slug: item.slug }));
-}
-
 export default async function WhitepaperDetailPage({ params }) {
     const { slug } = await params;
-    const whitepaper = getWhitepaperBySlug(slug);
+    const whitepaper = await getWhitepaperBySlug(slug);
 
     return (
         <InsightDetail item={whitepaper} basePath="/whitepapers" backLabel="Back to Whitepapers" />

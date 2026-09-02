@@ -184,6 +184,80 @@ export interface Database {
         Update: Partial<Database['public']['Tables']['blogs']['Insert']>;
         Relationships: [];
       };
+      case_studies: {
+        Row: {
+          id: string;
+          slug: string;
+          title: string;
+          category: string;
+          summary: string;
+          cover_image: string;
+          publish_date: string;
+          author: string;
+          meta_line: string | null;
+          tags: string[];
+          highlights: Json;
+          sections: Json;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          slug: string;
+          title: string;
+          category: string;
+          summary: string;
+          cover_image: string;
+          publish_date?: string;
+          author: string;
+          meta_line?: string | null;
+          tags?: string[];
+          highlights?: Json;
+          sections?: Json;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['case_studies']['Insert']>;
+        Relationships: [];
+      };
+      white_papers: {
+        Row: {
+          id: string;
+          slug: string;
+          title: string;
+          category: string;
+          summary: string;
+          cover_image: string;
+          publish_date: string;
+          author: string;
+          meta_line: string | null;
+          tags: string[];
+          file_info: string | null;
+          download_url: string | null;
+          sections: Json;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          slug: string;
+          title: string;
+          category: string;
+          summary: string;
+          cover_image: string;
+          publish_date?: string;
+          author: string;
+          meta_line?: string | null;
+          tags?: string[];
+          file_info?: string | null;
+          download_url?: string | null;
+          sections?: Json;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['white_papers']['Insert']>;
+        Relationships: [];
+      };
       job_applications: {
         Row: {
           id: string;

@@ -206,8 +206,8 @@ function ResumeUploadModal({ isOpen, onClose, jobTitle }) {
                             onDrop={handleDrop}
                             onClick={() => fileInputRef.current?.click()}
                             className={`border-2 border-dashed p-8 flex flex-col items-center justify-center gap-2 cursor-pointer transition-all ${dragActive
-                                    ? "border-blue-500 bg-blue-50/50"
-                                    : "border-slate-200 hover:border-slate-300 bg-slate-50/50"
+                                ? "border-blue-500 bg-blue-50/50"
+                                : "border-slate-200 hover:border-slate-300 bg-slate-50/50"
                                 }`}
                         >
                             <Image src={uploadIcon} alt="" width={36} height={36} />
@@ -293,8 +293,8 @@ export default function JobDescription({ job, otherJobs = [] }) {
                             </div>
                             <div className="flex items-center gap-2 mt-2 text-sm text-[#6a7282]">
                                 <Image src={applicantsIcon} alt="" width={16} height={16} />
-                                <span>{job.applicants} applicants</span>
-                                <span>•</span>
+                                {/* <span>{job.applicants} applicants</span> */}
+                                {/* <span>•</span> */}
                                 <span>{job.postedAgo}</span>
                             </div>
                             <div className="flex flex-wrap gap-2 mt-3">
