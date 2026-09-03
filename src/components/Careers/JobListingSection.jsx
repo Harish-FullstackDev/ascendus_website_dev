@@ -9,16 +9,38 @@ import clearFilterIcon from "@/assets/career/icons/Clear filter.svg";
 import prevPageIcon from "@/assets/career/icons/previous page toggle.svg";
 import nextPageIcon from "@/assets/career/icons/Next page toggle arrow.svg";
 import viewJobDetailsIcon from "@/assets/career/icons/view job details.svg";
-import { jobs } from "@/components/Constants/Career/jobsData";
+import { getAllJobs } from "@/lib/jobs";
 import { AREA_OF_INTEREST } from "@/components/Constants/Career/filterCategories";
 
 const PAGE_SIZE = 6;
 
 export default function JobListingSection() {
+    const [jobs, setJobs] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [page, setPage] = useState(1);
     const [filtersOpen, setFiltersOpen] = useState(false);
+
+    useEffect(() => {
+        let isMounted = true;
+
+        getAllJobs()
+            .then((data) => {
+                if (isMounted) setJobs(data);
+            })
+            .catch((err) => {
+                console.error("Error fetching jobs:", err.message);
+                if (isMounted) setJobs([]);
+            })
+            .finally(() => {
+                if (isMounted) setLoading(false);
+            });
+
+        return () => {
+            isMounted = false;
+        };
+    }, []);
 
     const categoryCounts = useMemo(() => {
         const counts = {};
@@ -26,7 +48,7 @@ export default function JobListingSection() {
             counts[category] = jobs.filter((job) => job.categories.includes(category)).length;
         });
         return counts;
-    }, []);
+    }, [jobs]);
 
     const filteredJobs = useMemo(() => {
         const query = search.trim().toLowerCase();
@@ -40,7 +62,7 @@ export default function JobListingSection() {
                 job.categories.some((category) => selectedCategories.includes(category));
             return matchesSearch && matchesCategory;
         });
-    }, [search, selectedCategories]);
+    }, [jobs, search, selectedCategories]);
 
     const totalPages = Math.max(1, Math.ceil(filteredJobs.length / PAGE_SIZE));
     const paginatedJobs = filteredJobs.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
@@ -174,7 +196,9 @@ export default function JobListingSection() {
 
                     <div className="flex-1 flex flex-col gap-6">
                         <div className="flex flex-col gap-3">
-                            {paginatedJobs.length === 0 ? (
+                            {loading ? (
+                                <p className="text-sm text-[#5c5c5c] py-10 text-center">Loading open roles...</p>
+                            ) : paginatedJobs.length === 0 ? (
                                 <p className="text-sm text-[#5c5c5c] py-10 text-center">
                                     No roles match your current filters. Adjust your search criteria or check back
                                     as new opportunities become available.

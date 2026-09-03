@@ -1,9 +1,9 @@
 import PageClient from "./PageClient";
-import { getJobBySlug } from "@/components/Constants/Career/jobsData";
+import { getJobBySlug, getOtherJobs } from "@/lib/jobs";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const job = getJobBySlug(slug);
+  const job = await getJobBySlug(slug);
   if (!job) {
     return {
       title: "Job Not Found",
@@ -27,6 +27,10 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function Page() {
-  return <PageClient />;
+export default async function Page({ params }) {
+  const { slug } = await params;
+  const job = await getJobBySlug(slug);
+  const otherJobs = job ? await getOtherJobs(job.slug) : [];
+
+  return <PageClient job={job} otherJobs={otherJobs} />;
 }
