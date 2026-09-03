@@ -28,7 +28,7 @@ const Navbar = () => {
   const [isCapabilitiesOpen, setIsCapabilitiesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
 
-  const lightThemeRoutes = ["/privacyPolicy", "/ssterrors", "/termsOfService"];
+  const lightThemeRoutes = ["/legal/privacy/", "/ssterrors/", "/legal/terms/"];
 
   const navLinkClass = `
                           relative py-2 px-3
@@ -121,19 +121,19 @@ const Navbar = () => {
 
   const servicesMenu = {
     capabilities: [
-      { name: "Enterprise Transformation", href: "/whatWeDo/enterprise-transformation" },
-      { name: "Artificial Intelligence", href: "/whatWeDo/artificial-intelligence" },
-      { name: "Cloud & Infrastructure", href: "/whatWeDo/cloud-infrastructure" },
-      { name: "Data & Intelligence", href: "/whatWeDo/data-intelligence" },
-      { name: "Digital Engineering", href: "/whatWeDo/digital-engineering" },
-      { name: "Customer Experience", href: "/whatWeDo/customer-experience" },
+      { name: "Enterprise Transformation", href: "/what-we-do/enterprise-transformation" },
+      { name: "Artificial Intelligence", href: "/what-we-do/artificial-intelligence" },
+      { name: "Cloud & Infrastructure", href: "/what-we-do/cloud-infrastructure" },
+      { name: "Data & Intelligence", href: "/what-we-do/data-intelligence" },
+      { name: "Digital Engineering", href: "/what-we-do/digital-engineering" },
+      { name: "Customer Experience", href: "/what-we-do/customer-experience" },
 
-      { name: "Experience Design", href: "/whatWeDo/experience-design" },
-      { name: "Intelligent Automation", href: "/whatWeDo/intelligent-automation" },
-      { name: "Cybersecurity & Digital Trust", href: "/whatWeDo/cybersecurity-digital-trust" },
-      { name: "Managed Services", href: "/whatWeDo/managed-services" },
-      { name: "Business Advisory", href: "/whatWeDo/business-advisory" },
-      { name: "Innovation & Emerging Technologies", href: "/whatWeDo/innovation-emerging-technologies" },
+      { name: "Experience Design", href: "/what-we-do/experience-design" },
+      { name: "Intelligent Automation", href: "/what-we-do/intelligent-automation" },
+      { name: "Cybersecurity & Digital Trust", href: "/what-we-do/cybersecurity-digital-trust" },
+      { name: "Managed Services", href: "/what-we-do/managed-services" },
+      { name: "Business Advisory", href: "/what-we-do/business-advisory" },
+      { name: "Innovation & Emerging Technologies", href: "/what-we-do/innovation-emerging-technologies" },
     ],
 
     industries: [
@@ -414,7 +414,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/who-we-are"
-                      className={`${navLinkClass} ${pathname === "/who-we-are" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      className={`${navLinkClass} ${pathname === "/who-we-are/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Who we are
@@ -423,8 +423,8 @@ const Navbar = () => {
 
                   <li>
                     <Link
-                      href="/contact-us"
-                      className={`${navLinkClass} ${pathname === "/contact-us" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      href="/contact"
+                      className={`${navLinkClass} ${pathname === "/contact/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Contact
@@ -433,7 +433,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/careers"
-                      className={`${navLinkClass} ${pathname === "/careers" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      className={`${navLinkClass} ${pathname === "/careers/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Careers
@@ -599,7 +599,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/who-we-are"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/who-we-are"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/who-we-are/"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
@@ -611,8 +611,8 @@ const Navbar = () => {
 
             <li>
               <Link
-                href="/contact-us"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/contact-us"
+                href="/contact"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/contact/"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
@@ -624,7 +624,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/careers"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/career"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/careers/"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}

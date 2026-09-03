@@ -24,9 +24,19 @@ export interface OfficeLocation {
 
 const LOCATIONS: OfficeLocation[] = [
   {
-    id: "pondy-hq",
-    name: "Puducherry",
+    id: "riyadh-hq",
+    name: "Riyadh",
     type: "HQ",
+    coordinates: { x: 62.6, y: 41.4 },
+    timezone: "AST (GMT +3:00)",
+    address: "7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., Riyadh 12624, Kingdom of Saudi Arabia",
+    phone: "+966 11 123 4567",
+    email: "riyadh@ascendus.com"
+  },
+  {
+    id: "pondy-office",
+    name: "Puducherry",
+    type: "Regional",
     coordinates: { x: 72.5, y: 52.2 },
     timezone: "IST (GMT +5:30)",
     address: "#192, Kamaraj Salai, Puducherry, India, Pin Code - 605013",
@@ -82,16 +92,6 @@ const LOCATIONS: OfficeLocation[] = [
     address: "Kuwait City, Kuwait",
     phone: "+965 2234 5678",
     email: "kuwait@ascendus.com"
-  },
-  {
-    id: "riyadh-office",
-    name: "Riyadh",
-    type: "Regional",
-    coordinates: { x: 62.6, y: 41.4 },
-    timezone: "AST (GMT +3:00)",
-    address: "Olaya District, Riyadh, KSA",
-    phone: "+966 11 123 4567",
-    email: "riyadh@ascendus.com"
   }
 ];
 

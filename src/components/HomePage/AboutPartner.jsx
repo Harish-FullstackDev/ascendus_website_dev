@@ -20,7 +20,7 @@ export default function AboutPartner() {
                     className="flex-1 flex flex-col gap-2"
                 >
                     <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold w-full">
-                        A Technology Partner Built for Enterprise Complexity
+                        Make enterprise technology work as one system.
                     </h2>
                     <p className="mt-4 text-[#55595E] text-lg font-light leading-[1.5]">
                         Most enterprise programs are not lost on strategy. They are lost in the handoffs: between the firm that designed the architecture and the firm that built it, between the project that went live and the team that has to run it, between a compliance requirement and the system that was already in production when it arrived. Ascendus keeps design, build and run under one accountable team, so architecture context is not re-learned at every stage.

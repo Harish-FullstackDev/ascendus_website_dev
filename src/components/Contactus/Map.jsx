@@ -34,7 +34,7 @@ const Map = () => {
   <div className="px-6 pt-6 pb-2 ">
     <div className="relative w-full h-0 pb-[97.5%] overflow-hidden rounded-lg">
       <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.5025088649436!2d79.81591100000001!3d11.939670300000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5361c4eec70b95%3A0x584de4859b109201!2sSupport%20Studio%20Technologies!5e0!3m2!1sen!2sin!4v1757399839664!5m2!1sen!2sin"
+        src="https://www.google.com/maps?q=7731+King+Saud+Ibn+Abdulaziz+Saud%2C+2839+Al+Murabba+Dist.%2C+Riyadh+12624%2C+Saudi+Arabia&output=embed"
         className="absolute top-0 left-0 w-120 h-100 border-0"
         allowFullScreen="" 
         loading="lazy" 
@@ -144,7 +144,7 @@ const Map = () => {
             </div>
             <div className="text-center sm:text-left">
               <h3 className="text-sm sm:text-base font-semibold text-[#202020]">Location</h3>
-              <p className="text-sm sm:text-base text-[#615E5B]">Pondicherry, India</p>
+              <p className="text-sm sm:text-base text-[#615E5B]">Riyadh, Saudi Arabia</p>
             </div>
           </div>
         </div>

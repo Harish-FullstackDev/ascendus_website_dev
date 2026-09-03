@@ -7,7 +7,7 @@ export async function generateMetadata({ params }) {
   if (!job) {
     return {
       title: "Job Not Found",
-      alternates: { canonical: `/careers/${slug}` },
+      alternates: { canonical: `/careers/${slug}/` },
     };
   }
   const description =
@@ -17,11 +17,11 @@ export async function generateMetadata({ params }) {
   return {
     title: job.title,
     description,
-    alternates: { canonical: `/careers/${slug}` },
+    alternates: { canonical: `/careers/${slug}/` },
     openGraph: {
       title: `${job.title} | Ascendus`,
       description,
-      url: `/careers/${slug}`,
+      url: `/careers/${slug}/`,
       images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ascendus" }],
     },
   };

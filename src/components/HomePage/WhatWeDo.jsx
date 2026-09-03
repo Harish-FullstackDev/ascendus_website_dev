@@ -43,7 +43,7 @@ export default function WhatWeDo() {
                         ready to scale.
                     </p>
                     {/* <Link
-                        href="/whatWeDo/en"
+                        href="/what-we-do/en"
                         className="mt-6 self-start rounded-none border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#2d8ec5] hover:text-white"
                     >
                         What We Do

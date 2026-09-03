@@ -49,7 +49,7 @@ export default function CookieConsent() {
   return (
     <div className="fixed bottom-0 left-0 right-0 p-4 bg-gray-900 text-white shadow-lg z-50 flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
       <p className="text-sm text-center md:text-left">
-        We use cookies to ensure you get the best experience on our website. Review our <a href="/privacyPolicy" className="underline font-semibold">Privacy Policy</a> and <a href="/cookiePolicy" className="underline font-semibold">Cookie Policy</a>.
+        We use cookies to ensure you get the best experience on our website. Review our <a href="/legal/privacy" className="underline font-semibold">Privacy Policy</a> and <a href="/legal/cookies" className="underline font-semibold">Cookie Policy</a>.
       </p>
       <div className="flex space-x-3">
         <button

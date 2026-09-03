@@ -15,7 +15,7 @@ export default function Overview() {
                 className="flex flex-col gap-4 w-full sm:flex-1"
             >
                 <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
-                    Microsoft, running next to SAP, not instead of it
+                    Microsoft, running next to SAP,<br /> not instead of it
                 </h2>
                 <p className="text-[#55595E] text-lg font-light leading-[1.5]">
                     Most enterprises we work with run Microsoft and SAP side by side already, Microsoft handling

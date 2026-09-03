@@ -4,7 +4,7 @@ import "./font.css";
 // import BackgroundMusic from "../components/BackgroundMusic/BackgroundMusic";
 import CookieConsent from "../components/Cookies/CookieConsent";
 import ContactUsButton from "../components/Contactusbutton/contact_us_button";
-import { generateOrganizationSchema } from "@/lib/seo";
+import { generateOrganizationSchema, generateWebsiteSchema } from "@/lib/seo";
 import { Metadata, Viewport } from "next";
 
 export const viewport: Viewport = {
@@ -75,6 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const orgSchema = generateOrganizationSchema();
+  const websiteSchema = generateWebsiteSchema();
 
   return (
     <html lang="en" className="scroll-smooth" style={{ "--lineWidth": "2px" } as React.CSSProperties}>
@@ -82,6 +83,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body className="antialiased selection:bg-blue-500 selection:text-white">

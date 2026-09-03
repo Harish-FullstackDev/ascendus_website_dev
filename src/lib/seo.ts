@@ -16,8 +16,10 @@ export const generateOrganizationSchema = () => {
     "description": "Ascendus is a premium enterprise IT and SAP consulting firm providing digital transformation, cloud managed services, and S/4HANA migration across the UAE, Saudi Arabia, and the GCC.",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Dubai",
-      "addressCountry": "AE"
+      "streetAddress": "7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist.",
+      "addressLocality": "Riyadh",
+      "postalCode": "12624",
+      "addressCountry": "SA"
     },
     "sameAs": [
       "https://www.linkedin.com/company/ascendus-company/?viewAsMember=true",
@@ -32,6 +34,15 @@ export const generateOrganizationSchema = () => {
         "availableLanguage": ["en", "ar"]
       }
     ]
+  };
+};
+
+export const generateWebsiteSchema = () => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Ascendus",
+    "url": "https://www.ascendus.tech"
   };
 };
 
