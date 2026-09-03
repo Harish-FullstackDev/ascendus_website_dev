@@ -28,7 +28,7 @@ const Navbar = () => {
   const [isCapabilitiesOpen, setIsCapabilitiesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
 
-  const lightThemeRoutes = ["/legal/privacy", "/ssterrors", "/legal/terms"];
+  const lightThemeRoutes = ["/legal/privacy/", "/ssterrors/", "/legal/terms/"];
 
   const navLinkClass = `
                           relative py-2 px-3
@@ -414,7 +414,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/who-we-are"
-                      className={`${navLinkClass} ${pathname === "/who-we-are" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      className={`${navLinkClass} ${pathname === "/who-we-are/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Who we are
@@ -424,7 +424,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/contact"
-                      className={`${navLinkClass} ${pathname === "/contact" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      className={`${navLinkClass} ${pathname === "/contact/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Contact
@@ -433,7 +433,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/careers"
-                      className={`${navLinkClass} ${pathname === "/careers" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      className={`${navLinkClass} ${pathname === "/careers/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Careers
@@ -599,7 +599,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/who-we-are"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/who-we-are"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/who-we-are/"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
@@ -612,7 +612,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/contact"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/contact"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/contact/"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
@@ -624,7 +624,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/careers"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/career"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/careers/"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
