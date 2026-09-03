@@ -1,6 +1,5 @@
 import { MetadataRoute } from 'next';
 import { supabase } from '@/lib/supabaseClient';
-import { jobs } from '@/components/Constants/Career/jobsData';
 import { industryReportsData } from '@/data/industryReportsData';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -46,14 +45,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: route === '' ? 1 : 0.8,
-  }));
-
-  // 2. Careers — static job listings
-  const careerRoutes: MetadataRoute.Sitemap = jobs.map((job) => ({
-    url: `${baseUrl}/careers/${job.slug}`,
-    lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.6,
   }));
 
   // 3. Industry reports — static data
@@ -109,5 +100,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error('Sitemap: whitepapers fetch failed', error);
   }
 
-  return [...staticRoutes, ...careerRoutes, ...industryReportRoutes, ...dynamicRoutes];
+  try {
+    const { data: jobs } = await supabase.from('jobs').select('slug, updated_at').eq('status', 'Open');
+    (jobs || []).forEach((row: any) => {
+      dynamicRoutes.push({
+        url: `${baseUrl}/careers/${row.slug}`,
+        lastModified: row.updated_at ? new Date(row.updated_at).toISOString() : now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.6,
+      });
+    });
+  } catch (error) {
+    console.error('Sitemap: jobs fetch failed', error);
+  }
+
+  return [...staticRoutes, ...industryReportRoutes, ...dynamicRoutes];
 }

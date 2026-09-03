@@ -258,6 +258,46 @@ export interface Database {
         Update: Partial<Database['public']['Tables']['white_papers']['Insert']>;
         Relationships: [];
       };
+      jobs: {
+        Row: {
+          id: string;
+          slug: string;
+          title: string;
+          company: string;
+          location: string;
+          mode_of_work: string;
+          type_of_work: string;
+          experience_level: string;
+          posted_at: string;
+          categories: string[];
+          about_job: string;
+          responsibilities: string[];
+          qualifications: string[];
+          status: string;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          slug: string;
+          title: string;
+          company?: string;
+          location: string;
+          mode_of_work?: string;
+          type_of_work?: string;
+          experience_level: string;
+          posted_at?: string;
+          categories?: string[];
+          about_job?: string;
+          responsibilities?: string[];
+          qualifications?: string[];
+          status?: string;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['jobs']['Insert']>;
+        Relationships: [];
+      };
       job_applications: {
         Row: {
           id: string;

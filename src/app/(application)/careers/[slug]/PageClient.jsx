@@ -1,16 +1,9 @@
-"use client";
-
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 import CareersLayout from "@/components/Careers/CareersLayout";
 import JobDescription from "@/components/Careers/JobDescription/JobDescription";
-import { getJobBySlug, getOtherJobs } from "@/components/Constants/Career/jobsData";
 
-const page = () => {
-    const { slug } = useParams();
-    const job = getJobBySlug(slug);
-
+const PageClient = ({ job, otherJobs }) => {
     if (!job) {
         return (
             <CareersLayout>
@@ -29,8 +22,6 @@ const page = () => {
             </CareersLayout>
         );
     }
-
-    const otherJobs = getOtherJobs(job.slug);
 
     return (
         <CareersLayout
@@ -51,5 +42,4 @@ const page = () => {
     );
 };
 
-export default page;
-
+export default PageClient;
