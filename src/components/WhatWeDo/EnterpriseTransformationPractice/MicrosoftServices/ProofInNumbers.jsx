@@ -23,7 +23,10 @@ function AnimatedStat({ value }) {
     const { prefix, number, suffix, decimals } = parseStatValue(value);
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.5 });
-    const [display, setDisplay] = useState(0);
+    // Init to the real final number, not 0 — SSR/no-JS/bot/pre-scroll HTML must always
+    // show the actual value. The count-up below is a cosmetic replay for JS users who
+    // scroll it into view; it is never the only place the real number exists.
+    const [display, setDisplay] = useState(number);
 
     useEffect(() => {
         if (!isInView) return;
