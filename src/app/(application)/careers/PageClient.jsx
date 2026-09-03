@@ -39,7 +39,7 @@ const page = () => {
                 <GrowthQuoteBand />
                 <OurCulture />
                 {/* <WhatSetsUsApart /> */}
-                <LinkedInCarousel />
+                {/* <LinkedInCarousel /> */}
                 <JoinUsSocialBand />
             </div>
 
