@@ -273,7 +273,7 @@ export const jobs = [
         "Strong analytical, communication, and problem-solving skills",
         "Bachelor's degree in Computer Science, Information Technology, Business, or related field",
     ],
-},
+}, 
 {
     slug: "marketing-executive",
     title: "Marketing Executive",
