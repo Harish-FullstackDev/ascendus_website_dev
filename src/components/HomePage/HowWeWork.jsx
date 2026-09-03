@@ -44,26 +44,48 @@ export default function HowWeWork() {
         // its own full 64 bottom via pb-16, and the section above (Industries)
         // already took the full 64 for this boundary since this band contributes 0.
         <section className="relative w-full overflow-hidden">
-            {/* Rebalanced toward 50/50 — image brought down, panel grown (via its
-                own padding below) to make up the difference rather than shrinking
-                the section's total height back down. */}
-            <div className="relative w-full aspect-[16/12] sm:aspect-[16/10] lg:aspect-[1280/380]">
+            {/* Figma (node 2700:1414/1413) actually splits this band roughly
+                43/57 image-to-panel, not 50/50 — the image div is 496px tall but
+                the dark panel is pulled up over its bottom 284px (mb-[-284px]),
+                leaving only ~212px of it genuinely visible. Reproduced here as a
+                real proportional relationship rather than a copied breakpoint: the
+                lg aspect ratio matches Figma's 1280x496 image exactly, and the
+                panel's overlap below is a %-of-width margin (284/1280 ≈ 22.2%,
+                CSS % margins resolve against the containing block's width, same
+                reference axis as the aspect ratio), so the same ~43/57 split holds
+                at any viewport width instead of only at 1280px. Mobile/tablet keep
+                their own taller aspect ratios (not in the Figma desktop frame at
+                all) since the heading needs more absolute height to stay readable
+                on a narrow screen — the width-proportional overlap still applies
+                on top of those. */}
+            {/* lg ratio nudged from Figma's raw 1280/496 to 1280/520 — a small,
+                deliberate bump (not itself in the Figma numbers) so the visible
+                slice reads at the same size Figma's own screenshot shows; the
+                overlap margin below is untouched, so this bump is the only lever
+                changing how much stays in view. */}
+            <div className="relative w-full aspect-[16/12] sm:aspect-[16/10] lg:aspect-[1280/520]">
                 <Image src={corridorImg} alt="" fill className="object-cover pointer-events-none" />
                 <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-                {/* Anchored from the top at a fixed % of the image (the same pattern
-                    other hero sections on the site use), sitting in the image's upper
-                    portion — clearly separated from the dark panel/seam below, not
-                    hugging it. */}
-                <div className="absolute inset-x-0 top-[14%] sm:top-[16%] flex flex-col items-center text-white text-center px-6 gap-2">
-                    <h2 className="text-2xl sm:text-[28px] font-semibold">How We Work</h2>
-                    <p className="text-lg font-light sm:pt-6">A Clear Path From Problem to Production</p>
-                    <p className="text-lg font-light w-full leading-normal mt-2">
-                        No black boxes, no scope creep. Every engagement follows a process built for transparency and outcomes.
-                    </p>
+                {/* Figma positions this block at a fixed 34px from the image's top
+                    (34/496 ≈ 7% of the image height) — the previous 14–16% was
+                    calibrated for the old, much taller image and was eating into the
+                    (now correctly shorter) band's remaining room, which is what let
+                    the panel/badges collide with the heading. gap-3 (12px) between
+                    the H1 and the subtitle+body pair matches Figma's Message
+                    Container; the subtitle and body are their own flush two-line
+                    block (no gap between them) same as Figma's two stacked <p>s. */}
+                <div className="absolute inset-x-0 top-[8%] flex flex-col items-center text-white text-center px-6 gap-3">
+                    <h2 className="text-2xl sm:text-[28px] font-semibold leading-tight">How We Work</h2>
+                    <div className="flex flex-col leading-tight">
+                        <p className="text-lg font-light">A Clear Path From Problem to Production</p>
+                        <p className="text-lg font-light">
+                            No black boxes, no scope creep. Every engagement follows a process built for transparency and outcomes.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <div className="relative z-10 -mt-12 sm:-mt-16 bg-[#002C4F] pb-20 sm:pb-28 px-6 sm:px-[64px]">
+            <div className="relative z-10 -mt-[22.2%] bg-[#002C4F] pb-20 sm:pb-28 px-6 sm:px-[64px]">
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}

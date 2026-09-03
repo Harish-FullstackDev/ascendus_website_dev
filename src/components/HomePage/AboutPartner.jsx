@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import serverRoomImg from "@/assets/HomePage/images/server-room.png";
+import ctaArrowIcon from "@/assets/HomePage/WhyEnterprisePartner/icon-cta-arrow.svg";
 
 export default function AboutPartner() {
     return (
@@ -26,9 +27,12 @@ export default function AboutPartner() {
                     </p>
                     <Link
                         href="/who-we-are"
-                        className="mt-6 self-start rounded-none border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#00447A] hover:text-white"
+                        className="group mt-6 self-start flex items-center justify-between gap-4 rounded-full border border-[#2d8ec5] pl-8 pr-1.5 py-1.5 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#00447A] hover:text-white whitespace-nowrap"
                     >
                         Who We Are
+                        <span className="relative size-[42px] shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                            <Image src={ctaArrowIcon} alt="" fill className="object-contain" />
+                        </span>
                     </Link>
                 </motion.div>
 

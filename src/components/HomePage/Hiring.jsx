@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import officeStaircaseImg from "@/assets/HomePage/images/office-staircase.png";
+import ctaArrowIcon from "@/assets/HomePage/WhyEnterprisePartner/icon-cta-arrow.svg";
 
 // Image-right / overlapping-card treatment lifted from
 // WhatWeDo/CloudInfrastructure/DisruptionFreeMigrationScalability.jsx —
@@ -47,9 +48,12 @@ export default function Hiring() {
                         </div>
                         <Link
                             href="/careers"
-                            className="self-start rounded-none border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#00447A] hover:text-white"
+                            className="group self-start flex items-center justify-between gap-4 rounded-full border border-[#2d8ec5] pl-8 pr-1.5 py-1.5 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#00447A] hover:text-white whitespace-nowrap"
                         >
                             View Open Roles
+                            <span className="relative size-[42px] shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                                <Image src={ctaArrowIcon} alt="" fill className="object-contain" />
+                            </span>
                         </Link>
                     </div>
                 </motion.div>
