@@ -82,8 +82,8 @@ const InteractiveLocationPreview = () => {
     };
 
     // Google Maps location URL details
-    const mapsUrl = "https://maps.app.goo.gl/FPyusDn4whKnYmst8";
-    const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.5025088649436!2d79.81591100000001!3d11.939670300000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5361c4eec70b95%3A0x584de4859b109201!2sSupport%20Studio%20Technologies!5e0!3m2!1sen!2sin!4v1757399839664!5m2!1sen!2sin%22";
+    const mapsUrl = "https://maps.app.goo.gl/dwn46nzVzmjKjuP86";
+    const mapEmbedUrl = "https://www.google.com/maps?q=7731+King+Saud+Ibn+Abdulaziz+Saud%2C+2839+Al+Murabba+Dist.%2C+Riyadh+12624%2C+Saudi+Arabia&output=embed";
 
     // Framer Motion variants
     const cardVariants = {
@@ -189,10 +189,10 @@ const InteractiveLocationPreview = () => {
                         aria-haspopup="true"
                         aria-expanded={isOpen || isBottomSheetOpen}
                     >
-                        <p className="text-black font-semibold"> Regional Office (India) </p>
+                        <p className="text-black font-semibold"> Head Office (Saudi Arabia) </p>
                         <p>
-                            #192, Kamaraj Salai, Puducherry, India,
-                            Pin Code - 605013
+                            7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist.,
+                            Riyadh 12624
                         </p>
 
                         <a
@@ -307,7 +307,7 @@ const InteractiveLocationPreview = () => {
                                                     <div className="w-12 h-[3px] bg-blue-500 rounded-full mt-1.5 mb-3" />
 
                                                     <p className="text-xs text-slate-200 leading-relaxed font-light">
-                                                        #192, Kamaraj Salai, Puducherry - 605 013
+                                                        7731 King Saud Ibn Abdulaziz Saud, Riyadh 12624
                                                     </p>
                                                 </div>
 
@@ -432,7 +432,7 @@ const InteractiveLocationPreview = () => {
                                     <div>
                                         <h4 className="text-xs uppercase tracking-wider font-semibold text-slate-400">Head Office Address</h4>
                                         <p className="text-sm text-slate-200 mt-1 leading-relaxed">
-                                            #192, Kamaraj Salai, Puducherry - 605 013, India
+                                            7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., Riyadh 12624, Saudi Arabia
                                         </p>
                                     </div>
                                 </div>

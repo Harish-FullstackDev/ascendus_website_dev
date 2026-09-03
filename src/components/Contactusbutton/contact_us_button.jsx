@@ -6,7 +6,7 @@ import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
 const ContactUsButton = ({ floating = false }) => {
   return (
     <Link
-      href="/contact-us"
+      href="/contact"
       className={`
         inline-flex items-center gap-2
         px-4 py-2

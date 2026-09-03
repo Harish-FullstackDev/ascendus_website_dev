@@ -28,7 +28,7 @@ export default function CareersLayout({
                 </div>
 
                 <div className="absolute inset-x-0 top-0 h-[75vh] z-[5]">
-                    <CareersHeroText />
+                    <CareersHeroText as="h2" />
                 </div>
             </div>
 

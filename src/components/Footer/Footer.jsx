@@ -82,7 +82,7 @@ const Footer = () => {
                 </li> */}
                 <li>
                   <Link
-                    href="/contact-us"
+                    href="/contact"
                     className="hover:text-white transition-colors duration-200"
                   >
                     Contact
@@ -123,7 +123,7 @@ const Footer = () => {
               </li> */}
                 <li>
                   <Link
-                    href="/bookacall"
+                    href="/book-a-consultation"
                     className="hover:text-white transition-colors duration-200"
                   >
                     Book a call
@@ -187,7 +187,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/whatWeDo/enterprise-transformation"
+                  href="/what-we-do/enterprise-transformation"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Enterprise Transformation
@@ -195,7 +195,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/whatWeDo/artificial-intelligence"
+                  href="/what-we-do/artificial-intelligence"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Artificial Intelligence
@@ -203,7 +203,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/whatWeDo/cloud-infrastructure"
+                  href="/what-we-do/cloud-infrastructure"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Cloud & Infrastructure
@@ -211,7 +211,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/whatWeDo/data-intelligence"
+                  href="/what-we-do/data-intelligence"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Data & Intelligence
@@ -219,7 +219,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/whatWeDo/digital-engineering"
+                  href="/what-we-do/digital-engineering"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Digital Engineering
@@ -227,7 +227,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/whatWeDo/customer-experience"
+                  href="/what-we-do/customer-experience"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Customer Experience
@@ -242,7 +242,7 @@ const Footer = () => {
             <ul className="space-y-2 md:mt-32.5">
               <li>
                 <Link
-                  href="/whatWeDo/experience-design"
+                  href="/what-we-do/experience-design"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Experience Design
@@ -250,7 +250,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/whatWeDo/intelligent-automation"
+                  href="/what-we-do/intelligent-automation"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Intelligent Automation
@@ -258,7 +258,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/whatWeDo/cybersecurity-digital-trust"
+                  href="/what-we-do/cybersecurity-digital-trust"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Cybersecurity & Digital Trust
@@ -266,7 +266,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/whatWeDo/managed-services"
+                  href="/what-we-do/managed-services"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Managed Services
@@ -274,7 +274,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/whatWeDo/business-advisory"
+                  href="/what-we-do/business-advisory"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Business Advisory
@@ -282,7 +282,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/whatWeDo/innovation-emerging-technologies"
+                  href="/what-we-do/innovation-emerging-technologies"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Innovation & Emerging Technologies
@@ -521,28 +521,28 @@ const Footer = () => {
             <div className="space-x-3 md:col-span-1">
               <p className="text-sm text-white mb-4 md:mb-0">
                 <a
-                  href="/termsOfService"
+                  href="/legal/terms"
                   className="hover:text-gray-300 transition-colors"
                 >
                   Terms & Conditions
                 </a>
                 {" | "}
                 <a
-                  href="/privacyPolicy"
+                  href="/legal/privacy"
                   className="hover:text-gray-300 transition-colors"
                 >
                   Privacy Policy
                 </a>
                 <br />
                 <a
-                  href="/securityPrivacyPolicy"
+                  href="/legal/security"
                   className="hover:text-gray-300 transition-colors"
                 >
                   Security Policy
                 </a>
                 {" | "}
                 <a
-                  href="/cookiePolicy"
+                  href="/legal/cookies"
                   className="hover:text-gray-300 transition-colors"
                 >
                   Cookie Policy
@@ -687,28 +687,28 @@ const Footer = () => {
             <div className="space-x-3 md:col-span-1">
               <p className="text-sm text-white mb-4 md:mb-0">
                 <a
-                  href="/termsOfService"
+                  href="/legal/terms"
                   className="hover:text-gray-300 transition-colors"
                 >
                   Terms & Conditions
                 </a>
                 {" | "}
                 <a
-                  href="/privacyPolicy"
+                  href="/legal/privacy"
                   className="hover:text-gray-300 transition-colors"
                 >
                   Privacy Policy
                 </a>
                 <br />
                 <a
-                  href="/securityPrivacyPolicy"
+                  href="/legal/security"
                   className="hover:text-gray-300 transition-colors"
                 >
                   Security Policy
                 </a>
                 {" | "}
                 <a
-                  href="/cookiePolicy"
+                  href="/legal/cookies"
                   className="hover:text-gray-300 transition-colors"
                 >
                   Cookie Policy

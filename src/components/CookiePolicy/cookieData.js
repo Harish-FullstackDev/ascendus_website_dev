@@ -91,8 +91,8 @@ export const sectionContent = {
       {
         label: "Registered Address",
         value:
-          "Ascendus Pvt Ltd, #192, Kamaraj Salai, New Saram, Puducherry 605013, India.",
-        href: "https://www.google.com/maps/search/?api=1&query=Support+Studio+Technologies+Pvt+Ltd%2C+%23192%2C+Kamaraj+Salai%2C+New+Saram%2C+Puducherry+605013%2C+India",
+          "Ascendus, 7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., Riyadh 12624, Kingdom of Saudi Arabia.",
+        href: "https://maps.app.goo.gl/dwn46nzVzmjKjuP86",
       },
     ],
   },

@@ -1,7 +1,7 @@
 // Maps a URL path segment to its display label for breadcrumb trails.
-// Add an entry here whenever a new /whatWeDo/* (or other) route is created.
+// Add an entry here whenever a new /what-we-do/* (or other) route is created.
 export const ROUTE_LABELS: Record<string, string> = {
-  whatWeDo: "What We Do",
+  "what-we-do": "What We Do",
   "enterprise-transformation": "Enterprise Transformation",
   "sap-transformation": "SAP Transformation",
   "microsoft-services": "Microsoft Services",
@@ -17,11 +17,17 @@ export const ROUTE_LABELS: Record<string, string> = {
   "intelligent-automation": "Intelligent Automation",
   "managed-services": "Managed Services",
   "business-advisory": "Business Advisory",
+  "book-a-consultation": "Book a Consultation",
+  legal: "Legal",
+  terms: "Terms & Conditions",
+  privacy: "Privacy Policy",
+  security: "Security & Privacy Policy",
+  cookies: "Cookie Policy",
 };
 
 export type BreadcrumbItem = { name: string; item: string };
 
-// Builds breadcrumb items (Home first) from a path like "/whatWeDo/experience-design".
+// Builds breadcrumb items (Home first) from a path like "/what-we-do/experience-design".
 // Falls back to a title-cased version of the segment when it isn't in ROUTE_LABELS.
 export function buildBreadcrumbItems(pathname: string): BreadcrumbItem[] {
   const segments = pathname.split("/").filter(Boolean);

@@ -17,12 +17,12 @@ export async function generateMetadata({ params }) {
         return {
             title: staticBlog.title,
             description,
-            alternates: { canonical: `/blog/${slug}` },
+            alternates: { canonical: `/blog/${slug}/` },
             openGraph: {
                 type: "article",
                 title: staticBlog.title,
                 description,
-                url: `/blog/${slug}`,
+                url: `/blog/${slug}/`,
                 authors: staticBlog.author ? [staticBlog.author] : undefined,
                 images: staticBlog.cover_image
                     ? [{ url: staticBlog.cover_image, width: 1200, height: 630, alt: staticBlog.title }]
@@ -51,13 +51,13 @@ export async function generateMetadata({ params }) {
         title: blog.title,
         description,
         alternates: {
-            canonical: `/blog/${slug}`,
+            canonical: `/blog/${slug}/`,
         },
         openGraph: {
             type: "article",
             title: blog.title,
             description,
-            url: `/blog/${slug}`,
+            url: `/blog/${slug}/`,
             authors: blog.author ? [blog.author] : undefined,
             images: blog.cover_image
                 ? [{ url: blog.cover_image, width: 1200, height: 630, alt: blog.title }]

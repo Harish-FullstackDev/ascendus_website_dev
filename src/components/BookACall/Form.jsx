@@ -120,7 +120,7 @@ const Form = () => {
 
     if (Object.keys(newErrors).length === 0) {
       try {
-        const res = await fetch("/api/bookacall", {
+        const res = await fetch("/api/book-a-consultation", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
@@ -351,14 +351,14 @@ const Form = () => {
               <span>
                 I agree to the{" "}
                 <a
-                  href="/termsOfService"
+                  href="/legal/terms"
                   className="text-blue-600 hover:text-blue-800 underline"
                 >
                   Terms & Conditions
                 </a>{" "}
                 and{" "}
                 <a
-                  href="/privacyPolicy"
+                  href="/legal/privacy"
                   className="text-blue-600 hover:text-blue-800 underline"
                 >
                   Privacy Policy

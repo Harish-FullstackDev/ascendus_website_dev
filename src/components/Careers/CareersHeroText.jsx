@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function CareersHeroText() {
+export default function CareersHeroText({ as: Heading = "h1" }) {
     return (
         <div className="absolute inset-x-0 top-[18%] sm:top-[23%] px-6 py-6 sm:py-0 sm:px-10  lg:px-[64px]">
             <motion.div
@@ -15,9 +15,9 @@ export default function CareersHeroText() {
                     Careers
                 </p>
                 <div className="mt-3 sm:mt-1 h-px w-full bg-white/40" />
-                <h1 className="text-white text-2xl sm:text-4xl lg:text-5xl font-medium capitalize mt-6 sm:mt-6 leading-tight">
+                <Heading className="text-white text-2xl sm:text-4xl lg:text-5xl font-medium capitalize mt-6 sm:mt-6 leading-tight">
                     Build what enterprises depend on.
-                </h1>
+                </Heading>
 
             </motion.div>
         </div>

@@ -13,13 +13,13 @@ export async function generateMetadata({ params }) {
         title: whitepaper.title,
         description: whitepaper.summary,
         alternates: {
-            canonical: `/whitepapers/${slug}`,
+            canonical: `/whitepapers/${slug}/`,
         },
         openGraph: {
             type: "article",
             title: whitepaper.title,
             description: whitepaper.summary,
-            url: `/whitepapers/${slug}`,
+            url: `/whitepapers/${slug}/`,
             authors: whitepaper.author ? [whitepaper.author] : undefined,
             images: whitepaper.cover_image
                 ? [{ url: whitepaper.cover_image, width: 1200, height: 630, alt: whitepaper.title }]
