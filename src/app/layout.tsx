@@ -15,13 +15,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.ascendus.com'), // TODO: swap for the real Ascendus domain
+  metadataBase: new URL('https://www.ascendus.tech'),
   title: {
     default: "Ascendus | Enterprise SAP & IT Consulting GCC",
     template: "%s | Ascendus"
   },
   description: "Ascendus provides premium SAP consulting, IT managed services, and digital transformation solutions for enterprises in the UAE, Saudi Arabia, and the wider GCC region.",
-  authors: [{ name: "Ascendus", url: "https://www.ascendus.com" }],
+  authors: [{ name: "Ascendus", url: "https://www.ascendus.tech" }],
   creator: "Ascendus Engineering",
   publisher: "Ascendus",
   formatDetection: {

@@ -1,4 +1,6 @@
 import PageClient from "./PageClient";
+import { generateBreadcrumbSchema } from "@/lib/seo";
+import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/whitepapers" },
@@ -13,5 +15,15 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <PageClient />;
+  const breadcrumbSchema = generateBreadcrumbSchema(buildBreadcrumbItems("/whitepapers"));
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <PageClient />
+    </>
+  );
 }

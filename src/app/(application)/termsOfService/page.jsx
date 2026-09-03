@@ -2,6 +2,8 @@ import TermsContent from '@/components/TermsOfService/TermsContent'
 import Navbar from '@/components/Navbar/Navbar'
 import Footer from '@/components/Footer/Footer'
 import React from 'react'
+import { generateBreadcrumbSchema } from "@/lib/seo";
+import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/termsOfService" },
@@ -16,12 +18,20 @@ export const metadata = {
 }
 
 const page = () => {
+  const breadcrumbSchema = generateBreadcrumbSchema(buildBreadcrumbItems("/termsOfService"));
+
   return (
-    <div>
-      <Navbar />
-      <TermsContent />
-      <Footer />
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <div>
+        <Navbar />
+        <TermsContent />
+        <Footer />
+      </div>
+    </>
   )
 }
 

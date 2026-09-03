@@ -1,5 +1,5 @@
 import PageClient from "./PageClient";
-import { generateBreadcrumbSchema } from "@/lib/seo";
+import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/seo";
 import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
@@ -18,12 +18,21 @@ export default function Page() {
   const breadcrumbSchema = generateBreadcrumbSchema(
     buildBreadcrumbItems("/whatWeDo/experience-design")
   );
+  const serviceSchema = generateServiceSchema({
+    name: metadata.title,
+    description: metadata.description,
+    url: "/whatWeDo/experience-design",
+  });
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <PageClient />
     </>

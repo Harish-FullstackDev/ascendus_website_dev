@@ -11,8 +11,8 @@ export const generateOrganizationSchema = () => {
     "@type": "Organization",
     "name": "Ascendus",
     "alternateName": "Ascendus Technologies",
-    "url": "https://www.ascendus.com", // TODO: swap for the real Ascendus domain
-    "logo": "https://www.ascendus.com/Brand/Ascendus_Logo_Primary.svg",
+    "url": "https://www.ascendus.tech",
+    "logo": "https://www.ascendus.tech/Brand/Ascendus_Logo_Primary.svg",
     "description": "Ascendus is a premium enterprise IT and SAP consulting firm providing digital transformation, cloud managed services, and S/4HANA migration across the UAE, Saudi Arabia, and the GCC.",
     "address": {
       "@type": "PostalAddress",
@@ -43,7 +43,7 @@ export const generateBreadcrumbSchema = (crumbs: { name: string; item: string }[
       "@type": "ListItem",
       "position": index + 1,
       "name": crumb.name,
-      "item": crumb.item.startsWith('http') ? crumb.item : `https://www.ascendus.com${crumb.item}`
+      "item": crumb.item.startsWith('http') ? crumb.item : `https://www.ascendus.tech${crumb.item}`
     }))
   };
 };
@@ -56,11 +56,11 @@ export const generateServiceSchema = (service: { name: string; description: stri
     "provider": {
       "@type": "Organization",
       "name": "Ascendus",
-      "url": "https://www.ascendus.com"
+      "url": "https://www.ascendus.tech"
     },
     "name": service.name,
     "description": service.description,
-    "url": service.url.startsWith('http') ? service.url : `https://www.ascendus.com${service.url}`,
+    "url": service.url.startsWith('http') ? service.url : `https://www.ascendus.tech${service.url}`,
     "areaServed": [
       { "@type": "Country", "name": "United Arab Emirates" },
       { "@type": "Country", "name": "Saudi Arabia" },

@@ -1,4 +1,6 @@
 import PageClient from "./PageClient";
+import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/seo";
+import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/whatWeDo/digital-engineering" },
@@ -13,5 +15,26 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <PageClient />;
+  const breadcrumbSchema = generateBreadcrumbSchema(
+    buildBreadcrumbItems("/whatWeDo/digital-engineering")
+  );
+  const serviceSchema = generateServiceSchema({
+    name: metadata.title,
+    description: metadata.description,
+    url: "/whatWeDo/digital-engineering",
+  });
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <PageClient />
+    </>
+  );
 }

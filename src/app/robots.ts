@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/admin', '/private', '/api', '/_next'],
     },
-    sitemap: 'https://www.ascendus.com/sitemap.xml', // TODO: swap for the real Ascendus domain
+    sitemap: 'https://www.ascendus.tech/sitemap.xml',
   };
 }

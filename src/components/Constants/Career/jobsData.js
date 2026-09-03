@@ -334,6 +334,35 @@ export const jobs = [
         "Bachelor's degree in Marketing, Communications, or related field",
     ],
 },
+{
+    slug: "business-development-executive",
+    title: "Business Development Executive",
+    company: COMPANY,
+    location: "Pondicherry, India",
+    modeOfWork: "On-site",
+    typeOfWork: "Full-time",
+    experienceLevel: "0-1 years",
+    applicants: 6,
+    postedAgo: "2 days ago",
+    categories: [],
+    aboutJob:
+        "We're seeking a highly motivated and ambitious individual to join our team as a Business Development Executive, driving lead generation and client relationships for our SAP solutions and services.",
+    responsibilities: [
+        "Identify and generate leads through channels such as LinkedIn, cold calling, emails, and networking",
+        "Build and maintain strong relationships with potential and existing clients to understand their business needs",
+        "Conduct research on industry trends, competitors, and potential clients to identify new business opportunities",
+        "Contact potential clients through calls, emails, and meetings to present our SAP solutions and services",
+        "Prepare business proposals, sales presentations, and pitch decks tailored to client needs",
+    ],
+    qualifications: [
+        "Bachelor's degree in BE or Business Administration",
+        "0-1 years of experience",
+        "Strong communication and interpersonal skills, presentation skills, and the ability to confidently engage with clients and build relationships",
+        "Excellent organizational and time management skills, with the ability to prioritize tasks effectively",
+        "Ability to work both independently and collaboratively in a team-oriented environment",
+        "Prior internship or part-time work experience in sales or BDE is a plus",
+    ],
+},
 
 ];
 
