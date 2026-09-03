@@ -1,10 +1,12 @@
-// Area of interest filter options shown in the Careers job-listing sidebar.
+// Area of interest filter options shown in the Careers job-listing sidebar,
+// organized by department. Must match the `categories` values stored on
+// each row in the `jobs` table.
 export const AREA_OF_INTEREST = [
-    "Artificial Intelligence (AI) & Data",
-    "Machine Learning (ML) & Analytics",
-    "Cloud Computing & Services",
-    "Internet of Things (IoT) & Connectivity",
-    "Blockchain Technology & Security",
-    "Augmented Reality (AR) & Virtual Reality (VR)",
-    "Cybersecurity & Risk Management",
+    "SAP Consulting & Delivery",
+    "Sales & Business Development",
+    "Marketing",
+    "Engineering & Technology",
+    "Product Development",
+    "Human Resources",
+    "Finance & Operations",
 ];

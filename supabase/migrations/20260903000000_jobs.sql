@@ -76,7 +76,7 @@ VALUES
     '6-10 years',
     'Open',
     now() - interval '7 days',
-    ARRAY['SAP & Enterprise Applications'],
+    ARRAY['SAP Consulting & Delivery'],
     'We''re seeking an experienced SAP Consultant to support enterprise business processes, optimize SAP solutions, and collaborate with business and technical teams to deliver scalable and efficient implementations.',
     ARRAY['Configure, implement, and support SAP solutions based on business requirements','Analyze business processes and translate requirements into SAP solutions','Collaborate with functional and technical teams on SAP implementation projects','Troubleshoot system issues and provide timely resolution','Develop and maintain SAP documentation, configurations, and process workflows','Support system upgrades, integrations, testing, and continuous process improvements'],
     ARRAY['6-10 years of experience working with SAP systems','Strong understanding of SAP modules and enterprise business processes','Experience with SAP implementation, configuration, and support','Knowledge of SAP integration with other enterprise applications','Strong analytical, communication, and problem-solving skills','Bachelor''s degree in Computer Science, Information Technology, Business, or related field']
@@ -91,7 +91,7 @@ VALUES
     '1-3 years',
     'Open',
     now() - interval '3 days',
-    '{}'::text[],
+    ARRAY['Marketing'],
     'We''re looking for a Marketing Executive to plan and execute campaigns that build brand visibility and generate qualified pipeline across our enterprise technology and SAP consulting offerings.',
     ARRAY['Plan and execute digital and offline marketing campaigns','Manage content calendars across website, social, and email channels','Coordinate with design and content teams on campaign assets','Track campaign performance and report on key marketing metrics','Support event, webinar, and lead-generation initiatives','Maintain brand consistency across all marketing materials'],
     ARRAY['1-3 years of experience in marketing or a related field','Familiarity with digital marketing tools and social media platforms','Strong written and verbal communication skills','Basic understanding of SEO and campaign analytics','Ability to manage multiple projects and deadlines','Bachelor''s degree in Marketing, Communications, or related field']
@@ -106,7 +106,7 @@ VALUES
     '0-1 years',
     'Open',
     now() - interval '2 days',
-    '{}'::text[],
+    ARRAY['Sales & Business Development'],
     'We''re seeking a highly motivated and ambitious individual to join our team as a Business Development Executive, driving lead generation and client relationships for our SAP solutions and services.',
     ARRAY['Identify and generate leads through channels such as LinkedIn, cold calling, emails, and networking','Build and maintain strong relationships with potential and existing clients to understand their business needs','Conduct research on industry trends, competitors, and potential clients to identify new business opportunities','Contact potential clients through calls, emails, and meetings to present our SAP solutions and services','Prepare business proposals, sales presentations, and pitch decks tailored to client needs'],
     ARRAY['Bachelor''s degree in BE or Business Administration','0-1 years of experience','Strong communication and interpersonal skills, presentation skills, and the ability to confidently engage with clients and build relationships','Excellent organizational and time management skills, with the ability to prioritize tasks effectively','Ability to work both independently and collaboratively in a team-oriented environment','Prior internship or part-time work experience in sales or BDE is a plus']
