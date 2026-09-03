@@ -10,6 +10,7 @@ import sapFoundationIcon from "@/assets/HomePage/WhyEnterprisePartner/icon-sap-f
 import fullDeliveryIcon from "@/assets/HomePage/WhyEnterprisePartner/icon-full-delivery.svg";
 import regionalComplianceIcon from "@/assets/HomePage/WhyEnterprisePartner/icon-regional-compliance.svg";
 import executionDisciplineIcon from "@/assets/HomePage/WhyEnterprisePartner/icon-execution-discipline.svg";
+import ctaArrowIcon from "@/assets/HomePage/WhyEnterprisePartner/icon-cta-arrow.svg";
 
 const FEATURES = [
     {
@@ -57,9 +58,12 @@ export default function WhyUs() {
                     </div>
                     <Link
                         href="/who-we-are"
-                        className="shrink-0 rounded-none border border-[#2d8ec5] px-8 py-3 text-lg font-light text-[#2E3033] text-center transition-colors hover:bg-[#00447A] hover:text-white whitespace-nowrap"
+                        className="group shrink-0 flex items-center justify-between gap-4 rounded-full border border-[#2d8ec5] pl-8 pr-1.5 py-1.5 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#00447A] hover:text-white whitespace-nowrap"
                     >
                         Who We Are
+                        <span className="relative size-[42px] shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                            <Image src={ctaArrowIcon} alt="" fill className="object-contain" />
+                        </span>
                     </Link>
                 </motion.div>
 
@@ -71,12 +75,17 @@ export default function WhyUs() {
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#55595E]/30"
                 >
                     {FEATURES.map((feat) => (
-                        <div key={feat.title} className="flex flex-col items-start gap-6 p-6 first:pl-0">
+                        <div key={feat.title} className="flex flex-col items-start gap-[clamp(2rem,6vw,6.5rem)] p-6 first:pl-0">
                             <div className="relative size-10 sm:size-12 shrink-0">
                                 <Image src={feat.icon} alt="" fill className="object-contain" />
                             </div>
-                            <div className="flex flex-col gap-4">
-                                <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold leading-normal">{feat.title}</h2>
+                            <div className="flex flex-col gap-6 w-full">
+                                {/* Fixed to a 2-line height regardless of actual wrap count, so every
+                                    card's description starts on the same row — titles range from one
+                                    to two lines at this column width and would otherwise stagger the
+                                    descriptions (a misalignment the Figma source has too; not reproduced
+                                    here on purpose). */}
+                                <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold leading-normal min-h-[60px] sm:min-h-[72px]">{feat.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-normal">{feat.desc}</p>
                             </div>
                         </div>
