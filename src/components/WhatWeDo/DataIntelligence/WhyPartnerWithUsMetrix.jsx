@@ -31,7 +31,10 @@ function AnimatedStat({ value }) {
     const target = match ? parseFloat(match[1]) : 0;
     const suffix = match ? match[2] : "";
     const decimals = match && match[1].includes(".") ? match[1].split(".")[1].length : 0;
-    const [display, setDisplay] = useState((0).toFixed(decimals));
+    // Init to the real final target, not 0 — SSR/no-JS/bot/pre-scroll HTML must always
+    // show the actual value. The count-up below is a cosmetic replay for JS users who
+    // scroll it into view; it is never the only place the real number exists.
+    const [display, setDisplay] = useState(target.toFixed(decimals));
 
     useEffect(() => {
         if (!isInView || !match) return;
