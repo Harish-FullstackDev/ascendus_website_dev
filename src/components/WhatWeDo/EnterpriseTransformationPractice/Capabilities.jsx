@@ -54,8 +54,12 @@ const REVEAL_EASE = [0.22, 1, 0.36, 1];
 // of sync with the other.
 const INTERACTIVE_DISTANCE = 2400;
 
+// Minimum gap kept between the active card's bottom edge (where the next
+// card's divider line sits) and the top of any fixed bottom overlay.
+const DIVIDER_CLEARANCE = 24;
+
 const CapabilityCard = forwardRef(function CapabilityCard(
-    { number, title, description, image, href, isActive, isPassed, showDivider, onActivate },
+    { number, title, description, image, href, isActive, isPassed, showDivider, hairline, onActivate },
     ref
 ) {
     return (
@@ -70,13 +74,28 @@ const CapabilityCard = forwardRef(function CapabilityCard(
             transition={{ duration: 0.8, ease: REVEAL_EASE }}
             className="w-full overflow-hidden"
         >
-            {/* Dividers are TOP borders (every card but the first), not bottom —
-                same pixel position since the cards are adjacent, but a bottom
-                border gets clipped away by the fold animation's overflow:hidden
-                (which cuts from the bottom) as soon as the card starts closing. */}
+            {/* The divider is a real element at the very top of the card (every
+                card but the first), not a `border-t`, and its height is an exact
+                whole number of DEVICE pixels rather than a 1px CSS hairline.
+                A 1px CSS border is 1.25 device pixels on a 125%-scaled display,
+                so it can never align to the device grid — and once this track is
+                composited (it carries a GSAP transform) that misalignment lets the
+                rasteriser anti-alias the line away completely, which is what made
+                it vanish for the whole time a card was pinned. Sizing it in whole
+                device pixels means it always covers full device rows and cannot be
+                rounded out of existence.
+                It stays at the TOP of the card for the same reason the border did:
+                the fold animation's overflow:hidden clips from the bottom, so a
+                bottom-edge line would be cut the moment a card starts closing. */}
+            {showDivider && (
+                <div
+                    aria-hidden="true"
+                    className="w-full shrink-0 bg-[#8794a3]"
+                    style={{ height: `${hairline}px` }}
+                />
+            )}
             <div
-                className={`flex flex-col lg:flex-row w-full items-start lg:justify-between gap-6 lg:gap-10 py-6 ${showDivider ? "border-t border-[#8794a3]" : ""
-                    }`}
+                className="flex flex-col lg:flex-row w-full items-start lg:justify-between gap-6 lg:gap-10 py-6"
             >
                 {/* Mobile-only duplicate of the number+title below (hidden below lg) —
                     on mobile the image sits below the number/title rather than above. */}
@@ -139,6 +158,23 @@ const CapabilityCard = forwardRef(function CapabilityCard(
 
 export default function Capabilities() {
     const [activeIndex, setActiveIndex] = useState(0);
+    // Divider thickness in CSS px, chosen so it covers a whole number of device
+    // pixels: 1 device px at dpr 1, 2 device px at any fractional/hi-dpi ratio
+    // (1.6px at dpr 1.25, 1.333px at 1.5, 1px at 2). Starts at 1 so the server
+    // render and first paint match, then corrects on mount. `resize` fires on
+    // browser zoom changes in Chrome, which is also how dpr changes.
+    const [hairline, setHairline] = useState(1);
+
+    useEffect(() => {
+        if (typeof window === "undefined") return;
+        const computeHairline = () => {
+            const dpr = window.devicePixelRatio || 1;
+            setHairline(Math.ceil(dpr) / dpr);
+        };
+        computeHairline();
+        window.addEventListener("resize", computeHairline);
+        return () => window.removeEventListener("resize", computeHairline);
+    }, []);
     // windowRef is the pinned stage — always naturally sized, never clipped.
     // trackRef (the card stack) is what gets shifted to keep the active card
     // centered.
@@ -239,6 +275,35 @@ export default function Capabilities() {
     useEffect(() => {
         if (typeof window === "undefined") return;
 
+        // Height of any fixed overlay pinned to the viewport's bottom edge —
+        // in practice the cookie consent banner (~70px). Centering against the
+        // raw innerHeight put the active card's bottom edge, and therefore the
+        // next card's top-border divider, underneath that banner on shorter
+        // viewports (reproduced at 620px tall: divider at y=564, banner
+        // occupying 550-620), which read as the divider vanishing for the whole
+        // time card 1 was active. Probed by hit-testing the bottom-centre pixel
+        // rather than matching the banner's markup, so this stays decoupled
+        // from whatever renders it and self-corrects the moment it's dismissed.
+        const readBottomInset = () => {
+            if (typeof document.elementsFromPoint !== "function") return 0;
+            const stack =
+                document.elementsFromPoint(
+                    Math.round(window.innerWidth / 2),
+                    window.innerHeight - 2
+                ) || [];
+            for (const el of stack) {
+                if (el === document.body || el === document.documentElement) break;
+                if (getComputedStyle(el).position !== "fixed") continue;
+                const rect = el.getBoundingClientRect();
+                // Bottom-anchored, and not so tall that it's really a full-screen
+                // overlay (a modal shouldn't shift the centering).
+                if (rect.bottom >= window.innerHeight - 2 && rect.height < window.innerHeight * 0.5) {
+                    return rect.height;
+                }
+            }
+            return 0;
+        };
+
         const recenter = (scrolled = lastScrolledRef.current) => {
             const win = windowRef.current;
             const track = trackRef.current;
@@ -251,7 +316,26 @@ export default function Capabilities() {
             const winTop = win.getBoundingClientRect().top;
             const cardOffsetTop = activeCard.offsetTop;
             const cardHeight = activeCard.offsetHeight;
-            const centeredY = window.innerHeight / 2 - winTop - cardOffsetTop - cardHeight / 2;
+            // Centre within the space actually visible above any bottom overlay,
+            // not the whole viewport.
+            const availableHeight = window.innerHeight - readBottomInset();
+            const cardTopInWindow = winTop + cardOffsetTop;
+            const centredTarget = availableHeight / 2 - cardTopInWindow - cardHeight / 2;
+            // The next card's divider sits exactly on the active card's bottom
+            // edge, so that edge must never fall below the visible area. While the
+            // card is shorter than the available space, centring already satisfies
+            // this and the clamp is inert (centredTarget <= bottomLimit whenever
+            // availableHeight >= cardHeight). Once it's taller — short viewport,
+            // browser zoom, or a consent banner wrapped onto two lines — centring
+            // alone pushes that bottom edge, and the divider with it, back under
+            // the overlay; pinning the card to the bottom of the visible area
+            // keeps the divider on screen instead.
+            // DIVIDER_CLEARANCE keeps the edge a few pixels clear of the overlay
+            // rather than flush against it — landing it exactly on the boundary
+            // still leaves the 1px line sitting under the overlay's first pixel.
+            const bottomLimit =
+                availableHeight - DIVIDER_CLEARANCE - cardTopInWindow - cardHeight;
+            const centeredY = Math.min(centredTarget, bottomLimit);
 
             // Linear, additive unwind: past INTERACTIVE_DISTANCE, the shift
             // moves toward 0 at exactly 1px per 1px of extra scroll, matching
@@ -270,7 +354,24 @@ export default function Capabilities() {
 
             const inTransition = now < transitionUntilRef.current;
             const effectiveUnwind = inTransition ? frozenUnwindRef.current : unwind;
-            const shift = centeredY - Math.sign(centeredY) * effectiveUnwind;
+            const rawShift = centeredY - Math.sign(centeredY) * effectiveUnwind;
+            // Snap so the active card's BOTTOM EDGE — where the next card's 1px
+            // border-t divider sits — lands on a whole device pixel.
+            //
+            // Rounding the transform to a whole CSS pixel (what this used to do)
+            // isn't enough: the edge's own layout position is fractional
+            // (617.65625px here, coming from the image's aspect-ratio-derived
+            // height), and on a fractional-DPR display — 125% Windows scaling,
+            // dpr 1.25 — that lands the hairline at 772.07 device pixels. Once
+            // the track is composited by a transform, a border straddling device
+            // rows like that gets anti-aliased away entirely under GPU
+            // rasterisation, so the divider reads as simply missing for the whole
+            // time the card is pinned. Snapping the edge instead of the transform
+            // costs under one device pixel of centring accuracy — imperceptible —
+            // and puts the line back on the grid.
+            const dpr = window.devicePixelRatio || 1;
+            const edgeY = winTop + cardOffsetTop + cardHeight + rawShift;
+            const shift = rawShift + (Math.round(edgeY * dpr) / dpr - edgeY);
 
             gsap.killTweensOf(track);
             if (inTransition) {
@@ -369,6 +470,7 @@ export default function Capabilities() {
                             isActive={index === activeIndex}
                             isPassed={index < activeIndex}
                             showDivider={index > 0}
+                            hairline={hairline}
                             onActivate={() => setActiveIndex(index)}
                         />
                     ))}
