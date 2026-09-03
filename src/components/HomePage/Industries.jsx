@@ -9,13 +9,11 @@ import governmentImg from "@/assets/HomePage/images/Industries/government-public
 import financialImg from "@/assets/HomePage/images/Industries/financial-services.png";
 import arrowIcon from "@/assets/HomePage/Industries/icon-arrow.svg";
 
-// The 4 real industries from Figma (node 2700:1394), plus the 6 more named in
-// the Navbar's "What We Do" industries dropdown (Navbar.jsx) that had no
-// destination card here yet. The 6 new ones reuse the same 4 photos on a
-// loop and carry clearly placeholder copy (`dummy: true`) until real
-// photography/copy is supplied — swap those two fields once it lands; the
-// carousel below works off `INDUSTRIES.length`, so adding or removing cards
-// needs no other code changes.
+// The 4 industries from Figma (node 2700:1394) plus 6 more supplied since.
+// Titles and descriptions are all final. The last 6 still borrow the original
+// four photos on a loop (`imagePending: true`) because no photography exists
+// for them yet — swap `image` on those once it lands. The carousel works off
+// `INDUSTRIES.length`, so adding or removing cards needs no other code changes.
 const INDUSTRIES = [
     {
         title: "Manufacturing",
@@ -38,40 +36,40 @@ const INDUSTRIES = [
         image: financialImg,
     },
     {
-        title: "Construction & EPC",
-        desc: "Placeholder copy pending sign-off — coordinating design, procurement, and field execution across large-scale builds.",
+        title: "Energy, Resources, and Utilities",
+        desc: "Modernizing asset management, field operations, and grid systems built for uptime and regulatory reporting.",
         image: manufacturingImg,
-        dummy: true,
+        imagePending: true,
     },
     {
-        title: "Oil & Gas",
-        desc: "Placeholder copy pending sign-off — supporting safety-critical operations across upstream, midstream, and downstream systems.",
+        title: "Engineering, Procurement and Construction",
+        desc: "Coordinating project controls, procurement, and site execution across complex capital programs.",
         image: retailImg,
-        dummy: true,
+        imagePending: true,
     },
     {
-        title: "Healthcare",
-        desc: "Placeholder copy pending sign-off — connecting clinical, operational, and compliance systems around patient outcomes.",
+        title: "Public Services",
+        desc: "Streamlining service delivery and case management for citizen-facing programs.",
         image: governmentImg,
-        dummy: true,
+        imagePending: true,
     },
     {
-        title: "Logistics",
-        desc: "Placeholder copy pending sign-off — synchronizing fleet, warehouse, and last-mile systems in real time.",
+        title: "Life Sciences",
+        desc: "Supporting validated environments across research, manufacturing, and regulatory submissions.",
         image: financialImg,
-        dummy: true,
+        imagePending: true,
     },
     {
-        title: "Utilities",
-        desc: "Placeholder copy pending sign-off — modernizing grid, metering, and asset-management systems at scale.",
+        title: "Communications and Information Services",
+        desc: "Scaling billing, network, and customer platforms for high-volume service providers.",
         image: manufacturingImg,
-        dummy: true,
+        imagePending: true,
     },
     {
-        title: "Real Estate",
-        desc: "Placeholder copy pending sign-off — unifying leasing, facilities, and portfolio systems on one platform.",
+        title: "Education",
+        desc: "Unifying student, academic, and administrative systems on one connected platform.",
         image: retailImg,
-        dummy: true,
+        imagePending: true,
     },
 ];
 

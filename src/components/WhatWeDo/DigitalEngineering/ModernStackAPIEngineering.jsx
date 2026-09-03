@@ -84,7 +84,7 @@ export default function ModernStackAPIEngineering() {
                                     setIsPaused(true);
                                     setHoveredIndex(index);
                                 }}
-                                className={`relative flex-1 flex flex-col items-center justify-center gap-5 px-4 text-left transition-colors duration-300 ${isHovered ? "bg-[#2d8ec5]/75 cursor-pointer" : "cursor-pointer"
+                                className={`relative flex-1 flex flex-col items-center justify-center gap-5 px-4 text-left transition-colors duration-300 ${isHovered ? "bg-[#1c5f85]/80 cursor-pointer" : "cursor-pointer"
                                     }`}
                             >
                                 <h2 className="text-white text-2xl font-semibold w-[240px]">{step.title}</h2>

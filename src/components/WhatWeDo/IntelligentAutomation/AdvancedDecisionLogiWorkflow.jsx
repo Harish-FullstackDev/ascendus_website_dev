@@ -37,7 +37,7 @@ export default function AdvancedDecisionLogiWorkflow() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="absolute left-0 bottom-0 sm:bottom-auto sm:top-[267px] w-[85%] sm:w-[477px] sm:h-60 bg-[#2d8ec5]/90 text-white flex flex-col justify-center gap-2 px-6 sm:px-[76px] py-6 sm:py-0 z-0"
+                        className="absolute left-0 bottom-0 sm:bottom-auto sm:top-[267px] w-[85%] sm:w-[477px] sm:h-60 bg-[#1c5f85]/80 text-white flex flex-col justify-center gap-2 px-6 sm:px-[76px] py-6 sm:py-0 z-0"
                     >
                         <h2 className="text-2xl sm:text-[28px] font-semibold">Advanced Decision Logic & Workflow</h2>
                         <p className="text-lg sm:text-lg font-light">Extended automation capabilities for complex business rules.</p>
