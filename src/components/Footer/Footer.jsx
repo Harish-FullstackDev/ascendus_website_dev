@@ -441,13 +441,17 @@ const Footer = () => {
               </li> */}
               {/* <li>
                 <a
-                  href="mailto:info@isupportz.com"
+                  href="mailto:info@ascendus.tech"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  info@isupportz.com
+                  info@ascendus.tech
                 </a>
               </li> */}
-
+              <li>
+                <p>
+                  Headquarters
+                </p>
+              </li>
               <li>
 
                 <a
@@ -573,7 +577,7 @@ const Footer = () => {
               />
             </a>
             <a
-              href="https://www.instagram.com/isupportz.official?igsh=MWF5Z3M2MXFrbXI3cg=="
+              href="https://www.instagram.com/ascendus.official?igsh=MWF5Z3M2MXFrbXI3cg=="
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
@@ -668,7 +672,7 @@ const Footer = () => {
               />
             </a>
             <a
-              href="https://www.instagram.com/isupportz.official?igsh=MWF5Z3M2MXFrbXI3cg=="
+              href="https://www.instagram.com/ascendus.official?igsh=MWF5Z3M2MXFrbXI3cg=="
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"

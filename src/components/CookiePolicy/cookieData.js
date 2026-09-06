@@ -86,7 +86,7 @@ export const sectionContent = {
       "If you have any questions about this Cookie Policy or our use of cookies, please contact us:",
     ],
     contacts: [
-      { label: "Email", value: "sstdpo@isupportz.com", href: "mailto:sstdpo@isupportz.com" },
+      { label: "Email", value: "legal@ascendus.tech", href: "mailto:legal@ascendus.tech" },
       { label: "Phone", value: "+91 413 2191301", href: "tel:+914132191301" },
       {
         label: "Registered Address",

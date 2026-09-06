@@ -5,6 +5,7 @@ export const sections = [
   "How We Keep Information Secure",
   "How Long We Keep Information",
   "Your Rights",
+  "PrivacyPolicyCommitment",
   "How To Contact Us",
   "Changes To This Policy",
 ];
@@ -101,13 +102,21 @@ export const sectionContent = {
     ],
   },
 
+  PrivacyPolicyCommitment: {
+    title: "Privacy Policy Commitment",
+    paragraphs: [
+      "Ascendus is committed to protecting personal information and maintaining transparency in how we handle it. Read our full commitment below.",
+      { text: "View Our Privacy Policy Commitment", href: "/legal/privacyCommitment" },
+    ],
+  },
+
   "How To Contact Us": {
     title: "How to Contact Us",
     paragraphs: [
       {
         parts: [
           "For questions, requests, or concerns regarding this Privacy Policy or the processing of your personal information, please contact Ascendus at ",
-          { text: "privacy@isupportz.com", href: "mailto:privacy@isupportz.com" },
+          { text: "legal@ascendus.tech", href: "mailto:legal@ascendus.tech" },
           " or through the Contact Us section of our website.",
         ],
       },

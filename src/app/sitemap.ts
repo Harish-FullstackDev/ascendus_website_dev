@@ -22,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/whitepapers',
     '/legal/privacy',
     '/legal/terms',
-    '/privacyCommitment',
+    '/legal/privacyCommitment',
     '/legal/security',
     '/legal/cookies',
     '/what-we-do/enterprise-transformation',

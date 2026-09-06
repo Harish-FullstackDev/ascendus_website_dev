@@ -6,7 +6,7 @@ import bgimage from "public/blog/d315b1f54a5c717d8114b27effb0c7859d99ecb9.jpg"
 
 export default function AuthorSection() {
     return (
-        <section className="py-10  bg-gradient-to-r from-blue-50 via-blue-50 to-blue-50" >
+        <section className="py-10  bg-[#f4f3f9]" >
             <div className="max-w-9xl mx-auto px-6">
                 <div className="rounded-none bg-gray-100 backdrop-blur-xl border border-white/60 shadow-lg px-8 py-10">
 

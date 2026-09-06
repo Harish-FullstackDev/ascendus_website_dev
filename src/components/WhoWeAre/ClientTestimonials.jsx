@@ -6,73 +6,73 @@ import { motion } from "framer-motion";
 const testimonials = [
     {
         text: "This ERP revolutionized our operations, streamlining finance and inventory. The cloud-based platform keeps us productive, even remotely.",
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
+        image: "/blog/default-author.svg",
         name: "Briana Patton",
         role: "Operations Manager",
     },
     {
         text: "Implementing this ERP was smooth and quick. The customizable, user-friendly interface made team training effortless.",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150",
+        image: "/blog/default-author.svg",
         name: "Bilal Ahmed",
         role: "IT Manager",
     },
     {
         text: "The support team is exceptional, guiding us through setup and providing ongoing assistance, ensuring our satisfaction.",
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150",
+        image: "/blog/default-author.svg",
         name: "Saman Malik",
         role: "Customer Support Lead",
     },
     {
         text: "This ERP's seamless integration enhanced our business operations and efficiency. Highly recommend for its intuitive interface.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150",
+        image: "/blog/default-author.svg",
         name: "Omar Raza",
         role: "CEO",
     },
     {
         text: "Its robust features and quick support have transformed our workflow, making us significantly more efficient.",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150",
+        image: "/blog/default-author.svg",
         name: "Zainab Hussain",
         role: "Project Manager",
     },
     {
         text: "The smooth implementation exceeded expectations. It streamlined processes, improving overall business performance.",
-        image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150&h=150",
+        image: "/blog/default-author.svg",
         name: "Aliza Khan",
         role: "Business Analyst",
     },
     {
         text: "Our business functions improved with a user-friendly design and positive customer feedback.",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150",
+        image: "/blog/default-author.svg",
         name: "Farhan Siddiqui",
         role: "Marketing Director",
     },
     {
         text: "They delivered a solution that exceeded expectations, understanding our needs and enhancing our operations.",
-        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150",
+        image: "/blog/default-author.svg",
         name: "Sana Sheikh",
         role: "Sales Manager",
     },
     {
         text: "Using this ERP, our online presence and conversions significantly improved, boosting business performance.",
-        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150&h=150",
+        image: "/blog/default-author.svg",
         name: "Hassan Ali",
         role: "E-commerce Manager",
     },
     {
         text: "This ERP simplified our daily operations by centralizing data across departments. Reporting is faster, and decision-making has become much easier.",
-        image: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&q=80&w=150&h=150",
+        image: "/blog/default-author.svg",
         name: "Emily Carter",
         role: "Finance Manager",
     },
     {
         text: "The automation features have saved our team countless hours each week. We now spend more time focusing on growth instead of repetitive tasks.",
-        image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&q=80&w=150&h=150",
+        image: "/blog/default-author.svg",
         name: "Daniel Morris",
         role: "Operations Director",
     },
     {
         text: "From inventory tracking to customer management, everything is available in one place. The platform is intuitive and reliable.",
-        image: "https://images.unsplash.com/photo-1521119989659-a83eee488004?auto=format&fit=crop&q=80&w=150&h=150",
+        image: "/blog/default-author.svg",
         name: "Sophia Nguyen",
         role: "Supply Chain Manager",
     },
@@ -145,8 +145,8 @@ export default function ClientTestimonials() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-12"
             >
-                <h2 className="text-2xl font-medium text-[#0d0c22]">What our Clients Say</h2>
-                <p className="mt-2 text-base sm:text-lg font-light text-[#3d3d4e]">
+                <h2 className="text-2xl font-semibold text-[#2E3033]">What our Clients Say</h2>
+                <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
                     We are passionate about empowering individuals and businesses to take control of their finances
                     and achieve their financial goals.
                 </p>

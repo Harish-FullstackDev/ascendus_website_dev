@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS public.jobs (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     title VARCHAR NOT NULL,
     slug VARCHAR UNIQUE NOT NULL,
-    company VARCHAR NOT NULL DEFAULT 'Support Studio Technologies',
+    company VARCHAR NOT NULL DEFAULT 'Ascendus',
     location VARCHAR NOT NULL,
     mode_of_work VARCHAR NOT NULL DEFAULT 'On-site',
     type_of_work VARCHAR NOT NULL DEFAULT 'Full-time',
@@ -29,6 +29,10 @@ CREATE TABLE IF NOT EXISTS public.jobs (
     created_at TIMESTAMPTZ DEFAULT timezone('utc'::text, now()) NOT NULL,
     updated_at TIMESTAMPTZ DEFAULT timezone('utc'::text, now()) NOT NULL
 );
+
+-- Table may have been provisioned before this file existed, so the column
+-- default on a pre-existing live table won't pick up the literal above.
+ALTER TABLE public.jobs ALTER COLUMN company SET DEFAULT 'Ascendus';
 
 -- 2. Indexing
 CREATE INDEX IF NOT EXISTS idx_jobs_slug ON public.jobs(slug);

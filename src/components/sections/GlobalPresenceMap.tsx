@@ -31,7 +31,7 @@ const LOCATIONS: OfficeLocation[] = [
     timezone: "AST (GMT +3:00)",
     address: "7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., Riyadh 12624, Kingdom of Saudi Arabia",
     phone: "+966 11 123 4567",
-    email: "riyadh@ascendus.com"
+    email: "riyadh@ascendus.tech"
   },
   {
     id: "pondy-office",
@@ -41,7 +41,7 @@ const LOCATIONS: OfficeLocation[] = [
     timezone: "IST (GMT +5:30)",
     address: "#192, Kamaraj Salai, Puducherry, India, Pin Code - 605013",
     phone: "0413-2191301",
-    email: "info@isupportz.com"
+    email: "info@ascendus.tech"
   },
   {
     id: "oman-office",
@@ -51,7 +51,7 @@ const LOCATIONS: OfficeLocation[] = [
     timezone: "GST (GMT +4:00)",
     address: "Muscat, Sultanate of Oman",
     phone: "+968 2456 7890",
-    email: "oman@ascendus.com"
+    email: "oman@ascendus.tech"
   },
   {
     id: "uae-office",
@@ -61,7 +61,7 @@ const LOCATIONS: OfficeLocation[] = [
     timezone: "GST (GMT +4:00)",
     address: "Dubai Internet City, Dubai, UAE",
     phone: "+971 4 234 5678",
-    email: "uae@ascendus.com"
+    email: "uae@ascendus.tech"
   },
   {
     id: "qatar-office",
@@ -71,7 +71,7 @@ const LOCATIONS: OfficeLocation[] = [
     timezone: "AST (GMT +3:00)",
     address: "Doha, Qatar",
     phone: "+974 4456 7890",
-    email: "qatar@ascendus.com"
+    email: "qatar@ascendus.tech"
   },
   {
     id: "ksa-jeddah",
@@ -81,7 +81,7 @@ const LOCATIONS: OfficeLocation[] = [
     timezone: "AST (GMT +3:00)",
     address: "Jeddah, Saudi Arabia",
     phone: "+966 12 123 4567",
-    email: "ksa@ascendus.com"
+    email: "ksa@ascendus.tech"
   },
   {
     id: "kuwait-office",
@@ -91,7 +91,7 @@ const LOCATIONS: OfficeLocation[] = [
     timezone: "AST (GMT +3:00)",
     address: "Kuwait City, Kuwait",
     phone: "+965 2234 5678",
-    email: "kuwait@ascendus.com"
+    email: "kuwait@ascendus.tech"
   }
 ];
 

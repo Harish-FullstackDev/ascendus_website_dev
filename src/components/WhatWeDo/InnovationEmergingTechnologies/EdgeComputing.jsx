@@ -25,11 +25,11 @@ export default function EdgeComputing() {
                 className="relative z-10 h-full flex flex-col justify-center gap-4 sm:gap-6 px-6 sm:px-[52px] max-w-[540px]"
             >
                 <h2 className="text-black text-2xl sm:text-[32px] font-semibold">
-                    Support Studio Technologies Innovation Edge
+                    Ascendus Innovation Edge
                 </h2>
 
                 <p className="text-black text-lg sm:text-2xl font-normal">
-                    Why enterprises choose Support Studio Technologies for emerging tech deployment.
+                    Why enterprises choose Ascendus for emerging tech deployment.
                 </p>
 
                 <p className="text-black text-base sm:text-lg font-light leading-snug">

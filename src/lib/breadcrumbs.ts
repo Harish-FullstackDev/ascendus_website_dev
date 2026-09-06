@@ -23,6 +23,7 @@ export const ROUTE_LABELS: Record<string, string> = {
   privacy: "Privacy Policy",
   security: "Security & Privacy Policy",
   cookies: "Cookie Policy",
+  privacyCommitment: "Privacy Commitment",
 };
 
 export type BreadcrumbItem = { name: string; item: string };

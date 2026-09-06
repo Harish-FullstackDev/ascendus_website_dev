@@ -127,7 +127,7 @@ const Map = () => {
             </div>
             <div className="text-center sm:text-left">
               <h3 className="text-sm sm:text-base font-semibold text-[#202020]">Email</h3>
-              <p className="text-sm sm:text-base text-[#615E5B] break-all sm:break-normal">info@isupportz.com</p>
+              <p className="text-sm sm:text-base text-[#615E5B] break-all sm:break-normal">info@ascendus.tech</p>
             </div>
           </div>
 

@@ -13,7 +13,7 @@ const SLIDES = [
         subtitle: "Deliver Faster, Smarter Customer Support",
         paragraphs: [
             "Modern service desks provide a single point of contact for customer inquiries, technical support, and issue resolution, ensuring consistent and efficient service delivery.",
-            "SST helps organizations implement intelligent service desk platforms with automation, knowledge management, and AI-assisted support to improve response times and customer satisfaction.",
+            "Ascendus helps organizations implement intelligent service desk platforms with automation, knowledge management, and AI-assisted support to improve response times and customer satisfaction.",
         ],
     },
     {
@@ -29,7 +29,7 @@ const SLIDES = [
         subtitle: "Intelligent Support Available 24/7",
         paragraphs: [
             "Artificial intelligence enhances customer service by automating repetitive requests, providing instant responses, and intelligently routing complex issues to the right specialists.",
-            "SST leverages AI chatbots, virtual assistants, predictive analytics, and automation to reduce service costs while improving customer satisfaction and operational efficiency.",
+            "Ascendus leverages AI chatbots, virtual assistants, predictive analytics, and automation to reduce service costs while improving customer satisfaction and operational efficiency.",
         ],
     },
     {

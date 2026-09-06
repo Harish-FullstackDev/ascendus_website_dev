@@ -103,7 +103,7 @@ export default function BlogPostClient() {
         if (!blog?.sections?.length) return;
 
         const handleScroll = () => {
-            const headings = document.querySelectorAll("h2[id^='section-']");
+            const headings = document.querySelectorAll("[id^='section-']");
 
             const OFFSET =
                 window.innerWidth >= 1024
@@ -254,7 +254,7 @@ export default function BlogPostClient() {
                                 </div>
                                 <div>
                                     <span className="block text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Author</span>
-                                    <span className=" text-slate-800 text-sm">{blog.author}</span>
+                                    <span className=" font-semibold  text-slate-800 text-sm">{blog.author}</span>
                                 </div>
                             </div>
                             <div className="flex items-center gap-2">

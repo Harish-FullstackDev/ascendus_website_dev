@@ -2,7 +2,7 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
 
 export default async function SitemapPage() {
-  const baseUrl = "https://www.ascendus.com"; // TODO: swap for the real Ascendus domain
+  const baseUrl = "https://www.ascendus.tech";
 
   const staticRoutes = [
     { name: "Home", path: "" },

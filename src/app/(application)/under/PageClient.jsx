@@ -22,10 +22,10 @@ export default function MaintenancePage() {
           <p>Contact us for further information.</p>
 
           <Link
-            href="mailto:admin@isupportz.com"
+            href="mailto:admin@ascendus.tech"
             className="text-sky-600 hover:text-sky-700 transition-colors font-medium"
           >
-            admin@isupportz.com
+            admin@ascendus.tech
           </Link>
         </div>
 
@@ -45,7 +45,7 @@ export default function MaintenancePage() {
             </Link>
 
             <Link
-              href="https://www.instagram.com/isupportz.official?igsh=MWF5Z3M2MXFrbXI3cg=="
+              href="https://www.instagram.com/ascendus.official?igsh=MWF5Z3M2MXFrbXI3cg=="
               target="_blank"
               className="w-11 h-11 rounded-full bg-[#05649A] hover:scale-110 transition-all duration-300 flex items-center justify-center text-white"
             >
@@ -53,7 +53,7 @@ export default function MaintenancePage() {
             </Link>
 
             <Link
-              href="https://x.com/isupportz"
+              href="https://x.com/ascendus?s=11"
               target="_blank"
               className="w-11 h-11 rounded-full bg-[#05649A] hover:scale-110 transition-all duration-300 flex items-center justify-center text-white"
             >

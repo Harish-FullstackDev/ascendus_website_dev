@@ -10,26 +10,26 @@ import footerBanner from "@/assets/career/Footer image banner.png";
 
 const SOCIALS = [
     { icon: linkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/company/ascendus-company/?viewAsMember=true" },
-    { icon: instagramIcon, label: "Instagram", href: "https://www.instagram.com/isupportz.official?igsh=MWF5Z3M2MXFrbXI3cg==" },
-    { icon: twitterIcon, label: "Twitter", href: "https://x.com/isupportz?s=11" },
+    { icon: instagramIcon, label: "Instagram", href: "https://www.instagram.com/ascendus.official?igsh=MWF5Z3M2MXFrbXI3cg==" },
+    { icon: twitterIcon, label: "Twitter", href: "https://x.com/ascendus?s=11" },
 ];
 
 export default function JoinUsSocialBand() {
     return (
         <section className="w-full">
-            <div className="bg-[#f4f3f9] py-10 sm:py-14 px-4 sm:px-6 lg:px-8">
+            <div className="bg-[#f4f3f9] py-10 sm:py-14 px-4 sm:px-16 lg:p-16">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-end justify-between gap-10"
+                    className="w-full mx-auto flex flex-col sm:flex-row items-start sm:items-end justify-start gap-6 sm:gap-16"
                 >
                     <div className="flex flex-col sm:flex-row items-start sm:items-end gap-8 sm:gap-10">
-                        <div className="flex flex-col gap-6">
+                        <div className="flex flex-col max-w-5xl gap-6">
                             <div>
-                                <p className="text-2xl text-black">Your Next Opportunity</p>
-                                <p className="mt-2 text-base sm:text-lg text-black">
+                                <h2 className="text-2xl text-[#2E3033] font-semibold">Your Next Opportunity</h2>
+                                <p className="mt-2 text-base sm:text-lg sm:w-[80%] font-light text-[#55595E]">
                                     Ready to work on problems worth solving? Explore our current openings and find
                                     an opportunity where your expertise can contribute to work that matters to
                                     enterprise organisations.
@@ -49,8 +49,8 @@ export default function JoinUsSocialBand() {
 
                     <div className="flex flex-col gap-6">
                         <div>
-                            <p className="text-2xl text-black">Social</p>
-                            <p className="mt-2 text-base sm:text-lg text-black">Follow us for the latest updates</p>
+                            <p className="text-2xl text-[#2E3033] font-semibold">Social</p>
+                            <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">Follow us for the latest updates</p>
                         </div>
                         <div className="flex items-center gap-3">
                             {SOCIALS.map((social) => (
