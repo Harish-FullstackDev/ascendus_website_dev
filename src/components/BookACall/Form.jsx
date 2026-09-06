@@ -188,7 +188,15 @@ const Form = () => {
 
   return (
     <>
-      <div className="max-w-4xl mx-auto p-10 bg-white shadow-lg rounded-md overflow-x-hidden overflow-hidden">
+      <div
+        className="max-w-4xl mx-auto p-8 lg:p-10 shadow-lg rounded-none border overflow-x-hidden overflow-hidden"
+        style={{
+          backdropFilter: "blur(14px)",
+          WebkitBackdropFilter: "blur(14px)",
+          background: "rgba(255, 255, 255, 0.55)",
+          borderColor: "rgba(229, 231, 235, 0.5)"
+        }}
+      >
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Name and Email Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -203,9 +211,9 @@ const Form = () => {
                 value={formData.firstName}
                 onChange={handleChange}
                 placeholder="Enter Your Name"
-                className={`w-full px-3 py-2 border placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.firstName
-                  ? 'border-red-400 focus:ring-red-200'
-                  : 'border-gray-300 focus:ring-blue-200'
+                className={`w-full px-4 py-3 border placeholder-gray-400 rounded-none bg-gray-50 backdrop-blur-sm text-sm focus:outline-none focus:ring-2 focus:bg-white/80 transition-all duration-200 ${errors.firstName
+                  ? 'border-red-300 focus:ring-red-300'
+                  : 'border-gray-200/50 focus:ring-blue-300'
                   }`}
               />
               {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
@@ -222,9 +230,9 @@ const Form = () => {
                 value={formData.lastName}
                 onChange={handleChange}
                 placeholder="Enter Your Name"
-                className={`w-full px-3 py-2 border placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.lastName
-                  ? 'border-red-400 focus:ring-red-200'
-                  : 'border-gray-300 focus:ring-blue-200'
+                className={`w-full px-4 py-3 border placeholder-gray-400 rounded-none bg-gray-50 backdrop-blur-sm text-sm focus:outline-none focus:ring-2 focus:bg-white/80 transition-all duration-200 ${errors.lastName
+                  ? 'border-red-300 focus:ring-red-300'
+                  : 'border-gray-200/50 focus:ring-blue-300'
                   }`}
               />
               {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
@@ -244,7 +252,7 @@ const Form = () => {
                 value={formData.companyName}
                 onChange={handleChange}
                 placeholder="Company name"
-                className={`w-full px-3 py-2 border placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.companyName ? 'border-red-400 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-200'
+                className={`w-full px-4 py-3 border placeholder-gray-400 rounded-none bg-gray-50 backdrop-blur-sm text-sm focus:outline-none focus:ring-2 focus:bg-white/80 transition-all duration-200 ${errors.companyName ? 'border-red-300 focus:ring-red-300' : 'border-gray-200/50 focus:ring-blue-300'
                   }`}
               />
               {errors.companyName && <p className="text-red-500 text-xs mt-1">{errors.companyName}</p>}
@@ -261,7 +269,7 @@ const Form = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your Email"
-                className={`w-full px-3 py-2 border placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.email ? 'border-red-400 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-200'
+                className={`w-full px-4 py-3 border placeholder-gray-400 rounded-none bg-gray-50 backdrop-blur-sm text-sm focus:outline-none focus:ring-2 focus:bg-white/80 transition-all duration-200 ${errors.email ? 'border-red-300 focus:ring-red-300' : 'border-gray-200/50 focus:ring-blue-300'
                   }`}
               />
               {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
@@ -279,7 +287,7 @@ const Form = () => {
                 name="country"
                 value={formData.country}
                 onChange={handleChange}
-                className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 bg-white ${errors.country ? 'border-red-400 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-200'
+                className={`w-full px-4 py-3 border rounded-none bg-gray-50 backdrop-blur-sm text-sm focus:outline-none focus:ring-2 focus:bg-white/80 transition-all duration-200 ${errors.country ? 'border-red-300 focus:ring-red-300' : 'border-gray-200/50 focus:ring-blue-300'
                   }`}
               >
                 <option value="">Select a country</option>
@@ -304,9 +312,9 @@ const Form = () => {
                 onChange={handleChange}
                 placeholder="Enter your Mobile number"
                 maxLength={15}
-                className={`w-full px-3 py-2 border placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.mobile
-                  ? 'border-red-400 focus:ring-red-200'
-                  : 'border-gray-300 focus:ring-blue-200'
+                className={`w-full px-4 py-3 border placeholder-gray-400 rounded-none bg-gray-50 backdrop-blur-sm text-sm focus:outline-none focus:ring-2 focus:bg-white/80 transition-all duration-200 ${errors.mobile
+                  ? 'border-red-300 focus:ring-red-300'
+                  : 'border-gray-200/50 focus:ring-blue-300'
                   }`}
               />
 
@@ -331,7 +339,7 @@ const Form = () => {
               onChange={handleChange}
               placeholder="Type your message..."
               rows={4}
-              className={`w-full px-3 py-2 border placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 resize-vertical ${errors.message ? 'border-red-400 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-200'
+              className={`w-full px-4 py-3 border placeholder-gray-400 rounded-none bg-gray-50 backdrop-blur-sm text-sm focus:outline-none focus:ring-2 focus:bg-white/80 transition-all duration-200 resize-vertical ${errors.message ? 'border-red-300 focus:ring-red-300' : 'border-gray-200/50 focus:ring-blue-300'
                 }`}
             />
             {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
@@ -345,7 +353,7 @@ const Form = () => {
                 name="termsAccepted"
                 checked={formData.termsAccepted}
                 onChange={handleChange}
-                className="mt-1 h-4 w-4 rounded border-gray-300 text-[#0061af] focus:ring-[#0061af]"
+                className="mt-1 h-4 w-4 rounded-none border-gray-300 text-[#0061af] focus:ring-[#0061af]"
               />
 
               <span>
@@ -382,7 +390,7 @@ const Form = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`flex items-center gap-2 bg-[#0061af] text-white font-medium py-2 px-6 rounded-md transition duration-200 ease-in-out ${isSubmitting
+                className={`flex items-center gap-2 bg-[#0061af] text-white font-medium py-2 px-6 rounded-none transition duration-200 ease-in-out ${isSubmitting
                   ? 'opacity-80 cursor-not-allowed'
                   : 'hover:bg-blue-400'
                   }`}
@@ -401,7 +409,7 @@ const Form = () => {
               {/* <button
                 type="button"
                 onClick={() => setShowCalendly(true)}
-                className="flex items-center gap-2 bg-[#0061af] text-white font-medium py-2 px-6 rounded-md transition duration-200 ease-in-out hover:bg-blue-400"
+                className="flex items-center gap-2 bg-[#0061af] text-white font-medium py-2 px-6 rounded-none transition duration-200 ease-in-out hover:bg-blue-400"
               >
                 Schedule a Call
               </button> */}

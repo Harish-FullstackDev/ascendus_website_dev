@@ -188,7 +188,7 @@ const ContactForm = () => {
   return (
     <>
       <div
-        className="rounded-3xl shadow-lg p-8 lg:p-8 m-4 lg:m-8 overflow-x-hidden overflow-hidden border"
+        className="rounded-none shadow-lg p-8 lg:p-8 m-4 lg:m-8 overflow-x-hidden overflow-hidden border"
         style={{
           backdropFilter: "blur(14px)",
           WebkitBackdropFilter: "blur(14px)",
@@ -216,7 +216,7 @@ const ContactForm = () => {
                 value={formData.firstName}
                 onChange={handleChange}
                 placeholder="Exp. Hyra"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-xl bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.firstName
+                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.firstName
                   ? 'border-red-300 focus:ring-red-300'
                   : 'focus:ring-blue-300'
                   }`}
@@ -237,7 +237,7 @@ const ContactForm = () => {
                 value={formData.secondName}
                 onChange={handleChange}
                 placeholder="Exp. Banu"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-xl bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.secondName
+                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.secondName
                   ? 'border-red-300 focus:ring-red-300'
                   : 'focus:ring-blue-300'
                   }`}
@@ -261,7 +261,7 @@ const ContactForm = () => {
                 value={formData.companyEmail}
                 onChange={handleChange}
                 placeholder="hyra@company.com"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-xl bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.companyEmail
+                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.companyEmail
                   ? 'border-red-300 focus:ring-red-300'
                   : 'focus:ring-blue-300'
                   }`}
@@ -282,7 +282,7 @@ const ContactForm = () => {
                 value={formData.contactNumber}
                 onChange={handleChange}
                 placeholder="(+966) xx xxx xxxx"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-xl bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.contactNumber
+                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.contactNumber
                   ? 'border-red-300 focus:ring-red-300'
                   : 'focus:ring-blue-300'
                   }`}
@@ -306,7 +306,7 @@ const ContactForm = () => {
                 value={formData.country}
                 onChange={handleChange}
                 placeholder="KSA"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-xl bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.country
+                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.country
                   ? 'border-red-300 focus:ring-red-300'
                   : 'focus:ring-blue-300'
                   }`}
@@ -327,7 +327,7 @@ const ContactForm = () => {
                 value={formData.companyName}
                 onChange={handleChange}
                 placeholder="ABC Corporation"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-xl bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.companyName
+                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.companyName
                   ? 'border-red-300 focus:ring-red-300'
                   : 'focus:ring-blue-300'
                   }`}
@@ -351,7 +351,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 rows={4}
                 placeholder="Please describe your enquiry in detail..."
-                className={`w-full px-4 py-3 border border-gray-200 rounded-xl bg-gray-50 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-colors resize-none ${errors.enquiries
+                className={`w-full px-4 py-3 border border-gray-200 rounded-none bg-gray-50 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-colors resize-none ${errors.enquiries
                   ? 'border-red-300 focus:ring-red-300'
                   : 'focus:ring-blue-300'
                   }`}
@@ -367,7 +367,7 @@ const ContactForm = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`flex items-center gap-2 bg-black text-white py-2 px-5 rounded-lg font-medium text-sm transition duration-200 ease-in-out  ${isSubmitting
+              className={`flex items-center gap-2 bg-black text-white py-2 px-5 rounded-none font-medium text-sm transition duration-200 ease-in-out  ${isSubmitting
                 ? 'opacity-50 cursor-not-allowed'
                 : 'hover:bg-gray-800 hover:shadow-md transform hover:scale-105'
                 }`}
