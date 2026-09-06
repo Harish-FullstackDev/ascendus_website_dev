@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+
 const testimonials = [
     {
         text: "This ERP revolutionized our operations, streamlining finance and inventory. The cloud-based platform keeps us productive, even remotely.",
