@@ -27,9 +27,8 @@ function Field({ label, required, className, isPreFilled, ...props }) {
             <input
                 {...props}
                 required={required}
-                className={`${inputClass} ${
-                    isPreFilled ? "ring-2 ring-blue-500/30 bg-blue-50/20 !border-blue-300" : ""
-                }`}
+                className={`${inputClass} ${isPreFilled ? "ring-2 ring-blue-500/30 bg-blue-50/20 !border-blue-300" : ""
+                    }`}
             />
         </div>
     );
@@ -46,9 +45,8 @@ function TextareaField({ label, required, className, isPreFilled, ...props }) {
             <textarea
                 {...props}
                 required={required}
-                className={`${textareaClass} ${
-                    isPreFilled ? "ring-2 ring-blue-500/30 bg-blue-50/20 !border-blue-300" : ""
-                }`}
+                className={`${textareaClass} ${isPreFilled ? "ring-2 ring-blue-500/30 bg-blue-50/20 !border-blue-300" : ""
+                    }`}
             />
         </div>
     );
@@ -66,9 +64,8 @@ function SelectField({ label, required, className, options, placeholder, isPreFi
                 <select
                     {...props}
                     required={required}
-                    className={`${inputClass} appearance-none pr-9 cursor-pointer ${
-                        isPreFilled ? "ring-2 ring-blue-500/30 bg-blue-50/20 !border-blue-300" : ""
-                    }`}
+                    className={`${inputClass} appearance-none pr-9 cursor-pointer ${isPreFilled ? "ring-2 ring-blue-500/30 bg-blue-50/20 !border-blue-300" : ""
+                        }`}
                 >
                     <option value="" disabled>
                         {placeholder || "Select an option"}
@@ -171,7 +168,7 @@ export default function JobApplicationForm() {
             if (parsedDataStr) {
                 try {
                     const parsedData = JSON.parse(parsedDataStr);
-                    
+
                     // Merge data
                     Object.keys(parsedData).forEach((key) => {
                         if (parsedData[key] !== undefined && parsedData[key] !== null) {
@@ -310,11 +307,11 @@ export default function JobApplicationForm() {
             <form onSubmit={handleSubmit} className="space-y-6">
                 <Card title="Personal Information" description="Please provide your contact details">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <Field id="firstName" name="firstName" label="First Name" required placeholder="John" value={formData.firstName} onChange={handleChange} autoComplete="given-name" isPreFilled={preFilledFields.firstName} />
-                        <Field id="lastName" name="lastName" label="Last Name" required placeholder="Doe" value={formData.lastName} onChange={handleChange} autoComplete="family-name" isPreFilled={preFilledFields.lastName} />
+                        <Field id="firstName" name="firstName" label="First Name" required placeholder="Aditya" value={formData.firstName} onChange={handleChange} autoComplete="given-name" isPreFilled={preFilledFields.firstName} />
+                        <Field id="lastName" name="lastName" label="Last Name" required placeholder="Menon" value={formData.lastName} onChange={handleChange} autoComplete="family-name" isPreFilled={preFilledFields.lastName} />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <Field id="email" name="email" type="email" label="Email Address" required placeholder="john.doe@example.com" value={formData.email} onChange={handleChange} autoComplete="email" isPreFilled={preFilledFields.email} />
+                        <Field id="email" name="email" type="email" label="Email Address" required placeholder="aditya.menon@example.com" value={formData.email} onChange={handleChange} autoComplete="email" isPreFilled={preFilledFields.email} />
                         <Field id="phone" name="phone" type="tel" label="Phone Number" required placeholder="+1 (555) 123-4567" value={formData.phone} onChange={handleChange} autoComplete="tel" isPreFilled={preFilledFields.phone} />
                     </div>
                     <div className="space-y-3">
@@ -339,7 +336,7 @@ export default function JobApplicationForm() {
                     <SelectField id="experience" name="experience" label="Years of Experience" required placeholder="Select experience level" options={EXPERIENCE_LEVELS} value={formData.experience} onChange={handleChange} isPreFilled={preFilledFields.experience} />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <Field id="jobTitle" name="jobTitle" label="Current Job Title" placeholder="Senior Developer" value={formData.jobTitle} onChange={handleChange} isPreFilled={preFilledFields.jobTitle} />
-                        <Field id="employer" name="employer" label="Current Employer" placeholder="Tech Corp Inc." value={formData.employer} onChange={handleChange} isPreFilled={preFilledFields.employer} />
+                        <Field id="employer" name="employer" label="Current Employer" placeholder="Infotech Solutions Pvt. Ltd." value={formData.employer} onChange={handleChange} isPreFilled={preFilledFields.employer} />
                     </div>
                 </Card>
 
@@ -351,11 +348,10 @@ export default function JobApplicationForm() {
                         <button
                             type="button"
                             onClick={() => fileInputRef.current?.click()}
-                            className={`w-full border-2 border-dashed p-6 flex flex-col items-center justify-center gap-2 transition-all cursor-pointer ${
-                                resumeFile 
-                                    ? "border-blue-300 bg-blue-50/10 hover:border-blue-400" 
-                                    : "border-[#d1d5dc] hover:border-blue-400"
-                            }`}
+                            className={`w-full border-2 border-dashed p-6 flex flex-col items-center justify-center gap-2 transition-all cursor-pointer ${resumeFile
+                                ? "border-blue-300 bg-blue-50/10 hover:border-blue-400"
+                                : "border-[#d1d5dc] hover:border-blue-400"
+                                }`}
                         >
                             {resumeFile ? (
                                 <FileText className="w-8 h-8 text-blue-500" />
@@ -388,8 +384,8 @@ export default function JobApplicationForm() {
                         <SelectField id="startDate" name="startDate" label="Available Start Date" required placeholder="Select availability" options={START_DATE_OPTIONS} value={formData.startDate} onChange={handleChange} isPreFilled={preFilledFields.startDate} />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <Field id="currentSalary" name="currentSalary" label="Current Salary (Annual)" placeholder="$80,000" value={formData.currentSalary} onChange={handleChange} isPreFilled={preFilledFields.currentSalary} />
-                        <Field id="expectedSalary" name="expectedSalary" label="Expected Salary (Annual)" placeholder="$80,000" value={formData.expectedSalary} onChange={handleChange} isPreFilled={preFilledFields.expectedSalary} />
+                        <Field id="currentSalary" name="currentSalary" label="Current Salary (Annual)" placeholder="e.g., 8 LPA" value={formData.currentSalary} onChange={handleChange} isPreFilled={preFilledFields.currentSalary} />
+                        <Field id="expectedSalary" name="expectedSalary" label="Expected Salary (Annual)" placeholder="e.g., 8 LPA" value={formData.expectedSalary} onChange={handleChange} isPreFilled={preFilledFields.expectedSalary} />
                     </div>
                     <Field id="linkedin" name="linkedin" type="url" label="LinkedIn Profile URL" placeholder="https://linkedin.com/in/yourprofile" value={formData.linkedin} onChange={handleChange} isPreFilled={preFilledFields.linkedin} />
                     <Field id="portfolio" name="portfolio" type="url" label="Portfolio/Website URL" placeholder="https://yourportfolio.com" value={formData.portfolio} onChange={handleChange} isPreFilled={preFilledFields.portfolio} />
@@ -397,11 +393,11 @@ export default function JobApplicationForm() {
 
                 <Card title="Professional Reference" description="Provide at least one professional reference">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <Field id="refName" name="refName" label="Reference Full Name" placeholder="Jane Smith" value={formData.refName} onChange={handleChange} isPreFilled={preFilledFields.refName} />
+                        <Field id="refName" name="refName" label="Reference Full Name" placeholder="Meera Krishnan" value={formData.refName} onChange={handleChange} isPreFilled={preFilledFields.refName} />
                         <Field id="refRelationship" name="refRelationship" label="Relationship" placeholder="Former Manager" value={formData.refRelationship} onChange={handleChange} isPreFilled={preFilledFields.refRelationship} />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <Field id="refEmail" name="refEmail" type="email" label="Reference Email" placeholder="jane.smith@company.com" value={formData.refEmail} onChange={handleChange} isPreFilled={preFilledFields.refEmail} />
+                        <Field id="refEmail" name="refEmail" type="email" label="Reference Email" placeholder="meera.krishnan@company.com" value={formData.refEmail} onChange={handleChange} isPreFilled={preFilledFields.refEmail} />
                         <Field id="refPhone" name="refPhone" type="tel" label="Reference Phone" placeholder="+1 (555) 987-6543" value={formData.refPhone} onChange={handleChange} isPreFilled={preFilledFields.refPhone} />
                     </div>
                 </Card>
@@ -416,7 +412,7 @@ export default function JobApplicationForm() {
                     <button
                         type="submit"
                         disabled={status === "submitting"}
-                        className="bg-[#030213] hover:bg-black text-white text-sm font-medium h-[45px] min-w-[200px] px-6 flex items-center justify-center gap-2 transition-colors disabled:opacity-60 cursor-pointer"
+                        className="bg-[#0061AF] hover:bg-[#00447A] text-white text-sm font-medium h-[45px] min-w-[200px] px-6 flex items-center justify-center gap-2 transition-colors disabled:opacity-60 cursor-pointer"
                     >
                         {status === "submitting" ? (
                             <>

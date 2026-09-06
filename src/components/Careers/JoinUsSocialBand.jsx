@@ -10,8 +10,8 @@ import footerBanner from "@/assets/career/Footer image banner.png";
 
 const SOCIALS = [
     { icon: linkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/company/ascendus-company/?viewAsMember=true" },
-    { icon: instagramIcon, label: "Instagram", href: "https://www.instagram.com/ascendus.official?igsh=MWF5Z3M2MXFrbXI3cg==" },
-    { icon: twitterIcon, label: "Twitter", href: "https://x.com/ascendus?s=11" },
+    { icon: instagramIcon, label: "Instagram", href: "https://www.instagram.com/ascendus.ksa" },
+    { icon: twitterIcon, label: "Twitter", href: "https://x.com/ascendus_ksa" },
 ];
 
 export default function JoinUsSocialBand() {

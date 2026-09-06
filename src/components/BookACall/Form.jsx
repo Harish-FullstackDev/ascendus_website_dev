@@ -392,7 +392,7 @@ const Form = () => {
                 disabled={isSubmitting}
                 className={`flex items-center gap-2 bg-[#0061af] text-white font-medium py-2 px-6 rounded-none transition duration-200 ease-in-out ${isSubmitting
                   ? 'opacity-80 cursor-not-allowed'
-                  : 'hover:bg-blue-400'
+                  : 'hover:bg-[#00447A]'
                   }`}
               >
                 {isSubmitting ? (
@@ -409,7 +409,7 @@ const Form = () => {
               {/* <button
                 type="button"
                 onClick={() => setShowCalendly(true)}
-                className="flex items-center gap-2 bg-[#0061af] text-white font-medium py-2 px-6 rounded-none transition duration-200 ease-in-out hover:bg-blue-400"
+                className="flex items-center gap-2 bg-[#0061af] text-white font-medium py-2 px-6 rounded-none transition duration-200 ease-in-out hover:bg-[#00447A]"
               >
                 Schedule a Call
               </button> */}

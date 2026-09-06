@@ -10,7 +10,7 @@ import logo2 from "../../assets/Brand/Ascendus_Logo_Primary.svg";
 import logo3 from "../../assets/Brand/Ascendus_Icon_Primary.png";
 import logo4 from "../../assets/Brand/Ascendus_Wordmark_OnDark.svg";
 import logo5 from "../../assets/Brand/Ascendus_Wordmark_OnLight.svg";
-import { validRoutes } from "../Constants/Routes/routes";
+import { isValidRoute } from "../Constants/Routes/routes";
 import LanguageSelector from "../languageselector/Language_selector.jsx";
 import ContactUsButton from "../Contactusbutton/contact_us_button";
 import BookAcallButton from "../BookAcallButton/BookAcall_button";
@@ -58,7 +58,7 @@ const Navbar = () => {
   const activeLinkClass = "after:scale-x-100 after:bg-current";
   const inactiveLinkClass = "after:bg-current";
 
-  const isLight = lightThemeRoutes.includes(pathname) || !validRoutes.includes(pathname);
+  const isLight = lightThemeRoutes.includes(pathname) || !isValidRoute(pathname);
   const isNavbarLight = isLight || isScrolled;
 
   useEffect(() => {

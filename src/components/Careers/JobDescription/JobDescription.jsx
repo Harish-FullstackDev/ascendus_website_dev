@@ -4,13 +4,11 @@ import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { X, Loader2, AlertCircle } from "lucide-react";
+import { X, Loader2, AlertCircle, Clock, Link2, Check } from "lucide-react";
 import locationIcon from "@/assets/career/icons/location.svg";
 import modeOfWorkIcon from "@/assets/career/icons/mode of work.svg";
 import typeOfWorkIcon from "@/assets/career/icons/type of work.svg";
-import applicantsIcon from "@/assets/career/icons/applicants.svg";
 import shareIcon from "@/assets/career/icons/share.svg";
-import menuIcon from "@/assets/career/icons/menu.svg";
 import viewJobDetailsIcon from "@/assets/career/icons/view job details.svg";
 import uploadIcon from "@/assets/career/icons/upload.svg";
 
@@ -45,7 +43,7 @@ function BulletList({ items }) {
     );
 }
 
-function IconButton({ icon, label, onClick }) {
+function IconButton({ icon, label, onClick, children }) {
     return (
         <button
             type="button"
@@ -53,7 +51,7 @@ function IconButton({ icon, label, onClick }) {
             onClick={onClick}
             className="flex h-9 w-9 items-center justify-center border border-black/10 bg-white text-[#0a0a0a] transition-colors hover:bg-slate-50"
         >
-            <Image src={icon} alt="" width={16} height={16} />
+            {children ?? <Image src={icon} alt="" width={16} height={16} />}
         </button>
     );
 }
@@ -265,6 +263,7 @@ function ResumeUploadModal({ isOpen, onClose, jobTitle }) {
 
 export default function JobDescription({ job, otherJobs = [] }) {
     const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
+    const [copied, setCopied] = useState(false);
 
     const handleShare = () => {
         if (typeof window === "undefined") return;
@@ -273,6 +272,13 @@ export default function JobDescription({ job, otherJobs = [] }) {
         } else {
             navigator.clipboard.writeText(window.location.href);
         }
+    };
+
+    const handleCopyLink = () => {
+        if (typeof window === "undefined") return;
+        navigator.clipboard.writeText(window.location.href);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
     };
 
     return (
@@ -292,21 +298,21 @@ export default function JobDescription({ job, otherJobs = [] }) {
                                 <MetaItem icon={typeOfWorkIcon} label={job.typeOfWork} />
                             </div>
                             <div className="flex items-center gap-2 mt-2 text-sm text-[#6a7282]">
-                                <Image src={applicantsIcon} alt="" width={16} height={16} />
-                                {/* <span>{job.applicants} applicants</span> */}
-                                {/* <span>•</span> */}
+                                <Clock className="w-4 h-4" />
                                 <span>{job.postedAgo}</span>
                             </div>
                             <div className="flex flex-wrap gap-2 mt-3">
                                 <Badge>{job.experienceLevel}</Badge>
-                                <Badge>{job.typeOfWork}</Badge>
+                                {/* <Badge>{job.typeOfWork}</Badge> */}
                             </div>
                         </div>
                     </div>
 
                     <div className="flex gap-2 self-start">
                         <IconButton icon={shareIcon} label="Share this job" onClick={handleShare} />
-                        <IconButton icon={menuIcon} label="More options" />
+                        <IconButton label="Copy link" onClick={handleCopyLink}>
+                            {copied ? <Check className="w-4 h-4" /> : <Link2 className="w-4 h-4" />}
+                        </IconButton>
                     </div>
                 </div>
 

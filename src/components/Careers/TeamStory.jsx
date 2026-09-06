@@ -2,39 +2,38 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import profile1 from "@/assets/career/Team story profile 1.svg";
-import profile2 from "@/assets/career/Team story profile 2.svg";
-import profile3 from "@/assets/career/Team story profile 3.svg";
 import separatorLine from "@/assets/career/Separetor line.png";
+
+const AVATAR = "/blog/default-author.svg";
 
 const TESTIMONIALS = [
     {
-        avatar: profile1,
-        name: "Gilbert B.",
-        role: "HR at Tech International",
+        avatar: AVATAR,
+        name: "Vignesh",
+        role: "Marketing Head",
         quote:
-            "Getting a job here is very easy, with a few registration steps I immediately get a call from the company I want.",
+            "I get real ownership over how we tell our story to the market, and the freedom to try new channels without waiting months for sign-off.",
     },
     {
-        avatar: profile2,
-        name: "Audrey William",
-        role: "Senior Designer at Bright Studio",
+        avatar: AVATAR,
+        name: "Santhosh",
+        role: "SAP Delivery",
         quote:
-            "What's interesting about the process is that I didn't have to wait long for an interview, and within 1 month I was onboard.",
+            "Every SAP engagement here is run with the same discipline, whether it's a small support ticket or a full rollout. That consistency is what clients keep coming back for.",
     },
     {
-        avatar: profile3,
-        name: "Jammie F.",
-        role: "Senior Finance at News Update",
+        avatar: AVATAR,
+        name: "Deepak",
+        role: "Business Development Executive",
         quote:
-            "Lockdown made me confused and had difficulty getting a job, but just by registering here I immediately got noticed.",
+            "I'm trusted to build client relationships from the first conversation onward, not just hand off leads. That ownership is what keeps the work interesting.",
     },
     {
-        avatar: profile3,
-        name: "Jammie F.",
-        role: "Senior Finance at News Update",
+        avatar: AVATAR,
+        name: "Sneha",
+        role: "SAP Project Coordinator",
         quote:
-            "Lockdown made me confused and had difficulty getting a job, but just by registering here I immediately got noticed.",
+            "Coordinating across teams taught me more in a year here than I expected. Everyone is approachable, and there's always someone willing to explain the why behind a decision.",
     },
 ];
 

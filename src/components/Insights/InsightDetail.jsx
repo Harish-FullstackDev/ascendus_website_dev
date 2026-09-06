@@ -340,12 +340,12 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                                 setIsDropdownOpen(false);
                                             }}
                                             className={`flex items-center justify-between px-6 py-2.5 text-left text-sm  transition-colors cursor-pointer ${isActive
-                                                ? "text-blue-500 bg-blue-50/50 dark:bg-blue-900/10 font-bold"
+                                                ? "text-[#0061AF] bg-blue-50/50 dark:bg-blue-900/10 font-bold"
                                                 : "text-slate-655 dark:text-slate-350 hover:bg-slate-50 dark:hover:bg-neutral-800"
                                                 }`}
                                         >
                                             <span>{sec.heading}</span>
-                                            {isActive && <Check className="w-4 h-4 text-blue-500" />}
+                                            {isActive && <Check className="w-4 h-4 text-[#0061AF]" />}
                                         </button>
                                     );
                                 })}
@@ -375,14 +375,14 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                             <button
                                                 onClick={() => scrollToSection(targetId)}
                                                 className={`relative w-full pl-6 pr-2 py-4 text-left transition-colors duration-200 ${isActive
-                                                    ? "text-blue-600 font-semibold"
+                                                    ? "text-[#0061AF] font-semibold"
                                                     : "text-slate-700 hover:text-slate-900"
                                                     }`}
                                             >
                                                 {isActive && (
                                                     <motion.span
                                                         layoutId="toc-indicator"
-                                                        className="absolute left-[-2px] top-0 h-full w-[3px] rounded-full bg-blue-500"
+                                                        className="absolute left-[-2px] top-0 h-full w-[3px] rounded-full bg-[#0061AF]"
                                                         transition={{
                                                             type: "spring",
                                                             stiffness: 450,

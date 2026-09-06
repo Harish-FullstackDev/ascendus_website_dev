@@ -27,8 +27,8 @@ export default function ReadyToTransform() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative z-10 flex flex-col items-center text-center gap-6 px-4 pb-16 sm:pb-24 lg:pb-32 pt-32 sm:pt-[160px] lg:pt-[246px]"
                 >
-                    <div className="max-w-3xl">
-                        <h2 className="text-2xl sm:text-4xl font-medium text-white">
+                    <div className="max-w-4xl">
+                        <h2 className="text-2xl sm:text-5xl font-semibold text-white">
                             Want to know more about how we work?
                         </h2>
 

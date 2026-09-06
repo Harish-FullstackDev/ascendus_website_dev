@@ -3,6 +3,11 @@ const nextConfig = {
   devIndicators: false,
   trailingSlash: true,
   serverExternalPackages: ['pdf-parse', 'pdfjs-dist', '@napi-rs/canvas'],
+  outputFileTracingIncludes: {
+    '/api/parse-resume/route': [
+      './node_modules/pdf-parse/node_modules/pdfjs-dist/legacy/build/*.mjs',
+    ],
+  },
   images: {
     remotePatterns: [
       {

@@ -29,3 +29,9 @@ export const validRoutes = [
   "/what-we-do/enterprise-transformation/microsoft-services/",
   "/what-we-do/enterprise-transformation/broader-technology-services/",
 ];
+
+// Dynamic routes that reuse CareersLayout's dark parallax hero (job
+// description pages, the application form) need the same navbar theme as
+// "/careers/" itself, but their slug can't be listed literally above.
+export const isValidRoute = (pathname) =>
+  validRoutes.includes(pathname) || pathname.startsWith("/careers/");
