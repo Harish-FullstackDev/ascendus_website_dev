@@ -19,7 +19,7 @@ const ContactInfo = () => {
     }
   };
   return (
-    <div className="bg-white p-8 lg:p-12">
+    <div className="bg-white py-8 lg:py-12">
       <div className="max-w-md">
         <h2 className="text-2xl lg:text-2xl text-[#2E3033] font-semibold mb-2">
           Contact Information

@@ -1,10 +1,32 @@
-import React from 'react';
+"use client";
+import React, { useEffect, useRef, useState } from 'react';
 import Footer from '../Footer/Footer';
 import ContactInfo from './Address';
 import ContactForm from './Form';
 import ContactHeader from './Header';
 
+const HERO_LEFT_INSET_PX = 64;
+
 const ContactUs = () => {
+  const infoColRef = useRef(null);
+  const [infoColShift, setInfoColShift] = useState(0);
+
+  useEffect(() => {
+    const alignInfoColToHero = () => {
+      if (!infoColRef.current) return;
+      if (window.innerWidth < 1024) {
+        setInfoColShift(0);
+        return;
+      }
+      const currentLeft = infoColRef.current.getBoundingClientRect().left;
+      setInfoColShift(HERO_LEFT_INSET_PX - currentLeft);
+    };
+
+    alignInfoColToHero();
+    window.addEventListener('resize', alignInfoColToHero);
+    return () => window.removeEventListener('resize', alignInfoColToHero);
+  }, []);
+
   return (
     <div className="min-h-screen overflow-x-hidden overflow-hidden">
       {/* Header Section with Hero */}
@@ -20,7 +42,11 @@ const ContactUs = () => {
             </div>
 
             {/* Contact Information - Shows second on mobile, first on desktop */}
-            <div className="w-full lg:w-1/3 lg:pr-4 lg:order-1">
+            <div
+              ref={infoColRef}
+              className="w-full lg:w-1/3 lg:pr-4 lg:order-1"
+              style={{ position: 'relative', left: infoColShift }}
+            >
               <div className="lg:sticky lg:top-4">
                 <ContactInfo />
               </div>
