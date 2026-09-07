@@ -8,7 +8,7 @@ import searchIcon from "@/assets/career/icons/Search Icon.svg";
 import clearFilterIcon from "@/assets/career/icons/Clear filter.svg";
 import prevPageIcon from "@/assets/career/icons/previous page toggle.svg";
 import nextPageIcon from "@/assets/career/icons/Next page toggle arrow.svg";
-import viewJobDetailsIcon from "@/assets/career/icons/view job details.svg";
+import ctaArrowIcon from "@/assets/HomePage/WhyEnterprisePartner/icon-cta-arrow.svg";
 import { getAllJobs } from "@/lib/jobs";
 import { AREA_OF_INTEREST } from "@/components/Constants/Career/filterCategories";
 
@@ -222,10 +222,12 @@ export default function JobListingSection() {
                                         </div>
                                         <Link
                                             href={`/careers/${job.slug}`}
-                                            className="inline-flex w-full sm:w-auto justify-center items-center gap-2 rounded-full border border-[#7f7f7f] px-4 py-2 text-sm text-[#2d8ec5]"
+                                            className="group inline-flex w-full sm:w-auto shrink-0 items-center justify-between gap-3 rounded-full border border-[#2d8ec5] pl-5 pr-1 py-1 text-sm font-light text-[#2E3033] transition-colors hover:bg-[#00447A] hover:text-white whitespace-nowrap"
                                         >
-                                            <Image src={viewJobDetailsIcon} alt="" width={13} height={13} />
                                             View Role
+                                            <span className="relative size-[26px] shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                                                <Image src={ctaArrowIcon} alt="" fill className="object-contain" />
+                                            </span>
                                         </Link>
                                     </motion.div>
                                 ))

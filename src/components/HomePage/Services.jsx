@@ -23,16 +23,11 @@ function ServiceCard({ item }) {
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/10 transition-colors duration-500 group-hover:from-black/80 group-hover:via-black/45 group-hover:to-black/25 pointer-events-none" />
 
-            {/* Content anchored to the top of the card */}
-            <div className="relative z-10 flex flex-col items-start p-6 sm:p-8">
+            {/* Title top, description bottom */}
+            <div className="absolute inset-0 z-10 flex flex-col items-start justify-between p-6 sm:p-8">
                 <h2 className="text-white text-2xl font-semibold leading-[1.4]">{item.title}</h2>
 
-                {/* Description stays hidden until hover, then reveals with a smooth height + fade animation */}
-                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out w-full">
-                    <p className="overflow-hidden text-white/90 text-base font-light leading-[1.5] pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                        {item.desc}
-                    </p>
-                </div>
+                <p className="text-white/90 text-base font-light leading-[1.5] pt-2">{item.desc}</p>
             </div>
         </div>
     );

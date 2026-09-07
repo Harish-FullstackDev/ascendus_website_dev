@@ -11,8 +11,8 @@ import typeOfWorkIcon from "@/assets/career/icons/type of work.svg";
 import applicantsIcon from "@/assets/career/icons/applicants.svg";
 import shareIcon from "@/assets/career/icons/share.svg";
 import menuIcon from "@/assets/career/icons/menu.svg";
-import viewJobDetailsIcon from "@/assets/career/icons/view job details.svg";
 import uploadIcon from "@/assets/career/icons/upload.svg";
+import ctaArrowIcon from "@/assets/HomePage/WhyEnterprisePartner/icon-cta-arrow.svg";
 
 
 function MetaItem({ icon, label }) {
@@ -378,10 +378,12 @@ export default function JobDescription({ job, otherJobs = [] }) {
                                 </div>
                                 <Link
                                     href={`/careers/${other.slug}`}
-                                    className="inline-flex items-center gap-1.5 border border-[#7f7f7f] px-3 py-1.5 text-xs text-[#2d8ec5] whitespace-nowrap transition-colors hover:bg-slate-50"
+                                    className="group inline-flex shrink-0 items-center justify-between gap-2 rounded-full border border-[#2d8ec5] pl-4 pr-1 py-1 text-xs font-light text-[#2E3033] transition-colors hover:bg-[#00447A] hover:text-white whitespace-nowrap"
                                 >
                                     View Job Details
-                                    <Image src={viewJobDetailsIcon} alt="" width={8} height={8} />
+                                    <span className="relative size-[22px] shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                                        <Image src={ctaArrowIcon} alt="" fill className="object-contain" />
+                                    </span>
                                 </Link>
                             </div>
                         ))}
