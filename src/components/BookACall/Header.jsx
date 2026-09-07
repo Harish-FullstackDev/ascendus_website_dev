@@ -104,7 +104,7 @@ const Header = () => {
                 variants={titleVariants}
                 className="text-white
                      text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl
-                     font-normal tracking-wide leading-tight
+                     font-semibold tracking-wide leading-tight
                      drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]
                      max-w-4xl mx-auto mb-4 sm:mb-6"
               >

@@ -217,7 +217,7 @@ export default function JobListingSection() {
                                         <div>
                                             <p className="text-[16px] text-black">{job.title}</p>
                                             <p className="text-[14px] font-light text-[#6c6c6c] mt-1">
-                                                {job.location} | {job.typeOfWork} | Experience: {job.experienceLevel}
+                                                {job.location} | {job.typeOfWork} | {job.experienceLevel}
                                             </p>
                                         </div>
                                         <Link

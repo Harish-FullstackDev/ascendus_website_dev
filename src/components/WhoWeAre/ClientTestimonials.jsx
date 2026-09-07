@@ -3,86 +3,109 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-
 const testimonials = [
     {
-        text: "This ERP revolutionized our operations, streamlining finance and inventory. The cloud-based platform keeps us productive, even remotely.",
+        text: "Migrating our core ERP to S/4HANA felt like a massive risk, but the Ascendus team handled the heavy lifting seamlessly. Downtime during the go-live weekend was minimal, and our finance team was up and running by Monday morning without major hiccups.",
         image: "/blog/default-author.svg",
-        name: "Briana Patton",
-        role: "Operations Manager",
+        name: "David Vance",
+        role: "VP of IT Operations",
     },
     {
-        text: "Implementing this ERP was smooth and quick. The customizable, user-friendly interface made team training effortless.",
+        text: "Our legacy portal was customer-facing and badly needed a modern UX refresh. The Ascendus design team ran great stakeholder workshops, got straight to the root of our user friction points, and delivered a slick UI that our users actually enjoy navigating now.",
         image: "/blog/default-author.svg",
-        name: "Bilal Ahmed",
-        role: "IT Manager",
+        name: "Elena Rostova",
+        role: "Director of Digital Product",
     },
     {
-        text: "The support team is exceptional, guiding us through setup and providing ongoing assistance, ensuring our satisfaction.",
+        text: "Working with Ascendus has been a game changer for our day-to-day operations. Their team actually takes the time to listen, understand our bottlenecks, and deliver practical solutions rather than pushing cookie-cutter frameworks. Highly recommend them.",
         image: "/blog/default-author.svg",
-        name: "Saman Malik",
-        role: "Customer Support Lead",
+        name: "Rachel Bennett",
+        role: "Director of Strategy",
     },
     {
-        text: "This ERP's seamless integration enhanced our business operations and efficiency. Highly recommend for its intuitive interface.",
+        text: "Honestly, what stood out the most was their adaptability. Midway through the project, our internal priorities shifted unexpectedly, and instead of pushing back with endless change orders, the Ascendus team pivoted smoothly with us. They felt less like an external vendor and more like an extension of our own team.",
         image: "/blog/default-author.svg",
-        name: "Omar Raza",
-        role: "CEO",
+        name: "Sarah Jenkins",
+        role: "Chief Operating Officer",
     },
     {
-        text: "Its robust features and quick support have transformed our workflow, making us significantly more efficient.",
+        text: "Excellent technical expertise and great project delivery overall. Would definitely collaborate with Ascendus again on future initiatives.",
         image: "/blog/default-author.svg",
-        name: "Zainab Hussain",
-        role: "Project Manager",
+        name: "Anita Patel",
+        role: "VP of Enterprise Solutions",
     },
     {
-        text: "The smooth implementation exceeded expectations. It streamlined processes, improving overall business performance.",
+        text: "Ascendus helped us make sense of a complicated SAP transformation. They understood both the technology and the business side, which made the entire process much easier for our team.",
         image: "/blog/default-author.svg",
-        name: "Aliza Khan",
-        role: "Business Analyst",
+        name: "Michael Turner",
+        role: "VP, Enterprise Applications",
     },
     {
-        text: "Our business functions improved with a user-friendly design and positive customer feedback.",
+        text: "The difference was noticeable almost immediately. The new experience feels simpler, more intuitive, and much closer to what our customers actually expect.",
         image: "/blog/default-author.svg",
-        name: "Farhan Siddiqui",
-        role: "Marketing Director",
+        name: "Daniel Foster",
+        role: "Product Director",
     },
     {
-        text: "They delivered a solution that exceeded expectations, understanding our needs and enhancing our operations.",
+        text: "We've worked with a number of technology partners over the years, and Ascendus stood out for how well they understood the bigger picture. They didn't just focus on the immediate task.",
         image: "/blog/default-author.svg",
-        name: "Sana Sheikh",
-        role: "Sales Manager",
+        name: "Jennifer Moore",
+        role: "VP, Technology",
     },
     {
-        text: "Using this ERP, our online presence and conversions significantly improved, boosting business performance.",
+        text: "I'd happily work with them again. They listened, understood the challenges we were facing, and delivered without making the process harder than it needed to be.",
         image: "/blog/default-author.svg",
-        name: "Hassan Ali",
-        role: "E-commerce Manager",
+        name: "Jonathan Reed",
+        role: "VP, Business Transformation",
     },
     {
-        text: "This ERP simplified our daily operations by centralizing data across departments. Reporting is faster, and decision-making has become much easier.",
+        text: "Our customer journey had become fragmented over time. Ascendus helped us step back, understand where the real friction was, and create a much more consistent experience.",
         image: "/blog/default-author.svg",
-        name: "Emily Carter",
-        role: "Finance Manager",
+        name: "Sophie Anderson",
+        role: "Customer Experience Director",
     },
     {
-        text: "The automation features have saved our team countless hours each week. We now spend more time focusing on growth instead of repetitive tasks.",
+        text: "The transition was far smoother than we anticipated. Our teams barely noticed the change, and we now have a much more scalable infrastructure to build on.",
         image: "/blog/default-author.svg",
-        name: "Daniel Morris",
-        role: "Operations Director",
+        name: "Arjun Mehta",
+        role: "Head of Infrastructure",
     },
     {
-        text: "From inventory tracking to customer management, everything is available in one place. The platform is intuitive and reliable.",
+        text: "A surprisingly straightforward experience for something as significant as an ERP implementation. The team kept us focused on the essentials and avoided overcomplicating the solution.",
         image: "/blog/default-author.svg",
-        name: "Sophia Nguyen",
-        role: "Supply Chain Manager",
+        name: "Sarah Bennett",
+        role: "Head of Business Systems",
+    },
+    {
+        text: "Starting fresh gave us an opportunity to do things differently. Ascendus helped us make the most of that rather than simply recreating what we already had.",
+        image: "/blog/default-author.svg",
+        name: "Daniel Wilson",
+        role: "COO",
+    },
+    {
+        text: "We wanted to avoid carrying years of unnecessary customization into a new environment. The team helped us stay focused on the standard capabilities and rethink some of our existing processes along the way.",
+        image: "/blog/default-author.svg",
+        name: "Laura Mitchell",
+        role: "Business Transformation Lead",
+    },
+    {
+        text: "RISE was a significant change for us, and there were plenty of questions at the beginning. Ascendus helped us work through those decisions without making the process feel overwhelming.",
+        image: "/blog/default-author.svg",
+        name: "Priya Nair",
+        role: "Director of IT",
+    },
+    {
+        text: "We were concerned about the disruption an ECC migration could cause to the business. The planning around our cutover window was excellent, and the transition was much smoother than we expected.",
+        image: "/blog/default-author.svg",
+        name: "Anita Sharma",
+        role: "Head of Enterprise Applications",
     },
 ];
 
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
-const fourthColumn = testimonials.slice(9, 12);
+const firstColumn = testimonials.slice(0, 4);
+const secondColumn = testimonials.slice(4, 8);
+const thirdColumn = testimonials.slice(8, 12);
+const fourthColumn = testimonials.slice(12, 16);
 
 function TestimonialsColumn({ className, testimonials, duration = 10 }) {
     return (

@@ -99,7 +99,7 @@ export default function TermsContent() {
                 key={section}
                 onClick={() => scrollToSection(section)}
                 className={`w-full cursor-pointer text-left px-4 py-2.5 rounded-md text-sm font-medium transition-colors ${activeSection === section
-                  ? "bg-blue-600 text-white"
+                  ? "bg-[#0061AF] text-white"
                   : "text-black hover:bg-gray-100"
                   }`}
               >

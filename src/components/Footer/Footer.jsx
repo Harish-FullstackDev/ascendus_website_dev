@@ -499,7 +499,7 @@ const Footer = () => {
                 />
               </a>
               <a
-                href="https://www.instagram.com/ascendus.official?igsh=MWF5Z3M2MXFrbXI3cg=="
+                href="https://www.instagram.com/ascendus.ksa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
@@ -577,7 +577,7 @@ const Footer = () => {
               />
             </a>
             <a
-              href="https://www.instagram.com/ascendus.official?igsh=MWF5Z3M2MXFrbXI3cg=="
+              href="https://www.instagram.com/ascendus.ksa"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
@@ -672,7 +672,7 @@ const Footer = () => {
               />
             </a>
             <a
-              href="https://www.instagram.com/ascendus.official?igsh=MWF5Z3M2MXFrbXI3cg=="
+              href="https://www.instagram.com/ascendus.ksa"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"

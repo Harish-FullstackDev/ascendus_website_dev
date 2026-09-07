@@ -45,7 +45,7 @@ export default function MaintenancePage() {
             </Link>
 
             <Link
-              href="https://www.instagram.com/ascendus.official?igsh=MWF5Z3M2MXFrbXI3cg=="
+              href="https://www.instagram.com/ascendus.ksa"
               target="_blank"
               className="w-11 h-11 rounded-full bg-[#05649A] hover:scale-110 transition-all duration-300 flex items-center justify-center text-white"
             >
@@ -53,7 +53,7 @@ export default function MaintenancePage() {
             </Link>
 
             <Link
-              href="https://x.com/ascendus?s=11"
+              href="https://x.com/ascendus_ksa"
               target="_blank"
               className="w-11 h-11 rounded-full bg-[#05649A] hover:scale-110 transition-all duration-300 flex items-center justify-center text-white"
             >
