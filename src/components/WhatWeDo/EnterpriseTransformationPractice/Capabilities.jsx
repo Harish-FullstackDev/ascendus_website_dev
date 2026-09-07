@@ -158,6 +158,11 @@ const CapabilityCard = forwardRef(function CapabilityCard(
 
 export default function Capabilities() {
     const [activeIndex, setActiveIndex] = useState(0);
+    // Below lg (Tailwind's own mobile/desktop split for this section — see the
+    // card's own `lg:flex-row` layout swap), the scroll-driven pin/reveal is
+    // skipped entirely and every card renders open. Defaults to desktop so the
+    // server render and first paint match; corrected right after mount.
+    const [isDesktop, setIsDesktop] = useState(true);
     // Divider thickness in CSS px, chosen so it covers a whole number of device
     // pixels: 1 device px at dpr 1, 2 device px at any fractional/hi-dpi ratio
     // (1.6px at dpr 1.25, 1.333px at 1.5, 1px at 2). Starts at 1 so the server
@@ -210,6 +215,15 @@ export default function Capabilities() {
 
     useEffect(() => {
         if (typeof window === "undefined") return;
+        const mql = window.matchMedia("(min-width: 1024px)");
+        const update = () => setIsDesktop(mql.matches);
+        update();
+        mql.addEventListener("change", update);
+        return () => mql.removeEventListener("change", update);
+    }, []);
+
+    useEffect(() => {
+        if (typeof window === "undefined" || !isDesktop) return;
 
         gsap.registerPlugin(ScrollTrigger);
 
@@ -266,7 +280,7 @@ export default function Capabilities() {
         });
 
         return () => ctx.revert();
-    }, []);
+    }, [isDesktop]);
 
     // Keeps the active card's vertical center pinned to the viewport's
     // vertical center by translating the whole track. Re-measures continuously
@@ -274,6 +288,12 @@ export default function Capabilities() {
     // reflows the stack frame-by-frame for the whole ~800ms open/close.
     useEffect(() => {
         if (typeof window === "undefined") return;
+        if (!isDesktop) {
+            // No pin/recenter on mobile — cards render open in normal flow, so
+            // any leftover transform from a desktop->mobile resize must go.
+            if (trackRef.current) gsap.set(trackRef.current, { clearProps: "transform" });
+            return;
+        }
 
         // Height of any fixed overlay pinned to the viewport's bottom edge —
         // in practice the cookie consent banner (~70px). Centering against the
@@ -433,7 +453,7 @@ export default function Capabilities() {
             ro.disconnect();
             window.removeEventListener("resize", handleChange);
         };
-    }, [activeIndex]);
+    }, [activeIndex, isDesktop]);
 
     return (
         <section className="w-full bg-[#f3f6f9] px-6 py-8 sm:px-[64px] sm:py-[64px] flex flex-col items-center gap-10 sm:gap-[86px]">
@@ -467,8 +487,8 @@ export default function Capabilities() {
                                 cardRefs.current[index] = el;
                             }}
                             {...cap}
-                            isActive={index === activeIndex}
-                            isPassed={index < activeIndex}
+                            isActive={isDesktop ? index === activeIndex : true}
+                            isPassed={isDesktop ? index < activeIndex : false}
                             showDivider={index > 0}
                             hairline={hairline}
                             onActivate={() => setActiveIndex(index)}

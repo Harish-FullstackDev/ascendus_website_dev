@@ -123,7 +123,7 @@ export default function CloudPlatformsServices() {
                 </motion.div>
 
                 <div className="flex flex-col gap-10 sm:gap-14 lg:gap-[60px] w-full">
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 lg:gap-[95px] w-full">
+                    <div className="grid grid-cols-3 gap-2 sm:gap-8 lg:gap-[95px] w-full">
                         {TABS.map((tab, index) => {
                             const isActive = index === active;
                             return (
@@ -132,7 +132,7 @@ export default function CloudPlatformsServices() {
                                     type="button"
                                     aria-pressed={isActive}
                                     onClick={() => setActive(index)}
-                                    className={`bg-white h-[93px] flex items-center justify-center transition-all duration-300 ${isActive
+                                    className={`bg-white h-[56px] sm:h-[93px] flex items-center justify-center transition-all duration-300 ${isActive
                                         ? "shadow-[2px_4px_20px_0px_rgba(0,0,0,0.25)]"
                                         : ""
                                         }`}
@@ -140,7 +140,7 @@ export default function CloudPlatformsServices() {
                                     <Image
                                         src={tab.logo}
                                         alt={`${tab.name} logo`}
-                                        className="max-h-[60px] sm:max-h-[55px] lg:max-h-[55px] w-auto max-w-[75%] object-contain"
+                                        className="max-h-[32px] sm:max-h-[55px] lg:max-h-[55px] w-auto max-w-[75%] object-contain"
                                     />
                                 </button>
                             );

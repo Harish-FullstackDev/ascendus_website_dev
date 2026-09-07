@@ -27,7 +27,7 @@ export default function ArchitecturalResilienceStrategy() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative h-full flex flex-col justify-center gap-4 sm:gap-6 max-w-full px-6 sm:px-[64px]"
                 >
-                    <h2 className="text-white text-[48px] font-semibold max-w-[600px] sm:mb-5">Architectural Resilience Strategy</h2>
+                    <h2 className="text-white text-2xl sm:text-[48px] font-semibold max-w-[600px] sm:mb-5">Architectural Resilience Strategy</h2>
                     <p className="text-white text-base sm:text-2xl font-light ">
                         The principles that guide our cloud and infrastructure deployments
                     </p>
