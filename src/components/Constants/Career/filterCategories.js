@@ -6,7 +6,7 @@ export const AREA_OF_INTEREST = [
     "Sales & Business Development",
     "Marketing",
     "Engineering & Technology",
-    "Product Development",
+    "Design",
     "Human Resources",
     "Finance & Operations",
 ];

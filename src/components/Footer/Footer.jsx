@@ -99,7 +99,7 @@ const Footer = () => {
                 </li>
                 {/* <li>
                 <Link
-                  href="/sstpartner"
+                  href="/ascenduspartner"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Ascendus Partnership

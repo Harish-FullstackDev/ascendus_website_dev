@@ -28,7 +28,7 @@ const Navbar = () => {
   const [isCapabilitiesOpen, setIsCapabilitiesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
 
-  const lightThemeRoutes = ["/legal/privacy/", "/ssterrors/", "/legal/terms/"];
+  const lightThemeRoutes = ["/legal/privacy/", "/ascenduserrors/", "/legal/terms/"];
 
   const navLinkClass = `
                           relative py-2 px-3

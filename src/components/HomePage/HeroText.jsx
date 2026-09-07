@@ -49,13 +49,13 @@ export default function HeroText() {
                         fire there). Desktop (sm+) keeps the ghost treatment — white
                         outline on transparent, filling white with navy text on hover —
                         which already reads fine against the dark hero photo there. */}
-                    <button
+                    {/* <button
                         type="button"
                         onClick={scrollToCapabilities}
                         className="rounded-[54px] border border-white px-8 py-3 text-base sm:text-lg font-light transition-colors bg-white text-black hover:bg-transparent hover:text-white active:bg-transparent active:text-white sm:bg-transparent sm:text-white sm:hover:bg-white sm:hover:text-[#0a3a52] sm:active:bg-white sm:active:text-[#0a3a52]"
                     >
                         See What We Do
-                    </button>
+                    </button> */}
                 </div>
             </motion.div>
 

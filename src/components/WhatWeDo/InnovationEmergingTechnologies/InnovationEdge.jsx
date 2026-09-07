@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import buildingPhoto from "@/assets/WhatWeDo/Innovation & Emerging Technologies/new/Support.jpg";
 
-export default function SSTInnovatioEdge() {
+export default function InnovationEdge() {
     return (
         <section className="relative w-full min-h-[460px] sm:min-h-[471px] overflow-hidden bg-[#c2e3f9]">
             {/* Fixed Background Image */}

@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import separatorLine from "@/assets/career/Separetor line.png";
-import chroPhoto from "@/assets/career/CHRO Bhuvaneshwari.jpg";
+
+const AVATAR = "/blog/default-author.svg";
 
 export default function GrowthQuoteBand() {
     return (
@@ -20,7 +21,7 @@ export default function GrowthQuoteBand() {
                 >
                     <div className="flex flex-col items-center text-center gap-3 shrink-0">
                         <Image
-                            src={chroPhoto}
+                            src={AVATAR}
                             alt="Bhuvaneshwari"
                             width={94}
                             height={94}

@@ -97,7 +97,7 @@ const ContactInfo = () => {
             >
               <p className="text-[#2E3033] font-semibold">Headquarters</p>
               <p>
-                7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., <br /> Riyadh 12624, KSA
+                7731 King Saud Ibn Abdulaziz Saud, <br /> 2839 Al Murabba Dist., <br /> Riyadh 12624, KSA
               </p>
             </a>
           </div>

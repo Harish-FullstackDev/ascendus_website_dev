@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CheckCircle, Loader2, AlertCircle, FileText } from "lucide-react";
@@ -137,10 +137,13 @@ const MAX_RESUME_SIZE = 5 * 1024 * 1024;
 
 export default function JobApplicationForm() {
     const searchParams = useSearchParams();
+    const router = useRouter();
+    const [redirectCountdown, setRedirectCountdown] = useState(10);
     const [formData, setFormData] = useState(initialFormData);
     const [resumeFile, setResumeFile] = useState(null);
     const [resumeError, setResumeError] = useState("");
     const [status, setStatus] = useState("idle");
+    const [submitError, setSubmitError] = useState("");
     const [preFilledFields, setPreFilledFields] = useState({});
     const [showPreFilledBanner, setShowPreFilledBanner] = useState(false);
     const fileInputRef = useRef(null);
@@ -249,7 +252,19 @@ export default function JobApplicationForm() {
         setResumeFile(file);
     };
 
-    const handleSubmit = (e) => {
+    useEffect(() => {
+        if (status !== "success") return;
+
+        if (redirectCountdown === 0) {
+            router.push("/careers#job-listings");
+            return;
+        }
+
+        const timer = setTimeout(() => setRedirectCountdown((prev) => prev - 1), 1000);
+        return () => clearTimeout(timer);
+    }, [status, redirectCountdown, router]);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (!resumeFile) {
@@ -257,12 +272,34 @@ export default function JobApplicationForm() {
             return;
         }
 
+        setSubmitError("");
         setStatus("submitting");
 
-        // Front-end only for now — no backend endpoint has been wired up yet.
-        setTimeout(() => {
+        try {
+            const payload = new FormData();
+            Object.entries(formData).forEach(([key, value]) => {
+                payload.append(key, value);
+            });
+            payload.append("consent", "true");
+            payload.append("resume", resumeFile);
+
+            const response = await fetch("/api/careers/apply", {
+                method: "POST",
+                body: payload,
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.error || "Failed to submit application.");
+            }
+
             setStatus("success");
-        }, 600);
+        } catch (err) {
+            console.error(err);
+            setSubmitError(err.message || "An unexpected error occurred. Please try again.");
+            setStatus("idle");
+        }
     };
 
     if (status === "success") {
@@ -272,7 +309,7 @@ export default function JobApplicationForm() {
                 animate={{ opacity: 1, scale: 1 }}
                 role="alert"
                 aria-live="polite"
-                className="max-w-4xl mx-auto text-center"
+                className="max-w-4xl mx-auto text-center min-h-[75vh] flex flex-col items-center justify-center"
             >
                 <div className="w-16 h-16 bg-blue-600 text-white flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-9 h-9" aria-hidden="true" />
@@ -280,6 +317,9 @@ export default function JobApplicationForm() {
                 <h2 className="text-2xl font-semibold text-slate-900 mb-3">Application Submitted</h2>
                 <p className="text-slate-500 max-w-md mx-auto">
                     Thank you for applying. Our HR team will review your application and reach out if there&apos;s a match.
+                </p>
+                <p className="text-slate-400 text-sm mt-4">
+                    Redirecting to job listing in {redirectCountdown} seconds
                 </p>
             </motion.div>
         );
@@ -407,6 +447,12 @@ export default function JobApplicationForm() {
                         <SelectField id="hearAbout" name="hearAbout" label="" placeholder="Select an option" options={SOURCE_OPTIONS} value={formData.hearAbout} onChange={handleChange} isPreFilled={preFilledFields.hearAbout} />
                     </div>
                 </Card>
+
+                {submitError && (
+                    <p className="text-sm text-red-600 flex items-center gap-1.5">
+                        <AlertCircle className="w-4 h-4" aria-hidden="true" /> {submitError}
+                    </p>
+                )}
 
                 <div className="flex justify-end">
                     <button

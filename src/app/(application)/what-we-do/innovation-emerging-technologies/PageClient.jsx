@@ -13,7 +13,7 @@ import IoT from "@/components/WhatWeDo/InnovationEmergingTechnologies/IoT";
 import DigitalTwins from "@/components/WhatWeDo/InnovationEmergingTechnologies/DigitalTwins";
 import ARVR from "@/components/WhatWeDo/InnovationEmergingTechnologies/ARVR";
 import ExtendedReality from "@/components/WhatWeDo/InnovationEmergingTechnologies/ExtendedReality";
-import SSTInnovatioEdge from "@/components/WhatWeDo/InnovationEmergingTechnologies/SSTInnovatioEdge";
+import InnovationEdge from "@/components/WhatWeDo/InnovationEmergingTechnologies/InnovationEdge";
 import QuantumReadiness from "@/components/WhatWeDo/InnovationEmergingTechnologies/QuantumReadiness";
 import Industry4 from "@/components/WhatWeDo/InnovationEmergingTechnologies/Industry4";
 import SmartEnterpriseSolutions from "@/components/WhatWeDo/InnovationEmergingTechnologies/SmartEnterpriseSolutions";
@@ -53,7 +53,7 @@ const page = () => {
 
 
             {/* <DigitalTwins /> */}
-            <SSTInnovatioEdge />
+            <InnovationEdge />
             <EmergingTechnologyAssessment />
             <ARVR />
             <ScalingPilotsSmartOperations />
