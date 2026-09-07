@@ -48,11 +48,13 @@ export default function Hiring() {
                         </div>
                         <Link
                             href="/careers"
-                            className="group self-start flex items-center justify-between gap-4 rounded-full border border-[#2d8ec5] pl-8 pr-1.5 py-1.5 text-lg font-light text-[#2E3033] transition-colors hover:bg-[#00447A] hover:text-white whitespace-nowrap"
+                            className="group relative self-start inline-flex h-[54px] items-center overflow-hidden rounded-full border border-[#2d8ec5] pl-1 pr-2 text-lg font-light text-[#2E3033] whitespace-nowrap"
                         >
-                            View Open Roles
-                            <span className="relative size-[42px] shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                            <span className="absolute left-1 top-1/2 -translate-y-1/2 size-[42px] transition-all duration-500 ease-out group-hover:left-[calc(100%-46px)]">
                                 <Image src={ctaArrowIcon} alt="" fill className="object-contain" />
+                            </span>
+                            <span className="inline-block transition-all duration-500 ease-out ml-[50px] group-hover:ml-1 group-hover:mr-[46px]">
+                                View Open Roles
                             </span>
                         </Link>
                     </div>

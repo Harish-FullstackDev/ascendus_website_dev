@@ -384,11 +384,13 @@ export default function JobDescription({ job, otherJobs = [] }) {
                                 </div>
                                 <Link
                                     href={`/careers/${other.slug}`}
-                                    className="group inline-flex shrink-0 items-center justify-between gap-2 rounded-full border border-[#2d8ec5] pl-4 pr-1 py-1 text-xs font-light text-[#2E3033] transition-colors hover:bg-[#00447A] hover:text-white whitespace-nowrap"
+                                    className="group relative inline-flex h-[30px] shrink-0 items-center overflow-hidden rounded-full border border-[#2d8ec5] pl-1 pr-2 text-xs font-light text-[#2E3033] whitespace-nowrap"
                                 >
-                                    View Job Details
-                                    <span className="relative size-[22px] shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                                    <span className="absolute left-1 top-1/2 -translate-y-1/2 size-[22px] transition-all duration-500 ease-out group-hover:left-[calc(100%-26px)]">
                                         <Image src={ctaArrowIcon} alt="" fill className="object-contain" />
+                                    </span>
+                                    <span className="inline-block transition-all duration-500 ease-out ml-[30px] group-hover:ml-1 group-hover:mr-[26px]">
+                                        View Job Details
                                     </span>
                                 </Link>
                             </div>

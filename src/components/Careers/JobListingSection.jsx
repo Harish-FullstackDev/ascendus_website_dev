@@ -222,11 +222,13 @@ export default function JobListingSection() {
                                         </div>
                                         <Link
                                             href={`/careers/${job.slug}`}
-                                            className="group inline-flex w-full sm:w-auto shrink-0 items-center justify-between gap-3 rounded-full border border-[#2d8ec5] pl-5 pr-1 py-1 text-sm font-light text-[#2E3033] transition-colors hover:bg-[#00447A] hover:text-white whitespace-nowrap"
+                                            className="group relative inline-flex h-[34px] w-full sm:w-auto shrink-0 items-center justify-center overflow-hidden rounded-full border border-[#2d8ec5] pl-1 pr-2 text-sm font-light text-[#2E3033] whitespace-nowrap"
                                         >
-                                            View Role
-                                            <span className="relative size-[26px] shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                                            <span className="absolute left-1 top-1/2 -translate-y-1/2 size-[26px] transition-all duration-500 ease-out group-hover:left-[calc(100%-30px)]">
                                                 <Image src={ctaArrowIcon} alt="" fill className="object-contain" />
+                                            </span>
+                                            <span className="inline-block transition-all duration-500 ease-out ml-[34px] group-hover:ml-1 group-hover:mr-[30px]">
+                                                View Role
                                             </span>
                                         </Link>
                                     </motion.div>
