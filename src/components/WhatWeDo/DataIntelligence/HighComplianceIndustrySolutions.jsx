@@ -16,7 +16,7 @@ export default function HighComplianceIndustrySolutions() {
                     className="flex flex-col items-center gap-2 max-w-[760px] mx-auto text-center px-6"
                 >
                     <h2 className="text-[#2E3033] text-[28px] font-semibold">
-                        High-Compliance Industry Solutions
+                        High Compliance Industry Solutions
                     </h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Data environments built for strictly regulated regional sectors.

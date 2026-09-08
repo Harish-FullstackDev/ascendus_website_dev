@@ -21,11 +21,11 @@ const ITEMS = [
     {
         icon: hybridCloudIcon,
         title: "Hybrid Cloud",
-        desc: "We design environments that balance on-premise control with cloud flexibility, matched to your compliance requirements.",
+        desc: "We design environments that balance on premise control with cloud flexibility, matched to your compliance requirements.",
     },
     {
         icon: multiCloudStrategyIcon,
-        title: "Multi-Cloud Strategy",
+        title: "Multi Cloud Strategy",
         desc: "We build architectures that avoid vendor lock-in and route workloads to the platform best suited for each.",
     },
 ];
@@ -43,7 +43,7 @@ export default function CloudMigrationHybridStrategy() {
                 >
                     <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Cloud Migration &amp; Hybrid Strategy</h2>
                     <p className="text-[#55595E] text-lg font-light">
-                        Modernization, hybrid models, and multi-cloud environments.
+                        Modernization, hybrid models, and multi cloud environments.
                     </p>
                 </motion.div>
 

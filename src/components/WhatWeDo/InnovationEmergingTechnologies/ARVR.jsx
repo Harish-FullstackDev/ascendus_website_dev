@@ -9,7 +9,7 @@ const ITEMS = [
     { title: "Extended Reality (AR/VR)", desc: "Define where blockchain genuinely adds value across your business, from settlement to provenance tracking." },
     { title: "Smart Enterprise Solutions", desc: "Integrated combinations of emerging technology matched to specific operational challenges." },
     { title: "Supply Chain Traceability", desc: "Track goods and materials end-to-end on an immutable ledger that every partner can trust." },
-    { title: "Blockchain", desc: "Issue, custody, and manage tokenized assets with enterprise-grade controls." },
+    { title: "Blockchain", desc: "Issue, custody, and manage tokenized assets with enterprise grade controls." },
     { title: "Quantum Readiness", desc: "Give users and partners a portable, verifiable digital identity that reduces fraud and friction." },
 ];
 
@@ -47,7 +47,7 @@ export default function ARVR() {
             >
                 <h2 className="text-[#2E3033] text-2xl font-semibold">AR/VR, Blockchain & Quantum Readiness</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Forward-looking technology applications for specialized use cases.
+                    Forward looking technology applications for specialized use cases.
                 </p>
             </motion.div>
 

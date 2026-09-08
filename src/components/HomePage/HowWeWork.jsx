@@ -18,7 +18,7 @@ const STEPS = [
     {
         num: "3",
         title: "Implement",
-        desc: "We architect a solution built around your operations, not a one-size-fits-all playbook.",
+        desc: "We architect a solution built around your operations, not a one size fits all playbook.",
     },
     {
         num: "4",

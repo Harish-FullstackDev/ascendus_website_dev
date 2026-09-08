@@ -22,7 +22,7 @@ export default function PositioningStatement() {
                     </h2>
 
                     <p className="text-lg text-[#55595E] font-light leading-relaxed">
-                        Manual, repetitive processes quietly drain enterprise capacity. We identify where automation delivers real time and cost savings, then build the RPA, workflow, and AI-powered automation to capture it, without adding fragile, unmanageable bots to your environment.
+                        Manual, repetitive processes quietly drain enterprise capacity. We identify where automation delivers real time and cost savings, then build the RPA, workflow, and AI powered automation to capture it, without adding fragile, unmanageable bots to your environment.
                     </p>
                 </motion.div>
 

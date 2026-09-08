@@ -83,7 +83,7 @@ export default function ScalableAIDeployment() {
                     </h2>
 
                     <p className="text-[#55595E] text-sm sm:text-lg font-light">
-                        Detailed look at moving AI from proof-of-concept to production and agent-led automation.
+                        Detailed look at moving AI from proof of concept to production and agent-led automation.
                     </p>
                 </motion.div>
 

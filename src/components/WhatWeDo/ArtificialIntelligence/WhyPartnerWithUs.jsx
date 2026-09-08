@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 
 const POINTS = [
-    "SAP-certified delivery teams",
+    "SAP certified delivery teams",
     "GCC regulatory awareness",
     "Governance built into every deployment",
     "Proven enterprise integration experience",
-    "Outcome-based engagement models",
+    "Outcome based engagement models",
     "Cross-industry delivery track record",
 ];
 

@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import changeBg from "@/assets/WhatWeDo/Digital Engineering/webp/Digital_ModernStack.webp";
 
 const STEPS = [
-    { title: "Web Development", desc: "Enterprise-grade web platforms built for performance, security, and scale." },
-    { title: "Mobile Applications", desc: "Native and cross-platform mobile experiences engineered for enterprise reliability." },
-    { title: "API Development", desc: "Well-documented, secure APIs that make your systems easy to integrate and extend." },
+    { title: "Web Development", desc: "Enterprise grade web platforms built for performance, security, and scale." },
+    { title: "Mobile Applications", desc: "Native and cross platform mobile experiences engineered for enterprise reliability." },
+    { title: "API Development", desc: "Well documented, secure APIs that make your systems easy to integrate and extend." },
     { title: "Microservices", desc: "Modular architectures that let you deploy, scale, and update services independently." },
     { title: "DevOps", desc: "CI/CD pipelines and delivery practices that get software into production faster, with fewer defects." },
 ];

@@ -17,7 +17,7 @@ import arrowIcon from "@/assets/HomePage/Industries/icon-arrow.svg";
 const INDUSTRIES = [
     {
         title: "Manufacturing",
-        desc: "Streamlining supply chain, production planning, and plant-floor integration with SAP and IoT-driven systems.",
+        desc: "Streamlining supply chain, production planning, and plant-floor integration with SAP and IoT driven systems.",
         image: manufacturingImg,
     },
     {
@@ -27,7 +27,7 @@ const INDUSTRIES = [
     },
     {
         title: "Government & Public Sector",
-        desc: "Delivering GCC-compliant, secure systems built for accountability and scale.",
+        desc: "Delivering GCC compliant, secure systems built for accountability and scale.",
         image: governmentImg,
     },
     {

@@ -31,13 +31,13 @@ const TABS = [
     {
         code: "Analytics",
         title: "Analytics",
-        desc: "Design and build cloud-native applications leveraging containers, orchestration, and managed services for elasticity and resilience.",
+        desc: "Design and build cloud native applications leveraging containers, orchestration, and managed services for elasticity and resilience.",
         image: ceaImage4,
     },
     {
         code: "Loyalty Solutions",
         title: "Loyalty Solutions",
-        desc: "Re-architect legacy enterprise systems into modern, maintainable platforms without disrupting day-to-day business operations.",
+        desc: "Re-architect legacy enterprise systems into modern, maintainable platforms without disrupting day to day business operations.",
         image: ceaImage5,
     },
 ];

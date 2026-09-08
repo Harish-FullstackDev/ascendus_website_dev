@@ -16,7 +16,7 @@ const CARDS = [
     },
     {
         title: "Data Warehousing",
-        desc: "We design centralized data platforms that consolidate SAP and non-SAP sources into a single source of truth.",
+        desc: "We design centralized data platforms that consolidate SAP and non SAP sources into a single source of truth.",
         image: DataWarehousing,
     },
     {
@@ -26,7 +26,7 @@ const CARDS = [
     },
     {
         title: "Business Intelligence",
-        desc: "We deliver reporting and dashboards that give decision-makers clarity, not just charts.",
+        desc: "We deliver reporting and dashboards that give decision makers clarity, not just charts.",
         image: BusinessIntelligence,
     },
 ];

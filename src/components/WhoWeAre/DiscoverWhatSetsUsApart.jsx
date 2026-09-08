@@ -16,7 +16,7 @@ const CARDS = [
         title: "Our Innovation",
         heading: "Innovation That Delivers",
         description:
-            "We leverage SAP, cloud, AI, cybersecurity, and modern digital technologies to build future-ready enterprises. Our focus is on creating scalable, secure, and high-performing solutions that accelerate digital transformation. Every engagement is driven by innovation, measurable outcomes, and long-term business value.",
+            "We leverage SAP, cloud, AI, cybersecurity, and modern digital technologies to build future ready enterprises. Our focus is on creating scalable, secure, and high performing solutions that accelerate digital transformation. Every engagement is driven by innovation, measurable outcomes, and long term business value.",
     },
 ];
 

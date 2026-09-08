@@ -11,7 +11,7 @@ const ITEMS = [
     { icon: oneViewIcon, title: " One View of the Customer", desc: "We unify sales, service, and marketing data so every team works from the same customer context." },
     { icon: journeysIcon, title: "Journeys, Not Just Touchpoints", desc: "We design experiences around the full customer journey, not isolated channels or campaigns." },
     { icon: platformExpertiseIcon, title: " Platform Expertise That Delivers", desc: "Certified Salesforce and CRM implementation experience that turns strategy into a working system" },
-    { icon: insightDrivenIcon, title: "Insight-Driven Engagement", desc: "Customer analytics inform every journey we design, so engagement decisions are evidence-based" },
+    { icon: insightDrivenIcon, title: "Insight Driven Engagement", desc: "Customer analytics inform every journey we design, so engagement decisions are evidence based" },
 ];
 
 export default function SingleCustomerView() {
@@ -24,7 +24,7 @@ export default function SingleCustomerView() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-2 w-full lg:w-[518px] shrink-0"
             >
-                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Single Customer View & Evidence-Based Design
+                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Single Customer View & Evidence Based Design
                 </h2>
                 <p className="text-[#55595E] text-lg font-light">
                     Why our approach to customer experience drives long-term adoption.

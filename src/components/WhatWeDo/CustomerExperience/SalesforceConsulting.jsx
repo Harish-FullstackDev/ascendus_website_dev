@@ -9,10 +9,10 @@ import nextArrow from "@/assets/WhatWeDo/Customer Experience/Icons/Section6_Arro
 const SERVICES = [
     "Certified Salesforce delivery expertise",
     "SAP and CRM integration experience",
-    "Journey-first design approach",
+    "Journey first design approach",
     "Regional customer behavior insight",
     "Omnichannel implementation capability",
-    "Analytics-driven optimization"
+    "Analytics driven optimization"
 
 ];
 
@@ -48,7 +48,7 @@ export default function SalesforceConsulting() {
                     <div className="absolute inset-x-6 bottom-6 flex flex-col gap-2 sm:bottom-8 lg:inset-x-auto lg:bottom-[24%] lg:left-[20.8%] lg:right-[14.5%]">
                         <h2 className="text-white text-2xl font-semibold">Our Expertise</h2>
                         <p className="text-white/90 text-base sm:text-lg font-light">
-                            Strategic advantages in delivering enterprise-grade CX.
+                            Strategic advantages in delivering enterprise grade CX.
                         </p>
                     </div>
                 </motion.div>

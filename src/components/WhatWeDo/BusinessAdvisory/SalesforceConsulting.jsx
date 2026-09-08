@@ -6,8 +6,8 @@ import Image from "next/image";
 import consultingImg from "@/assets/WhatWeDo/Business Advisory/webp/Business_Why_Partner.webp";
 
 const SERVICES = [
-    "Independent, outcome-focused advisory",
-    "SAP-informed technology assessment",
+    "Independent, outcome focused advisory",
+    "SAP informed technology assessment",
     "Proven transformation roadmaps",
     "Change management expertise",
     "PMO governance discipline",

@@ -19,7 +19,7 @@ const AREAS = [
     },
     {
         title: "Penetration Testing",
-        desc: "Controlled, real-world attack simulations that show you where defenses actually hold and where they don't.",
+        desc: "Controlled, real world attack simulations that show you where defenses actually hold and where they don't.",
     },
     {
         title: "Cloud Security",

@@ -12,12 +12,12 @@ const STATS = [
 ];
 
 const POINTS = [
-    "SAP-certified delivery teams",
+    "SAP certified delivery teams",
     "GCC regulatory awareness",
     "Governance built into every deployment",
     "Proven enterprise integration experience",
-    "Outcome-based engagement models",
-    "Cross-industry delivery track record"
+    "Outcome based engagement models",
+    "Cross industry delivery track record"
 ];
 
 

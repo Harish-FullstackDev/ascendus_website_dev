@@ -19,7 +19,7 @@ const TABS = [
     {
         label: "Application Modernization",
         title: "Application Modernization",
-        desc: "We modernize legacy applications into scalable, cloud-native systems without disrupting the business processes that depend on them.",
+        desc: "We modernize legacy applications into scalable, cloud native systems without disrupting the business processes that depend on them.",
         img: Application,
     },
     {

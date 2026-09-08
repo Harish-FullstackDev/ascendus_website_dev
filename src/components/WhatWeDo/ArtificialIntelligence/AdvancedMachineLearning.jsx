@@ -22,7 +22,7 @@ const ITEMS = [
     },
     {
         title: "Predictive Intelligence",
-        desc: "Forward-looking models that flag risk, demand shifts, and operational anomalies before they affect the business.",
+        desc: "Forward looking models that flag risk, demand shifts, and operational anomalies before they affect the business.",
         image: sideImage3,
     },
     {

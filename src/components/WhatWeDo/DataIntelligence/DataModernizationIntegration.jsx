@@ -25,7 +25,7 @@ const ITEMS = [
     },
     {
         icon: aiReadyDataIcon,
-        title: "AI-Ready Data",
+        title: "AI Ready Data",
         desc: "We prepare structured, trusted data environments that support advanced analytics and AI initiatives.",
     },
 ];

@@ -40,7 +40,7 @@ const CAPABILITIES = [
         title: "Broader Technology Services",
         description: [
             "SAP is our core deliberately. Microsoft and adjacent platforms extend that core. We help businesses modernize infrastructure, manage data, support change, and strengthen security and compliance.",
-            "Our services include Cloud & Infrastructure Modernization, Data Migration & Governance, Change Management & Adoption, and Cybersecurity & Compliance — helping create a secure, connected, and efficient technology environment.",
+            "Our services include Cloud & Infrastructure Modernization, Data Migration & Governance, Change Management & Adoption, and Cybersecurity & Compliance helping create a secure, connected, and efficient technology environment.",
         ],
         image: broaderTechImg,
         href: "/what-we-do/enterprise-transformation/broader-technology-services",
