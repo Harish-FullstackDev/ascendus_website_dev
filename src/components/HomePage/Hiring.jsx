@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import officeStaircaseImg from "@/assets/HomePage/images/office-staircase.png";
-import ctaArrowIcon from "@/assets/HomePage/WhyEnterprisePartner/icon-cta-arrow.svg";
 
 // Image-right / overlapping-card treatment lifted from
 // WhatWeDo/CloudInfrastructure/DisruptionFreeMigrationScalability.jsx —
@@ -41,20 +40,26 @@ export default function Hiring() {
                                 Building the Team Behind Enterprise Technology That Lasts
                             </h2>
                             <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
-                                We&apos;re growing — and looking for people who care about doing enterprise
+                                We&apos;re growing and looking for people who care about doing enterprise
                                 technology right. If you want to build systems that actually work long after
                                 launch day, we want to hear from you.
                             </p>
                         </div>
                         <Link
                             href="/careers"
-                            className="group relative self-start inline-flex h-[54px] items-center overflow-hidden rounded-full border border-[#2d8ec5] pl-1 pr-2 text-lg font-light text-[#2E3033] whitespace-nowrap"
+                            className="group self-start inline-flex items-center gap-4 whitespace-nowrap"
                         >
-                            <span className="absolute left-1 top-1/2 -translate-y-1/2 size-[42px] transition-all duration-500 ease-out group-hover:left-[calc(100%-46px)]">
-                                <Image src={ctaArrowIcon} alt="" fill className="object-contain" />
-                            </span>
-                            <span className="inline-block transition-all duration-500 ease-out ml-[50px] group-hover:ml-1 group-hover:mr-[46px]">
+                            <span className="relative pb-[3px] text-lg font-light text-[#2E3033]">
                                 View Open Roles
+                                <span className="absolute left-0 bottom-0 h-[0.5px] w-full origin-left scale-x-0 bg-[#00447A] transition-transform duration-500 ease-out group-hover:scale-x-100" />
+                            </span>
+                            <span className="relative size-7 shrink-0 overflow-hidden rounded-full bg-[#00447A]">
+                                <svg viewBox="0 0 24 24" fill="none" className="absolute inset-0 size-full transition-transform duration-500 ease-out group-hover:translate-x-full group-hover:-translate-y-full">
+                                    <path d="M7.76011 16.2427L16.2454 7.75738M9.88143 7.75738H16.2454V14.1213" stroke="white" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="none" className="absolute inset-0 size-full -translate-x-full translate-y-full transition-transform duration-500 ease-out group-hover:translate-x-0 group-hover:translate-y-0">
+                                    <path d="M7.76011 16.2427L16.2454 7.75738M9.88143 7.75738H16.2454V14.1213" stroke="white" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
                             </span>
                         </Link>
                     </div>

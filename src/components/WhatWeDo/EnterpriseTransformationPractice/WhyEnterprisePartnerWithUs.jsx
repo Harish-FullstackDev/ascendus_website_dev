@@ -28,7 +28,7 @@ const LEFT_COLUMN = [
     {
         icon: certifiedIcon,
         title: "Certified Across Platforms",
-        desc: "SAP-certified consultants and Microsoft-aligned specialists working as one accountable team.",
+        desc: "SAP certified consultants and Microsoft aligned specialists working as one accountable team.",
     },
     {
         icon: endToEndIcon,
@@ -46,7 +46,7 @@ const RIGHT_COLUMN = [
     {
         icon: longRunIcon,
         title: "Built for the Long Run",
-        desc: "We stay on after go-live — optimizing and evolving the system as your business changes.",
+        desc: "We stay on after go-live optimizing and evolving the system as your business changes.",
     },
 ];
 
@@ -80,7 +80,7 @@ export default function WhyEnterprisePartnerWithUs() {
             >
                 <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Why Partner With Us</h2>
                 <p className="text-[#55595E] text-lg font-light leading-[1.5]">
-                    Expertise, flexibility, and measurable outcomes—built around your business needs.
+                    Expertise, flexibility, and measurable outcomes built around your business needs.
                 </p>
             </motion.div>
 

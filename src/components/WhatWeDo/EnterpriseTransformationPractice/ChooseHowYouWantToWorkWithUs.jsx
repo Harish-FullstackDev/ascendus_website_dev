@@ -18,7 +18,7 @@ export default function ChooseHowYouWantToWorkWithUs() {
                     Choose how you want to work with us
                 </h2>
                 <p className="text-[#55595E] text-xl font-light leading-[1.5]">
-                    Enterprise technology rarely fails on ambition. It fails on execution: systems that don&apos;t talk
+                    Enterprise technology rarely fails on ambition. It fails on execution systems that don&apos;t talk
                     to each other, projects that stall after go-live, compliance treated as an afterthought instead
                     of a starting point. Closing that gap is the work.
                 </p>

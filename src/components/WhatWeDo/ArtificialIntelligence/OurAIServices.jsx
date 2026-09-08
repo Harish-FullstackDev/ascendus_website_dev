@@ -140,10 +140,13 @@ export default function OurAIServices() {
                                         }`}
                                 />
 
-                                <div className="absolute inset-0 flex flex-col justify-start gap-3 p-6">
+                                <div
+                                    className={`absolute inset-0 flex flex-col justify-between gap-3 transition-[padding] duration-500 ${isActive ? "p-6" : "p-4"
+                                        }`}
+                                >
                                     <h2 className="text-white text-xl sm:text-2xl font-semibold ">{card.title}</h2>
                                     <p
-                                        className={`text-white/85 text-lg font-light  overflow-hidden transition-all duration-300 ease-out ${isActive ? "max-h-64 opacity-100 delay-500" : "max-h-0 opacity-0"
+                                        className={`text-white/85 text-lg font-light overflow-hidden transition-all duration-700 ease-out ${isActive ? "max-h-64 opacity-100 delay-500" : "max-h-0 opacity-0"
                                             }`}
                                     >
                                         {card.desc}

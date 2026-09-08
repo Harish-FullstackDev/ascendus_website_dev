@@ -13,7 +13,7 @@ const STEPS = [
     {
         num: "2",
         title: "Design",
-        desc: "One team builds and implements — the same people who designed it, so nothing gets lost in translation.",
+        desc: "One team builds and implements the same people who designed it, so nothing gets lost in translation.",
     },
     {
         num: "3",

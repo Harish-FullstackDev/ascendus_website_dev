@@ -47,7 +47,7 @@ export default function WhyItMatters() {
                 className="relative w-full max-w-[1152px] flex flex-col gap-6 text-white/90 text-lg sm:text-2xl font-light leading-[1.4]"
             >
                 <p>
-                    The SAP core rarely causes a transformation to stall. What surrounds it does: systems that
+                    The SAP core rarely causes a transformation to stall. What surrounds it does systems that
                     don&apos;t talk to each other, data no one trusts, users who quietly revert to their old
                     process.
                 </p>

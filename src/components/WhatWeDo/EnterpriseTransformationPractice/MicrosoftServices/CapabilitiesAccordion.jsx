@@ -5,6 +5,11 @@ import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import panelImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/MicrosoftServices/capabilities-panel.png";
+import azureLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/MicrosoftServices/icons/microsoft-azure.svg";
+import microsoft365Logo from "@/assets/WhatWeDo/Enterprise Transformation Practice/MicrosoftServices/icons/microsoft-365.svg";
+import powerPlatformLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/MicrosoftServices/icons/power-platform.svg";
+import dynamics365Logo from "@/assets/WhatWeDo/Enterprise Transformation Practice/MicrosoftServices/icons/dynamics-365.svg";
+import powerBiLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/MicrosoftServices/icons/power-bi.svg";
 
 // All 5 items have real Figma copy this time (unlike the SAP Transformation
 // page, where only item 1 was filled in) — the other 4 panels were laid out
@@ -13,6 +18,7 @@ import panelImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/Mic
 const ITEMS = [
     {
         title: "Microsoft Azure",
+        logo: azureLogo,
         desc: "Cloud infrastructure and hosting for workloads that need to sit close to, or integrate directly with, your SAP environment.",
         bullets: [
             "Infrastructure design and provisioning",
@@ -23,6 +29,7 @@ const ITEMS = [
     },
     {
         title: "Microsoft 365",
+        logo: microsoft365Logo,
         desc: "Productivity and collaboration tools configured for how your teams actually work, with governance and security set from day one.",
         bullets: [
             "Tenant setup and configuration",
@@ -33,6 +40,7 @@ const ITEMS = [
     },
     {
         title: "Power Platform",
+        logo: powerPlatformLogo,
         desc: "Low-code apps, workflows, and automation built by IT and governed like IT, not shadow tools that show up unmanaged.",
         bullets: [
             "App and workflow development",
@@ -43,6 +51,7 @@ const ITEMS = [
     },
     {
         title: "Dynamics 365",
+        logo: dynamics365Logo,
         desc: "CRM and business applications for teams and subsidiaries that don't need the full weight of an SAP deployment.",
         bullets: [
             "Implementation and configuration",
@@ -53,6 +62,7 @@ const ITEMS = [
     },
     {
         title: "Power BI",
+        logo: powerBiLogo,
         desc: "Reporting and dashboards pulling from SAP and non-SAP sources alike, one view instead of five spreadsheets.",
         bullets: [
             "Data model design",
@@ -125,7 +135,7 @@ export default function CapabilitiesAccordion() {
                                     }`}
                             >
                                 <span
-                                    className={`text-lg font-light leading-[1.4] transition-colors ${isActive ? "text-[#10161d]" : "text-[#6c6c6c]/70"
+                                    className={`text-lg font-semibold leading-[1.4] transition-colors ${isActive ? "text-[#10161d]" : "text-[#6c6c6c]/70"
                                         }`}
                                 >
                                     {item.title}
@@ -169,7 +179,12 @@ export default function CapabilitiesAccordion() {
                                 className="hidden sm:block absolute left-[25%] right-[6%] top-[31%] bottom-0 bg-white"
                             >
                                 <div className="absolute left-[9.55%] right-[9.55%] top-[18.24%] bottom-[18.24%] flex flex-col justify-between gap-6">
-                                    <h2 className="text-[#2E3033] text-lg font-semibold leading-[1.4]">{active.desc}</h2>
+                                    <div className="flex flex-col gap-6">
+                                        <div className="relative h-10 w-36 shrink-0">
+                                            <Image src={active.logo} alt="" fill className="object-contain object-left" />
+                                        </div>
+                                        <h2 className="text-[#2E3033] text-lg font-semibold leading-[1.4]">{active.desc}</h2>
+                                    </div>
                                     <ul className="list-disc pl-5 flex flex-col gap-1 text-[#55595E] text-lg font-light leading-[1.4]">
                                         {active.bullets.map((bullet) => (
                                             <li key={bullet}>{bullet}</li>
@@ -191,6 +206,9 @@ export default function CapabilitiesAccordion() {
                             transition={{ duration: 0.35, ease: "easeOut" }}
                             className="sm:hidden bg-white p-6 flex flex-col gap-6"
                         >
+                            <div className="relative h-10 w-36 shrink-0">
+                                <Image src={active.logo} alt="" fill className="object-contain object-left" />
+                            </div>
                             <h2 className="text-[#2E3033] text-lg font-semibold leading-[1.4]">{active.desc}</h2>
                             <ul className="list-disc pl-5 flex flex-col gap-1 text-[#55595E] text-lg font-light leading-[1.4]">
                                 {active.bullets.map((bullet) => (

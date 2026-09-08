@@ -5,6 +5,13 @@ import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import panelImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/capabilities-panel.png";
+import sap4HanaLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/sap-s4hana.svg";
+import riseWithSapLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/rise-with-sap.svg";
+import growWithSapLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/grow-with-sap.svg";
+import sapBtpLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/sap-btp.svg";
+import sapAnalyticsCloudLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/sap-analytics-cloud.svg";
+import sapBw4HanaLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/sap-bw4hana.svg";
+import sapAmsLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/sap-ams.svg";
 
 // Figma only fills in real copy for item 1's expanded panel — item 1's own
 // panel frame is still an empty skeleton placeholder there, so its copy below
@@ -14,6 +21,7 @@ import panelImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/Sap
 const ITEMS = [
     {
         title: "SAP S/4HANA Migration & Implementation",
+        logo: sap4HanaLogo,
         desc: "End-to-end migration from ECC to S/4HANA, planned around your compliance deadlines and cutover windows, not a generic timeline.",
         bullets: [
             "Landscape assessment and readiness review",
@@ -24,7 +32,8 @@ const ITEMS = [
     },
     {
         title: "RISE with SAP",
-        desc: "Full RISE with SAP delivery: infrastructure, migration, and managed operations bundled under a single SAP-backed contract.",
+        logo: riseWithSapLogo,
+        desc: "Full RISE with SAP delivery infrastructure, migration, and managed operations bundled under a single SAP-backed contract.",
         bullets: [
             "Contract and scope planning",
             "Infrastructure provisioning",
@@ -34,6 +43,7 @@ const ITEMS = [
     },
     {
         title: "GROW with SAP",
+        logo: growWithSapLogo,
         desc: "Cloud-native S/4HANA on SAP's best-practice reference architecture, built for organizations without legacy customization to carry over.",
         bullets: [
             "Fit-to-standard workshops",
@@ -44,7 +54,8 @@ const ITEMS = [
     },
     {
         title: "SAP Business Technology Platform",
-        desc: "Extend SAP without touching the core: integration, automation, and app development on BTP, upgrade safe by design.",
+        logo: sapBtpLogo,
+        desc: "Extend SAP without touching the core integration, automation, and app development on BTP, upgrade safe by design.",
         bullets: [
             "Integration Suite setup",
             "Low-code app development",
@@ -54,6 +65,7 @@ const ITEMS = [
     },
     {
         title: "SAP Analytics Cloud",
+        logo: sapAnalyticsCloudLogo,
         desc: "Planning, forecasting, and reporting built directly on your SAP data, no separate BI layer to maintain.",
         bullets: [
             "Planning model design",
@@ -64,6 +76,7 @@ const ITEMS = [
     },
     {
         title: "SAP BW/4HANA",
+        logo: sapBw4HanaLogo,
         desc: "Data warehousing built for SAP-native reporting at enterprise scale, migrated or built fresh on HANA.",
         bullets: [
             "Migration from legacy BW",
@@ -74,6 +87,7 @@ const ITEMS = [
     },
     {
         title: "Application Managed Services (AMS)",
+        logo: sapAmsLogo,
         desc: "Ongoing support, monitoring, and continuous improvement for SAP environments already live, not just the ones we implement.",
         bullets: [
             "Incident and problem management",
@@ -196,7 +210,12 @@ export default function SAPS4HANAMigrationImplementation() {
                                 className="hidden sm:block absolute left-[25%] right-[6%] top-[31%] bottom-0 bg-white"
                             >
                                 <div className="absolute left-[9.55%] right-[9.55%] top-[18.24%] bottom-[18.24%] flex flex-col justify-between gap-6">
-                                    <h3 className="text-[#10161d] text-lg font-medium leading-[1.4]">{active.desc}</h3>
+                                    <div className="flex flex-col gap-6">
+                                        <div className="relative h-10 w-36 shrink-0">
+                                            <Image src={active.logo} alt="" fill className="object-contain object-left" />
+                                        </div>
+                                        <h3 className="text-[#10161d] text-lg font-medium leading-[1.4]">{active.desc}</h3>
+                                    </div>
                                     <ul className="list-disc pl-5 flex flex-col gap-1 text-[#3d3d4e] text-lg font-light leading-[1.4]">
                                         {active.bullets.map((bullet) => (
                                             <li key={bullet}>{bullet}</li>
@@ -218,6 +237,9 @@ export default function SAPS4HANAMigrationImplementation() {
                             transition={{ duration: 0.35, ease: "easeOut" }}
                             className="sm:hidden bg-white p-6 flex flex-col gap-6"
                         >
+                            <div className="relative h-10 w-36 shrink-0">
+                                <Image src={active.logo} alt="" fill className="object-contain object-left" />
+                            </div>
                             <h3 className="text-[#10161d] text-lg font-medium leading-[1.4]">{active.desc}</h3>
                             <ul className="list-disc pl-5 flex flex-col gap-1 text-[#3d3d4e] text-lg font-light leading-[1.4]">
                                 {active.bullets.map((bullet) => (

@@ -20,7 +20,7 @@ const REASONS = [
     {
         image: card2,
         title: "Vendor-Neutral Cloud Approach",
-        desc: "AWS, Azure, or GCP, whichever fits the workload, not a single-cloud agenda we're incentivized to push.",
+        desc: "AWS, Azure, or GCP, whichever fits the workload, not a single cloud agenda we're incentivized to push.",
     },
     {
         image: card3,

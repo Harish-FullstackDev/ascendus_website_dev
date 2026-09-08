@@ -49,8 +49,7 @@ export default function SalesforceConsulting() {
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/40" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70" />
 
                     <div className="absolute inset-x-6 bottom-6 flex flex-col gap-2 sm:bottom-8 lg:inset-x-auto lg:bottom-[24%] lg:left-[20.8%] lg:right-[14.5%]">
                         <h2 className="text-white text-2xl sm:text-[28px] font-semibold">

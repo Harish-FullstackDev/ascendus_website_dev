@@ -108,7 +108,7 @@ export default function MissionVision() {
             >
                 <h2 className="text-[28px] font-semibold text-[#2E3033]">Where we&apos;re headed, and why</h2>
                 <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
-                    Everything we build ties back to two commitments: what we exist to do for clients today, and
+                    Everything we build ties back to two commitments what we exist to do for clients today, and
                     where we intend to take the practice next.
                 </p>
             </motion.div>

@@ -40,7 +40,7 @@ export default function SoftwareScalability() {
                     </h2>
 
                     <p className="text-lg font-light leading-normal text-[#55595E]">
-                        Introductory Focus: Enterprise applications age fast
+                        Introductory Focus Enterprise applications age fast
                         when they are built without architecture discipline. We
                         engineer software, from customer-facing platforms to
                         internal enterprise systems, built for performance,

@@ -35,7 +35,7 @@ export default function EndToEndMigration() {
                 </h2>
                 <div className="flex flex-col gap-4 text-[#55595E] text-lg font-light leading-[1.5]">
                     <p>
-                        Every year an ECC system runs past its maintenance window adds risk: security patches, tax
+                        Every year an ECC system runs past its maintenance window adds risk security patches, tax
                         and legal updates, and vendor support all get harder to get and more expensive to buy.
                         Migration planned now, on your timeline, costs less than migration forced later, on
                         SAP&apos;s.

@@ -20,7 +20,7 @@ const ROWS = [
         workingModel: "Billing basis",
         fixedPrice: "Locked total for defined scope",
         ams: "Monthly retainer / SLA tier",
-        timeAndMaterials: "Actuals — effort delivered",
+        timeAndMaterials: "Actuals effort delivered",
     },
     {
         workingModel: "Scope",
