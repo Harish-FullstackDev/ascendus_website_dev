@@ -234,42 +234,50 @@ export default function Industries() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6"
+                    className="flex flex-col gap-2"
                 >
-                    <div className="flex flex-col gap-2">
-                        <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
-                            Industry-Specific Solutions
-                        </h2>
-                        <p className="text-[#55595E] text-lg font-light leading-[1.4]">
+                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
+                        Industry-Specific Solutions
+                    </h2>
+
+                    {/* The subheading and the arrows share this line on md+. The arrows
+                        are taken out of flow there (absolute, centred on the line) rather
+                        than being a flex sibling: they are taller than the text, so an
+                        in-flow centre would grow this row and push both the subheading and
+                        the 64px gap below it downwards. Out of flow, only the arrows move.
+                        The subheading carries the right padding, not this wrapper, so
+                        `right-0` still resolves to the container edge. */}
+                    <div className="relative flex flex-col gap-6 md:block">
+                        <p className="text-[#55595E] text-lg font-light leading-[1.4] md:pr-32">
                             Built for Your Industry, Not Just Enterprise in General
                         </p>
-                    </div>
 
-                    {/* Prev/next controls — the Figma frame for this section links to a
-                        "Find Your Solution" button that always resolves to /who-we-are (no
-                        solutions page exists to point it at), so it's removed rather than
-                        shipping a link that lies about its destination. Figma has no arrow
-                        control on this section, but does use this exact white-pill,
-                        two-arrow pattern elsewhere on the homepage (node 2700:1310) — reused
-                        here per direct instruction, aligned with the title/description
-                        instead of on its own row. */}
-                    <div className="shrink-0 flex items-center gap-3 bg-white rounded-full p-3">
-                        <button
-                            type="button"
-                            aria-label="Previous industry"
-                            onClick={() => stepBy(-1)}
-                            className="flex items-center justify-center size-12 transition-transform duration-300 hover:scale-110"
-                        >
-                            <Image src={arrowIcon} alt="" className="size-12 -rotate-90" />
-                        </button>
-                        <button
-                            type="button"
-                            aria-label="Next industry"
-                            onClick={() => stepBy(1)}
-                            className="flex items-center justify-center size-12 transition-transform duration-300 hover:scale-110"
-                        >
-                            <Image src={arrowIcon} alt="" className="size-12 rotate-90" />
-                        </button>
+                        {/* Prev/next controls — the Figma frame for this section links to a
+                            "Find Your Solution" button that always resolves to /who-we-are (no
+                            solutions page exists to point it at), so it's removed rather than
+                            shipping a link that lies about its destination. Figma has no arrow
+                            control on this section, but does use this exact white-pill,
+                            two-arrow pattern elsewhere on the homepage (node 2700:1310) — reused
+                            here per direct instruction. `self-end` keeps them on the right once
+                            the row stacks on mobile. */}
+                        <div className="shrink-0 self-end flex items-center gap-3 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2">
+                            <button
+                                type="button"
+                                aria-label="Previous industry"
+                                onClick={() => stepBy(-1)}
+                                className="flex items-center justify-center size-12 transition-transform duration-300 hover:scale-110"
+                            >
+                                <Image src={arrowIcon} alt="" className="size-12 -rotate-90" />
+                            </button>
+                            <button
+                                type="button"
+                                aria-label="Next industry"
+                                onClick={() => stepBy(1)}
+                                className="flex items-center justify-center size-12 transition-transform duration-300 hover:scale-110"
+                            >
+                                <Image src={arrowIcon} alt="" className="size-12 rotate-90" />
+                            </button>
+                        </div>
                     </div>
                 </motion.div>
             </div>
@@ -302,7 +310,7 @@ export default function Industries() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="relative w-screen left-1/2 -translate-x-1/2 mt-6 h-[320px] sm:h-[360px] lg:h-[407px] overflow-hidden"
+                className="relative w-screen left-1/2 -translate-x-1/2 mt-16 h-[320px] sm:h-[360px] lg:h-[407px] overflow-hidden"
             >
                     <div
                         className={`flex flex-row items-start ${instant ? "" : "transition-transform ease-in-out"}`}
