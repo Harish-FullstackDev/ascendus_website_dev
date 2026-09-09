@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import separatorLine from "@/assets/career/Separetor line.png";
 
 const AVATAR = "/blog/default-author.svg";
 
@@ -51,7 +50,7 @@ export default function TeamStory() {
     return (
         <section className="bg-[#fdfdfd] py-16 sm:py-20">
             <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-                <Image src={separatorLine} alt="" className="w-full h-px object-cover mb-12 opacity-25" />
+                <div aria-hidden className="w-full h-px bg-black/10 mb-12" />
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -95,7 +94,7 @@ export default function TeamStory() {
                     ))}
                 </motion.div>
 
-                <Image src={separatorLine} alt="" className="w-full h-px object-cover mt-12 opacity-25" />
+                <div aria-hidden className="w-full h-px bg-black/10 mt-12 mb-8" />
             </div>
         </section>
     );

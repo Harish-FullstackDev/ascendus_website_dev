@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import separatorLine from "@/assets/career/Separetor line.png";
 
 const AVATAR = "/blog/default-author.svg";
 
@@ -10,7 +9,7 @@ export default function GrowthQuoteBand() {
     return (
         <section className="w-full py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto flex flex-col gap-8">
-                <Image src={separatorLine} alt="" className="w-full h-px object-cover" />
+                <div aria-hidden className="w-full h-px bg-black/10" />
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -49,7 +48,7 @@ export default function GrowthQuoteBand() {
                     </div>
                 </motion.div>
 
-                <Image src={separatorLine} alt="" className="w-full h-px object-cover" />
+                <div aria-hidden className="w-full h-px bg-black/10" />
             </div>
         </section>
     );

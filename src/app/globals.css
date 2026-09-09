@@ -277,25 +277,36 @@ h2 {
   }
 }
 
-/* Resting underline is fully visible (scaleX(1)). On hover it wipes out
-   left-to-right (origin-right shrink), then redraws left-to-right
-   (origin-left grow) - same direction as the arrow's exit/reappear swap. */
+/* Resting underline is fully drawn. On hover it wipes out left-to-right
+   (anchored right, shrinking), then redraws left-to-right (anchored left,
+   growing) - same direction as the arrow's exit/reappear swap.
+   Width is animated rather than scaleX on purpose. A transform animation
+   promotes the 2px bar to a composited layer, which resamples it across
+   three soft rows at its fractional Y offset then snaps back to two crisp
+   rows on finish, so the bar visibly thickened mid-animation. Width is not
+   compositable, so the bar keeps being painted as a pixel-snapped colour box
+   at a constant weight, and the anchor swap at the midpoint happens while it
+   is zero-width and therefore invisible. */
 @keyframes underline-cycle {
   0% {
-    transform: scaleX(1);
-    transform-origin: right;
+    left: auto;
+    right: 0;
+    width: 100%;
   }
   49% {
-    transform: scaleX(0);
-    transform-origin: right;
+    left: auto;
+    right: 0;
+    width: 0%;
   }
   50% {
-    transform: scaleX(0);
-    transform-origin: left;
+    left: 0;
+    right: auto;
+    width: 0%;
   }
   100% {
-    transform: scaleX(1);
-    transform-origin: left;
+    left: 0;
+    right: auto;
+    width: 100%;
   }
 }
 
@@ -303,20 +314,24 @@ h2 {
    matching the arrow's reversed exit/reappear direction on hover-out. */
 @keyframes underline-cycle-reverse {
   0% {
-    transform: scaleX(1);
-    transform-origin: left;
+    left: 0;
+    right: auto;
+    width: 100%;
   }
   49% {
-    transform: scaleX(0);
-    transform-origin: left;
+    left: 0;
+    right: auto;
+    width: 0%;
   }
   50% {
-    transform: scaleX(0);
-    transform-origin: right;
+    left: auto;
+    right: 0;
+    width: 0%;
   }
   100% {
-    transform: scaleX(1);
-    transform-origin: right;
+    left: auto;
+    right: 0;
+    width: 100%;
   }
 }
 

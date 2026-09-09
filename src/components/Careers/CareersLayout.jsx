@@ -36,11 +36,11 @@ export default function CareersLayout({
                 <main className="relative z-10 -mt-[75vh] flex-grow w-full pb-16 bg-white">
                     <div className={`w-full max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 ${cardBg}`}>
                         {breadcrumbs && (
-                            <div className="flex items-center gap-2 py-4 text-sm">
+                            <div className="flex items-center gap-2 pt-10 pb-2.5 sm:pt-12 text-sm border-b border-black/10">
                                 {breadcrumbs}
                             </div>
                         )}
-                        <div className="py-10">
+                        <div className="pt-6 pb-10">
                             {children}
                         </div>
                     </div>
