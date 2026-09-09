@@ -10,7 +10,7 @@ import logo2 from "../../assets/Brand/Ascendus_Logo_Primary.png";
 import logo4 from "../../assets/Brand/Ascendus_Wordmark_OnDark.svg";
 import logo5 from "../../assets/Brand/Ascendus_Wordmark_OnLight.svg";
 import { isValidRoute } from "../Constants/Routes/routes";
-import LanguageSelector from "../languageselector/Language_selector.jsx";
+// import LanguageSelector from "../languageselector/Language_selector.jsx";
 import ContactUsButton from "../Contactusbutton/contact_us_button";
 import BookAcallButton from "../BookAcallButton/BookAcall_button";
 import CalendlyModal from "../CommonComponents/CommonCalendy";
@@ -511,7 +511,7 @@ const Navbar = () => {
 
       {/* Full-screen Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 lg:hidden transform transition-transform duration-500 ease-in-out ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed inset-0 lg:hidden transform transition-transform duration-500 ease-in-out ${isMenuOpen ? "translate-x-0" : "-translate-x-full"
           } bg-white z-[60] flex flex-col`}
       >
         <div className="flex justify-between items-center p-5">
@@ -525,9 +525,10 @@ const Navbar = () => {
               height={40}
             />
           </Link>
-          {/* Right side controls (Language Selector and Close Menu button) */}
+          {/* Right side controls (Close Menu button) */}
           <div className="flex items-center gap-3">
-            <LanguageSelector isNavbarLight={true} />
+            {/* Language selector hidden for now (also disabled in desktop navbar) */}
+            {/* <LanguageSelector isNavbarLight={true} /> */}
             {/* Close button */}
             <button onClick={closeMenu} aria-label="Close menu" className="flex items-center justify-center">
               <IoMdClose className="text-3xl sm:text-4xl text-black" />

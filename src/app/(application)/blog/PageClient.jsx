@@ -224,9 +224,9 @@ export default function BlogPage() {
                 onSubmit={handleFormSubmit}
             />
 
-            {/* <section>
+            <section>
                 <AuthorsSection authors={authors} />
-            </section> */}
+            </section>
             <Footer />
         </div>
     );
