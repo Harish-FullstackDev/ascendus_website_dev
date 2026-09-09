@@ -15,7 +15,7 @@ const CARDS = [
     },
     {
         title: "Process Mining",
-        desc: "We automate rule-based, repetitive tasks across your systems, freeing your teams for higher-value work.",
+        desc: "We automate rule based, repetitive tasks across your systems, freeing your teams for higher-value work.",
         image: processAutomationPhoto,
     },
     {

@@ -23,7 +23,7 @@ const ITEMS = [
         bullets: [
             "Infrastructure design and provisioning",
             "Workload migration",
-            "Azure-to-SAP connectivity",
+            "Azure to SAP connectivity",
             "Cost and performance management",
         ],
     },

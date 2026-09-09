@@ -16,11 +16,11 @@ import panelImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/Bro
 const ITEMS = [
     {
         title: "Cloud & Infrastructure Modernization",
-        desc: "Migrate and rearchitect infrastructure around the workloads that actually need to scale, not a lift-and-shift of everything at once.",
+        desc: "Migrate and rearchitect infrastructure around the workloads that actually need to scale, not a lift and shift of everything at once.",
     },
     {
         title: "Systems Integration & API Management",
-        desc: "Connect SAP to CRM, e-commerce, and third-party platforms through governed APIs, not one-off integrations that break on the next upgrade.",
+        desc: "Connect SAP to CRM, e-commerce, and third party platforms through governed APIs, not one off integrations that break on the next upgrade.",
     },
     {
         title: "Data Migration & Governance",

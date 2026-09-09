@@ -42,7 +42,7 @@ export default function ProcessAwareSupportRootCauseResolution() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="text-[28px] font-semibold leading-tight text-white"
                     >
-                        Process-Aware Support &amp; Root-Cause Resolution
+                        Process Aware Support &amp; Root Cause Resolution
                     </motion.h2>
                     <p className="mt-2 text-lg font-light leading-snug text-white">
                         Moving beyond ticket resolution to continuous system improvement

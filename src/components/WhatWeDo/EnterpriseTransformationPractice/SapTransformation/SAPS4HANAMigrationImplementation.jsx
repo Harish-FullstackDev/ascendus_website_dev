@@ -33,7 +33,7 @@ const ITEMS = [
     {
         title: "RISE with SAP",
         logo: riseWithSapLogo,
-        desc: "Full RISE with SAP delivery infrastructure, migration, and managed operations bundled under a single SAP-backed contract.",
+        desc: "Full RISE with SAP delivery infrastructure, migration, and managed operations bundled under a single SAP backed contract.",
         bullets: [
             "Contract and scope planning",
             "Infrastructure provisioning",
@@ -44,10 +44,10 @@ const ITEMS = [
     {
         title: "GROW with SAP",
         logo: growWithSapLogo,
-        desc: "Cloud-native S/4HANA on SAP's best-practice reference architecture, built for organizations without legacy customization to carry over.",
+        desc: "Cloud native S/4HANA on SAP's best practice reference architecture, built for organizations without legacy customization to carry over.",
         bullets: [
-            "Fit-to-standard workshops",
-            "Rapid configuration against best-practice processes",
+            "Fit to standard workshops",
+            "Rapid configuration against best practice processes",
             "Process adoption support",
             "Go-live support",
         ],
@@ -77,7 +77,7 @@ const ITEMS = [
     {
         title: "SAP BW/4HANA",
         logo: sapBw4HanaLogo,
-        desc: "Data warehousing built for SAP-native reporting at enterprise scale, migrated or built fresh on HANA.",
+        desc: "Data warehousing built for SAP native reporting at enterprise scale, migrated or built fresh on HANA.",
         bullets: [
             "Migration from legacy BW",
             "Data model design",
@@ -93,7 +93,7 @@ const ITEMS = [
             "Incident and problem management",
             "Basis and functional support",
             "Regulatory and compliance updates",
-            "SLA-backed reporting",
+            "SLA backed reporting",
         ],
     },
 ];

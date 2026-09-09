@@ -53,7 +53,7 @@ const TABS = [
             },
             {
                 label: "Databases",
-                desc: "Managed database solutions designed for reliable, scalable, and high-performance enterprise applications.",
+                desc: "Managed database solutions designed for reliable, scalable, and high performance enterprise applications.",
             },
             {
                 label: "Networking",
@@ -82,7 +82,7 @@ const TABS = [
             },
             {
                 label: "Application Modernization",
-                desc: "Modernize existing applications and build scalable, cloud-ready solutions using Azure services.",
+                desc: "Modernize existing applications and build scalable, cloud ready solutions using Azure services.",
             },
             {
                 label: "Data & Analytics",
@@ -94,7 +94,7 @@ const TABS = [
             },
             {
                 label: "Hybrid Cloud",
-                desc: "Connect Azure cloud environments with existing on-premise infrastructure and enterprise systems.",
+                desc: "Connect Azure cloud environments with existing on premise infrastructure and enterprise systems.",
             },
         ],
     },

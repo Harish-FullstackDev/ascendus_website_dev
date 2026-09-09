@@ -6,11 +6,11 @@ import workflowPhoto from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelli
 
 const SERVICES = [
     "Process mining before automation",
-    "SAP-integrated automation delivery",
+    "SAP integrated automation delivery",
     "Hyper automation capability",
     "Governance and monitoring built in",
     "Exception handling by design",
-    "Proven high-volume deployments",
+    "Proven high volume deployments",
 ];
 
 export default function WhyPartnerWithUs() {

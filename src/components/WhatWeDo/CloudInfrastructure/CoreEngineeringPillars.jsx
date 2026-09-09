@@ -20,7 +20,7 @@ const ITEMS = [
         icon: Security,
     },
     {
-        title: "Platform-Agnostic Judgment",
+        title: "Platform Agnostic Judgment",
         desc: "We recommend the platform that fits your workload, not the one we happen to resell.",
         icon: Platform,
     },

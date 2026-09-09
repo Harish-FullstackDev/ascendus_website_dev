@@ -7,7 +7,7 @@ import processMiningPhoto from "@/assets/WhatWeDo/Intelligent Automation/new/Adv
 const CARDS = [
     { title: "Workflow Automation", desc: "Automated approval and routing workflows that eliminate delays across departments." },
     { title: "Business Rules Automation", desc: "Decision logic automated and centralized, so policy is applied consistently every time." },
-    { title: "AI-Powered Automation", desc: "Automation enhanced with AI to handle exceptions and unstructured data, not just fixed rules." },
+    { title: "AI Powered Automation", desc: "Automation enhanced with AI to handle exceptions and unstructured data, not just fixed rules." },
 ];
 
 export default function AdvancedDecisionLogiWorkflow() {

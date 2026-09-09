@@ -22,7 +22,7 @@ export default function ScalingPilotsSmartOperations() {
                         Scaling Pilots & Smart Operations
                     </h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
-                        Transforming technology proofs-of-concept into full operational platforms.
+                        Transforming technology proofs of concept into full operational platforms.
                     </p>
                 </motion.div>
 

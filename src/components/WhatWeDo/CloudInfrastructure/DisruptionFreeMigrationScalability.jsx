@@ -34,7 +34,7 @@ export default function DisruptionFreeMigrationScalability() {
                     <h2
                         className="text-[#2E3033] text-[22px] leading-[1.2] font-semibold tracking-[-0.02em] sm:text-[28px]"
                     >
-                        Disruption-Free Migration & Scalability
+                        Disruption Free Migration & Scalability
                     </h2>
 
                     <p

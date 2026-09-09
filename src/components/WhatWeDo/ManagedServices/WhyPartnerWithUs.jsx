@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import buildingImg from "@/assets/WhatWeDo/Managed Services/new/why.jpg";
 
 const BENEFITS = [
-    "SAP-certified support teams",
+    "SAP certified support teams",
     "Tiered L1/L2/L3 model",
     "Transparent SLA reporting",
     "Continuous improvement built in",
@@ -48,7 +48,7 @@ export default function WhyPartnerWithUs() {
                             Why Partner With Us
                         </h2>
                         <p className="text-base font-light leading-snug text-white/90 sm:text-lg">
-                            Core operational standards driving our managed delivery..
+                            Core operational standards driving our managed delivery.
                         </p>
                     </div>
                 </motion.div>

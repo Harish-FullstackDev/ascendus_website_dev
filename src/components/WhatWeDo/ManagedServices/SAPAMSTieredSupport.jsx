@@ -14,7 +14,7 @@ const ITEMS = [
     {
         n: "2",
         title: "Application Management Services",
-        desc: "We manage the day-to-day performance, fixes, and enhancements of your enterprise applications",
+        desc: "We manage the day to day performance, fixes, and enhancements of your enterprise applications",
     },
     {
         n: "3",

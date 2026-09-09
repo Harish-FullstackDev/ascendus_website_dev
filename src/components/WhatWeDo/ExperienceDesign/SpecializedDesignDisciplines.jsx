@@ -19,7 +19,7 @@ const COLUMNS = [
     },
     {
         title: "Interaction Design",
-        items: ["Micro-interactions and flows designed to make digital products feel responsive and intuitive."],
+        items: ["Micro interactions and flows designed to make digital products feel responsive and intuitive."],
     },
 ];
 

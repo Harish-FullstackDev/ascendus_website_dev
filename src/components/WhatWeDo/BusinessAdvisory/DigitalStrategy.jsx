@@ -27,7 +27,7 @@ const CARDS = [
     {
         image: card4,
         title: "Business Process Consulting",
-        desc: "Sequence technology investments against business priorities so every initiative compounds toward long-term goals.",
+        desc: "Sequence technology investments against business priorities so every initiative compounds toward long term goals.",
     },
 ];
 

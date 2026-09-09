@@ -34,7 +34,7 @@ const ITEMS = [
     {
         icon: ProcessDocumentation,
         title: "Process Documentation",
-        desc: "Our AI-powered bot automatically and accurately answers support questions with zero training required. Instantly generate replies, recap conversations for other agents, and create new help articles.",
+        desc: "Our AI powered bot automatically and accurately answers support questions with zero training required. Instantly generate replies, recap conversations for other agents, and create new help articles.",
     },
     {
         icon: TechnologyAssessment,

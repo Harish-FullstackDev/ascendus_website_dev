@@ -31,12 +31,12 @@ export default function InnovationEdge() {
                 </p>
 
                 <ul className="text-white text-base list-disc font-['Houschka_Pro'] sm:text-lg sm:pl-5 font-light space-y-1">
-                    <li>SAP-integrated emerging tech deployment</li>
-                    <li>Pilot-to-scale methodology</li>
-                    <li>Cross-industry innovation experience</li>
+                    <li>SAP integrated emerging tech deployment</li>
+                    <li>Pilot to scale methodology</li>
+                    <li>Cross industry innovation experience</li>
                     <li>Early quantum readiness assessment</li>
                     <li>Industry 4.0 delivery capability</li>
-                    <li>Value-first technology evaluation</li>
+                    <li>Value first technology evaluation</li>
                 </ul>
             </motion.div>
         </section>

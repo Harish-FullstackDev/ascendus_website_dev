@@ -19,7 +19,7 @@ const CARDS = [
         icon: personalizedEngagementIcon,
     },
     {
-        title: "Next-Best Action",
+        title: "Next Best Action",
         desc: "We apply customer intelligence to identify appropriate actions across sales and service journeys.",
         icon: nextBestActionIcon,
     },

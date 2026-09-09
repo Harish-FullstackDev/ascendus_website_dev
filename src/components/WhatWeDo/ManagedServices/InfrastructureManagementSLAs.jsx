@@ -30,7 +30,7 @@ const ITEMS = [
         title: "Continuous Improvement",
         image: knowledgeManagementPhoto,
         companionTitle: "Continuous Learning",
-        companionDesc: "Ongoing performance tuning and enhancement recommendations, not just break-fix support.",
+        companionDesc: "Ongoing performance tuning and enhancement recommendations, not just break fix support.",
     },
 ];
 

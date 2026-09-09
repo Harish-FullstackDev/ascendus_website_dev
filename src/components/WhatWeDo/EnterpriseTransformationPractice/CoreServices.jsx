@@ -12,12 +12,12 @@ const SERVICES = [
     {
         number: "02",
         title: "RISE with SAP",
-        desc: "Full RISE with SAP delivery: infrastructure, migration, and managed operations bundled under a single SAP-backed contract.",
+        desc: "Full RISE with SAP delivery, infrastructure, migration, and managed operations bundled under a single SAP-backed contract.",
     },
     {
         number: "03",
         title: "GROW with SAP",
-        desc: "Cloud-native S/4HANA on SAP's best-practice reference architecture, built for organizations without legacy customization to carry over.",
+        desc: "Cloud native S/4HANA on SAP's best practice reference architecture, built for organizations without legacy customization to carry over.",
     },
     {
         number: "04",

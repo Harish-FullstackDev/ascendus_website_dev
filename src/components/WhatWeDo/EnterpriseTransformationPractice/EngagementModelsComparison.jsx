@@ -31,13 +31,13 @@ const ROWS = [
     {
         workingModel: "Governance",
         fixedPrice: "Milestone sign-off",
-        ams: "SLA-backed response times",
+        ams: "SLA backed response times",
         timeAndMaterials: "Timesheet transparency",
     },
     {
         workingModel: "Best for",
         fixedPrice: "S/4HANA migrations, greenfield rollouts",
-        ams: "Post go-live, steady-state operations",
+        ams: "Post go-live, steady state operations",
         timeAndMaterials: "Discovery, evolving builds",
     },
 ];

@@ -13,11 +13,11 @@ const ITEMS = [
         desc: "We fix data quality and governance first, because dashboards built on unreliable data erode confidence fast.",
     },
     {
-        title: "SAP-Native Data Depth",
+        title: "SAP Native Data Depth",
         desc: "Deep knowledge of SAP data structures means faster, more accurate integration than generalist data teams deliver.",
     },
     {
-        title: " Built for Decision-Makers",
+        title: " Built for Decision Makers",
         desc: "We design analytics around the decisions executives actually need to make, not around available data fields.",
     },
     {
