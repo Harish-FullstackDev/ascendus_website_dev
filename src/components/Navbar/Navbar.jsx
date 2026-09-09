@@ -171,7 +171,7 @@ const Navbar = () => {
             <div
               className="
                 relative
-                lg:h-[88px]
+                lg:h-[80px]
                 w-full
                 flex items-center
                 justify-between
