@@ -35,28 +35,28 @@ export default function HeroText() {
                     content (the default flex-col cross-axis behavior is stretch,
                     which would otherwise force them full-width) — same natural width
                     as the desktop row uses. */}
-                <div className="flex flex-col items-start sm:flex-row sm:items-center gap-4 mt-8 sm:mt-10">
-                    <button
+                {/* <div className="flex flex-col items-start sm:flex-row sm:items-center gap-4 mt-8 sm:mt-10"> */}
+                {/* <button
                         type="button"
                         onClick={() => setShowCalendly(true)}
-                        className="rounded-[54px] border border-[#d0d0d0] bg-[#0a3a52] px-8 py-3 text-base sm:text-lg font-light text-white transition-colors hover:bg-white hover:text-[#0a3a52]"
+                        className="rounded-none border border-[#d0d0d0] bg-[#0a3a52] px-8 py-3 text-base sm:text-lg font-light text-white transition-colors hover:bg-white hover:text-[#0a3a52]"
                     >
                         Book a Consultation
-                    </button>
-                    {/* Mobile only: solid white/black instead of the ghost outline,
+                    </button> */}
+                {/* Mobile only: solid white/black instead of the ghost outline,
                         inverting to transparent/white on hover or press (:active covers
                         the tap-and-hold state on touch, since :hover doesn't reliably
                         fire there). Desktop (sm+) keeps the ghost treatment — white
                         outline on transparent, filling white with navy text on hover —
                         which already reads fine against the dark hero photo there. */}
-                    {/* <button
+                {/* <button
                         type="button"
                         onClick={scrollToCapabilities}
                         className="rounded-[54px] border border-white px-8 py-3 text-base sm:text-lg font-light transition-colors bg-white text-black hover:bg-transparent hover:text-white active:bg-transparent active:text-white sm:bg-transparent sm:text-white sm:hover:bg-white sm:hover:text-[#0a3a52] sm:active:bg-white sm:active:text-[#0a3a52]"
                     >
                         See What We Do
                     </button> */}
-                </div>
+                {/* </div> */}
             </motion.div>
 
             <CalendlyModal

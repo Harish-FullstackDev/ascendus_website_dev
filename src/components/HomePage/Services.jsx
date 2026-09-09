@@ -21,13 +21,13 @@ function ServiceCard({ item }) {
                 fill
                 className="object-cover pointer-events-none transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/10 transition-colors duration-500 group-hover:from-black/80 group-hover:via-black/45 group-hover:to-black/25 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/30 transition-colors duration-500 group-hover:from-black/80 group-hover:via-black/45 group-hover:to-black/25 pointer-events-none" />
 
             {/* Title top, description bottom */}
             <div className="absolute inset-0 z-10 flex flex-col items-start justify-between p-6 sm:p-8">
                 <h2 className="text-white text-2xl font-semibold leading-[1.4]">{item.title}</h2>
 
-                <p className="text-white/90 text-base font-light leading-[1.5] pt-2">{item.desc}</p>
+                <p className="text-white/90 text-lg font-light leading-[1.5] pt-2">{item.desc}</p>
             </div>
         </div>
     );

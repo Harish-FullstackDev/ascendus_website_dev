@@ -79,13 +79,19 @@ export default function SecurityAssessmentCloudDefense() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3 }}
                                 transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.06 }}
-                                className="flex flex-col gap-4 sm:gap-[23px] w-full"
+                                className="group flex flex-col gap-4 sm:gap-[23px] w-full"
                             >
                                 <div className="flex flex-col gap-3 sm:gap-5">
                                     <h2 className="text-[#2E3033] text-2xl font-semibold">{area.title}</h2>
                                     <p className="text-[#55595E] text-base sm:text-lg font-light">{area.desc}</p>
                                 </div>
-                                <div className="h-px w-[139px] bg-[#3d3d4e]/40" />
+                                <div className="relative w-[139px] h-[2px]">
+                                    {/* Base line */}
+                                    <div className="absolute left-0 top-1/2 w-full h-px -translate-y-1/2 bg-[#3d3d4e]/40" />
+
+                                    {/* Hover line */}
+                                    <div className="absolute left-0 top-1/2 w-full h-[2px] -translate-y-1/2 origin-left bg-[#0061AF] scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100" />
+                                </div>
                             </motion.div>
                         ))}
                     </div>
