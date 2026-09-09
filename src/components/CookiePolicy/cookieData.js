@@ -87,7 +87,7 @@ export const sectionContent = {
     ],
     contacts: [
       { label: "Email", value: "legal@ascendus.sa", href: "mailto:legal@ascendus.sa" },
-      { label: "Phone", value: "+91 413 2191301", href: "tel:+914132191301" },
+      { label: "Phone", value: "+966 573956334", href: "tel:+966573956334" },
       {
         label: "Registered Address",
         value:

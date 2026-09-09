@@ -50,10 +50,10 @@ const Bookacall = () => {
                 We are always happy to help.
               </p>
               <a
-                href="tel:+04132191301"
+                href="tel:+966573956334"
                 className="text-blue-600 font-medium hover:text-blue-700 transition-colors"
               >
-                0413-2191301
+                +966 573956334
               </a>
             </div>
 

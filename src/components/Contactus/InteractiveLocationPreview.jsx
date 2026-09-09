@@ -441,7 +441,7 @@ const InteractiveLocationPreview = () => {
                                 <div className="flex gap-3 pt-2">
                                     {/* Call Action */}
                                     <a
-                                        href="tel:+04132191301"
+                                        href="tel:+966573956334"
                                         className="flex-1 py-3 px-2 bg-slate-900 hover:bg-slate-800 active:bg-slate-800/80 border border-white/10 rounded-xl flex flex-col items-center justify-center gap-1 text-white transition-colors"
                                     >
                                         <Phone className="w-5 h-5 text-cyan-400" />

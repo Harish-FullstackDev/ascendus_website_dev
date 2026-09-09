@@ -90,7 +90,7 @@ export default function CleanPrinciples() {
                                 onMouseLeave={() => {
                                     isPaused.current = false;
                                 }}
-                                className="bg-[#EDEDED] flex flex-col justify-start p-6 h-[220px] sm:h-[237px]"
+                                className="bg-[#D3DAE2] flex flex-col justify-start p-6 h-[220px] sm:h-[237px]"
                             >
                                 <h2 className="text-2xl text-[#2E3033] font-semibold">
                                     {item.title}

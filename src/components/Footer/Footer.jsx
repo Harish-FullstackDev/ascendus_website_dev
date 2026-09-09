@@ -30,19 +30,8 @@ const Footer = () => {
       <footer className="bg-neutral-900 text-gray-400 p-8 md:p-16 ">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-16  pb-4 md:pb-12 mb-2">
           <div className="space-x-3 md:col-span-1">
-            <div className="relative h-8 sm:h-10 w-auto aspect-[4/1] md:mb-12">
-              <Image
-                src={logo}
-                alt="Ascendus Logo"
-                fill
-                style={{
-                  objectFit: "contain",
-                }}
-              />
-            </div>
-
             {/* Quick Link */}
-            <div className="mt-4 mb-7.5 md:mb-12">
+            <div className="mt-4 md:mt-21.5 mb-7.5 md:mb-12">
               <h3 className="text-white text-lg font-semibold mb-4">
                 Quick Link
               </h3>
@@ -428,7 +417,17 @@ const Footer = () => {
 
           {/* Get In Touch */}
           <div className="md:col-span-1">
-            <h3 className="text-white text-lg font-semibold md:mt-21.5 mb-4">
+            <div className="relative h-8 sm:h-10 w-auto aspect-[4/1] mb-4 md:mb-[46px]">
+              <Image
+                src={logo}
+                alt="Ascendus Logo"
+                fill
+                style={{
+                  objectFit: "contain",
+                }}
+              />
+            </div>
+            <h3 className="text-white text-lg font-semibold mb-4">
               Get In Touch
             </h3>
             <ul className="space-y-2">
