@@ -50,7 +50,7 @@ const itemVariants = {
 export default function TeamStory() {
     return (
         <section className="bg-[#fdfdfd] py-16 sm:py-20">
-            <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
                 <Image src={separatorLine} alt="" className="w-full h-px object-cover mb-12 opacity-25" />
 
                 <motion.div
@@ -71,26 +71,26 @@ export default function TeamStory() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8"
+                    className="flex flex-wrap justify-center gap-x-14 gap-y-14 sm:gap-x-16 lg:gap-x-30"
                 >
                     {TESTIMONIALS.map((item, index) => (
                         <motion.div
                             key={`${item.name}-${index}`}
                             variants={itemVariants}
-                            className="flex flex-col items-center text-center gap-4"
+                            className="flex w-60 shrink-0 flex-col items-center text-center gap-3"
                         >
                             <Image
                                 src={item.avatar}
                                 alt={item.name}
-                                width={70}
-                                height={70}
-                                className="rounded-full object-cover size-[70px] bg-[#d8d8d8]"
+                                width={64}
+                                height={64}
+                                className="rounded-full object-cover size-16 bg-[#d8d8d8]"
                             />
                             <div>
-                                <p className="font-semibold text-[##2E3033] text-base">{item.name}</p>
+                                <p className="font-semibold text-[#2E3033] text-base">{item.name}</p>
                                 <p className="text-[#3d3d4e] text-sm opacity-60">{item.role}</p>
                             </div>
-                            <p className="text-sm text-[#55595E] px-10 leading-relaxed">{item.quote}</p>
+                            <p className="text-sm text-[#55595E] leading-relaxed">{item.quote}</p>
                         </motion.div>
                     ))}
                 </motion.div>

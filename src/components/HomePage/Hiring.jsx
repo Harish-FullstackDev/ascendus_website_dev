@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import officeStaircaseImg from "@/assets/HomePage/images/office-staircase.png";
+import UnderlineArrowLink from "./UnderlineArrowLink";
 
 // Image-right / overlapping-card treatment lifted from
 // WhatWeDo/CloudInfrastructure/DisruptionFreeMigrationScalability.jsx —
@@ -45,23 +45,11 @@ export default function Hiring() {
                                 launch day, we want to hear from you.
                             </p>
                         </div>
-                        <Link
+                        <UnderlineArrowLink
                             href="/careers"
-                            className="group self-start inline-flex items-center gap-4 whitespace-nowrap"
-                        >
-                            <span className="relative pb-[3px] text-lg font-light text-[#2E3033]">
-                                View Open Roles
-                                <span className="absolute left-0 bottom-0 h-[0.5px] w-full origin-left scale-x-0 bg-[#00447A] transition-transform duration-500 ease-out group-hover:scale-x-100" />
-                            </span>
-                            <span className="relative size-7 shrink-0 overflow-hidden rounded-full bg-[#00447A]">
-                                <svg viewBox="0 0 24 24" fill="none" className="absolute inset-0 size-full transition-transform duration-500 ease-out group-hover:translate-x-full group-hover:-translate-y-full">
-                                    <path d="M7.76011 16.2427L16.2454 7.75738M9.88143 7.75738H16.2454V14.1213" stroke="white" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                                <svg viewBox="0 0 24 24" fill="none" className="absolute inset-0 size-full -translate-x-full translate-y-full transition-transform duration-500 ease-out group-hover:translate-x-0 group-hover:translate-y-0">
-                                    <path d="M7.76011 16.2427L16.2454 7.75738M9.88143 7.75738H16.2454V14.1213" stroke="white" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </span>
-                        </Link>
+                            label="View Open Roles"
+                            className="self-start"
+                        />
                     </div>
                 </motion.div>
             </div>

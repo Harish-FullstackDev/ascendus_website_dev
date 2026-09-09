@@ -277,6 +277,49 @@ h2 {
   }
 }
 
+/* Resting underline is fully visible (scaleX(1)). On hover it wipes out
+   left-to-right (origin-right shrink), then redraws left-to-right
+   (origin-left grow) - same direction as the arrow's exit/reappear swap. */
+@keyframes underline-cycle {
+  0% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  49% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  50% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* Mouse-out mirror of underline-cycle - wipes out and redraws right-to-left,
+   matching the arrow's reversed exit/reappear direction on hover-out. */
+@keyframes underline-cycle-reverse {
+  0% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  49% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0%);

@@ -8,7 +8,7 @@ import searchIcon from "@/assets/career/icons/Search Icon.svg";
 import clearFilterIcon from "@/assets/career/icons/Clear filter.svg";
 import prevPageIcon from "@/assets/career/icons/previous page toggle.svg";
 import nextPageIcon from "@/assets/career/icons/Next page toggle arrow.svg";
-import ctaArrowIcon from "@/assets/HomePage/WhyEnterprisePartner/icon-cta-arrow.svg";
+import ViewDetailsButton from "./ViewDetailsButton";
 import { getAllJobs } from "@/lib/jobs";
 import { AREA_OF_INTEREST } from "@/components/Constants/Career/filterCategories";
 
@@ -220,17 +220,10 @@ export default function JobListingSection() {
                                                 {job.location} | {job.typeOfWork} | {job.experienceLevel}
                                             </p>
                                         </div>
-                                        <Link
+                                        <ViewDetailsButton
                                             href={`/careers/${job.slug}`}
-                                            className="group relative inline-flex h-[34px] w-full sm:w-auto shrink-0 items-center justify-center overflow-hidden rounded-full border border-[#2d8ec5] pl-1 pr-2 text-sm font-light text-[#2E3033] whitespace-nowrap"
-                                        >
-                                            <span className="absolute left-1 top-1/2 -translate-y-1/2 size-[26px] transition-all duration-500 ease-out group-hover:left-[calc(100%-30px)]">
-                                                <Image src={ctaArrowIcon} alt="" fill className="object-contain" />
-                                            </span>
-                                            <span className="inline-block transition-all duration-500 ease-out ml-[34px] group-hover:ml-1 group-hover:mr-[30px]">
-                                                View Role
-                                            </span>
-                                        </Link>
+                                            className="w-full sm:w-auto justify-center sm:justify-start"
+                                        />
                                     </motion.div>
                                 ))
                             )}
