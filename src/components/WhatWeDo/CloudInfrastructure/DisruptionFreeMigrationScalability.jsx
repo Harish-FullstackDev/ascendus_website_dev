@@ -22,7 +22,7 @@ const ROWS = [
 
 export default function DisruptionFreeMigrationScalability() {
     return (
-        <section className="w-full py-10 sm:py-16 pl-16 pr-6 sm:p-16  bg-[#F3F6F9] flex flex-col gap-16 sm:gap-[64px] overflow-hidden">
+        <section className="w-full py-10 sm:py-16 px-6 sm:p-16  bg-[#F3F6F9] flex flex-col gap-16 sm:gap-[64px] overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

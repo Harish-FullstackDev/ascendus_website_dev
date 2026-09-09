@@ -187,7 +187,7 @@ export default function CoreEngineeringPillars() {
                 onPointerUp={endDrag}
                 onPointerLeave={endDrag}
                 onPointerCancel={endDrag}
-                className="w-full max-w-[14000px] flex gap-6 sm:gap-10 overflow-x-auto cursor-grab active:cursor-grabbing select-none touch-pan-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [scroll-snap-type:x_mandatory]"
+                className="w-full max-w-[14000px] flex gap-8 sm:gap-10 overflow-x-auto cursor-grab active:cursor-grabbing select-none touch-pan-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [scroll-snap-type:x_mandatory]"
             >
                 {SLIDES.map((item, index) => {
                     const isClone = index < REAL_LEN || index >= REAL_LEN * 2;
@@ -195,17 +195,23 @@ export default function CoreEngineeringPillars() {
                         <div
                             key={`slide-${index}`}
                             aria-hidden={isClone || undefined}
-                            className="shrink-0 w-[80%] sm:w-[40%] flex flex-col gap-6 py-4 [scroll-snap-align:start] px-5"
+                            className="shrink-0 w-[88%] sm:w-[40%] flex flex-col gap-6 py-4 [scroll-snap-align:start] px-0 sm:px-5"
                         >
-                            <div className="flex items-start gap-10">
-                                <div className="relative shrink-0 size-[50px] sm:size-[60px]">
+                            {/* One grid, two arrangements. Mobile: icon and title share the top row,
+                                a full-width hairline under them, description across the full card width
+                                (the desktop icon | rule | copy row leaves the text ~90px wide on a phone).
+                                sm+: icon, vertical rule, then title over description — the original layout. */}
+                            <div className="grid grid-cols-[auto_1fr] items-start gap-x-4 gap-y-4 sm:grid-cols-[auto_auto_1fr] sm:gap-x-10 sm:gap-y-3">
+                                <div className="col-start-1 row-start-1 relative shrink-0 size-[50px] sm:size-[60px]">
                                     <Image src={item.icon} alt="" fill className="object-contain" draggable={false} />
                                 </div>
-                                <div className="w-px h-[50px] sm:h-[180px] shrink-0 bg-[#7F7F7F]" />
-                                <div className="flex flex-col gap-3">
-                                    <h2 className="text-[#0D0C22] text-xl sm:text-2xl font-semibold">{item.title}</h2>
-                                    <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
-                                </div>
+                                <div className="col-span-2 col-start-1 row-start-2 h-px w-full self-start bg-[#7F7F7F] sm:col-span-1 sm:col-start-2 sm:row-start-1 sm:row-span-2 sm:h-[180px] sm:w-px" />
+                                <h2 className="col-start-2 row-start-1 self-center text-[#0D0C22] text-xl font-semibold sm:col-start-3 sm:self-start sm:text-2xl">
+                                    {item.title}
+                                </h2>
+                                <p className="col-span-2 col-start-1 row-start-3 text-[#55595E] text-base font-light sm:col-span-1 sm:col-start-3 sm:row-start-2 sm:text-lg">
+                                    {item.desc}
+                                </p>
                             </div>
                         </div>
                     );
