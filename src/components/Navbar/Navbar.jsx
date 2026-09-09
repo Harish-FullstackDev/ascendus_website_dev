@@ -288,12 +288,19 @@ const Navbar = () => {
                     {/* Dropdown — anchored to the trigger's left edge (not centered on
                         it) since the nav now starts near the viewport's left edge; a
                         centered 990px-wide panel would run off-screen to the left. */}
+                    {/* The padding is the hover bridge between the trigger and the
+                        panel, so the cursor can cross the gap without dropping the
+                        group-hover. It is sized to land the panel flush against the
+                        navbar's bottom edge rather than below it: this wrapper starts at
+                        the trigger's bottom, and the trigger is centred in an 80px row,
+                        leaving ~21px of slack beneath it. At 30px the panel cleared the
+                        navbar by ~9px and a strip of the page showed through. */}
                     <div
                       className="
                         invisible opacity-0 translate-y-3
                         group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
                         transition-all duration-300
-                        absolute left-0 top-full pt-[30px] z-50
+                        absolute left-0 top-full pt-[24px] z-50
                       "
                     >
                       {/* <div
