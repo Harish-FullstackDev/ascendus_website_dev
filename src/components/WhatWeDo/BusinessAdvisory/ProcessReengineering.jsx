@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const BIG_CARDS = [
     {
         title: "Process Assessment",
-        desc: "Our AI-powered bot automatically and accurately answers support questions with zero training required. Instantly generate replies, recap conversations for other agents, and create new help articles. Immediately recommend helpful content with machine learning—directly in your product.",
+        desc: "Our AI-powered bot automatically and accurately answers support questions with zero training required. Instantly generate replies, recap conversations for other agents, and create new help articles. Immediately recommend helpful content with machine learning — directly in your product.",
     },
     {
         title: "Lean Transformation",
