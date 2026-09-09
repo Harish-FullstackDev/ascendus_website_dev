@@ -187,7 +187,7 @@ export default function CoreEngineeringPillars() {
                 onPointerUp={endDrag}
                 onPointerLeave={endDrag}
                 onPointerCancel={endDrag}
-                className="w-full max-w-[14000px] flex gap-6 sm:gap-10 overflow-x-auto cursor-grab active:cursor-grabbing select-none touch-pan-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [scroll-snap-type:x_mandatory]"
+                className="w-full max-w-[14000px] flex gap-8 sm:gap-10 overflow-x-auto cursor-grab active:cursor-grabbing select-none touch-pan-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [scroll-snap-type:x_mandatory]"
             >
                 {SLIDES.map((item, index) => {
                     const isClone = index < REAL_LEN || index >= REAL_LEN * 2;
@@ -195,13 +195,16 @@ export default function CoreEngineeringPillars() {
                         <div
                             key={`slide-${index}`}
                             aria-hidden={isClone || undefined}
-                            className="shrink-0 w-[80%] sm:w-[40%] flex flex-col gap-6 py-4 [scroll-snap-align:start] px-5"
+                            className="shrink-0 w-[88%] sm:w-[40%] flex flex-col gap-6 py-4 [scroll-snap-align:start] px-0 sm:px-5"
                         >
-                            <div className="flex items-start gap-10">
+                            {/* Mobile stacks the card: icon, a full-width hairline, then the copy —
+                                the desktop icon | rule | copy row leaves the text roughly 90px wide
+                                on a phone, which is too narrow to read. */}
+                            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-10">
                                 <div className="relative shrink-0 size-[50px] sm:size-[60px]">
                                     <Image src={item.icon} alt="" fill className="object-contain" draggable={false} />
                                 </div>
-                                <div className="w-px h-[50px] sm:h-[180px] shrink-0 bg-[#7F7F7F]" />
+                                <div className="w-full h-px sm:w-px sm:h-[180px] shrink-0 bg-[#7F7F7F]" />
                                 <div className="flex flex-col gap-3">
                                     <h2 className="text-[#0D0C22] text-xl sm:text-2xl font-semibold">{item.title}</h2>
                                     <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
