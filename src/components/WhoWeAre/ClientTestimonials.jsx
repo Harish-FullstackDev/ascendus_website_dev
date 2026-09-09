@@ -169,7 +169,7 @@ export default function ClientTestimonials() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-12"
             >
-                <h2 className="text-2xl font-semibold text-[#2E3033]">What our Clients Say</h2>
+                <h2 className="text-2xl font-semibold text-[#2E3033]">What Our Clients Say</h2>
                 <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
                     We are passionate about empowering individuals and businesses to take control of their finances
                     and achieve their financial goals.

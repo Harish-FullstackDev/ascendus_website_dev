@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import serverRoomImg from "@/assets/HomePage/images/server-room.png";
+import serverRoomImg from "@/assets/HomePage/Enterprise_Technologies.webp";
 import UnderlineArrowLink from "./UnderlineArrowLink";
 
 export default function AboutPartner() {
@@ -36,13 +36,13 @@ export default function AboutPartner() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="relative w-full lg:w-[400px] max-w-[400px] aspect-[400/304] shrink-0"
+                    className="relative w-full lg:w-[640px] max-w-[640px] aspect-video shrink-0"
                 >
                     <Image
                         src={serverRoomImg}
                         alt="Enterprise technology infrastructure"
                         fill
-                        className="object-cover object-bottom"
+                        className="object-contain"
                     />
                 </motion.div>
             </div>

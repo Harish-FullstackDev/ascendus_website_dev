@@ -48,7 +48,7 @@ export default function ReadyToTransform({
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-12 px-6 sm:px-[64px] pt-32 sm:pt-30 lg:pt-32 pb-16 sm:pb-24 lg:pb-32"
                 >
-                    <div className="flex flex-col w-full md:gap-12 sm:w-[40%]">
+                    <div className="flex flex-col w-full md:gap-12 sm:w-[60%]">
                         <h2 className="text-2xl sm:text-5xl font-semibold text-white">
                             {title}
                         </h2>
@@ -61,7 +61,7 @@ export default function ReadyToTransform({
                     <button
                         type="button"
                         onClick={handleContactClick}
-                        className="w-full sm:w-[205px] h-14 sm:h-[70px] shrink-0 border border-[#002C4F] bg-[#002C4F] px-6 text-lg font-medium text-white transition-colors hover:bg-white hover:text-[#002C4F]"
+                        className="w-full sm:w-[190px] h-14 sm:h-[60px] shrink-0 border border-[#002C4F] bg-[#002C4F] px-6 sm:px-[24px] sm:py-[8px] text-lg font-light  text-white transition-colors hover:bg-white hover:text-[#002C4F]"
                     >
                         {buttonLabel}
                     </button>

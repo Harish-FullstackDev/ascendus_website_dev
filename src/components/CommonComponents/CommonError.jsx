@@ -34,10 +34,10 @@ export default function CommonError() {
           </a>
           , or head over to{' '}
           <a
-            href="https://ascendus.tech"
+            href="https://ascendus.sa"
             className="text-blue-500 hover:underline"
           >
-            ascendus.tech
+            ascendus.sa
           </a>{' '}
           to choose a new direction.
         </span>

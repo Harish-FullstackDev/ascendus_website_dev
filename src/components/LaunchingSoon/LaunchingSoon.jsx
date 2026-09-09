@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Orbitron } from "next/font/google";
 import gsap from "gsap";
 import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
-import logo from "../../assets/Brand/Ascendus_Logo_Primary.svg";
+import logo from "../../assets/Brand/Ascendus_Logo_Primary.png";
 import Footer from "@/components/Footer/Footer";
 
 const orbitron = Orbitron({ subsets: ["latin"], weight: ["600", "700"] });

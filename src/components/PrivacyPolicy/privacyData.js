@@ -116,7 +116,7 @@ export const sectionContent = {
       {
         parts: [
           "For questions, requests, or concerns regarding this Privacy Policy or the processing of your personal information, please contact Ascendus at ",
-          { text: "legal@ascendus.tech", href: "mailto:legal@ascendus.tech" },
+          { text: "legal@ascendus.sa", href: "mailto:legal@ascendus.sa" },
           " or through the Contact Us section of our website.",
         ],
       },

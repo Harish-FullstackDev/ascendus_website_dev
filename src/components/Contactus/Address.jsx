@@ -57,7 +57,7 @@ const ContactInfo = () => {
             </div>
             <div className="text-gray-700 text-base">
               <div>
-                <a className="hover:text-blue-500 transition-colors duration-200" href="mailto:info@ascendus.tech" target="_blank">info@ascendus.tech</a></div>
+                <a className="hover:text-blue-500 transition-colors duration-200" href="mailto:info@ascendus.sa" target="_blank">info@ascendus.sa</a></div>
             </div>
           </div> */}
 

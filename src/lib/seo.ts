@@ -11,8 +11,8 @@ export const generateOrganizationSchema = () => {
     "@type": "Organization",
     "name": "Ascendus",
     "alternateName": "Ascendus Technologies",
-    "url": "https://www.ascendus.tech",
-    "logo": "https://www.ascendus.tech/Brand/Ascendus_Logo_Primary.svg",
+    "url": "https://www.ascendus.sa",
+    "logo": "https://www.ascendus.sa/Brand/Ascendus_Logo_Primary.svg",
     "description": "Ascendus is a premium enterprise IT and SAP consulting firm providing digital transformation, cloud managed services, and S/4HANA migration across the UAE, Saudi Arabia, and the GCC.",
     "address": {
       "@type": "PostalAddress",
@@ -23,7 +23,7 @@ export const generateOrganizationSchema = () => {
     },
     "sameAs": [
       "https://www.linkedin.com/company/ascendus-company/?viewAsMember=true",
-      "https://twitter.com/AscendusTech" // TODO: confirm real handle
+      "https://x.com/ascendus_ksa"
     ],
     "contactPoint": [
       {
@@ -42,7 +42,7 @@ export const generateWebsiteSchema = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Ascendus",
-    "url": "https://www.ascendus.tech"
+    "url": "https://www.ascendus.sa"
   };
 };
 
@@ -54,7 +54,7 @@ export const generateBreadcrumbSchema = (crumbs: { name: string; item: string }[
       "@type": "ListItem",
       "position": index + 1,
       "name": crumb.name,
-      "item": crumb.item.startsWith('http') ? crumb.item : `https://www.ascendus.tech${crumb.item}`
+      "item": crumb.item.startsWith('http') ? crumb.item : `https://www.ascendus.sa${crumb.item}`
     }))
   };
 };
@@ -67,11 +67,11 @@ export const generateServiceSchema = (service: { name: string; description: stri
     "provider": {
       "@type": "Organization",
       "name": "Ascendus",
-      "url": "https://www.ascendus.tech"
+      "url": "https://www.ascendus.sa"
     },
     "name": service.name,
     "description": service.description,
-    "url": service.url.startsWith('http') ? service.url : `https://www.ascendus.tech${service.url}`,
+    "url": service.url.startsWith('http') ? service.url : `https://www.ascendus.sa${service.url}`,
     "areaServed": [
       { "@type": "Country", "name": "United Arab Emirates" },
       { "@type": "Country", "name": "Saudi Arabia" },

@@ -1,12 +1,13 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../assets/Brand/Ascendus_Logo_Flat_WHT.svg";
+import logo from "../../assets/Brand/Ascendus_Logo_Secondary.png";
 import { useState } from "react";
 import { MdOutlineMailOutline } from "react-icons/md";
 import FBIcon from "../../assets/Footer/FacebookIcon.svg";
-import InstagramIcon from "../../assets/Footer/instagram.svg";
-import LinkedinIcon from "../../assets/Footer/LinkedinIcon.svg";
+import InstagramIcon from "../../assets/Footer/Instagram_Icon.svg";
+import LinkedinIcon from "../../assets/Footer/LinkedIn_Icon.svg";
+import TwitterIcon from "../../assets/Footer/X_Icon.svg";
 // import CalendlyIcon from "../../assets/Footer/CalendlyIcon.svg";
 
 const Footer = () => {
@@ -441,10 +442,10 @@ const Footer = () => {
               </li> */}
               {/* <li>
                 <a
-                  href="mailto:info@ascendus.tech"
+                  href="mailto:info@ascendus.sa"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  info@ascendus.tech
+                  info@ascendus.sa
                 </a>
               </li> */}
               <li>
@@ -508,6 +509,21 @@ const Footer = () => {
                 <Image
                   src={InstagramIcon}
                   alt="Instagram"
+                  className="w-10 h-10"
+                  width={24}
+                  height={24}
+                />
+              </a>
+              <a
+                href="https://x.com/ascendus_ksa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
+                aria-label="Twitter"
+              >
+                <Image
+                  src={TwitterIcon}
+                  alt="Twitter"
                   className="w-10 h-10"
                   width={24}
                   height={24}

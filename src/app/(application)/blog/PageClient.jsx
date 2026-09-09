@@ -183,7 +183,7 @@ export default function BlogPage() {
     return (
         <div className="min-h-screen flex flex-col font-sans">
             <Navbar />
-            <div className="relative -mt-[64px] lg:-mt-[68px] h-[680px] sm:h-[200vh]">
+            <div className="relative -mt-[64px] lg:-mt-[88px] h-[680px] sm:h-[200vh]">
                 <div className="sticky top-0 h-[340px] sm:h-screen z-0">
                     <Hero />
                 </div>
@@ -224,9 +224,9 @@ export default function BlogPage() {
                 onSubmit={handleFormSubmit}
             />
 
-            <section>
+            {/* <section>
                 <AuthorsSection authors={authors} />
-            </section>
+            </section> */}
             <Footer />
         </div>
     );

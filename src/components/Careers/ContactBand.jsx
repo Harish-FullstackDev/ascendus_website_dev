@@ -38,10 +38,10 @@ export default function ContactBand() {
                                     Email us for general queries, including marketing and partnership opportunities
                                 </p>
                                 <a
-                                    href="mailto:hr@ascendus.tech"
+                                    href="mailto:hr@ascendus.sa"
                                     className="block text-blue-600 hover:text-blue-700 font-medium text-sm"
                                 >
-                                    hr@ascendus.tech
+                                    hr@ascendus.sa
                                 </a>
                             </div>
                         </div>
@@ -54,7 +54,7 @@ export default function ContactBand() {
                                     Call us to speak to a member of our team. We are always happy to help
                                 </p>
                                 <a
-                                    href="mailto:hr@ascendus.tech"
+                                    href="mailto:hr@ascendus.sa"
                                     className="block text-blue-600 hover:text-blue-700 font-medium text-sm"
                                 >
                                     0413-2191301

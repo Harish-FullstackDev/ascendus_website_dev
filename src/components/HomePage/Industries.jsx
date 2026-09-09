@@ -3,16 +3,20 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import manufacturingImg from "@/assets/HomePage/images/Industries/manufacturing.png";
-import retailImg from "@/assets/HomePage/images/Industries/retail-distribution.png";
-import governmentImg from "@/assets/HomePage/images/Industries/government-public-sector.png";
-import financialImg from "@/assets/HomePage/images/Industries/financial-services.png";
+import manufacturingImg from "@/assets/HomePage/IndustriesWeServe/Manufacturing.webp";
+import retailImg from "@/assets/HomePage/IndustriesWeServe/Retail_&_Consumer.webp";
+import governmentImg from "@/assets/HomePage/IndustriesWeServe/Government_&_Public_Sector.webp";
+import financialImg from "@/assets/HomePage/IndustriesWeServe/Banking_&_Financial_Services.webp";
+import energyImg from "@/assets/HomePage/IndustriesWeServe/Energy_&_Utilities.webp";
+import engineeringImg from "@/assets/HomePage/IndustriesWeServe/Engineering_&_Construction.webp";
+import healthcareImg from "@/assets/HomePage/IndustriesWeServe/Healthcare_&_Life_Sciences.webp";
+import technologyMediaImg from "@/assets/HomePage/IndustriesWeServe/Technology,_Media_&_Communications.webp";
+import transportationImg from "@/assets/HomePage/IndustriesWeServe/Transportation_&_Logistics.webp";
+import educationImg from "@/assets/HomePage/IndustriesWeServe/Education_&_Research.webp";
 import arrowIcon from "@/assets/HomePage/Industries/icon-arrow.svg";
 
-// The 4 industries from Figma (node 2700:1394) plus 6 more supplied since.
-// Titles and descriptions are all final. The last 6 still borrow the original
-// four photos on a loop (`imagePending: true`) because no photography exists
-// for them yet — swap `image` on those once it lands. The carousel works off
+// All 10 industries now have their own dedicated photo (IndustriesWeServe/) —
+// no more borrowed/looped placeholders. The carousel works off
 // `INDUSTRIES.length`, so adding or removing cards needs no other code changes.
 const INDUSTRIES = [
     {
@@ -38,38 +42,32 @@ const INDUSTRIES = [
     {
         title: "Energy & Utilities",
         desc: "Modernizing asset management, field operations, and grid systems built for uptime and regulatory reporting.",
-        image: manufacturingImg,
-        imagePending: true,
+        image: energyImg,
     },
     {
         title: "Engineering & Construction",
         desc: "Coordinating project controls, procurement, and site execution across complex capital programs.",
-        image: retailImg,
-        imagePending: true,
+        image: engineeringImg,
     },
     {
         title: "Healthcare & Life Sciences",
         desc: "Supporting validated, compliant systems across clinical, research, and life sciences operations.",
-        image: governmentImg,
-        imagePending: true,
+        image: healthcareImg,
     },
     {
         title: "Technology, Media & Communications",
         desc: "Scaling billing, network, and content platforms for high-volume technology and media providers.",
-        image: financialImg,
-        imagePending: true,
+        image: technologyMediaImg,
     },
     {
         title: "Transportation & Logistics",
         desc: "Connecting fleet, freight, and supply chain systems for real-time visibility and on-time delivery.",
-        image: manufacturingImg,
-        imagePending: true,
+        image: transportationImg,
     },
     {
         title: "Education & Research",
         desc: "Unifying student, academic, research, and administrative systems on one connected platform.",
-        image: retailImg,
-        imagePending: true,
+        image: educationImg,
     },
 ];
 
@@ -246,19 +244,15 @@ export default function Industries() {
                             Built for Your Industry, Not Just Enterprise in General
                         </p>
                     </div>
-                </motion.div>
 
-                {/* Prev/next controls — the Figma frame for this section links to a
-                    "Find Your Solution" button that always resolves to /who-we-are (no
-                    solutions page exists to point it at), so it's removed rather than
-                    shipping a link that lies about its destination. Figma has no arrow
-                    control on this section, but does use this exact white-pill,
-                    two-arrow pattern elsewhere on the homepage (node 2700:1310) — reused
-                    here per direct instruction. Sized up from that reference's 40px (and
-                    given its own row directly above the card track, right-aligned over
-                    the last visible card) per explicit feedback that the reference size
-                    and the header-row placement both read too small/cramped. */}
-                <div className="flex justify-end mt-6">
+                    {/* Prev/next controls — the Figma frame for this section links to a
+                        "Find Your Solution" button that always resolves to /who-we-are (no
+                        solutions page exists to point it at), so it's removed rather than
+                        shipping a link that lies about its destination. Figma has no arrow
+                        control on this section, but does use this exact white-pill,
+                        two-arrow pattern elsewhere on the homepage (node 2700:1310) — reused
+                        here per direct instruction, aligned with the title/description
+                        instead of on its own row. */}
                     <div className="shrink-0 flex items-center gap-3 bg-white rounded-full p-3">
                         <button
                             type="button"
@@ -277,7 +271,7 @@ export default function Industries() {
                             <Image src={arrowIcon} alt="" className="size-12 rotate-90" />
                         </button>
                     </div>
-                </div>
+                </motion.div>
             </div>
 
             {/* Sliding carousel: deliberately breaks out of the padded/max-width

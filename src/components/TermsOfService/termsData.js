@@ -103,7 +103,7 @@ export const sectionContent = {
       {
         parts: [
           "For questions regarding these Terms of Use, please contact Ascendus using the contact details provided on our website or by emailing ",
-          { text: "legal@ascendus.tech", href: "mailto:legal@ascendus.tech" },
+          { text: "legal@ascendus.sa", href: "mailto:legal@ascendus.sa" },
           ".",
         ],
       },

@@ -106,7 +106,7 @@ export default function MissionVision() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-12 px-4 sm:px-6 lg:px-8"
             >
-                <h2 className="text-[28px] font-semibold text-[#2E3033]">Where we&apos;re headed, and why</h2>
+                <h2 className="text-[28px] font-semibold text-[#2E3033]">Where We&apos;re Headed, and Why</h2>
                 <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
                     Everything we build ties back to two commitments what we exist to do for clients today, and
                     where we intend to take the practice next.

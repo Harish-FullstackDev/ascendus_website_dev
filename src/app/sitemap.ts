@@ -3,7 +3,7 @@ import { supabase } from '@/lib/supabaseClient';
 import { industryReportsData } from '@/data/industryReportsData';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.ascendus.tech';
+  const baseUrl = 'https://www.ascendus.sa';
   const now = new Date().toISOString();
 
   // 1. Core static routes

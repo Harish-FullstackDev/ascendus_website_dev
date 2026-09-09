@@ -1,36 +1,44 @@
 "use client";
 
 import { useLayoutEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
+
+import s4hanaLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/icon/s4hana.svg";
+import riseWithSapLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/icon/rise_with_sap.svg";
+import growWithSapLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/icon/grow_with_sap.svg";
+import amsLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/icon/ams.svg";
+import microsoftLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/icon/microsoft.svg";
+import integrationSuiteLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/icon/integration_suite.svg";
 
 const SERVICES = [
     {
-        number: "01",
+        logo: s4hanaLogo,
         title: "SAP S/4HANA Migration",
         desc: "End-to-end migration from ECC to S/4HANA, planned around your compliance deadlines and cutover windows, not a generic timeline.",
     },
     {
-        number: "02",
+        logo: riseWithSapLogo,
         title: "RISE with SAP",
         desc: "Full RISE with SAP delivery, infrastructure, migration, and managed operations bundled under a single SAP-backed contract.",
     },
     {
-        number: "03",
+        logo: growWithSapLogo,
         title: "GROW with SAP",
         desc: "Cloud native S/4HANA on SAP's best practice reference architecture, built for organizations without legacy customization to carry over.",
     },
     {
-        number: "04",
+        logo: amsLogo,
         title: "Application Managed Services",
         desc: "We manage and support your applications to keep them running smoothly, reliably, and efficiently.",
     },
     {
-        number: "05",
+        logo: microsoftLogo,
         title: "Microsoft & Cloud Services",
         desc: "We provide simple, secure, and scalable Microsoft and cloud solutions to support your business.",
     },
     {
-        number: "06",
+        logo: integrationSuiteLogo,
         title: "Systems Integration",
         desc: "We provide ongoing support and maintenance to keep your applications secure, stable, and performing well.",
     },
@@ -114,7 +122,9 @@ function ServiceCard({ service }) {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="w-full h-full bg-white flex flex-col items-start justify-between gap-6 p-8 shadow-[2px_4px_8.4px_0px_rgba(0,0,0,0.1)] min-h-[280px] sm:min-h-[304px]"
         >
-            <p className="text-[#8794a3] text-[28px] font-medium">{service.number}</p>
+            <div className="relative h-8 w-[140px]">
+                <Image src={service.logo} alt="" fill className="object-contain object-left" />
+            </div>
             <p className="text-[#10161d] text-2xl font-medium">{service.title}</p>
             <p className="text-[#10161d] text-base font-extralight leading-[1.59]">
                 {service.desc}

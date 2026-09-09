@@ -5,9 +5,8 @@ import { IoMdMenu, IoMdClose } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import logo from "../../assets/Brand/Ascendus_Logo_Flat_WHT.svg";
-import logo2 from "../../assets/Brand/Ascendus_Logo_Primary.svg";
-import logo3 from "../../assets/Brand/Ascendus_Icon_Primary.png";
+import logo from "../../assets/Brand/Ascendus_Logo_Secondary.png";
+import logo2 from "../../assets/Brand/Ascendus_Logo_Primary.png";
 import logo4 from "../../assets/Brand/Ascendus_Wordmark_OnDark.svg";
 import logo5 from "../../assets/Brand/Ascendus_Wordmark_OnLight.svg";
 import { isValidRoute } from "../Constants/Routes/routes";
@@ -172,11 +171,11 @@ const Navbar = () => {
             <div
               className="
                 relative
-                lg:h-[60px]
+                lg:h-[88px]
                 w-full
                 flex items-center
                 justify-between
-                px-4 py-1.5
+                py-[24px]
               "
             >
               {/* Sibling background layer to avoid nested backdrop-filter bug */}
@@ -192,14 +191,14 @@ const Navbar = () => {
                 `}
               />
               {/* Left Logo Area with Ascendus and SAP logos */}
-              <div className="flex items-center gap-3 px-4 sm:px-8 lg:px-10">
+              {/* <div className="flex items-center gap-3 px-4 sm:px-8 lg:px-10">
                 <Link
                   href="/"
                   onClick={closeMenu}
                   className="group flex items-center overflow-hidden"
-                >
-                  {/* Icon */}
-                  <div className="relative z-10 flex-shrink-0">
+                > */}
+              {/* Icon */}
+              {/* <div className="relative z-10 flex-shrink-0">
                     <Image
                       src={logo3}
                       alt="Ascendus Icon"
@@ -207,10 +206,10 @@ const Navbar = () => {
                       height={101}
                       className="h-8.5 w-auto object-contain transition-all duration-300 ease-out"
                     />
-                  </div>
+                  </div> */}
 
-                  {/* Company Name Reveal */}
-                  <div
+              {/* Company Name Reveal */}
+              {/* <div
                     className="
                     w-0
                     ml-0
@@ -232,16 +231,16 @@ const Navbar = () => {
                       className="block h-6 w-auto max-w-none object-contain"
                     />
                   </div>
-                </Link>
+                </Link> */}
 
-                {/* Subtle vertical separator line */}
-                <div
+              {/* Subtle vertical separator line */}
+              {/* <div
                   className={`h-8 w-[1px] ${isNavbarLight ? "bg-gray-400/40" : "bg-white/20"
                     }`}
-                />
+                /> */}
 
-                {/* SAP Partner Logo */}
-                <Link href="/" className="flex items-center flex-shrink-0">
+              {/* SAP Partner Logo */}
+              {/* <Link href="/" className="flex items-center flex-shrink-0">
                   <Image
                     src="/sap-logo-svg.svg"
                     alt="SAP Partner Logo"
@@ -250,10 +249,10 @@ const Navbar = () => {
                     height={40}
                   />
                 </Link>
-              </div>
+              </div> */}
 
-              {/* Center Menu (Absolutely Centered) */}
-              <div className="absolute left-1/2 -translate-x-1/2">
+              {/* Nav links start at the row's left edge, 64px in. */}
+              <div className="absolute left-0 pl-[64px]">
                 <ul className="flex items-center gap-3">
                   <Link
                     href="/"
@@ -286,13 +285,15 @@ const Navbar = () => {
                       </svg>
                     </button>
 
-                    {/* Dropdown */}
+                    {/* Dropdown — anchored to the trigger's left edge (not centered on
+                        it) since the nav now starts near the viewport's left edge; a
+                        centered 990px-wide panel would run off-screen to the left. */}
                     <div
                       className="
                         invisible opacity-0 translate-y-3
                         group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
                         transition-all duration-300
-                        absolute left-1/2 -translate-x-1/2 top-full pt-3 z-50
+                        absolute left-0 top-full pt-[30px] z-50
                       "
                     >
                       {/* <div
@@ -442,14 +443,31 @@ const Navbar = () => {
                 </ul>
               </div>
 
-              {/* Right Side Placeholder to balance the centered layout */}
-              {/* Right Side */}
-              <div className="hidden lg:flex items-center gap-3">
-                <LanguageSelector isNavbarLight={isNavbarLight} />
+              {/* Logo — pinned to the right edge; ml-auto keeps it there regardless of
+                  the row's justify-between (the center menu is absolutely positioned,
+                  so this is the only real flex child otherwise free to drift). */}
+              <div className="hidden lg:flex items-center gap-3 ml-auto pr-[64px]">
+                {/* <LanguageSelector isNavbarLight={isNavbarLight} /> */}
                 {/* <ContactUsButton /> */}
-                <BookAcallButton
+                {/* <BookAcallButton
                   isNavbarLight={isNavbarLight}
-                  setShowCalendly={setShowCalendly} />
+                  setShowCalendly={setShowCalendly} /> */}
+                <Link
+                  href="/"
+                  onClick={closeMenu}
+                  className="group flex items-center overflow-hidden"
+                >
+                  <div className="relative z-10 flex-shrink-0">
+                    <Image
+                      src={isNavbarLight ? logo2 : logo}
+                      alt="Ascendus Logo"
+                      width={160}
+                      height={40}
+                      className="h-8 sm:h-10 w-auto object-contain transition-all duration-300 ease-out"
+                    />
+                  </div>
+                </Link>
+
               </div>
             </div>
           </div>
@@ -459,16 +477,6 @@ const Navbar = () => {
             ? "bg-white/80 border-gray-200/20 text-black shadow-md"
             : "bg-neutral-900/90 border-neutral-800/30 text-white"
             }`}>
-            <Link href="/" onClick={closeMenu} className="flex items-center">
-              <Image
-                src={isNavbarLight ? logo2 : logo}
-                alt="Ascendus Logo"
-                className="h-8 sm:h-10 w-auto"
-                width={160}
-                height={40}
-              />
-            </Link>
-
             {/* Mobile menu toggle button */}
             <button
               className={`lg:hidden transition-colors duration-300 flex items-center justify-center p-1.5 ${isNavbarLight
@@ -480,6 +488,16 @@ const Navbar = () => {
             >
               <IoMdMenu className="text-3xl sm:text-4xl" />
             </button>
+
+            <Link href="/" onClick={closeMenu} className="flex items-center">
+              <Image
+                src={isNavbarLight ? logo2 : logo}
+                alt="Ascendus Logo"
+                className="h-8 sm:h-10 w-auto"
+                width={160}
+                height={40}
+              />
+            </Link>
           </div>
         </div>
       </nav>

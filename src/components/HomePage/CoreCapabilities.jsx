@@ -7,18 +7,18 @@ import { motion } from "framer-motion";
 
 import cardArrowIcon from "@/assets/HomePage/CoreCapabilities/card-arrow-icon.svg";
 
-import enterpriseTransformationImg from "@/assets/HomePage/CoreCapabilities/card-enterprise-transformation.png";
-import artificialIntelligenceImg from "@/assets/HomePage/CoreCapabilities/card-artificial-intelligence.png";
-import cloudInfrastructureImg from "@/assets/HomePage/CoreCapabilities/card-cloud-infrastructure.png";
-import dataIntelligenceImg from "@/assets/WhatWeDo/Data Inteligent/new/hero_bg.jpg";
-import digitalEngineeringImg from "@/assets/WhatWeDo/Digital Engineering/new/hero_bg.jpg";
-import customerExperienceImg from "@/assets/WhatWeDo/Customer Experience/new/hero_bg.jpg";
-import experienceDesignImg from "@/assets/WhatWeDo/Experience Design/new/Experience_Design.jpg";
-import intelligentAutomationImg from "@/assets/WhatWeDo/Intelligent Automation/new/Intelligent_Automation.jpg";
-import cybersecurityImg from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/new/Cybersecurity.jpg";
-import managedServicesImg from "@/assets/WhatWeDo/Managed Services/new/hero_bg.jpg";
-import businessAdvisoryImg from "@/assets/WhatWeDo/Business Advisory/new/hero_bg.jpg";
-import innovationImg from "@/assets/WhatWeDo/Innovation & Emerging Technologies/new/Innovation.jpg";
+import enterpriseTransformationImg from "@/assets/HomePage/capab/enterprise_transformation.webp";
+import artificialIntelligenceImg from "@/assets/HomePage/capab/artificial_intelligence.webp";
+import cloudInfrastructureImg from "@/assets/HomePage/capab/cloud_infrastructure.webp";
+import dataIntelligenceImg from "@/assets/HomePage/capab/data_intelligence.webp";
+import digitalEngineeringImg from "@/assets/HomePage/capab/digital_engineering.webp";
+import customerExperienceImg from "@/assets/HomePage/capab/customer_experience.webp";
+import experienceDesignImg from "@/assets/HomePage/capab/experience_design.webp";
+import intelligentAutomationImg from "@/assets/HomePage/capab/intelligent_automation.webp";
+import cybersecurityImg from "@/assets/HomePage/capab/cybersecurity.webp";
+import managedServicesImg from "@/assets/HomePage/capab/managed_services.webp";
+import businessAdvisoryImg from "@/assets/HomePage/capab/business_advisory.webp";
+import innovationImg from "@/assets/HomePage/capab/innovation.webp";
 
 // Same 12 entries, same order, as the "What We Do" navbar dropdown
 // (Navbar.jsx) — that list is the source of truth for hrefs here.
