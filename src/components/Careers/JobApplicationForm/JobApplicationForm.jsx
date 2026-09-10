@@ -133,7 +133,7 @@ const initialFormData = {
     hearAbout: "",
 };
 
-const MAX_RESUME_SIZE = 5 * 1024 * 1024;
+const MAX_RESUME_SIZE = 4 * 1024 * 1024;
 
 export default function JobApplicationForm() {
     const searchParams = useSearchParams();
@@ -243,7 +243,7 @@ export default function JobApplicationForm() {
             return;
         }
         if (file.size > MAX_RESUME_SIZE) {
-            setResumeError("File is too large. Maximum size is 5MB.");
+            setResumeError("File is too large. Maximum size is 4MB.");
             setResumeFile(null);
             return;
         }
@@ -283,7 +283,7 @@ export default function JobApplicationForm() {
             payload.append("consent", "true");
             payload.append("resume", resumeFile);
 
-            const response = await fetch("/api/careers/apply", {
+            const response = await fetch("/api/careers/apply/", {
                 method: "POST",
                 body: payload,
             });
@@ -399,7 +399,7 @@ export default function JobApplicationForm() {
                                 <Image src={uploadIcon} alt="" width={32} height={32} />
                             )}
                             <span className="text-sm text-[#4a5565] text-center font-medium">
-                                {resumeFile ? resumeFile.name : "Click to upload resume (PDF or Word, max 5MB)"}
+                                {resumeFile ? resumeFile.name : "Click to upload resume (PDF or Word, max 4MB)"}
                             </span>
                         </button>
                         <input

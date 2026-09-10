@@ -3,7 +3,9 @@ import { createAdminClient } from '@/lib/supabaseClient';
 
 export const runtime = 'nodejs';
 
-const MAX_RESUME_SIZE = 5 * 1024 * 1024;
+// Capped below the platform's ~4.5MB serverless request body limit, which
+// rejects larger uploads before this handler ever runs.
+const MAX_RESUME_SIZE = 4 * 1024 * 1024;
 
 const REQUIRED_FIELDS = [
   'firstName', 'lastName', 'email', 'phone',
@@ -81,7 +83,7 @@ export async function POST(req) {
       );
     }
     if (file.size > MAX_RESUME_SIZE) {
-      return NextResponse.json({ error: 'Resume file exceeds maximum size of 5MB.' }, { status: 400 });
+      return NextResponse.json({ error: 'Resume file exceeds maximum size of 4MB.' }, { status: 400 });
     }
 
     supabase = createAdminClient();

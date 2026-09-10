@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
-import "@/lib/pdfPolyfill";
-import { PDFParse } from "pdf-parse";
+import { extractText } from "unpdf";
 import mammoth from "mammoth";
  
 export const runtime = "nodejs";
+// Reading a PDF plus the one-time cold start of the bundled pdf.js build can
+// exceed the platform's default serverless timeout on the first request.
+export const maxDuration = 60;
  
 const EXPERIENCE_LEVELS = ["0-1 years", "1-3 years", "3-5 years", "5-10 years", "10+ years"];
  
@@ -445,8 +447,10 @@ export async function POST(req) {
             return NextResponse.json({ error: "Invalid file type. Only PDF and Word documents are allowed." }, { status: 400 });
         }
  
-        if (fileSize > 5 * 1024 * 1024) {
-            return NextResponse.json({ error: "File exceeds maximum size of 5MB." }, { status: 400 });
+        // Capped below the platform's ~4.5MB serverless request body limit,
+        // which rejects larger uploads before this handler ever runs.
+        if (fileSize > 4 * 1024 * 1024) {
+            return NextResponse.json({ error: "File exceeds maximum size of 4MB." }, { status: 400 });
         }
  
         if (isLegacyDoc) {
@@ -460,13 +464,10 @@ export async function POST(req) {
  
         let rawText = "";
         if (isPdf) {
-            const parser = new PDFParse({ data: buffer });
-            try {
-                const result = await parser.getText();
-                rawText = result.text || "";
-            } finally {
-                await parser.destroy();
-            }
+            // mergePages joins every page into one string while preserving the
+            // per-item line breaks the line-based heuristics below rely on.
+            const result = await extractText(new Uint8Array(buffer), { mergePages: true });
+            rawText = result.text || "";
         } else {
             const result = await mammoth.extractRawText({ buffer });
             rawText = result.value || "";
@@ -485,7 +486,7 @@ export async function POST(req) {
         const lines = rawText
             .split(/\r?\n/)
             .map((l) => l.trim())
-            .filter((l) => l && !/^--\s*\d+\s*of\s*\d+\s*--$/i.test(l)); // strip pdf-parse page separators
+            .filter((l) => l && !/^--\s*\d+\s*of\s*\d+\s*--$/i.test(l)); // strip any page-separator artifacts
  
         // Each field is extracted independently and defensively: a bad match
         // (or an unexpected edge case in one heuristic) on a resume with an

@@ -84,8 +84,8 @@ function ResumeUploadModal({ isOpen, onClose, jobTitle }) {
             setFile(null);
             return;
         }
-        if (selectedFile.size > 5 * 1024 * 1024) {
-            setError("File is too large. Maximum size is 5MB.");
+        if (selectedFile.size > 4 * 1024 * 1024) {
+            setError("File is too large. Maximum size is 4MB.");
             setFile(null);
             return;
         }
@@ -126,7 +126,7 @@ function ResumeUploadModal({ isOpen, onClose, jobTitle }) {
             const formData = new FormData();
             formData.append("file", file);
 
-            const response = await fetch("/api/parse-resume", {
+            const response = await fetch("/api/parse-resume/", {
                 method: "POST",
                 body: formData,
             });
@@ -212,7 +212,7 @@ function ResumeUploadModal({ isOpen, onClose, jobTitle }) {
                             <span className="text-sm font-medium text-slate-700 text-center">
                                 {file ? file.name : "Drag & drop or click to upload"}
                             </span>
-                            <span className="text-xs text-slate-400">PDF, DOC, DOCX up to 5MB</span>
+                            <span className="text-xs text-slate-400">PDF, DOC, DOCX up to 4MB</span>
                             <input
                                 ref={fileInputRef}
                                 type="file"
