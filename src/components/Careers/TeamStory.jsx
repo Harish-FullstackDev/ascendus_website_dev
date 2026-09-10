@@ -8,10 +8,10 @@ const AVATAR = "/blog/default-author.svg";
 const TESTIMONIALS = [
     {
         avatar: AVATAR,
-        name: "Vignesh",
-        role: "Marketing Head",
+        name: "Tharanidharen",
+        role: "Graphic Designer",
         quote:
-            "I get real ownership over how we tell our story to the market, and the freedom to try new channels without waiting months for sign-off.",
+            "I get to shape how the brand actually looks and feels across every touchpoint, not just push pixels on a template. That creative ownership is rare to find.",
     },
     {
         avatar: AVATAR,
