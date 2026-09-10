@@ -190,26 +190,32 @@ export default function SAPS4HANAMigrationImplementation() {
                             same copy renders as a normal in-flow block after the image
                             instead (see the sibling block below) rather than trying to
                             force it into a box that's fundamentally too short for it. */}
-                        <AnimatePresence mode="wait">
-                            {/* Card footprint (position/size against the image) is unchanged —
-                                still bottom-flush, top-31%, inset from the left/right. Figma's
-                                sibling item frames (e.g. "RISE with SAP") all share the same
-                                spec for this content: a 462×256 box centered inside the 571×403
-                                card — i.e. equal insets on every side (54.5/571 ≈ 9.55% left+right,
-                                73.5/403 ≈ 18.24% top+bottom), with justify-between spreading the
-                                title and bullets inside that box rather than a flat padding value.
-                                That symmetric inset is what reads as "centered" — a flat padding
-                                with top-anchored content always pools leftover space at the
-                                bottom once the copy is shorter than the card. */}
-                            <motion.div
-                                key={active.title}
-                                initial={{ opacity: 0, y: 12 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -12 }}
-                                transition={{ duration: 0.35, ease: "easeOut" }}
-                                className="hidden sm:block absolute left-[25%] right-[6%] top-[31%] bottom-0 bg-white"
-                            >
-                                <div className="absolute left-[9.55%] right-[9.55%] top-[18.24%] bottom-[18.24%] flex flex-col justify-between gap-6">
+                        {/* Card footprint (position/size against the image) is unchanged —
+                            still bottom-flush, top-31%, inset from the left/right. Figma's
+                            sibling item frames (e.g. "RISE with SAP") all share the same
+                            spec for this content: a 462×256 box centered inside the 571×403
+                            card — i.e. equal insets on every side (54.5/571 ≈ 9.55% left+right,
+                            73.5/403 ≈ 18.24% top+bottom), with justify-between spreading the
+                            title and bullets inside that box rather than a flat padding value.
+                            That symmetric inset is what reads as "centered" — a flat padding
+                            with top-anchored content always pools leftover space at the
+                            bottom once the copy is shorter than the card. */}
+                        <div className="hidden sm:block absolute left-[25%] right-[6%] top-[31%] bottom-0 bg-white">
+                            {/* The white card is deliberately OUTSIDE AnimatePresence: it
+                                stays mounted and static while the selection changes, so
+                                hovering the list swaps only the copy inside it. Animating
+                                the card itself made the whole white panel fade and slide
+                                on every hover, which read as the panel flickering rather
+                                than the content updating. */}
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={active.title}
+                                    initial={{ opacity: 0, y: 12 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -12 }}
+                                    transition={{ duration: 0.35, ease: "easeOut" }}
+                                    className="absolute left-[9.55%] right-[9.55%] top-[18.24%] bottom-[18.24%] flex flex-col justify-between gap-6"
+                                >
                                     <div className="flex flex-col gap-6">
                                         <div className="relative h-10 w-36 shrink-0">
                                             <Image src={active.logo} alt="" fill className="object-contain object-left" />
@@ -221,33 +227,37 @@ export default function SAPS4HANAMigrationImplementation() {
                                             <li key={bullet}>{bullet}</li>
                                         ))}
                                     </ul>
-                                </div>
-                            </motion.div>
-                        </AnimatePresence>
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
                     </div>
 
                     {/* Mobile only: same content as the overlay above, but as a plain
                         in-flow block below the image instead of stacked on top of it. */}
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={active.title}
-                            initial={{ opacity: 0, y: 12 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -12 }}
-                            transition={{ duration: 0.35, ease: "easeOut" }}
-                            className="sm:hidden bg-white p-6 flex flex-col gap-6"
-                        >
-                            <div className="relative h-10 w-36 shrink-0">
-                                <Image src={active.logo} alt="" fill className="object-contain object-left" />
-                            </div>
-                            <h3 className="text-[#10161d] text-lg font-medium leading-[1.4]">{active.desc}</h3>
-                            <ul className="list-disc pl-5 flex flex-col gap-1 text-[#3d3d4e] text-lg font-light leading-[1.4]">
-                                {active.bullets.map((bullet) => (
-                                    <li key={bullet}>{bullet}</li>
-                                ))}
-                            </ul>
-                        </motion.div>
-                    </AnimatePresence>
+                    {/* Same split as the overlay above: the white block stays
+                        mounted, only its contents animate on selection change. */}
+                    <div className="sm:hidden bg-white p-6">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={active.title}
+                                initial={{ opacity: 0, y: 12 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -12 }}
+                                transition={{ duration: 0.35, ease: "easeOut" }}
+                                className="flex flex-col gap-6"
+                            >
+                                <div className="relative h-10 w-36 shrink-0">
+                                    <Image src={active.logo} alt="" fill className="object-contain object-left" />
+                                </div>
+                                <h3 className="text-[#10161d] text-lg font-medium leading-[1.4]">{active.desc}</h3>
+                                <ul className="list-disc pl-5 flex flex-col gap-1 text-[#3d3d4e] text-lg font-light leading-[1.4]">
+                                    {active.bullets.map((bullet) => (
+                                        <li key={bullet}>{bullet}</li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        </AnimatePresence>
+                    </div>
                 </div>
             </div>
         </section>

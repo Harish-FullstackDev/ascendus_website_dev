@@ -157,28 +157,34 @@ export default function CapabilitiesAccordion() {
                             the image instead (see the sibling block below), since the
                             fixed-aspect-ratio image gets too short on a narrow phone to hold
                             this content overlaid without clipping it. */}
-                        <AnimatePresence mode="wait">
-                            {/* Card footprint (position/size against the image) stays
-                                bottom-flush, top-31%, inset from the left/right — matching
-                                Figma's card bottom = panel bottom. The sibling item frames
-                                on the SAP Transformation page's equivalent section (which
-                                this list+panel component is shared with) share one spec for
-                                the content inside that footprint: a 462×256 box centered
-                                inside the 571×403 card — i.e. equal insets on every side
-                                (54.5/571 ≈ 9.55% left+right, 73.5/403 ≈ 18.24% top+bottom),
-                                with justify-between spreading the desc and bullets inside
-                                that box rather than a flat padding value stretched across
-                                the whole footprint (which pushes them far apart once the
-                                copy is shorter than the card). */}
-                            <motion.div
-                                key={active.title}
-                                initial={{ opacity: 0, y: 12 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -12 }}
-                                transition={{ duration: 0.35, ease: "easeOut" }}
-                                className="hidden sm:block absolute left-[25%] right-[6%] top-[31%] bottom-0 bg-white"
-                            >
-                                <div className="absolute left-[9.55%] right-[9.55%] top-[18.24%] bottom-[18.24%] flex flex-col justify-between gap-6">
+                        {/* Card footprint (position/size against the image) stays
+                            bottom-flush, top-31%, inset from the left/right — matching
+                            Figma's card bottom = panel bottom. The sibling item frames
+                            on the SAP Transformation page's equivalent section (which
+                            this list+panel component is shared with) share one spec for
+                            the content inside that footprint: a 462×256 box centered
+                            inside the 571×403 card — i.e. equal insets on every side
+                            (54.5/571 ≈ 9.55% left+right, 73.5/403 ≈ 18.24% top+bottom),
+                            with justify-between spreading the desc and bullets inside
+                            that box rather than a flat padding value stretched across
+                            the whole footprint (which pushes them far apart once the
+                            copy is shorter than the card). */}
+                        <div className="hidden sm:block absolute left-[25%] right-[6%] top-[31%] bottom-0 bg-white">
+                            {/* The white card is deliberately OUTSIDE AnimatePresence: it
+                                stays mounted and static while the selection changes, so
+                                hovering the list swaps only the copy inside it. Animating
+                                the card itself made the whole white panel fade and slide
+                                on every hover, which read as the panel flickering rather
+                                than the content updating. */}
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={active.title}
+                                    initial={{ opacity: 0, y: 12 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -12 }}
+                                    transition={{ duration: 0.35, ease: "easeOut" }}
+                                    className="absolute left-[9.55%] right-[9.55%] top-[18.24%] bottom-[18.24%] flex flex-col justify-between gap-6"
+                                >
                                     <div className="flex flex-col gap-6">
                                         <div className="relative h-10 w-36 shrink-0">
                                             <Image src={active.logo} alt="" fill className="object-contain object-left" />
@@ -190,33 +196,37 @@ export default function CapabilitiesAccordion() {
                                             <li key={bullet}>{bullet}</li>
                                         ))}
                                     </ul>
-                                </div>
-                            </motion.div>
-                        </AnimatePresence>
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
                     </div>
 
                     {/* Mobile only: same content as the overlay above, but as a plain
                         in-flow block below the image instead of stacked on top of it. */}
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={active.title}
-                            initial={{ opacity: 0, y: 12 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -12 }}
-                            transition={{ duration: 0.35, ease: "easeOut" }}
-                            className="sm:hidden bg-white p-6 flex flex-col gap-6"
-                        >
-                            <div className="relative h-10 w-36 shrink-0">
-                                <Image src={active.logo} alt="" fill className="object-contain object-left" />
-                            </div>
-                            <h2 className="text-[#2E3033] text-lg font-semibold leading-[1.4]">{active.desc}</h2>
-                            <ul className="list-disc pl-5 flex flex-col gap-1 text-[#55595E] text-lg font-light leading-[1.4]">
-                                {active.bullets.map((bullet) => (
-                                    <li key={bullet}>{bullet}</li>
-                                ))}
-                            </ul>
-                        </motion.div>
-                    </AnimatePresence>
+                    {/* Same split as the overlay above: the white block stays
+                        mounted, only its contents animate on selection change. */}
+                    <div className="sm:hidden bg-white p-6">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={active.title}
+                                initial={{ opacity: 0, y: 12 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -12 }}
+                                transition={{ duration: 0.35, ease: "easeOut" }}
+                                className="flex flex-col gap-6"
+                            >
+                                <div className="relative h-10 w-36 shrink-0">
+                                    <Image src={active.logo} alt="" fill className="object-contain object-left" />
+                                </div>
+                                <h2 className="text-[#2E3033] text-lg font-semibold leading-[1.4]">{active.desc}</h2>
+                                <ul className="list-disc pl-5 flex flex-col gap-1 text-[#55595E] text-lg font-light leading-[1.4]">
+                                    {active.bullets.map((bullet) => (
+                                        <li key={bullet}>{bullet}</li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        </AnimatePresence>
+                    </div>
                 </div>
             </div>
         </section>

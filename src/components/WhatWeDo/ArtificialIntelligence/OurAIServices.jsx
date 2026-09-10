@@ -146,7 +146,7 @@ export default function OurAIServices() {
                                 >
                                     <h2 className="text-white text-xl sm:text-2xl font-semibold ">{card.title}</h2>
                                     <p
-                                        className={`text-white/85 text-lg font-light overflow-hidden transition-all duration-700 ease-out ${isActive ? "max-h-64 opacity-100 delay-500" : "max-h-0 opacity-0"
+                                        className={`text-white/85 text-lg font-light overflow-hidden transition-all duration-700 ease-out ${isActive ? "max-h-64 opacity-100 delay-250" : "max-h-0 opacity-0"
                                             }`}
                                     >
                                         {card.desc}
