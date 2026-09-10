@@ -15,7 +15,7 @@ export default function BlogCardGrid({ blogs, loading, onCardClick, onWriteFirst
     if (blogs.length === 0) {
         return (
             <div className="text-center py-40 border border-dashed border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 bg-white">
-                <p className="text-slate-600 text-lg mb-6">
+                <p className="text-[#55595E] font-light text-lg mb-6">
                     No blog posts found. Due too techenical issue
                 </p>
                 {/* <button
@@ -54,7 +54,7 @@ export default function BlogCardGrid({ blogs, loading, onCardClick, onWriteFirst
 
                                 <CardItem
                                     translateZ="0"
-                                    className="mt-4 text-lg  line-clamp-2 min-h-[56px]"
+                                    className="mt-4 text-lg font-semibold text-[#2E3033] line-clamp-2 min-h-[56px]"
                                 >
                                     {blog.title}
                                 </CardItem>

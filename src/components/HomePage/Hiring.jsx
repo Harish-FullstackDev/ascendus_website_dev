@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import officeStaircaseImg from "@/assets/HomePage/images/office-staircase.png";
+import officeStaircaseImg from "@/assets/HomePage/hiring.webp";
 import UnderlineArrowLink from "./UnderlineArrowLink";
 
 // Image-right / overlapping-card treatment lifted from

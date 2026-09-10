@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import card1Bg from "@/assets/WhoWeAre/webp/Who_We_Are_Card_1.webp";
-import card2Bg from "@/assets/WhoWeAre/webp/Who_We_Are_Card_2.webp";
-import card3Bg from "@/assets/WhoWeAre/webp/Who_We_Are_Card_3.webp";
-import card4Bg from "@/assets/WhoWeAre/webp/Who_We_Are_Card_4.webp";
+import card1Bg from "@/assets/WhoWeAre/customer_satisfaction.webp";
+import card2Bg from "@/assets/WhoWeAre/project_delivery.webp";
+import card3Bg from "@/assets/WhoWeAre/customer_retention.webp";
+import card4Bg from "@/assets/WhoWeAre/team_productivity.webp";
 
 const CARDS = [
     {

@@ -11,10 +11,10 @@ export default function AuthorSection() {
                 <div className="rounded-none bg-gray-100 backdrop-blur-xl border border-white/60 shadow-lg px-8 py-10">
 
                     <div className="text-center mb-12">
-                        <h2 className="text-[28px] font-semibold text-slate-900">
+                        <h2 className="text-[28px] font-semibold text-[#2E3033]">
                             Meet Our Authors
                         </h2>
-                        <p className="text-lg font-light mt-3 max-w-2xl mx-auto">
+                        <p className="text-[#55595E] text-lg font-light mt-3 max-w-2xl mx-auto">
                             Our experts share practical insights on AI, ERP, CRM,
                             cloud technologies, and digital transformation.
                         </p>
@@ -37,7 +37,7 @@ export default function AuthorSection() {
                                 </div>
 
                                 <div>
-                                    <h2 className="text-2xl font-semibold text-slate-900">
+                                    <h2 className="text-2xl font-semibold text-[#2E3033]">
                                         {author.name}
                                     </h2>
                                     <p className="text-lg text-blue-600 font-light">

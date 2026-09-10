@@ -129,7 +129,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                     <h1 className="text-4xl font-black text-slate-800 dark:text-white mb-4">
                         Not Found
                     </h1>
-                    <p className="text-slate-500 dark:text-neutral-400 mb-8 max-w-md">
+                    <p className="text-[#55595E] mb-8 max-w-md">
                         The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.
                     </p>
                     <Link
@@ -154,7 +154,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
             <Navbar />
 
             {/* Header / Hero Section */}
-            <header className="w-full max-w-7xl mx-auto px-6 pt-12 md:pt-20">
+            <header className="w-full px-16 pt-12 md:pt-20">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pb-12 md:border-b md:border-slate-200 md:dark:border-neutral-800">
 
                     {/* Left: Meta Details */}
@@ -170,7 +170,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                             {item.type}
                         </span>
 
-                        <h2 className="text-[#16171a] text-2xl font-medium">
+                        <h2 className="text-[#2E3033] text-2xl font-semibold">
                             {item.title}
                         </h2>
 
@@ -194,7 +194,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                 </div>
                                 <div>
                                     <span className="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Author</span>
-                                    <span className="font-semibold text-slate-800 text-sm">{item.author}</span>
+                                    <span className="font-normal text-slate-800 text-sm">{item.author}</span>
                                 </div>
                             </div>
                             <div className="flex items-center gap-2">
@@ -203,7 +203,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                 </div>
                                 <div>
                                     <span className="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Published</span>
-                                    <span className="font-semibold text-slate-800 text-sm">
+                                    <span className="font-normal text-slate-800 text-sm">
                                         {new Date(item.publish_date).toLocaleDateString("en-US", {
                                             year: "numeric",
                                             month: "long",
@@ -218,7 +218,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                 </div>
                                 <div>
                                     <span className="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Read Time</span>
-                                    <span className="font-semibold text-slate-800 text-sm">{readingTime} min read</span>
+                                    <span className="font-normal text-slate-800 text-sm">{readingTime} min read</span>
                                 </div>
                             </div>
                         </div>
@@ -356,7 +356,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
             </div>
 
             {/* Content & TOC Grid */}
-            <main className="flex-grow max-w-7xl w-full mx-auto px-6 py-12">
+            <main className="flex-grow w-full px-16 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
                     {/* Left Sticky Sidebar (Desktop only) */}
@@ -415,11 +415,11 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                             <section key={idx} className="space-y-4 border-b border-slate-100 pb-8 last:border-none last:pb-0">
                                 <h2
                                     id={`section-${idx}`}
-                                    className="text-[#16171a] text-2xl font-medium  pt-2"
+                                    className="text-[#2E3033] text-2xl font-semibold  pt-2"
                                 >
                                     {sec.heading}
                                 </h2>
-                                <div className="text-[#55595E] dark:text-neutral-350 text-base md:text-lg leading-relaxed whitespace-pre-wrap font-normal">
+                                <div className="text-[#55595E] text-base md:text-lg leading-relaxed whitespace-pre-wrap font-light">
                                     {sec.content}
                                 </div>
 
@@ -435,7 +435,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                             </div>
                                         </div>
                                         {sec.caption && (
-                                            <p className="text-center text-xs md:text-sm text-slate-500 dark:text-neutral-450 italic">
+                                            <p className="text-center text-xs md:text-sm text-[#55595E] italic">
                                                 {sec.caption}
                                             </p>
                                         )}
@@ -455,10 +455,10 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                     <User className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <p className="text-xs uppercase tracking-wide text-slate-500">
+                                    <p className="text-xs font-normal tracking-wide text-[#55595E]">
                                         Author
                                     </p>
-                                    <p className="font-semibold text-slate-900">
+                                    <p className="font-light text-[#2E3033]">
                                         {item.author}
                                     </p>
                                 </div>
@@ -469,10 +469,10 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                     <Calendar className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <p className="text-xs uppercase tracking-wide text-slate-500">
+                                    <p className="text-xs font-normal tracking-wide text-[#55595E]">
                                         Published
                                     </p>
-                                    <p className="font-semibold text-slate-900">
+                                    <p className="font-light text-[#2E3033]">
                                         {new Date(item.publish_date).toLocaleDateString("en-US", {
                                             year: "numeric",
                                             month: "long",
@@ -487,10 +487,10 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                     <Clock className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <p className="text-xs uppercase tracking-wide text-slate-500">
+                                    <h2 className="text-xs font-normal tracking-wide text-[#55595E]">
                                         Read Time
-                                    </p>
-                                    <p className="font-semibold text-slate-900">
+                                    </h2>
+                                    <p className="font-light text-[#2E3033]">
                                         {readingTime} min read
                                     </p>
                                 </div>

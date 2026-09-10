@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import serverRoomImg from "@/assets/HomePage/Homepage_Business_built_around.webp";
+import serverRoomImg from "@/assets/HomePage/technology_built_around.webp";
 
 export default function WhatWeDo() {
     return (
@@ -34,7 +34,7 @@ export default function WhatWeDo() {
                     className="flex-1 flex flex-col gap-2 order-1 lg:order-2"
                 >
                     <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold leading-[1.4] ">
-                        Technology built around your business.
+                        Technology Built Around your Business.
                     </h2>
                     <p className="mt-4 text-[#55595E] text-lg font-light leading-[1.5]">
                         We help enterprises plan, build, secure, and manage their technology with one

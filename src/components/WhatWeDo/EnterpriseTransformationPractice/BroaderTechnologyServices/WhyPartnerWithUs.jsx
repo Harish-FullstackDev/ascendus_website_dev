@@ -116,7 +116,7 @@ export default function WhyPartnerWithUs() {
                                 className={`absolute inset-0 transition-colors duration-500 ${isActive ? "bg-black/70" : "bg-black/20"}`}
                             />
                             <div className="absolute inset-0 flex items-start justify-start px-6 py-10 text-left">
-                                <h2 className="text-white text-xl sm:text-3xl font-semibold">{reason.title}</h2>
+                                <h2 className="text-white text-xl sm:text-2xl font-semibold">{reason.title}</h2>
                             </div>
                             <div
                                 className={`absolute inset-x-0 bottom-0 px-6 pb-6 grid transition-[grid-template-rows] duration-500 ease-out ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"

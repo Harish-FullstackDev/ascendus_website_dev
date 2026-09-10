@@ -7,18 +7,18 @@ import { motion } from "framer-motion";
 
 import cardArrowIcon from "@/assets/HomePage/CoreCapabilities/card-arrow-icon.svg";
 
-import enterpriseTransformationImg from "@/assets/HomePage/capab/enterprise_transformation.webp";
-import artificialIntelligenceImg from "@/assets/HomePage/capab/artificial_intelligence.webp";
-import cloudInfrastructureImg from "@/assets/HomePage/capab/cloud_infrastructure.webp";
-import dataIntelligenceImg from "@/assets/HomePage/capab/data_intelligence.webp";
+import enterpriseTransformationImg from "@/assets/HomePage/Capabilities/enterprise_transformation.webp";
+import artificialIntelligenceImg from "@/assets/HomePage/Capabilities/artificial_intelligence.webp";
+import cloudInfrastructureImg from "@/assets/HomePage/Capabilities/cloud_infrastructure.webp";
+import dataIntelligenceImg from "@/assets/HomePage/Capabilities/data_intelligence.webp";
 import digitalEngineeringImg from "@/assets/HomePage/capab/digital_engineering.webp";
-import customerExperienceImg from "@/assets/HomePage/capab/customer_experience.webp";
+import customerExperienceImg from "@/assets/HomePage/Capabilities/customer_experience.webp";
 import experienceDesignImg from "@/assets/HomePage/capab/experience_design.webp";
-import intelligentAutomationImg from "@/assets/HomePage/capab/intelligent_automation.webp";
+import intelligentAutomationImg from "@/assets/HomePage/Capabilities/intelligent_automation.webp";
 import cybersecurityImg from "@/assets/HomePage/capab/cybersecurity.webp";
-import managedServicesImg from "@/assets/HomePage/capab/managed_services.webp";
-import businessAdvisoryImg from "@/assets/HomePage/capab/business_advisory.webp";
-import innovationImg from "@/assets/HomePage/capab/innovation.webp";
+import managedServicesImg from "@/assets/HomePage/Capabilities/managed_services.webp";
+import businessAdvisoryImg from "@/assets/HomePage/Capabilities/business_advisory.webp";
+import innovationImg from "@/assets/HomePage/Capabilities/innovation.webp";
 
 // Same 12 entries, same order, as the "What We Do" navbar dropdown
 // (Navbar.jsx) — that list is the source of truth for hrefs here.

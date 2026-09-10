@@ -101,7 +101,7 @@ export default function InsightsListing({
           </div>
         ) : filteredItems.length === 0 ? (
           <div className="text-center py-40 border border-dashed border-neutral-200 rounded-none p-8 bg-white">
-            <p className="text-slate-600 text-lg">{emptyStateText}</p>
+            <p className="text-[#55595E] font-light text-lg">{emptyStateText}</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
@@ -139,7 +139,7 @@ export default function InsightsListing({
 
                       <CardItem
                         translateZ="0"
-                        className="text-lg  text-neutral-900 dark:text-neutral-100 mt-4 line-clamp-2"
+                        className="text-lg font-semibold text-[#2E3033] mt-4 line-clamp-2"
                       >
                         {item.title}
                       </CardItem>
@@ -151,7 +151,7 @@ export default function InsightsListing({
                       </CardItem>
                       <CardItem
                         translateZ="0"
-                        className="text-sm text-neutral-500 dark:text-neutral-400 line-clamp-2"
+                        className="text-sm font-light text-[#55595E] line-clamp-2"
                       >
                         {item.summary}
                       </CardItem>
