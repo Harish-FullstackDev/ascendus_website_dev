@@ -34,11 +34,18 @@ const FEATURES = [
     },
 ];
 
+// One fluid gap value used in two places that are meant to read as the same
+// interval: between the "Who We Are" link and the card row, and inside each
+// card between its icon and title. Declared once (as a full literal, so
+// Tailwind's scanner still sees the class) rather than repeated, so the two
+// cannot drift apart later.
+const MATCHED_GAP = "gap-[clamp(2rem,6vw,6.5rem)]";
+
 export default function WhyUs() {
     return (
         // Colored section bordered by white sections on both edges — full 64 on each.
         <section className="w-full bg-[#f3f6f9] pt-10 pb-10 sm:p-16 px-6 ">
-            <div className="w-full flex flex-col gap-10 sm:gap-16">
+            <div className={`w-full flex flex-col ${MATCHED_GAP}`}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +77,7 @@ export default function WhyUs() {
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#55595E]/30"
                 >
                     {FEATURES.map((feat) => (
-                        <div key={feat.title} className="flex flex-col items-start gap-[clamp(2rem,6vw,6.5rem)] p-6 first:pl-0">
+                        <div key={feat.title} className={`flex flex-col items-start ${MATCHED_GAP} p-6 first:pl-0`}>
                             <div className="relative size-10 sm:size-12 shrink-0">
                                 <Image src={feat.icon} alt="" fill className="object-contain" />
                             </div>
