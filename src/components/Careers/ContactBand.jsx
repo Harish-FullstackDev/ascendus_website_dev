@@ -54,10 +54,10 @@ export default function ContactBand() {
                                     Call us to speak to a member of our team. We are always happy to help
                                 </p>
                                 <a
-                                    href="mailto:hr@ascendus.sa"
+                                    href="tel:+966573956334"
                                     className="block text-blue-600 hover:text-blue-700 font-medium text-sm"
                                 >
-                                    0413-2191301
+                                    +966 573956334
                                 </a>
                             </div>
                         </div>

@@ -254,13 +254,13 @@ const Navbar = () => {
               {/* Nav links start at the row's left edge, 64px in. */}
               <div className="absolute left-0 pl-[64px]">
                 <ul className="flex items-center gap-3">
-                  <Link
+                  {/* <Link
                     href="/"
                     className={`${navLinkClass} ${pathname === "/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                       }`}
                   >
                     Home
-                  </Link>
+                  </Link> */}
 
                   <li className="relative group">
                     <button
@@ -539,7 +539,7 @@ const Navbar = () => {
         {/* Menu items */}
         <div className="flex-1 overflow-y-auto px-5 py-8">
           <ul className="flex flex-col gap-6">
-            <li>
+            {/* <li>
               <Link
                 href="/"
                 className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/"
@@ -550,7 +550,7 @@ const Navbar = () => {
               >
                 Home
               </Link>
-            </li>
+            </li> */}
 
             <li>
               <div
