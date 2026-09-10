@@ -46,9 +46,32 @@ export default function AdvancedDecisionLogiWorkflow() {
 
                 {/* Cards — normal flow right after the photo, with only a small
                     top offset (44px) so they clip just the bottom sliver of the
-                    blue box instead of covering it. Asymmetric side padding
-                    (353px left / 64px right) matches the Figma card positions. */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 px-6 sm:px-0 sm:pl-[353px] sm:pr-[64px] pt-8 sm:pt-11 pb-35 sm:pb-16 relative z-10">
+                    blue box instead of covering it.
+
+                    All three cards stay on ONE row from sm up; only below sm do
+                    they stack one per row. An earlier attempt at this dropped
+                    to two columns between sm and 1300px, which is what produced
+                    the 2-then-1 split.
+
+                    Three columns fit at every width because the offset that
+                    used to prevent it is now fluid rather than fixed. The
+                    asymmetric 353px-left / 64px-right padding is a Figma
+                    coordinate off the ~1440px frame; held at a literal 353px it
+                    left, at 768px, only 768 - 353 - 64 - gaps ≈ 287px to share
+                    between three cards, and at 640px nothing at all. The clamp
+                    interpolates that offset linearly from 64px at the sm
+                    breakpoint to the full 353px at 1300px and above
+                    (43.79vw - 216.2px is the line through those two points), so
+                    the cards keep the Figma inset exactly where the design
+                    frame is wide enough to carry it and reclaim the space
+                    below that.
+
+                    The card gap and the cards' own padding scale on the same
+                    principle, and sm:min-h-64 replaces the fixed sm:h-64 so
+                    taller copy grows the card instead of being clipped — at
+                    1300px+ the content fits inside 256px anyway, so the
+                    rendered result there is unchanged. */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-[clamp(1rem,2.2vw,2rem)] px-6 sm:pl-[clamp(4rem,calc(43.79vw_-_216.2px),22.0625rem)] sm:pr-16 pt-8 sm:pt-11 pb-35 sm:pb-16 relative z-10">
                     {CARDS.map((card, index) => (
                         <motion.div
                             key={card.title}
@@ -56,7 +79,7 @@ export default function AdvancedDecisionLogiWorkflow() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
-                            className="bg-white px-8 py-10 flex flex-col gap-8 sm:h-64"
+                            className="bg-white px-8 py-10 sm:px-[clamp(1rem,2.25vw,2rem)] sm:py-[clamp(1.5rem,2.8vw,2.5rem)] flex flex-col gap-8 sm:gap-[clamp(1rem,2.2vw,2rem)] sm:min-h-64"
                         >
                             <h2 className="text-[#2E3033] text-xl font-semibold">{card.title}</h2>
                             <p className="text-[#55595E] text-lg font-light">{card.desc}</p>

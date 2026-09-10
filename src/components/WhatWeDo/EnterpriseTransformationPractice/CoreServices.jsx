@@ -140,15 +140,22 @@ export default function CoreServices() {
     const step = useCardStep(trackRef);
 
     return (
-        <section className="w-full bg-[#f3f6f9] px-6 py-10 sm:px-[64px] sm:py-[64px] flex flex-col gap-8 sm:gap-[4px]">
+        // sm:gap-16 is the 64px between the subtitle's end and the card row. It
+        // was 4px, which only looked right when the arrows had their own row
+        // (plus its own gap-4) sitting in this space; once the arrows moved up
+        // into the header the cards were left almost touching the subtitle.
+        // The arrows' -mb-[13px] pulls them below the header's own box without
+        // adding to its height, so it eats into this gap rather than widening
+        // it — the 64px stays measured from the subtitle, as intended.
+        <section className="w-full bg-[#f3f6f9] px-6 py-10 sm:px-[64px] sm:py-[64px] flex flex-col gap-8 sm:gap-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="w-full flex flex-col sm:flex-col sm:items-start sm:justify-between gap-4"
+                className="w-full flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4"
             >
-                <div className="w-full flex flex-col sm:flex-col sm:items-start sm:justify-between gap-4">
+                <div className="w-full sm:flex-1 sm:min-w-0 flex flex-col items-start gap-4">
                     <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold shrink-0">Core Services</h2>
                     <p className="text-[#55595E] text-lg sm:text-2xl font-light sm:tracking-[0.24px] w-full sm:max-w-[618px]">
                         SAP is our core  deliberately. Microsoft and adjacent platforms extend that core so the enterprise
@@ -156,7 +163,27 @@ export default function CoreServices() {
                     </p>
                 </div>
 
-
+                {/* Desktop arrows sit in the header rather than in their own row
+                    above the cards, which is what left them looking unanchored.
+                    items-end lines the button BOX up with the subtitle's box, but
+                    the arrow's visible ink sits well inside that box, so the box
+                    alignment alone still reads as floating. The offset below is
+                    derived, not eyeballed:
+                        8px  button padding (size-10 button around a size-6 svg)
+                      + 6px  path inset inside the svg (the glyph spans y 6-18 of
+                             its 0 0 24 24 viewBox, so it never touches the edge)
+                      - 1px  line-height leading under the subtitle's last line
+                      = 13px
+                    which puts the arrow's lower edge level with the bottom of the
+                    subtitle's last line of text. Verified at 768-1920px. */}
+                <div className="hidden sm:flex items-center gap-2 shrink-0 -mb-[13px]">
+                    <ArrowButton direction={-1} disabled={index === 0} onClick={() => setIndex((i) => Math.max(0, i - 1))} />
+                    <ArrowButton
+                        direction={1}
+                        disabled={index === MAX_INDEX}
+                        onClick={() => setIndex((i) => Math.min(MAX_INDEX, i + 1))}
+                    />
+                </div>
             </motion.div>
 
             {/* Mobile: one card in view at a time (its own page/state, 6 pages),
@@ -195,15 +222,6 @@ export default function CoreServices() {
             {/* sm and up: 3 cards visible at a time, sliding one card per arrow
                 click (measured via useCardStep) instead of jumping a whole page. */}
             <div className="hidden sm:flex flex-col gap-4">
-                <div className="flex items-center justify-end gap-2">
-                    <ArrowButton direction={-1} disabled={index === 0} onClick={() => setIndex((i) => Math.max(0, i - 1))} />
-                    <ArrowButton
-                        direction={1}
-                        disabled={index === MAX_INDEX}
-                        onClick={() => setIndex((i) => Math.min(MAX_INDEX, i + 1))}
-                    />
-                </div>
-
                 <div className="w-full overflow-hidden">
                     <div
                         ref={trackRef}
