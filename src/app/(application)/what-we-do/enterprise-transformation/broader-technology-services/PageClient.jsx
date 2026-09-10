@@ -2,7 +2,7 @@
 
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import ReadyToTransform from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/ReadyToTransform";
+import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
 import Hero from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/Hero";
 import HeroText from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/HeroText";
 import Overview from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/Overview";
@@ -43,7 +43,7 @@ const page = () => {
             <ReadyToTransform
                 title="A short technical review shows where integration, data, or security work is quietly adding risk."
                 description="A focused technical review of your surrounding landscape integration, data, and security shows exactly where the risk sits and what to fix first."
-                buttonLabel="Book a Call"
+                buttonLabel="Book a Consultation"
                 bgImage={ctaBg}
             />
 

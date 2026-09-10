@@ -65,7 +65,7 @@ export default function DiscoverWhatSetsUsApart() {
                                 <h2 className="text-2xl font-semibold text-[#2E3033] mt-1">{card.heading}</h2>
                             </div>
                             <div className="text-sm sm:text-base text-[#55595E] leading-relaxed space-y-1">
-                                <p>{card.description}</p>
+                                <p className="text-sm sm:text-lg text-[#55595E] font-light leading-relaxed">{card.description}</p>
                             </div>
                         </motion.div>
                     ))}

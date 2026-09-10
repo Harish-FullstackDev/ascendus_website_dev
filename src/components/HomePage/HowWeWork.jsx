@@ -110,7 +110,7 @@ export default function HowWeWork() {
                             </div>
                             <div className="flex flex-col gap-3 text-white">
                                 <h2 className="text-2xl font-semibold">{step.title}</h2>
-                                <p className="text-lg font-light leading-[1.5]">{step.desc}</p>
+                                <p className="text-lg font-extralight leading-[1.5]">{step.desc}</p>
                             </div>
                         </div>
                     ))}

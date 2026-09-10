@@ -2,7 +2,7 @@
 
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import ReadyToTransform from "@/components/WhatWeDo/EnterpriseTransformationPractice/MicrosoftServices/ReadyToTransform";
+import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
 
 import Hero from "@/components/WhatWeDo/EnterpriseTransformationPractice/MicrosoftServices/Hero";
 import HeroText from "@/components/WhatWeDo/EnterpriseTransformationPractice/MicrosoftServices/HeroText";
@@ -44,7 +44,7 @@ const page = () => {
             <ReadyToTransform
                 title="Running Microsoft and SAP side by side?"
                 description="We can show you where the two are working against each other, and where they should be working together."
-                buttonLabel="Book a Call"
+                buttonLabel="Book a Consultation"
                 bgImage={ctaBg}
             />
 

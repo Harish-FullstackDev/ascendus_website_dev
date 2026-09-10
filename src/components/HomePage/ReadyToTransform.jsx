@@ -26,7 +26,7 @@ import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
 export default function ReadyToTransform({
     title = "Ready to Transform Your Business?",
     description = "Let's talk about where your technology is holding you back and what it would take to fix it for good.",
-    buttonLabel = "Book a Call",
+    buttonLabel = "Book a Consultation",
     bgImage = ctaBg,
 }) {
     const [showCalendly, setShowCalendly] = useState(false);
@@ -61,7 +61,7 @@ export default function ReadyToTransform({
                     <button
                         type="button"
                         onClick={handleContactClick}
-                        className="w-full sm:w-[190px] h-14 sm:h-[60px] shrink-0 border border-[#002C4F] bg-[#002C4F] px-6 sm:px-[24px] sm:py-[8px] text-lg font-light  text-white transition-colors hover:bg-white hover:text-[#002C4F]"
+                        className="shrink-0 rounded-none border border-[#d0d0d0] px-6 sm:px-[24px] py-2 sm:py-[8px] text-lg font-light text-white transition-colors hover:bg-white hover:text-black"
                     >
                         {buttonLabel}
                     </button>

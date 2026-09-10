@@ -2,7 +2,7 @@
 
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import ReadyToTransform from "@/components/WhatWeDo/EnterpriseTransformationPractice/ReadyToTransform";
+import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
 
 import Hero from "@/components/WhatWeDo/EnterpriseTransformationPractice/Hero";
 import HeroText from "@/components/WhatWeDo/EnterpriseTransformationPractice/HeroText";
@@ -48,7 +48,7 @@ const page = () => {
             <ReadyToTransform
                 title="Let's find the right engagement model for your transformation."
                 description="Talk to our team about the SAP and Microsoft environment your business actually needs."
-                buttonLabel="Schedule a Consultation"
+                buttonLabel="Book a Consultation"
                 bgImage={ctaBg}
             />
 

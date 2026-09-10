@@ -60,7 +60,7 @@ export default function TeamStory() {
                     className="text-center mb-12"
                 >
                     <h2 className="text-2xl sm:text-[28px] font-semibold text-[#2E3033] capitalize">Our Team Story</h2>
-                    <p className="mt-4 text-sm sm:text-lg text-[#55595E]">
+                    <p className="mt-4 text-sm font-light sm:text-lg text-[#55595E]">
                         You might want to hear from some of our team on their unique expeditions
                     </p>
                 </motion.div>

@@ -31,11 +31,11 @@ export default function LearningDevelopment() {
                         <h2 className="text-2xl font-semibold text-[#2E3033] mt-1">Build depth through the work you deliver.</h2>
                     </div>
                     <div className="text-sm sm:text-lg text-[#55595E] leading-relaxed space-y-1">
-                        <p>
+                        <p className="text-sm sm:text-lg text-[#55595E] font-light leading-relaxed">
                             We believe professional growth happens when people are trusted with increasingly
                             complex problems.
                         </p>
-                        <p>
+                        <p className="text-sm sm:text-lg text-[#55595E] font-light leading-relaxed">
                             Exposure to enterprise engagements, experienced specialists and varied technology
                             landscapes gives our people the opportunity to strengthen both technical expertise and
                             delivery judgement.

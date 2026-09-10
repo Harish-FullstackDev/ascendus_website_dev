@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import ReadyToTransform from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/ReadyToTransform";
+import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
 
 import Hero from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/Hero";
 import HeroText from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/HeroText";
@@ -45,7 +45,7 @@ const page = () => {
             <ReadyToTransform
                 title="Not sure where your SAP landscape stands?"
                 description="A landscape assessment shows exactly what migration path fits, and how much runway you actually have left."
-                buttonLabel="Book a Call"
+                buttonLabel="Book a Consultation"
                 bgImage={ctaBg}
             />
 
