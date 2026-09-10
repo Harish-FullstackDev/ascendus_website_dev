@@ -189,6 +189,13 @@ export default function Capabilities() {
     const activeIndexRef = useRef(activeIndex);
     // True only while ScrollTrigger is actively pinned.
     const pinnedRef = useRef(false);
+    // The live ScrollTrigger instance, or null when there is no pin (mobile, or
+    // mid-teardown). Everything that mutates the pin-spacer gates on this:
+    // ctx.revert() tears the pin down WITHOUT firing onToggle, so the flags
+    // below keep whatever mid-pin values they had. Reading them afterwards is
+    // what made a resize across the lg breakpoint centre the track against a
+    // pin that no longer existed and collapse the spacer under it.
+    const triggerRef = useRef(null);
     // Index recenter() last targeted — detects the exact moment activeIndex
     // switches, as opposed to a merely large per-frame scroll delta.
     const lastRecenteredIndexRef = useRef(activeIndex);
@@ -208,6 +215,28 @@ export default function Capabilities() {
     // Unwind value frozen at the instant an index transition starts, so it
     // doesn't oscillate against the centering tween as cards resize mid-animation.
     const frozenUnwindRef = useRef(0);
+
+    // Bumped once a resize has settled. Every measurement the pin is built
+    // from — where it starts, how tall the spacer must be, how tall each card
+    // is — is invalidated by a resize, and correcting them in place is what
+    // left stale state behind. Bumping this instead tears the pin down and
+    // rebuilds it from clean layout: the same state a reload produces, which is
+    // why a reload was the only thing that cleared the broken layout.
+    const [resizeEpoch, setResizeEpoch] = useState(0);
+
+    useEffect(() => {
+        if (typeof window === "undefined") return;
+        let timer;
+        const onResize = () => {
+            clearTimeout(timer);
+            timer = setTimeout(() => setResizeEpoch((n) => n + 1), 250);
+        };
+        window.addEventListener("resize", onResize);
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener("resize", onResize);
+        };
+    }, []);
 
     useEffect(() => {
         activeIndexRef.current = activeIndex;
@@ -238,7 +267,7 @@ export default function Capabilities() {
             // Trigger is card 1 itself (not the whole stage), so "center
             // center" engages exactly when card 1's own middle crosses the
             // viewport's middle — not the combined stack's much lower midpoint.
-            ScrollTrigger.create({
+            triggerRef.current = ScrollTrigger.create({
                 trigger: cardRefs.current[0],
                 pin: windowRef.current,
                 start: "center center",
@@ -279,8 +308,36 @@ export default function Capabilities() {
             });
         });
 
-        return () => ctx.revert();
-    }, [isDesktop]);
+        // The rebuild runs after a resize has settled, but the sections above
+        // this one may have reflowed too, which moves where the pin starts.
+        // Refresh so GSAP re-derives the start from the settled page rather
+        // than from whatever the layout looked like mid-drag.
+        ScrollTrigger.refresh();
+
+        return () => {
+            ctx.revert();
+            // ctx.revert() removes the pin silently — onToggle never reports
+            // the release — so every piece of pin-derived state has to be reset
+            // by hand. Without this, remounting on the way back to desktop
+            // reads mid-pin values as current: the track keeps its centring
+            // transform (~-880px, which is what dragged the card stack up over
+            // the neighbouring sections) and activeIndex stays at 2, holding
+            // cards 1 and 2 collapsed at height 0.
+            triggerRef.current = null;
+            pinnedRef.current = false;
+            pastPinRef.current = false;
+            lastScrolledRef.current = 0;
+            frozenUnwindRef.current = 0;
+            transitionUntilRef.current = 0;
+            lastRecenteredIndexRef.current = 0;
+            if (trackRef.current) {
+                gsap.killTweensOf(trackRef.current);
+                gsap.set(trackRef.current, { clearProps: "transform" });
+            }
+            if (windowRef.current) windowRef.current.style.height = "";
+            setActiveIndex(0);
+        };
+    }, [isDesktop, resizeEpoch]);
 
     // Keeps the active card's vertical center pinned to the viewport's
     // vertical center by translating the whole track. Re-measures continuously
@@ -411,6 +468,9 @@ export default function Capabilities() {
             const win = windowRef.current;
             const track = trackRef.current;
             if (!win || !track) return;
+            // No live pin means no spacer of ours to correct, and the branches
+            // below would be reading stale pin state.
+            if (!triggerRef.current) return;
             win.style.height = "";
             const spacer = win.parentElement;
             if (!spacer || !spacer.classList.contains("pin-spacer")) return;
@@ -434,7 +494,7 @@ export default function Capabilities() {
 
         recenterRef.current = recenter;
         syncSpacerRef.current = syncSpacerHeight;
-        if (pinnedRef.current) recenter();
+        if (triggerRef.current?.isActive) recenter();
 
         // Wrapped in a no-arg call: ResizeObserver/`resize` invoke their
         // callback with a truthy first argument, which would otherwise be
@@ -444,16 +504,33 @@ export default function Capabilities() {
             if (!pinnedRef.current) return;
             recenter();
         };
+        // GSAP re-derives the pin from live layout on every refresh (which a
+        // resize triggers), and our inline heights are part of that layout — so
+        // it would measure our correction and compound it, shrinking the spacer
+        // a little more on each resize. Drop them before GSAP measures, put
+        // them back once it has.
+        const clearForRefresh = () => {
+            const win = windowRef.current;
+            if (!win) return;
+            win.style.height = "";
+            const spacer = win.parentElement;
+            if (spacer?.classList.contains("pin-spacer")) spacer.style.height = "";
+        };
+
         const ro = new ResizeObserver(handleChange);
         cardRefs.current.forEach((el) => el && ro.observe(el));
         window.addEventListener("resize", handleChange);
+        ScrollTrigger.addEventListener("refreshInit", clearForRefresh);
+        ScrollTrigger.addEventListener("refresh", syncSpacerHeight);
         syncSpacerHeight();
 
         return () => {
             ro.disconnect();
             window.removeEventListener("resize", handleChange);
+            ScrollTrigger.removeEventListener("refreshInit", clearForRefresh);
+            ScrollTrigger.removeEventListener("refresh", syncSpacerHeight);
         };
-    }, [activeIndex, isDesktop]);
+    }, [activeIndex, isDesktop, resizeEpoch]);
 
     return (
         <section className="w-full bg-[#f3f6f9] px-6 py-8 sm:px-[64px] sm:py-[64px] flex flex-col items-center gap-10 sm:gap-[86px]">
