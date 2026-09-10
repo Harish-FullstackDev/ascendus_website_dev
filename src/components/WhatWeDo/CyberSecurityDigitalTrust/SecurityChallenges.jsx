@@ -51,18 +51,18 @@ export default function SecurityChallenges() {
                     type and spacing scale with the viewport on the same curve the card
                     itself does, so the content stays proportional to the box instead of
                     outgrowing it. Every clamp resolves to the original Figma value at
-                    1400px and above, so the design width renders exactly as before.
+                    1440px and above, so the design width renders exactly as before.
 
                     Every fluid value is gated behind sm:, so the stacked mobile layout
                     below 640px keeps its own fixed sizes untouched. */}
-                <div className="relative w-full lg:absolute lg:top-[13.5%] lg:left-[37.7%] lg:h-[76.3%] lg:w-[62.3%] bg-[#F3F6F9] overflow-hidden flex items-center px-6 sm:pl-[7.5%] sm:max-[1399px]:pr-[8%] min-[1400px]:pr-[15%] py-8 sm:max-[1399px]:py-[clamp(1rem,2vw,2rem)] min-[1400px]:py-10">
-                    <div className="flex flex-col gap-8 sm:max-[1399px]:gap-[clamp(1rem,2.6vw,2.5rem)] min-[1400px]:gap-16 w-full sm:max-[1399px]:max-w-[85%] min-[1400px]:max-w-[58.5%]">
+                <div className="relative w-full lg:absolute lg:top-[13.5%] lg:left-[37.7%] lg:h-[76.3%] lg:w-[62.3%] bg-[#F3F6F9] overflow-hidden flex items-center px-6 sm:pl-[7.5%] sm:max-[1439px]:pr-[8%] min-[1440px]:pr-[15%] py-8 sm:max-[1439px]:py-[clamp(1rem,2vw,2rem)] min-[1440px]:py-10">
+                    <div className="flex flex-col gap-8 sm:max-[1439px]:gap-[clamp(1rem,2.6vw,2.5rem)] min-[1440px]:gap-16 w-full sm:max-[1439px]:max-w-[85%] min-[1440px]:max-w-[58.5%]">
                         <h2 className="font-heading text-black text-xl sm:text-[clamp(1.5rem,1.95vw,1.75rem)] font-semibold">Our Security Advantages</h2>
-                        <div className="flex flex-col gap-4 sm:gap-[clamp(0.5rem,1.1vw,1rem)]">
+                        <div className="flex flex-col gap-4 sm:gap-[clamp(0.5rem,1.15vw,1rem)]">
                             <h2 className="text-[#2E3033] text-xl sm:text-[clamp(1.125rem,1.67vw,1.5rem)] font-semibold">
                                 Regional compliance depth and SAP security expertise.
                             </h2>
-                            <ul className="list-disc marker:text-[#6c6c6c] pl-[27px] text-[#6c6c6c] text-lg sm:text-[clamp(0.9375rem,1.25vw,1.125rem)] font-light leading-relaxed space-y-3 sm:space-y-[clamp(0.5rem,0.83vw,0.75rem)]">
+                            <ul className="list-disc marker:text-[#6c6c6c] pl-[27px] text-[#6c6c6c] text-lg sm:text-[clamp(0.9375rem,1.25vw,1.125rem)] font-light leading-relaxed space-y-3 sm:space-y-[clamp(0.5rem,0.9vw,0.75rem)]">
                                 {CHALLENGES.map((item) => (
                                     <li key={item}>{item}</li>
                                 ))}
