@@ -42,6 +42,46 @@ const slideVariants = {
     exit: (dir) => ({ opacity: 0, x: dir > 0 ? -32 : 32 }),
 };
 
+// How long each card pair stays on screen before advancing. Longer than the
+// hover-row sections elsewhere on the site (2.5s) because these cards carry a
+// full sentence of copy that has to be readable before it moves on.
+const AUTOPLAY_MS = 5000;
+
+// The arrow glyph from Figma (solar:arrow-up-linear — nodes 2749:1924 for
+// prev, 2749:1931 for next). Both nodes export the SAME up-pointing arrow;
+// Figma rotates it to face left/right, which is what `rotate` reproduces
+// here. This replaced the literal "←"/"→" text characters, which rendered in
+// the body font — hence the curved, off-centre look, since a glyph's own
+// bearings decide where it sits in its line box, not the circle around it.
+//
+// Two deliberate departures from the raw export:
+//   - The circle is left to the button's own CSS border rather than baked in
+//     (the export includes it as a <rect>), so the enabled/disabled colours
+//     stay drivable from Tailwind classes.
+//   - The path is nudged by (-0.5, +0.5). Figma's own vector is slightly off
+//     centre: it spans x 10-22 and y 7-23, putting its centre at (16, 15)
+//     inside a 31x31 box whose centre is (15.5, 15.5). Correcting it is the
+//     "not centered inside the circle" part of the fix.
+function NavArrow({ direction }) {
+    return (
+        <svg
+            viewBox="0 0 31 31"
+            fill="none"
+            aria-hidden="true"
+            className={`size-full ${direction === "prev" ? "-rotate-90" : "rotate-90"}`}
+        >
+            <g transform="translate(-0.5 0.5)">
+                <path
+                    d="M16 23V7M10 13L16 7L22 13"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </g>
+        </svg>
+    );
+}
+
 export default function GovernanceSAPDataDepth() {
     const searchParams = useSearchParams();
     const sectionRef = useRef(null);
@@ -51,6 +91,23 @@ export default function GovernanceSAPDataDepth() {
     const next = ITEMS[index + 1] ?? ITEMS[0];
 
     const goTo = (nextIndex, dir) => setPage([Math.max(0, Math.min(maxIndex, nextIndex)), dir]);
+
+    // Autoplay. Unlike the arrow buttons — which stay clamped at both ends, as
+    // they were — this wraps back to the first card, so the section keeps
+    // cycling instead of parking on the last one. Pauses while the pointer is
+    // over the carousel (or focus is inside it) so the copy can actually be
+    // read, and resumes from wherever it left off rather than resetting.
+    const [isPaused, setIsPaused] = useState(false);
+
+    useEffect(() => {
+        if (isPaused) return undefined;
+
+        const timer = setInterval(() => {
+            setPage(([current]) => [(current + 1) % ITEMS.length, 1]);
+        }, AUTOPLAY_MS);
+
+        return () => clearInterval(timer);
+    }, [isPaused]);
 
     // Deep-link from the Enterprise page's Capabilities service list — see the
     // matching effect in SapTransformation/SAPS4HANAMigrationImplementation.jsx.
@@ -81,7 +138,13 @@ export default function GovernanceSAPDataDepth() {
                 </p>
             </motion.div>
 
-            <div className="relative w-full h-[520px] sm:h-[592px] overflow-hidden">
+            <div
+                className="relative w-full h-[520px] sm:h-[592px] overflow-hidden"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                onFocusCapture={() => setIsPaused(true)}
+                onBlurCapture={() => setIsPaused(false)}
+            >
                 <div className="absolute inset-y-0 left-0 w-full sm:w-1/2 bg-[#5c5c5c]">
                     <Image src={panelImage} alt="SAP data governance panel screenshot" fill className="object-cover" />
                 </div>
@@ -124,10 +187,10 @@ export default function GovernanceSAPDataDepth() {
                         aria-label="Previous"
                         onClick={() => goTo(index - 1, -1)}
                         disabled={index === 0}
-                        className={`flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border shrink-0 transition-transform hover:scale-110 ${index === 0 ? "border-[#a4a7a5] text-[#a4a7a5]" : "border-black text-black"
+                        className={`flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border-[0.5px] shrink-0 transition-transform hover:scale-110 ${index === 0 ? "border-[#a4a7a5] text-[#a4a7a5]" : "border-black text-black"
                             }`}
                     >
-                        ←
+                        <NavArrow direction="prev" />
                     </button>
                     <div className="flex items-center gap-[10px]">
                         {ITEMS.map((item, dotIndex) => (
@@ -146,10 +209,10 @@ export default function GovernanceSAPDataDepth() {
                         aria-label="Next"
                         onClick={() => goTo(index + 1, 1)}
                         disabled={index === maxIndex}
-                        className={`flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border shrink-0 transition-transform hover:scale-110 ${index === maxIndex ? "border-[#a4a7a5] text-[#a4a7a5]" : "border-black text-black"
+                        className={`flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border-[0.5px] shrink-0 transition-transform hover:scale-110 ${index === maxIndex ? "border-[#a4a7a5] text-[#a4a7a5]" : "border-black text-black"
                             }`}
                     >
-                        →
+                        <NavArrow direction="next" />
                     </button>
                 </div>
             </div>
