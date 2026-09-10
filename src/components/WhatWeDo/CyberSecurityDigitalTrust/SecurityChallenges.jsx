@@ -40,14 +40,29 @@ export default function SecurityChallenges() {
                     description + list now live inside the card itself (Figma has no separate
                     page-level heading above this row), and the blue accent bar Figma doesn't
                     have has been removed. */}
-                <div className="relative w-full lg:absolute lg:top-[13.5%] lg:left-[37.7%] lg:h-[76.3%] lg:w-[62.3%] bg-[#F3F6F9] overflow-hidden flex items-center px-6 sm:pl-[7.5%] sm:pr-[15%] py-8 sm:py-10">
-                    <div className="flex flex-col gap-8 sm:gap-16 w-full sm:max-w-[58.5%]">
-                        <h2 className="font-heading text-black text-xl sm:text-[28px] font-semibold">Our Security Advantages</h2>
-                        <div className="flex flex-col gap-4">
-                            <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">
+                {/* Below the 1400px design width the card's own box shrinks with the
+                    viewport (its height is a % of an aspect-locked wrapper) while the
+                    copy did not, so with overflow-hidden the first and last lines were
+                    simply cut off — and the 15% right padding plus the 58.5% column cap
+                    meant a third of the card sat empty while that happened.
+
+                    The card's position and size are untouched. What adapts is the copy
+                    inside it: the column widens into that unused right side, and the
+                    type and spacing scale with the viewport on the same curve the card
+                    itself does, so the content stays proportional to the box instead of
+                    outgrowing it. Every clamp resolves to the original Figma value at
+                    1400px and above, so the design width renders exactly as before.
+
+                    Every fluid value is gated behind sm:, so the stacked mobile layout
+                    below 640px keeps its own fixed sizes untouched. */}
+                <div className="relative w-full lg:absolute lg:top-[13.5%] lg:left-[37.7%] lg:h-[76.3%] lg:w-[62.3%] bg-[#F3F6F9] overflow-hidden flex items-center px-6 sm:pl-[7.5%] sm:max-[1399px]:pr-[8%] min-[1400px]:pr-[15%] py-8 sm:max-[1399px]:py-[clamp(1rem,2vw,2rem)] min-[1400px]:py-10">
+                    <div className="flex flex-col gap-8 sm:max-[1399px]:gap-[clamp(1rem,2.6vw,2.5rem)] min-[1400px]:gap-16 w-full sm:max-[1399px]:max-w-[85%] min-[1400px]:max-w-[58.5%]">
+                        <h2 className="font-heading text-black text-xl sm:text-[clamp(1.5rem,1.95vw,1.75rem)] font-semibold">Our Security Advantages</h2>
+                        <div className="flex flex-col gap-4 sm:gap-[clamp(0.5rem,1.1vw,1rem)]">
+                            <h2 className="text-[#2E3033] text-xl sm:text-[clamp(1.125rem,1.67vw,1.5rem)] font-semibold">
                                 Regional compliance depth and SAP security expertise.
                             </h2>
-                            <ul className="list-disc marker:text-[#6c6c6c] pl-[27px] text-[#6c6c6c] text-lg font-light leading-relaxed space-y-3">
+                            <ul className="list-disc marker:text-[#6c6c6c] pl-[27px] text-[#6c6c6c] text-lg sm:text-[clamp(0.9375rem,1.25vw,1.125rem)] font-light leading-relaxed space-y-3 sm:space-y-[clamp(0.5rem,0.83vw,0.75rem)]">
                                 {CHALLENGES.map((item) => (
                                     <li key={item}>{item}</li>
                                 ))}
