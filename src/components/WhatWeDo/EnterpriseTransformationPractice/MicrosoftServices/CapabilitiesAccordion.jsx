@@ -135,7 +135,7 @@ export default function CapabilitiesAccordion() {
                                     }`}
                             >
                                 <span
-                                    className={`text-lg font-semibold leading-[1.4] transition-colors ${isActive ? "text-[#10161d]" : "text-[#6c6c6c]/70"
+                                    className={`text-lg font-semibold font-houschka leading-[1.4] transition-colors ${isActive ? "text-[#10161d]" : "text-[#6c6c6c]/70"
                                         }`}
                                 >
                                     {item.title}
