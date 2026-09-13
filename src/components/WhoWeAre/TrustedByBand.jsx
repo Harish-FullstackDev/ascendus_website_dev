@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 export default function TrustedByBand() {
     return (
-        <section className="w-full bg-[#F3F6F9] py-16 sm:py-24">
+        <section className="w-full bg-[#F3F6F9] px-6 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="max-w-6xl mx-auto px-4 lg:px-40 text-center"
+                className="max-w-6xl mx-auto text-center"
             >
 
                 <h2 className="text-2xl sm:text-[32px] leading-[1.5] font-semibold text-[#2E3033]">

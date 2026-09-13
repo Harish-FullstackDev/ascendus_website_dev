@@ -25,13 +25,13 @@ const itemVariants = {
 
 export default function OurStrength() {
     return (
-        <section className="w-full py-16 sm:pb-20 sm:pt-10 px-4 sm:px-6">
+        <section className="w-full px-6 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-8">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="text-center max-w-3xl mx-auto mb-12"
+                className="text-center max-w-3xl mx-auto mb-16"
             >
                 <h2 className="text-[28px] font-semibold text-[#2E3033]">The Scale Behind The Practice</h2>
                 <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
@@ -64,7 +64,7 @@ export default function OurStrength() {
                     </React.Fragment>
                 ))}
             </motion.div>
-            <div className="w-full h-px bg-gray-100 max-w-[1300px] mx-auto mt-16 sm:mt-20" />
+            <div className="w-full h-px bg-gray-100 max-w-[1300px] mx-auto mt-16" />
         </section>
     );
 }

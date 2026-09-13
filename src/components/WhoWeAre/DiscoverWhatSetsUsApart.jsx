@@ -22,14 +22,14 @@ const CARDS = [
 
 export default function DiscoverWhatSetsUsApart() {
     return (
-        <section className="w-full py-16 sm:py-16 px-4 sm:px-6 lg:px-8">
+        <section className="w-full px-6 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-8">
             {/* <div className="w-full h-px bg-[#c7cbcd] max-w-[1300px] mx-auto mb-16 sm:mb-20" /> */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="text-center max-w-3xl mx-auto mb-12"
+                className="text-center max-w-3xl mx-auto mb-16"
             >
                 <h2 className="text-[28px] font-semibold text-[#2E3033]">Discover What Set Us apart</h2>
                 <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
@@ -38,7 +38,11 @@ export default function DiscoverWhatSetsUsApart() {
                 </p>
             </motion.div>
 
-            <div className="max-w-[1300px] mx-auto flex flex-col lg:relative lg:w-full lg:aspect-[1220/592]">
+            {/* No max-width cap: the block spans the section's content box, so the
+                image's left edge sits on the 64px inset at any width and the whole
+                composition (which is percentage-based against this box, including the
+                cards' own height) scales up with it instead of stopping at 1300px. */}
+            <div className="flex flex-col lg:relative lg:w-full lg:aspect-[1220/592]">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -57,7 +61,7 @@ export default function DiscoverWhatSetsUsApart() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 + index * 0.1 }}
-                            className={`w-full lg:absolute lg:top-[18.24%] lg:h-[63.68%] lg:w-[35.98%] bg-[#F3F6F9] flex flex-col justify-center gap-4 px-6 sm:px-8 py-10 ${index === 0 ? "lg:left-[24.79%]" : "lg:left-[62.5%]"
+                            className={`w-full lg:absolute lg:top-[18.24%] lg:h-[63.68%] lg:w-[36.74%] bg-[#F3F6F9] flex flex-col justify-center gap-4 px-6 sm:px-8 py-10 ${index === 0 ? "lg:left-[24.79%]" : "lg:left-[63.26%]"
                                 }`}
                         >
                             <div>

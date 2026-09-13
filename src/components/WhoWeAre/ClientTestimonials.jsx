@@ -161,13 +161,13 @@ function TestimonialsColumn({ className, testimonials, duration = 10 }) {
 
 export default function ClientTestimonials() {
     return (
-        <section className="w-full py-16 sm:pb-20 sm:pt-1 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <section className="w-full px-6 sm:px-[64px] pt-10 pb-10 sm:pt-8 sm:pb-16 overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="text-center max-w-3xl mx-auto mb-12"
+                className="text-center max-w-3xl mx-auto mb-16"
             >
                 <h2 className="text-2xl font-semibold text-[#2E3033]">What Our Clients Say</h2>
                 <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
