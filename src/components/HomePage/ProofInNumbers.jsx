@@ -78,10 +78,15 @@ export default function ProofInNumbers() {
                     {STATS.map((stat) => (
                         <div
                             key={stat.label}
-                            className="flex flex-1 flex-col gap-2 items-center sm:px-10 first:sm:pl-0 last:sm:pr-0"
+                            className="flex min-w-0 flex-1 flex-col gap-2 items-center sm:px-10 first:sm:pl-0 last:sm:pr-0"
                         >
                             <AnimatedStat value={stat.value} />
-                            <p className="text-[#55595E] text-lg font-light whitespace-nowrap">
+                            {/* The single-line label is a desktop rule only: on mobile the
+                                two columns are ~150px wide and "SAP Engagements Delivered"
+                                on one line is ~230px, so nowrap there pushed the grid wider
+                                than the viewport and gave the whole page a horizontal
+                                scroll. Wraps below sm, stays on one line from sm up. */}
+                            <p className="text-[#55595E] text-lg font-light text-center sm:whitespace-nowrap">
                                 {stat.label}
                             </p>
                         </div>
