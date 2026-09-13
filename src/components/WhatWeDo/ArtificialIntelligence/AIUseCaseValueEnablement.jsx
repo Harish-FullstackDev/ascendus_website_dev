@@ -47,7 +47,7 @@ export default function AIUseCaseValueEnablement() {
                 </p>
             </motion.div>
 
-            <div className="max-w-[1300px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 sm:gap-x-8 lg:gap-x-12 gap-y-20">
+            <div className="max-w-[1300px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 sm:gap-x-8 lg:gap-x-12 gap-y-20">
                 {CARDS.map((card, index) => (
                     <motion.div
                         key={card.title}

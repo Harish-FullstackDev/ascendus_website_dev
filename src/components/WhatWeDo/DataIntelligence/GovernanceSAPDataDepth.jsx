@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import hybridPhoto from "@/assets/WhatWeDo/Data Inteligent/webp/Data_Governance.webp";
-import arrowIcon from "@/assets/WhatWeDo/Cloud and Infrastructure/icons/Section2_RightArrow.svg";
 import linkIcon from "@/assets/WhatWeDo/Cloud and Infrastructure/icons/Vector.svg";
 
 const ITEMS = [
@@ -31,6 +30,30 @@ const slideVariants = {
     center: { opacity: 1, x: 0 },
     exit: (dir) => ({ opacity: 0, x: dir > 0 ? -32 : 32 }),
 };
+
+// solar:arrow-up-linear, rotated to face left/right — replaces the literal
+// "←"/"→" glyphs, which rendered in the body font and sat off-centre in the
+// circle. See BroaderTechnologyServices/GovernanceSAPDataDepth.jsx for the
+// same fix on this section's sibling page.
+function NavArrow({ direction }) {
+    return (
+        <svg
+            viewBox="0 0 31 31"
+            fill="none"
+            aria-hidden="true"
+            className={`size-full ${direction === "prev" ? "-rotate-90" : "rotate-90"}`}
+        >
+            <g transform="translate(-0.5 0.5)">
+                <path
+                    d="M16 23V7M10 13L16 7L22 13"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </g>
+        </svg>
+    );
+}
 
 function LinkArrow({ light }) {
     return (
@@ -61,7 +84,7 @@ export default function GovernanceSAPDataDepth() {
             setPage(([currentIndex]) =>
                 currentIndex >= maxIndex ? [0, 1] : [currentIndex + 1, 1]
             );
-        }, 3500);
+        }, 2000);
         return () => clearInterval(id);
     }, [isPaused, maxIndex]);
 
@@ -134,7 +157,7 @@ export default function GovernanceSAPDataDepth() {
                         className={`flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border shrink-0 transition-transform hover:scale-110 ${index === 0 ? "border-[#a4a7a5] text-[#a4a7a5]" : "border-black text-black"
                             }`}
                     >
-                        ←
+                        <NavArrow direction="prev" />
                     </button>
                     <div className="flex items-center gap-[10px]">
                         {ITEMS.map((item, dotIndex) => (
@@ -156,7 +179,7 @@ export default function GovernanceSAPDataDepth() {
                         className={`flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border shrink-0 transition-transform hover:scale-110 ${index === maxIndex ? "border-[#a4a7a5] text-[#a4a7a5]" : "border-black text-black"
                             }`}
                     >
-                        →
+                        <NavArrow direction="next" />
                     </button>
                 </div>
             </div>

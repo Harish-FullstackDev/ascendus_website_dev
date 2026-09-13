@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Hanken_Grotesk } from "next/font/google";
-import missionBg from "@/assets/WhoWeAre/webp/Who_We_Are_Mission_Vission.webp";
+import missionBg from "@/assets/WhoWeAre/mission_vision.webp";
 
 // AktivGrotesk (used in the Figma design) isn't a freely licensed font, so this
 // substitutes Hanken Grotesk, a similar neo-grotesque with matching thin/light weights.
@@ -121,7 +121,7 @@ export default function MissionVision() {
                         backgroundImage: `url(${missionBg.src})`,
                     }}
                 />
-                {/* <div className="absolute inset-0 bg-black/40" /> */}
+                <div className="absolute inset-0 bg-black/60" />
                 <div className="relative flex flex-col sm:flex-row sm:h-full sm:items-center px-5">
                     {CARDS.map((card) => (
                         <AnimatedBorderCard key={card.title} {...card} />

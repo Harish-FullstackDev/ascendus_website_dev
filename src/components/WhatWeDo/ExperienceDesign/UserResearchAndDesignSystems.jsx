@@ -90,7 +90,7 @@ export default function UserResearchAndDesignSystems() {
                                 : "border-[#6c6c6c] text-[#6c6c6c] opacity-70"
                                 }`}
                         >
-                            <h2 className="text-base sm:text-2xl font-light">{tab.label}</h2>
+                            <h2 className="text-base sm:text-2xl font-semibold">{tab.label}</h2>
                         </button>
                     ))}
                 </div>

@@ -13,10 +13,10 @@ export default function BlogPostAuthorMeta({ blog }) {
                             <User className="w-6 h-6" />
                         </div>
                         <div>
-                            <p className="text-xs uppercase tracking-wide text-slate-500">
+                            <p className="text-xs uppercase tracking-wide text-[#55595E]">
                                 Author
                             </p>
-                            <p className="font-normal text-slate-900">
+                            <p className="font-normal text-[#2E3033]">
                                 {blog.author}
                             </p>
                         </div>
@@ -28,10 +28,10 @@ export default function BlogPostAuthorMeta({ blog }) {
                             <Calendar className="w-6 h-6" />
                         </div>
                         <div>
-                            <p className="text-xs uppercase tracking-wide text-slate-500">
+                            <p className="text-xs uppercase tracking-wide text-[#55595E]">
                                 Published
                             </p>
-                            <p className="font-normal text-slate-900">
+                            <p className="font-normal text-[#2E3033]">
                                 {new Date(blog.publish_date).toLocaleDateString("en-US", {
                                     year: "numeric",
                                     month: "long",

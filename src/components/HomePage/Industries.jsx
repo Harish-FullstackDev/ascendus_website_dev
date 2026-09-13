@@ -3,16 +3,16 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import manufacturingImg from "@/assets/HomePage/IndustriesWeServe/Manufacturing.webp";
-import retailImg from "@/assets/HomePage/IndustriesWeServe/Retail_&_Consumer.webp";
-import governmentImg from "@/assets/HomePage/IndustriesWeServe/Government_&_Public_Sector.webp";
-import financialImg from "@/assets/HomePage/IndustriesWeServe/Banking_&_Financial_Services.webp";
-import energyImg from "@/assets/HomePage/IndustriesWeServe/Energy_&_Utilities.webp";
-import engineeringImg from "@/assets/HomePage/IndustriesWeServe/Engineering_&_Construction.webp";
-import healthcareImg from "@/assets/HomePage/IndustriesWeServe/Healthcare_&_Life_Sciences.webp";
-import technologyMediaImg from "@/assets/HomePage/IndustriesWeServe/Technology,_Media_&_Communications.webp";
-import transportationImg from "@/assets/HomePage/IndustriesWeServe/Transportation_&_Logistics.webp";
-import educationImg from "@/assets/HomePage/IndustriesWeServe/Education_&_Research.webp";
+import manufacturingImg from "@/assets/HomePage/Industries/manufacturing.webp";
+import retailImg from "@/assets/HomePage/Industries/retail_consumer.webp";
+import governmentImg from "@/assets/HomePage/Industries/government_public_sector.webp";
+import financialImg from "@/assets/HomePage/Industries/banking_financial_services.webp";
+import energyImg from "@/assets/HomePage/Industries/energy_utilities.webp";
+import engineeringImg from "@/assets/HomePage/Industries/engineering_construction.webp";
+import healthcareImg from "@/assets/HomePage/Industries/healthcare_life_sciences.webp";
+import technologyMediaImg from "@/assets/HomePage/Industries/technology.webp";
+import transportationImg from "@/assets/HomePage/Industries/transportation_logistics.webp";
+import educationImg from "@/assets/HomePage/Industries/education_research.webp";
 import arrowIcon from "@/assets/HomePage/Industries/icon-arrow.svg";
 
 // All 10 industries now have their own dedicated photo (IndustriesWeServe/) —

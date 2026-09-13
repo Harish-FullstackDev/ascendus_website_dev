@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import corridorImg from "@/assets/HomePage/images/data-center-hallway.png";
+import corridorImg from "@/assets/HomePage/how_we_work.webp";
 
 const STEPS = [
     {
