@@ -48,19 +48,38 @@ const itemVariants = {
 
 export default function TeamStory() {
     return (
-        <section className="bg-[#fdfdfd] py-16 sm:py-20">
+        <section className="bg-[#fdfdfd] py-10 sm:py-8">
             <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-                <div aria-hidden className="w-full h-px bg-black/10 mb-12" />
+                {/* These two hairlines are identical divs, but a 1px box at a fractional y
+                    offset has its 10% of black split across two device rows, and that
+                    split is what the eye reads as thickness. Two things had to be true
+                    for them to match:
+
+                    1. Whole-number layout between them — the heading block was 73.328px
+                       and the card row 245.75px, so the rules sat on different subpixel
+                       phases (.578 vs .656) and the lower one rendered heavier. The
+                       leading pins on the h2 and the quote below fix that.
+                    2. A gap that stays whole once multiplied by the device pixel ratio.
+                       With 517px between them, 517 x 1.4 = 723.8 put them back on
+                       different phases at 140% zoom (measured: top peaked at 28/255
+                       darkness, bottom at 22 spread over two rows — the bottom read as
+                       thicker and softer). 520 is a multiple of 20, so the product is
+                       whole at 1.1, 1.25, 1.4, 1.5, 1.75 and 2, and both rules rasterise
+                       the same way at every one. That is what the 67px below buys.
+
+                    Tried and rejected: transform-gpu on each rule, hoping compositing
+                    would snap them to the pixel grid. Measured no change at 1.1 or 1.4. */}
+                <div aria-hidden className="w-full h-px bg-black/10 mb-16" />
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="text-center mb-12"
+                    className="text-center mb-16"
                 >
-                    <h2 className="text-2xl sm:text-[28px] font-semibold text-[#2E3033] capitalize">Our Team Story</h2>
-                    <p className="mt-4 text-sm font-light sm:text-lg text-[#55595E]">
+                    <h2 className="text-2xl sm:text-[28px] sm:leading-9 font-semibold text-[#2E3033] capitalize">Our Team Story</h2>
+                    <p className="mt-2 text-sm font-light sm:text-lg text-[#55595E]">
                         You might want to hear from some of our team on their unique expeditions
                     </p>
                 </motion.div>
@@ -89,12 +108,12 @@ export default function TeamStory() {
                                 <p className="font-semibold text-[#2E3033] text-base">{item.name}</p>
                                 <p className="text-[#3d3d4e] text-sm opacity-60">{item.role}</p>
                             </div>
-                            <p className="text-sm text-[#55595E] leading-relaxed">{item.quote}</p>
+                            <p className="text-sm text-[#55595E] leading-6">{item.quote}</p>
                         </motion.div>
                     ))}
                 </motion.div>
 
-                <div aria-hidden className="w-full h-px bg-black/10 mt-12 mb-8" />
+                <div aria-hidden className="w-full h-px bg-black/10 mt-[67px]" />
             </div>
         </section>
     );

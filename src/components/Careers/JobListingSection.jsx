@@ -143,16 +143,16 @@ export default function JobListingSection() {
     );
 
     return (
-        <section id="job-listings" className="w-full py-16 sm:pb-10 sm:pt-5 scroll-mt-24">
+        <section id="job-listings" className="w-full py-16 sm:pb-8 sm:pt-8 scroll-mt-24">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="text-center mb-8"
+                className="text-center mb-16"
             >
                 <p className="text-lg text-[#55595E]">Opportunities</p>
-                <h2 className="text-2xl sm:text-[28px] font-semibold text-[#2E3033] mt-1">Find work that matches your expertise.</h2>
+                <h2 className="text-2xl sm:text-[28px] font-semibold text-[#2E3033] mt-2">Find work that matches your expertise.</h2>
             </motion.div>
 
             <motion.div
@@ -160,7 +160,7 @@ export default function JobListingSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="relative w-full bg-[#f3f3f3] shadow-[0px_1px_30.9px_rgba(0,0,0,0.14)] px-5 sm:px-40 py-8"
+                className="relative w-full bg-[#f3f3f3] shadow-[0px_1px_30.9px_rgba(0,0,0,0.14)] px-5 sm:px-32 py-16"
             >
                 <div aria-hidden className="hidden lg:block absolute top-2 bottom-2 right-2 w-[6px] rounded-full bg-[#d7d7d7]">
                     <div className="w-full h-2/3 rounded-full bg-[#c5c2c2] shadow-[inset_0px_4px_4px_rgba(0,0,0,0.25)]" />

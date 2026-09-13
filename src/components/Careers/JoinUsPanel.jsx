@@ -6,7 +6,7 @@ import separatorLine from "@/assets/career/Separetor line.png";
 
 export default function JoinUsPanel() {
     return (
-        <div className="relative w-full bg-white px-6 sm:px-10 lg:px-[85px] py-10 sm:py-16">
+        <div className="relative w-full bg-white px-6 sm:px-10 lg:px-[64px] pt-10 sm:pt-16 pb-10 sm:pb:8">
             <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -15,19 +15,11 @@ export default function JoinUsPanel() {
                 className="max-w-5xl mx-auto text-center"
             >
                 <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">Join us</h2>
-                <p className="mt-3 text-sm sm:text-lg font-light text-[#55595E] leading-relaxed">
+                <p className="mt-2 text-sm sm:text-lg font-light text-[#55595E] leading-relaxed">
                     Work alongside specialists solving complex technology challenges across SAP, cloud, data,
                     cybersecurity and digital transformation, with the opportunity to see your work move from
                     strategy into production.
                 </p>
-                <div className="relative w-full max-w-3xl h-px mt-8 mx-auto opacity-30">
-                    <Image
-                        src={separatorLine}
-                        alt=""
-                        fill
-                        className="object-cover"
-                    />
-                </div>
             </motion.div>
         </div>
     );
