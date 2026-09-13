@@ -304,13 +304,18 @@ export default function Industries() {
                 mid-transition (their heights don't sum to a constant), which shoved
                 How We Work below up and down on every rotation. Locking the wrapper's
                 height stops that — individual cards can still resize freely inside
-                it without the page around them moving. */}
+                it without the page around them moving.
+
+                mt-8 on mobile, not mt-16: on a phone the arrows stack under the
+                subheading, and a 64px drop from there to the cards read as a hole —
+                wider than the same arrows-to-cards gap in the Services carousel
+                above. 32px matches it; sm and up keep Figma's 64px. */}
             <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="relative w-screen left-1/2 -translate-x-1/2 mt-16 h-[320px] sm:h-[360px] lg:h-[407px] overflow-hidden"
+                className="relative w-screen left-1/2 -translate-x-1/2 mt-8 sm:mt-16 h-[320px] sm:h-[360px] lg:h-[407px] overflow-hidden"
             >
                     <div
                         className={`flex flex-row items-start ${instant ? "" : "transition-transform ease-in-out"}`}

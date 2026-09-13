@@ -160,7 +160,7 @@ export default function JobListingSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="relative w-full bg-[#f3f3f3] shadow-[0px_1px_30.9px_rgba(0,0,0,0.14)] px-10 sm:px-40 py-8"
+                className="relative w-full bg-[#f3f3f3] shadow-[0px_1px_30.9px_rgba(0,0,0,0.14)] px-5 sm:px-40 py-8"
             >
                 <div aria-hidden className="hidden lg:block absolute top-2 bottom-2 right-2 w-[6px] rounded-full bg-[#d7d7d7]">
                     <div className="w-full h-2/3 rounded-full bg-[#c5c2c2] shadow-[inset_0px_4px_4px_rgba(0,0,0,0.25)]" />
@@ -212,9 +212,12 @@ export default function JobListingSection() {
                                         viewport={{ once: true, amount: 0.3 }}
                                         transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
                                         whileHover={{ scale: 1.015 }}
-                                        className="group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white border-l-4 border-transparent px-5 py-4 transition-all duration-300 hover:border-[#2d8ec5] hover:shadow-[1px_3px_12px_rgba(0,0,0,0.18)]"
+                                        className="group flex flex-row items-center justify-between gap-3 sm:gap-4 bg-white border-l-4 border-transparent px-5 py-4 transition-all duration-300 hover:border-[#2d8ec5] hover:shadow-[1px_3px_12px_rgba(0,0,0,0.18)]"
                                     >
-                                        <div>
+                                        {/* min-w-0 so this column can shrink below its
+                                            longest word instead of pushing the button
+                                            out of the card on a narrow screen. */}
+                                        <div className="min-w-0">
                                             <p className="text-[16px] text-black">{job.title}</p>
                                             <p className="text-[14px] font-light text-[#6c6c6c] mt-1">
                                                 {job.location} | {job.typeOfWork} | {job.experienceLevel}
@@ -222,7 +225,7 @@ export default function JobListingSection() {
                                         </div>
                                         <ViewDetailsButton
                                             href={`/careers/${job.slug}`}
-                                            className="w-full sm:w-auto justify-center sm:justify-start"
+                                            className="shrink-0"
                                         />
                                     </motion.div>
                                 ))

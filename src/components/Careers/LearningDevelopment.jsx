@@ -6,8 +6,14 @@ import { ArrowRight } from "lucide-react";
 import learningImage from "@/assets/career/webp/Careers_Learning_Development.webp";
 
 export default function LearningDevelopment() {
+    // overflow-x-clip on the section: the text panel enters from x: 24 and the
+    // image panel from x: -24. On mobile both are full-width, so while the
+    // entrance animation is pending or running the panel sits 24px past the
+    // right viewport edge — transforms count toward scrollable overflow — and
+    // the whole page picks up a 24px horizontal scroll. clip, not hidden:
+    // hidden would make this a scroll container and break position: sticky.
     return (
-        <section className="w-full py-8 sm:py-12">
+        <section className="w-full py-8 sm:py-12 overflow-x-clip">
             <div className="flex flex-col lg:relative lg:w-full lg:aspect-[1280/537]">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}

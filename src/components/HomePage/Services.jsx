@@ -169,8 +169,16 @@ export default function Services() {
                     {/* Arrows sit above the cards, right-aligned — same icon, size and
                         hover behavior as the Industry-Specific Solutions section. They
                         share the heading's row from md up and drop below it, still
-                        right-aligned, when that row is too narrow. */}
-                    <div className="shrink-0 self-end flex items-center gap-3">
+                        right-aligned, when that row is too narrow.
+
+                        items-end only aligns the boxes; the arrow glyph does not reach
+                        its own box's bottom edge. icon-arrow.svg draws inside y 11-27 of
+                        a 40 viewBox, so at size-12 (48px) there is 48 x 13/40 = ~15.6px
+                        of empty space under the glyph, against only (1.5-1) x 18/2 =
+                        4.5px of half-leading under the description's last line. The
+                        ~11px difference is pushed back here so the visible arrow bottom,
+                        not the invisible box bottom, lines up with the text. */}
+                    <div className="shrink-0 self-end flex items-center gap-3 md:translate-y-[11px]">
                         <button
                             type="button"
                             aria-label="Previous capability"
