@@ -8,7 +8,7 @@ const AVATAR = "/blog/default-author.svg";
 
 export default function GrowthQuoteBand() {
     return (
-        <section className="w-full py-8 sm:py-8 px-4 sm:px-6 lg:px-8">
+        <section className="w-full py-5 sm:py-8 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto flex flex-col gap-8">
                 <div aria-hidden className="w-full h-px bg-black/30" />
 
@@ -47,8 +47,10 @@ export default function GrowthQuoteBand() {
 
                         Figma stacks the mark above the copy (node 3357:301) with the
                         paragraph indented inside it. Width scales with the viewport rather
-                        than pinning Figma's literal 34px ink width. */}
-                    <div className="flex flex-col items-center lg:items-start gap-3">
+                        than pinning Figma's literal 34px ink width. The mark hangs off the
+                        left edge at every width — centring it on mobile left it floating
+                        over the middle of the paragraph with nothing to anchor it. */}
+                    <div className="flex flex-col items-start gap-3">
                         <Image
                             src={quoteMark}
                             alt=""

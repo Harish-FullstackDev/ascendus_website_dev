@@ -13,7 +13,7 @@ export default function LearningDevelopment() {
     // the whole page picks up a 24px horizontal scroll. clip, not hidden:
     // hidden would make this a scroll container and break position: sticky.
     return (
-        <section className="w-full py-8 sm:py-8 overflow-x-clip">
+        <section className="w-full py-5 sm:py-8 overflow-x-clip">
             <div className="flex flex-col lg:relative lg:w-full lg:aspect-[1280/537]">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}

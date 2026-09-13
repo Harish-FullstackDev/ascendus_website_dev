@@ -48,7 +48,7 @@ const itemVariants = {
 
 export default function TeamStory() {
     return (
-        <section className="bg-[#fdfdfd] py-10 sm:py-8">
+        <section className="bg-[#fdfdfd] py-5 sm:py-8">
             <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
                 {/* These two hairlines are identical divs, but a 1px box at a fractional y
                     offset has its 10% of black split across two device rows, and that
@@ -69,14 +69,14 @@ export default function TeamStory() {
 
                     Tried and rejected: transform-gpu on each rule, hoping compositing
                     would snap them to the pixel grid. Measured no change at 1.1 or 1.4. */}
-                <div aria-hidden className="w-full h-px bg-black/10 mb-16" />
+                <div aria-hidden className="w-full h-px bg-black/10 mb-8 sm:mb-16" />
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="text-center mb-16"
+                    className="text-center mb-10 sm:mb-16"
                 >
                     <h2 className="text-2xl sm:text-[28px] sm:leading-9 font-semibold text-[#2E3033] capitalize">Our Team Story</h2>
                     <p className="mt-2 text-sm font-light sm:text-lg text-[#55595E]">
@@ -113,7 +113,7 @@ export default function TeamStory() {
                     ))}
                 </motion.div>
 
-                <div aria-hidden className="w-full h-px bg-black/10 mt-[67px]" />
+                <div aria-hidden className="w-full h-px bg-black/10 mt-8 sm:mt-[67px]" />
             </div>
         </section>
     );

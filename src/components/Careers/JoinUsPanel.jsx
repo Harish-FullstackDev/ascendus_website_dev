@@ -6,7 +6,7 @@ import separatorLine from "@/assets/career/Separetor line.png";
 
 export default function JoinUsPanel() {
     return (
-        <div className="relative w-full bg-white px-6 sm:px-10 lg:px-[64px] pt-10 sm:pt-16 pb-10 sm:pb:8">
+        <div className="relative w-full bg-white px-6 sm:px-10 lg:px-[64px] pt-10 sm:pt-16 pb-5 sm:pb-8">
             <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
