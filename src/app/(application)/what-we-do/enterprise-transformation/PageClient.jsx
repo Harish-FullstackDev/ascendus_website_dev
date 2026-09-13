@@ -46,7 +46,7 @@ const page = () => {
             </div>
 
             <ReadyToTransform
-                title="Let's find the right engagement model for your transformation."
+                title="Let's Find the Right Engagement Model for Your Transformation."
                 description="Talk to our team about the SAP and Microsoft environment your business actually needs."
                 buttonLabel="Book a Consultation"
                 bgImage={ctaBg}
