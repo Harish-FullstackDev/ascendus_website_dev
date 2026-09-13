@@ -57,7 +57,7 @@ export default function BusinessTransformationAdvisory() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[694px] text-center"
             >
-                <h2 className="text-[#2E3033] text-2xl font-semibold">Business Transformation Advisory</h2>
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">Business Transformation Advisory</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Advisory services that connect business priorities, technology decisions, and transformation
                     outcomes.

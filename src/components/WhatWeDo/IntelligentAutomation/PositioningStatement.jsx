@@ -6,7 +6,7 @@ import matterPhoto from "@/assets/WhatWeDo/Intelligent Automation/new/Positionin
 
 export default function PositioningStatement() {
     return (
-        <section className="w-full px-6 py-10 sm:pl-[64px] sm:pr-[64px] sm:py-[64px] bg-[#f3f6f9]">
+        <section className="w-full px-6 py-10 sm:pl-[64px] sm:pr-[64px] sm:py-[64px] bg-[#f5f6f6]">
 
             <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-[143px]">
                 {/* Content */}

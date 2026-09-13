@@ -32,7 +32,7 @@ const ITEMS = [
 
 export default function DataProtectionPrivacy() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[64px] bg-[#f3f6f9] flex flex-col items-center gap-16">
+        <section className="w-full py-10 sm:py-16 px-6 sm:px-[64px] bg-[#F5F6F6] flex flex-col items-center gap-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export default function DataProtectionPrivacy() {
                                 thinner than Houschka Pro 600 at the same nominal weight —
                                 which is what made them look lighter than the section
                                 heading above. */}
-                            <p className="font-houschka-pro text-black text-xl sm:text-2xl font-semibold">{item.title}</p>
+                            <h2 className=" text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h2>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                         </div>
                     </motion.div>

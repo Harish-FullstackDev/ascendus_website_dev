@@ -93,7 +93,7 @@ export default function CapabilitiesAccordion() {
     return (
         <section
             ref={sectionRef}
-            className="w-full bg-[#f3f6f9] pt-10 pb-10 sm:pt-16 sm:pb-16 flex flex-col items-center gap-10 sm:gap-20 scroll-mt-24"
+            className="w-full bg-[#f5f6f6] pt-10 pb-10 sm:pt-16 sm:pb-16 flex flex-col items-center gap-10 sm:gap-20 scroll-mt-24"
         >
             <div className="w-full px-6 sm:px-[64px] flex justify-center">
                 <motion.div

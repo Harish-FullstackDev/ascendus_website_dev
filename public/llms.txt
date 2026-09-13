@@ -1,0 +1,45 @@
+# Ascendus
+
+> Ascendus is a technology consulting and implementation partner delivering SAP transformation, enterprise technology, and digital services to enterprises across Saudi Arabia and the GCC region.
+
+Ascendus helps organizations modernize through SAP-led transformation, cloud and infrastructure, data and AI, cybersecurity, digital engineering, and customer experience services, with regional compliance and delivery expertise for the KSA/GCC market.
+
+## Company
+
+- [Who We Are](https://www.ascendus.sa/who-we-are): Company overview, principles, and delivery approach.
+- [Careers](https://www.ascendus.sa/careers): Open roles and hiring process.
+- [Contact](https://www.ascendus.sa/contact): Get in touch with Ascendus.
+- [Book a Consultation](https://www.ascendus.sa/book-a-consultation): Schedule a call with the team.
+
+## What We Do
+
+- [Enterprise Transformation](https://www.ascendus.sa/what-we-do/enterprise-transformation): SAP-led enterprise transformation services.
+- [SAP Transformation](https://www.ascendus.sa/what-we-do/enterprise-transformation/sap-transformation): SAP implementation and modernization.
+- [Microsoft Services](https://www.ascendus.sa/what-we-do/enterprise-transformation/microsoft-services): Microsoft platform services.
+- [Broader Technology Services](https://www.ascendus.sa/what-we-do/enterprise-transformation/broader-technology-services): Extended enterprise technology services.
+- [Artificial Intelligence](https://www.ascendus.sa/what-we-do/artificial-intelligence): AI strategy, deployment, and scaling.
+- [Cloud & Infrastructure](https://www.ascendus.sa/what-we-do/cloud-infrastructure): Cloud migration and infrastructure services.
+- [Data & Intelligence](https://www.ascendus.sa/what-we-do/data-intelligence): Data architecture, governance, and analytics.
+- [Digital Engineering](https://www.ascendus.sa/what-we-do/digital-engineering): Custom software and API development.
+- [Customer Experience](https://www.ascendus.sa/what-we-do/customer-experience): Experience design and customer journey services.
+- [Experience Design](https://www.ascendus.sa/what-we-do/experience-design): UX research and design systems.
+- [Cybersecurity & Digital Trust](https://www.ascendus.sa/what-we-do/cybersecurity-digital-trust): Security architecture, GRC, and identity management.
+- [Intelligent Automation](https://www.ascendus.sa/what-we-do/intelligent-automation): Process automation services.
+- [Managed Services](https://www.ascendus.sa/what-we-do/managed-services): Ongoing operations and support.
+- [Business Advisory](https://www.ascendus.sa/what-we-do/business-advisory): Business and technology advisory services.
+- [Innovation & Emerging Technologies](https://www.ascendus.sa/what-we-do/innovation-emerging-technologies): Emerging technology exploration and adoption.
+
+## Insights
+
+- [Case Studies](https://www.ascendus.sa/case-studies): Client engagement outcomes.
+- [Whitepapers](https://www.ascendus.sa/whitepapers): In-depth research and technical papers.
+- [Blog](https://www.ascendus.sa/blog): Articles and updates.
+- [Industry Reports](https://www.ascendus.sa/industry-reports): Sector-specific research reports.
+- [Trust Center](https://www.ascendus.sa/trustcenter): Compliance and security resources.
+
+## Legal
+
+- [Terms & Conditions](https://www.ascendus.sa/legal/terms)
+- [Privacy Policy](https://www.ascendus.sa/legal/privacy)
+- [Security Policy](https://www.ascendus.sa/legal/security)
+- [Cookie Policy](https://www.ascendus.sa/legal/cookies)

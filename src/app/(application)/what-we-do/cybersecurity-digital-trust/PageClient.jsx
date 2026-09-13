@@ -72,7 +72,7 @@ const page = () => {
             {/* <FutureFocusedInsights /> */}
             <SecurityChallenges />
             <ReadyToTransform
-                title="Ready to strengthen your security posture?"
+                title="Ready to Strengthen Your Security Posture?"
                 description="Talk to our cybersecurity team about protecting what your business is building."
                 bgImage={customBg}
             />

@@ -100,8 +100,8 @@ const CapabilityCard = forwardRef(function CapabilityCard(
                 {/* Mobile-only duplicate of the number+title below (hidden below lg) —
                     on mobile the image sits below the number/title rather than above. */}
                 <div className="flex flex-col gap-5 lg:hidden">
-                    <span className="text-[#8794a3] text-2xl font-medium leading-[1.5]">{number}</span>
-                    <p className="text-[#10161d] text-lg font-medium leading-[1.5]">{title}</p>
+                    <span className="text-[#73A8D3] text-2xl font-medium leading-[1.5]">{number}</span>
+                    <h2 className="text-[#2E3033] text-lg font-semibold leading-[1.5]">{title}</h2>
                 </div>
 
                 {/* 272x459 in Figma, kept as an aspect ratio on a responsive width
@@ -124,10 +124,10 @@ const CapabilityCard = forwardRef(function CapabilityCard(
                     {/* Number and title stay outside the collapsible — a closed card
                         still reads as "02 Microsoft Services"; only the description
                         and button fold away. */}
-                    <span className="hidden lg:inline text-[#8794a3] text-2xl sm:text-[28px] font-medium leading-[1.5]">
+                    <span className="hidden lg:inline text-[#73A8D3] text-2xl sm:text-[28px] font-medium leading-[1.5]">
                         {number}
                     </span>
-                    <p className="hidden lg:block mt-5 text-[#10161d] text-lg font-medium leading-[1.5]">{title}</p>
+                    <h2 className="hidden lg:block mt-5 text-[#2E3033] text-2xl font-semibold leading-[1.5]">{title}</h2>
 
                     <motion.div
                         initial={false}
@@ -136,7 +136,7 @@ const CapabilityCard = forwardRef(function CapabilityCard(
                         className="overflow-hidden"
                     >
                         <div className="flex flex-col gap-8 pt-2.5">
-                            <div className="text-[#4a5568] text-lg font-light leading-normal">
+                            <div className="text-[#55595E] text-lg font-light leading-normal">
                                 {description.map((paragraph) => (
                                     <p key={paragraph}>{paragraph}</p>
                                 ))}
@@ -144,7 +144,7 @@ const CapabilityCard = forwardRef(function CapabilityCard(
                             <Link
                                 href={href}
                                 onClick={(event) => event.stopPropagation()}
-                                className="inline-flex h-11 w-[175px] shrink-0 items-center justify-center border border-[#d0d0d0] bg-[#0a3a52] px-6 text-lg font-light text-white text-center transition-colors hover:bg-white hover:text-[#0a3a52]"
+                                className="inline-flex h-11 w-[175px] shrink-0 items-center justify-center border border-[#d0d0d0] bg-[#002C4F] px-6 text-lg font-light text-white text-center transition-colors hover:bg-white hover:text-[#0a3a52]"
                             >
                                 View More
                             </Link>
@@ -533,7 +533,7 @@ export default function Capabilities() {
     }, [activeIndex, isDesktop, resizeEpoch]);
 
     return (
-        <section className="w-full bg-[#f3f6f9] px-6 py-8 sm:px-[64px] sm:py-[64px] flex flex-col items-center gap-10 sm:gap-[86px]">
+        <section className="w-full bg-[#f5f6f6] px-6 py-8 sm:px-[64px] sm:py-[64px] flex flex-col items-center gap-10 sm:gap-[86px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -541,8 +541,8 @@ export default function Capabilities() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-3 sm:gap-[24px] max-w-[855px] text-center"
             >
-                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">Capabilities</h2>
-                <p className="text-[#4a5568] text-lg font-light">
+                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Capabilities</h2>
+                <p className="text-[#55595E] text-lg font-light">
                     SAP is our core deliberately. Microsoft and adjacent platforms extend that core so the
                     enterprise moves as a system, not a set of silos.
                 </p>

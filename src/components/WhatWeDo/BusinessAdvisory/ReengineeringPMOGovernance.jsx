@@ -94,7 +94,7 @@ export default function ReengineeringPMOGovernance() {
                                 <Image src={item.icon} alt="" width={40} height={40} className="object-contain" />
                             </div>
                             <div className="flex flex-col gap-2 sm:gap-3">
-                                <h2 className="text-[#2E3033] text-lg sm:text-xl font-semibold">{item.title}</h2>
+                                <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                             </div>
                         </motion.div>

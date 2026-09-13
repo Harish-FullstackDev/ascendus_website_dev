@@ -34,7 +34,7 @@ export default function SecurityAssessmentCloudDefense() {
         // no horizontal constraint, so it now runs edge-to-edge like the Figma frame instead
         // of leaving page-white gutters on either side.
         <section className="w-full py-10 sm:py-[32px]">
-            <div className="w-full bg-[#f3f6f9] flex flex-col items-center gap-10 sm:gap-16 px-6 sm:px-[64px] py-8 sm:py-[32px]">
+            <div className="w-full bg-[#F5F6F6] flex flex-col items-center gap-10 sm:gap-16 px-6 sm:px-[64px] py-8 sm:py-[32px]">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -42,8 +42,8 @@ export default function SecurityAssessmentCloudDefense() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
                 >
-                    <h2 className="font-heading text-black text-2xl font-semibold">Security Assessment & Cloud Defense</h2>
-                    <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
+                    <h2 className="text-[#2E3033] text-[28px] font-semibold">Security Assessment & Cloud Defense</h2>
+                    <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Targeted security assessments and cloud protection services.
                     </p>
                 </motion.div>

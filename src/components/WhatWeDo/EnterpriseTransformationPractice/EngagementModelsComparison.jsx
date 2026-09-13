@@ -53,7 +53,7 @@ export default function EngagementModelsComparison() {
     return (
         <section
             id="engagement-models"
-            className="w-full bg-[#f3f6f9] px-6 pt-10 pb-10 sm:px-[64px] sm:pt-16 sm:pb-16 flex flex-col items-center gap-8 sm:gap-8"
+            className="w-full bg-[#f5f6f6] px-6 pt-10 pb-10 sm:px-[64px] sm:pt-16 sm:pb-16 flex flex-col items-center gap-8 sm:gap-8"
         >
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -62,8 +62,8 @@ export default function EngagementModelsComparison() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-5 max-w-[818px] text-center"
             >
-                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">Engagement Models</h2>
-                <p className="text-[#4a5568] text-lg font-light leading-[1.5]">
+                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Engagement Models</h2>
+                <p className="text-[#55595E] text-lg font-light leading-[1.5]">
                     Choose the engagement model that fits your needs, from focused projects to ongoing support and
                     strategic guidance.
                 </p>

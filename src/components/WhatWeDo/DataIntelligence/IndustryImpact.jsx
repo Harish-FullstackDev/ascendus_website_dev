@@ -18,7 +18,7 @@ const INDUSTRIES = [
 
 export default function IndustryImpact() {
     return (
-        <section className="w-full bg-[#F3F6F9] py-10 sm:p-16 px-6 ">
+        <section className="w-full bg-[#F5F6F6] py-10 sm:p-16 px-6 ">
             <div className="w-full mx-auto flex flex-col items-center gap-10 sm:gap-16">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -45,7 +45,7 @@ export default function IndustryImpact() {
                             <div className="relative shrink-0 size-10 sm:size-12">
                                 <Image src={industry.icon} alt="" fill className="object-contain" />
                             </div>
-                            <p className="text-[#2E3033] text-sm sm:text-[16px] font-light whitespace-nowrap">
+                            <p className="text-[#2E3033] text-sm sm:text-lg font-light whitespace-nowrap">
                                 {industry.name}
                             </p>
                         </div>

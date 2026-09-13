@@ -12,12 +12,12 @@ const STATS = [
 ];
 
 const POINTS = [
-    "SAP certified delivery teams",
-    "GCC regulatory awareness",
-    "Governance built into every deployment",
-    "Proven enterprise integration experience",
-    "Outcome based engagement models",
-    "Cross industry delivery track record"
+    "SAP data architecture expertise",
+    "Governance built into every platform",
+    "Real time and batch capability",
+    "Cross source data integration",
+    "Analytics tied to business outcomes",
+    "Regional compliance awareness"
 ];
 
 
@@ -98,7 +98,7 @@ export default function WhyPartnerWithUsMetrix() {
             </div>
 
 
-            <div className="bg-[#F3F6F9] w-full py-10 sm:p-16 px-6 flex flex-col  items-center ">
+            <div className="bg-[#F5F6F6] w-full py-10 sm:p-16 px-6 flex flex-col  items-center ">
                 <motion.h3
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}

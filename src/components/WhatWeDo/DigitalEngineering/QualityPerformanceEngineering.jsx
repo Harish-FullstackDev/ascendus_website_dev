@@ -59,7 +59,7 @@ export default function QualityPerformanceEngineering() {
                             className="flex flex-col items-center gap-6 text-center"
                         >
                             <Image src={item.icon} alt="" width={48} height={48} />
-                            <h2 className="text-[#2E3033] text-xl font-semibold">{item.title}</h2>
+                            <h2 className="text-[#2E3033] text-2xl font-semibold">{item.title}</h2>
                             <p className="text-[#55595E] text-lg font-light">{item.desc}</p>
                         </motion.div>
                     ))}

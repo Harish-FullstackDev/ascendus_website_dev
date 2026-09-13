@@ -35,8 +35,7 @@ export default function SoftwareScalability() {
                     className="flex w-full flex-1 flex-col gap-5 text-[#3d3d4e]"
                 >
                     <h2 className="text-2xl font-semibold text-[#2E3033]">
-                        Positioning enterprise software as a driver of agility
-                        rather than operational constraint.
+                        Positioning Enterprise Software As a Driver of Agility Rather Than Operational Constraint.
                     </h2>
 
                     <p className="text-lg font-light leading-normal text-[#55595E]">

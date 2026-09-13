@@ -53,7 +53,7 @@ export default function IndustryDigitalTwins() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16 px-6 sm:px-[64px]"
             >
-                <h2 className="text-[#2E3033] text-2xl font-semibold">Industry 4.0, IoT & Digital Twins</h2>
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">Industry 4.0, IoT & Digital Twins</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Core emerging tech capabilities for real-world enterprise application.
 
@@ -93,7 +93,7 @@ export default function IndustryDigitalTwins() {
                                 aria-hidden
                                 className={`absolute inset-0 transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}
                             >
-                                <div className="absolute inset-0 bg-[#0a2b3e]/90" />
+                                <div className="absolute inset-0 bg-[#002C4F]" />
                             </div>
                             <div className="relative md:mt-15 flex flex-col gap-12 sm:gap-20">
                                 <h2 className="text-xl sm:text-[32px] font-semibold">

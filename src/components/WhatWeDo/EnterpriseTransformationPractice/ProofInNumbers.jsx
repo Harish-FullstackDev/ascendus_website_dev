@@ -50,7 +50,7 @@ function AnimatedStat({ value }) {
     }, [isInView, number]);
 
     return (
-        <p ref={ref} className="font-urbane text-[#1c5f85] text-2xl sm:text-[28px] font-medium leading-normal">
+        <p ref={ref} className="text-[#0061AF] text-2xl sm:text-[28px] font-medium leading-normal">
             {prefix}
             {display.toFixed(decimals)}
             {suffix}
@@ -77,7 +77,7 @@ export default function ProofInNumbers() {
                     {STATS.map((stat) => (
                         <div key={stat.label} className="flex flex-col gap-2 items-center sm:justify-center sm:px-10 first:sm:pl-0 last:sm:pr-0">
                             <AnimatedStat value={stat.value} />
-                            <p className="text-[#4a5568] text-lg font-light text-center sm:whitespace-nowrap">{stat.label}</p>
+                            <p className="text-[#55595E] text-lg font-light text-center sm:whitespace-nowrap">{stat.label}</p>
                         </div>
                     ))}
                 </div>

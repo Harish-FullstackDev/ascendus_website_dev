@@ -53,7 +53,7 @@ const page = () => {
             {/* <FutureFocusedInsights /> */}
             <WhyPartnerWithUs />
             <ReadyToTransform
-                title="Ready to remove manual work from your business processes?"
+                title="Ready to Remove Manual Work From Your Business Processes?"
                 description="Talk to our automation team about where intelligent automation pays off fastest."
                 bgImage={customBg}
             />

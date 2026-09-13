@@ -81,7 +81,7 @@ export default function AdvancedDecisionLogiWorkflow() {
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
                             className="bg-white px-8 py-10 sm:px-[clamp(1rem,2.25vw,2rem)] sm:py-[clamp(1.5rem,2.8vw,2.5rem)] flex flex-col gap-8 sm:gap-[clamp(1rem,2.2vw,2rem)] sm:min-h-64"
                         >
-                            <h2 className="text-[#2E3033] text-xl font-semibold">{card.title}</h2>
+                            <h2 className="text-[#2E3033] text-2xl font-semibold">{card.title}</h2>
                             <p className="text-[#55595E] text-lg font-light">{card.desc}</p>
                         </motion.div>
                     ))}

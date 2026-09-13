@@ -42,7 +42,7 @@ export default function IndustriesWeServe() {
                         transition={{ duration: 0.6, ease: "easeOut", delay: (index % 3) * 0.08 }}
                         className="border-b border-white/50 pb-4 flex items-center justify-center"
                     >
-                        <p className="text-[#f3f6f9] text-xl sm:text-2xl font-extralight text-center">{industry}</p>
+                        <h2 className="text-[#f5f6f6] text-xl sm:text-2xl font-medium text-center">{industry}</h2>
                     </motion.div>
                 ))}
             </div>

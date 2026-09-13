@@ -45,7 +45,7 @@ const page = () => {
             <SalesforceConsulting />
             <SpecializedCXAutomationAnalytics />
             <ReadyToTransform
-                title="Ready to design a customer experience that earns loyalty?"
+                title="Ready to Design a Customer Experience That Earns Loyalty?"
                 description="Talk to our CX team about connecting every customer touchpoint that matters."
                 bgImage={customBg}
             />

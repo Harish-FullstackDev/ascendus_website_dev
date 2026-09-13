@@ -55,9 +55,9 @@ export default function SecurityChallenges() {
 
                     Every fluid value is gated behind sm:, so the stacked mobile layout
                     below 640px keeps its own fixed sizes untouched. */}
-                <div className="relative w-full lg:absolute lg:top-[13.5%] lg:left-[37.7%] lg:h-[76.3%] lg:w-[62.3%] bg-[#F3F6F9] overflow-hidden flex items-center px-6 sm:pl-[7.5%] sm:max-[1439px]:pr-[8%] min-[1440px]:pr-[15%] py-8 sm:max-[1439px]:py-[clamp(1rem,2vw,2rem)] min-[1440px]:py-10">
+                <div className="relative w-full lg:absolute lg:top-[13.5%] lg:left-[37.7%] lg:h-[76.3%] lg:w-[62.3%] bg-[#F5F6F6] overflow-hidden flex items-center px-6 sm:pl-[7.5%] sm:max-[1439px]:pr-[8%] min-[1440px]:pr-[15%] py-8 sm:max-[1439px]:py-[clamp(1rem,2vw,2rem)] min-[1440px]:py-10">
                     <div className="flex flex-col gap-8 sm:max-[1439px]:gap-[clamp(1rem,2.6vw,2.5rem)] min-[1440px]:gap-16 w-full sm:max-[1439px]:max-w-[85%] min-[1440px]:max-w-[58.5%]">
-                        <h2 className="font-heading text-black text-xl sm:text-[clamp(1.5rem,1.95vw,1.75rem)] font-semibold">Our Security Advantages</h2>
+                        <h2 className="text-[#2E3033] text-xl sm:text-[clamp(1.5rem,1.95vw,1.75rem)] font-semibold">Our Security Advantages</h2>
                         <div className="flex flex-col gap-4 sm:gap-[clamp(0.5rem,1.15vw,1rem)]">
                             <h2 className="text-[#2E3033] text-xl sm:text-[clamp(1.125rem,1.67vw,1.5rem)] font-semibold">
                                 Regional compliance depth and SAP security expertise.

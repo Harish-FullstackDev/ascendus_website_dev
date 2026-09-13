@@ -43,9 +43,9 @@ const Footer = () => {
           <div className="space-x-3 md:col-span-1">
             {/* Quick Link */}
             <div className="mt-4 md:mt-21.5 mb-7.5 md:mb-12">
-              <h3 className="text-white text-lg font-semibold mb-4">
+              <h2 className="text-white text-lg font-semibold mb-4">
                 Quick Link
-              </h3>
+              </h2>
               <ul className="space-y-2">
                 <li>
                   <Link
@@ -184,7 +184,7 @@ const Footer = () => {
 
           {/* Capabilities column 1 */}
           <div className="md:col-span-1">
-            <h3 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Capabilities</h3>
+            <h2 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Capabilities</h2>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -239,7 +239,7 @@ const Footer = () => {
 
           {/* Capabilities column 2 */}
           <div className="md:col-span-1">
-            {/* <h3 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Industries</h3> */}
+            {/* <h2 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Industries</h2> */}
             <ul className="space-y-2 md:mt-32.5">
               <li>
                 <Link
@@ -294,7 +294,7 @@ const Footer = () => {
 
           {/* Industries */}
           {/* <div className="md:col-span-1">
-            <h3 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Industries</h3>
+            <h2 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Industries</h2>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -381,7 +381,7 @@ const Footer = () => {
 
           {/* Support */}
           <div className="md:col-span-1 ">
-            <h3 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Insights</h3>
+            <h2 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Insights</h2>
             <ul className="space-y-2">
               {/* <li>
                 <Link
@@ -428,7 +428,7 @@ const Footer = () => {
 
           {/* Get In Touch */}
           <div className="md:col-span-1">
-            <div className="hidden md:block relative h-8 sm:h-10 w-auto aspect-[4/1] mb-4 md:mb-[46px]">
+            <div className="relative h-8 sm:h-10 w-auto aspect-[4/1] mb-4 md:mb-[46px]">
               <Image
                 src={logo}
                 alt="Ascendus Logo"
@@ -438,9 +438,9 @@ const Footer = () => {
                 }}
               />
             </div>
-            <h3 className="text-white text-lg font-semibold mb-4">
+            <h2 className="text-white text-lg font-semibold mb-4">
               Get In Touch
-            </h3>
+            </h2>
             <ul className="space-y-2">
               {/* <li>
                 <a

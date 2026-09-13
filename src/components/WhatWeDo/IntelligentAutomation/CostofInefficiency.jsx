@@ -4,7 +4,7 @@ import buildingPhoto from "@/assets/WhatWeDo/Intelligent Automation/new/Cost.jpg
 
 export default function CostofInefficiency() {
     return (
-        <section className="relative w-full h-[420px] sm:h-[471px] overflow-hidden bg-[#cfe3f2]">
+        <section className="relative w-full h-[300px] sm:h-[340px] overflow-hidden bg-[#cfe3f2]">
             {/* Fixed background image */}
             <div
                 className="absolute inset-0 bg-fixed bg-cover bg-center bg-no-repeat"
@@ -20,7 +20,7 @@ export default function CostofInefficiency() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative z-10 h-full flex flex-col justify-center gap-4 sm:gap-16 px-6 sm:px-[64px] "
             >
-                <h2 className="text-white  text-lg sm:text-lg font-light">
+                <h2 className="text-white  text-lg sm:text-2xl font-light">
                     Cost of Inefficiency
 
                 </h2>

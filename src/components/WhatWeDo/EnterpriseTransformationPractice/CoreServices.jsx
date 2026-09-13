@@ -125,8 +125,8 @@ function ServiceCard({ service }) {
             <div className="relative h-8 w-[140px]">
                 <Image src={service.logo} alt="" fill className="object-contain object-left" />
             </div>
-            <p className="text-[#10161d] text-2xl font-medium">{service.title}</p>
-            <p className="text-[#10161d] text-base font-extralight leading-[1.59]">
+            <h2 className="text-[#2E3033] text-2xl font-semibold">{service.title}</h2>
+            <p className="text-[#55595E] text-lg font-light">
                 {service.desc}
             </p>
         </motion.div>
@@ -147,7 +147,7 @@ export default function CoreServices() {
         // The arrows' -mb-[13px] pulls them below the header's own box without
         // adding to its height, so it eats into this gap rather than widening
         // it — the 64px stays measured from the subtitle, as intended.
-        <section className="w-full bg-[#f3f6f9] px-6 py-10 sm:px-[64px] sm:py-[64px] flex flex-col gap-8 sm:gap-16">
+        <section className="w-full bg-[#f5f6f6] px-6 py-10 sm:px-[64px] sm:py-[64px] flex flex-col gap-8 sm:gap-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

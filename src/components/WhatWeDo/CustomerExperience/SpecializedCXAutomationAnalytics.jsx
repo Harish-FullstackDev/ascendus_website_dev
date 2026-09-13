@@ -46,7 +46,7 @@ export default function SpecializedCXAutomationAnalytics() {
     const [active, setActive] = useState(0);
 
     return (
-        <section className=" bg-[#F3F6F9] w-full py-10 sm:p-16">
+        <section className=" bg-[#F5F6F6] w-full py-10 sm:p-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

@@ -18,7 +18,7 @@ const INDUSTRIES = [
 
 export default function IndustryImpact() {
     return (
-        <section className="w-full bg-[#F3F6F9] py-10 sm:p-16 px-6 ">
+        <section className="w-full bg-[#F5F6F6] py-10 sm:p-16 px-6 ">
             <div className="w-full mx-auto flex flex-col items-center gap-10 sm:gap-16">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ export default function IndustryImpact() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[780px] mx-auto text-center"
                 >
-                    <h2 className="text-[#2E3033] text-2xl font-semibold">Industry Impact</h2>
+                    <h2 className="text-[#2E3033] text-[28px] font-semibold">Industry Impact</h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Sectors where we deploy enterprise-grade AI solutions
                     </p>

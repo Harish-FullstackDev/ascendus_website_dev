@@ -65,7 +65,7 @@ const page = () => {
 
             {/* <FutureFocusedInsights /> */}
             <ReadyToTransform
-                title="Ready to explore what's next for your enterprise?"
+                title="Ready to Explore What's Next for Your Enterprise?"
                 description="Talk to our innovation team about the emerging technologies worth your attention."
                 bgImage={customBg}
             />

@@ -112,7 +112,7 @@ export default function RealTimeAnalyticsAndMasterDataManagement() {
                 <div className="flex sm:hidden flex-col divide-y divide-[#e5e5e5] px-4">
                     {ITEMS.map((item) => (
                         <div key={item.title} className="py-5 first:pt-0 last:pb-0">
-                            <p className="text-[#0d0c22] text-lg font-light">{item.title}</p>
+                            <h2 className="text-[#0d0c22] text-lg font-light">{item.title}</h2>
                             <p className="text-[#6c6c6c] text-sm font-light leading-relaxed mt-2">{item.desc}</p>
                         </div>
                     ))}

@@ -47,9 +47,9 @@ export default function SecurityArchitectureResilience() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.4, delay: index * 0.06 }}
-                        className="border border-[#a5a5a5] bg-[#f3f6f9] flex flex-col gap-4 px-6 py-8"
+                        className="border border-[#a5a5a5] bg-[#f5f6f6] flex flex-col gap-4 px-6 py-8"
                     >
-                        <p className="text-black text-lg font-semibold">{card.title}</p>
+                        <p className="text-[#2E3033] text-lg font-semibold">{card.title}</p>
                         <p className="text-[#55595E] text-sm font-light">{card.desc}</p>
                     </motion.div>
                 ))}
@@ -57,7 +57,7 @@ export default function SecurityArchitectureResilience() {
 
             {/* Desktop layout — white title cards floating on top of a full-bleed Neutral/100 band that holds the descriptions */}
             <div className="hidden lg:block relative w-full lg:min-h-[303px]">
-                <div className="absolute inset-x-0 top-[99px] bottom-0 bg-[#f3f6f9]" />
+                <div className="absolute inset-x-0 top-[99px] bottom-0 bg-[#F5F6F6]" />
 
                 <div className="relative z-10 max-w-full mx-auto px-6 sm:px-[64px] grid grid-cols-4 gap-x-6 lg:gap-x-8">
                     {CARDS.map((card, index) => (

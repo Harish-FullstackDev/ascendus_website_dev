@@ -156,7 +156,7 @@ export default function IndustriesWeServe() {
             </motion.div>
 
             {/* Cards */}
-            <div className="w-full bg-[#f3f6f9] px-6 py-10 sm:px-[64px] sm:py-16">
+            <div className="w-full bg-[#f5f6f6] px-6 py-10 sm:px-[64px] sm:py-16">
                 {/* Desktop/tablet: paged, 3-cards-at-a-time track */}
                 <div className="hidden lg:flex flex-col gap-8">
                     <div className="w-full overflow-hidden">

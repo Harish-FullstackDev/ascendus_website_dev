@@ -49,7 +49,7 @@ export default function WhyPartnerWithUs() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="absolute left-[32%] right-0 top-[5%] h-[85%] bg-[#f3f6f9] overflow-hidden flex items-center pl-[clamp(2rem,7vw,6.5rem)] pr-6 lg:pr-10"
+                    className="absolute left-[32%] right-0 top-[5%] h-[85%] bg-[#f5f6f6] overflow-hidden flex items-center pl-[clamp(2rem,7vw,6.5rem)] pr-6 lg:pr-10"
                 >
                     <ul className="w-full max-w-[620px]">
                         {SERVICES.map((item) => (
@@ -96,7 +96,7 @@ export default function WhyPartnerWithUs() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="w-full bg-[#f3f6f9] px-6 py-10"
+                    className="w-full bg-[#f5f6f6] px-6 py-10"
                 >
                     <ul>
                         {SERVICES.map((item) => (

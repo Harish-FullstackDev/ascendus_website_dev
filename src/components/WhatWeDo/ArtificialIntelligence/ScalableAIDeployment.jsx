@@ -78,7 +78,7 @@ export default function ScalableAIDeployment() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 w-full mx-auto text-center mb-16"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
                         Scalable AI Deployment & Operational Workflows
                     </h2>
 

@@ -89,7 +89,7 @@ export default function GovernanceSAPDataDepth() {
     }, [isPaused, maxIndex]);
 
     return (
-        <section className="w-full bg-[#F3F6F9] py-10 sm:p-16 px-6  flex flex-col items-center gap-10 sm:gap-[62px]">
+        <section className="w-full bg-[#F5F6F6] py-10 sm:p-16 px-6  flex flex-col items-center gap-10 sm:gap-[62px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -126,7 +126,7 @@ export default function GovernanceSAPDataDepth() {
                             transition={{ duration: 0.5, ease: "easeInOut" }}
                             className="flex flex-col sm:flex-row gap-4 sm:gap-[21px]"
                         >
-                            <div className="bg-[#002C4F] w-full sm:w-[439px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-between gap-4 text-white">
+                            <div className="bg-[#002C4F] w-full sm:w-[439px] h-[280px] sm:h-[377px] px-6 sm:px-[27px] pb-6 sm:pb-[27px] pt-12 flex flex-col justify-between gap-4 text-white">
                                 <div className="flex flex-col gap-4 sm:gap-6">
                                     <h2 className="text-xl sm:text-2xl font-semibold">{active.title}</h2>
                                     <p className="text-white sm:mt-25 text-sm sm:text-lg font-light leading-relaxed">
@@ -135,7 +135,7 @@ export default function GovernanceSAPDataDepth() {
                                 </div>
 
                             </div>
-                            <div className="hidden sm:flex bg-white w-full sm:w-[439px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex-col justify-between gap-4 text-black">
+                            <div className="hidden sm:flex bg-white w-full sm:w-[439px] h-[280px] sm:h-[377px] px-6 sm:px-[27px] pb-6 sm:pb-[27px] pt-12 flex-col justify-between gap-4 text-black">
                                 <div className="flex flex-col gap-4 sm:gap-6">
                                     <h2 className="text-xl text-[#2E3033] sm:text-2xl font-semibold">{next.title}</h2>
                                     <p className="text-[#55595E] sm:mt-25 text-sm sm:text-lg font-light leading-relaxed">

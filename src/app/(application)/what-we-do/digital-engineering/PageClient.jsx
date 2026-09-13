@@ -62,7 +62,7 @@ const page = () => {
             {/* <EnterpriseApplicationDevelopment /> */}
             {/* <FutureFocusedInsights /> */}
             <ReadyToTransform
-                title="Ready to build software that scales with your business?"
+                title="Ready to Build Software That Scales With Your Business?"
                 description="Talk to our engineering team about your next application or modernization initiative."
                 bgImage={customBg}
             />

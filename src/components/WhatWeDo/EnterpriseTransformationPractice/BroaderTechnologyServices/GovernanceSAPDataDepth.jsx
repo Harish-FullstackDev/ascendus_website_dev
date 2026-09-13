@@ -123,7 +123,7 @@ export default function GovernanceSAPDataDepth() {
     return (
         <section
             ref={sectionRef}
-            className="w-full bg-[#F3F6F9] py-10 sm:py-16 px-6 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16 scroll-mt-24"
+            className="w-full bg-[#F5F6F6] py-10 sm:py-16 px-6 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16 scroll-mt-24"
         >
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

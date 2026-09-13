@@ -43,7 +43,7 @@ const page = () => {
             <CloudMigrationHybridStrategy />
             <ModernInfrastructure />
             <ReadyToTransform
-                title="Ready to build infrastructure that scales with you?"
+                title="Ready to Build Infrastructure That Scales With You?"
                 description="Talk to our infrastructure team about the environment your business actually needs."
                 bgImage={customBg}
             />

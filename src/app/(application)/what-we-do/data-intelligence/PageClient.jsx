@@ -55,7 +55,7 @@ const page = () => {
 
             {/* <FutureFocusedInsights /> */}
             <ReadyToTransform
-                title="Ready to trust your data again?"
+                title="Ready to Trust Your Data Again?"
                 description="Talk to our data and analytics team about building a platform your business can rely on."
                 bgImage={customBg}
             />

@@ -60,11 +60,11 @@ export default function BusinessEnablementThroughSecurity() {
                         `min-h` rather than a fixed `h` so the card still grows instead
                         of clipping at narrower widths, where the copy wraps onto more
                         lines than it does at desktop. */}
-                    <div className="relative sm:absolute sm:left-[5.8%] sm:top-1/2 sm:-translate-y-1/2 bg-[#F3F6F9] w-full sm:w-[58.9%] sm:min-h-[77%] -mt-4 sm:mt-0 overflow-hidden flex flex-col gap-6 sm:gap-[35px] px-6 py-8 sm:pl-[6.1%] sm:pr-[12.1%] sm:pt-[49px] sm:pb-[33px]">
-                        <h2 className="font-heading text-black text-xl sm:text-[28px] font-semibold">{item.eyebrow}</h2>
+                    <div className="relative sm:absolute sm:left-[5.8%] sm:top-1/2 sm:-translate-y-1/2 bg-[#F5F6F6] w-full sm:w-[58.9%] sm:min-h-[77%] -mt-4 sm:mt-0 overflow-hidden flex flex-col gap-6 sm:gap-[35px] px-6 py-8 sm:pl-[6.1%] sm:pr-[12.1%] sm:pt-[49px] sm:pb-[33px]">
+                        <h2 className="font-heading text-[#2E3033] text-xl sm:text-[28px] font-semibold">{item.eyebrow}</h2>
                         <div className="flex flex-col gap-3 sm:gap-4">
-                            <p className="text-[#10161d] text-base sm:text-lg font-light">{item.title}</p>
-                            <p className="text-[#4a5568] text-base sm:text-lg font-light">{item.desc}</p>
+                            <p className="text-[#2E3033] text-base sm:text-lg font-light">{item.title}</p>
+                            <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                         </div>
                     </div>
                 </motion.div>

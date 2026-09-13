@@ -50,7 +50,7 @@ const page = () => {
 
             {/* <FutureFocusedInsights /> */}
             <ReadyToTransform
-                title="Ready for systems that just keep working?"
+                title="Ready for Systems That Just Keep Working?"
                 description="Talk to our advisory team about the roadmap your transformation needs."
                 bgImage={customBg}
             />

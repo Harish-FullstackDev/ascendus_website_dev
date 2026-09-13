@@ -50,7 +50,7 @@ const page = () => {
             <SpecializedDesignDisciplines />
             <OurDesignCapabilities />
             <ReadyToTransform
-                title="Ready to design an experience people actually enjoy using?"
+                title="Ready to Design an Experience People Actually Enjoy Using?"
                 description="Talk to our design team about your next product or platform."
                 bgImage={customBg}
             />

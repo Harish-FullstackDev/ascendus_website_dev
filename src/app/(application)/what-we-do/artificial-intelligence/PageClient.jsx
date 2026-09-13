@@ -56,7 +56,7 @@ const page = () => {
             <WhyPartnerWithUs />
             {/* <FutureFocusedInsights /> */}
             <ReadyToTransform
-                title="Ready to put AI to work in your enterprise?"
+                title="Ready to Put AI to Work in Your Enterprise?"
                 description="Talk to our AI advisory team about where intelligence can move your business forward."
                 bgImage={customBg}
             />

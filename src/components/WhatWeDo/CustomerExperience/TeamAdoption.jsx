@@ -17,7 +17,7 @@ const BOXES = [
 
 export default function TeamAdoption() {
     return (
-        <section className="w-full py-10 px-6 sm:p-[64px] bg-[#f3f6f9]">
+        <section className="w-full py-10 px-6 sm:p-[64px] bg-[#f5f6f6]">
             {/* Two columns fill the full padded width via proportional flex-grow (≈654:475,
                 the Figma ratio) instead of fixed px, so they scale together on any desktop
                 width instead of leaving a mismatched gap between them. */}
