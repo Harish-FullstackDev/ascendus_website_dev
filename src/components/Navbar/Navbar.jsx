@@ -486,7 +486,7 @@ const Navbar = () => {
             }`}>
             {/* Mobile menu toggle button */}
             <button
-              className={`lg:hidden transition-colors duration-300 flex items-center justify-center p-1.5 ${isNavbarLight
+              className={`lg:hidden transition-colors duration-300 flex items-center justify-center p-2 ${isNavbarLight
                 ? "text-black hover:bg-gray-100"
                 : "text-white hover:bg-neutral-800"
                 }`}
@@ -496,7 +496,7 @@ const Navbar = () => {
               <IoMdMenu className="text-3xl sm:text-4xl" />
             </button>
 
-            <Link href="/" onClick={closeMenu} className="flex items-center">
+            <Link href="/" onClick={closeMenu} className="flex items-center p-2">
               <Image
                 src={isNavbarLight ? logo2 : logo}
                 alt="Ascendus Logo"
