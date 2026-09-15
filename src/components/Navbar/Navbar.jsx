@@ -661,12 +661,17 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        {isMenuOpen && (
+        {/* Book a call — not wanted in the navbar for now. The desktop instance above
+            was already commented out; this was the last live one (the floating button
+            inside the open mobile menu). The import and the Calendly modal below are
+            left in place so this is a one-line revert when it's wanted again. The
+            ContactUsButton that sat alongside it here was already commented out before
+            this, and is dropped from the block rather than nested inside the comment. */}
+        {/* {isMenuOpen && (
           <div className="lg:hidden fixed bottom-6 right-6 z-[70]">
-            {/* <ContactUsButton /> */}
             <BookAcallButton setShowCalendly={setShowCalendly} />
           </div>
-        )}
+        )} */}
       </div>
       {/* Spacer to prevent content overlap */}
       <div className="h-[64px] lg:h-[68px] w-full" />

@@ -58,8 +58,11 @@ function AnimatedStat({ value }) {
 
 export default function WhyPartnerWithUsMetrix() {
     return (
-        <section className="w-full py-10 sm:pt-8 sm:pb-0">
-            <div className="w-full px-6 sm:px-[64px] py-10 lg:py-[32px]">
+        // Mobile top spacing is 16px total: the section's own 40px plus the inner 40px
+        // stacked to 80px under the card block above. max-sm: trims the section to 16px
+        // and zeroes the inner top; sm+ keeps pt-8 / py-[32px] as before.
+        <section className="w-full py-10 max-sm:pt-8 sm:pt-8 sm:pb-0">
+            <div className="w-full px-6 sm:px-[64px] py-10 max-sm:pt-0 lg:py-[32px]">
                 <div className="grid w-full lg:grid-cols-[1fr_auto_1fr] items-center gap-0">
 
                     {/* Left */}
@@ -69,7 +72,9 @@ export default function WhyPartnerWithUsMetrix() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="text-xl sm:text-[28px] font-semibold text-[#2E3033]"
+                            // Centered only in the stacked mobile layout; at lg it is the left
+                            // column of the three-column row and stays left aligned.
+                            className="text-xl sm:text-[28px] font-semibold text-[#2E3033] max-sm:text-center"
                         >
                             Why Partner With Us
                         </motion.h2>
@@ -86,9 +91,16 @@ export default function WhyPartnerWithUsMetrix() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="justify-self-start max-w-[467px]"
+                        // 16px between the heading and the first bullet. The grid sets gap-0
+                        // because at lg these are side-by-side columns, so the spacing has to
+                        // come from the stacked side only.
+                        className="justify-self-start max-w-[467px] max-sm:mt-8 max-sm:justify-self-center"
                     >
-                        <ul className="list-disc marker:text-[#7f7f7f] pl-16 space-y-3 text-[#55595E] text-base sm:text-lg font-light">
+                        {/* pl-10 is desktop-only: it clears the vertical divider in the lg
+                            three-column row. Carried into the stacked layout it pushed the
+                            list 40px right of the centered heading. Mobile keeps just the
+                            5 (20px) the disc markers need to render inside the box. */}
+                        <ul className="list-disc marker:text-[#7f7f7f] pl-10 max-sm:pl-5 space-y-3 text-[#55595E] text-base sm:text-lg font-light">
                             {POINTS.map((point) => (
                                 <li key={point}>{point}</li>
                             ))}

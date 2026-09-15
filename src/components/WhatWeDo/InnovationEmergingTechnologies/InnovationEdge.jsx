@@ -20,7 +20,10 @@ export default function InnovationEdge() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative z-10 h-full flex flex-col justify-center gap-4 sm:gap-6 px-6 sm:px-[64px] py-10 sm:py-14 "
+                // px-8 (32px) on mobile is what the rest of this page uses — AIIntegration,
+                // ExtendedReality, IoT and the others all sit on that edge, and px-6 left
+                // this section 8px out of line with them. sm+ keeps px-[64px].
+                className="relative z-10 h-full flex flex-col justify-center gap-4 sm:gap-6 px-8 sm:px-[64px] py-10 sm:py-14 "
             >
                 <h2 className="text-white text-xl sm:text-[32px] font-semibold">
                     Ascendus Innovation Edge
@@ -30,7 +33,12 @@ export default function InnovationEdge() {
                     Why enterprises choose Ascendus for emerging tech deployment.
                 </p>
 
-                <ul className="text-white text-base list-disc font-['Houschka_Pro'] sm:text-lg sm:pl-5 font-light space-y-1">
+                {/* pl-5 was sm-only, so on mobile the list had no padding and list-disc
+                    rendered its markers outside the content box — left of the heading and
+                    description, past the section's own edge. Applying it at every width
+                    puts the markers inside and indents the list under the text; the sm+
+                    value is the same 5 it already had. */}
+                <ul className="text-white text-base list-disc font-['Houschka_Pro'] sm:text-lg pl-5 font-light space-y-1">
                     <li>SAP integrated emerging tech deployment</li>
                     <li>Pilot to scale methodology</li>
                     <li>Cross industry innovation experience</li>

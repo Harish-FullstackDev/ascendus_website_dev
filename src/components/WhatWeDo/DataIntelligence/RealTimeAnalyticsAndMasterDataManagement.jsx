@@ -64,7 +64,11 @@ export default function RealTimeAnalyticsAndMasterDataManagement() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative z-10 -mt-8 sm:-mt-35 mb-8 sm:mb-16 mx-4 sm:mx-auto sm:max-w-[1390px] bg-white shadow-[0px_4px_28.65px_rgba(0,0,0,0.25)] py-6 sm:py-0"
+                // Mobile pulls the card block further over the banner (-80px instead of
+                // -32px) so it sits ~32px under the banner's description instead of leaving
+                // a band of bare photo, and drops the gap to the next section to 16px. Both
+                // are max-sm: — the sm+ figures (-mt-35 / mb-16) are unchanged.
+                className="relative z-10 -mt-8 max-sm:-mt-20 sm:-mt-35 mb-8 max-sm:mb-4 sm:mb-16 mx-4 sm:mx-auto sm:max-w-[1390px] bg-white shadow-[0px_4px_28.65px_rgba(0,0,0,0.25)] py-6 sm:py-0"
             >
                 <div
                     className="hidden sm:flex items-center justify-between"
