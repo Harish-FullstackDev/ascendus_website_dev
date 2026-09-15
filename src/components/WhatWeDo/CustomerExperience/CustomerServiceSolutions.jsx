@@ -58,7 +58,7 @@ export default function CustomerServiceSolutions() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-14"
             >
-                <h2 className="text-black text-2xl font-semibold">Team Adoption & Seamless Context</h2>
+                <h2 className="text-black text-xl font-semibold">Team Adoption & Seamless Context</h2>
                 <p className="text-black text-base sm:text-lg font-light">
                     Why our approach to customer experience drives long-term adoption.
                 </p>
@@ -78,7 +78,7 @@ export default function CustomerServiceSolutions() {
                             transition={{ duration: 0.4 }}
                             className="w-full max-w-[938px] bg-white/[0.28] h-[500px] text-center text-white px-6 sm:px-12 py-10 sm:py-14"
                         >
-                            <h3 className="text-2xl sm:text-3xl font-normal mb-6 sm:mb-8">{slide.title}</h3>
+                            <h3 className="text-xl sm:text-3xl font-normal mb-6 sm:mb-8">{slide.title}</h3>
                             <div className="flex flex-col gap-4 text-base sm:text-lg lg:text-2xl font-light">
                                 <p>{slide.subtitle}</p>
                                 {slide.paragraphs.map((p, i) => (

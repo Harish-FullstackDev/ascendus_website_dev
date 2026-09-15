@@ -53,7 +53,7 @@ export default function ProcessReengineering() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[694px] text-center"
             >
-                <h2 className="text-black text-2xl font-normal">Process Reengineering</h2>
+                <h2 className="text-black text-xl font-normal">Process Reengineering</h2>
                 <p className="text-[#515151] text-base sm:text-lg font-light">
                     Reimagine existing business processes using modern technologies and best practices to improve
                     agility, scalability, and business performance.

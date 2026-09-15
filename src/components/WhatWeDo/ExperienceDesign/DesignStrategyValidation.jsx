@@ -52,7 +52,7 @@ export default function DesignStrategyValidation() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 text-center w-full"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-semibold">Design Strategy &amp; Validation</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Design Strategy &amp; Validation</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[840px] leading-[1.4]">
                     Research-led design capabilities that connect user needs, business objectives, and digital
                     product requirements.

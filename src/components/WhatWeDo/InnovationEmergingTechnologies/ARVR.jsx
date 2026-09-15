@@ -45,7 +45,7 @@ export default function ARVR() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center px-6"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-semibold">AR/VR, Blockchain & Quantum Readiness</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">AR/VR, Blockchain & Quantum Readiness</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Forward looking technology applications for specialized use cases.
                 </p>
@@ -62,7 +62,7 @@ export default function ARVR() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.4, delay: index * 0.06 }}
-                        className="flex gap-4 rounded-[10px] bg-[#f3f3f3] px-5 py-4"
+                        className="flex gap-4 rounded-[10px] bg-[#F5F6F6] px-5 py-4"
                     >
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#00447A] text-sm font-semibold text-white">
                             {index + 1}
@@ -114,7 +114,7 @@ export default function ARVR() {
                                         }`}
                                 >
                                     <h2
-                                        className={`relative z-10 text-lg lg:text-2xl font-semibold leading-tight ${isActive ? "text-white" : "text-black"
+                                        className={`relative z-10 text-base lg:text-2xl font-semibold leading-tight ${isActive ? "text-white" : "text-black"
                                             }`}
                                     >
                                         {item.title}

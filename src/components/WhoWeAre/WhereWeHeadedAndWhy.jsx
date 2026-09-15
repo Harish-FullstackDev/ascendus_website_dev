@@ -112,7 +112,7 @@ function AnimatedBorderCard({ title, description, isActive, onActivate, onDeacti
                 style={{ ...bottomStyle(isHovered), transform: isHovered ? "scaleX(1)" : "scaleX(0)" }}
             />
 
-            <h2 className={`${cardFont.className} relative text-2xl font-semibold text-white`}>{title}</h2>
+            <h2 className={`${cardFont.className} relative text-xl font-semibold text-white`}>{title}</h2>
             <p
                 className={`${cardFont.className} relative text-lg font-light mt-10 leading-relaxed origin-left transition-all ease-in-out ${isHovered ? "text-white scale-105" : "text-white/50"
                     }`}
@@ -178,7 +178,7 @@ export default function WhereWeHeadedAndWhy() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-16 px-6 sm:px-[64px]"
             >
-                <h2 className="text-[28px] font-semibold text-[#2E3033]">Where We&apos;re Headed, and Why</h2>
+                <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">Where We&apos;re Headed, and Why</h2>
                 <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
                     Everything we build ties back to two commitments what we exist to do for clients today, and
                     where we intend to take the practice next.

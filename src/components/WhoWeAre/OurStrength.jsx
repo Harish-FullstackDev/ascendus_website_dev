@@ -33,7 +33,7 @@ export default function OurStrength() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-16"
             >
-                <h2 className="text-[28px] font-semibold text-[#2E3033]">The Scale Behind The Practice</h2>
+                <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">The Scale Behind The Practice</h2>
                 <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
                     Numbers that describe reach, not just size.
                 </p>

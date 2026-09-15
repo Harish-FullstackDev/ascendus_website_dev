@@ -51,7 +51,7 @@ export default function DigitalTwins() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center"
             >
-                <h2 className="text-black text-2xl font-semibold">Digital Twins</h2>
+                <h2 className="text-black text-xl font-semibold">Digital Twins</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Create living digital replicas of physical assets and processes to simulate, predict, and
                     optimize before committing real-world resources.
@@ -92,7 +92,7 @@ export default function DigitalTwins() {
                     <AnimatedImage active={active} src={twinsPhoto} />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black" />
                     <div className="absolute inset-x-6 sm:inset-x-10 bottom-6 sm:bottom-10 flex items-end justify-between gap-6">
-                        <p className="text-white text-lg sm:text-2xl font-normal max-w-[344px]">
+                        <p className="text-white text-base sm:text-lg sm:text-2xl font-normal max-w-[344px]">
                             Helping organizations realize value faster through proven methodologies.
                         </p>
                         <p className="text-white text-2xl sm:text-[32px] font-semibold shrink-0">

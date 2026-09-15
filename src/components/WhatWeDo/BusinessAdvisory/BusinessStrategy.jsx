@@ -67,11 +67,11 @@ export default function BusinessStrategy() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="lg:absolute lg:left-[50px] lg:top-0 lg:w-96 px-6 lg:px-0 py-6 lg:py-0 z-10"
             >
-                <h2 className="text-black text-2xl font-normal mb-2">Business Strategy</h2>
-                <p className="text-gray-700 text-lg font-normal leading-6 mb-2">
+                <h2 className="text-black text-xl font-normal mb-2">Business Strategy</h2>
+                <p className="text-gray-700 text-base sm:text-lg font-normal leading-6 mb-2">
                     Build a Roadmap for Sustainable Growth
                 </p>
-                <p className="text-gray-700 text-lg font-normal leading-6">
+                <p className="text-gray-700 text-base sm:text-lg font-normal leading-6">
                     Develop clear business strategies that align organizational goals with market opportunities, innovation, and operational excellence.
                 </p>
             </motion.div>
@@ -92,7 +92,7 @@ export default function BusinessStrategy() {
                             <h3 className="text-black text-3xl font-normal leading-10 mb-2">
                                 {currentSlide.title}
                             </h3>
-                            <p className="text-gray-700 text-lg font-normal leading-6">
+                            <p className="text-gray-700 text-base sm:text-lg font-normal leading-6">
                                 {currentSlide.subtitle}
                             </p>
                         </motion.div>
@@ -122,7 +122,7 @@ export default function BusinessStrategy() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/30 to-black/70" />
 
-                        <p className="absolute left-6 lg:left-[68px] right-6 lg:right-[140px] bottom-8 lg:bottom-[60px] text-white text-lg lg:text-2xl font-normal leading-relaxed lg:leading-8">
+                        <p className="absolute left-6 lg:left-[68px] right-6 lg:right-[140px] bottom-8 lg:bottom-[60px] text-white text-base sm:text-lg lg:text-2xl font-normal leading-relaxed lg:leading-8">
                             {currentSlide.overlay}
                         </p>
                     </motion.div>

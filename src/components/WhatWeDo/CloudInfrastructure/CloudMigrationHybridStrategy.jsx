@@ -41,8 +41,8 @@ export default function CloudMigrationHybridStrategy() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Cloud Migration &amp; Hybrid Strategy</h2>
-                    <p className="text-[#55595E] text-lg font-light">
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Cloud Migration &amp; Hybrid Strategy</h2>
+                    <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Modernization, hybrid models, and multi cloud environments.
                     </p>
                 </motion.div>

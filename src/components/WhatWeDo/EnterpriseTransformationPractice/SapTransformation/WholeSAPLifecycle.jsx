@@ -14,11 +14,11 @@ export default function WholeSAPLifecycle() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-4 w-full sm:flex-1"
             >
-                <p className="text-[#10161d] text-lg font-semibold">whole SAP lifecycle</p>
-                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-semibold">
+                <p className="text-[#10161d] text-base sm:text-lg font-semibold">whole SAP lifecycle</p>
+                <h2 className="text-[#10161d] text-xl sm:text-[28px] font-semibold">
                     One practice, the whole SAP lifecycle
                 </h2>
-                <p className="text-[#4a5568] text-lg font-light leading-[1.5]">
+                <p className="text-[#4a5568] text-base sm:text-lg font-light leading-[1.5]">
                     From the first landscape assessment to the system still running years into production, SAP work
                     sits in one practice here, not scattered across a project team and a separate support vendor. SAP
                     Transformation covers migration, platform extension, analytics, data warehousing, and the managed

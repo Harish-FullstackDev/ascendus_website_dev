@@ -69,7 +69,7 @@ export default function WhyPartnerWithUsMetrix() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="text-[28px] font-semibold text-[#2E3033]"
+                            className="text-xl sm:text-[28px] font-semibold text-[#2E3033]"
                         >
                             Why Partner With Us
                         </motion.h2>
@@ -104,7 +104,7 @@ export default function WhyPartnerWithUsMetrix() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="text-[#2d8ec5] text-2xl font-semibold text-center"
+                    className="text-[#2d8ec5] text-xl font-semibold text-center"
                 >
 
                 </motion.h3>

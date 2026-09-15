@@ -52,11 +52,11 @@ export default function GovernanceRiskCompliance() {
                                 sm:pt-[8%]
                             "
                 >
-                    <h2 className="font-heading text-white sm:text-black text-2xl sm:text-[32px] font-semibold">
+                    <h2 className="font-heading text-white sm:text-black text-xl sm:text-[32px] font-semibold">
                         Governance, Risk &amp; Compliance
                     </h2>
 
-                    <p className="text-white/90 sm:text-black text-lg sm:text-2xl">
+                    <p className="text-white/90 sm:text-black text-base sm:text-lg sm:text-2xl">
                         Establishing Security Governance Across the Enterprise
                     </p>
                     <div className="text-white/80 sm:text-black/80 text-base sm:text-2xl font-light space-y-4">

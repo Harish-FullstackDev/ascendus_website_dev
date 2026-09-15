@@ -120,7 +120,7 @@ export default function ContactForm() {
           <CheckCircle className="w-12 h-12" aria-hidden="true" />
         </div>
         <h2 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Requirement Captured</h2>
-        <p className="text-slate-500 mb-10 text-lg font-medium">Your request has been prioritized under sst-premium. An Ascendus transformation consultant will contact you via your business email shortly.</p>
+        <p className="text-slate-500 mb-10 text-base sm:text-lg font-medium">Your request has been prioritized under sst-premium. An Ascendus transformation consultant will contact you via your business email shortly.</p>
         <button
           onClick={() => setStatus("idle")}
           className="bg-slate-900 text-white font-bold py-4 px-10 rounded-2xl hover:bg-black transition-all shadow-lg active:scale-95"
@@ -144,7 +144,7 @@ export default function ContactForm() {
             <Globe className="w-3.5 h-3.5" aria-hidden="true" /> GCC Global Delivery Network
           </div>
           <h2 id="form-heading" className="text-5xl font-black tracking-tighter mb-4 leading-none">Enterprise <br /><span className="text-blue-500">Inquiry</span></h2>
-          <p className="text-slate-400 font-medium text-lg max-w-lg leading-relaxed">Let&apos;s refine your SAP landscape. Provide your business details below to initiate a technical assessment.</p>
+          <p className="text-slate-400 font-medium text-base sm:text-lg max-w-lg leading-relaxed">Let&apos;s refine your SAP landscape. Provide your business details below to initiate a technical assessment.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">

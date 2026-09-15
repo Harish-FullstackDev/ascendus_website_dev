@@ -56,8 +56,8 @@ const Card = ({ icon, title, desc, index }) => (
         <div className="relative size-10 shrink-0">
             <Image src={icon} alt="" fill className="object-contain" />
         </div>
-        <h2 className="text-[#2E3033] text-2xl font-semibold">{title}</h2>
-        <p className="text-[#55595E] text-lg font-light leading-[1.4]">{desc}</p>
+        <h2 className="text-[#2E3033] text-xl font-semibold">{title}</h2>
+        <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">{desc}</p>
     </motion.div>
 );
 
@@ -102,10 +102,10 @@ export default function DesignOperationsExperienceOptimization() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 text-center mb-10 sm:mb-16 w-full"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-semibold">
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
                     Design Operations &amp; Experience Optimization
                 </h2>
-                <p className="text-[#55595E] text-lg font-light">
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Design capabilities that help enterprise products remain consistent, accessible, and effective
                     as they grow.
                 </p>

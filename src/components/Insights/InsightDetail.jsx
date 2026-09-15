@@ -154,7 +154,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
             <Navbar />
 
             {/* Header / Hero Section */}
-            <header className="w-full px-16 pt-12 md:pt-20">
+            <header className="w-full px-8 sm:px-16 pt-12 md:pt-20">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pb-12 md:border-b md:border-slate-200 md:dark:border-neutral-800">
 
                     {/* Left: Meta Details */}
@@ -170,7 +170,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                             {item.type}
                         </span>
 
-                        <h2 className="text-[#2E3033] text-2xl font-semibold">
+                        <h2 className="text-[#2E3033] text-xl font-semibold">
                             {item.title}
                         </h2>
 
@@ -356,7 +356,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
             </div>
 
             {/* Content & TOC Grid */}
-            <main className="flex-grow w-full px-16 py-12">
+            <main className="flex-grow w-full px-8 sm:px-16 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
                     {/* Left Sticky Sidebar (Desktop only) */}
@@ -415,7 +415,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                             <section key={idx} className="space-y-4 border-b border-slate-100 pb-8 last:border-none last:pb-0">
                                 <h2
                                     id={`section-${idx}`}
-                                    className="text-[#2E3033] text-2xl font-semibold  pt-2"
+                                    className="text-[#2E3033] text-xl font-semibold  pt-2"
                                 >
                                     {sec.heading}
                                 </h2>

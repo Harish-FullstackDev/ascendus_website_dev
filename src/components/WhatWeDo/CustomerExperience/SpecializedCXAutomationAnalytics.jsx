@@ -54,13 +54,13 @@ export default function SpecializedCXAutomationAnalytics() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[42px] px-6"
             >
-                <h2 className="text-[##2E3033] text-[28px] font-semibold">Specialized CX Automation & Analytics</h2>
+                <h2 className="text-[##2E3033] text-xl sm:text-[28px] font-semibold">Specialized CX Automation & Analytics</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Automation, analytics, and loyalty tools for customer retention.
                 </p>
             </motion.div>
 
-            <div className="bg-[#f4f3f9] w-full px-4 sm:px-[50px] py-8 sm:py-[32px]">
+            <div className="bg-[#F5F6F6] w-full px-4 sm:px-[50px] py-8 sm:py-[32px]">
                 <div className="flex flex-col gap-2.5 sm:flex-row sm:gap-[37px] h-auto sm:h-[560px] max-w-[1180px] mx-auto">
                     {TABS.map((tab, i) => {
                         const isActive = i === active;
@@ -70,7 +70,7 @@ export default function SpecializedCXAutomationAnalytics() {
                                 type="button"
                                 onClick={() => setActive(i)}
                                 aria-expanded={isActive}
-                                className={`group relative w-full min-h-[56px] sm:h-full shrink-0 overflow-hidden text-left transition-[width] duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${isActive ? "bg-white sm:w-[573px]" : "bg-[#f4f3f9] sm:w-[78px] sm:border-r sm:border-[#a4a7a5]"
+                                className={`group relative w-full min-h-[56px] sm:h-full shrink-0 overflow-hidden text-left transition-[width] duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${isActive ? "bg-white sm:w-[573px]" : "bg-[#F5F6F6] sm:w-[78px] sm:border-r sm:border-[#a4a7a5]"
                                     }`}
                             >
                                 {isActive ? (

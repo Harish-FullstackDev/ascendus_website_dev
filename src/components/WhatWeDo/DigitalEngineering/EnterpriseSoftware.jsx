@@ -62,11 +62,11 @@ export default function EnterpriseSoftware() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-semibold">
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
                     Enterprise Software Development & Modernization
                 </h2>
 
-                <p className="text-[#55595E] text-lg sm:text-lg font-light">
+                <p className="text-[#55595E] text-base sm:text-lg sm:text-lg font-light">
                     Flagship engineering services for custom software,
                     modernization, and integration.
                 </p>
@@ -129,7 +129,7 @@ export default function EnterpriseSoftware() {
                                 transition={{ duration: 0.3, delay: 0.1 }}
                                 className="absolute left-6 right-6 sm:left-[55px] sm:right-auto bottom-6 sm:bottom-[46px] sm:w-[462px] text-white flex flex-col gap-3"
                             >
-                                <h2 className="text-2xl font-semibold">
+                                <h2 className="text-xl font-semibold">
                                     {activeTab.title}
                                 </h2>
 

@@ -28,7 +28,7 @@ export default function ExtendedReality() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[45px]"
             >
-                <h2 className="text-black text-2xl font-semibold">Extended Reality (AR/VR)</h2>
+                <h2 className="text-black text-xl font-semibold">Extended Reality (AR/VR)</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Blend digital and physical experiences to train faster, collaborate remotely, and visualize what
                     hasn&apos;t been built yet.

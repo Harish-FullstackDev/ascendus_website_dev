@@ -228,7 +228,7 @@ const ResponsibilitySection = () => {
             variants={titleVariants}
             animate={shouldShowContent ? "active" : "default"}
           >
-            <h3 className="text-2xl font-bold drop-shadow-lg mb-4">
+            <h3 className="text-xl font-bold drop-shadow-lg mb-4">
               {card.title}
             </h3>
           </motion.div>

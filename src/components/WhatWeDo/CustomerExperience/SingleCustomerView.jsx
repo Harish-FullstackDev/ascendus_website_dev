@@ -24,9 +24,9 @@ export default function SingleCustomerView() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-2 w-full lg:w-[518px] shrink-0"
             >
-                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Single Customer View & Evidence Based Design
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Single Customer View & Evidence Based Design
                 </h2>
-                <p className="text-[#55595E] text-lg font-light">
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Why our approach to customer experience drives long-term adoption.
                 </p>
             </motion.div>
@@ -42,8 +42,8 @@ export default function SingleCustomerView() {
                         className="flex flex-col gap-6"
                     >
                         <Image src={item.icon} alt="" width={48} height={48} />
-                        <h2 className="text-[#2E3033] text-2xl font-semibold">{item.title}</h2>
-                        <p className="text-[#55595E] text-lg font-light">{item.desc}</p>
+                        <h2 className="text-[#2E3033] text-xl font-semibold">{item.title}</h2>
+                        <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                     </motion.div>
                 ))}
             </div>

@@ -330,7 +330,7 @@ const Feature = () => {
                     />
                   </div>
                 </div>
-                <h3 className="text-black text-lg mb-1">
+                <h3 className="text-black text-base mb-1">
                   {module.name}
                 </h3>
                 {/* <p className="text-gray-600 text-sm">{module.desc}</p> */}

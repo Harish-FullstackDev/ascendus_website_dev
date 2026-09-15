@@ -189,7 +189,7 @@ function ResumeUploadModal({ isOpen, onClose, jobTitle }) {
                 </button>
 
                 <div className="mb-4">
-                    <h3 className="text-lg font-semibold text-slate-900">Upload your Resume</h3>
+                    <h3 className="text-base font-semibold text-slate-900">Upload your Resume</h3>
                     <p className="text-sm text-slate-500 mt-1">
                         Upload your PDF or Word document, and we&apos;ll automatically pre-fill your application.
                     </p>

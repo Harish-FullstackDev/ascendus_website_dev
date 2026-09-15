@@ -217,7 +217,7 @@ const JobBoard = () => {
             id="mobile-filters-menu"
           >
             <div className="bg-white rounded-2xl p-4 sm:p-9 shadow-sm">
-              <h2 className="font-general-sans text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
+              <h2 className="font-general-sans text-base sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
                 Filter
               </h2>
 
@@ -331,7 +331,7 @@ const JobBoard = () => {
           <div className="flex-1">
             {currentJobs.length === 0 ? (
               <div className="bg-white rounded-2xl p-8 text-center">
-                <p className="text-gray-500 text-lg">
+                <p className="text-gray-500 text-base sm:text-lg">
                   No jobs found matching your criteria.
                 </p>
                 <p className="text-gray-400 text-sm mt-2">

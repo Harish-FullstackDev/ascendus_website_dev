@@ -40,7 +40,7 @@ export default function AIUseCaseValueEnablement() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-14 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-semibold">AI Use Case &amp; Value Enablement</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">AI Use Case &amp; Value Enablement</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Targeted AI capabilities that connect enterprise data, processes, and intelligence to
                     Measurable business value.

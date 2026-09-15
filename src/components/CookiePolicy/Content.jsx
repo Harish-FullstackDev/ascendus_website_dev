@@ -163,10 +163,10 @@ export default function CookiePolicy() {
           {/* Title Banner */}
           <div
             ref={(el) => (sectionRefs.current["Introduction"] = el)}
-            className="bg-[#eaeaea] px-[66px] py-[62px]"
+            className="bg-[#eaeaea] px-8 sm:px-[66px] py-[62px]"
           >
             <div className="flex flex-col gap-[42px] max-w-[848px]">
-              <h1 className="text-2xl font-semibold text-black">{intro.title}</h1>
+              <h1 className="text-xl font-semibold text-black">{intro.title}</h1>
               <div>
                 {intro.paragraphs.map((item, index) => (
                   <Paragraph key={index} item={item} />
@@ -176,13 +176,13 @@ export default function CookiePolicy() {
           </div>
 
           {/* Main Content */}
-          <div className="px-[66px] py-[60px] space-y-[60px]">
+          <div className="px-8 sm:px-[66px] py-[60px] space-y-[60px]">
             {bodySections.map((section) => (
               <section
                 key={section}
                 ref={(el) => (sectionRefs.current[section] = el)}
               >
-                <h2 className="text-2xl font-semibold text-black mb-[42px]">
+                <h2 className="text-xl font-semibold text-black mb-[42px]">
                   {sectionContent[section].title}
                 </h2>
                 <SectionBody data={sectionContent[section]} />

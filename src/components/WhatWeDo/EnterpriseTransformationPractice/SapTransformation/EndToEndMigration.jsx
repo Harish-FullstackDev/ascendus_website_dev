@@ -29,7 +29,7 @@ export default function EndToEndMigration() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="flex flex-col gap-8 sm:gap-16 w-full sm:flex-1"
             >
-                <h2 className="text-[#2E3033] text-2xl font-semibold leading-[1.4]">
+                <h2 className="text-[#2E3033] text-xl font-semibold leading-[1.4]">
                     End-to-end migration from ECC to S/4HANA, planned around your compliance deadlines and cutover
                     windows, not a generic timeline.
                 </h2>

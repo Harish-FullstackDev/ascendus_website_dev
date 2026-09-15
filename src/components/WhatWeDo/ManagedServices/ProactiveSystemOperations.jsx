@@ -99,7 +99,7 @@ export default function ProactiveSystemOperations() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[340px] shrink-0 lg:pt-8"
                 >
-                    <h2 className="text-[#2E3033] text-[28px] font-semibold">Proactive System Operations</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Proactive System Operations</h2>
                     <p className="text-[#55595E] text-xl font-light">
                         Ongoing operational capabilities that help enterprise systems remain stable, available, and
                         performant.

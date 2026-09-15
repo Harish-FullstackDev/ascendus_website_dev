@@ -39,7 +39,7 @@ export default function AIPoweredAutomation() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[736px] text-center px-6"
             >
-                <h2 className="text-black text-2xl font-normal">AI-Powered Automation</h2>
+                <h2 className="text-black text-xl font-normal">AI-Powered Automation</h2>
                 <p className="text-[#515151] text-base sm:text-lg font-light">
                     Layer artificial intelligence into your automation stack to make smarter, faster decisions.
                 </p>
@@ -69,7 +69,7 @@ export default function AIPoweredAutomation() {
                             className="flex flex-col items-center gap-6 sm:gap-8 text-center text-white max-w-[776px]"
                         >
                             <p className="text-2xl sm:text-[32px] font-semibold">{slide.title}</p>
-                            <p className="text-lg sm:text-2xl font-semibold">{slide.subtitle}</p>
+                            <p className="text-base sm:text-lg sm:text-2xl font-semibold">{slide.subtitle}</p>
                             <p className="text-base sm:text-2xl font-light max-w-[598px]">{slide.desc}</p>
                         </motion.div>
                     </AnimatePresence>

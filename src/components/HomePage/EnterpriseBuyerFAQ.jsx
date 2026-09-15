@@ -53,11 +53,11 @@ export default function EnterpriseBuyerFAQ() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-2 w-full"
             >
-                <h2 className="text-[28px] font-medium">
+                <h2 className="text-xl sm:text-[28px] font-medium">
                     <span className="text-[#2E3033]">Questions Enterprise Buyers </span>
                     <span className="text-[#0061AF]">Actually Ask</span>
                 </h2>
-                <p className="text-[#55595E] text-lg font-light leading-[1.4] max-w-[954px]">
+                <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4] max-w-[954px]">
                     Research-led design capabilities that connect user needs, business objectives, and digital
                     product requirements.
                 </p>

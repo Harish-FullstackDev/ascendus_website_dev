@@ -20,11 +20,11 @@ export default function CostofInefficiency() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative z-10 h-full flex flex-col justify-center gap-4 sm:gap-16 px-6 sm:px-[64px] "
             >
-                <h2 className="text-white  text-lg sm:text-2xl font-light">
+                <h2 className="text-white  text-base sm:text-2xl font-light">
                     Cost of Inefficiency
 
                 </h2>
-                {/* <p className="text-white text-lg sm:text-lg font-light">
+                {/* <p className="text-white text-base sm:text-lg sm:text-lg font-light">
                     Identifying hidden costs in manual operational workflows.
 
                 </p> */}

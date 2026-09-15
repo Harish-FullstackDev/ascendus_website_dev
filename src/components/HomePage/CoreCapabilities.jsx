@@ -204,7 +204,7 @@ export default function CoreCapabilities() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-1 w-full mx-auto text-center mb-8"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-medium">
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-medium">
                     Everything an Enterprise Technology Estate Needs, Under <br />
                     <span className="text-[#0061AF]">One Roof</span>
                 </h2>

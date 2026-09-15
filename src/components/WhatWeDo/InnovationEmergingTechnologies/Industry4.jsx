@@ -51,8 +51,8 @@ export default function Industry4() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[880px] mx-auto text-center mb-10 sm:mb-[100px]"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-semibold">Industry 4.0</h2>
-                <p className="text-black text-lg font-light">Build Intelligent Manufacturing Operations</p>
+                <h2 className="text-[#0d0c22] text-xl font-semibold">Industry 4.0</h2>
+                <p className="text-black text-base sm:text-lg font-light">Build Intelligent Manufacturing Operations</p>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Modernize manufacturing with connected technologies, automation, AI, IoT, and advanced analytics
                     to create smart factories and intelligent production systems.

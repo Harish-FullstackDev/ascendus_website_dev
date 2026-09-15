@@ -9,7 +9,7 @@ export default function BlogPostContent({ sections }) {
                 <section key={idx} className="space-y-4 border-b border-slate-100 pb-8 last:border-none last:pb-0">
                     <h2
                         id={`section-${idx}`}
-                        className="text-[#2E3033] text-2xl md:text-2xl font-semibold scroll-mt-28 pt-2"
+                        className="text-[#2E3033] text-xl md:text-2xl font-semibold scroll-mt-28 pt-2"
                     >
                         {sec.heading}
                     </h2>

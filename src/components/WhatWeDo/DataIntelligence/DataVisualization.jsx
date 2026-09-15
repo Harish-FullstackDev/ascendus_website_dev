@@ -30,7 +30,7 @@ export default function DataVisualization() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center"
             >
-                <h2 className="text-black text-2xl font-normal">Data Visualization</h2>
+                <h2 className="text-black text-xl font-normal">Data Visualization</h2>
                 <p className="text-[#515151] text-base sm:text-lg font-light">
                     Turn complex datasets into clear, actionable visuals that make insight accessible to every
                     decision-maker.

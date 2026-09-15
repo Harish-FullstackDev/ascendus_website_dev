@@ -33,7 +33,7 @@ export default function ConversationalAI() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[50px]"
             >
-                <h2 className="text-black text-2xl font-semibold">Conversational AI</h2>
+                <h2 className="text-black text-xl font-semibold">Conversational AI</h2>
                 <p className="text-black text-base sm:text-lg font-light">Deliver Intelligent Conversations at Scale</p>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Create natural, engaging conversational experiences through AI-powered chatbots and virtual

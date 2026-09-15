@@ -75,7 +75,7 @@ export default function ServiceDesk() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[736px] mx-auto text-center mb-12 sm:mb-[60px]"
             >
-                <h2 className="text-black text-2xl font-semibold">Infrastructure Management & SLAs</h2>
+                <h2 className="text-black text-xl font-semibold">Infrastructure Management & SLAs</h2>
                 <p className="text-[#515151] text-base sm:text-lg font-light">
                     Extended support capabilities, desk management, and clear SLAs.
                 </p>

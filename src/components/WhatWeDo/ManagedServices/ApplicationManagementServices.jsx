@@ -52,7 +52,7 @@ export default function ApplicationManagementServices() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[750px] mx-auto text-center mb-10 sm:mb-[45px]"
             >
-                <h2 className="font-heading text-black text-2xl font-semibold">Application Management Services (AMS)</h2>
+                <h2 className="font-heading text-black text-xl font-semibold">Application Management Services (AMS)</h2>
                 <p className="text-black text-base sm:text-lg font-light">Maximize Application Performance & Reliability</p>
                 <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
                     Ensure your enterprise applications remain secure, optimized, and aligned with evolving business

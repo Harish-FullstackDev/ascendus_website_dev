@@ -86,7 +86,7 @@ export default function ProofInNumbers() {
                                 on one line is ~230px, so nowrap there pushed the grid wider
                                 than the viewport and gave the whole page a horizontal
                                 scroll. Wraps below sm, stays on one line from sm up. */}
-                            <p className="text-[#55595E] text-lg font-light text-center sm:whitespace-nowrap">
+                            <p className="text-[#55595E] text-base sm:text-lg font-light text-center sm:whitespace-nowrap">
                                 {stat.label}
                             </p>
                         </div>

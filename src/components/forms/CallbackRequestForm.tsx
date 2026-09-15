@@ -65,7 +65,7 @@ export default function CallbackRequestForm() {
         <PhoneCall className="w-8 h-8" />
       </div>
 
-      <h3 id="callback-form-title" className="text-2xl font-extrabold text-gray-900 mb-2">Priority Callback</h3>
+      <h3 id="callback-form-title" className="text-xl font-extrabold text-gray-900 mb-2">Priority Callback</h3>
       <p className="text-gray-500 text-sm mb-10 leading-relaxed">Schedule a direct conversation with our regional account managers.</p>
 
       <form 

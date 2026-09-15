@@ -75,10 +75,10 @@ export default function HowWeWork() {
                     Container; the subtitle and body are their own flush two-line
                     block (no gap between them) same as Figma's two stacked <p>s. */}
                 <div className="absolute inset-x-0 top-[8%] flex flex-col items-center text-white text-center px-6 gap-3">
-                    <h2 className="text-2xl sm:text-[28px] font-semibold leading-tight">How We Work</h2>
+                    <h2 className="text-xl sm:text-[28px] font-semibold leading-tight">How We Work</h2>
                     <div className="flex flex-col leading-tight">
-                        <p className="text-lg font-light">A Clear Path From Problem to Production</p>
-                        <p className="text-lg font-light">
+                        <p className="text-base sm:text-lg font-light">A Clear Path From Problem to Production</p>
+                        <p className="text-base sm:text-lg font-light">
                             No black boxes, no scope creep. Every engagement follows a process built for transparency and outcomes.
                         </p>
                     </div>
@@ -109,8 +109,8 @@ export default function HowWeWork() {
                                 <span className="text-[#2E3033] text-3xl font-light">{step.num}</span>
                             </div>
                             <div className="flex flex-col gap-3 text-white">
-                                <h2 className="text-2xl font-semibold">{step.title}</h2>
-                                <p className="text-lg font-extralight leading-[1.5]">{step.desc}</p>
+                                <h2 className="text-xl font-semibold">{step.title}</h2>
+                                <p className="text-base sm:text-lg font-extralight leading-[1.5]">{step.desc}</p>
                             </div>
                         </div>
                     ))}

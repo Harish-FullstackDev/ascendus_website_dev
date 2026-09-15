@@ -41,8 +41,8 @@ export default function DataModernizationIntegration() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:max-w-[430px] shrink-0"
                 >
-                    <h2 className="text-[#2E3033] text-[28px] font-semibold">Data Modernization &amp; Integration</h2>
-                    <p className="text-[#55595E] text-lg font-light">
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Data Modernization &amp; Integration</h2>
+                    <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Modern data capabilities that bring fragmented enterprise information together for
                         analytics, reporting, and AI.
                     </p>
@@ -59,8 +59,8 @@ export default function DataModernizationIntegration() {
                             className="flex flex-col gap-6"
                         >
                             <Image src={item.icon} alt="" width={48} height={48} />
-                            <h2 className="text-[#2E3033] text-2xl font-semibold">{item.title}</h2>
-                            <p className="text-[#55595E] text-lg font-light">{item.desc}</p>
+                            <h2 className="text-[#2E3033] text-xl font-semibold">{item.title}</h2>
+                            <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                         </motion.div>
                     ))}
                 </div>

@@ -99,7 +99,7 @@ export default function ScalableAIDeployment() {
                         className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[100px]"
                     >
                         <div className="flex flex-col gap-5 w-full">
-                            <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">
+                            <h2 className="text-[#2E3033] text-base sm:text-2xl font-semibold">
                                 From Pilot to Production
                             </h2>
 
@@ -138,7 +138,7 @@ export default function ScalableAIDeployment() {
                         </div>
 
                         <div className="flex flex-col gap-5 w-full">
-                            <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">
+                            <h2 className="text-[#2E3033] text-base sm:text-2xl font-semibold">
                                 AI Agents That Work Inside Your Processes
                             </h2>
 

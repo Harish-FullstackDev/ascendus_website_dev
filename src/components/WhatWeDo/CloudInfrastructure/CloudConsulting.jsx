@@ -65,9 +65,9 @@ export default function CloudConsulting() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-4 w-full lg:w-[285px] shrink-0"
                 >
-                    <h2 className="text-[#0d0c22] text-2xl font-semibold">Cloud Consulting</h2>
-                    <p className="text-black text-lg font-light">Develop a Cloud Strategy That Drives Growth</p>
-                    <p className="text-[#6c6c6c] text-lg font-light">
+                    <h2 className="text-[#0d0c22] text-xl font-semibold">Cloud Consulting</h2>
+                    <p className="text-black text-base sm:text-lg font-light">Develop a Cloud Strategy That Drives Growth</p>
+                    <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
                         Create a cloud adoption roadmap aligned with your business goals, technology landscape, and
                         digital transformation initiatives.
                     </p>
@@ -97,7 +97,7 @@ export default function CloudConsulting() {
                                 <p className={`text-black text-2xl font-normal ${!card.icon ? "mt-14" : ""}`}>
                                     {card.title}
                                 </p>
-                                <p className="text-[#6c6c6c] text-lg font-light mt-6">{card.desc}</p>
+                                <p className="text-[#6c6c6c] text-base sm:text-lg font-light mt-6">{card.desc}</p>
                             </motion.div>
                         ))}
                     </div>

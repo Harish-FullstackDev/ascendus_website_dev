@@ -18,7 +18,7 @@ const CommonHeader = ({ Title, TitleColor, description }) => {
 
           {/* Description */}
           <div className="max-w-7xl mx-auto">
-            <p className="text-gray-600 text-lg md:text-xl leading-relaxed  text-left">
+            <p className="text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed  text-left">
               {description}
             </p>
           </div>

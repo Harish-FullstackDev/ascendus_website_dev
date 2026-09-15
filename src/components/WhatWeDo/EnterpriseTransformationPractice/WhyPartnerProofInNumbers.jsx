@@ -82,7 +82,7 @@ export default function ProofInNumbers() {
                 {STATS.map((stat) => (
                     <div key={stat.label} className="flex flex-col gap-2 items-start sm:justify-center sm:px-10 first:sm:pl-0 last:sm:pr-0">
                         <AnimatedStat value={stat.value} />
-                        <p className="text-[#4a5568] text-lg font-light whitespace-nowrap">{stat.label}</p>
+                        <p className="text-[#4a5568] text-base sm:text-lg font-light whitespace-nowrap">{stat.label}</p>
                     </div>
                 ))}
             </div>

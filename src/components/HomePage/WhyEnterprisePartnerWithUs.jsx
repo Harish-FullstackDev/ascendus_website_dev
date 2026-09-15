@@ -41,10 +41,10 @@ export default function WhyEnterprisePartnerWithUs() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[38%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <h2 className="text-[#2E3033] text-[28px] font-medium">
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-medium">
                         A Partnership Built on <span className="text-[#0061AF]">Delivery Discipline</span>
                     </h2>
-                    <p className="text-[#55595E] text-lg font-light">
+                    <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Everything an enterprise technology estate needs,under one roof
                     </p>
                 </motion.div>

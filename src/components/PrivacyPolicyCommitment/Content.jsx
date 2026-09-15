@@ -96,10 +96,10 @@ export default function PrivacyPolicyCommitment() {
           {/* Introduction Banner */}
           <div
             ref={(el) => (sectionRefs.current[introduction.title] = el)}
-            className="bg-[#eaeaea] px-[66px] py-[62px]"
+            className="bg-[#eaeaea] px-8 sm:px-[66px] py-[62px]"
           >
             <div className="flex flex-col gap-[42px] ">
-              <h1 className="text-2xl font-semibold text-black">
+              <h1 className="text-xl font-semibold text-black">
                 {introduction.title}
               </h1>
               <div>
@@ -113,9 +113,9 @@ export default function PrivacyPolicyCommitment() {
           {/* Privacy Principles */}
           <div
             ref={(el) => (sectionRefs.current[privacyPrinciples.title] = el)}
-            className="px-[66px] py-[60px] "
+            className="px-8 sm:px-[66px] py-[60px] "
           >
-            <h2 className="text-2xl font-semibold text-black mb-[42px]">
+            <h2 className="text-xl font-semibold text-black mb-[42px]">
               {privacyPrinciples.title}
             </h2>
             {privacyPrinciples.paragraphs.map((item, index) => (

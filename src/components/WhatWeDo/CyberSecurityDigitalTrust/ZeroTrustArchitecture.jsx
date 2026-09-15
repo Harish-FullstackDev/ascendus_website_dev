@@ -98,7 +98,7 @@ export default function ZeroTrustArchitecture() {
             <div className="relative z-10 w-full lg:max-w-[664px] flex flex-col gap-3 sm:gap-[14px]">
                 <h2 className="font-heading text-white text-xl sm:text-2xl lg:text-[32px] font-normal">Zero Trust Architecture</h2>
 
-                <div className="bg-[#f4f3f9] border border-[#d9d9d9] shadow-lg w-full px-6 sm:px-8 lg:px-[53px] py-8 sm:py-10 min-h-[260px] sm:min-h-[300px] flex items-center">
+                <div className="bg-[#F5F6F6] border border-[#d9d9d9] shadow-lg w-full px-6 sm:px-8 lg:px-[53px] py-8 sm:py-10 min-h-[260px] sm:min-h-[300px] flex items-center">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={index}

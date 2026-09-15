@@ -14,9 +14,9 @@ export default function WhyIntelligentAutomationMatters() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-7 w-full sm:w-[623px] shrink-0"
             >
-                <h2 className="text-black text-2xl font-normal">Positioning Statement</h2>
-                {/* <p className="text-black text-lg font-light">Work Smarter. Automate Faster.</p> */}
-                <p className="text-[#3d3d4e] text-lg font-light">
+                <h2 className="text-black text-xl font-normal">Positioning Statement</h2>
+                {/* <p className="text-black text-base sm:text-lg font-light">Work Smarter. Automate Faster.</p> */}
+                <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Manual, repetitive processes quietly drain enterprise capacity. We
                     identify where automation delivers real time and cost savings, then build the RPA, workflow,
                     and AI-powered automation to capture it, without adding fragile, unmanageable bots to

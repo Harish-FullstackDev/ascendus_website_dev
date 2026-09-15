@@ -15,7 +15,7 @@ export default function BlogCardGrid({ blogs, loading, onCardClick, onWriteFirst
     if (blogs.length === 0) {
         return (
             <div className="text-center py-40 border border-dashed border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 bg-white">
-                <p className="text-[#55595E] font-light text-lg mb-6">
+                <p className="text-[#55595E] font-light text-base sm:text-lg mb-6">
                     No blog posts found. Due too techenical issue
                 </p>
                 {/* <button

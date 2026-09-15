@@ -28,7 +28,7 @@ export default function LearningDevelopment() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="text-2xl sm:text-3xl font-semibold text-black text-center mb-8"
+                className="text-xl sm:text-3xl font-semibold text-black text-center mb-8"
             >
                 Learning and Development
             </motion.h2>

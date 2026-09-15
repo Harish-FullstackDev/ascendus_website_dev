@@ -12,11 +12,11 @@ export default function EngagementModelsOverview() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-4 w-full lg:max-w-[586px]"
             >
-                <p className="text-[#10161d] text-lg font-medium">Engagement Models</p>
-                <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-medium">
+                <p className="text-[#10161d] text-base sm:text-lg font-medium">Engagement Models</p>
+                <h2 className="text-[#10161d] text-xl sm:text-[28px] font-medium">
                     Choose how you want to work with us
                 </h2>
-                <p className="text-[#4a5568] text-lg font-light leading-[1.5]">
+                <p className="text-[#4a5568] text-base sm:text-lg font-light leading-[1.5]">
                     Enterprise technology rarely fails on ambition. It fails on execution: systems that don&apos;t talk
                     to each other, projects that stall after go-live, compliance treated as an afterthought instead
                     of a starting point. Closing that gap is the work.

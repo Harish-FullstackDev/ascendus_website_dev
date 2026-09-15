@@ -14,9 +14,9 @@ export default function WhyBusinessAdvisoryMatters() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-7 w-full sm:w-[623px] shrink-0"
             >
-                <h2 className="text-black text-2xl font-normal">Why Business Advisory Matters</h2>
-                <p className="text-black text-lg font-light">Strategic Guidance That Delivers Real Business Outcomes</p>
-                <p className="text-[#3d3d4e] text-lg font-light">
+                <h2 className="text-black text-xl font-normal">Why Business Advisory Matters</h2>
+                <p className="text-black text-base sm:text-lg font-light">Strategic Guidance That Delivers Real Business Outcomes</p>
+                <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Partner with experienced advisors to define clear strategies, streamline operations, and build a
                     roadmap for sustainable growth and transformation.
                 </p>

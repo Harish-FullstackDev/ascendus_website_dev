@@ -50,7 +50,7 @@ export default function WhatYouWantToDo() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="max-w-3xl mx-auto text-center mb-12"
             >
-                <h2 className="text-2xl sm:text-3xl font-medium text-black">Whatever you want to do</h2>
+                <h2 className="text-xl sm:text-3xl font-medium text-black">Whatever you want to do</h2>
                 <p className="mt-4 text-sm sm:text-base text-[#4a5565] leading-relaxed">
                     No matter your experience level, all Ascendus employees get opportunities, support, and resources to
                     pursue their career goals, balance work-life commitments, and strengthen their health and

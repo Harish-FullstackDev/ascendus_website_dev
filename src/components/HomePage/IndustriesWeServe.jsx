@@ -65,7 +65,7 @@ function IndustryCard({ item }) {
                 <p className="text-2xl font-medium leading-normal text-white transition-colors duration-500 group-hover:text-[#2E3033]">
                     {item.title}
                 </p>
-                <p className="text-lg font-light leading-normal text-[#55595E] opacity-0 translate-y-2 transition-all duration-500 delay-100 group-hover:opacity-100 group-hover:translate-y-0">
+                <p className="text-base sm:text-lg font-light leading-normal text-[#55595E] opacity-0 translate-y-2 transition-all duration-500 delay-100 group-hover:opacity-100 group-hover:translate-y-0">
                     {item.desc}
                 </p>
             </div>
@@ -143,10 +143,10 @@ export default function IndustriesWeServe() {
                 className="w-full bg-[#2E3033] flex flex-col sm:flex-row"
             >
                 <div className="flex flex-col justify-center gap-2 px-6 py-10 sm:px-[64px] sm:py-16 sm:w-[390px] shrink-0">
-                    <h2 className="text-white text-[28px] font-medium">
+                    <h2 className="text-white text-xl sm:text-[28px] font-medium">
                         <span className="text-[#0061AF]">Industries</span> We Serve
                     </h2>
-                    <p className="text-white/70 text-lg font-light">
+                    <p className="text-white/70 text-base sm:text-lg font-light">
                         Built for the sectors that can&apos;t afford disruption
                     </p>
                 </div>

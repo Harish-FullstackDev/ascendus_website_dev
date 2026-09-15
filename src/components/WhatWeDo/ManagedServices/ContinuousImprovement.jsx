@@ -47,7 +47,7 @@ export default function ContinuousImprovement() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1148px] mx-auto text-center mb-12 sm:mb-[60px]"
             >
-                <h2 className="font-heading text-black text-2xl sm:text-[32px] font-semibold">Continuous Improvement</h2>
+                <h2 className="font-heading text-black text-xl sm:text-[32px] font-semibold">Continuous Improvement</h2>
                 <p className="text-[#515151] text-base sm:text-2xl font-light max-w-[912px]">
                     Evaluate your current ERP landscape, identify transformation opportunities, and create a roadmap
                     aligned with your business objectives.

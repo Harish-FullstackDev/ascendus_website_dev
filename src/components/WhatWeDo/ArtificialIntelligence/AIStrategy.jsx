@@ -70,7 +70,7 @@ export default function AIStrategy() {
                                 {index !== ITEMS.length - 1 && <div className="w-px flex-1 min-h-[24px] bg-[#7f7f7f]" />}
                             </div>
                             <div className="flex flex-col gap-2 pb-8 sm:pb-[38px]">
-                                <p className="text-black text-lg sm:text-2xl">{item.title}</p>
+                                <p className="text-black text-base sm:text-lg sm:text-2xl">{item.title}</p>
                                 <p className="text-[#515151] text-sm sm:text-lg">{item.desc}</p>
                             </div>
                         </div>

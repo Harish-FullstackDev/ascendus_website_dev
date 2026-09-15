@@ -18,8 +18,8 @@ export default function Capabilities() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-3 sm:gap-[24px] max-w-[855px] text-center"
             >
-                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Capabilities</h2>
-                <p className="text-[#55595E] text-lg font-light">
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Capabilities</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     SAP is our core deliberately. Microsoft and adjacent platforms extend that core so the
                     enterprise moves as a system, not a set of silos.
                 </p>

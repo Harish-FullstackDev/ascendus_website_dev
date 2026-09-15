@@ -37,7 +37,7 @@ const ITEMS = [
 function CardBlock({ item }) {
     return (
         <div className="flex w-full max-w-[420px] flex-col items-center gap-6 sm:max-w-[512px] lg:max-w-none lg:flex-1 lg:basis-1/2">
-            <h2 className="text-center text-lg font-semibold text-[#2E3033] sm:text-2xl">{item.title}</h2>
+            <h2 className="text-center text-base font-semibold text-[#2E3033] sm:text-2xl">{item.title}</h2>
             <div className="relative aspect-[512/200] w-full overflow-hidden">
                 <Image src={item.image} alt="" fill className="object-cover" />
             </div>
@@ -49,7 +49,7 @@ function CompanionBlock({ item }) {
     return (
         <div className="flex w-full max-w-[480px] items-center gap-4 px-2 sm:gap-5 sm:px-0 lg:max-w-none lg:flex-1 lg:basis-1/2">
             <div className="w-[4px] shrink-0 self-stretch bg-[#808a99] sm:w-[8px]" />
-            <p className="w-full text-lg font-light leading-[1.5] text-[#55595E] sm:text-2xl">{item.companionDesc}</p>
+            <p className="w-full text-base sm:text-lg font-light leading-[1.5] text-[#55595E] sm:text-2xl">{item.companionDesc}</p>
         </div>
     );
 }
@@ -69,7 +69,7 @@ export default function InfrastructureManagementSLAs() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex max-w-[772px] flex-col items-center gap-2 text-center"
                 >
-                    <h2 className="text-2xl font-semibold text-[#2E3033] sm:text-[28px]">
+                    <h2 className="text-xl font-semibold text-[#2E3033] sm:text-[28px]">
                         Infrastructure Management &amp; SLAs
                     </h2>
                     <p className="text-base font-light text-[#55595E] sm:text-lg">

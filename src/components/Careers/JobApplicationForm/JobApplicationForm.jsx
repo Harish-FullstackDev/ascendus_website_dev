@@ -314,7 +314,7 @@ export default function JobApplicationForm() {
                 <div className="w-16 h-16 bg-blue-600 text-white flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-9 h-9" aria-hidden="true" />
                 </div>
-                <h2 className="text-2xl font-semibold text-slate-900 mb-3">Application Submitted</h2>
+                <h2 className="text-xl font-semibold text-slate-900 mb-3">Application Submitted</h2>
                 <p className="text-slate-500 max-w-md mx-auto">
                     Thank you for applying. Our HR team will review your application and reach out if there&apos;s a match.
                 </p>
@@ -328,7 +328,7 @@ export default function JobApplicationForm() {
     return (
         <div className="max-w-[60rem] mx-auto">
             <div className="text-center mb-8">
-                <h1 className="text-2xl font-medium text-[#101828]">Job Application Form</h1>
+                <h1 className="text-xl font-medium text-[#101828]">Job Application Form</h1>
                 <p className="text-[#4a5565] mt-2">Please fill out all required fields to submit your application</p>
             </div>
 

@@ -30,7 +30,7 @@ export default function WhatSetsUsApart() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center max-w-[1500px] mx-auto"
                 >
-                    <h2 className="text-2xl font-medium text-black">What sets us apart</h2>
+                    <h2 className="text-xl font-medium text-black">What sets us apart</h2>
                     <p className="mt-3 text-base text-black">At Ascendus, people are at the heart of everything we do.</p>
                     <p className="mt-2 text-sm sm:text-base text-[#6c6c6c] leading-relaxed">
                         We empower our teams through continuous learning and innovation. Our collaborative culture
@@ -55,7 +55,7 @@ export default function WhatSetsUsApart() {
                         >
                             <p className="text-2xl text-white">{stat.value}</p>
                             <div>
-                                <p className="text-lg font-medium text-white">{stat.title}</p>
+                                <p className="text-base sm:text-lg font-medium text-white">{stat.title}</p>
                                 <p className="text-xs text-white/80 mt-3 leading-relaxed">{stat.description}</p>
                             </div>
                         </motion.div>

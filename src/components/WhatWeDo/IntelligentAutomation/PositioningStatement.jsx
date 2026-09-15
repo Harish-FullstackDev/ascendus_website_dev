@@ -17,11 +17,11 @@ export default function PositioningStatement() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="w-full lg:w-[700px] shrink-0 flex flex-col gap-2 text-[#3d3d4e]"
                 >
-                    <h2 className="text-[28px] text-[#2E3033] font-semibold leading-normal">
+                    <h2 className="text-xl sm:text-[28px] text-[#2E3033] font-semibold leading-normal">
                         Positioning Statement
                     </h2>
 
-                    <p className="text-lg text-[#55595E] font-light leading-relaxed">
+                    <p className="text-base sm:text-lg text-[#55595E] font-light leading-relaxed">
                         Manual, repetitive processes quietly drain enterprise capacity. We identify where automation delivers real time and cost savings, then build the RPA, workflow, and AI powered automation to capture it, without adding fragile, unmanageable bots to your environment.
                     </p>
                 </motion.div>

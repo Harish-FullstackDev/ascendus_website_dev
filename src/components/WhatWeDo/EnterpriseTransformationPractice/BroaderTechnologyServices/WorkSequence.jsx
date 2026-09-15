@@ -45,8 +45,8 @@ export default function WorkSequence() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-4 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">How This Work Gets Sequenced</h2>
-                    <p className="text-[#55595E] text-lg font-light">
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How This Work Gets Sequenced</h2>
+                    <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Every engagement follows the same order, so nothing that surrounds SAP gets built before the
                         landscape it depends on is understood.
                     </p>

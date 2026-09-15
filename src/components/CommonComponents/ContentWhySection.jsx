@@ -197,7 +197,7 @@ const WhyContentSection = ({
                   variants={textContentVariants}
                 >
                   <motion.h3 
-                    className="text-2xl font-bold text-gray-900 transition-colors duration-300"
+                    className="text-xl font-bold text-gray-900 transition-colors duration-300"
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}

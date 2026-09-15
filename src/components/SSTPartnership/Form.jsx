@@ -115,7 +115,7 @@ function Form() {
       case 1:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-8">
               Personal Information
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
@@ -212,7 +212,7 @@ function Form() {
       case 2:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-8">
               Partner Information
             </h2>
             <div>
@@ -254,7 +254,7 @@ function Form() {
       case 3:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-8">
               Other Information
             </h2>
             <div>
@@ -279,11 +279,11 @@ function Form() {
       case 4:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-8">
               Summary & Submit
             </h2>
             <div className="bg-gray-100 p-6 rounded-lg shadow-inner">
-              <h3 className="font-semibold text-lg text-gray-800 mb-4">
+              <h3 className="font-semibold text-base text-gray-800 mb-4">
                 Review Your Information
               </h3>
               <ul className="space-y-2 text-gray-600">

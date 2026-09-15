@@ -41,7 +41,7 @@ export default function ProcessMiningRPAHyperautomation() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[1055px] mx-auto text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-semibold">Process Mining, RPA & Hyperautomation</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Process Mining, RPA & Hyperautomation</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Primary technologies for modernizing enterprise processes.
                 </p>

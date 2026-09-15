@@ -114,10 +114,10 @@ export default function TermsContent() {
           {/* Title Banner */}
           <div
             ref={(el) => (sectionRefs.current["Summary"] = el)}
-            className="bg-[#eaeaea] px-[66px] py-[62px]"
+            className="bg-[#eaeaea] px-8 sm:px-[66px] py-[62px]"
           >
             <div className="flex flex-col gap-[42px] ">
-              <h1 className="text-2xl font-semibold text-black">
+              <h1 className="text-xl font-semibold text-black">
                 {summary.title}
               </h1>
               <div>
@@ -128,13 +128,13 @@ export default function TermsContent() {
             </div>
           </div>
           {/* Main Content */}
-          <div className="px-[66px] py-[60px] space-y-[60px] ">
+          <div className="px-8 sm:px-[66px] py-[60px] space-y-[60px] ">
             {bodySections.map((section) => (
               <section
                 key={section}
                 ref={(el) => (sectionRefs.current[section] = el)}
               >
-                <h2 className="text-2xl font-semibold text-black mb-[42px]">
+                <h2 className="text-xl font-semibold text-black mb-[42px]">
                   {sectionContent[section].title}
                 </h2>
                 <SectionBody data={sectionContent[section]} />

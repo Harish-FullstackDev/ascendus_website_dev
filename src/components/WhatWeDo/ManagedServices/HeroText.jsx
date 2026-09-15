@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function HeroText() {
     return (
-        <div className="absolute inset-x-0 top-[18%] sm:top-[23%] px-6 py-6 sm:py-0 sm:px-10 lg:px-[63px]">
+        <div className="absolute inset-x-0 top-[18%] sm:top-[23%] px-8 py-6 sm:py-0 sm:px-10 lg:px-[63px]">
             <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -15,7 +15,7 @@ export default function HeroText() {
                     Managed Services
                 </p>
                 <div className="mt-3 sm:mt-1 h-px w-full bg-white/40" />
-                <h1 className="font-heading text-white text-2xl sm:text-4xl lg:text-5xl font-semibold capitalize mt-6 sm:mt-6 leading-tight">
+                <h1 className="font-heading text-white text-xl sm:text-4xl lg:text-5xl font-semibold capitalize mt-6 sm:mt-6 leading-tight">
                     Enterprise systems that keep running, without you having to manage them
                 </h1>
             </motion.div>

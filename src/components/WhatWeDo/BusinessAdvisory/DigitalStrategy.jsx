@@ -70,7 +70,7 @@ export default function DigitalStrategy() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 text-center"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-semibold">Strategic Planning & Architecture</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Strategic Planning & Architecture</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Defining transformation roadmaps, business architecture, and process change.
                 </p>
@@ -130,7 +130,7 @@ export default function DigitalStrategy() {
                                 upward as the description expands, matching the Identity Management
                                 card behavior. */}
                             <div className="absolute left-[12%] right-[12%] bottom-[12%] flex flex-col text-white">
-                                <h2 className="text-2xl font-semibold">{card.title}</h2>
+                                <h2 className="text-xl font-semibold">{card.title}</h2>
                                 <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
                                     <div className="overflow-hidden">
                                         <p className="text-base font-light pt-2">{card.desc}</p>

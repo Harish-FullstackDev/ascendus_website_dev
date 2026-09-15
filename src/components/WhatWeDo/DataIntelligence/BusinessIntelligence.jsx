@@ -31,7 +31,7 @@ export default function BusinessIntelligence() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center px-6 sm:px-0"
             >
-                <h2 className="text-black text-2xl font-normal">Business Intelligence</h2>
+                <h2 className="text-black text-xl font-normal">Business Intelligence</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Deliver interactive dashboards, executive reports, and KPI monitoring that empower
                     stakeholders to make informed business decisions.
@@ -49,7 +49,7 @@ export default function BusinessIntelligence() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="border border-black/10 flex flex-col gap-4 px-6 py-8"
                     >
-                        <p className="text-black text-lg font-semibold">{card.title}</p>
+                        <p className="text-black text-base sm:text-lg font-semibold">{card.title}</p>
                         <p className="text-[#6c6c6c] text-sm font-light">{card.desc}</p>
                     </motion.div>
                 ))}
@@ -72,7 +72,7 @@ export default function BusinessIntelligence() {
                             <div className="bg-white outline outline-[0.5px] outline-offset-[-0.5px] outline-neutral-400 flex items-center min-h-[128px] px-8 py-8">
                                 <p className="text-black text-xl font-normal leading-tight">{card.title}</p>
                             </div>
-                            <p className="text-black text-lg font-light pt-6 pb-10 pr-4">{card.desc}</p>
+                            <p className="text-black text-base sm:text-lg font-light pt-6 pb-10 pr-4">{card.desc}</p>
                         </motion.div>
                     ))}
                 </div>

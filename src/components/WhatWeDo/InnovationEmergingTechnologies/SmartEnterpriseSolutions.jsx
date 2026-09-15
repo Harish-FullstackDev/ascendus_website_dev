@@ -40,8 +40,8 @@ export default function SmartEnterpriseSolutions() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-4 w-full lg:w-[442px] shrink-0"
             >
-                <h2 className="text-black text-2xl font-normal">Smart Enterprise Solutions</h2>
-                <p className="text-[#6c6c6c] text-lg font-light">
+                <h2 className="text-black text-xl font-normal">Smart Enterprise Solutions</h2>
+                <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
                     Integrate emerging technologies across your enterprise to create connected, automated, and
                     data-driven business environments.
                 </p>

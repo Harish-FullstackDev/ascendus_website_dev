@@ -19,7 +19,7 @@ export default function BusinessRulesAutomationGrid() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center"
             >
-                <h2 className="text-black text-2xl font-normal">Business Rules Automation</h2>
+                <h2 className="text-black text-xl font-normal">Business Rules Automation</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Turn policy into automated, consistent decisions across every process.
                 </p>
@@ -36,7 +36,7 @@ export default function BusinessRulesAutomationGrid() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="border border-black/10 flex flex-col gap-4 px-6 py-8"
                     >
-                        <p className="text-black text-lg font-semibold">{item.title}</p>
+                        <p className="text-black text-base sm:text-lg font-semibold">{item.title}</p>
                         <p className="text-[#6c6c6c] text-sm font-light">{item.desc}</p>
                     </motion.div>
                 ))}
@@ -60,7 +60,7 @@ export default function BusinessRulesAutomationGrid() {
                             <div className="bg-white outline outline-[0.5px] outline-offset-[-0.5px] outline-neutral-400 flex items-center min-h-[128px] px-8 py-8">
                                 <p className="text-black text-xl font-normal leading-tight">{item.title}</p>
                             </div>
-                            <p className="text-black text-lg font-light pt-6 pb-10 pr-4">{item.desc}</p>
+                            <p className="text-black text-base sm:text-lg font-light pt-6 pb-10 pr-4">{item.desc}</p>
                         </motion.div>
                     ))}
                 </div>

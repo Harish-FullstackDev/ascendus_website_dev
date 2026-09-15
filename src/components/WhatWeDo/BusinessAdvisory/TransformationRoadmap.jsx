@@ -25,7 +25,7 @@ export default function TransformationRoadmap() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[841px] text-center px-6"
             >
-                <h2 className="text-black text-2xl font-normal">Transformation Roadmap</h2>
+                <h2 className="text-black text-xl font-normal">Transformation Roadmap</h2>
                 <p className="text-[#515151] text-base sm:text-lg font-light">
                     Develop a practical, phased roadmap that aligns strategic initiatives, technology investments,
                     and business priorities to achieve successful transformation.

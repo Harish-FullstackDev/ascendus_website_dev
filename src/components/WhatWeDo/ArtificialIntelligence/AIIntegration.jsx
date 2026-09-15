@@ -23,7 +23,7 @@ export default function AIIntegration() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-4 max-w-[560px] mx-auto text-center"
                 >
-                    <h2 className="text-black text-2xl sm:text-[28px] font-semibold">
+                    <h2 className="text-black text-xl sm:text-[28px] font-semibold">
                         Scalable AI Deployment &amp; Operational Workflows
                     </h2>
                     <p className="text-[#515151] text-base sm:text-lg font-light">
@@ -39,7 +39,7 @@ export default function AIIntegration() {
                     className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[23px]"
                 >
                     <div className="flex flex-col gap-5 w-full">
-                        <p className="text-black text-lg sm:text-2xl font-light">From Pilot to Production:</p>
+                        <p className="text-black text-base sm:text-lg sm:text-2xl font-light">From Pilot to Production:</p>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             Most AI initiatives stall between proof of concept and enterprise rollout. We close that
                             gap with implementation discipline: data readiness, integration architecture, and change
@@ -67,7 +67,7 @@ export default function AIIntegration() {
                             <Image src={integrationImage2} alt="" fill className="object-cover" />
                         </div>
                         <div className="flex flex-col gap-5 w-full">
-                            <p className="text-black text-lg sm:text-2xl font-light">
+                            <p className="text-black text-base sm:text-lg sm:text-2xl font-light">
                                 AI Agents That Work Inside Your Processes:
                             </p>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">

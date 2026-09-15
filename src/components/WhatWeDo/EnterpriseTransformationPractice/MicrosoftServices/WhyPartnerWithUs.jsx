@@ -45,7 +45,7 @@ export default function WhyPartnerWithUs() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-4 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <h2 className="text-[#10161d] text-2xl sm:text-[28px] font-semibold">Why Partner With Us For This</h2>
+                    <h2 className="text-[#10161d] text-xl sm:text-[28px] font-semibold">Why Partner With Us For This</h2>
                 </motion.div>
 
                 <motion.div

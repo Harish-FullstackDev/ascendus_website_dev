@@ -74,7 +74,7 @@ export default function InsightsListing({
           y: contentY,
           // opacity,
         }}
-        className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white flex-grow w-full mx-auto px-6 py-12 md:p-16 md:pb-30"
+        className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white flex-grow w-full mx-auto px-8 py-12 md:p-16 md:pb-30"
       >
 
         {/* Category Filter Chips */}
@@ -101,7 +101,7 @@ export default function InsightsListing({
           </div>
         ) : filteredItems.length === 0 ? (
           <div className="text-center py-40 border border-dashed border-neutral-200 rounded-none p-8 bg-white">
-            <p className="text-[#55595E] font-light text-lg">{emptyStateText}</p>
+            <p className="text-[#55595E] font-light text-base sm:text-lg">{emptyStateText}</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">

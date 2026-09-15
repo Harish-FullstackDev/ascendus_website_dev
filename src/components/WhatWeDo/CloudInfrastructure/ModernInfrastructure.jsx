@@ -59,7 +59,7 @@ export default function ModernInfrastructure() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.4, delay: index * 0.06 }}
-                        className="flex gap-4 rounded-[10px] bg-[#f3f3f3] px-5 py-4"
+                        className="flex gap-4 rounded-[10px] bg-[#F5F6F6] px-5 py-4"
                     >
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0A3A52] text-sm font-semibold text-white">
                             {index + 1}
@@ -133,7 +133,7 @@ export default function ModernInfrastructure() {
                                     <motion.h2
                                         layout
                                         transition={{ layout: { duration: 0.35, ease: "easeInOut" } }}
-                                        className={`relative z-10 text-lg lg:text-2xl font-semibold leading-tight transition-colors duration-500 ease-in-out ${isActive ? "text-white" : "text-black"
+                                        className={`relative z-10 text-base lg:text-2xl font-semibold leading-tight transition-colors duration-500 ease-in-out ${isActive ? "text-white" : "text-black"
                                             }`}
                                     >
                                         {step.title}

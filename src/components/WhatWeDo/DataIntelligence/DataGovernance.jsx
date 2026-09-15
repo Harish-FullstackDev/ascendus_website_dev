@@ -79,7 +79,7 @@ export default function DataGovernance() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1074px] text-center"
             >
-                <h2 className="text-black text-2xl font-semibold">Data Governance</h2>
+                <h2 className="text-black text-xl font-semibold">Data Governance</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Establish clear ownership, quality standards, and controls so every dataset across the
                     enterprise can be trusted, discovered, and used with confidence.

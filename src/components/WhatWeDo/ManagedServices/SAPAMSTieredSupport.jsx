@@ -100,7 +100,7 @@ export default function SAPAMSTieredSupport() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
-                            className="text-[28px] font-semibold leading-tight text-[#2E3033]"
+                            className="text-xl sm:text-[28px] font-semibold leading-tight text-[#2E3033]"
                         >
                             SAP AMS &amp; Tiered Support
                         </motion.h2>
