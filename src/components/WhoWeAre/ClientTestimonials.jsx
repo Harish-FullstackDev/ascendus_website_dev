@@ -161,7 +161,7 @@ function TestimonialsColumn({ className, testimonials, duration = 10 }) {
 
 export default function ClientTestimonials() {
     return (
-        <section className="w-full px-8 sm:px-[64px] pt-10 pb-10 sm:pt-8 sm:pb-16 overflow-hidden">
+        <section className="w-full px-8 sm:px-[64px] pt-8 pb-8 sm:pt-8 sm:pb-16 overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

@@ -127,7 +127,14 @@ export default function ProactiveSystemOperations() {
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.2 }}
                         variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
-                        className="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden pb-2"
+                        // overflow-y-hidden is load-bearing, not decoration: setting only
+                        // overflow-x makes the other axis compute to `auto` instead of
+                        // `visible`, so the track was also a vertical scroll container and a
+                        // touch drag could nudge the cards a few px up or down. Pinning y to
+                        // hidden leaves the horizontal axis as the only one that moves, and
+                        // overscroll-x-contain keeps a swipe past either end from chaining out
+                        // to whatever scrolls behind it.
+                        className="flex gap-8 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden pb-2"
                     >
                         {CARDS.map((card, index) => (
                             <motion.div
@@ -135,7 +142,12 @@ export default function ProactiveSystemOperations() {
                                 data-card
                                 variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } }}
                                 transition={{ duration: 0.5, ease: "easeOut" }}
-                                className="snap-start shrink-0 w-[260px] sm:w-[335px] h-[280px] sm:h-[360px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-center text-center px-6 sm:px-7 py-7 sm:py-8"
+                                // Mobile height is a floor, not a fixed size: at 260px wide the
+                                // longest description ("Availability Management") runs past a
+                                // hard 280px and spilled out of the card. The track is a flex row
+                                // with the default stretch alignment, so every card still matches
+                                // the tallest one and the row stays even.
+                                className="snap-start shrink-0 w-[260px] sm:w-[335px] min-h-[280px] sm:h-[360px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-center text-center px-6 sm:px-7 py-7 sm:py-8"
                             >
                                 <Image src={card.icon} alt="" width={44} height={44} className="mb-5" />
                                 <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h2>

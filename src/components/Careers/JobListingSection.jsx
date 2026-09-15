@@ -152,7 +152,7 @@ export default function JobListingSection() {
                 className="text-center mb-10 sm:mb-16"
             >
                 <p className="text-lg text-[#55595E]">Opportunities</p>
-                <h2 className="text-2xl sm:text-[28px] font-semibold text-[#2E3033] mt-2">Find work that matches your expertise.</h2>
+                <h2 className="text-2xl sm:text-[28px] font-semibold text-[#2E3033] mt-2">Find Work That Matches Your Expertise.</h2>
             </motion.div>
 
             <motion.div

@@ -89,7 +89,11 @@ export default function DigitalStrategy() {
                         className="relative w-full h-[220px] overflow-hidden"
                     >
                         <Image src={card.image} alt={card.title} fill className="object-cover" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30" />
+                        {/* Dark at the top, where this card's title and description sit — the
+                            same scrim BusinessProcessConsulting uses for its top-anchored text.
+                            Running it the other way (dark at the bottom) left the text over bare
+                            photo, so light images washed the titles out. */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/68 to-transparent" />
                         <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
                             <h2 className="text-white text-xl font-semibold">{card.title}</h2>
                             <p className="text-white/85 text-sm font-light max-w-[280px]">{card.desc}</p>

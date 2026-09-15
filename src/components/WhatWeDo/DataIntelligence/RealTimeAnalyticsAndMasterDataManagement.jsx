@@ -44,12 +44,16 @@ export default function RealTimeAnalyticsAndMasterDataManagement() {
             <div className="relative w-full h-[280px] sm:h-[500px] overflow-hidden">
                 <Image src={dataCenterPhoto} alt="" fill className="object-cover" />
                 <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute top-6 sm:top-10 left-1/2 -translate-x-1/2 text-center text-white z-20 px-4 sm:px-0">
-                    <h2 className="text-xl sm:text-[28px] font-semibold">
+                {/* Mobile-only breathing room: this heading wraps to three lines at phone
+                    widths, where 16px side padding and the tight line-height that text-xl
+                    carries ran it close to both edges and to its own description. The max-sm:
+                    prefix keeps all of it off the sm+ layout, which is unchanged. */}
+                <div className="absolute top-6 sm:top-10 left-1/2 -translate-x-1/2 text-center text-white z-20 max-sm:w-full px-6 sm:px-0">
+                    <h2 className="text-xl sm:text-[28px] font-semibold max-sm:leading-relaxed">
                         Real-Time Analytics &amp; Master Data Management
                     </h2>
 
-                    <p className="mt-2 sm:mt-2 max-w-3xl text-sm sm:text-lg font-light ">
+                    <p className="mt-2 sm:mt-2 max-w-3xl text-sm sm:text-lg font-light max-sm:mt-3 max-sm:leading-relaxed">
                         Advanced capabilities to unify, visualize, and govern data.
                     </p>
                 </div>
@@ -112,7 +116,10 @@ export default function RealTimeAnalyticsAndMasterDataManagement() {
                 <div className="flex sm:hidden flex-col divide-y divide-[#e5e5e5] px-4">
                     {ITEMS.map((item) => (
                         <div key={item.title} className="py-5 first:pt-0 last:pb-0">
-                            <h2 className="text-[#0d0c22] text-lg font-light">{item.title}</h2>
+                            {/* Same weight and ink as the sm+ card titles above (which are
+                                font-semibold #2E3033) — only the size steps down for the
+                                stacked list. */}
+                            <h2 className="text-[#2E3033] text-lg font-semibold">{item.title}</h2>
                             <p className="text-[#6c6c6c] text-sm font-light leading-relaxed mt-2">{item.desc}</p>
                         </div>
                     ))}

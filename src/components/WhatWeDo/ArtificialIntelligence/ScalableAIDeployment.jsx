@@ -126,7 +126,11 @@ export default function ScalableAIDeployment() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[100px]"
+                        // Image comes first in the DOM so the lg row alternates against Row 1
+                        // (text-left / image-right, then image-left / text-right). Stacked below
+                        // lg that order would put this row's image above its own heading, so the
+                        // stacked direction is reversed and the text leads, as in Row 1.
+                        className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-[100px]"
                     >
                         <div className="relative w-full lg:w-[560px] h-[220px] lg:h-[297px] shrink-0 bg-[#565656]">
                             <Image

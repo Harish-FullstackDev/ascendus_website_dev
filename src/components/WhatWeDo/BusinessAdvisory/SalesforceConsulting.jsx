@@ -17,7 +17,11 @@ const SERVICES = [
 export default function SalesforceConsulting() {
     return (
         <section className="relative z-10 w-full pt-10 sm:pt-16 pb-10 sm:pb-0">
-            <div className="w-full mx-auto flex flex-col lg:flex-row">
+            {/* The bullet card comes first in the DOM because it is the left column at lg.
+                Stacked below lg that puts the list above the titled image, so the section
+                opens on bullets with no heading — reversing the stacked direction leads with
+                the image card instead. The lg row order is unaffected. */}
+            <div className="w-full mx-auto flex flex-col-reverse lg:flex-row">
 
                 {/* Left */}
                 <motion.div
