@@ -112,7 +112,7 @@ export default function StartedAroundGapNotProduct() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="max-w-5xl mx-auto text-center"
                 >
-                    <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">Started Around a Gap, Not a Product </h2>
+                    <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">Started Around a Gap, Not a Product</h2>
                     <p className="mt-2 text-sm sm:text-lg font-light text-[#55595E] leading-relaxed">
                         Most enterprise tech providers focus on one stack layer  SAP implementation, cloud migration, or post live support. We bridge those gaps where transformations stall. Our practice includes SAP transformation, cloud and data engineering, digital experience, and compliance across the GCC. Enterprises need a partner accountable long after the project ends.
                     </p>
@@ -138,7 +138,7 @@ export default function StartedAroundGapNotProduct() {
                             className={`relative aspect-[258/335] flex flex-col justify-between p-6 ${card.textColor}`}
                         >
                             <Image src={card.bg} alt="" fill className="object-cover" />
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/10 to-black/50" />
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/10 to-black/50" />
 
                             <p className="relative text-base sm:text-lg font-light max-w-[196px]">
                                 {card.description}
