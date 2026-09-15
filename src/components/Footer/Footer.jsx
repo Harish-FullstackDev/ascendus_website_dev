@@ -428,7 +428,7 @@ const Footer = () => {
 
           {/* Get In Touch */}
           <div className="md:col-span-1">
-            <div className="relative h-8 sm:h-10 w-auto aspect-[4/1] mb-4 md:mb-[46px]">
+            <div className="hidden md:block relative h-8 sm:h-10 w-auto aspect-[4/1] mb-4 md:mb-[46px]">
               <Image
                 src={logo}
                 alt="Ascendus Logo"

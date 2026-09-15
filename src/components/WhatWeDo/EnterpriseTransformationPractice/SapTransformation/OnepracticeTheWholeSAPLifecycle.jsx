@@ -16,7 +16,7 @@ export default function OnepracticeTheWholeSAPLifecycle() {
             >
 
                 <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
-                    One practice, the whole SAP lifecycle
+                    One Practice, The Whole SAP Lifecycle
                 </h2>
                 <p className="text-[#55595E] text-lg font-light leading-[1.5]">
                     From the first landscape assessment to the system still running years into production, SAP work

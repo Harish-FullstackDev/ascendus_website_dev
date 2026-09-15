@@ -1,53 +1,8 @@
 "use client";
 
-import { forwardRef, useRef, useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import sapImg from "@/assets/WhatWeDo/Enterprise Transformation Practice/Capabilities/sap-transformation.png";
-import microsoftImg from "@/assets/WhatWeDo/Enterprise Transformation Practice/Capabilities/microsoft-services.png";
-import broaderTechImg from "@/assets/WhatWeDo/Enterprise Transformation Practice/Capabilities/broader-technology.png";
-
-// Per Figma nodes 2620:32, 2776:136, 2776:161. Each card is image + number +
-// title + description + "View More" — no per-service link list. `description`
-// is an array of paragraphs (cards 02/03 carry more than one); Figma sets them
-// with no gap between lines, so they render as separate <p> with no spacing.
-const CAPABILITIES = [
-    {
-        number: "01",
-        title: "SAP Transformation",
-        description: [
-            "We help businesses build, modernize, and manage their SAP landscape across S/4HANA, RISE with SAP, GROW with SAP, BTP, analytics, data, and ongoing support. Our focus is on creating a strong SAP foundation that simplifies operations, improves visibility, and supports business growth. Microsoft, cloud, and adjacent technologies extend that core where they bring additional value keeping your enterprise connected, flexible, and ready for what's next.",
-        ],
-        image: sapImg,
-        href: "/what-we-do/enterprise-transformation/sap-transformation",
-    },
-    {
-        number: "02",
-        title: "Microsoft Services",
-        description: [
-            "Microsoft & Cloud Services",
-            "Microsoft extends our SAP core deliberately. We use Microsoft technologies to connect and enhance SAP, helping businesses improve cloud operations, collaboration, automation, customer management, and analytics.",
-            "Our capabilities include Microsoft Azure, Microsoft 365, Power Platform, Dynamics 365, and Power BI working together with SAP to create a connected and scalable technology environment.",
-        ],
-        image: microsoftImg,
-        href: "/what-we-do/enterprise-transformation/microsoft-services",
-    },
-    {
-        number: "03",
-        title: "Broader Technology Services",
-        description: [
-            "SAP is our core deliberately. Microsoft and adjacent platforms extend that core. We help businesses modernize infrastructure, manage data, support change, and strengthen security and compliance.",
-            "Our services include Cloud & Infrastructure Modernization, Data Migration & Governance, Change Management & Adoption, and Cybersecurity & Compliance helping create a secure, connected, and efficient technology environment.",
-        ],
-        image: broaderTechImg,
-        href: "/what-we-do/enterprise-transformation/broader-technology-services",
-    },
-];
-
-const REVEAL_EASE = [0.22, 1, 0.36, 1];
 
 // Scroll budget (px) for the card1→2→3 scroll-driven switching, shared by the
 // ScrollTrigger setup and the recenter() effect below so neither drifts out
@@ -58,105 +13,13 @@ const INTERACTIVE_DISTANCE = 2400;
 // card's divider line sits) and the top of any fixed bottom overlay.
 const DIVIDER_CLEARANCE = 24;
 
-const CapabilityCard = forwardRef(function CapabilityCard(
-    { number, title, description, image, href, isActive, isPassed, showDivider, hairline, onActivate },
-    ref
-) {
-    return (
-        // isPassed cards (scrolled past, above the active one) collapse to zero
-        // height. That keeps the active card always at offset 0 in the stack —
-        // exactly like card 1, which is what makes its centering shift ~0 and
-        // its pin release seamless with no unwind needed.
-        <motion.div
-            ref={ref}
-            initial={false}
-            animate={{ height: isPassed ? 0 : "auto", opacity: isPassed ? 0 : 1 }}
-            transition={{ duration: 0.8, ease: REVEAL_EASE }}
-            className="w-full overflow-hidden"
-        >
-            {/* The divider is a real element at the very top of the card (every
-                card but the first), not a `border-t`, and its height is an exact
-                whole number of DEVICE pixels rather than a 1px CSS hairline.
-                A 1px CSS border is 1.25 device pixels on a 125%-scaled display,
-                so it can never align to the device grid — and once this track is
-                composited (it carries a GSAP transform) that misalignment lets the
-                rasteriser anti-alias the line away completely, which is what made
-                it vanish for the whole time a card was pinned. Sizing it in whole
-                device pixels means it always covers full device rows and cannot be
-                rounded out of existence.
-                It stays at the TOP of the card for the same reason the border did:
-                the fold animation's overflow:hidden clips from the bottom, so a
-                bottom-edge line would be cut the moment a card starts closing. */}
-            {showDivider && (
-                <div
-                    aria-hidden="true"
-                    className="w-full shrink-0 bg-[#8794a3]"
-                    style={{ height: `${hairline}px` }}
-                />
-            )}
-            <div
-                className="flex flex-col lg:flex-row w-full items-start lg:justify-between gap-6 lg:gap-10 py-6"
-            >
-                {/* Mobile-only duplicate of the number+title below (hidden below lg) —
-                    on mobile the image sits below the number/title rather than above. */}
-                <div className="flex flex-col gap-5 lg:hidden">
-                    <span className="text-[#73A8D3] text-2xl font-medium leading-[1.5]">{number}</span>
-                    <h2 className="text-[#2E3033] text-lg font-semibold leading-[1.5]">{title}</h2>
-                </div>
-
-                {/* 272x459 in Figma, kept as an aspect ratio on a responsive width
-                    so it scales with the viewport instead of distorting. */}
-                <motion.div
-                    initial={false}
-                    animate={{ height: isActive ? "auto" : 0, opacity: isActive ? 1 : 0 }}
-                    transition={{ duration: 0.8, ease: REVEAL_EASE }}
-                    className="overflow-hidden w-[200px] sm:w-[240px] lg:w-[272px] shrink-0 self-start"
-                >
-                    <div
-                        className={`relative w-full aspect-[272/459] transition-[transform] ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive ? "duration-[800ms] delay-[100ms] scale-100" : "duration-[400ms] scale-[0.97]"
-                            }`}
-                    >
-                        <Image src={image} alt={`${title} capability`} fill className="object-cover" />
-                    </div>
-                </motion.div>
-
-                <div className="flex flex-col w-full lg:w-auto lg:flex-1 lg:max-w-[773px]">
-                    {/* Number and title stay outside the collapsible — a closed card
-                        still reads as "02 Microsoft Services"; only the description
-                        and button fold away. */}
-                    <span className="hidden lg:inline text-[#73A8D3] text-2xl sm:text-[28px] font-medium leading-[1.5]">
-                        {number}
-                    </span>
-                    <h2 className="hidden lg:block mt-5 text-[#2E3033] text-2xl font-semibold leading-[1.5]">{title}</h2>
-
-                    <motion.div
-                        initial={false}
-                        animate={{ height: isActive ? "auto" : 0, opacity: isActive ? 1 : 0 }}
-                        transition={{ duration: 0.8, ease: REVEAL_EASE }}
-                        className="overflow-hidden"
-                    >
-                        <div className="flex flex-col gap-8 pt-2.5">
-                            <div className="text-[#55595E] text-lg font-light leading-normal">
-                                {description.map((paragraph) => (
-                                    <p key={paragraph}>{paragraph}</p>
-                                ))}
-                            </div>
-                            <Link
-                                href={href}
-                                onClick={(event) => event.stopPropagation()}
-                                className="inline-flex h-11 w-[175px] shrink-0 items-center justify-center border border-[#d0d0d0] bg-[#002C4F] px-6 text-lg font-light text-white text-center transition-colors hover:bg-white hover:text-[#0a3a52]"
-                            >
-                                View More
-                            </Link>
-                        </div>
-                    </motion.div>
-                </div>
-            </div>
-        </motion.div>
-    );
-});
-
-export default function Capabilities() {
+// Drives the Capabilities section's scroll-pinned card stack: on desktop,
+// scrolling through a fixed 2400px budget switches the active card between
+// the three CAPABILITIES entries while the whole stack stays pinned and
+// recentred in the viewport; on mobile every card renders open in normal
+// flow with no pin. Returns everything the section and its cards need to
+// wire up refs and read the current active/desktop state.
+export function useCapabilitiesScrollPin() {
     const [activeIndex, setActiveIndex] = useState(0);
     // Below lg (Tailwind's own mobile/desktop split for this section — see the
     // card's own `lg:flex-row` layout swap), the scroll-driven pin/reveal is
@@ -180,6 +43,7 @@ export default function Capabilities() {
         window.addEventListener("resize", computeHairline);
         return () => window.removeEventListener("resize", computeHairline);
     }, []);
+
     // windowRef is the pinned stage — always naturally sized, never clipped.
     // trackRef (the card stack) is what gets shifted to keep the active card
     // centered.
@@ -532,48 +396,5 @@ export default function Capabilities() {
         };
     }, [activeIndex, isDesktop, resizeEpoch]);
 
-    return (
-        <section className="w-full bg-[#f5f6f6] px-6 py-8 sm:px-[64px] sm:py-[64px] flex flex-col items-center gap-10 sm:gap-[86px]">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-3 sm:gap-[24px] max-w-[855px] text-center"
-            >
-                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Capabilities</h2>
-                <p className="text-[#55595E] text-lg font-light">
-                    SAP is our core deliberately. Microsoft and adjacent platforms extend that core so the
-                    enterprise moves as a system, not a set of silos.
-                </p>
-            </motion.div>
-
-            <motion.div
-                ref={windowRef}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="relative w-full max-w-[1280px] mx-auto"
-            >
-                <div ref={trackRef} className="flex flex-col w-full">
-                    {CAPABILITIES.map((cap, index) => (
-                        <CapabilityCard
-                            key={cap.title}
-                            ref={(el) => {
-                                cardRefs.current[index] = el;
-                            }}
-                            {...cap}
-                            isActive={isDesktop ? index === activeIndex : true}
-                            isPassed={isDesktop ? index < activeIndex : false}
-                            showDivider={index > 0}
-                            hairline={hairline}
-                            onActivate={() => setActiveIndex(index)}
-                        />
-                    ))}
-                </div>
-            </motion.div>
-        </section>
-    );
+    return { activeIndex, isDesktop, hairline, windowRef, trackRef, cardRefs };
 }
-
