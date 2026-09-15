@@ -20,8 +20,8 @@ export default function MonitoringIncidentManagement() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative z-10 h-full flex flex-col justify-center gap-4 sm:gap-6 px-6 sm:px-[50px] max-w-[640px]"
             >
-                <h2 className="font-heading text-white text-2xl sm:text-[32px] font-semibold">Monitoring &amp; Incident Management</h2>
-                <p className="text-white text-lg sm:text-2xl font-light">Proactive Monitoring. Rapid Response.</p>
+                <h2 className="font-heading text-white text-xl sm:text-[32px] font-semibold">Monitoring &amp; Incident Management</h2>
+                <p className="text-white text-base sm:text-lg sm:text-2xl font-light">Proactive Monitoring. Rapid Response.</p>
                 <p className="text-white text-base sm:text-2xl font-normal leading-snug">
                     Continuously monitor enterprise systems to identify issues early, minimize disruptions, and ensure
                     business continuity through proactive incident management.

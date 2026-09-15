@@ -42,9 +42,9 @@ function ServiceCard({ item }) {
 
             {/* Title top, description bottom */}
             <div className="absolute inset-0 z-10 flex flex-col items-start justify-between p-6 sm:p-8">
-                <h2 className="text-white text-2xl font-semibold leading-[1.4]">{item.title}</h2>
+                <h2 className="text-white text-xl font-semibold leading-[1.4]">{item.title}</h2>
 
-                <p className="text-white/90 text-lg font-light leading-[1.5] pt-2">{item.desc}</p>
+                <p className="text-white/90 text-base sm:text-lg font-light leading-[1.5] pt-2">{item.desc}</p>
             </div>
         </div>
     );
@@ -157,10 +157,10 @@ export default function Services() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-col gap-2 max-w-[808px]"
                     >
-                        <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold leading-[1.4] tracking-[0.28px]">
+                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold leading-[1.4] tracking-[0.28px]">
                             Everything an Enterprise Needs to Run on Modern Technology
                         </h2>
-                        <p className="text-[#55595E] text-lg font-light leading-[1.5] max-w-[600px]">
+                        <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5] max-w-[600px]">
                             A complete technology foundation that connects strategy, systems, security, data, and
                             operations to help enterprises scale with confidence.
                         </p>

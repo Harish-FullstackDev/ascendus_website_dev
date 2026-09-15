@@ -89,14 +89,14 @@ export default function L1L2L3Support() {
                         <h2 className="text-white text-3xl font-semibold leading-[1.2]">
                             Process-Aware Support & Root-Cause Resolution
                         </h2>
-                        <p className="text-white text-lg font-light leading-[1.2]">
+                        <p className="text-white text-base sm:text-lg font-light leading-[1.2]">
                             Moving beyond ticket resolution to continuous system improvement
                         </p>
                     </div>
                     <div className="flex flex-col gap-4 px-6 py-6 bg-[#f5f5f5]">
                         {TIERS.map((tier) => (
                             <div key={tier.n} className="bg-white border border-black p-5">
-                                <p className="text-black text-lg leading-snug">{tier.title}</p>
+                                <p className="text-black text-base sm:text-lg leading-snug">{tier.title}</p>
                                 <p className="text-black text-sm font-light mt-4">{tier.desc}</p>
                             </div>
                         ))}

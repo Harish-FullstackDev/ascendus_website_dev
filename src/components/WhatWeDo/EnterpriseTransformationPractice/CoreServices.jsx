@@ -125,8 +125,8 @@ function ServiceCard({ service }) {
             <div className="relative h-8 w-[140px]">
                 <Image src={service.logo} alt="" fill className="object-contain object-left" />
             </div>
-            <h2 className="text-[#2E3033] text-2xl font-semibold">{service.title}</h2>
-            <p className="text-[#55595E] text-lg font-light">
+            <h2 className="text-[#2E3033] text-xl font-semibold">{service.title}</h2>
+            <p className="text-[#55595E] text-base sm:text-lg font-light">
                 {service.desc}
             </p>
         </motion.div>
@@ -156,8 +156,8 @@ export default function CoreServices() {
                 className="w-full flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4"
             >
                 <div className="w-full sm:flex-1 sm:min-w-0 flex flex-col items-start gap-4">
-                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold shrink-0">Core Services</h2>
-                    <p className="text-[#55595E] text-lg sm:text-2xl font-light sm:tracking-[0.24px] w-full sm:max-w-[618px]">
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold shrink-0">Core Services</h2>
+                    <p className="text-[#55595E] text-base sm:text-lg sm:text-2xl font-light sm:tracking-[0.24px] w-full sm:max-w-[618px]">
                         SAP is our core  deliberately. Microsoft and adjacent platforms extend that core so the enterprise
                         moves as a system, not a set of silos.
                     </p>

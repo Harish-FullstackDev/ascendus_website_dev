@@ -236,7 +236,7 @@ export default function Industries() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2"
                 >
-                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
                         Industry-Specific Solutions
                     </h2>
 
@@ -248,7 +248,7 @@ export default function Industries() {
                         The subheading carries the right padding, not this wrapper, so
                         `right-0` still resolves to the container edge. */}
                     <div className="relative flex flex-col gap-6 md:block">
-                        <p className="text-[#55595E] text-lg font-light leading-[1.4] md:pr-32">
+                        <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4] md:pr-32">
                             Built for Your Industry, Not Just Enterprise in General
                         </p>
 

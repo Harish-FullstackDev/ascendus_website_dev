@@ -56,9 +56,9 @@ export default function CloudModernization() {
                     className="flex flex-col gap-12 sm:gap-16 lg:gap-[178px] w-full lg:w-[421px] shrink-0"
                 >
                     <div className="flex flex-col gap-4">
-                        <h2 className="text-[#0d0c22] text-2xl font-semibold">Cloud Modernization</h2>
-                        <p className="text-[#3d3d4e] text-lg font-normal">Modernize Legacy Systems for the Cloud Era</p>
-                        <p className="text-[#3d3d4e] text-lg font-light">
+                        <h2 className="text-[#0d0c22] text-xl font-semibold">Cloud Modernization</h2>
+                        <p className="text-[#3d3d4e] text-base sm:text-lg font-normal">Modernize Legacy Systems for the Cloud Era</p>
+                        <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                             Transform legacy applications into cloud-native solutions that improve performance,
                             flexibility, and operational efficiency.
                         </p>

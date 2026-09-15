@@ -31,7 +31,7 @@ function Paragraph({ item }) {
   }
 
   if (item.heading) {
-    return <p className="text-black font-semibold text-lg leading-[19px] mb-4">{item.text}</p>;
+    return <p className="text-black font-semibold text-base sm:text-lg leading-[19px] mb-4">{item.text}</p>;
   }
 
   if (item.bullets) {
@@ -94,7 +94,7 @@ function SectionBody({ data }) {
               key={officer.email}
               className="flex flex-col justify-between gap-[25px]"
             >
-              <h3 className="font-normal text-2xl text-[#0061af] leading-[normal]">
+              <h3 className="font-normal text-xl text-[#0061af] leading-[normal]">
                 {officer.title}
               </h3>
               <a
@@ -172,10 +172,10 @@ export default function PrivacyPolicy() {
           {/* Summary Banner */}
           <div
             ref={(el) => (sectionRefs.current["Summary"] = el)}
-            className="bg-[#eaeaea] px-[66px] py-[62px]"
+            className="bg-[#eaeaea] px-8 sm:px-[66px] py-[62px]"
           >
             <div className="flex flex-col gap-[42px] ">
-              <h1 className="text-2xl font-semibold text-black">
+              <h1 className="text-xl font-semibold text-black">
                 {summary.title}
               </h1>
               <div>
@@ -187,13 +187,13 @@ export default function PrivacyPolicy() {
           </div>
 
           {/* Main Content */}
-          <div className="px-[66px] py-[60px] space-y-[60px] ">
+          <div className="px-8 sm:px-[66px] py-[60px] space-y-[60px] ">
             {bodySections.map((section) => (
               <section
                 key={section}
                 ref={(el) => (sectionRefs.current[section] = el)}
               >
-                <h2 className="text-2xl font-semibold text-black mb-[42px]">
+                <h2 className="text-xl font-semibold text-black mb-[42px]">
                   {sectionContent[section].title}
                 </h2>
                 <SectionBody data={sectionContent[section]} />

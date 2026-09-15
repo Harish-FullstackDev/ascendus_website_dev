@@ -50,7 +50,7 @@ export default function WhatYouWantToDo() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="max-w-3xl mx-auto text-center mb-16"
             >
-                <h2 className="text-2xl sm:text-[28px] font-semibold text-[#2E3033]">Work Where Expertise Has Room to Grow.</h2>
+                <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">Work Where Expertise Has Room to Grow.</h2>
                 <p className="mt-2 text-sm font-light sm:text-lg text-[#55595E] leading-relaxed">
                     The strongest careers are built through meaningful work, experienced teams and opportunities to
                     take ownership. That is how we structure the work here.
@@ -81,8 +81,8 @@ export default function WhatYouWantToDo() {
                             />
                         </div>
                         <div className="p-5 text-center">
-                            <h2 className="text-2xl font-semibold text-[#2E3033]">{card.title}</h2>
-                            <p className="mt-2 text-lg font-light text-[#55595E]">{card.description}</p>
+                            <h2 className="text-xl font-semibold text-[#2E3033]">{card.title}</h2>
+                            <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">{card.description}</p>
                         </div>
                     </motion.div>
                 ))}

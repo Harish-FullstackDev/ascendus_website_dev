@@ -45,9 +45,9 @@ export default function PredictiveIntelligence() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[831px] mx-auto text-center mb-10 sm:mb-[50px]"
             >
-                <h2 className="text-black text-2xl sm:text-[32px] font-semibold">Predictive Intelligence</h2>
-                <p className="text-black text-lg sm:text-2xl font-normal">Anticipate Business Outcomes Before They Happen</p>
-                <p className="text-[#a4a7a5] text-lg sm:text-2xl font-light">
+                <h2 className="text-black text-xl sm:text-[32px] font-semibold">Predictive Intelligence</h2>
+                <p className="text-black text-base sm:text-lg sm:text-2xl font-normal">Anticipate Business Outcomes Before They Happen</p>
+                <p className="text-[#a4a7a5] text-base sm:text-lg sm:text-2xl font-light">
                     Use predictive analytics and AI models to forecast trends, reduce risks, optimize operations, and
                     support proactive decision-making.
                 </p>

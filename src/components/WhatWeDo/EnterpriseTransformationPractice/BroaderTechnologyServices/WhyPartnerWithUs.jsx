@@ -64,8 +64,8 @@ export default function WhyPartnerWithUs() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Why Partner With Us For This</h2>
-                <p className="text-[#55595E] text-lg font-light">
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why Partner With Us For This</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Core engineering capabilities for data platforms and business intelligence
                 </p>
             </motion.div>
@@ -123,7 +123,7 @@ export default function WhyPartnerWithUs() {
                                     }`}
                             >
                                 <div className="overflow-hidden">
-                                    <p className="text-white/85 text-lg font-light pt-2">{reason.desc}</p>
+                                    <p className="text-white/85 text-base sm:text-lg font-light pt-2">{reason.desc}</p>
                                 </div>
                             </div>
                         </motion.div>

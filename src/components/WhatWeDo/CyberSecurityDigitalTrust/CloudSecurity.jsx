@@ -66,7 +66,7 @@ export default function CloudSecurity() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1011px] text-center"
             >
-                <h2 className="font-heading text-black text-2xl font-semibold">Cloud Security</h2>
+                <h2 className="font-heading text-black text-xl font-semibold">Cloud Security</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Securing Cloud-First and Hybrid Enterprise Environments
                     <br />
@@ -89,7 +89,7 @@ export default function CloudSecurity() {
                             data-card
                             className="snap-start shrink-0 w-[220px] sm:w-[250px] aspect-[250/338] border-x border-b border-black/70 border-t-[5px] border-t-black flex flex-col gap-8 sm:gap-[141px] items-center px-4 pt-[18px]"
                         >
-                            <p className="text-black text-lg sm:text-2xl font-normal text-center w-full">{card.title}</p>
+                            <p className="text-black text-base sm:text-lg sm:text-2xl font-normal text-center w-full">{card.title}</p>
                             <p className="text-[#3d3d4e] text-sm sm:text-lg font-light text-center">{card.desc}</p>
                         </div>
                     ))}

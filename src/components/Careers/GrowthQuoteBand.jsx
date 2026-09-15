@@ -28,7 +28,7 @@ export default function GrowthQuoteBand() {
                             className="rounded-full object-cover size-[94px] bg-[#d8d8d8]"
                         />
                         <div>
-                            <p className="font-semibold text-[#2E3033] text-lg">Bhuvaneshwari</p>
+                            <p className="font-semibold text-[#2E3033] text-base sm:text-lg">Bhuvaneshwari</p>
                             <p className="text-[#3d3d4e] text-sm opacity-60 mt-1">
                                 Chief Human Resources Officer (CHRO)
                                 <br />

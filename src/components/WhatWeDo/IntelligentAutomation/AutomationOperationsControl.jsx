@@ -40,8 +40,8 @@ export default function AutomationOperationsControl() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-2 w-full lg:flex-1"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-semibold">Automation Operations &amp; Control</h2>
-                <p className="text-[#55595E] text-lg font-light">
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Automation Operations &amp; Control</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Capabilities that keep enterprise automation reliable, measurable, and manageable at scale.
                 </p>
             </motion.div>

@@ -13,11 +13,11 @@ export default function TrustedByBand() {
                 className="max-w-6xl mx-auto text-center"
             >
 
-                <h2 className="text-2xl sm:text-[32px] leading-[1.5] font-semibold text-[#2E3033]">
+                <h2 className="text-xl sm:text-[32px] leading-[1.5] font-semibold text-[#2E3033]">
                     Trusted by <span className="text-[#2D8EC5]">150+</span> Company for their sustainable growth partner
                 </h2>
 
-                {/* <h2 className="text-2xl sm:text-[32px] leading-[1.5] font-semibold text-[#2E3033]">
+                {/* <h2 className="text-xl sm:text-[32px] leading-[1.5] font-semibold text-[#2E3033]">
                     Enterprise technology only works when the people who built it are still there to answer for it.
                 </h2>
                 <p className="mt-4 text-base sm:text-lg font-light text-[#55595E]">

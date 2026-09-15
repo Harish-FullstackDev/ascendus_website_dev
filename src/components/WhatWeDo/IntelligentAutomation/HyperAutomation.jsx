@@ -26,8 +26,8 @@ export default function HyperAutomation() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[630px] text-center"
             >
-                <h2 className="text-black text-2xl font-normal">Hyper automation</h2>
-                <p className="text-black text-lg font-light">Connect People, Processes &amp; Technology</p>
+                <h2 className="text-black text-xl font-normal">Hyper automation</h2>
+                <p className="text-black text-base sm:text-lg font-light">Connect People, Processes &amp; Technology</p>
                 <p className="text-[#7f7f7f] text-base sm:text-lg font-light">
                     Scale enterprise automation by combining RPA, AI, analytics, APIs, low-code platforms, and
                     workflow automation into a unified automation ecosystem.

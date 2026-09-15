@@ -55,7 +55,7 @@ export default function EnterpriseArchitecture() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1011px] text-center"
             >
-                <h2 className="text-black text-2xl font-semibold">User Research & Design Systems
+                <h2 className="text-black text-xl font-semibold">User Research & Design Systems
                 </h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Flagship UX/UI, product, and design system capabilities

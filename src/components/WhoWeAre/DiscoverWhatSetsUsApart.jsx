@@ -31,7 +31,7 @@ export default function DiscoverWhatSetsUsApart() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-16"
             >
-                <h2 className="text-[28px] font-semibold text-[#2E3033]">Discover What Set Us apart</h2>
+                <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">Discover What Set Us apart</h2>
                 <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
                     We are passionate about empowering individuals and businesses to take control of their finances
                     and achieve their financial goals.
@@ -65,8 +65,8 @@ export default function DiscoverWhatSetsUsApart() {
                                 }`}
                         >
                             <div>
-                                <p className="text-lg font-light text-[#2E3033]">{card.title}</p>
-                                <h2 className="text-2xl font-semibold text-[#2E3033] mt-1">{card.heading}</h2>
+                                <p className="text-base sm:text-lg font-light text-[#2E3033]">{card.title}</p>
+                                <h2 className="text-xl font-semibold text-[#2E3033] mt-1">{card.heading}</h2>
                             </div>
                             <div className="text-sm sm:text-base text-[#55595E] leading-relaxed space-y-1">
                                 <p className="text-sm sm:text-lg text-[#55595E] font-light leading-relaxed">{card.description}</p>

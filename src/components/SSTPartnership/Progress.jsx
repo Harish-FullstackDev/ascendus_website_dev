@@ -15,7 +15,7 @@ const Progress = () => {
               {/* Tax Advisory & Compliance */}
               <div className="flex items-start justify-between p-4 sm:p-6 border-b lg:mr-10 border-gray-200">
                 <div className="flex-1">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-base sm:text-xl font-semibold text-gray-900 mb-2">
                     Tax Advisory & Compliance
                   </h3>
                   <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
@@ -34,7 +34,7 @@ const Progress = () => {
               {/* Risk Assessment & Management */}
               <div className="flex items-start justify-between lg:mr-10 p-4 sm:p-6">
                 <div className="flex-1">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-base sm:text-xl font-semibold text-gray-900 mb-2">
                     Risk Assessment & Management
                   </h3>
                   <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
@@ -69,7 +69,7 @@ const Progress = () => {
           {/* Mobile/Tablet: Text Third */}
           <div className="flex justify-center lg:hidden order-3 mt-4">
             <div className="text-center">
-              <h1 className="text-2xl sm:text-3xl font-normal text-black mb-2 leading-tight">
+              <h1 className="text-xl sm:text-3xl font-normal text-black mb-2 leading-tight">
                 Your Partner<br />
                 in Progress
               </h1> 
@@ -96,7 +96,7 @@ const Progress = () => {
                   Your Partner<br />
                   <span className='mr-3'>in Progress</span>
                 </h1> 
-                <p className="text-[#66CDF3] text-lg font-medium mr-31">Growth</p>
+                <p className="text-[#66CDF3] text-base sm:text-lg font-medium mr-31">Growth</p>
               </div>
             </div>
           </div>

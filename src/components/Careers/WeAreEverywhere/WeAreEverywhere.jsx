@@ -66,7 +66,7 @@ export default function WeAreEverywhere() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center mb-12"
                 >
-                    <h2 className="text-2xl sm:text-3xl font-semibold text-[#0d0c22] capitalize">We Are Everywhere</h2>
+                    <h2 className="text-xl sm:text-3xl font-semibold text-[#0d0c22] capitalize">We Are Everywhere</h2>
                     <p className="mt-4 text-sm sm:text-base text-[#3d3d4e]">
                         You might want to hear from some of our team on their unique expeditions
                     </p>

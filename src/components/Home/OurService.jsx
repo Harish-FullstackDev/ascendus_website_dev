@@ -102,7 +102,7 @@ const OurService = () => {
             {/* Main heading - responsive text sizes */}
             <motion.h1
               variants={heroVariants}
-              className="text-2xl lg:text-6xl xl:text-4xl font-normal leading-tight"
+              className="text-xl lg:text-6xl xl:text-4xl font-normal leading-tight"
             >
               Future-ready Services for 
               <br className="hidden sm:block" />

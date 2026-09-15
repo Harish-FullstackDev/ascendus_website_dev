@@ -17,7 +17,7 @@ const SOCIALS = [
 export default function JoinUsSocialBand() {
     return (
         <section className="w-full">
-            <div className="bg-[#f4f3f9] py-10 sm:py-14 px-4 sm:px-16 lg:p-16">
+            <div className="bg-[#F5F6F6] py-10 sm:py-14 px-4 sm:px-16 lg:p-16">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export default function JoinUsSocialBand() {
                     <div className="flex flex-col sm:flex-row items-start sm:items-end gap-8 sm:gap-10">
                         <div className="flex flex-col max-w-5xl gap-6">
                             <div>
-                                <h2 className="text-2xl text-[#2E3033] font-semibold">Your Next Opportunity</h2>
+                                <h2 className="text-xl text-[#2E3033] font-semibold">Your Next Opportunity</h2>
                                 <p className="mt-2 text-base sm:text-lg sm:w-[80%] font-light text-[#55595E]">
                                     Ready to work on problems worth solving? Explore our current openings and find
                                     an opportunity where your expertise can contribute to work that matters to

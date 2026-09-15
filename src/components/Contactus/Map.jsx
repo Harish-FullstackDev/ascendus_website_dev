@@ -25,7 +25,7 @@ const Map = () => {
     <div className="py-8 sm:py-12 lg:py-10 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-center text-[#000000] mb-8 sm:mb-10 lg:mb-12">
+        <h1 className="text-xl sm:text-3xl lg:text-4xl font-normal text-center text-[#000000] mb-8 sm:mb-10 lg:mb-12">
           Contact us
         </h1>
 

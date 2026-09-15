@@ -194,7 +194,7 @@ export default function BlogPage() {
             </div>
 
             <div className="relative z-10 -mt-[340px] sm:-mt-[80vh] bg-white">
-                <main className="flex-grow max-w-7xl w-full mx-auto px-6 py-12 md:py-20">
+                <main className="flex-grow max-w-7xl w-full mx-auto px-8 py-12 md:py-20">
                     <BlogCardGrid
                         blogs={blogs}
                         loading={loading}

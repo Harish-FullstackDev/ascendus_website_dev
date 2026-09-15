@@ -23,7 +23,7 @@ export default function DesignPhilosophy() {
                     Design Philosophy
                 </p>
 
-                <p className="text-white text-lg font-light sm:pb-5">
+                <p className="text-white text-base sm:text-lg font-light sm:pb-5">
                     The core principle behind our approach to experience design.
                 </p>
                 <p className="text-white text-xl sm:text-[32px] font-light leading-snug max-w-[734px]">

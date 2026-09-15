@@ -65,7 +65,7 @@ export default function HybridCloud() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] text-center"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-semibold">Hybrid Cloud</h2>
+                <h2 className="text-[#0d0c22] text-xl font-semibold">Hybrid Cloud</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Blend private, public, and on-premise infrastructure into one unified, seamlessly orchestrated
                     environment.

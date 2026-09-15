@@ -38,8 +38,8 @@ export default function ModernStackAPIEngineering() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[841px] text-center px-6"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-semibold">Modern Stack & API Engineering</h2>
-                <p className="text-[#55595E] text-lg sm:text-lg font-light">
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Modern Stack & API Engineering</h2>
+                <p className="text-[#55595E] text-base sm:text-lg sm:text-lg font-light">
                     Specialized engineering services from mobile to microservices.
                 </p>
             </motion.div>
@@ -87,7 +87,7 @@ export default function ModernStackAPIEngineering() {
                                 className={`relative flex-1 flex flex-col items-center justify-center gap-5 px-4 text-left transition-colors duration-300 ${isHovered ? "bg-[#00447A]/80 cursor-pointer" : "cursor-pointer"
                                     }`}
                             >
-                                <h2 className="text-white text-2xl font-semibold w-[240px]">{step.title}</h2>
+                                <h2 className="text-white text-xl font-semibold w-[240px]">{step.title}</h2>
                                 {isHovered && (
                                     <motion.p
                                         initial={{ opacity: 0, y: 8 }}

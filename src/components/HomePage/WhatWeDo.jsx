@@ -33,10 +33,10 @@ export default function WhatWeDo() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="flex-1 flex flex-col gap-2 order-1 lg:order-2"
                 >
-                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold leading-[1.4] ">
-                        Technology Built Around your Business.
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold leading-[1.4] ">
+                        Technology Built Around Your Business.
                     </h2>
-                    <p className="mt-4 text-[#55595E] text-lg font-light leading-[1.5]">
+                    <p className="mt-4 text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                         We help enterprises plan, build, secure, and manage their technology with one
                         connected team. From strategy and implementation to cloud, data, cybersecurity,
                         automation, and ongoing support, we make complex technology simpler, smarter, and

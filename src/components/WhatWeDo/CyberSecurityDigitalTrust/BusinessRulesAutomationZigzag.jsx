@@ -30,7 +30,7 @@ export default function BusinessRulesAutomationZigzag() {
                     <div className="relative w-full sm:w-[701px] sm:ml-auto h-[220px] sm:h-[468px]">
                         <Image src={item.image} alt="" fill className="object-cover" />
                     </div>
-                    <div className="relative sm:absolute sm:left-0 sm:top-[78px] bg-[#f3f3f3] w-full sm:w-[918px] sm:h-[313px] -mt-4 sm:mt-0 flex flex-col justify-center gap-6 px-6 sm:pl-[34px] sm:pr-[60px] py-8 sm:py-0">
+                    <div className="relative sm:absolute sm:left-0 sm:top-[78px] bg-[#F5F6F6] w-full sm:w-[918px] sm:h-[313px] -mt-4 sm:mt-0 flex flex-col justify-center gap-6 px-6 sm:pl-[34px] sm:pr-[60px] py-8 sm:py-0">
                         <p className="text-black text-xl sm:text-2xl font-normal">{item.eyebrow}</p>
                         <div className="flex flex-col gap-3">
                             <p className="text-black text-xl sm:text-2xl font-normal">{item.title}</p>

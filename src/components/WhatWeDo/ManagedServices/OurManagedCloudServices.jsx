@@ -131,10 +131,10 @@ const OurManagedCloudServices = () => {
                     transition={{ duration: 0.6 }}
                     className="max-w-2xl text-center"
                 >
-                    <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-semibold text-black mb-4">
+                    <h2 className="font-heading text-xl sm:text-3xl lg:text-4xl font-semibold text-black mb-4">
                         How We Manage Your Cloud
                     </h2>
-                    <p className="text-lg sm:text-xl font-light text-[#515151]">
+                    <p className="text-base sm:text-lg sm:text-xl font-light text-[#515151]">
                         A continuous cycle that keeps your cloud environment secure, performant, and ready for
                         what&apos;s next.
                     </p>
@@ -159,7 +159,7 @@ const OurManagedCloudServices = () => {
                                     <div className="flex h-[44px] w-[44px] flex-shrink-0 items-center justify-center rounded-full bg-white shadow-sm">
                                         <Image src={discoverIcon} alt="" width={20} height={20} />
                                     </div>
-                                    <p className="text-lg font-semibold text-black">{step.title}</p>
+                                    <p className="text-base sm:text-lg font-semibold text-black">{step.title}</p>
                                 </div>
                                 <p className="text-base font-light text-black">{step.desc}</p>
                             </div>

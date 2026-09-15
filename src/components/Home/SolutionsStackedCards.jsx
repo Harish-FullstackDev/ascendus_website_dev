@@ -160,7 +160,7 @@ export default function ServiceStackedCards({ height = "400px" }) {
                   Enterprise Solutions
                 </span>
  
-                <h3 className="text-2xl font-bold leading-tight text-slate-800">
+                <h3 className="text-xl font-bold leading-tight text-slate-800">
                   {card.expandedTitle}
                 </h3>
  

@@ -52,7 +52,7 @@ export default function UserResearch() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[750px] mx-auto text-center mb-10 sm:mb-[45px]"
             >
-                <h2 className="text-black text-2xl font-semibold">User Research</h2>
+                <h2 className="text-black text-xl font-semibold">User Research</h2>
                 <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
                     No matter the challenge, we apply proven research methods to understand real users and validate
                     decisions before a single line of code is written.

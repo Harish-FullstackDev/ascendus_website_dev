@@ -50,10 +50,10 @@ export default function FutureFocusedInsights() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="max-w-[700px] mb-12"
                 >
-                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
                         Articles
                     </h2>
-                    <p className="text-[#55595E] text-lg font-light leading-[1.4]">
+                    <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">
                         Perspectives on Enterprise Technology That Matter to Your Business
                     </p>
                 </motion.div>
@@ -71,7 +71,7 @@ export default function FutureFocusedInsights() {
                                 <Image src={item.img} alt={item.title} fill className="object-cover" />
                             </div>
                             <p className="text-sm text-[#55595E]">{item.date}</p>
-                            <h2 className="text-[#2E3033] text-lg font-semibold leading-[1.4]">{item.title}</h2>
+                            <h2 className="text-[#2E3033] text-base font-semibold leading-[1.4]">{item.title}</h2>
                             <button
                                 type="button"
                                 className="group flex items-center gap-2 text-[#2d8ec5] text-base font-light"

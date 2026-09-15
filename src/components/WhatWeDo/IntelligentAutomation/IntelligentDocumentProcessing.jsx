@@ -28,9 +28,9 @@ export default function IntelligentDocumentProcessing() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-4 w-full lg:w-[518px] shrink-0"
             >
-                <h2 className="text-black text-2xl sm:text-[32px] font-normal">Intelligent Document Processing</h2>
-                <p className="text-black text-lg font-normal">Extract Insights from Business Documents</p>
-                <p className="text-[#6c6c6c] text-lg font-light">
+                <h2 className="text-black text-xl sm:text-[32px] font-normal">Intelligent Document Processing</h2>
+                <p className="text-black text-base sm:text-lg font-normal">Extract Insights from Business Documents</p>
+                <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
                     Use AI and Optical Character Recognition (OCR) to automatically capture, classify, and process
                     structured and unstructured documents.
                 </p>
@@ -47,7 +47,7 @@ export default function IntelligentDocumentProcessing() {
                         className="flex flex-col gap-4"
                     >
                         <Image src={item.icon} alt="" width={48} height={48} />
-                        <p className="text-black text-lg font-semibold">{item.title}</p>
+                        <p className="text-black text-base sm:text-lg font-semibold">{item.title}</p>
                         <p className="text-[#6c6c6c] text-sm font-light">{item.desc}</p>
                     </motion.div>
                 ))}

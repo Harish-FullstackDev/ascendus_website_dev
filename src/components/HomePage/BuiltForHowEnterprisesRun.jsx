@@ -47,10 +47,10 @@ export default function BuiltForHowEnterprisesRun() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-1 max-w-[714px] mx-auto text-center mb-10 sm:mb-14"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-medium">
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-medium">
                     Built for How Enterprises <span className="text-[#0061AF]">Actually Run</span>
                 </h2>
-                <p className="text-[#55595E] text-lg font-light">
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The details that keep an engagement predictable long after the contract is signed.
                 </p>
             </motion.div>

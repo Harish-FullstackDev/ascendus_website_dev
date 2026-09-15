@@ -39,8 +39,8 @@ export default function AdvancedDecisionLogiWorkflow() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="absolute left-0 bottom-0 sm:bottom-auto sm:top-[267px] w-[85%] sm:w-[477px] sm:h-60 bg-[#1c5f85]/80 text-white flex flex-col justify-center gap-2 px-6 sm:px-[76px] py-6 sm:py-0 z-0"
                     >
-                        <h2 className="text-2xl sm:text-[28px] font-semibold">Advanced Decision Logic & Workflow</h2>
-                        <p className="text-lg sm:text-lg font-light">Extended automation capabilities for complex business rules.</p>
+                        <h2 className="text-xl sm:text-[28px] font-semibold">Advanced Decision Logic & Workflow</h2>
+                        <p className="text-base sm:text-lg sm:text-lg font-light">Extended automation capabilities for complex business rules.</p>
                     </motion.div>
                 </div>
 
@@ -81,8 +81,8 @@ export default function AdvancedDecisionLogiWorkflow() {
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
                             className="bg-white px-8 py-10 sm:px-[clamp(1rem,2.25vw,2rem)] sm:py-[clamp(1.5rem,2.8vw,2.5rem)] flex flex-col gap-8 sm:gap-[clamp(1rem,2.2vw,2rem)] sm:min-h-64"
                         >
-                            <h2 className="text-[#2E3033] text-2xl font-semibold">{card.title}</h2>
-                            <p className="text-[#55595E] text-lg font-light">{card.desc}</p>
+                            <h2 className="text-[#2E3033] text-xl font-semibold">{card.title}</h2>
+                            <p className="text-[#55595E] text-base sm:text-lg font-light">{card.desc}</p>
                         </motion.div>
                     ))}
                 </div>

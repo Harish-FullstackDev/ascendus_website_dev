@@ -21,7 +21,7 @@ export default function PenetrationTesting() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="font-heading justify-self-start text-2xl font-semibold text-black"
+                        className="font-heading justify-self-start text-xl font-semibold text-black"
                     >
                         Penetration Testing
                     </motion.h2>
@@ -67,7 +67,7 @@ export default function PenetrationTesting() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="text-[#2d8ec5] text-2xl font-semibold text-center"
+                    className="text-[#2d8ec5] text-xl font-semibold text-center"
                 >
                     Enterprise &amp; Technical
                 </motion.h3>

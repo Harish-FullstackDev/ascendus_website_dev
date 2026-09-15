@@ -22,7 +22,7 @@ export default function OurInnovationFramework() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[736px] text-center"
             >
-                <h2 className="text-black text-2xl font-semibold">Our Innovation Framework</h2>
+                <h2 className="text-black text-xl font-semibold">Our Innovation Framework</h2>
                 <p className="text-[#515151] text-base sm:text-lg font-light">
                     Evaluate your current technology landscape, identify emerging-tech opportunities, and create a
                     roadmap aligned with your business objectives.

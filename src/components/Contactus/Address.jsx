@@ -21,7 +21,7 @@ const ContactInfo = () => {
   return (
     <div className="bg-white py-8 lg:py-12">
       <div className="max-w-md">
-        <h2 className="text-2xl lg:text-2xl text-[#2E3033] font-semibold mb-2">
+        <h2 className="text-xl lg:text-2xl text-[#2E3033] font-semibold mb-2">
           Contact Information
         </h2>
         <p className="text-[#55595E] font-light mb-8 lg:mb-12">
@@ -30,7 +30,7 @@ const ContactInfo = () => {
 
         <div className="space-y-6 lg:space-y-8">
           {/* Phone */}
-          {/* <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4">
             <div className="w-6 h-6 flex-shrink-0">
               <Image
                 src={careercall}
@@ -41,11 +41,11 @@ const ContactInfo = () => {
               />
             </div>
             <span className="text-gray-700 text-base">
-              <a className="hover:text-blue-500 transition-colors duration-200" href="tel:+0413–2191301" target="_blank">0413-2191301</a></span>
-          </div> */}
+              <a className="hover:text-blue-500 transition-colors duration-200" href="tel:+966573956334" target="_blank">+966 573956334</a></span>
+          </div>
 
           {/* Email */}
-          {/* <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4">
             <div className="w-6 h-6 flex-shrink-0">
               <Image
                 src={careermsg}
@@ -59,7 +59,7 @@ const ContactInfo = () => {
               <div>
                 <a className="hover:text-blue-500 transition-colors duration-200" href="mailto:info@ascendus.sa" target="_blank">info@ascendus.sa</a></div>
             </div>
-          </div> */}
+          </div>
 
 
 

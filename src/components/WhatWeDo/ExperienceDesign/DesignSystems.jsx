@@ -75,7 +75,7 @@ export default function DesignSystems() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[42px]"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-semibold">Design Systems</h2>
+                <h2 className="text-[#0d0c22] text-xl font-semibold">Design Systems</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Scalable design systems that keep every product consistent, accessible, and easy to build on.
                 </p>
@@ -131,7 +131,7 @@ export default function DesignSystems() {
                                 className="flex flex-col justify-between h-full"
                             >
                                 <div>
-                                    <p className="text-lg text-white font-light">
+                                    <p className="text-base sm:text-lg text-white font-light">
                                         {left.tag}
                                     </p>
 
@@ -174,7 +174,7 @@ export default function DesignSystems() {
                                 className="flex flex-col justify-between h-full"
                             >
                                 <div>
-                                    <p className="text-lg text-black font-light">
+                                    <p className="text-base sm:text-lg text-black font-light">
                                         {right.tag}
                                     </p>
 

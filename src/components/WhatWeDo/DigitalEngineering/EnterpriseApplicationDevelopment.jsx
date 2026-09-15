@@ -58,14 +58,14 @@ export default function EnterpriseApplicationDevelopment() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[42px] px-6"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-semibold">Enterprise Application Development</h2>
+                <h2 className="text-[#0d0c22] text-xl font-semibold">Enterprise Application Development</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     We develop secure, scalable enterprise applications tailored to your business processes, enabling
                     greater efficiency, collaboration, and long-term growth.
                 </p>
             </motion.div>
 
-            <div className="bg-[#f4f3f9] w-full px-4 sm:px-[50px] py-8 sm:py-[42px]">
+            <div className="bg-[#F5F6F6] w-full px-4 sm:px-[50px] py-8 sm:py-[42px]">
                 <div className="flex flex-col gap-2.5 sm:flex-row sm:gap-[37px] h-auto sm:h-[560px] max-w-[1180px] mx-auto">
                     {TABS.map((tab, i) => {
                         const isActive = i === active;
@@ -75,7 +75,7 @@ export default function EnterpriseApplicationDevelopment() {
                                 type="button"
                                 onClick={() => setActive(i)}
                                 aria-expanded={isActive}
-                                className={`group relative w-full min-h-[56px] sm:h-full shrink-0 overflow-hidden text-left transition-[width] duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] sm:border-r sm:border-[#a4a7a5] ${isActive ? "bg-white sm:w-[573px]" : "bg-[#f4f3f9] sm:w-[78px]"
+                                className={`group relative w-full min-h-[56px] sm:h-full shrink-0 overflow-hidden text-left transition-[width] duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] sm:border-r sm:border-[#a4a7a5] ${isActive ? "bg-white sm:w-[573px]" : "bg-[#F5F6F6] sm:w-[78px]"
                                     }`}
                             >
                                 {isActive && (

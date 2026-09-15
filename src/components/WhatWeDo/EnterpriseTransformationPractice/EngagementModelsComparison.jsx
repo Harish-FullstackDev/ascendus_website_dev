@@ -62,8 +62,8 @@ export default function EngagementModelsComparison() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-5 max-w-[818px] text-center"
             >
-                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Engagement Models</h2>
-                <p className="text-[#55595E] text-lg font-light leading-[1.5]">
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Engagement Models</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                     Choose the engagement model that fits your needs, from focused projects to ongoing support and
                     strategic guidance.
                 </p>

@@ -78,7 +78,7 @@ export default function TeamStory() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center mb-10 sm:mb-16"
                 >
-                    <h2 className="text-2xl sm:text-[28px] sm:leading-9 font-semibold text-[#2E3033] capitalize">Our Team Story</h2>
+                    <h2 className="text-xl sm:text-[28px] sm:leading-9 font-semibold text-[#2E3033] capitalize">Our Team Story</h2>
                     <p className="mt-2 text-sm font-light sm:text-lg text-[#55595E]">
                         You might want to hear from some of our team on their unique expeditions
                     </p>

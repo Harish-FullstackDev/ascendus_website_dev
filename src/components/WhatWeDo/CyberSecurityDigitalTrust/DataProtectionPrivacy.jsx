@@ -40,8 +40,8 @@ export default function DataProtectionPrivacy() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[900px] text-center"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-semibold">Data Protection &amp; Privacy</h2>
-                <p className="text-[#55595E] text-lg font-light">
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Data Protection &amp; Privacy</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Security controls that help enterprises protect sensitive information and maintain appropriate
                     access throughout the data lifecycle.
                 </p>

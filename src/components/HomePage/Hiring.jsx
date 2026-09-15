@@ -35,7 +35,7 @@ export default function Hiring() {
 
                     <div className="relative sm:absolute sm:top-1/2 sm:right-0 sm:-translate-y-1/2 bg-[#f5f6f6] w-full sm:w-[860px] -mt-4 sm:mt-0 flex flex-col justify-center gap-6 px-6 sm:pl-[60px] sm:pr-[34px] py-8 sm:py-10">
                         <div className="flex flex-col gap-3 max-w-[512px]">
-                            <p className="text-[#2E3033] text-lg font-light">We&apos;re Hiring</p>
+                            <p className="text-[#2E3033] text-base sm:text-lg font-light">We&apos;re Hiring</p>
                             <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold leading-[1.35]">
                                 Building the Team Behind Enterprise Technology That Lasts
                             </h2>

@@ -18,7 +18,7 @@ export default function ScalingPilotsSmartOperations() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[560px] mx-auto text-center"
                 >
-                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
                         Scaling Pilots & Smart Operations
                     </h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
@@ -34,7 +34,7 @@ export default function ScalingPilotsSmartOperations() {
                     className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[100px]"
                 >
                     <div className="flex flex-col gap-5 w-full">
-                        <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">Access Control That Actually Holds</h2>
+                        <h2 className="text-[#2E3033] text-base sm:text-2xl font-semibold">Access Control That Actually Holds</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             We design identity and access management, including
                             SAP segregation of duties, so the right people have the right access and nothing more,
@@ -58,7 +58,7 @@ export default function ScalingPilotsSmartOperations() {
                             <Image src={integrationImage2} alt="" fill className="object-cover" />
                         </div>
                         <div className="flex flex-col gap-5 w-full">
-                            <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">
+                            <h2 className="text-[#2E3033] text-base sm:text-2xl font-semibold">
                                 Industry 4.0 for the Operations That Need It Most
                             </h2>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">

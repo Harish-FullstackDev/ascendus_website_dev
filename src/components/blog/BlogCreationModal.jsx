@@ -48,7 +48,7 @@ export default function BlogCreationModal({
                             <X className="w-5 h-5" />
                         </button>
 
-                        <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-6">
+                        <h2 className="text-xl font-bold text-neutral-900 dark:text-white mb-6">
                             Post a New Insights Article
                         </h2>
 
@@ -151,7 +151,7 @@ export default function BlogCreationModal({
 
                             <div className="space-y-6">
                                 <div className="flex justify-between items-center border-b border-neutral-200 dark:border-neutral-800 pb-2">
-                                    <h3 className="text-lg font-bold text-neutral-900 dark:text-white">
+                                    <h3 className="text-base font-bold text-neutral-900 dark:text-white">
                                         Article Sections
                                     </h3>
                                     <button

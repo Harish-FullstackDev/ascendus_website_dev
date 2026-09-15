@@ -25,7 +25,7 @@ export default function ChangeManagement() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[841px] text-center px-6"
             >
-                <h2 className="text-black text-2xl font-normal">Change Management</h2>
+                <h2 className="text-black text-xl font-normal">Change Management</h2>
                 <p className="text-[#515151] text-base sm:text-lg font-light">
                     Support organizational change by preparing employees, leaders, and stakeholders to successfully
                     adopt new processes, technologies, and ways of working.

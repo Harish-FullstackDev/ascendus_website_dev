@@ -15,7 +15,7 @@ export default function SoftwareScalability() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="mb-10 flex flex-col items-center gap-2 text-center sm:mb-16"
             >
-                <h2 className="text-[28px] font-semibold text-[#2E3033]">
+                <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">
                     Software Scalability
                 </h2>
 
@@ -34,11 +34,11 @@ export default function SoftwareScalability() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex w-full flex-1 flex-col gap-5 text-[#3d3d4e]"
                 >
-                    <h2 className="text-2xl font-semibold text-[#2E3033]">
+                    <h2 className="text-xl font-semibold text-[#2E3033]">
                         Positioning Enterprise Software As a Driver of Agility Rather Than Operational Constraint.
                     </h2>
 
-                    <p className="text-lg font-light leading-normal text-[#55595E]">
+                    <p className="text-base sm:text-lg font-light leading-normal text-[#55595E]">
                         Introductory Focus Enterprise applications age fast
                         when they are built without architecture discipline. We
                         engineer software, from customer-facing platforms to

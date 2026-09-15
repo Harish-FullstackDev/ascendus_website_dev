@@ -358,7 +358,7 @@ const TestimonialsSection = () => {
             className="text-4xl lg:text-6xl xl:text-4xl font-normal leading-tight">
             What our clients say
           </h1>
-          <p className="text-center mt-5 text-neutral-500 dark:text-neutral-400 text-lg leading-relaxed  transition-colors">
+          <p className="text-center mt-5 text-neutral-500 dark:text-neutral-400 text-base sm:text-lg leading-relaxed  transition-colors">
             From innovative marketing strategies to operational excellence, we
             provide expert solutions that drive success.
           </p>

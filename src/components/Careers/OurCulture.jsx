@@ -30,11 +30,11 @@ export default function OurCulture() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="w-full lg:absolute lg:top-[12.104%] lg:left-[44.766%] lg:h-[77.467%] lg:w-[50.547%] bg-[#f4f3f9] flex flex-col justify-center gap-6 px-6 sm:px-10 py-10 sm:py-14"
+                    className="w-full lg:absolute lg:top-[12.104%] lg:left-[44.766%] lg:h-[77.467%] lg:w-[50.547%] bg-[#F5F6F6] flex flex-col justify-center gap-6 px-6 sm:px-10 py-10 sm:py-14"
                 >
                     <div>
-                        <p className="text-lg text-black">Life Here</p>
-                        <h2 className="text-2xl font-semibold text-[#2E3033] mt-1">A team built around how the work gets done.</h2>
+                        <p className="text-base sm:text-lg text-black">Life Here</p>
+                        <h2 className="text-xl font-semibold text-[#2E3033] mt-1">A team built around how the work gets done.</h2>
                     </div>
                     <p className="text-sm sm:text-lg text-[#55595E] font-light leading-relaxed">
                         We value clarity, accountability and collaboration because complex work demands all three.

@@ -180,7 +180,7 @@ const ContentCardSection = ({
                   <MdArrowOutward className="w-6 h-6 text-blue-300 hover:text-blue-500 transition-colors duration-200" />
                 </motion.div>
                 <motion.h3 
-                  className="text-lg font-semibold text-gray-900"
+                  className="text-base font-semibold text-gray-900"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   whileInView={{ opacity: 1, x: 0 }}

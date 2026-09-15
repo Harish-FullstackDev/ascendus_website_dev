@@ -34,7 +34,7 @@ export default function WhyCybersecurityMatters() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1073px] text-center"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-semibold">Identity Management & Continuous Operations</h2>
+                <h2 className="text-[#0d0c22] text-xl font-semibold">Identity Management & Continuous Operations</h2>
                 <p className="text-[#6c6c6c] text-base sm:text-lg font-light">
                     Core protective pillars including IAM, GRC, SOC, and Zero Trust.
                 </p>

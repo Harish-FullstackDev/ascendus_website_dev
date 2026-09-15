@@ -76,7 +76,7 @@ export default function SAPManagedServices() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="px-6 text-2xl font-normal leading-tight text-black sm:px-[100px] sm:text-[32px]"
+                    className="px-6 text-xl font-normal leading-tight text-black sm:px-[100px] sm:text-[32px]"
                 >
                     SAP AMS & Tiered Support
                 </motion.h2>

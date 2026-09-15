@@ -42,7 +42,7 @@ export default function WorkflowAutomation() {
                     </h2>
 
                     <div className="absolute left-[149px] top-[134px] w-[518px] flex flex-col gap-3">
-                        <p className="text-[#6c6c6c] text-lg font-light leading-7">
+                        <p className="text-[#6c6c6c] text-base sm:text-lg font-light leading-7">
                             Our proven methods for building automation that remains maintainable at scale.
                         </p>
                     </div>
@@ -99,7 +99,7 @@ export default function WorkflowAutomation() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative bg-[#e2e2e2] px-6 py-10 flex flex-col gap-8"
                 >
-                    <h2 className="text-black text-2xl font-normal">Why Partner With Us</h2>
+                    <h2 className="text-black text-xl font-normal">Why Partner With Us</h2>
                     <div className="flex flex-col gap-2">
                         <p className="text-[#6c6c6c] text-base font-light">
                             Our proven methods for building automation that remains maintainable at scale.
@@ -107,7 +107,7 @@ export default function WorkflowAutomation() {
                     </div>
                     <div className="flex gap-8">
                         <div>
-                            <p className="text-black text-lg font-normal mb-3">Services</p>
+                            <p className="text-black text-base sm:text-lg font-normal mb-3">Services</p>
                             <ul className="list-disc list-inside space-y-1">
                                 {SERVICES.map((item) => (
                                     <li key={item} className="text-[#6c6c6c] text-base font-light">
@@ -117,7 +117,7 @@ export default function WorkflowAutomation() {
                             </ul>
                         </div>
                         {/* <div>
-                            <p className="text-black text-lg font-normal mb-3">Benefits</p>
+                            <p className="text-black text-base sm:text-lg font-normal mb-3">Benefits</p>
                             <ul className="list-disc list-inside space-y-1">
                                 {BENEFITS.map((item) => (
                                     <li key={item} className="text-[#6c6c6c] text-base font-light">

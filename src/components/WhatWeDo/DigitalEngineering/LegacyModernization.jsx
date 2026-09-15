@@ -39,7 +39,7 @@ export default function LegacyModernization() {
                 <Image src={buildingPhoto} alt="" fill className="object-cover" />
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute top-6 sm:top-10 left-1/2 -translate-x-1/2 text-center text-white z-20 px-4 sm:px-0">
-                    <h2 className="text-2xl sm:text-4xl font-light">
+                    <h2 className="text-xl sm:text-4xl font-light">
                         Legacy Modernization
                     </h2>
 
@@ -81,7 +81,7 @@ export default function LegacyModernization() {
                 <div className="flex sm:hidden flex-col divide-y divide-[#e5e5e5] px-4">
                     {ITEMS.map((item, i) => (
                         <div key={i} className="py-5 first:pt-0 last:pb-0">
-                            <p className="text-[#0d0c22] text-lg font-light">{item.title}</p>
+                            <p className="text-[#0d0c22] text-base sm:text-lg font-light">{item.title}</p>
                             <p className="text-[#6c6c6c] text-sm font-light leading-relaxed mt-2">{item.desc}</p>
                         </div>
                     ))}

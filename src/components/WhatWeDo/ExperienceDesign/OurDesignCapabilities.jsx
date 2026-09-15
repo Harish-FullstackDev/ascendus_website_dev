@@ -22,7 +22,7 @@ export default function OurDesignCapabilities() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-[28px] font-semibold">Our Design Capabilities</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Our Design Capabilities</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Key differentiators of our design practice
                 </p>
@@ -46,7 +46,7 @@ export default function OurDesignCapabilities() {
                                 key={item}
                                 className="border border-[#d3dae2] hover:border-[#2d8ec5] rounded-2xl px-4 py-3 transition-colors duration-300"
                             >
-                                <p className="text-[#55595E] text-lg sm:text-2xl font-light whitespace-normal sm:whitespace-nowrap text-center">{item}</p>
+                                <p className="text-[#55595E] text-base sm:text-lg sm:text-2xl font-light whitespace-normal sm:whitespace-nowrap text-center">{item}</p>
                             </div>
                         ))}
                     </div>

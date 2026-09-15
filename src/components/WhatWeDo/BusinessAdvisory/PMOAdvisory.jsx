@@ -54,7 +54,7 @@ export default function PMOAdvisory() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[814px] text-center"
             >
-                <h2 className="text-black text-2xl font-normal">Reengineering & PMO Governance</h2>
+                <h2 className="text-black text-xl font-normal">Reengineering & PMO Governance</h2>
                 <p className="text-[#515151] text-base sm:text-lg font-light">
                     Targeted advisory domains including PMO, digital strategy, and IT evaluation
                 </p>
@@ -72,7 +72,7 @@ export default function PMOAdvisory() {
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
                     <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 px-6 sm:px-[47px] py-8 sm:pb-10">
                         <p className="text-white text-2xl sm:text-[32px] font-normal">PMO Advisory</p>
-                        <p className="text-white text-lg sm:text-2xl font-light">Deliver Projects with Confidence</p>
+                        <p className="text-white text-base sm:text-lg sm:text-2xl font-light">Deliver Projects with Confidence</p>
                         <p className="text-white text-sm sm:text-base font-light leading-snug max-w-[424px]">
                             Strengthen project governance, portfolio management, and execution through a structured
                             Project Management Office (PMO) framework.
@@ -94,7 +94,7 @@ export default function PMOAdvisory() {
                                 <Image src={item.icon} alt="" width={35} height={35} className="object-contain" />
                             </div>
                             <div className="flex flex-col gap-2 sm:gap-3">
-                                <p className="text-black text-lg sm:text-xl font-normal">{item.title}</p>
+                                <p className="text-black text-base sm:text-lg sm:text-xl font-normal">{item.title}</p>
                                 <p className="text-[#6c6c6c] text-base sm:text-lg font-light">{item.desc}</p>
                             </div>
                         </motion.div>

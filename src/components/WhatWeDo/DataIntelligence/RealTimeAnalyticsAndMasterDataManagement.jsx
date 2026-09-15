@@ -93,7 +93,7 @@ export default function RealTimeAnalyticsAndMasterDataManagement() {
                                         }`}
                                 >
                                     <h2
-                                        className={`text-[#2E3033] text-2xl font-semibold text-left max-w-[180px] transition-all duration-500 ease-out ${isActive ? "opacity-0 -translate-y-2" : ""
+                                        className={`text-[#2E3033] text-xl sm:text-2xl font-semibold text-left max-w-[180px] transition-all duration-500 ease-out ${isActive ? "opacity-0 -translate-y-2" : ""
                                             }`}
                                     >
                                         {item.title}

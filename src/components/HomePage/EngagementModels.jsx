@@ -40,11 +40,11 @@ export default function EngagementModels() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-5 max-w-[818px] mx-auto text-center mb-10 sm:mb-14"
             >
-                <h2 className="text-[28px] font-medium">
+                <h2 className="text-xl sm:text-[28px] font-medium">
                     <span className="text-[#2E3033]">An Engagement Model Built Around </span>
                     <span className="text-[#0061AF]">Flexibility</span>
                 </h2>
-                <p className="text-[#55595E] text-lg font-light">
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Choose the engagement model that fits your needs, from focused projects to ongoing support and
                     strategic guidance.
                 </p>

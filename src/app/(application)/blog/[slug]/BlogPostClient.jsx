@@ -207,7 +207,7 @@ export default function BlogPostClient() {
             <div className="min-h-screen bg-slate-50 dark:bg-neutral-950 flex flex-col font-sans">
                 <Navbar />
                 <div className="flex-grow flex flex-col items-center justify-center py-40 px-6 text-center">
-                    <h1 className="text-2xl font-black text-slate-800 dark:text-white mb-4">
+                    <h1 className="text-xl font-black text-slate-800 dark:text-white mb-4">
                         Article Not Found
                     </h1>
                     <p className="text-slate-500 dark:text-neutral-400 mb-8 max-w-md">
@@ -253,7 +253,7 @@ export default function BlogPostClient() {
             />
 
             {/* Content & TOC Grid */}
-            <main className="flex-grow w-full px-16 py-12">
+            <main className="flex-grow w-full px-8 sm:px-16 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     <BlogPostSidebarTOC
                         sections={sections}

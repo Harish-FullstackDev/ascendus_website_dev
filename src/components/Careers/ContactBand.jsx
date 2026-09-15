@@ -17,7 +17,7 @@ export default function ContactBand() {
         <div className="w-full bg-slate-100 py-16 px-6">
             <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12">
                 <div className="w-full lg:w-[30%]">
-                    <h3 className="text-slate-900 font-semibold text-lg mb-4">Why Join Us</h3>
+                    <h3 className="text-slate-900 font-semibold text-base mb-4">Why Join Us</h3>
                     <ul className="space-y-2.5">
                         {WHY_JOIN_US.map((point) => (
                             <li key={point} className="flex gap-2 text-sm leading-relaxed text-slate-600">
@@ -33,7 +33,7 @@ export default function ContactBand() {
                         <div className="flex flex-col items-center gap-4">
                             <Image src={mailIcon} alt="" width={24} height={24} />
                             <div className="space-y-2">
-                                <h3 className="text-slate-900 font-semibold text-lg">Email us</h3>
+                                <h3 className="text-slate-900 font-semibold text-base">Email us</h3>
                                 <p className="text-slate-500 text-sm leading-relaxed">
                                     Email us for general queries, including marketing and partnership opportunities
                                 </p>
@@ -49,7 +49,7 @@ export default function ContactBand() {
                         <div className="flex flex-col items-center gap-4">
                             <Image src={callIcon} alt="" width={24} height={24} />
                             <div className="space-y-2">
-                                <h3 className="text-slate-900 font-semibold text-lg">Call us</h3>
+                                <h3 className="text-slate-900 font-semibold text-base">Call us</h3>
                                 <p className="text-slate-500 text-sm leading-relaxed">
                                     Call us to speak to a member of our team. We are always happy to help
                                 </p>

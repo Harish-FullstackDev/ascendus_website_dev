@@ -8,7 +8,7 @@ const PageClient = ({ job, otherJobs }) => {
         return (
             <CareersLayout>
                 <div className="max-w-3xl mx-auto text-center py-8">
-                    <h1 className="text-2xl font-semibold text-slate-900 mb-3">Job Not Found</h1>
+                    <h1 className="text-xl font-semibold text-slate-900 mb-3">Job Not Found</h1>
                     <p className="text-slate-500 mb-6">
                         This position may have been filled or is no longer accepting applications.
                     </p>

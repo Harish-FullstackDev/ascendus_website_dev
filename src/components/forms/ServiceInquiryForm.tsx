@@ -82,7 +82,7 @@ export default function ServiceInquiryForm() {
       </div>
 
       <div className="relative z-10">
-        <h3 id="service-inquiry-heading" className="text-2xl font-bold text-white mb-2">Service-Specific Inquiry</h3>
+        <h3 id="service-inquiry-heading" className="text-xl font-bold text-white mb-2">Service-Specific Inquiry</h3>
         <p className="text-slate-400 text-sm mb-8">Detailed technical requests for specialized SAP and IT solutions.</p>
 
         <form 

@@ -28,8 +28,8 @@ export default function IndustriesWeServe() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative z-10 flex flex-col items-center gap-4 text-center"
             >
-                <h2 className="text-white text-2xl sm:text-[28px] font-semibold">Industries</h2>
-                <p className="text-white text-lg font-light">Built for the sectors running SAP at scale</p>
+                <h2 className="text-white text-xl sm:text-[28px] font-semibold">Industries</h2>
+                <p className="text-white text-base sm:text-lg font-light">Built for the sectors running SAP at scale</p>
             </motion.div>
 
             <div className="relative z-10 w-full max-w-[1152px] grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-6 sm:gap-y-10">

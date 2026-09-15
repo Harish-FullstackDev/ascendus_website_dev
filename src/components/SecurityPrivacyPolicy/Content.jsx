@@ -9,7 +9,7 @@ function Paragraph({ item }) {
   }
 
   if (item.heading) {
-    return <p className="text-black font-semibold text-lg leading-[19px] mb-4">{item.text}</p>;
+    return <p className="text-black font-semibold text-base sm:text-lg leading-[19px] mb-4">{item.text}</p>;
   }
 
   if (item.bullets) {
@@ -85,10 +85,10 @@ export default function SecurityPrivacyPolicy() {
           {/* Summary Banner */}
           <div
             ref={(el) => (sectionRefs.current["Summary"] = el)}
-            className="bg-[#eaeaea] px-[66px] py-[62px]"
+            className="bg-[#eaeaea] px-8 sm:px-[66px] py-[62px]"
           >
             <div className="flex flex-col gap-[42px] ">
-              <h1 className="text-2xl font-semibold text-black">
+              <h1 className="text-xl font-semibold text-black">
                 {securityPolicy.Summary.title}
               </h1>
               <div>
@@ -101,9 +101,9 @@ export default function SecurityPrivacyPolicy() {
 
           <div
             ref={(el) => (sectionRefs.current[securityPolicy.title] = el)}
-            className="px-[66px] py-[60px]"
+            className="px-8 sm:px-[66px] py-[60px]"
           >
-            <h1 className="text-2xl font-semibold text-black mb-[42px]">
+            <h1 className="text-xl font-semibold text-black mb-[42px]">
               {securityPolicy.title}
             </h1>
             {securityPolicy.paragraphs.map((item, index) => (

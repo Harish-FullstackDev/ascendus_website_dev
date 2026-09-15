@@ -65,7 +65,7 @@ export default function ApplicationModernization() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[93px] sm:px-[50px]"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-semibold">Application Modernization</h2>
+                <h2 className="text-[#0d0c22] text-xl font-semibold">Application Modernization</h2>
                 <div className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     <p className="text-black">Automate, Deploy, and Scale with Confidence</p>
                     <p>
@@ -92,7 +92,7 @@ export default function ApplicationModernization() {
                                     transition={{ duration: 0.5, ease: "easeInOut" }}
                                     className="flex flex-col gap-3 sm:gap-[29px] text-white"
                                 >
-                                    <p className="text-lg sm:text-2xl font-normal">{left.title}</p>
+                                    <p className="text-base sm:text-lg sm:text-2xl font-normal">{left.title}</p>
                                     <p className="text-sm sm:text-lg font-light">{left.desc}</p>
                                     <p className="text-white/60 text-sm sm:text-lg font-light">{left.tag}</p>
                                 </motion.div>

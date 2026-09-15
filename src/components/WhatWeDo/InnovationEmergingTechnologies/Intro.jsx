@@ -14,11 +14,11 @@ export default function Intro() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-5 max-w-[760px]"
             >
-                <h2 className="text-black text-2xl font-normal">Innovation &amp; Emerging Technologies</h2>
-                <p className="text-black text-lg font-light">
+                <h2 className="text-black text-xl font-normal">Innovation &amp; Emerging Technologies</h2>
+                <p className="text-black text-base sm:text-lg font-light">
                     Helping Organizations Prepare for the Future with Next-Generation Technologies
                 </p>
-                <p className="text-[#3d3d4e] text-lg font-light">
+                <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Innovation is the foundation of long-term business success. As emerging technologies reshape
                     industries, organizations must embrace new possibilities to remain competitive and resilient. At
                     Ascendus, we help enterprises explore, adopt, and scale next-generation

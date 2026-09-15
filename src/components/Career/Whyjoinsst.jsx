@@ -62,7 +62,7 @@ const WhyjoinSST = () => {
             </p>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-4xl font-normal leading-tight mb-4 px-2">
+          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-4xl font-normal leading-tight mb-4 px-2">
             Why join <span className="gradient-text">Ascendus?</span>
           </h2>
 

@@ -26,7 +26,7 @@ export default function DataWarehousing() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] mx-auto text-center mb-10 sm:mb-[60px]"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-semibold">Data Warehousing</h2>
+                <h2 className="text-[#0d0c22] text-xl font-semibold">Data Warehousing</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Consolidate data from across the business into a single, high-performance warehouse
                     engineered for fast, reliable reporting and analytics at scale.
@@ -49,7 +49,7 @@ export default function DataWarehousing() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="w-full lg:absolute lg:top-[6.4%] lg:left-[35.1%] lg:h-[85.5%] lg:w-[63.4%] bg-[#f4f3f9] flex items-center px-6 sm:px-10 lg:px-[40px] py-10 sm:py-12"
+                    className="w-full lg:absolute lg:top-[6.4%] lg:left-[35.1%] lg:h-[85.5%] lg:w-[63.4%] bg-[#F5F6F6] flex items-center px-6 sm:px-10 lg:px-[40px] py-10 sm:py-12"
                 >
                     <div className="flex gap-6 sm:gap-[69px] items-stretch w-full">
                         <div className="w-[3px] shrink-0 rounded-full bg-[#2d8ec5]" />

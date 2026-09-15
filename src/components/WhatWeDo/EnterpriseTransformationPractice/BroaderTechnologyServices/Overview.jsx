@@ -14,10 +14,10 @@ export default function Overview() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-4 w-full sm:flex-1"
             >
-                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
                     The Work That Surrounds SAP, Not Apart From it
                 </h2>
-                <p className="text-[#55595E] text-lg font-light leading-[1.5]">
+                <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                     Cloud infrastructure, integration, data governance, change management, and security don&apos;t
                     sit outside an SAP transformation, they determine whether it holds up in production. Broader
                     Technology Services covers the work that runs alongside the SAP core, planned as part of the

@@ -176,7 +176,7 @@ const SecuritySection = () => {
           {/* Dynamic Number Section */}
           <div className="mb-6">
             <motion.h3
-              className="border-b border-gray-400 text-2xl  font-bold text-gray-900 mb-4 text-left"
+              className="border-b border-gray-400 text-xl  font-bold text-gray-900 mb-4 text-left"
               variants={numberVariants}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}

@@ -50,7 +50,7 @@ const CapabilityCard = forwardRef(function CapabilityCard(
                     on mobile the image sits below the number/title rather than above. */}
                 <div className="flex flex-col gap-5 lg:hidden">
                     <span className="text-[#73A8D3] text-2xl font-medium leading-[1.5]">{number}</span>
-                    <h2 className="text-[#2E3033] text-lg font-semibold leading-[1.5]">{title}</h2>
+                    <h2 className="text-[#2E3033] text-base font-semibold leading-[1.5]">{title}</h2>
                 </div>
 
                 {/* 272x459 in Figma, kept as an aspect ratio on a responsive width
@@ -76,7 +76,7 @@ const CapabilityCard = forwardRef(function CapabilityCard(
                     <span className="hidden lg:inline text-[#73A8D3] text-2xl sm:text-[28px] font-medium leading-[1.5]">
                         {number}
                     </span>
-                    <h2 className="hidden lg:block mt-5 text-[#2E3033] text-2xl font-semibold leading-[1.5]">{title}</h2>
+                    <h2 className="hidden lg:block mt-5 text-[#2E3033] text-xl font-semibold leading-[1.5]">{title}</h2>
 
                     <motion.div
                         initial={false}

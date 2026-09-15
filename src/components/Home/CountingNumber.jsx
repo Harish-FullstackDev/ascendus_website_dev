@@ -45,7 +45,7 @@ const CountingNumber = ({ end, duration , suffix = "" }) => {
   return (
     <h2
       ref={ref}
-      className="text-2xl md:text-2xl font-medium "
+      className="text-xl md:text-2xl font-medium "
     >
       {count}
       {count === end ? suffix : ""}

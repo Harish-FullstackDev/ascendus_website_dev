@@ -40,11 +40,11 @@ export default function ProcessAwareSupportRootCauseResolution() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="text-[28px] font-semibold leading-tight text-white"
+                        className="text-xl sm:text-[28px] font-semibold leading-tight text-white"
                     >
                         Process Aware Support &amp; Root Cause Resolution
                     </motion.h2>
-                    <p className="mt-2 text-lg font-light leading-snug text-white">
+                    <p className="mt-2 text-base sm:text-lg font-light leading-snug text-white">
                         Moving beyond ticket resolution to continuous system improvement
                     </p>
                 </div>
@@ -66,10 +66,10 @@ export default function ProcessAwareSupportRootCauseResolution() {
                                 }}
                                 className="aspect-[580/300] border border-black px-[clamp(1rem,2.4vw,2.5rem)] py-[clamp(1.25rem,2.6vw,2.5rem)]"
                             >
-                                <h2 className="text-2xl sm:w-[60%] font-semibold leading-snug text-[#2E3033]">
+                                <h2 className="text-xl sm:w-[60%] font-semibold leading-snug text-[#2E3033]">
                                     {tier.title}
                                 </h2>
-                                <p className="mt-8 text-lg sm:w-[90%] font-light leading-snug text-[#55595E]">
+                                <p className="mt-8 text-base sm:text-lg sm:w-[90%] font-light leading-snug text-[#55595E]">
                                     {tier.desc}
                                 </p>
                             </motion.div>
@@ -87,14 +87,14 @@ export default function ProcessAwareSupportRootCauseResolution() {
                     <h2 className="font-heading text-3xl font-semibold leading-[1.2] text-white">
                         Process-Aware Support &amp; Root-Cause Resolution
                     </h2>
-                    <p className="text-lg font-light leading-[1.2] text-white">
+                    <p className="text-base sm:text-lg font-light leading-[1.2] text-white">
                         Moving beyond ticket resolution to continuous system improvement
                     </p>
                 </div>
                 <div className="flex flex-col gap-8 bg-[#f5f5f5] px-6 py-6">
                     {TIERS.map((tier) => (
                         <div key={tier.n} className="border border-black bg-white p-5">
-                            <p className="text-lg leading-snug text-black">{tier.title}</p>
+                            <p className="text-base sm:text-lg leading-snug text-black">{tier.title}</p>
                             <p className="mt-4 text-sm font-light text-black">{tier.desc}</p>
                         </div>
                     ))}

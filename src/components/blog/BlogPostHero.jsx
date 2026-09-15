@@ -5,7 +5,7 @@ import { ArrowLeft, Calendar, Check, Link2, Mail, User } from "lucide-react";
 
 export default function BlogPostHero({ blog, copied, onShare, onShareEmail, onShareWhatsApp, onShareLinkedIn }) {
     return (
-        <header className="w-full px-16 pt-12 md:pt-20">
+        <header className="w-full px-8 sm:px-16 pt-12 md:pt-20">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pb-12 md:border-b md:border-slate-200 md:dark:border-neutral-800">
 
                 {/* Left: Meta Details */}
@@ -16,7 +16,7 @@ export default function BlogPostHero({ blog, copied, onShare, onShareEmail, onSh
                     >
                         <ArrowLeft className="w-4 h-4" /> Back to Blogs
                     </Link>
-                    <h2 className="text-[#2E3033] text-2xl md:text-2xl font-semibold sm:w-[93%]">
+                    <h2 className="text-[#2E3033] text-xl md:text-2xl font-semibold sm:w-[93%]">
                         {blog.title}
                     </h2>
                     <div className="flex items-center gap-6 pt-6 border-t border-slate-100 dark:border-neutral-850 mt-6 text-slate-500 dark:text-neutral-400">

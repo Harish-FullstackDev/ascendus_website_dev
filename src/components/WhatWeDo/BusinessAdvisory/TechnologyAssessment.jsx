@@ -72,7 +72,7 @@ export default function TechnologyAssessment() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[767px] text-center"
             >
-                <h2 className="text-[#0d0c22] text-2xl font-semibold">Technology Assessment</h2>
+                <h2 className="text-[#0d0c22] text-xl font-semibold">Technology Assessment</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Turn Data into Intelligent Decisions
                     <br />
@@ -96,7 +96,7 @@ export default function TechnologyAssessment() {
                         className="bg-[#0a2b3e] w-full sm:w-[439px] sm:h-[377px] flex flex-col justify-between px-7 py-6 sm:py-[48px] gap-6"
                     >
                         <div className="flex flex-col gap-3">
-                            <p className="text-white text-lg font-light">{CARDS[active].eyebrow}</p>
+                            <p className="text-white text-base sm:text-lg font-light">{CARDS[active].eyebrow}</p>
                             <p className="text-white text-2xl font-semibold">{CARDS[active].title}</p>
                         </div>
                         <div className="text-[#ce9d9d] text-base font-light leading-relaxed">
@@ -114,7 +114,7 @@ export default function TechnologyAssessment() {
                         className="bg-white w-full sm:w-[439px] sm:h-[377px] flex flex-col justify-between px-7 py-6 sm:py-[48px] gap-6 text-left"
                     >
                         <div className="flex flex-col gap-3">
-                            <p className="text-black text-lg font-light">{CARDS[other].eyebrow}</p>
+                            <p className="text-black text-base sm:text-lg font-light">{CARDS[other].eyebrow}</p>
                             <p className="text-black text-2xl font-semibold">{CARDS[other].title}</p>
                         </div>
                         <div className="text-[#6c6c6c] text-base font-light leading-relaxed">

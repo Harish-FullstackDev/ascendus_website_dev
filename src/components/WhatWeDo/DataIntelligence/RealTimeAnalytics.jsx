@@ -52,7 +52,7 @@ export default function RealTimeAnalytics() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1011px] text-center"
             >
-                <h2 className="text-black text-2xl font-semibold">Real-Time Analytics</h2>
+                <h2 className="text-black text-xl font-semibold">Real-Time Analytics</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                     Streaming Insight for Fast-Moving Enterprises
                     <br />
@@ -73,7 +73,7 @@ export default function RealTimeAnalytics() {
                     >
                         <p className="text-black text-2xl font-semibold">{slide.title}</p>
                         <p className="text-black text-2xl font-semibold">{slide.subtitle}</p>
-                        <p className="text-[#515151] text-lg font-light leading-relaxed">{slide.desc}</p>
+                        <p className="text-[#515151] text-base sm:text-lg font-light leading-relaxed">{slide.desc}</p>
                     </motion.div>
                 </div>
 
