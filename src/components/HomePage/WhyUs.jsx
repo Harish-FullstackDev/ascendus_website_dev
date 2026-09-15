@@ -40,6 +40,11 @@ const FEATURES = [
 // Tailwind's scanner still sees the class) rather than repeated, so the two
 // cannot drift apart later.
 const MATCHED_GAP = "gap-[clamp(2rem,6vw,6.5rem)]";
+// The same interval as MATCHED_GAP, expressed as a top margin. Inside a card the
+// icon/title/description are laid out as three flat siblings (so mobile can put
+// the icon *below* the title with `order`), which means the icon-to-title
+// interval has to come from a margin rather than the container's gap.
+const MATCHED_GAP_MT = "sm:mt-[clamp(2rem,6vw,6.5rem)]";
 
 export default function WhyUs() {
     return (
@@ -77,19 +82,26 @@ export default function WhyUs() {
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#55595E]/30"
                 >
                     {FEATURES.map((feat) => (
-                        <div key={feat.title} className={`flex flex-col items-start ${MATCHED_GAP} p-6 first:pl-0`}>
-                            <div className="relative size-10 sm:size-12 shrink-0">
+                        // Flat icon/title/description siblings so the mobile order can differ from
+                        // desktop: below sm the title leads and the icon follows it; from sm up the
+                        // source order (icon, title, description) is restored. Intervals are margins
+                        // rather than a container gap because they differ per element.
+                        // No horizontal padding in the mobile stack: the section's own px-6 already
+                        // sets the edge, so every card lines up with the heading above them — and
+                        // `first:pl-0` (which flushes the leftmost card of the sm+ row with the
+                        // section edge) would otherwise indent only cards 2-4 in a single column.
+                        <div key={feat.title} className="flex flex-col items-start py-6 px-0 sm:px-6 sm:first:pl-0">
+                            <div className="relative size-10 sm:size-12 shrink-0 order-2 mt-6 sm:order-1 sm:mt-0">
                                 <Image src={feat.icon} alt="" fill className="object-contain" />
                             </div>
-                            <div className="flex flex-col gap-6 w-full">
-                                {/* Fixed to a 2-line height regardless of actual wrap count, so every
-                                    card's description starts on the same row — titles range from one
-                                    to two lines at this column width and would otherwise stagger the
-                                    descriptions (a misalignment the Figma source has too; not reproduced
-                                    here on purpose). */}
-                                <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold leading-normal min-h-[60px] sm:min-h-[72px]">{feat.title}</h2>
-                                <p className="text-[#55595E] text-base sm:text-lg font-light leading-normal">{feat.desc}</p>
-                            </div>
+                            {/* From sm up, fixed to a 2-line height regardless of actual wrap count,
+                                so every card's description starts on the same row — titles range
+                                from one to two lines at that column width and would otherwise
+                                stagger the descriptions (a misalignment the Figma source has too;
+                                not reproduced here on purpose). Single-column mobile has no row to
+                                align to, so the reserve would only be dead space above the icon. */}
+                            <h2 className={`text-[#2E3033] text-xl sm:text-2xl font-semibold leading-normal sm:min-h-[72px] w-full order-1 sm:order-2 ${MATCHED_GAP_MT}`}>{feat.title}</h2>
+                            <p className="text-[#55595E] text-base sm:text-lg font-light leading-normal w-full order-3 mt-6">{feat.desc}</p>
                         </div>
                     ))}
                 </motion.div>
