@@ -34,7 +34,7 @@ const PATHS = [
 function IntroText() {
     return (
         <>
-            <h2 className="text-[#2E3033] text-2xl sm:text-[27px] font-semibold">Choosing Your Migration Path</h2>
+            <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">Choosing Your Migration Path</h2>
             <p className="text-[#55595E] text-lg font-light leading-[1.4]">
                 End-to-end migration from ECC to S/4HANA, planned around your compliance deadlines and cutover
                 windows, not a generic timeline.

@@ -69,7 +69,7 @@ export default function WhyPartnerWithUs() {
                         className="flex flex-col gap-6 sm:min-h-[240px]"
                     >
                         <Image src={reason.icon} alt="" className="size-12" />
-                        <h2 className="text-[#2E3033] text-xl font-semibold leading-[1.3]">{reason.title}</h2>
+                        <h2 className="text-[#2E3033] text-2xl font-semibold leading-[1.3]">{reason.title}</h2>
                         <p className="text-[#55595E] text-lg font-light leading-[1.3]">{reason.desc}</p>
                     </motion.div>
                 ))}

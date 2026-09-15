@@ -49,7 +49,7 @@ function AnimatedStat({ value }) {
     }, [isInView, number]);
 
     return (
-        <p ref={ref} className="font-urbane text-[#1c5f85] text-2xl sm:text-[24px] font-medium leading-normal">
+        <p ref={ref} className="text-[#0061AF] text-2xl sm:text-[24px] font-medium leading-normal">
             {prefix}
             {display.toFixed(decimals)}
             {suffix}

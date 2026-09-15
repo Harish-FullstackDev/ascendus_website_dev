@@ -43,7 +43,7 @@ const page = () => {
             </div>
 
             <ReadyToTransform
-                title="Not sure where your SAP landscape stands?"
+                title="Not Sure Where Your SAP Landscape Stands?"
                 description="A landscape assessment shows exactly what migration path fits, and how much runway you actually have left."
                 buttonLabel="Book a Consultation"
                 bgImage={ctaBg}

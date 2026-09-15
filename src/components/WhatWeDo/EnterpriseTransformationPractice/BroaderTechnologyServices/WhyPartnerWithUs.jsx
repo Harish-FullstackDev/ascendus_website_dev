@@ -123,7 +123,7 @@ export default function WhyPartnerWithUs() {
                                     }`}
                             >
                                 <div className="overflow-hidden">
-                                    <p className="text-white/85 text-xl font-light pt-2">{reason.desc}</p>
+                                    <p className="text-white/85 text-lg font-light pt-2">{reason.desc}</p>
                                 </div>
                             </div>
                         </motion.div>

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
 
 export default function HeroText() {
     const [showCalendly, setShowCalendly] = useState(false);
@@ -24,27 +23,7 @@ export default function HeroText() {
                     you already run.
                 </h1>
 
-                {/* <div className="flex flex-wrap items-center gap-4 mt-8 sm:mt-10">
-                    <button
-                        type="button"
-                        onClick={() => setShowCalendly(true)}
-                        className="rounded-[54px] border border-[#d0d0d0] bg-[#0a3a52] px-8 py-3 text-base sm:text-lg font-light text-white transition-colors hover:bg-white hover:text-[#0a3a52]"
-                    >
-                        Schedule a Consultation
-                    </button>
-                </div> */}
             </motion.div>
-
-            <CalendlyModal
-                isOpen={showCalendly}
-                onClose={() => setShowCalendly(false)}
-                calendlyUrl={process.env.NEXT_PUBLIC_CALENDLY_URL}
-                pageSettings={{
-                    backgroundColor: "ffffff",
-                    primaryColor: "#2d8ec5",
-                    textColor: "#003756",
-                }}
-            />
         </div>
     );
 }

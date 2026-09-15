@@ -69,7 +69,7 @@ export default function PlatformsTogether() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[50px]"
             >
-                <h2 className="text-[#2E3033] text-2xl font-semibold">
+                <h2 className="text-[#2E3033] text-[28px] font-semibold">
                     How the Two Platforms Work Together
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
