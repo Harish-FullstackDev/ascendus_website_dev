@@ -75,7 +75,7 @@ export default function ZeroTrustArchitecture() {
 
     return (
         <section
-            className=" relative overflow-hidden w-full bg-cover bg-center bg-no-repeat py-10 sm:py-16 lg:py-[71px] px-6 sm:px-10 lg:px-[50px] flex flex-col items-start"
+            className=" relative overflow-hidden w-full bg-cover bg-center bg-no-repeat py-10 sm:py-16 lg:py-[71px] px-8 sm:px-10 lg:px-[50px] flex flex-col items-start"
         >
             <AnimatePresence mode="wait">
                 <motion.div

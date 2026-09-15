@@ -32,7 +32,7 @@ const ITEMS = [
 
 export default function WhyEnterprisePartnerWithUs() {
     return (
-        <section className="w-full bg-[#f5f6f6] pt-10 pb-10 sm:pt-16 sm:pb-16 px-6 sm:px-[64px]">
+        <section className="w-full bg-[#f5f6f6] pt-10 pb-10 sm:pt-16 sm:pb-16 px-8 sm:px-[64px]">
             <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}

@@ -13,7 +13,7 @@ export default function Hiring() {
     return (
         // Bordering the boundary from Stats above (white → white, top half of the
         // 32/32 split); bottom half of the same split lives on the next section.
-        <section className="w-full bg-white pt-8 pb-8 sm:pt-8 sm:pb-8 px-6 sm:px-[64px] overflow-hidden">
+        <section className="w-full bg-white pt-8 pb-8 sm:pt-8 sm:pb-8 px-8 sm:px-[64px] overflow-hidden">
             <div className="max-w-[1280px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

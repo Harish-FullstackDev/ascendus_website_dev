@@ -49,7 +49,7 @@ function Card({ title, desc, className = "" }) {
 
 export default function BusinessTransformationAdvisory() {
     return (
-        <section className="w-full pt-10 sm:pt-8 pb-10 sm:pb-8 px-6 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16">
+        <section className="w-full pt-10 sm:pt-8 pb-10 sm:pb-8 px-8 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

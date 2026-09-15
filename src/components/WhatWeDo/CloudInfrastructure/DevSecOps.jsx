@@ -6,7 +6,7 @@ import devSecOpsBg from "@/assets/WhatWeDo/Cloud and Infrastructure/Section8_Bg.
 
 export default function DevSecOps() {
     return (
-        <section className="w-full px-6 sm:px-0">
+        <section className="w-full px-8 sm:px-0">
             <div className="relative w-full max-w-screen mx-auto h-[380px] sm:h-[440px] lg:h-[488px] overflow-hidden">
                 <Image src={devSecOpsBg} alt="" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-white/90 sm:from-white/80 via-white/10 to-transparent" />

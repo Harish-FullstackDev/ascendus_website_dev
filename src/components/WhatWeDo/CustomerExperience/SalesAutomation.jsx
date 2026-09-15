@@ -26,7 +26,7 @@ const CARDS = [
 
 export default function SalesAutomation() {
     return (
-        <section className="w-full py-14 sm:py-20 px-6 sm:px-[50px] bg-white">
+        <section className="w-full py-14 sm:py-20 px-8 sm:px-[50px] bg-white">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function EngagementModelsOverview() {
     return (
-        <section className="w-full bg-white px-6 pt-10 pb-8 sm:px-[64px] sm:pt-16 sm:pb-8 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+        <section className="w-full bg-white px-8 pt-10 pb-8 sm:px-[64px] sm:pt-16 sm:pb-8 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

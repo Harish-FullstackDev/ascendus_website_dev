@@ -5,7 +5,7 @@ import bgImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/Broade
 
 export default function WhyItMatters() {
     return (
-        <section className="relative w-full bg-[#1c5f85] px-6 py-10 sm:px-[64px] sm:py-16 flex flex-col gap-8 sm:gap-10 overflow-hidden">
+        <section className="relative w-full bg-[#1c5f85] px-8 py-10 sm:px-[64px] sm:py-16 flex flex-col gap-8 sm:gap-10 overflow-hidden">
             {/* Same sticky-background treatment as
                 CloudInfrastructure/ArchitecturalResilienceStrategy.jsx (and now
                 MicrosoftServices/WhyItMatters.jsx): a fixed-attachment

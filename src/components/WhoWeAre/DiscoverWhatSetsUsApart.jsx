@@ -22,7 +22,7 @@ const CARDS = [
 
 export default function DiscoverWhatSetsUsApart() {
     return (
-        <section className="w-full px-6 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-8">
+        <section className="w-full px-8 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-8">
             {/* <div className="w-full h-px bg-[#c7cbcd] max-w-[1300px] mx-auto mb-16 sm:mb-20" /> */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

@@ -11,7 +11,7 @@ const ITEMS = [
 
 export default function BusinessRulesAutomationGrid() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[0px] flex flex-col items-center gap-10 sm:gap-[45px]">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[0px] flex flex-col items-center gap-10 sm:gap-[45px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

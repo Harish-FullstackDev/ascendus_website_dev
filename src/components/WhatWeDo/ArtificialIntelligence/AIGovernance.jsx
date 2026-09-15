@@ -43,7 +43,7 @@ export default function AIGovernance() {
     const goTo = (nextIndex, dir) => setPage([Math.max(0, Math.min(maxIndex, nextIndex)), dir]);
 
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[50px]">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[50px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

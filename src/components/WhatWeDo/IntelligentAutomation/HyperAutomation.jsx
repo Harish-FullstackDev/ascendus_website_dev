@@ -18,7 +18,7 @@ const ITEMS = [
 
 export default function HyperAutomation() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[40px] flex flex-col items-center gap-10 sm:gap-[50px]">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[40px] flex flex-col items-center gap-10 sm:gap-[50px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

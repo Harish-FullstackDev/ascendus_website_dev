@@ -43,7 +43,7 @@ export default function Industry4() {
     const goTo = (nextIndex, dir) => setPage([Math.max(0, Math.min(maxIndex, nextIndex)), dir]);
 
     return (
-        <section className="w-full bg-[#f2f2f2] py-10 sm:py-[100px] px-6 sm:px-[40px]">
+        <section className="w-full bg-[#f2f2f2] py-10 sm:py-[100px] px-8 sm:px-[40px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

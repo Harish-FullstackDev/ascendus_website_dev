@@ -6,7 +6,7 @@ import scalabilityPhoto from "@/assets/WhatWeDo/Digital Engineering/webp/Digital
 
 export default function SoftwareScalability() {
     return (
-        <section className="w-full px-6 py-10 sm:px-16 sm:pb-[32px] sm:pt-16">
+        <section className="w-full px-8 py-10 sm:px-16 sm:pb-[32px] sm:pt-16">
             {/* Heading */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

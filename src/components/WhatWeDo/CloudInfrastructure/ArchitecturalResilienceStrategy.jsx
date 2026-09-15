@@ -6,7 +6,7 @@ import devSecOpsBg from "@/assets/WhatWeDo/Cloud and Infrastructure/webp/Cloud_S
 
 export default function ArchitecturalResilienceStrategy() {
     return (
-        <section className="w-full px-6 sm:px-0">
+        <section className="w-full px-8 sm:px-0">
             <div className="relative w-full max-w-screen mx-auto h-[380px] sm:h-[440px] lg:h-[488px] overflow-hidden">
                 {/* Fixed Background Image */}
 

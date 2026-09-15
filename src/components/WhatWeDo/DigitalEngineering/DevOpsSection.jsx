@@ -34,7 +34,7 @@ const GRID_CARDS = [
 
 export default function DevOpsSection() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[50px] flex flex-col gap-5">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[50px] flex flex-col gap-5">
             {/* Title tile: gradient photo backdrop, centered heading — no hover behavior */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

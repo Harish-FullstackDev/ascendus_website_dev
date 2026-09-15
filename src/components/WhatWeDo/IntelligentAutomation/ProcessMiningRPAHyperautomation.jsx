@@ -33,7 +33,7 @@ const CARDS = [
 
 export default function ProcessMiningRPAHyperautomation() {
     return (
-        <section className="w-full pt-10 sm:pt-16 pb-10 sm:pb-8 px-6 sm:px-[64px]">
+        <section className="w-full pt-10 sm:pt-16 pb-10 sm:pb-8 px-8 sm:px-[64px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

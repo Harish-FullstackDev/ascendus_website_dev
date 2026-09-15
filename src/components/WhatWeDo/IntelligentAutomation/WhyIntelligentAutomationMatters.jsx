@@ -6,7 +6,7 @@ import matterPhoto from "@/assets/WhatWeDo/Intelligent Automation/Section2_image
 
 export default function WhyIntelligentAutomationMatters() {
     return (
-        <section className="w-full max-w-[1280px] mx-auto py-10 px-6 sm:px-[50px] flex flex-col sm:flex-row items-center gap-10 sm:gap-[143px]">
+        <section className="w-full max-w-[1280px] mx-auto py-10 px-8 sm:px-[50px] flex flex-col sm:flex-row items-center gap-10 sm:gap-[143px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

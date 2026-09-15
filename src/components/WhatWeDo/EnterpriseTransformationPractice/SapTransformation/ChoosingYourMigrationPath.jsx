@@ -59,7 +59,7 @@ export default function ChoosingYourMigrationPath() {
     }, [isPaused]);
 
     return (
-        <section className="w-full bg-white px-6 py-10 sm:px-16 sm:pt-[64px] sm:pb-[64px]">
+        <section className="w-full bg-white px-8 py-10 sm:px-16 sm:pt-[64px] sm:pb-[64px]">
             {/* Mobile: intro stacked above, then simple stacked cards with
                 description always visible — no hover on touch. Ported from
                 EnterpriseDataFoundations' mobile treatment. */}

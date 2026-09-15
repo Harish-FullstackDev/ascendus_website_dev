@@ -94,7 +94,7 @@ const FeatureRow = ({ items }) => (
 
 export default function DesignOperationsExperienceOptimization() {
     return (
-        <section className="w-full pt-10 sm:pt-16 pb-10 sm:pb-10 lg:pb-16 px-6 sm:px-[64px]">
+        <section className="w-full pt-10 sm:pt-16 pb-10 sm:pb-10 lg:pb-16 px-8 sm:px-[64px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

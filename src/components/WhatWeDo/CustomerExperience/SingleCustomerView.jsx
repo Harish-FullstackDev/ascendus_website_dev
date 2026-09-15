@@ -16,7 +16,7 @@ const ITEMS = [
 
 export default function SingleCustomerView() {
     return (
-        <section className="w-full py-10  px-6 sm:p-16 flex flex-col lg:flex-row gap-10 lg:gap-[83px] items-center">
+        <section className="w-full py-10  px-8 sm:p-16 flex flex-col lg:flex-row gap-10 lg:gap-[83px] items-center">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

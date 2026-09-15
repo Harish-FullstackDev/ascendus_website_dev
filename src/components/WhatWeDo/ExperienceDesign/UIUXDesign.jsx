@@ -46,7 +46,7 @@ export default function UIUXDesign() {
     }, [activeIndex]);
 
     return (
-        <section className="w-full py-10 sm:pt-16 sm:pb-3 px-6 sm:px-[50px]">
+        <section className="w-full py-10 sm:pt-16 sm:pb-3 px-8 sm:px-[50px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

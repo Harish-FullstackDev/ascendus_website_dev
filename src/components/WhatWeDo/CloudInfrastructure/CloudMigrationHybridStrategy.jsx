@@ -32,7 +32,7 @@ const ITEMS = [
 
 export default function CloudMigrationHybridStrategy() {
     return (
-        <section className="w-full py-8 px-6 sm:p-16">
+        <section className="w-full py-8 px-8 sm:p-16">
             <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-12 max-w-[1390px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}

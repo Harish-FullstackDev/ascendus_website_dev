@@ -9,7 +9,7 @@ export default function AboutPartner() {
     return (
         // Bordering the hero curtain above (full 64 top); the section below is
         // also white, so the bottom half of that boundary (32) lives here.
-        <section className="w-full bg-white pt-10 pb-8 sm:pt-16 sm:pb-8 px-6 sm:px-[64px]">
+        <section className="w-full bg-white pt-10 pb-8 sm:pt-16 sm:pb-8 px-8 sm:px-[64px]">
             <div className="w-full flex flex-col lg:flex-row items-center gap-10 lg:gap-16 justify-between">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}

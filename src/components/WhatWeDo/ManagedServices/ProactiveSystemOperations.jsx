@@ -90,7 +90,7 @@ export default function ProactiveSystemOperations() {
     };
 
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[64px]">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px]">
             <div className="flex flex-col lg:flex-row lg:items-start gap-8 sm:gap-10 lg:gap-[80px] max-w-[1637px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

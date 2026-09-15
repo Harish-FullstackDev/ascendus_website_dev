@@ -21,7 +21,7 @@ const itemVariants = {
 
 export default function WhatSetsUsApart() {
     return (
-        <section className="w-full py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+        <section className="w-full py-16 sm:py-20 px-4 sm:px-8 lg:px-8">
             <div className="max-w-[1400px] mx-auto flex flex-col gap-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

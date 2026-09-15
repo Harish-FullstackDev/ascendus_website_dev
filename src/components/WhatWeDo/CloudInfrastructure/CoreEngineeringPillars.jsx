@@ -165,7 +165,7 @@ export default function CoreEngineeringPillars() {
     };
 
     return (
-        <section className="w-full bg-white py-10 sm:p-16 px-6  flex flex-col items-center gap-10 sm:gap-[64px]">
+        <section className="w-full bg-white py-10 sm:p-16 px-8  flex flex-col items-center gap-10 sm:gap-[64px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

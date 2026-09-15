@@ -6,7 +6,7 @@ import infraPhoto from "@/assets/WhatWeDo/Cloud and Infrastructure/Section7_imag
 
 export default function InfrastructureServices() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[0px] flex justify-center">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[0px] flex justify-center">
             <div className="w-full max-w-screen flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-[80px]">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}

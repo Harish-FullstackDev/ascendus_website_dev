@@ -8,7 +8,7 @@ const AVATAR = "/blog/default-author.svg";
 
 export default function GrowthQuoteBand() {
     return (
-        <section className="w-full py-5 sm:py-8 px-4 sm:px-6 lg:px-8">
+        <section className="w-full py-5 sm:py-8 px-4 sm:px-8 lg:px-8">
             <div className="max-w-6xl mx-auto flex flex-col gap-8">
                 <div aria-hidden className="w-full h-px bg-black/30" />
 

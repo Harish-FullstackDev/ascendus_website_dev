@@ -18,7 +18,7 @@ export default function BusinessEnablementThroughSecurity() {
         // Full-bleed on desktop: Figma's row (node 2261:5001) is 1274px inside a
         // 1280px frame — it overflows the frame's own 64px padding, so the photo
         // effectively runs to the screen's right edge rather than stopping short.
-        <section className="w-full pt-10 sm:pt-16 pb-10 sm:pb-8 px-6 sm:px-0 flex flex-col gap-16 sm:gap-[70px]">
+        <section className="w-full pt-10 sm:pt-16 pb-10 sm:pb-8 px-8 sm:px-0 flex flex-col gap-16 sm:gap-[70px]">
             {ITEMS.map((item) => (
                 <motion.div
                     key={item.title}

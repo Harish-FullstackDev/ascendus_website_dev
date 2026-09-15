@@ -129,7 +129,7 @@ export default function MultiCloudStrategy() {
     };
 
     return (
-        <section className="w-full bg-white py-10 sm:py-16 px-6 sm:px-[50px] flex flex-col items-center gap-10 sm:gap-[62px]">
+        <section className="w-full bg-white py-10 sm:py-16 px-8 sm:px-[50px] flex flex-col items-center gap-10 sm:gap-[62px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

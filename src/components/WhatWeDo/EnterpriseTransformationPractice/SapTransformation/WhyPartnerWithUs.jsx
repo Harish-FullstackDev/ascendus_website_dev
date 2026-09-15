@@ -32,7 +32,7 @@ const REASONS = [
 
 export default function WhyPartnerWithUs() {
     return (
-        <section className="w-full bg-white pt-10 pb-8 sm:pt-16 sm:pb-[32px] px-6 sm:px-[64px] flex flex-col items-center gap-8">
+        <section className="w-full bg-white pt-10 pb-8 sm:pt-16 sm:pb-[32px] px-8 sm:px-[64px] flex flex-col items-center gap-8">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
