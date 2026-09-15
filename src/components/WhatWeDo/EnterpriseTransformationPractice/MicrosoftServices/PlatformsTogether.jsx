@@ -61,7 +61,7 @@ export default function PlatformsTogether() {
     }, [isPaused]);
 
     return (
-        <section className="w-full bg-white py-10 sm:p-16 px-6">
+        <section className="w-full bg-white py-10 sm:p-16 px-8">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

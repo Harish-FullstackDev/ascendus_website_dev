@@ -8,7 +8,7 @@ import integrationImage2 from "@/assets/WhatWeDo/Artificial Intelligence/Section
 
 export default function AIIntegration() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[100px]">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[100px]">
             <div className="flex flex-col gap-10 sm:gap-[70px] max-w-screen mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

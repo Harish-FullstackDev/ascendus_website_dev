@@ -32,7 +32,7 @@ const ITEMS = [
 
 export default function EmergingTechnologyAssessment() {
     return (
-        <section className="w-full pt-10 sm:pt-16 pb-10 sm:pb-8 px-6 sm:px-[64px]">
+        <section className="w-full pt-10 sm:pt-16 pb-10 sm:pb-8 px-8 sm:px-[64px]">
             <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-12 max-w-[1390px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}

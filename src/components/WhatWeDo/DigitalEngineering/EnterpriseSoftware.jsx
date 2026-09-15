@@ -53,7 +53,7 @@ export default function EnterpriseSoftware() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full py-10 sm:py-8 px-6 sm:px-0 flex flex-col items-center gap-8 sm:gap-[45px]">
+        <section className="w-full py-10 sm:py-8 px-8 sm:px-0 flex flex-col items-center gap-8 sm:gap-[45px]">
             {/* Heading */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

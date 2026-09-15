@@ -17,7 +17,7 @@ const ITEMS = [
 
 export default function BusinessRulesAutomationZigzag() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[40px] flex flex-col gap-16 sm:gap-[70px] max-w-[1225px] mx-auto">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[40px] flex flex-col gap-16 sm:gap-[70px] max-w-[1225px] mx-auto">
             {ITEMS.map((item, index) => (
                 <motion.div
                     key={item.title}

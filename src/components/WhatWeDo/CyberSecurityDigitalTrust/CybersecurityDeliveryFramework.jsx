@@ -60,7 +60,7 @@ export default function CybersecurityDeliveryFramework() {
     const progress = maxIndex > 0 ? index / maxIndex : 0;
 
     return (
-        <section className="bg-white w-full py-12 sm:py-16 lg:py-0 px-6 sm:px-[65px]">
+        <section className="bg-white w-full py-12 sm:py-16 lg:py-0 px-8 sm:px-[65px]">
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-[91px] items-center lg:items-center w-full lg:py-16">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}

@@ -46,7 +46,7 @@ export default function BusinessProcessConsulting() {
     const slide = SLIDES[active];
 
     return (
-        <section className="w-full py-10 sm:py-[60px] px-6 sm:px-[40px] flex flex-col items-center gap-10 sm:gap-[69px]">
+        <section className="w-full py-10 sm:py-[60px] px-8 sm:px-[40px] flex flex-col items-center gap-10 sm:gap-[69px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

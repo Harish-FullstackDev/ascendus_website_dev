@@ -48,7 +48,7 @@ export default function BackupDisasterRecovery() {
     };
 
     return (
-        <section className="w-full py-10 sm:py-[51px] px-6 sm:px-[50px] flex flex-col items-center gap-10 sm:gap-[51px]">
+        <section className="w-full py-10 sm:py-[51px] px-8 sm:px-[50px] flex flex-col items-center gap-10 sm:gap-[51px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

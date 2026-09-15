@@ -45,7 +45,7 @@ export default function EnterpriseBuyerFAQ() {
     };
 
     return (
-        <section className="w-full bg-white border-t border-[#8794a3] pt-10 pb-16 px-6 sm:px-[64px] flex flex-col items-center gap-12">
+        <section className="w-full bg-white border-t border-[#8794a3] pt-10 pb-16 px-8 sm:px-[64px] flex flex-col items-center gap-12">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

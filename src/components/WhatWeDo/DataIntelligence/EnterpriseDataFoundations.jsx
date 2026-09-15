@@ -47,7 +47,7 @@ export default function EnterpriseDataFoundations() {
     }, [isPaused]);
 
     return (
-        <section className="w-full py-10 px-6 sm:p-16">
+        <section className="w-full py-10 px-8 sm:p-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

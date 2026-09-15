@@ -15,7 +15,7 @@ const capabilities = [
 
 export default function Intro() {
     return (
-        <section className="w-full max-w-[1280px] mx-auto py-10 px-6 sm:px-[50px] flex flex-col gap-10">
+        <section className="w-full max-w-[1280px] mx-auto py-10 px-8 sm:px-[50px] flex flex-col gap-10">
 
             {/* Heading */}
             <motion.div

@@ -38,7 +38,7 @@ export default function MachineLearning() {
     }, [active]);
 
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[0px]">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[0px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

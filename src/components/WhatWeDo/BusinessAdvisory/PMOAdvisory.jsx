@@ -46,7 +46,7 @@ const ITEMS = [
 
 export default function PMOAdvisory() {
     return (
-        <section className="w-full py-10 sm:py-[84px] px-6 sm:px-[57px] flex flex-col items-center gap-10 sm:gap-[60px]">
+        <section className="w-full py-10 sm:py-[84px] px-8 sm:px-[57px] flex flex-col items-center gap-10 sm:gap-[60px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

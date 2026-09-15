@@ -106,7 +106,7 @@ export default function CloudPlatformsServices() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full bg-white py-10 sm:p-16 px-6">
+        <section className="w-full bg-white py-10 sm:p-16 px-8">
             <div className="w-full flex flex-col items-center gap-10 sm:gap-16 lg:gap-20">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

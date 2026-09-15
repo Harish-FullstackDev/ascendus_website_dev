@@ -13,7 +13,7 @@ const CAPABILITY_ROWS = [
 
 export default function OurDesignCapabilities() {
     return (
-        <section className="w-full px-6 pt-8 pb-16 sm:px-[64px]">
+        <section className="w-full px-8 pt-8 pb-16 sm:px-[64px]">
             {/* Heading */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

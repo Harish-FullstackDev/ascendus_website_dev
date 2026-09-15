@@ -66,7 +66,7 @@ function AnimatedStat({ value }) {
 
 export default function ScalableAIDeployment() {
     return (
-        <section className="w-full py-10 px-6 sm:p-16 border-t-2 border-[#cac9c9]/70">
+        <section className="w-full py-10 px-8 sm:p-16 border-t-2 border-[#cac9c9]/70">
             {/* Outer container — this creates the Figma-style x-axis spacing */}
             <div className="w-full max-w-[1400px]">
 

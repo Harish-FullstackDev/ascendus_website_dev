@@ -107,7 +107,7 @@ export default function CRMStrategy() {
     const desktopArrows = useCarouselArrows(desktopScrollerRef);
 
     return (
-        <section className="relative w-full py-14 sm:py-20 px-6 sm:px-[50px] lg:px-0 lg:py-0 overflow-hidden">
+        <section className="relative w-full py-14 sm:py-20 px-8 sm:px-[50px] lg:px-0 lg:py-0 overflow-hidden">
             {/* ---------- Mobile / Tablet layout (scrollable cards) ---------- */}
             <div className="flex flex-col gap-10 lg:hidden">
                 <motion.div

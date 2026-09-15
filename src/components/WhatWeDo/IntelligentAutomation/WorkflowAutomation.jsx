@@ -25,7 +25,7 @@ const BENEFITS = [
 
 export default function WorkflowAutomation() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-10 flex justify-center">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-10 flex justify-center">
             {/* ===== Desktop / tablet: pixel-accurate Figma layout (1281 x 697) ===== */}
             <div className="hidden sm:block relative w-full max-w-[1281px] h-[697px]">
                 {/* Gray content panel */}

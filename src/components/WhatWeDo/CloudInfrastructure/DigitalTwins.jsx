@@ -44,7 +44,7 @@ export default function DigitalTwins() {
   }, []);
 
   return (
-    <section className="w-full bg-[#EDEDED] py-16 px-6 lg:px-10">
+    <section className="w-full bg-[#EDEDED] py-16 px-8 lg:px-10">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}

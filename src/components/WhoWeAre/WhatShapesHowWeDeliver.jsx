@@ -25,7 +25,7 @@ const PRINCIPLES = [
 
 export default function WhatShapesHowWeDeliver() {
     return (
-        <section className="w-full px-6 sm:px-[64px] pt-10 pb-10 sm:pt-8 sm:pb-16">
+        <section className="w-full px-8 sm:px-[64px] pt-10 pb-10 sm:pt-8 sm:pb-16">
             {/* No max-width cap: the 1300px cap centred this block inside the
                 section's content box, leaving the outer cards short of the 64px
                 inset on wide screens. Full width means the first card's left edge

@@ -9,7 +9,7 @@ import integrationImage2 from "@/assets/WhatWeDo/Innovation & Emerging Technolog
 
 export default function ScalingPilotsSmartOperations() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[64px]">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px]">
             <div className="flex flex-col gap-10 sm:gap-16 max-w-screen mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

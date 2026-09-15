@@ -23,7 +23,7 @@ const CARDS = [
 
 export default function ProductPlatformEngineering() {
     return (
-        <section className="w-full pt-10 sm:pt-16 pb-6 sm:pb-0 px-6 sm:px-[0px] flex flex-col items-center gap-10 sm:gap-12">
+        <section className="w-full pt-10 sm:pt-16 pb-6 sm:pb-0 px-8 sm:px-[0px] flex flex-col items-center gap-10 sm:gap-12">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

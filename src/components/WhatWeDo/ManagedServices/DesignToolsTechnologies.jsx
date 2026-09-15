@@ -22,7 +22,7 @@ export default function DesignToolsTechnologies() {
     const marqueeLogos = [...LOGOS, ...LOGOS];
 
     return (
-        <section className="w-full py-10 sm:py-16 px-6">
+        <section className="w-full py-10 sm:py-16 px-8">
             <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

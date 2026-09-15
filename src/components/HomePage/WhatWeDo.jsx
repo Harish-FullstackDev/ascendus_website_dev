@@ -9,7 +9,7 @@ export default function WhatWeDo() {
     return (
         // Bordering the colored WhyUs section above (full 64 top); the section
         // below (Stats) is white too, so the bottom half of that boundary lives here.
-        <section className="w-full bg-white pt-10 pb-8 sm:pt-16 sm:pb-8 px-6 sm:px-[64px]">
+        <section className="w-full bg-white pt-10 pb-8 sm:pt-16 sm:pb-8 px-8 sm:px-[64px]">
             <div className="w-full flex flex-col lg:flex-row items-center gap-10 lg:gap-16 justify-end">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}

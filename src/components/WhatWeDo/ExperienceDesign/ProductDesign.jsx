@@ -32,7 +32,7 @@ const ITEMS = [
 
 export default function ProductDesign() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[52px]">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[52px]">
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-[79px] max-w-[1390px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}

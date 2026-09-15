@@ -24,7 +24,7 @@ const PARTNERS = [
 
 export default function OurProudPartners() {
     return (
-        <section className="w-full bg-white pt-10 pb-12 sm:pt-16 sm:pb-16 px-6 sm:px-[64px]">
+        <section className="w-full bg-white pt-10 pb-12 sm:pt-16 sm:pb-16 px-8 sm:px-[64px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

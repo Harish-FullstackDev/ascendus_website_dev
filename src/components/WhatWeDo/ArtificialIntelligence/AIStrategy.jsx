@@ -38,7 +38,7 @@ const ITEMS = [
 
 export default function AIStrategy() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[60px]">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[60px]">
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-[35px] items-start justify-between max-w-[1180px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}

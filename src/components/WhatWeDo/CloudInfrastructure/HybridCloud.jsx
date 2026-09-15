@@ -57,7 +57,7 @@ export default function HybridCloud() {
     const goTo = (nextIndex, dir) => setPage([Math.max(0, Math.min(maxIndex, nextIndex)), dir]);
 
     return (
-        <section className="w-full bg-[#f2f2f2] py-10 sm:py-16 px-6 sm:px-[40px] flex flex-col items-center gap-10 sm:gap-[62px]">
+        <section className="w-full bg-[#f2f2f2] py-10 sm:py-16 px-8 sm:px-[40px] flex flex-col items-center gap-10 sm:gap-[62px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

@@ -41,7 +41,7 @@ const itemVariants = {
 
 export default function FutureFocusedInsights() {
     return (
-        <section className="w-full bg-white pt-16 pb-16 sm:pt-20 sm:pb-20 px-6 sm:px-[64px]">
+        <section className="w-full bg-white pt-16 pb-16 sm:pt-20 sm:pb-20 px-8 sm:px-[64px]">
             <div className="w-full">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

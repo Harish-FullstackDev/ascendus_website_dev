@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function TrustedByBand() {
     return (
-        <section className="w-full bg-[#F5F6F6] px-6 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-16">
+        <section className="w-full bg-[#F5F6F6] px-8 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

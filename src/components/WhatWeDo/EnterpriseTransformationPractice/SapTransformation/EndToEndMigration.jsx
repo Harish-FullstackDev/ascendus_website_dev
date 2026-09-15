@@ -6,7 +6,7 @@ import whyItMattersImage from "@/assets/WhatWeDo/Enterprise Transformation Pract
 
 export default function EndToEndMigration() {
     return (
-        <section className="w-full bg-white px-6 py-8 sm:px-[64px] sm:pt-[64px] sm:pb-[32px] flex flex-col-reverse sm:flex-row gap-8 sm:gap-[48px] items-start">
+        <section className="w-full bg-white px-8 py-8 sm:px-[64px] sm:pt-[64px] sm:pb-[32px] flex flex-col-reverse sm:flex-row gap-8 sm:gap-[48px] items-start">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

@@ -39,7 +39,7 @@ export default function BuiltForHowEnterprisesRun() {
     const [active, setActive] = useState(0);
 
     return (
-        <section className="w-full bg-white pt-10 pb-10 sm:pt-16 sm:pb-16 px-6 sm:px-[64px] border-b border-[#c7c7c7]">
+        <section className="w-full bg-white pt-10 pb-10 sm:pt-16 sm:pb-16 px-8 sm:px-[64px] border-b border-[#c7c7c7]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

@@ -103,7 +103,7 @@ function AnimatedStat({ value, className }) {
 // section (CleanPrinciples) is white too and pays the matching 32.
 export default function StartedAroundGapNotProduct() {
     return (
-        <section className="relative w-full bg-white px-6 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-8">
+        <section className="relative w-full bg-white px-8 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-8">
             <div className="flex flex-col gap-10 sm:gap-16">
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}

@@ -32,7 +32,7 @@ const ITEMS = [
 
 export default function AutomationOperationsControl() {
     return (
-        <section className="w-full pt-10 sm:pt-8 pb-10 sm:pb-16 px-6 sm:px-[64px] flex flex-col lg:flex-row gap-10 lg:gap-[72px] items-center">
+        <section className="w-full pt-10 sm:pt-8 pb-10 sm:pb-16 px-8 sm:px-[64px] flex flex-col lg:flex-row gap-10 lg:gap-[72px] items-center">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

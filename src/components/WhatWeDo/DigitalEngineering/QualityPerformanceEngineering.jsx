@@ -32,7 +32,7 @@ const ITEMS = [
 
 export default function QualityPerformanceEngineering() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-16">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-16">
             <div className="mx-auto flex flex-col items-center gap-10 sm:gap-16">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

@@ -9,7 +9,7 @@ import integrationImage2 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/n
 
 export default function AccessControlSimulatedAttacks() {
     return (
-        <section className="w-full pt-10 sm:pt-8 pb-10 sm:pb-16 px-6 sm:px-[64px]">
+        <section className="w-full pt-10 sm:pt-8 pb-10 sm:pb-16 px-8 sm:px-[64px]">
             <div className="flex flex-col gap-10 sm:gap-16 max-w-screen mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

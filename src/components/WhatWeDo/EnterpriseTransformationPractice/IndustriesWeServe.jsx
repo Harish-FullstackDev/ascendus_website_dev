@@ -17,7 +17,7 @@ export default function IndustriesWeServe() {
     return (
         // Figma now uses a real photo behind a 70% black overlay here, replacing
         // the flat #1C5F85 placeholder this was originally built against.
-        <section className="relative w-full overflow-hidden px-6 py-10 sm:px-[64px] sm:py-16 flex flex-col items-center gap-10 sm:gap-14">
+        <section className="relative w-full overflow-hidden px-8 py-10 sm:px-[64px] sm:py-16 flex flex-col items-center gap-10 sm:gap-14">
             <Image src={bgImage} alt="" fill className="object-cover pointer-events-none" />
             <div className="absolute inset-0 bg-black/70 pointer-events-none" />
 

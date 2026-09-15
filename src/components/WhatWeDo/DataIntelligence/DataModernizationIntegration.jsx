@@ -32,7 +32,7 @@ const ITEMS = [
 
 export default function DataModernizationIntegration() {
     return (
-        <section className="w-full py-10 sm:px-16 px-6 sm:pt-8 sm:pb-16">
+        <section className="w-full py-10 sm:px-16 px-8 sm:pt-8 sm:pb-16">
             <div className="max-w-[1300px] flex flex-col lg:flex-row lg:justify-between lg:items-center gap-10 lg:gap-16">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

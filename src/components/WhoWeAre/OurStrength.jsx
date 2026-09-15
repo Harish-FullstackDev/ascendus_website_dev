@@ -25,7 +25,7 @@ const itemVariants = {
 
 export default function OurStrength() {
     return (
-        <section className="w-full px-6 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-8">
+        <section className="w-full px-8 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-8">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

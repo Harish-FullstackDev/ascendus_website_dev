@@ -18,7 +18,7 @@ const INDUSTRIES = [
 
 export default function IndustryImpact() {
     return (
-        <section className="w-full bg-[#F5F6F6] py-10 sm:p-16 px-6 ">
+        <section className="w-full bg-[#F5F6F6] py-10 sm:p-16 px-8 ">
             <div className="w-full mx-auto flex flex-col items-center gap-10 sm:gap-16">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

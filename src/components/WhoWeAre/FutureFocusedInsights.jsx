@@ -44,7 +44,7 @@ export default function FutureFocusedInsights({
                 the full width all the way down to the cards' bottom edge, hiding the
                 overlap entirely. Leaving it transparent lets the CTA's dark background
                 show through beside the (narrower, its own bg-white) card grid instead. */}
-            <section className="relative z-10 w-full pt-16 sm:pt-16 px-4 sm:px-6 lg:px-8">
+            <section className="relative z-10 w-full pt-16 sm:pt-16 px-4 sm:px-8 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

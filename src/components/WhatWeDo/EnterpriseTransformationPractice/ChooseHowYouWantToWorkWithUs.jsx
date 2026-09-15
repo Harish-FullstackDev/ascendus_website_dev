@@ -6,7 +6,7 @@ import serverRoomImage from "@/assets/WhatWeDo/Enterprise Transformation Practic
 
 export default function ChooseHowYouWantToWorkWithUs() {
     return (
-        <section className="w-full px-6 py-10 sm:pl-[64px] sm:pr-[64px] sm:py-[64px]">
+        <section className="w-full px-8 py-10 sm:pl-[64px] sm:pr-[64px] sm:py-[64px]">
 
             <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-[143px]">
                 {/* Content */}

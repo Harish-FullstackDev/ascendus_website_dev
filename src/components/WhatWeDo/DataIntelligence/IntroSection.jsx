@@ -6,7 +6,7 @@ import introImage from "@/assets/WhatWeDo/Data Inteligent/Section2_image.svg";
 
 export default function IntroSection() {
     return (
-        <section className="w-full overflow-x-hidden py-10 sm:py-[40px] px-6 sm:px-[0px]">
+        <section className="w-full overflow-x-hidden py-10 sm:py-[40px] px-8 sm:px-[0px]">
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-[80px] items-center max-w-screen mx-auto">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}

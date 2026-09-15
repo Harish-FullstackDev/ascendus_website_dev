@@ -53,7 +53,7 @@ export default function EngagementModelsComparison() {
     return (
         <section
             id="engagement-models"
-            className="w-full bg-[#f5f6f6] px-6 pt-10 pb-10 sm:px-[64px] sm:pt-16 sm:pb-16 flex flex-col items-center gap-8 sm:gap-8"
+            className="w-full bg-[#f5f6f6] px-8 pt-10 pb-10 sm:px-[64px] sm:pt-16 sm:pb-16 flex flex-col items-center gap-8 sm:gap-8"
         >
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

@@ -44,7 +44,7 @@ export default function DesignStrategyValidation() {
     };
 
     return (
-        <section className="w-full py-8 sm:py-10 lg:py-[64px] px-6 sm:px-[64px] flex flex-col items-center gap-16">
+        <section className="w-full py-8 sm:py-10 lg:py-[64px] px-8 sm:px-[64px] flex flex-col items-center gap-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

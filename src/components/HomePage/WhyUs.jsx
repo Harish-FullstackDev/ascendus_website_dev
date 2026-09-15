@@ -49,7 +49,7 @@ const MATCHED_GAP_MT = "sm:mt-[clamp(2rem,6vw,6.5rem)]";
 export default function WhyUs() {
     return (
         // Colored section bordered by white sections on both edges — full 64 on each.
-        <section className="w-full bg-[#f5f6f6] pt-10 pb-10 sm:p-16 px-6 ">
+        <section className="w-full bg-[#f5f6f6] pt-10 pb-10 sm:p-16 px-8 ">
             <div className={`w-full flex flex-col ${MATCHED_GAP}`}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
