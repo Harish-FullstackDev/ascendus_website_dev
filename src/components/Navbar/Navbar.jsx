@@ -20,6 +20,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showCalendly, setShowCalendly] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const pathname = usePathname();
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -115,6 +116,7 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
     setIsServicesOpen(false);
+    setIsSolutionsOpen(false);
   };
 
 
@@ -153,6 +155,15 @@ const Navbar = () => {
   const capabilityColumns = [
     servicesMenu.capabilities.slice(0, 6),
     servicesMenu.capabilities.slice(6),
+  ];
+
+  const solutionsMenu = [
+    { name: "ERP", href: "/solutions/erp/Hanaonpremises" },
+    { name: "Business Technology", href: "/solutions/businessTechnology/BTP" },
+    { name: "HCM", href: "/solutions/HCM/SAPSuccess" },
+    { name: "Customer Experience", href: "/solutions/CustomerExperience/CRM" },
+    { name: "Finance and Controlling", href: "/solutions/FinanceControlling/FICO" },
+    { name: "Supply Spend Management", href: "/solutions/SpendManagement/Procurement" },
   ];
 
   const industryColumns = [
@@ -268,7 +279,7 @@ const Navbar = () => {
                       className={`${navLinkClass} after:content-none flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
-                      What we do
+                      Services
 
                       <svg
                         className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
@@ -418,6 +429,74 @@ const Navbar = () => {
                     </div>
                   </li>
 
+                  <li className="relative group">
+                    <button
+                      type="button"
+                      className={`${navLinkClass} after:content-none flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
+                        }`}
+                    >
+                      Solutions
+
+                      <svg
+                        className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+
+                    {/* Same hover-bridge/dropdown mechanics as the Services menu above,
+                        just a single short column since there are only 6 solutions. */}
+                    <div
+                      className="
+                        invisible opacity-0 translate-y-3
+                        group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
+                        transition-all duration-300
+                        absolute left-0 top-full pt-[24px] z-50
+                      "
+                    >
+                      <div
+                        className={`shadow-2xl min-w-[260px] p-6 border transition-colors duration-500 backdrop-blur-xl ${isNavbarLight
+                          ? "bg-white/80 border-gray-200/30 text-gray-800"
+                          : "bg-white/10 border-white/20 text-white"
+                          }`}
+                      >
+                        <ul className="space-y-2">
+                          {solutionsMenu.map((item) => (
+                            <li key={item.name}>
+                              <Link
+                                href={item.href}
+                                className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
+                                  ? "hover:bg-gray-100 text-gray-700"
+                                  : "hover:bg-white/10 text-white/80"
+                                  }`}
+                              >
+                                {item.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+
+                  {/* Industries has no page yet — plain non-interactive label until
+                      that content exists, rather than a link to nowhere. */}
+                  <li>
+                    <span
+                      className={`${navLinkClass} after:content-none cursor-default ${isNavbarLight ? "text-black/50" : "text-white/50"
+                        }`}
+                    >
+                      Industries
+                    </span>
+                  </li>
 
                   <li>
                     <Link
@@ -425,7 +504,27 @@ const Navbar = () => {
                       className={`${navLinkClass} ${pathname === "/who-we-are/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
-                      Who we are
+                      About Us
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      href="/ascenduspartner"
+                      className={`${navLinkClass} ${pathname === "/ascenduspartner/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                        }`}
+                    >
+                      Partners
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      href="/careers"
+                      className={`${navLinkClass} ${pathname === "/careers/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                        }`}
+                    >
+                      Careers
                     </Link>
                   </li>
 
@@ -436,15 +535,6 @@ const Navbar = () => {
                         }`}
                     >
                       Contact
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/careers"
-                      className={`${navLinkClass} ${pathname === "/careers/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
-                        }`}
-                    >
-                      Careers
                     </Link>
                   </li>
                 </ul>
@@ -563,7 +653,7 @@ const Navbar = () => {
                     : "text-gray-800"
                     }`}
                 >
-                  What we do
+                  Services
                 </div>
 
                 <button
@@ -623,6 +713,72 @@ const Navbar = () => {
             </li>
 
             <li>
+              <div
+                className={`w-full flex items-center justify-between ${pathname.startsWith("/solutions") ? "bg-gray-100" : ""
+                  }`}
+              >
+                <div
+                  className={`flex-1 py-3 px-4 text-2xl sm:text-3xl font-medium rounded-lg ${pathname.startsWith("/solutions")
+                    ? "text-[#2d8ec5]"
+                    : "text-gray-800"
+                    }`}
+                >
+                  Solutions
+                </div>
+
+                <button
+                  onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+                  className="py-3 px-4 text-gray-800 hover:text-[#2d8ec5] transition-colors duration-300 flex items-center justify-center"
+                  aria-label="Toggle Solutions dropdown"
+                >
+                  <svg
+                    className={`w-6 h-6 transition-transform duration-300 ${isSolutionsOpen ? "rotate-180" : ""
+                      }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <div
+                className={`overflow-hidden transition-all duration-300 ${isSolutionsOpen ? "max-h-[1000px] mt-2" : "max-h-0"
+                  }`}
+              >
+                <div className="bg-gray-50 border border-gray-200 overflow-hidden">
+                  <ul className="py-3">
+                    {solutionsMenu.map((item) => (
+                      <li key={item.name}>
+                        <Link
+                          href={item.href}
+                          onClick={closeMenu}
+                          className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#2d8ec5]"
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            {/* Industries has no page yet — plain non-interactive label until
+                that content exists, rather than a link to nowhere. */}
+            <li>
+              <span className="block py-3 px-4 text-2xl sm:text-3xl font-medium text-gray-400">
+                Industries
+              </span>
+            </li>
+
+            <li>
               <Link
                 href="/who-we-are"
                 className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/who-we-are/"
@@ -631,7 +787,33 @@ const Navbar = () => {
                   }`}
                 onClick={closeMenu}
               >
-                Who we are
+                About Us
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/ascenduspartner"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/ascenduspartner/"
+                  ? "text-[#2d8ec5] bg-gray-100"
+                  : "text-gray-800 hover:text-[#2d8ec5]"
+                  }`}
+                onClick={closeMenu}
+              >
+                Partners
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/careers"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/careers/"
+                  ? "text-[#2d8ec5] bg-gray-100"
+                  : "text-gray-800 hover:text-[#2d8ec5]"
+                  }`}
+                onClick={closeMenu}
+              >
+                Careers
               </Link>
             </li>
 
@@ -645,18 +827,6 @@ const Navbar = () => {
                 onClick={closeMenu}
               >
                 Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/careers"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/careers/"
-                  ? "text-[#2d8ec5] bg-gray-100"
-                  : "text-gray-800 hover:text-[#2d8ec5]"
-                  }`}
-                onClick={closeMenu}
-              >
-                Careers
               </Link>
             </li>
           </ul>
