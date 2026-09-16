@@ -40,85 +40,71 @@ const Footer = () => {
           />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-16  pb-4 md:pb-12 mb-2">
-          <div className="space-x-3 md:col-span-1">
+          <div className="space-x-3 md:col-span-2">
             {/* Quick Link */}
             <div className="mt-4 md:mt-21.5 mb-7.5 md:mb-12">
               <h2 className="text-white text-base font-semibold mb-4">
                 Quick Link
               </h2>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/what-we-do/enterprise-transformation"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/solutions"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Solutions
-                  </Link>
-                </li>
-                {/* Industries has no page yet — plain non-interactive label
-                    until that content exists, rather than a link to nowhere. */}
-                <li>
-                  <span className="text-gray-500 cursor-default">
-                    Industries
-                  </span>
-                </li>
-                <li>
-                  <Link
-                    href="/who-we-are"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/ascenduspartner"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Partners
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/careers"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/book-a-consultation"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Book a call
-                  </Link>
-                </li>
-              </ul>
+              {/* Nine links split across two sub-columns, 5 then 4, so the block
+                  reads as one section instead of a single tall list. */}
+              <div className="grid grid-cols-2 gap-x-8">
+                <ul className="space-y-2">
+                  <li>
+                    <Link href="/" className="hover:text-white transition-colors duration-200">
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/what-we-do/enterprise-transformation"
+                      className="hover:text-white transition-colors duration-200"
+                    >
+                      Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/solutions" className="hover:text-white transition-colors duration-200">
+                      Solutions
+                    </Link>
+                  </li>
+                  {/* Industries has no page yet — plain non-interactive label
+                      until that content exists, rather than a link to nowhere. */}
+                  <li>
+                    <span className="text-gray-500 cursor-default">
+                      Industries
+                    </span>
+                  </li>
+                  <li>
+                    <Link href="/who-we-are" className="hover:text-white transition-colors duration-200">
+                      About Us
+                    </Link>
+                  </li>
+                </ul>
+
+                <ul className="space-y-2">
+                  <li>
+                    <Link href="/ascenduspartner" className="hover:text-white transition-colors duration-200">
+                      Partners
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/careers" className="hover:text-white transition-colors duration-200">
+                      Careers
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact" className="hover:text-white transition-colors duration-200">
+                      Contact
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/book-a-consultation" className="hover:text-white transition-colors duration-200">
+                      Book a call
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* <div className="flex space-x-3 md:col-span-1">
@@ -154,112 +140,29 @@ const Footer = () => {
           </div>
 
 
-          {/* Capabilities column 1 */}
+          {/* Services — three top-level services. Business Transformation and
+              Digital & Technology Transformation have no page yet, so they are
+              plain labels, matching how Industries is handled above. */}
           <div className="md:col-span-1">
-            <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Capabilities</h2>
+            <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Services</h2>
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/what-we-do/enterprise-transformation"
+                  href="/what-we-do/enterprise-transformation/sap-transformation"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  Enterprise Transformation
+                  SAP Transformation
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/what-we-do/artificial-intelligence"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Artificial Intelligence
-                </Link>
+                <span className="text-gray-500 cursor-default">
+                  Business Transformation
+                </span>
               </li>
               <li>
-                <Link
-                  href="/what-we-do/cloud-infrastructure"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Cloud & Infrastructure
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/what-we-do/data-intelligence"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Data & Intelligence
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/what-we-do/digital-engineering"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Digital Engineering
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/what-we-do/customer-experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Customer Experience
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Capabilities column 2 */}
-          <div className="md:col-span-1">
-            {/* <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Industries</h2> */}
-            <ul className="space-y-2 md:mt-32.5">
-              <li>
-                <Link
-                  href="/what-we-do/experience-design"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Experience Design
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/what-we-do/intelligent-automation"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Intelligent Automation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/what-we-do/cybersecurity-digital-trust"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Cybersecurity & Digital Trust
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/what-we-do/managed-services"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Managed Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/what-we-do/business-advisory"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Business Advisory
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/what-we-do/innovation-emerging-technologies"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Innovation & Emerging Technologies
-                </Link>
+                <span className="text-gray-500 cursor-default">
+                  Digital &amp; Technology Transformation
+                </span>
               </li>
             </ul>
           </div>

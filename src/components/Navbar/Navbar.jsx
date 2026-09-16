@@ -25,7 +25,6 @@ const Navbar = () => {
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isCapabilitiesOpen, setIsCapabilitiesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
 
   const lightThemeRoutes = ["/legal/privacy/", "/ascenduserrors/", "/legal/terms/"];
@@ -122,20 +121,13 @@ const Navbar = () => {
 
 
   const servicesMenu = {
-    capabilities: [
-      { name: "Enterprise Transformation", href: "/what-we-do/enterprise-transformation" },
-      { name: "Artificial Intelligence", href: "/what-we-do/artificial-intelligence" },
-      { name: "Cloud & Infrastructure", href: "/what-we-do/cloud-infrastructure" },
-      { name: "Data & Intelligence", href: "/what-we-do/data-intelligence" },
-      { name: "Digital Engineering", href: "/what-we-do/digital-engineering" },
-      { name: "Customer Experience", href: "/what-we-do/customer-experience" },
-
-      { name: "Experience Design", href: "/what-we-do/experience-design" },
-      { name: "Intelligent Automation", href: "/what-we-do/intelligent-automation" },
-      { name: "Cybersecurity & Digital Trust", href: "/what-we-do/cybersecurity-digital-trust" },
-      { name: "Managed Services", href: "/what-we-do/managed-services" },
-      { name: "Business Advisory", href: "/what-we-do/business-advisory" },
-      { name: "Innovation & Emerging Technologies", href: "/what-we-do/innovation-emerging-technologies" },
+    // Only three top-level services now. Business Transformation and Digital &
+    // Technology Transformation have no page yet, so they carry no href and
+    // render as plain labels rather than links to nowhere.
+    services: [
+      { name: "SAP Transformation", href: "/what-we-do/enterprise-transformation/sap-transformation" },
+      { name: "Business Transformation" },
+      { name: "Digital & Technology Transformation" },
     ],
 
     // No per-industry pages exist yet — all point at /solutions until each
@@ -155,13 +147,6 @@ const Navbar = () => {
     ],
   };
 
-  const capabilityColumns = [
-    servicesMenu.capabilities.slice(0, 6),
-    servicesMenu.capabilities.slice(6),
-  ];
-
-  // These SAP-product names don't have dedicated pages yet — all point at the
-  // single /solutions overview until each gets its own route.
   const solutionsMenu = [
     { name: "SAP S/4HANA", href: "/solutions" },
     { name: "SAP Ariba", href: "/solutions" },
@@ -335,160 +320,32 @@ const Navbar = () => {
                         //   ? "bg-white/80 border-gray-200/30 text-gray-800"
                         //   : "bg-neutral-900/80 border-white/20 text-white"
                         //   }`}
-                        className={`shadow-2xl min-w-[990px] p-8 pl-20 border transition-colors duration-500 backdrop-blur-xl ${isNavbarLight
-                          ? "bg-white/80 border-gray-200/30 text-gray-800"
-                          : "bg-white/10 border-white/20 text-white"
-                          }`}
-                      >
-                        {/* <div className="grid grid-cols-4 gap-10"> */}
-                        <div className="grid grid-cols-2 gap-10">
-
-                          {/* Capability Column 1 */}
-                          <div>
-                            <h3
-                              className={`text-sm font-semibold uppercase tracking-wider mb-5 ${isNavbarLight ? "text-black" : "text-white"
-                                }`}
-                            >
-                              Capabilities
-                            </h3>
-
-                            <ul className="space-y-2">
-                              {capabilityColumns[0].map((item) => (
-                                <li key={item.name}>
-                                  <Link
-                                    href={item.href}
-                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
-                                      ? "hover:bg-gray-100 text-gray-700"
-                                      : "hover:bg-white/10 text-white/80"
-                                      }`}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* Capability Column 2 */}
-                          <div className="pt-9">
-                            <ul className="space-y-2">
-                              {capabilityColumns[1].map((item) => (
-                                <li key={item.name}>
-                                  <Link
-                                    href={item.href}
-                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
-                                      ? "hover:bg-gray-100 text-gray-700"
-                                      : "hover:bg-white/10 text-white/80"
-                                      }`}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* Industry Column 1 */}
-                          {/* <div>
-                            <h3
-                              className={`text-sm font-semibold uppercase tracking-wider mb-5 ${isNavbarLight ? "text-black" : "text-white"
-                                }`}
-                            >
-                              Industries
-                            </h3>
- 
-                            <ul className="space-y-2">
-                              {industryColumns[0].map((item) => (
-                                <li key={item.name}>
-                                  <Link
-                                    href={item.href}
-                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
-                                      ? "hover:bg-gray-100 text-gray-700"
-                                      : "hover:bg-white/10 text-white/80"
-                                      }`}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div> */}
-
-                          {/* Industry Column 2 */}
-                          {/* <div className="pt-9">
-                            <ul className="space-y-2">
-                              {industryColumns[1].map((item) => (
-                                <li key={item.name}>
-                                  <Link
-                                    href={item.href}
-                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
-                                      ? "hover:bg-gray-100 text-gray-700"
-                                      : "hover:bg-white/10 text-white/80"
-                                      }`}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div> */}
-
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li className="relative group">
-                    <button
-                      type="button"
-                      className={`${navLinkClass} after:content-none flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
-                        }`}
-                    >
-                      Solutions
-
-                      <svg
-                        className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </button>
-
-                    {/* Same hover-bridge/dropdown mechanics as the Services menu above,
-                        just a single short column since there are only 6 solutions. */}
-                    <div
-                      className="
-                        invisible opacity-0 translate-y-3
-                        group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
-                        transition-all duration-300
-                        absolute left-0 top-full pt-[24px] z-50
-                      "
-                    >
-                      <div
-                        className={`shadow-2xl min-w-[260px] p-6 border transition-colors duration-500 backdrop-blur-xl ${isNavbarLight
+                        className={`shadow-2xl min-w-[320px] p-6 border transition-colors duration-500 backdrop-blur-xl ${isNavbarLight
                           ? "bg-white/80 border-gray-200/30 text-gray-800"
                           : "bg-white/10 border-white/20 text-white"
                           }`}
                       >
                         <ul className="space-y-2">
-                          {solutionsMenu.map((item) => (
+                          {servicesMenu.services.map((item) => (
                             <li key={item.name}>
-                              <Link
-                                href={item.href}
-                                className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
-                                  ? "hover:bg-gray-100 text-gray-700"
-                                  : "hover:bg-white/10 text-white/80"
-                                  }`}
-                              >
-                                {item.name}
-                              </Link>
+                              {item.href ? (
+                                <Link
+                                  href={item.href}
+                                  className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
+                                    ? "hover:bg-gray-100 text-gray-700"
+                                    : "hover:bg-white/10 text-white/80"
+                                    }`}
+                                >
+                                  {item.name}
+                                </Link>
+                              ) : (
+                                <span
+                                  className={`block px-2 py-1 text-sm cursor-default ${isNavbarLight ? "text-gray-400" : "text-white/40"
+                                    }`}
+                                >
+                                  {item.name}
+                                </span>
+                              )}
                             </li>
                           ))}
                         </ul>
@@ -557,6 +414,17 @@ const Navbar = () => {
                         </div>
                       </div>
                     </div>
+                  </li>
+
+                  {/* Industries has no page yet — plain non-interactive label until
+                      that content exists, rather than a link to nowhere. */}
+                  <li>
+                    <span
+                      className={`${navLinkClass} after:content-none cursor-default ${isNavbarLight ? "text-black/50" : "text-white/50"
+                        }`}
+                    >
+                      Industries
+                    </span>
                   </li>
 
                   <li>
@@ -746,26 +614,22 @@ const Navbar = () => {
               >
 
                 <div className="bg-gray-50 border border-gray-200 overflow-hidden">
-                  {/* Capabilities is the only category left now that Industries is
-                      removed, so it no longer needs its own nested open/close toggle —
-                      it just shows directly as soon as "What we do" itself is expanded. */}
-                  <div className="px-4 py-4">
-                    <span className="font-medium text-gray-800">
-                      Capabilities
-                    </span>
-                  </div>
-
-                  <div className="mx-4 border-t border-gray-200" />
-                  <ul className="pb-3">
-                    {servicesMenu.capabilities.map((item) => (
+                  <ul className="py-3">
+                    {servicesMenu.services.map((item) => (
                       <li key={item.name}>
-                        <Link
-                          href={item.href}
-                          onClick={closeMenu}
-                          className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#2d8ec5]"
-                        >
-                          {item.name}
-                        </Link>
+                        {item.href ? (
+                          <Link
+                            href={item.href}
+                            onClick={closeMenu}
+                            className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#2d8ec5]"
+                          >
+                            {item.name}
+                          </Link>
+                        ) : (
+                          <span className="block pl-8 pr-4 py-2 text-gray-400 cursor-default">
+                            {item.name}
+                          </span>
+                        )}
                       </li>
                     ))}
                   </ul>
