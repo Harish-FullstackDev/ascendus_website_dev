@@ -2,725 +2,256 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../assets/Brand/Ascendus_Logo_Secondary.png";
-import { useState } from "react";
-import { MdOutlineMailOutline } from "react-icons/md";
-import FBIcon from "../../assets/Footer/FacebookIcon.svg";
+import wordmark from "../../assets/Brand/Ascendus_Wordmark_OnDark.svg";
 import InstagramIcon from "../../assets/Footer/Instagram_Icon.svg";
 import LinkedinIcon from "../../assets/Footer/LinkedIn_Icon.svg";
 import TwitterIcon from "../../assets/Footer/X_Icon.svg";
-// import CalendlyIcon from "../../assets/Footer/CalendlyIcon.svg";
+
+const linkClass = "hover:text-white transition-colors duration-200";
+const labelClass = "text-gray-500 cursor-default";
+
+// One entry per footer column. The link row is a 7-column grid so every column
+// is the same width and the row can never wrap onto a second line; Industries
+// and Solutions each take two of those columns, the second carrying no heading.
+const columns = [
+  {
+    heading: "Industries",
+    items: [
+      { name: "Manufacturing" },
+      { name: "Retail & Consumer" },
+      { name: "Government & Public Sector" },
+      { name: "Banking & Financial Services" },
+      { name: "Energy & Utilities" },
+    ],
+  },
+  {
+    heading: null,
+    items: [
+      { name: "Engineering & Construction" },
+      { name: "Healthcare & Life Sciences" },
+      { name: "Technology, Media & Communications" },
+      { name: "Transportation & Logistics" },
+      { name: "Education & Research" },
+    ],
+  },
+  {
+    heading: "Solutions",
+    items: [
+      { name: "SAP S/4HANA", href: "/solutions" },
+      { name: "SAP Ariba", href: "/solutions" },
+      { name: "SAP SuccessFactors", href: "/solutions" },
+      { name: "SAP BTP", href: "/solutions" },
+      { name: "SAP Analytics", href: "/solutions" },
+    ],
+  },
+  {
+    heading: null,
+    items: [
+      { name: "SAP Integration", href: "/solutions" },
+      { name: "SAP EHS", href: "/solutions" },
+      { name: "SAP CX", href: "/solutions" },
+      { name: "RISE with SAP", href: "/solutions" },
+      { name: "GROW with SAP", href: "/solutions" },
+    ],
+  },
+  {
+    heading: "Services",
+    items: [
+      { name: "SAP Transformation", href: "/what-we-do/enterprise-transformation/sap-transformation" },
+      { name: "Business Transformation" },
+      { name: "Digital & Technology Transformation" },
+    ],
+  },
+  {
+    heading: "Insights",
+    items: [
+      { name: "Case Studies", href: "/case-studies" },
+      { name: "SAP Insights" },
+      { name: "Industry Insights", href: "/industry-reports" },
+      { name: "Blog", href: "/blog" },
+      { name: "Whitepapers", href: "/whitepapers" },
+    ],
+  },
+  {
+    heading: "Quick Links",
+    items: [
+      { name: "Home", href: "/" },
+      { name: "About Us", href: "/who-we-are" },
+      { name: "Partners", href: "/ascenduspartner" },
+      { name: "Careers", href: "/careers" },
+      { name: "Contact", href: "/contact" },
+      { name: "Book a call", href: "/book-a-consultation" },
+    ],
+  },
+];
+
+const socials = [
+  {
+    href: "https://www.linkedin.com/company/ascendus-company/?viewAsMember=true",
+    icon: LinkedinIcon,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://www.instagram.com/ascendus.ksa",
+    icon: InstagramIcon,
+    label: "Instagram",
+  },
+  {
+    href: "https://x.com/ascendus_ksa",
+    icon: TwitterIcon,
+    label: "Twitter",
+  },
+];
+
+const legalLines = [
+  [
+    { name: "Terms & Conditions", href: "/legal/terms" },
+    { name: "Privacy Policy", href: "/legal/privacy" },
+  ],
+  [
+    { name: "Security Policy", href: "/legal/security" },
+    { name: "Cookie Policy", href: "/legal/cookies" },
+    { name: "Disclaimer", href: "/legal/disclaimer" },
+  ],
+];
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-  const handleSendEmail = () => {
-    if (email) {
-      console.log("Sending email to:", email);
-      setEmail("");
-    }
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleSendEmail();
-    }
-  };
-
   return (
-    <>
-      <footer className="bg-neutral-900 text-gray-400 p-8 md:p-16 ">
-        <div className="relative h-8 w-auto aspect-[4/1] mb-6 md:hidden">
+    <footer className="bg-neutral-900 text-gray-400 px-8 pt-8 md:px-16 md:pt-16">
+      <div className="relative h-8 w-auto aspect-[4/1] mb-6 md:hidden">
+        <Image
+          src={logo}
+          alt="Ascendus Logo"
+          fill
+          style={{ objectFit: "contain", objectPosition: "left" }}
+        />
+      </div>
+
+      {/* Link row. Seven equal columns at md and up, so widths and gaps are
+          uniform and the row can never drop onto a second line. The resulting
+          column width is narrow enough that a long label such as
+          "Government & Public Sector" wraps its last word rather than
+          widening its column. */}
+      <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-7 md:gap-6 lg:gap-8 pb-10 md:pb-16">
+        {columns.map((column, index) => (
+          <div key={column.heading || "continued-" + index}>
+            {column.heading ? (
+              <h2 className="text-white text-base lg:text-lg font-semibold mb-4">
+                {column.heading}
+              </h2>
+            ) : (
+              /* Continuation column: an invisible heading keeps its first item
+                 level with the first item of the column it continues. */
+              <h2
+                className="hidden md:block text-white text-base lg:text-lg font-semibold mb-4 invisible"
+                aria-hidden="true"
+              >
+                &nbsp;
+              </h2>
+            )}
+
+            <ul className="space-y-2 text-sm">
+              {column.items.map((item) => (
+                <li key={item.name}>
+                  {/* Entries with no page yet stay plain labels rather than
+                      becoming links to nowhere. */}
+                  {item.href ? (
+                    <Link href={item.href} className={linkClass}>
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <span className={labelClass}>{item.name}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom band. The wordmark sits behind this whole block as a faint
+          backdrop, with the contact details, divider and legal lines on top. */}
+      <div className="relative overflow-hidden pt-10 md:pt-14 pb-6 md:pb-8">
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-4 md:bottom-6 flex justify-center"
+          aria-hidden="true"
+        >
           <Image
-            src={logo}
-            alt="Ascendus Logo"
-            fill
-            style={{
-              objectFit: "contain",
-              objectPosition: "left",
-            }}
+            src={wordmark}
+            alt=""
+            className="opacity-[0.12]"
+            style={{ width: "70%", height: "auto" }}
           />
         </div>
-        <div className="grid grid-cols-1 gap-8 md:flex md:flex-wrap md:gap-16  pb-4 md:pb-12 mb-2">
-          {/* Quick Link — single column. Services and Industries are dropped
-              here since they get their own dedicated footer columns below. */}
-          <div className="md:shrink-0">
-            <h2 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Quick Link</h2>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/who-we-are"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/ascenduspartner"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Partners
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/careers"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/book-a-consultation"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Book a call
-                </Link>
-              </li>
-            </ul>
-          </div>
 
-          {/* Services — three top-level services. Business Transformation and
-              Digital & Technology Transformation have no page yet, so they are
-              plain labels, matching how Industries is handled above. */}
-          <div className="md:shrink-0 md:max-w-[190px]">
-            <h2 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Services</h2>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/what-we-do/enterprise-transformation/sap-transformation"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  SAP Transformation
-                </Link>
-              </li>
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  Business Transformation
-                </span>
-              </li>
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  Digital &amp; Technology Transformation
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Solutions — same list as the navbar, 5 and 5 across two columns. */}
-          <div className="md:shrink-0">
-            <h2 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Solutions</h2>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
-                  SAP S/4HANA
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
-                  SAP Ariba
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
-                  SAP SuccessFactors
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
-                  SAP BTP
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
-                  SAP Analytics
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="md:shrink-0">
-            <h2 className="hidden md:block text-white text-lg font-semibold md:mt-21.5 mb-4 invisible" aria-hidden="true">
-              &nbsp;
-            </h2>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
-                  SAP Integration
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
-                  SAP EHS
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
-                  SAP CX
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
-                  RISE with SAP
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
-                  GROW with SAP
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Industries — same list as the navbar, 5 and 5 across two columns.
-              None of these have a page yet, so they render as plain labels
-              rather than links to nowhere. */}
-          <div className="md:shrink-0">
-            <h2 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Industries</h2>
-            <ul className="space-y-2">
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  Manufacturing
-                </span>
-              </li>
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  Retail &amp; Consumer
-                </span>
-              </li>
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  Government &amp; Public Sector
-                </span>
-              </li>
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  Banking &amp; Financial Services
-                </span>
-              </li>
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  Energy &amp; Utilities
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="md:shrink-0">
-            <h2 className="hidden md:block text-white text-lg font-semibold md:mt-21.5 mb-4 invisible" aria-hidden="true">
-              &nbsp;
-            </h2>
-            <ul className="space-y-2">
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  Engineering &amp; Construction
-                </span>
-              </li>
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  Healthcare &amp; Life Sciences
-                </span>
-              </li>
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  Technology, Media &amp; Communications
-                </span>
-              </li>
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  Transportation &amp; Logistics
-                </span>
-              </li>
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  Education &amp; Research
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Industries */}
-          {/* <div className="md:col-span-1">
-            <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Industries</h2>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/services/sapService/rise-with-sap"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Manufacturing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/enterpriseTransformation"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Construction & EPC
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#product"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Oil & Gas
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Retail
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Healthcare
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Logistics
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Government
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Utilities
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Financial Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Real Estate
-                </Link>
-              </li>
-            </ul>
-          </div> */}
-
-          {/* Support */}
-          <div className="md:shrink-0">
-            <h2 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Insights</h2>
-            <ul className="space-y-2">
-              {/* <li>
-                <Link
-                  href="#compliance"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Compliance
-                </Link>
-              </li> */}
-              <li>
-                <Link
-                  href="/case-studies"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Case Studies
-                </Link>
-              </li>
-              {/* SAP Insights has no page yet — plain non-interactive label
-                  until that content exists, rather than a link to nowhere. */}
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  SAP Insights
-                </span>
-              </li>
-              <li>
-                <Link
-                  href="/industry-reports"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Industry Insights
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/whitepapers"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Whitepapers
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Get In Touch */}
-          <div className="md:flex-1 md:min-w-[260px]">
-            <div className="hidden md:block relative h-8 sm:h-10 w-auto aspect-[4/1] mb-4 md:mb-[46px]">
-              <Image
-                src={logo}
-                alt="Ascendus Logo"
-                fill
-                style={{
-                  objectFit: "contain",
-                }}
-              />
-            </div>
-            <h2 className="text-white text-lg font-semibold mb-4">
-              Get In Touch
-            </h2>
-            <ul className="space-y-2">
-              <li>
-                <p>
-                  Headquarters
-                </p>
-              </li>
-              <li>
-
-                <a
-                  href="https://maps.app.goo.gl/r13crYbGJBBuQiSE7"
-                  className="hover:text-white transition-colors duration-200"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  7731 King Saud Ibn Abdulaziz Saud,<br /> 2839 Al Murabba Dist., <br /> Riyadh 12624, KSA
-
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:info@ascendus.sa"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  info@ascendus.sa
-                </a>
-              </li>
-            </ul>
-            {/* <div className="w-full max-w-xs mt-24 space-y-3">
-              <label className="text-white text-sm sm:text-base font-normal block text-start">
-                News Letter
-              </label>
-
-              <div className="relative w-full">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Enter your email address"
-                  className="w-full pr-10 px-3 sm:px-4 py-2 sm:py-3  border-b border-white/20 rounded-none text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
-                />
-                <MdOutlineMailOutline className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white text-lg" />
-              </div>
-            </div> */}
-            <div className="flex space-x-3 md:col-span-1 min-h-[50px] mb-2 mt-4">
+        <div className="relative">
+          <div className="flex justify-center gap-3 mb-8">
+            {socials.map((social) => (
               <a
-                href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
+                key={social.label}
+                href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-                aria-label="LinkedIn"
+                aria-label={social.label}
               >
                 <Image
-                  src={LinkedinIcon}
-                  alt="LinkedIn"
+                  src={social.icon}
+                  alt={social.label}
                   className="w-10 h-10"
                   width={24}
                   height={24}
                 />
               </a>
-              <a
-                href="https://www.instagram.com/ascendus.ksa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-                aria-label="Instagram"
-              >
-                <Image
-                  src={InstagramIcon}
-                  alt="Instagram"
-                  className="w-10 h-10"
-                  width={24}
-                  height={24}
-                />
-              </a>
-              <a
-                href="https://x.com/ascendus_ksa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-                aria-label="Twitter"
-              >
-                <Image
-                  src={TwitterIcon}
-                  alt="Twitter"
-                  className="w-10 h-10"
-                  width={24}
-                  height={24}
-                />
-              </a>
-            </div>
+            ))}
           </div>
 
-        </div>
+          {/* Centred and centre-aligned, so the successively shorter lines
+              taper the way the address reads on paper. */}
+          <div className="text-center text-sm space-y-1">
+            <p className="text-white font-medium">Headquarters</p>
+            <a
+              href="https://maps.app.goo.gl/r13crYbGJBBuQiSE7"
+              className={"block " + linkClass}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              7731 King Saud Ibn Abdulaziz Saud,
+              <br />
+              2839 Al Murabba Dist.,
+              <br />
+              Riyadh 12624, KSA
+            </a>
+            <a href="mailto:info@ascendus.sa" className={"block " + linkClass}>
+              info@ascendus.sa
+            </a>
+          </div>
 
-        {/* policy  */}
-        <div className="grid grid-cols-1 md:grid-cols-6  md:gap-16  ">
-
-          <div className="md:col-span-2 ">
-            <div className="space-x-3 md:col-span-1">
-              <p className="text-sm text-white mb-4 md:mb-0">
-                <a
-                  href="/legal/terms"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Terms & Conditions
-                </a>
-                {" | "}
-                <a
-                  href="/legal/privacy"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Privacy Policy
-                </a>
-                <br />
-                <a
-                  href="/legal/security"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Security Policy
-                </a>
-                {" | "}
-                <a
-                  href="/legal/cookies"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Cookie Policy
-                </a>
-                {" | "}
-                <a
-                  href="/legal/disclaimer"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Disclaimer
-                </a>
-              </p>
-            </div>
-            <p className="text-sm text-white flex items-center min-h-[50px]">
+          <div className="border-t border-white/15 mt-8 pt-6 text-center text-sm">
+            <p className="text-white">
+              {legalLines.map((line, lineIndex) => (
+                <span key={lineIndex} className="block">
+                  {line.map((item, itemIndex) => (
+                    <span key={item.href}>
+                      {itemIndex > 0 && " | "}
+                      <a
+                        href={item.href}
+                        className="hover:text-gray-300 transition-colors"
+                      >
+                        {item.name}
+                      </a>
+                    </span>
+                  ))}
+                </span>
+              ))}
+            </p>
+            <p className="text-white mt-3">
               © 2026 Ascendus. All Rights Reserved.
             </p>
           </div>
-
-
-
-
-          {/* <a
-              href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="LinkedIn"
-            >
-              <Image
-                src={LinkedinIcon}
-                alt="LinkedIn"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/ascendus.ksa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="Instagram"
-            >
-              <Image
-                src={InstagramIcon}
-                alt="Instagram"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a> */}
-          {/* <a
-              href="https://calendly.com/ascendus"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="Calendly"
-            >
-              <Image
-                src={CalendlyIcon}
-                alt="Calendly"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a> */}
-
-          <div className="flex space-x-3 md:col-span-1">
-            {/* <a
-              href="#"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="Facebook"
-            >
-              <Image
-                src={FBIcon}
-                alt="Facebook"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a> */}
-
-            {/* <a
-              href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="LinkedIn"
-            >
-              <Image
-                src={LinkedinIcon}
-                alt="LinkedIn"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a>
-            <a
-              href="#"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="Twitter"
-            >
-              <Image
-                src={TwitterIcon}
-                alt="Twitter"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a> */}
-          </div>
-
-          <div className="md:col-span-1"></div>
-
-          <div className="md:col-span-1"></div>
-          {/* <div className="flex space-x-3 md:col-span-1 min-h-[50px] mb-2">
-            <a
-              href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="LinkedIn"
-            >
-              <Image
-                src={LinkedinIcon}
-                alt="LinkedIn"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/ascendus.ksa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="Instagram"
-            >
-              <Image
-                src={InstagramIcon}
-                alt="Instagram"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a>
-          </div> */}
-          {/* <div className="md:col-span-2 ">
-            <div className="space-x-3 md:col-span-1">
-              <p className="text-sm text-white mb-4 md:mb-0">
-                <a
-                  href="/legal/terms"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Terms & Conditions
-                </a>
-                {" | "}
-                <a
-                  href="/legal/privacy"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Privacy Policy
-                </a>
-                <br />
-                <a
-                  href="/legal/security"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Security Policy
-                </a>
-                {" | "}
-                <a
-                  href="/legal/cookies"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Cookie Policy
-                </a>
-              </p>
-            </div>
-            <p className="text-sm text-white flex items-center min-h-[50px]">
-              © 2026 Ascendus. All Rights Reserved.
-            </p>
-          </div> */}
         </div>
-      </footer >
-    </>
+      </div>
+    </footer>
   );
 };
 
