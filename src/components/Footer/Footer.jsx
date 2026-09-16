@@ -43,7 +43,7 @@ const Footer = () => {
           {/* Quick Link — single column. Services and Industries are dropped
               here since they get their own dedicated footer columns below. */}
           <div className="md:shrink-0">
-            <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Quick Link</h2>
+            <h2 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Quick Link</h2>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -51,14 +51,6 @@ const Footer = () => {
                   className="hover:text-white transition-colors duration-200"
                 >
                   Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/solutions"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Solutions
                 </Link>
               </li>
               <li>
@@ -108,7 +100,7 @@ const Footer = () => {
               Digital & Technology Transformation have no page yet, so they are
               plain labels, matching how Industries is handled above. */}
           <div className="md:shrink-0 md:max-w-[190px]">
-            <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Services</h2>
+            <h2 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Services</h2>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -131,11 +123,76 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Solutions — same list as the navbar, 5 and 5 across two columns. */}
+          <div className="md:shrink-0">
+            <h2 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Solutions</h2>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
+                  SAP S/4HANA
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
+                  SAP Ariba
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
+                  SAP SuccessFactors
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
+                  SAP BTP
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
+                  SAP Analytics
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="md:shrink-0">
+            <h2 className="hidden md:block text-white text-lg font-semibold md:mt-21.5 mb-4 invisible" aria-hidden="true">
+              &nbsp;
+            </h2>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
+                  SAP Integration
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
+                  SAP EHS
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
+                  SAP CX
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
+                  RISE with SAP
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions" className="hover:text-white transition-colors duration-200">
+                  GROW with SAP
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Industries — same list as the navbar, 5 and 5 across two columns.
               None of these have a page yet, so they render as plain labels
               rather than links to nowhere. */}
           <div className="md:shrink-0">
-            <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Industries</h2>
+            <h2 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Industries</h2>
             <ul className="space-y-2">
               <li>
                 <span className="text-gray-500 cursor-default">
@@ -166,7 +223,7 @@ const Footer = () => {
           </div>
 
           <div className="md:shrink-0">
-            <h2 className="hidden md:block text-white text-base font-semibold md:mt-21.5 mb-4 invisible" aria-hidden="true">
+            <h2 className="hidden md:block text-white text-lg font-semibold md:mt-21.5 mb-4 invisible" aria-hidden="true">
               &nbsp;
             </h2>
             <ul className="space-y-2">
@@ -287,7 +344,7 @@ const Footer = () => {
 
           {/* Support */}
           <div className="md:shrink-0">
-            <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Insights</h2>
+            <h2 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Insights</h2>
             <ul className="space-y-2">
               {/* <li>
                 <Link
@@ -351,7 +408,7 @@ const Footer = () => {
                 }}
               />
             </div>
-            <h2 className="text-white text-base font-semibold mb-4">
+            <h2 className="text-white text-lg font-semibold mb-4">
               Get In Touch
             </h2>
             <ul className="space-y-2">
