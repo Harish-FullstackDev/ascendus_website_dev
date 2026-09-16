@@ -140,7 +140,7 @@ function ITServicesLanding() {
         >
           {/* Network Design Card with Motion */}
           <motion.div 
-            className="relative rounded-2xl p-6 shadow-sm h-89 overflow-hidden"
+            className="relative p-6 shadow-sm h-89 overflow-hidden"
             variants={serviceCardVariants(0.2)}
             initial="hidden"
             whileInView="visible"
@@ -152,7 +152,7 @@ function ITServicesLanding() {
             whileTap={{ scale: 0.98 }}
           >
             {/* Background Image */}
-            <div className="absolute inset-0 rounded-2xl overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden">
               <Image
                 src="/SolutionPage/Website.png"
                 alt="Website background"
@@ -183,7 +183,7 @@ function ITServicesLanding() {
                 transition={{ duration: 0.5, delay: 1.0 }}
               >
                 <motion.button 
-                  className="bg-white text-black cursor-pointer mb-15 px-4 py-2 rounded-lg text-sm font-medium  "
+                  className="bg-white text-black cursor-pointer mb-15 px-4 py-2 text-sm font-medium  "
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -195,7 +195,7 @@ function ITServicesLanding() {
 
           {/* Cloud Solutions Card - Featured with Motion */}
           <motion.div 
-            className="rounded-2xl relative overflow-hidden"
+            className="relative overflow-hidden"
             variants={serviceCardVariants(0.4)}
             initial="hidden"
             whileInView="visible"
@@ -217,7 +217,7 @@ function ITServicesLanding() {
                 transition={{ duration: 0.6, delay: 1.0 }}
               >
                 <motion.button 
-                  className="bg-[#1D1D1D] rounded-2xl cursor-pointer text-white w-full h-12 sm:h-16 text-lg sm:text-md mb-3 font-medium px-4"
+                  className="bg-[#1D1D1D] cursor-pointer text-white w-full h-12 sm:h-16 text-lg sm:text-md mb-3 font-medium px-4"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -237,7 +237,7 @@ function ITServicesLanding() {
                   alt="Website"
                   width={800}
                   height={800}
-                  className="object-cover rounded-2xl w-full lg:h-[280px] h-[350px]"
+                  className="object-cover w-full lg:h-[280px] h-[350px]"
                 />
               </motion.div>
               
@@ -264,7 +264,7 @@ function ITServicesLanding() {
 
           {/* System Upgrades Card with Motion */}
           <motion.div 
-            className="relative rounded-2xl p-6 shadow-sm h-89 overflow-hidden"
+            className="relative p-6 shadow-sm h-89 overflow-hidden"
             variants={serviceCardVariants(0.6)}
             initial="hidden"
             whileInView="visible"
@@ -276,7 +276,7 @@ function ITServicesLanding() {
             whileTap={{ scale: 0.98 }}
           >
             {/* Background Image */}
-            <div className="absolute inset-0 rounded-2xl overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden">
               <Image
                src="/SolutionPage/Website.png"
                 alt="Website background"
@@ -307,7 +307,7 @@ function ITServicesLanding() {
                 transition={{ duration: 0.5, delay: 1.0 }}
               >
                 <motion.button 
-                  className="bg-white text-black mb-15 px-4 py-2 rounded-lg cursor-pointer text-sm font-medium transition-colors"
+                  className="bg-white text-black mb-15 px-4 py-2 cursor-pointer text-sm font-medium transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -327,7 +327,7 @@ function ITServicesLanding() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <motion.button 
-            className="bg-[#1D1D1D] rounded-2xl cursor-pointer text-white w-50 max-w-md h-12 text-lg font-medium px-6"
+            className="bg-[#1D1D1D] cursor-pointer text-white w-50 max-w-md h-12 text-lg font-medium px-6"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >

@@ -158,19 +158,19 @@ function Header() {
             className="lg:col-span-2 relative group cursor-pointer w-full max-w-sm mx-auto lg:max-w-md"
             variants={imageVariants}
           >
-            <div className="aspect-[1/1] w-full rounded-2xl relative overflow-hidden">
+            <div className="aspect-[1/1] w-full relative overflow-hidden">
               <Image
                 src="/SolutionPage/SolutionHeader.png"
                 alt="AI Boosted Business Innovation - VR Technology"
                 fill
-                className="object-contain rounded-2xl "
+                className="object-contain "
                 // transition-transform duration-700 ease-out group-hover:scale-105
                 priority
               />
             </div>
 
             {/* Subtle glow effect */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-blue-500/10 rounded-3xl blur-xl opacity-50"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-blue-500/10 blur-xl opacity-50"></div>
           </motion.div>
         </div>
       </motion.div>

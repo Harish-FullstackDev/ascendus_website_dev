@@ -50,7 +50,7 @@ const Card = ({ title, description, onCardClick, imageSrc, reportType, stats, bo
       viewport={{ once: true, amount: 0.3 }}
     >
       <motion.div 
-        className="relative w-full h-[18rem] rounded-3xl overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105"
+        className="relative w-full h-[18rem] overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={onCardClick}
