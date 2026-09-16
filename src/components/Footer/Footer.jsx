@@ -55,41 +55,45 @@ const Footer = () => {
                     Home
                   </Link>
                 </li>
-                {/* <li>
-                  <Link
-                    href="/services"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    What we do
-                  </Link>
-                </li> */}
-
                 <li>
                   <Link
-                    href="/who-we-are"
+                    href="/what-we-do/enterprise-transformation"
                     className="hover:text-white transition-colors duration-200"
                   >
-                    Who we are
+                    Services
                   </Link>
                 </li>
-
-                {/* <li>
+                <li>
                   <Link
                     href="/solutions"
                     className="hover:text-white transition-colors duration-200"
                   >
                     Solutions
                   </Link>
-                </li> */}
+                </li>
+                {/* Industries has no page yet — plain non-interactive label
+                    until that content exists, rather than a link to nowhere. */}
+                <li>
+                  <span className="text-gray-500 cursor-default">
+                    Industries
+                  </span>
+                </li>
                 <li>
                   <Link
-                    href="/contact"
+                    href="/who-we-are"
                     className="hover:text-white transition-colors duration-200"
                   >
-                    Contact
+                    About Us
                   </Link>
                 </li>
-
+                <li>
+                  <Link
+                    href="/ascenduspartner"
+                    className="hover:text-white transition-colors duration-200"
+                  >
+                    Partners
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href="/careers"
@@ -98,30 +102,14 @@ const Footer = () => {
                     Careers
                   </Link>
                 </li>
-                {/* <li>
-                <Link
-                  href="/ascenduspartner"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Ascendus Partnership
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/careers"
-                  className="hover:text-white hover:underline-offset-8 transition-colors duration-200"
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/trustcenter"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Trust Center
-                </Link>
-              </li> */}
+                <li>
+                  <Link
+                    href="/contact"
+                    className="hover:text-white transition-colors duration-200"
+                  >
+                    Contact
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href="/book-a-consultation"
@@ -130,22 +118,6 @@ const Footer = () => {
                     Book a call
                   </Link>
                 </li>
-                {/* <li>
-                <Link
-                  href="#contact"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#careers"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  News Letter
-                </Link>
-              </li> */}
               </ul>
             </div>
 
