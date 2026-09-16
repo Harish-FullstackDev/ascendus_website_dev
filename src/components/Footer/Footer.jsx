@@ -274,12 +274,19 @@ const Footer = () => {
                   Case Studies
                 </Link>
               </li>
+              {/* SAP Insights has no page yet — plain non-interactive label
+                  until that content exists, rather than a link to nowhere. */}
+              <li>
+                <span className="text-gray-500 cursor-default">
+                  SAP Insights
+                </span>
+              </li>
               <li>
                 <Link
-                  href="/whitepapers"
+                  href="/industry-reports"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  Whitepapers
+                  Industry Insights
                 </Link>
               </li>
               <li>
@@ -292,18 +299,11 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/industry-reports"
+                  href="/whitepapers"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  Industry Insights
+                  Whitepapers
                 </Link>
-              </li>
-              {/* SAP Insights has no page yet — plain non-interactive label
-                  until that content exists, rather than a link to nowhere. */}
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  SAP Insights
-                </span>
               </li>
             </ul>
           </div>

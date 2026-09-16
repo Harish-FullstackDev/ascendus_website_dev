@@ -165,6 +165,11 @@ const Navbar = () => {
     servicesMenu.industries.slice(6),
   ];
 
+  const solutionsColumns = [
+    solutionsMenu.slice(0, 5),
+    solutionsMenu.slice(5),
+  ];
+
   return (
     <>
       <nav
@@ -359,6 +364,68 @@ const Navbar = () => {
                       className={`${navLinkClass} after:content-none flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
+                      Solutions
+
+                      <svg
+                        className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+
+                    {/* Same hover-bridge/dropdown mechanics as the Services menu above,
+                        two columns since there are 10 solutions. */}
+                    <div
+                      className="
+                        invisible opacity-0 translate-y-3
+                        group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
+                        transition-all duration-300
+                        absolute left-0 top-full pt-[24px] z-50
+                      "
+                    >
+                      <div
+                        className={`shadow-2xl min-w-[420px] p-6 border transition-colors duration-500 backdrop-blur-xl ${isNavbarLight
+                          ? "bg-white/80 border-gray-200/30 text-gray-800"
+                          : "bg-white/10 border-white/20 text-white"
+                          }`}
+                      >
+                        <div className="grid grid-cols-2 gap-8">
+                          {solutionsColumns.map((column, columnIndex) => (
+                            <ul key={columnIndex} className="space-y-2">
+                              {column.map((item) => (
+                                <li key={item.name}>
+                                  <Link
+                                    href={item.href}
+                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
+                                      ? "hover:bg-gray-100 text-gray-700"
+                                      : "hover:bg-white/10 text-white/80"
+                                      }`}
+                                  >
+                                    {item.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li className="relative group">
+                    <button
+                      type="button"
+                      className={`${navLinkClass} after:content-none flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
+                        }`}
+                    >
                       Industries
 
                       <svg
@@ -414,17 +481,6 @@ const Navbar = () => {
                         </div>
                       </div>
                     </div>
-                  </li>
-
-                  {/* Industries has no page yet — plain non-interactive label until
-                      that content exists, rather than a link to nowhere. */}
-                  <li>
-                    <span
-                      className={`${navLinkClass} after:content-none cursor-default ${isNavbarLight ? "text-black/50" : "text-white/50"
-                        }`}
-                    >
-                      Industries
-                    </span>
                   </li>
 
                   <li>
