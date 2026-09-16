@@ -40,9 +40,8 @@ const Footer = () => {
           />
         </div>
         <div className="grid grid-cols-1 gap-8 md:flex md:flex-wrap md:gap-16  pb-4 md:pb-12 mb-2">
-          {/* Quick Link — nine links across two columns, 5 then 4. Both are
-              real grid columns rather than a nested grid, so the gap between
-              them is the same gap that separates every other footer column. */}
+          {/* Quick Link — single column. Services and Industries are dropped
+              here since they get their own dedicated footer columns below. */}
           <div className="md:shrink-0">
             <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Quick Link</h2>
             <ul className="space-y-2">
@@ -56,24 +55,11 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/what-we-do/enterprise-transformation"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/solutions"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Solutions
                 </Link>
-              </li>
-              <li>
-                <span className="text-gray-500 cursor-default">
-                  Industries
-                </span>
               </li>
               <li>
                 <Link
@@ -83,14 +69,6 @@ const Footer = () => {
                   About Us
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          <div className="md:shrink-0">
-            <h2 className="hidden md:block text-white text-base font-semibold md:mt-21.5 mb-4 invisible" aria-hidden="true">
-              &nbsp;
-            </h2>
-            <ul className="space-y-2">
               <li>
                 <Link
                   href="/ascenduspartner"
@@ -166,22 +144,22 @@ const Footer = () => {
               </li>
               <li>
                 <span className="text-gray-500 cursor-default">
-                  Construction &amp; EPC
+                  Retail &amp; Consumer
                 </span>
               </li>
               <li>
                 <span className="text-gray-500 cursor-default">
-                  Oil &amp; Gas
+                  Government &amp; Public Sector
                 </span>
               </li>
               <li>
                 <span className="text-gray-500 cursor-default">
-                  Retail
+                  Banking &amp; Financial Services
                 </span>
               </li>
               <li>
                 <span className="text-gray-500 cursor-default">
-                  Healthcare
+                  Energy &amp; Utilities
                 </span>
               </li>
             </ul>
@@ -194,27 +172,27 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <span className="text-gray-500 cursor-default">
-                  Logistics
+                  Engineering &amp; Construction
                 </span>
               </li>
               <li>
                 <span className="text-gray-500 cursor-default">
-                  Government
+                  Healthcare &amp; Life Sciences
                 </span>
               </li>
               <li>
                 <span className="text-gray-500 cursor-default">
-                  Utilities
+                  Technology, Media &amp; Communications
                 </span>
               </li>
               <li>
                 <span className="text-gray-500 cursor-default">
-                  Financial Services
+                  Transportation &amp; Logistics
                 </span>
               </li>
               <li>
                 <span className="text-gray-500 cursor-default">
-                  Real Estate
+                  Education &amp; Research
                 </span>
               </li>
             </ul>
@@ -390,7 +368,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., <br /> Riyadh 12624, KSA
+                  7731 King Saud Ibn Abdulaziz Saud,<br /> 2839 Al Murabba Dist., <br /> Riyadh 12624, KSA
 
                 </a>
               </li>

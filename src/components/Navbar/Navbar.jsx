@@ -134,16 +134,16 @@ const Navbar = () => {
     // gets its own route, same stand-in as the Solutions dropdown.
     industries: [
       { name: "Manufacturing", href: "/solutions" },
-      { name: "Construction & EPC", href: "/solutions" },
-      { name: "Oil & Gas", href: "/solutions" },
-      { name: "Retail", href: "/solutions" },
-      { name: "Healthcare", href: "/solutions" },
-      { name: "Logistics", href: "/solutions" },
+      { name: "Retail & Consumer", href: "/solutions" },
+      { name: "Government & Public Sector", href: "/solutions" },
+      { name: "Banking & Financial Services", href: "/solutions" },
+      { name: "Energy & Utilities", href: "/solutions" },
 
-      { name: "Government", href: "/solutions" },
-      { name: "Utilities", href: "/solutions" },
-      { name: "Financial Services", href: "/solutions" },
-      { name: "Real Estate", href: "/solutions" },
+      { name: "Engineering & Construction", href: "/solutions" },
+      { name: "Healthcare & Life Sciences", href: "/solutions" },
+      { name: "Technology, Media & Communications", href: "/solutions" },
+      { name: "Transportation & Logistics", href: "/solutions" },
+      { name: "Education & Research", href: "/solutions" },
     ],
   };
 
@@ -455,7 +455,7 @@ const Navbar = () => {
                       "
                     >
                       <div
-                        className={`shadow-2xl min-w-[420px] p-6 border transition-colors duration-500 backdrop-blur-xl ${isNavbarLight
+                        className={`shadow-2xl min-w-[620px] p-6 border transition-colors duration-500 backdrop-blur-xl ${isNavbarLight
                           ? "bg-white/80 border-gray-200/30 text-gray-800"
                           : "bg-white/10 border-white/20 text-white"
                           }`}
@@ -467,7 +467,7 @@ const Navbar = () => {
                                 <li key={item.name}>
                                   <Link
                                     href={item.href}
-                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
+                                    className={`block px-2 py-1 rounded-md text-sm transition whitespace-nowrap ${isNavbarLight
                                       ? "hover:bg-gray-100 text-gray-700"
                                       : "hover:bg-white/10 text-white/80"
                                       }`}
