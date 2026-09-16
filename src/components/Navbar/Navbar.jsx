@@ -25,7 +25,6 @@ const Navbar = () => {
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isCapabilitiesOpen, setIsCapabilitiesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
 
   const lightThemeRoutes = ["/legal/privacy/", "/ascenduserrors/", "/legal/terms/"];
@@ -121,20 +120,13 @@ const Navbar = () => {
 
 
   const servicesMenu = {
-    capabilities: [
-      { name: "Enterprise Transformation", href: "/what-we-do/enterprise-transformation" },
-      { name: "Artificial Intelligence", href: "/what-we-do/artificial-intelligence" },
-      { name: "Cloud & Infrastructure", href: "/what-we-do/cloud-infrastructure" },
-      { name: "Data & Intelligence", href: "/what-we-do/data-intelligence" },
-      { name: "Digital Engineering", href: "/what-we-do/digital-engineering" },
-      { name: "Customer Experience", href: "/what-we-do/customer-experience" },
-
-      { name: "Experience Design", href: "/what-we-do/experience-design" },
-      { name: "Intelligent Automation", href: "/what-we-do/intelligent-automation" },
-      { name: "Cybersecurity & Digital Trust", href: "/what-we-do/cybersecurity-digital-trust" },
-      { name: "Managed Services", href: "/what-we-do/managed-services" },
-      { name: "Business Advisory", href: "/what-we-do/business-advisory" },
-      { name: "Innovation & Emerging Technologies", href: "/what-we-do/innovation-emerging-technologies" },
+    // Only three top-level services now. Business Transformation and Digital &
+    // Technology Transformation have no page yet, so they carry no href and
+    // render as plain labels rather than links to nowhere.
+    services: [
+      { name: "SAP Transformation", href: "/what-we-do/enterprise-transformation/sap-transformation" },
+      { name: "Business Transformation" },
+      { name: "Digital & Technology Transformation" },
     ],
 
     industries: [
@@ -151,11 +143,6 @@ const Navbar = () => {
       { name: "Real Estate", href: "/services" },
     ],
   };
-
-  const capabilityColumns = [
-    servicesMenu.capabilities.slice(0, 6),
-    servicesMenu.capabilities.slice(6),
-  ];
 
   const solutionsMenu = [
     { name: "ERP", href: "/solutions/erp/Hanaonpremises" },
@@ -326,105 +313,35 @@ const Navbar = () => {
                         //   ? "bg-white/80 border-gray-200/30 text-gray-800"
                         //   : "bg-neutral-900/80 border-white/20 text-white"
                         //   }`}
-                        className={`shadow-2xl min-w-[990px] p-8 pl-20 border transition-colors duration-500 backdrop-blur-xl ${isNavbarLight
+                        className={`shadow-2xl min-w-[320px] p-6 border transition-colors duration-500 backdrop-blur-xl ${isNavbarLight
                           ? "bg-white/80 border-gray-200/30 text-gray-800"
                           : "bg-white/10 border-white/20 text-white"
                           }`}
                       >
-                        {/* <div className="grid grid-cols-4 gap-10"> */}
-                        <div className="grid grid-cols-2 gap-10">
-
-                          {/* Capability Column 1 */}
-                          <div>
-                            <h3
-                              className={`text-sm font-semibold uppercase tracking-wider mb-5 ${isNavbarLight ? "text-black" : "text-white"
-                                }`}
-                            >
-                              Capabilities
-                            </h3>
-
-                            <ul className="space-y-2">
-                              {capabilityColumns[0].map((item) => (
-                                <li key={item.name}>
-                                  <Link
-                                    href={item.href}
-                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
-                                      ? "hover:bg-gray-100 text-gray-700"
-                                      : "hover:bg-white/10 text-white/80"
-                                      }`}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* Capability Column 2 */}
-                          <div className="pt-9">
-                            <ul className="space-y-2">
-                              {capabilityColumns[1].map((item) => (
-                                <li key={item.name}>
-                                  <Link
-                                    href={item.href}
-                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
-                                      ? "hover:bg-gray-100 text-gray-700"
-                                      : "hover:bg-white/10 text-white/80"
-                                      }`}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* Industry Column 1 */}
-                          {/* <div>
-                            <h3
-                              className={`text-sm font-semibold uppercase tracking-wider mb-5 ${isNavbarLight ? "text-black" : "text-white"
-                                }`}
-                            >
-                              Industries
-                            </h3>
- 
-                            <ul className="space-y-2">
-                              {industryColumns[0].map((item) => (
-                                <li key={item.name}>
-                                  <Link
-                                    href={item.href}
-                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
-                                      ? "hover:bg-gray-100 text-gray-700"
-                                      : "hover:bg-white/10 text-white/80"
-                                      }`}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div> */}
-
-                          {/* Industry Column 2 */}
-                          {/* <div className="pt-9">
-                            <ul className="space-y-2">
-                              {industryColumns[1].map((item) => (
-                                <li key={item.name}>
-                                  <Link
-                                    href={item.href}
-                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
-                                      ? "hover:bg-gray-100 text-gray-700"
-                                      : "hover:bg-white/10 text-white/80"
-                                      }`}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div> */}
-
-                        </div>
+                        <ul className="space-y-2">
+                          {servicesMenu.services.map((item) => (
+                            <li key={item.name}>
+                              {item.href ? (
+                                <Link
+                                  href={item.href}
+                                  className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
+                                    ? "hover:bg-gray-100 text-gray-700"
+                                    : "hover:bg-white/10 text-white/80"
+                                    }`}
+                                >
+                                  {item.name}
+                                </Link>
+                              ) : (
+                                <span
+                                  className={`block px-2 py-1 text-sm cursor-default ${isNavbarLight ? "text-gray-400" : "text-white/40"
+                                    }`}
+                                >
+                                  {item.name}
+                                </span>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </li>
@@ -685,26 +602,22 @@ const Navbar = () => {
               >
 
                 <div className="bg-gray-50 border border-gray-200 overflow-hidden">
-                  {/* Capabilities is the only category left now that Industries is
-                      removed, so it no longer needs its own nested open/close toggle —
-                      it just shows directly as soon as "What we do" itself is expanded. */}
-                  <div className="px-4 py-4">
-                    <span className="font-medium text-gray-800">
-                      Capabilities
-                    </span>
-                  </div>
-
-                  <div className="mx-4 border-t border-gray-200" />
-                  <ul className="pb-3">
-                    {servicesMenu.capabilities.map((item) => (
+                  <ul className="py-3">
+                    {servicesMenu.services.map((item) => (
                       <li key={item.name}>
-                        <Link
-                          href={item.href}
-                          onClick={closeMenu}
-                          className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#2d8ec5]"
-                        >
-                          {item.name}
-                        </Link>
+                        {item.href ? (
+                          <Link
+                            href={item.href}
+                            onClick={closeMenu}
+                            className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#2d8ec5]"
+                          >
+                            {item.name}
+                          </Link>
+                        ) : (
+                          <span className="block pl-8 pr-4 py-2 text-gray-400 cursor-default">
+                            {item.name}
+                          </span>
+                        )}
                       </li>
                     ))}
                   </ul>
