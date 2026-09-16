@@ -14,7 +14,7 @@ export default function SoftwareScalability() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
+                <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
                     Software Scalability
                 </h2>
 
@@ -51,7 +51,7 @@ export default function SoftwareScalability() {
                             Strategy That Becomes a Roadmap, Not a Deck
                         </h2>
 
-                        <p className="text-sm sm:text-lg text-[#55595E] font-light">
+                        <p className="text-base sm:text-lg text-[#55595E] font-light">
                             We translate business and digital strategy
                             into a sequenced transformation roadmap with clear ownership, dependencies, and
                             milestones, so it survives the handoff from strategy to delivery.
@@ -60,7 +60,7 @@ export default function SoftwareScalability() {
                             Process Change People Actually Adopt
                         </h2>
 
-                        <p className="text-sm sm:text-lg text-[#55595E] font-light">
+                        <p className="text-base sm:text-lg text-[#55595E] font-light">
                             We pair process reengineering with structured
                             change management, because a redesigned process that nobody follows delivers zero value,
                             no matter how sound the design.

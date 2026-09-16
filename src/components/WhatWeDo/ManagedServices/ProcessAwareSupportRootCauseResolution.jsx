@@ -94,8 +94,8 @@ export default function ProcessAwareSupportRootCauseResolution() {
                 <div className="flex flex-col gap-8 bg-[#f5f5f5] px-6 py-6">
                     {TIERS.map((tier) => (
                         <div key={tier.n} className="border border-black bg-white p-5">
-                            <p className="text-base sm:text-lg leading-snug text-black">{tier.title}</p>
-                            <p className="mt-4 text-sm font-light text-black">{tier.desc}</p>
+                            <h2 className="text-base sm:text-lg font-semibold leading-snug text-[#2E3033]">{tier.title}</h2>
+                            <p className="mt-4 text-sm font-light text-[#55595E]">{tier.desc}</p>
                         </div>
                     ))}
                 </div>

@@ -34,7 +34,7 @@ export default function OurCulture() {
                 >
                     <div>
                         <p className="text-base sm:text-lg text-black">Life Here</p>
-                        <h2 className="text-xl font-semibold text-[#2E3033] mt-1">A team built around how the work gets done.</h2>
+                        <h2 className="text-xl font-semibold text-[#2E3033] mt-1">A Team Built Around How The Work Gets Done.</h2>
                     </div>
                     <p className="text-sm sm:text-lg text-[#55595E] font-light leading-relaxed">
                         We value clarity, accountability and collaboration because complex work demands all three.

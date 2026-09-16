@@ -50,7 +50,17 @@ export default function ModernInfrastructure() {
 
             {/* Mobile: stacked list — the 5-column image banner has no room to breathe
                 this narrow, so swap it for the same card-list pattern used by
-                Change Management on Business Advisory. */}
+                Change Management on Business Advisory. Title/subtitle repeated here
+                since the desktop pair above lives inside the hidden banner block. */}
+            <div className="flex sm:hidden flex-col items-center gap-2 text-center px-6">
+                <h2 className="text-[#2E3033] text-xl font-semibold">
+                    Modern Infrastructure & Security Operations
+                </h2>
+                <p className="text-[#55595E] text-sm font-light">
+                    Extended technical services including DevSecOps, automation, and recovery
+                </p>
+            </div>
+
             <div className="flex sm:hidden w-full flex-col gap-3 px-6">
                 {STEPS.map((step, index) => (
                     <motion.div
@@ -61,7 +71,7 @@ export default function ModernInfrastructure() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="flex gap-4 rounded-[10px] bg-[#F5F6F6] px-5 py-4"
                     >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0A3A52] text-sm font-semibold text-white">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#00447A] text-sm font-semibold text-white">
                             {index + 1}
                         </div>
                         <div className="flex flex-col gap-1">

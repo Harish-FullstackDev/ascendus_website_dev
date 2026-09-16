@@ -34,7 +34,7 @@ export default function LearningDevelopment() {
                 >
                     <div>
                         <p className="text-base sm:text-lg text-black">Growth & Development</p>
-                        <h2 className="text-xl font-semibold text-[#2E3033] mt-1">Build depth through the work you deliver.</h2>
+                        <h2 className="text-xl font-semibold text-[#2E3033] mt-1">Build Depth Through the Work You Deliver.</h2>
                     </div>
                     <div className="text-sm sm:text-lg text-[#55595E] leading-relaxed space-y-1">
                         <p className="text-sm sm:text-lg text-[#55595E] font-light leading-relaxed">
