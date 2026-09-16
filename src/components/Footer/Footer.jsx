@@ -548,6 +548,13 @@ const Footer = () => {
                 >
                   Cookie Policy
                 </a>
+                {" | "}
+                <a
+                  href="/legal/disclaimer"
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  Disclaimer
+                </a>
               </p>
             </div>
             <p className="text-sm text-white flex items-center min-h-[50px]">

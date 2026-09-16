@@ -34,7 +34,7 @@ Ascendus helps organizations modernize through SAP-led transformation, cloud and
 - [Case Studies](https://www.ascendus.sa/case-studies): Client engagement outcomes.
 - [Whitepapers](https://www.ascendus.sa/whitepapers): In-depth research and technical papers.
 - [Blog](https://www.ascendus.sa/blog): Articles and updates.
-- [Industry Reports](https://www.ascendus.sa/industry-reports): Sector-specific research reports.
+- [Industry Insights](https://www.ascendus.sa/industry-reports): Sector-specific research reports.
 - [Trust Center](https://www.ascendus.sa/trustcenter): Compliance and security resources.
 
 ## Legal
