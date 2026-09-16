@@ -39,111 +39,97 @@ const Footer = () => {
             }}
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-16  pb-4 md:pb-12 mb-2">
-          <div className="space-x-3 md:col-span-2">
-            {/* Quick Link */}
-            <div className="mt-4 md:mt-21.5 mb-7.5 md:mb-12">
-              <h2 className="text-white text-base font-semibold mb-4">
-                Quick Link
-              </h2>
-              {/* Nine links split across two sub-columns, 5 then 4, so the block
-                  reads as one section instead of a single tall list. */}
-              <div className="grid grid-cols-2 gap-x-8">
-                <ul className="space-y-2">
-                  <li>
-                    <Link href="/" className="hover:text-white transition-colors duration-200">
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/what-we-do/enterprise-transformation"
-                      className="hover:text-white transition-colors duration-200"
-                    >
-                      Services
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/solutions" className="hover:text-white transition-colors duration-200">
-                      Solutions
-                    </Link>
-                  </li>
-                  {/* Industries has no page yet — plain non-interactive label
-                      until that content exists, rather than a link to nowhere. */}
-                  <li>
-                    <span className="text-gray-500 cursor-default">
-                      Industries
-                    </span>
-                  </li>
-                  <li>
-                    <Link href="/who-we-are" className="hover:text-white transition-colors duration-200">
-                      About Us
-                    </Link>
-                  </li>
-                </ul>
-
-                <ul className="space-y-2">
-                  <li>
-                    <Link href="/ascenduspartner" className="hover:text-white transition-colors duration-200">
-                      Partners
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/careers" className="hover:text-white transition-colors duration-200">
-                      Careers
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/contact" className="hover:text-white transition-colors duration-200">
-                      Contact
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/book-a-consultation" className="hover:text-white transition-colors duration-200">
-                      Book a call
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* <div className="flex space-x-3 md:col-span-1">
-              {/* <a
-              href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="LinkedIn"
-            >
-              <Image
-                src={LinkedinIcon}
-                alt="LinkedIn"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a>
-            <a
-              href="#"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="Twitter"
-            >
-              <Image
-                src={TwitterIcon}
-                alt="Twitter"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a> */}
-            {/* </div> */}
+        <div className="grid grid-cols-1 gap-8 md:flex md:flex-wrap md:gap-16  pb-4 md:pb-12 mb-2">
+          {/* Quick Link — nine links across two columns, 5 then 4. Both are
+              real grid columns rather than a nested grid, so the gap between
+              them is the same gap that separates every other footer column. */}
+          <div className="md:shrink-0">
+            <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Quick Link</h2>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/what-we-do/enterprise-transformation"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/solutions"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Solutions
+                </Link>
+              </li>
+              <li>
+                <span className="text-gray-500 cursor-default">
+                  Industries
+                </span>
+              </li>
+              <li>
+                <Link
+                  href="/who-we-are"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  About Us
+                </Link>
+              </li>
+            </ul>
           </div>
 
+          <div className="md:shrink-0">
+            <h2 className="hidden md:block text-white text-base font-semibold md:mt-21.5 mb-4 invisible" aria-hidden="true">
+              &nbsp;
+            </h2>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/ascenduspartner"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Partners
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/careers"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/book-a-consultation"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Book a call
+                </Link>
+              </li>
+            </ul>
+          </div>
 
           {/* Services — three top-level services. Business Transformation and
               Digital & Technology Transformation have no page yet, so they are
               plain labels, matching how Industries is handled above. */}
-          <div className="md:col-span-1">
+          <div className="md:shrink-0 md:max-w-[190px]">
             <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Services</h2>
             <ul className="space-y-2">
               <li>
@@ -162,6 +148,73 @@ const Footer = () => {
               <li>
                 <span className="text-gray-500 cursor-default">
                   Digital &amp; Technology Transformation
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Industries — same list as the navbar, 5 and 5 across two columns.
+              None of these have a page yet, so they render as plain labels
+              rather than links to nowhere. */}
+          <div className="md:shrink-0">
+            <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Industries</h2>
+            <ul className="space-y-2">
+              <li>
+                <span className="text-gray-500 cursor-default">
+                  Manufacturing
+                </span>
+              </li>
+              <li>
+                <span className="text-gray-500 cursor-default">
+                  Construction &amp; EPC
+                </span>
+              </li>
+              <li>
+                <span className="text-gray-500 cursor-default">
+                  Oil &amp; Gas
+                </span>
+              </li>
+              <li>
+                <span className="text-gray-500 cursor-default">
+                  Retail
+                </span>
+              </li>
+              <li>
+                <span className="text-gray-500 cursor-default">
+                  Healthcare
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="md:shrink-0">
+            <h2 className="hidden md:block text-white text-base font-semibold md:mt-21.5 mb-4 invisible" aria-hidden="true">
+              &nbsp;
+            </h2>
+            <ul className="space-y-2">
+              <li>
+                <span className="text-gray-500 cursor-default">
+                  Logistics
+                </span>
+              </li>
+              <li>
+                <span className="text-gray-500 cursor-default">
+                  Government
+                </span>
+              </li>
+              <li>
+                <span className="text-gray-500 cursor-default">
+                  Utilities
+                </span>
+              </li>
+              <li>
+                <span className="text-gray-500 cursor-default">
+                  Financial Services
+                </span>
+              </li>
+              <li>
+                <span className="text-gray-500 cursor-default">
+                  Real Estate
                 </span>
               </li>
             </ul>
@@ -255,7 +308,7 @@ const Footer = () => {
           </div> */}
 
           {/* Support */}
-          <div className="md:col-span-1 ">
+          <div className="md:shrink-0">
             <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Insights</h2>
             <ul className="space-y-2">
               {/* <li>
@@ -309,7 +362,7 @@ const Footer = () => {
           </div>
 
           {/* Get In Touch */}
-          <div className="md:col-span-1">
+          <div className="md:flex-1 md:min-w-[260px]">
             <div className="hidden md:block relative h-8 sm:h-10 w-auto aspect-[4/1] mb-4 md:mb-[46px]">
               <Image
                 src={logo}
