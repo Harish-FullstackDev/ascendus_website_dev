@@ -13,7 +13,7 @@ export default function IndustryReportsPage() {
             basePath="/industry-reports"
             backgroundImage={backgroundImage}
             subtitle="Market Intelligence"
-            title="Industry Reports"
+            title="Industry Insights"
             description="Benchmark data and market analysis on SAP adoption, cloud infrastructure spending, cybersecurity threats, and AI adoption across the industries we serve."
             highlights={[
                 "Global benchmark data",

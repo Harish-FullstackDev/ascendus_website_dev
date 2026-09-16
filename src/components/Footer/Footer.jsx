@@ -387,14 +387,21 @@ const Footer = () => {
                   Blog
                 </Link>
               </li>
-              {/* <li>
+              <li>
                 <Link
                   href="/industry-reports"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  Industry Reports
+                  Industry Insights
                 </Link>
-              </li> */}
+              </li>
+              {/* SAP Insights has no page yet — plain non-interactive label
+                  until that content exists, rather than a link to nowhere. */}
+              <li>
+                <span className="text-gray-500 cursor-default">
+                  SAP Insights
+                </span>
+              </li>
             </ul>
           </div>
 
@@ -415,22 +422,6 @@ const Footer = () => {
             </h2>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="tel:+966573956334"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  +966 573956334
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:info@ascendus.sa"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  info@ascendus.sa
-                </a>
-              </li>
-              <li>
                 <p>
                   Headquarters
                 </p>
@@ -445,6 +436,14 @@ const Footer = () => {
                 >
                   7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., <br /> Riyadh 12624, KSA
 
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@ascendus.sa"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  info@ascendus.sa
                 </a>
               </li>
             </ul>

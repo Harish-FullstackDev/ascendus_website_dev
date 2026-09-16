@@ -117,6 +117,7 @@ const Navbar = () => {
     setIsMenuOpen(false);
     setIsServicesOpen(false);
     setIsSolutionsOpen(false);
+    setIsIndustriesOpen(false);
   };
 
 
@@ -137,18 +138,20 @@ const Navbar = () => {
       { name: "Innovation & Emerging Technologies", href: "/what-we-do/innovation-emerging-technologies" },
     ],
 
+    // No per-industry pages exist yet — all point at /solutions until each
+    // gets its own route, same stand-in as the Solutions dropdown.
     industries: [
-      { name: "Manufacturing", href: "/services" },
-      { name: "Construction & EPC", href: "/services" },
-      { name: "Oil & Gas", href: "/services" },
-      { name: "Retail", href: "/services" },
-      { name: "Healthcare", href: "/services" },
-      { name: "Logistics", href: "/services" },
+      { name: "Manufacturing", href: "/solutions" },
+      { name: "Construction & EPC", href: "/solutions" },
+      { name: "Oil & Gas", href: "/solutions" },
+      { name: "Retail", href: "/solutions" },
+      { name: "Healthcare", href: "/solutions" },
+      { name: "Logistics", href: "/solutions" },
 
-      { name: "Government", href: "/services" },
-      { name: "Utilities", href: "/services" },
-      { name: "Financial Services", href: "/services" },
-      { name: "Real Estate", href: "/services" },
+      { name: "Government", href: "/solutions" },
+      { name: "Utilities", href: "/solutions" },
+      { name: "Financial Services", href: "/solutions" },
+      { name: "Real Estate", href: "/solutions" },
     ],
   };
 
@@ -157,13 +160,19 @@ const Navbar = () => {
     servicesMenu.capabilities.slice(6),
   ];
 
+  // These SAP-product names don't have dedicated pages yet — all point at the
+  // single /solutions overview until each gets its own route.
   const solutionsMenu = [
-    { name: "ERP", href: "/solutions/erp/Hanaonpremises" },
-    { name: "Business Technology", href: "/solutions/businessTechnology/BTP" },
-    { name: "HCM", href: "/solutions/HCM/SAPSuccess" },
-    { name: "Customer Experience", href: "/solutions/CustomerExperience/CRM" },
-    { name: "Finance and Controlling", href: "/solutions/FinanceControlling/FICO" },
-    { name: "Supply Spend Management", href: "/solutions/SpendManagement/Procurement" },
+    { name: "SAP S/4HANA", href: "/solutions" },
+    { name: "SAP Ariba", href: "/solutions" },
+    { name: "SAP SuccessFactors", href: "/solutions" },
+    { name: "SAP BTP", href: "/solutions" },
+    { name: "SAP Analytics", href: "/solutions" },
+    { name: "SAP Integration", href: "/solutions" },
+    { name: "SAP EHS", href: "/solutions" },
+    { name: "SAP CX", href: "/solutions" },
+    { name: "RISE with SAP", href: "/solutions" },
+    { name: "GROW with SAP", href: "/solutions" },
   ];
 
   const industryColumns = [
@@ -487,15 +496,67 @@ const Navbar = () => {
                     </div>
                   </li>
 
-                  {/* Industries has no page yet — plain non-interactive label until
-                      that content exists, rather than a link to nowhere. */}
-                  <li>
-                    <span
-                      className={`${navLinkClass} after:content-none cursor-default ${isNavbarLight ? "text-black/50" : "text-white/50"
+                  <li className="relative group">
+                    <button
+                      type="button"
+                      className={`${navLinkClass} after:content-none flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Industries
-                    </span>
+
+                      <svg
+                        className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+
+                    {/* Same hover-bridge/dropdown mechanics as the Services menu above,
+                        two columns since there are 10 industries. No per-industry pages
+                        exist yet, so every item points at /solutions as a stand-in. */}
+                    <div
+                      className="
+                        invisible opacity-0 translate-y-3
+                        group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
+                        transition-all duration-300
+                        absolute left-0 top-full pt-[24px] z-50
+                      "
+                    >
+                      <div
+                        className={`shadow-2xl min-w-[420px] p-6 border transition-colors duration-500 backdrop-blur-xl ${isNavbarLight
+                          ? "bg-white/80 border-gray-200/30 text-gray-800"
+                          : "bg-white/10 border-white/20 text-white"
+                          }`}
+                      >
+                        <div className="grid grid-cols-2 gap-8">
+                          {industryColumns.map((column, columnIndex) => (
+                            <ul key={columnIndex} className="space-y-2">
+                              {column.map((item) => (
+                                <li key={item.name}>
+                                  <Link
+                                    href={item.href}
+                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
+                                      ? "hover:bg-gray-100 text-gray-700"
+                                      : "hover:bg-white/10 text-white/80"
+                                      }`}
+                                  >
+                                    {item.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </li>
 
                   <li>
@@ -770,12 +831,59 @@ const Navbar = () => {
               </div>
             </li>
 
-            {/* Industries has no page yet — plain non-interactive label until
-                that content exists, rather than a link to nowhere. */}
             <li>
-              <span className="block py-3 px-4 text-2xl sm:text-3xl font-medium text-gray-400">
-                Industries
-              </span>
+              <div
+                className={`w-full flex items-center justify-between ${pathname.startsWith("/solutions") ? "bg-gray-100" : ""
+                  }`}
+              >
+                <div className="flex-1 py-3 px-4 text-2xl sm:text-3xl font-medium rounded-lg text-gray-800">
+                  Industries
+                </div>
+
+                <button
+                  onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
+                  className="py-3 px-4 text-gray-800 hover:text-[#2d8ec5] transition-colors duration-300 flex items-center justify-center"
+                  aria-label="Toggle Industries dropdown"
+                >
+                  <svg
+                    className={`w-6 h-6 transition-transform duration-300 ${isIndustriesOpen ? "rotate-180" : ""
+                      }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              {/* No per-industry pages exist yet, so every item points at
+                  /solutions as a stand-in, same as the desktop dropdown. */}
+              <div
+                className={`overflow-hidden transition-all duration-300 ${isIndustriesOpen ? "max-h-[1000px] mt-2" : "max-h-0"
+                  }`}
+              >
+                <div className="bg-gray-50 border border-gray-200 overflow-hidden">
+                  <ul className="py-3">
+                    {servicesMenu.industries.map((item) => (
+                      <li key={item.name}>
+                        <Link
+                          href={item.href}
+                          onClick={closeMenu}
+                          className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#2d8ec5]"
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </li>
 
             <li>

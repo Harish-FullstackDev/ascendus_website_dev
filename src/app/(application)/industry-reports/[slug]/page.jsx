@@ -37,6 +37,6 @@ export default async function IndustryReportDetailPage({ params }) {
     const report = getIndustryReportBySlug(slug);
 
     return (
-        <InsightDetail item={report} basePath="/industry-reports" backLabel="Back to Industry Reports" />
+        <InsightDetail item={report} basePath="/industry-reports" backLabel="Back to Industry Insights" />
     );
 }
