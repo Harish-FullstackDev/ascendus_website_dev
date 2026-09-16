@@ -103,16 +103,12 @@ const socials = [
   },
 ];
 
-const legalLines = [
-  [
-    { name: "Terms & Conditions", href: "/legal/terms" },
-    { name: "Privacy Policy", href: "/legal/privacy" },
-  ],
-  [
-    { name: "Security Policy", href: "/legal/security" },
-    { name: "Cookie Policy", href: "/legal/cookies" },
-    { name: "Disclaimer", href: "/legal/disclaimer" },
-  ],
+const legalLinks = [
+  { name: "Terms & Conditions", href: "/legal/terms" },
+  { name: "Privacy Policy", href: "/legal/privacy" },
+  { name: "Security Policy", href: "/legal/security" },
+  { name: "Cookie Policy", href: "/legal/cookies" },
+  { name: "Disclaimer", href: "/legal/disclaimer" },
 ];
 
 const Footer = () => {
@@ -132,7 +128,7 @@ const Footer = () => {
           column width is narrow enough that a long label such as
           "Government & Public Sector" wraps its last word rather than
           widening its column. */}
-      <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-7 md:gap-6 lg:gap-8 pb-10 md:pb-16">
+      <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-7 md:gap-6 lg:gap-8 ">
         {columns.map((column, index) => (
           <div key={column.heading || "continued-" + index}>
             {column.heading ? (
@@ -185,7 +181,9 @@ const Footer = () => {
         </div>
 
         <div className="relative">
-          <div className="flex justify-center gap-3 mb-8">
+          {/* Mobile: icons keep their own centred row above the address —
+              not enough width here to also right-align them on this line. */}
+          <div className="flex md:hidden justify-center gap-3 mb-8">
             {socials.map((social) => (
               <a
                 key={social.label}
@@ -206,42 +204,61 @@ const Footer = () => {
             ))}
           </div>
 
-          {/* Centred and centre-aligned, so the successively shorter lines
-              taper the way the address reads on paper. */}
-          <div className="text-center text-sm space-y-1">
-            <p className="text-white font-medium">Headquarters</p>
-            <a
-              href="https://maps.app.goo.gl/r13crYbGJBBuQiSE7"
-              className={"block " + linkClass}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              7731 King Saud Ibn Abdulaziz Saud,
-              <br />
-              2839 Al Murabba Dist.,
-              <br />
-              Riyadh 12624, KSA
-            </a>
-            <a href="mailto:info@ascendus.sa" className={"block " + linkClass}>
-              info@ascendus.sa
-            </a>
+          {/* Desktop: icons sit right-aligned level with the email line,
+              directly above the legal-links divider. */}
+          <div className="relative flex items-end justify-center">
+            <div className="hidden md:flex absolute right-0 bottom-0 gap-3">
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
+                  aria-label={social.label}
+                >
+                  <Image
+                    src={social.icon}
+                    alt={social.label}
+                    className="w-10 h-10"
+                    width={24}
+                    height={24}
+                  />
+                </a>
+              ))}
+            </div>
+
+            {/* Centred and centre-aligned, so the successively shorter lines
+                taper the way the address reads on paper. */}
+            <div className="text-center text-sm space-y-1">
+              <p className="text-white text-lg font-medium">Registered office</p>
+              <a
+                href="https://maps.app.goo.gl/r13crYbGJBBuQiSE7"
+                className={"block " + linkClass}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                7731 King Saud Ibn Abdulaziz Saud,<br /> 2839 Al Murabba Dist.,
+                <br />
+                Riyadh 12624, KSA
+              </a>
+              <a href="mailto:info@ascendus.sa" className={"block " + linkClass}>
+                info@ascendus.sa
+              </a>
+            </div>
           </div>
 
           <div className="border-t border-white/15 mt-8 pt-6 text-center text-sm">
-            <p className="text-white">
-              {legalLines.map((line, lineIndex) => (
-                <span key={lineIndex} className="block">
-                  {line.map((item, itemIndex) => (
-                    <span key={item.href}>
-                      {itemIndex > 0 && " | "}
-                      <a
-                        href={item.href}
-                        className="hover:text-gray-300 transition-colors"
-                      >
-                        {item.name}
-                      </a>
-                    </span>
-                  ))}
+            <p className="text-white whitespace-nowrap overflow-x-auto">
+              {legalLinks.map((item, index) => (
+                <span key={item.href}>
+                  {index > 0 && " | "}
+                  <a
+                    href={item.href}
+                    className="hover:text-gray-300 transition-colors"
+                  >
+                    {item.name}
+                  </a>
                 </span>
               ))}
             </p>
