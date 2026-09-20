@@ -41,20 +41,20 @@ export default function ACollaborativeEcosystem() {
             {/* Figma runs the intro column (395px) beside the card row (800px)
                 with a 109px gutter. Expressed as a max-width on the intro track
                 so the cards take the remaining space at any viewport. */}
-            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,395px)_minmax(0,1fr)] gap-10 lg:gap-[clamp(3rem,7vw,109px)] lg:items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)] gap-10 lg:gap-16 lg:items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    <p className="text-sm font-medium uppercase tracking-[0.6px] text-[#0061af] leading-4">
+                    <p className="text-sm font-semibold uppercase tracking-[0.6px] text-[#0061af] leading-4">
                         Our Ecosystem
                     </p>
                     <h2 className="mt-2 text-2xl sm:text-[32px] font-semibold text-[#10161d] leading-[36px]">
                         A Collaborative Ecosystem for Greater Possibilities
                     </h2>
-                    <p className="mt-2 max-w-[347px] text-sm sm:text-base font-medium text-[#64748b] leading-5">
+                    <p className="mt-2 max-w-[396px] text-base font-normal text-[#415773] leading-5">
                         Our ecosystem includes strategic partners, technology leaders, and industry alliances that help
                         us deliver innovative solutions, expand capabilities and create greater value for our clients.
                     </p>
@@ -63,6 +63,9 @@ export default function ACollaborativeEcosystem() {
                 {/* 20px between cards (Figma 127:1891 — four 185px cards across an
                     800px track). */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-5">
+                    {/* Figma fixes these cards at 185x259. The width comes from the
+                        grid track; min-h holds the proportion without capping copy
+                        that runs longer than the design's. */}
                     {CARDS.map((card) => (
                         <motion.article
                             key={card.title}
@@ -70,7 +73,7 @@ export default function ACollaborativeEcosystem() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ duration: 0.5, ease: "easeOut" }}
-                            className="flex h-full flex-col rounded-[8px] border border-[#e2e8f0] bg-white p-[25px] transition-shadow duration-300 hover:shadow-[0px_6px_18px_rgba(10,58,82,0.12)]"
+                            className="flex h-full flex-col justify-between rounded-[8px] border border-[#e2e8f0] bg-white p-[25px] sm:min-h-[259px] transition-shadow duration-300 hover:shadow-[0px_6px_18px_rgba(10,58,82,0.12)]"
                         >
                             <span className="flex size-10 shrink-0 items-center justify-center rounded-[8px] bg-[#eff6ff]">
                                 {card.wordmark ? (
@@ -82,8 +85,11 @@ export default function ACollaborativeEcosystem() {
                                 )}
                             </span>
 
-                            <h3 className="mt-4 text-base font-semibold text-[#0f172a] leading-6">{card.title}</h3>
-                            <p className="mt-2 text-sm text-[#64748b] leading-[19.5px]">{card.description}</p>
+                            {/* Icon, title and description are three siblings
+                                spread by justify-between, the way Figma's 209px
+                                inner column distributes them. */}
+                            <h3 className="pt-2 text-lg font-semibold text-[#0f172a] leading-6">{card.title}</h3>
+                            <p className="text-sm font-normal text-[#64748b] leading-[19.5px]">{card.description}</p>
                         </motion.article>
                     ))}
                 </div>

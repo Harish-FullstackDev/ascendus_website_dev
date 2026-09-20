@@ -41,7 +41,7 @@ export default function MoreThanAPartnership() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="lg:col-span-5 flex flex-col items-start"
                 >
-                    <p className="font-houschka-pro text-sm font-semibold uppercase tracking-[1.1px] text-[#0061af] leading-[16.5px]">
+                    <p className="text-sm font-semibold uppercase tracking-[1.1px] text-[#0061af] leading-[16.5px]">
                         Why Partner With Us
                     </p>
                     <h2 className="mt-3 text-2xl sm:text-[32px] font-semibold tracking-[-0.85px] text-[#0f172a] leading-[42.5px]">
@@ -53,7 +53,7 @@ export default function MoreThanAPartnership() {
                         <br className="hidden lg:inline" />
                         A Shared Journey.
                     </h2>
-                    <p className="mt-3 text-sm sm:text-base text-[#475569] leading-5">
+                    <p className="mt-3 text-base font-normal text-[#475569] leading-5">
                         We go beyond transactions. Our partnerships are built on trust, transparency and a shared
                         commitment to innovation and customer success.
                     </p>
@@ -64,7 +64,7 @@ export default function MoreThanAPartnership() {
                                 <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-[#0061af]">
                                     <Image src={checkIcon} alt="" className="size-2.5" />
                                 </span>
-                                <span className="text-sm font-medium text-[#334155] leading-5">{benefit}</span>
+                                <span className="text-base font-medium text-[#334155] leading-5">{benefit}</span>
                             </li>
                         ))}
                     </ul>
@@ -101,10 +101,10 @@ export default function MoreThanAPartnership() {
                     <div className="absolute inset-y-0 right-0 flex flex-col items-end justify-center gap-7 p-6 sm:p-10 text-right">
                         {STATS.map((stat) => (
                             <div key={stat.label} className="flex flex-col gap-0.5">
-                                <span className="text-2xl sm:text-[36px] font-extrabold tracking-[-0.9px] text-white leading-tight sm:leading-10">
+                                <span className="text-2xl sm:text-[32px] font-extrabold tracking-[-0.9px] text-white leading-tight sm:leading-10">
                                     {stat.value}
                                 </span>
-                                <span className="text-xs font-medium tracking-[0.3px] text-[#cbd5e1] leading-4">
+                                <span className="text-sm sm:text-base font-medium tracking-[0.3px] text-[#cbd5e1] leading-4">
                                     {stat.label}
                                 </span>
                             </div>

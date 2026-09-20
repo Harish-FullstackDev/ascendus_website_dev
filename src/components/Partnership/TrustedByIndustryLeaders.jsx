@@ -35,13 +35,13 @@ export default function TrustedByIndustryLeaders() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center text-center"
             >
-                <p className="font-houschka-pro text-sm font-semibold uppercase tracking-[1.1px] text-[#0061af] leading-[16.5px]">
+                <p className="text-sm font-semibold uppercase tracking-[1.1px] text-[#0061af] leading-[16.5px]">
                     Our Partners
                 </p>
-                <h2 className="mt-3 text-2xl sm:text-[32px] font-medium tracking-[-0.75px] text-[#0f172a] leading-[36px]">
+                <h2 className="mt-3 text-2xl sm:text-[32px] font-semibold tracking-[-0.75px] text-[#0f172a] leading-[36px]">
                     Trusted by Industry Leaders
                 </h2>
-                <p className="mt-3 max-w-[672px] text-sm sm:text-base text-[#64748b] leading-5">
+                <p className="mt-3 max-w-[672px] text-base font-normal text-[#64748b] leading-5">
                     We work with a select group of partners who share our commitment to excellence, innovation and
                     customer success.
                 </p>
@@ -84,7 +84,7 @@ export default function TrustedByIndustryLeaders() {
                     </span>
                 ))}
 
-                <span className="text-xs font-medium italic text-[#94a3b8] leading-4">and more...</span>
+                <span className="text-xs font-normal text-[#94a3b8] leading-4">and more...</span>
             </motion.div>
         </section>
     );
