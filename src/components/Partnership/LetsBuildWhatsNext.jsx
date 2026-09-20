@@ -62,7 +62,7 @@ export default function LetsBuildWhatsNext() {
                     <p className="text-sm font-semibold uppercase tracking-[1.1px] text-[#0061af] leading-[16.5px]">
                         Partner With Us
                     </p>
-                    <h2 className="text-2xl sm:text-[32px] font-semibold tracking-[-0.75px] text-[#0f172a] leading-[36px]">
+                    <h2 className="text-2xl sm:text-[32px] font-semibold text-[#0f172a] leading-[36px]">
                         Let&apos;s Build What&apos;s Next
                     </h2>
                     <p className="text-base font-normal text-[#475569] leading-5">
@@ -106,7 +106,7 @@ export default function LetsBuildWhatsNext() {
                                 <span className="flex size-10 shrink-0 items-center justify-center rounded-[8px] bg-[#eff6ff]">
                                     <Image src={card.icon} alt="" className="size-6" />
                                 </span>
-                                <h3 className="text-base font-bold text-[#0f172a] leading-[16.5px]">{card.title}</h3>
+                                <p className="text-base font-semibold text-[#0f172a] leading-[16.5px]">{card.title}</p>
                             </div>
 
                             <p className="text-sm font-normal text-[#64748b] leading-[16.5px]">{card.description}</p>

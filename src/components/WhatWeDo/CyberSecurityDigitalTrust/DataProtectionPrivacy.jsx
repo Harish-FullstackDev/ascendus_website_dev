@@ -60,13 +60,10 @@ export default function DataProtectionPrivacy() {
                     >
                         <Image src={item.icon} alt="" width={32} height={32} />
                         <div className="flex flex-col gap-5">
-                            {/* Figma (node 2261:5104) sets these at heading/h2 24px in
-                                Houschka Pro DemiBold on black. font-heading is required
-                                as well as font-semibold: as a <p> these inherit the body
-                                face (General Sans), and General Sans 600 reads noticeably
-                                thinner than Houschka Pro 600 at the same nominal weight —
-                                which is what made them look lighter than the section
-                                heading above. */}
+                            {/* Figma (node 2261:5104) sets these at heading/h2 24px,
+                                DemiBold on black — rendered as an <h2> so it inherits
+                                the site's Switzer heading weight rather than the
+                                lighter body weight a <p> would pick up. */}
                             <h2 className=" text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h2>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                         </div>

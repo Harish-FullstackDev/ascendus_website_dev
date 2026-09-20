@@ -48,7 +48,7 @@ export default function ACollaborativeEcosystem() {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    <p className="text-sm font-semibold uppercase tracking-[0.6px] text-[#0061af] leading-4">
+                    <p className="text-sm font-semibold uppercase tracking-[1.1px] text-[#0061af] leading-4">
                         Our Ecosystem
                     </p>
                     <h2 className="mt-2 text-2xl sm:text-[32px] font-semibold text-[#10161d] leading-[36px]">
@@ -88,7 +88,7 @@ export default function ACollaborativeEcosystem() {
                             {/* Icon, title and description are three siblings
                                 spread by justify-between, the way Figma's 209px
                                 inner column distributes them. */}
-                            <h3 className="pt-2 text-lg font-semibold text-[#0f172a] leading-6">{card.title}</h3>
+                            <p className="pt-2 text-lg font-semibold text-[#0f172a] leading-6">{card.title}</p>
                             <p className="text-sm font-normal text-[#64748b] leading-[19.5px]">{card.description}</p>
                         </motion.article>
                     ))}
