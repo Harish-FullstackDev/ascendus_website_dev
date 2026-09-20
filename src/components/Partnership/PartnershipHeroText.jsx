@@ -24,7 +24,7 @@ export default function PartnershipHeroText() {
                     letter-spacing makes Chrome position the glyphs at fractional
                     offsets, which visibly blunts the sharp diagonal joints of
                     Switzer's A, W, V, X and M. */}
-                <h1 className="mt-6 text-2xl sm:text-4xl lg:text-5xl font-medium capitalize text-white leading-tight">
+                <h1 className="mt-6 text-2xl sm:text-4xl lg:text-5xl font-semibold capitalize text-white leading-tight">
                     Stronger Together for Greater Impact
                 </h1>
 
