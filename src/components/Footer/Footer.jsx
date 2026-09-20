@@ -77,7 +77,7 @@ const columns = [
     items: [
       { name: "Home", href: "/" },
       { name: "About Us", href: "/who-we-are" },
-      { name: "Partners", href: "/ascenduspartner" },
+      { name: "Partners", href: "/partnership" },
       { name: "Careers", href: "/careers" },
       { name: "Contact", href: "/contact-us" },
       { name: "Book a call", href: "/book-a-consultation" },

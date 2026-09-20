@@ -495,8 +495,8 @@ const Navbar = () => {
 
                   <li>
                     <Link
-                      href="/ascenduspartner"
-                      className={`${navLinkClass} ${pathname === "/ascenduspartner/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      href="/partnership"
+                      className={`${navLinkClass} ${pathname === "/partnership/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Partners
@@ -821,8 +821,8 @@ const Navbar = () => {
 
             <li>
               <Link
-                href="/ascenduspartner"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/ascenduspartner/"
+                href="/partnership"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/partnership/"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
