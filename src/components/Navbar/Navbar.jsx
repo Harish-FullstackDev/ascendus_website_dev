@@ -130,20 +130,20 @@ const Navbar = () => {
       { name: "Digital & Technology Transformation" },
     ],
 
-    // No per-industry pages exist yet — all point at /solutions until each
-    // gets its own route, same stand-in as the Solutions dropdown.
+    // No per-industry pages exist yet — all point at the /industries overview
+    // until each gets its own route.
     industries: [
-      { name: "Manufacturing", href: "/solutions" },
-      { name: "Retail & Consumer", href: "/solutions" },
-      { name: "Government & Public Sector", href: "/solutions" },
-      { name: "Banking & Financial Services", href: "/solutions" },
-      { name: "Energy & Utilities", href: "/solutions" },
+      { name: "Manufacturing", href: "/industries" },
+      { name: "Retail & Consumer", href: "/industries" },
+      { name: "Government & Public Sector", href: "/industries" },
+      { name: "Banking & Financial Services", href: "/industries" },
+      { name: "Energy & Utilities", href: "/industries" },
 
-      { name: "Engineering & Construction", href: "/solutions" },
-      { name: "Healthcare & Life Sciences", href: "/solutions" },
-      { name: "Technology, Media & Communications", href: "/solutions" },
-      { name: "Transportation & Logistics", href: "/solutions" },
-      { name: "Education & Research", href: "/solutions" },
+      { name: "Engineering & Construction", href: "/industries" },
+      { name: "Healthcare & Life Sciences", href: "/industries" },
+      { name: "Technology, Media & Communications", href: "/industries" },
+      { name: "Transportation & Logistics", href: "/industries" },
+      { name: "Education & Research", href: "/industries" },
     ],
   };
 
@@ -421,9 +421,12 @@ const Navbar = () => {
                   </li>
 
                   <li className="relative group">
-                    <button
-                      type="button"
-                      className={`${navLinkClass} after:content-none flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
+                    {/* The trigger is a link, not a button: Industries now has an
+                        overview page of its own, and the dropdown still opens on
+                        hover over the same element. */}
+                    <Link
+                      href="/industries"
+                      className={`${navLinkClass} ${pathname === "/industries/" ? activeLinkClass : inactiveLinkClass} flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Industries
@@ -441,11 +444,11 @@ const Navbar = () => {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                    </button>
+                    </Link>
 
                     {/* Same hover-bridge/dropdown mechanics as the Services menu above,
                         two columns since there are 10 industries. No per-industry pages
-                        exist yet, so every item points at /solutions as a stand-in. */}
+                        exist yet, so every item points at the /industries overview. */}
                     <div
                       className="
                         invisible opacity-0 translate-y-3
@@ -753,12 +756,21 @@ const Navbar = () => {
 
             <li>
               <div
-                className={`w-full flex items-center justify-between ${pathname.startsWith("/solutions") ? "bg-gray-100" : ""
+                className={`w-full flex items-center justify-between ${pathname.startsWith("/industries") ? "bg-gray-100" : ""
                   }`}
               >
-                <div className="flex-1 py-3 px-4 text-2xl sm:text-3xl font-medium rounded-lg text-gray-800">
+                {/* Tapping the label opens the overview page; the chevron beside
+                    it still expands the per-industry list. */}
+                <Link
+                  href="/industries"
+                  onClick={closeMenu}
+                  className={`flex-1 py-3 px-4 text-2xl sm:text-3xl font-medium rounded-lg transition-colors duration-300 ${pathname === "/industries/"
+                    ? "text-[#2d8ec5]"
+                    : "text-gray-800 hover:text-[#2d8ec5]"
+                    }`}
+                >
                   Industries
-                </div>
+                </Link>
 
                 <button
                   onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
@@ -782,8 +794,8 @@ const Navbar = () => {
                 </button>
               </div>
 
-              {/* No per-industry pages exist yet, so every item points at
-                  /solutions as a stand-in, same as the desktop dropdown. */}
+              {/* No per-industry pages exist yet, so every item points at the
+                  /industries overview, same as the desktop dropdown. */}
               <div
                 className={`overflow-hidden transition-all duration-300 ${isIndustriesOpen ? "max-h-[1000px] mt-2" : "max-h-0"
                   }`}

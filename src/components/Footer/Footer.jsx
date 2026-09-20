@@ -16,22 +16,23 @@ const labelClass = "text-gray-500 cursor-default";
 const columns = [
   {
     heading: "Industries",
+    headingHref: "/industries",
     items: [
-      { name: "Manufacturing" },
-      { name: "Retail & Consumer" },
-      { name: "Government & Public Sector" },
-      { name: "Banking & Financial Services" },
-      { name: "Energy & Utilities" },
+      { name: "Manufacturing", href: "/industries" },
+      { name: "Retail & Consumer", href: "/industries" },
+      { name: "Government & Public Sector", href: "/industries" },
+      { name: "Banking & Financial Services", href: "/industries" },
+      { name: "Energy & Utilities", href: "/industries" },
     ],
   },
   {
     heading: null,
     items: [
-      { name: "Engineering & Construction" },
-      { name: "Healthcare & Life Sciences" },
-      { name: "Technology, Media & Communications" },
-      { name: "Transportation & Logistics" },
-      { name: "Education & Research" },
+      { name: "Engineering & Construction", href: "/industries" },
+      { name: "Healthcare & Life Sciences", href: "/industries" },
+      { name: "Technology, Media & Communications", href: "/industries" },
+      { name: "Transportation & Logistics", href: "/industries" },
+      { name: "Education & Research", href: "/industries" },
     ],
   },
   {
@@ -132,8 +133,16 @@ const Footer = () => {
         {columns.map((column, index) => (
           <div key={column.heading || "continued-" + index}>
             {column.heading ? (
+              /* A heading links out only when its section has a page of its own
+                 (Industries does); the rest stay plain labels. */
               <h2 className="text-white text-base lg:text-lg font-semibold mb-4">
-                {column.heading}
+                {column.headingHref ? (
+                  <Link href={column.headingHref} className={linkClass}>
+                    {column.heading}
+                  </Link>
+                ) : (
+                  column.heading
+                )}
               </h2>
             ) : (
               /* Continuation column: an invisible heading keeps its first item
