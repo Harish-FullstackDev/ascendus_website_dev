@@ -44,7 +44,7 @@ export default function MoreThanAPartnership() {
                     <p className="text-sm font-semibold uppercase tracking-[1.1px] text-[#0061af] leading-[16.5px]">
                         Why Partner With Us
                     </p>
-                    <h2 className="mt-3 text-2xl sm:text-[32px] font-semibold tracking-[-0.85px] text-[#0f172a] leading-[42.5px]">
+                    <h2 className="mt-3 text-2xl sm:text-[32px] font-semibold  text-[#0f172a] leading-[42.5px]">
                         More Than a Partnership.{" "}
                         {/* Figma sets this heading on two lines, breaking after
                             the first sentence. Forced only from lg up, where the

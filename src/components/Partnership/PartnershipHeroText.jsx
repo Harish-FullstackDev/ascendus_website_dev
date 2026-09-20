@@ -17,7 +17,8 @@ export default function PartnershipHeroText() {
                 {/* The eyebrow is Houschka Pro Light — it needs the utility
                     explicitly, since only h1/h2 pick Houschka up automatically and
                     everything else inherits General Sans. */}
-                <p className="font-houschka-pro text-white text-xs sm:text-base uppercase tracking-[1.2px] font-light">
+
+                <p className="text-white text-xs sm:text-base uppercase tracking-[1.2px] font-light">
                     Partnership
                 </p>
 
@@ -35,7 +36,7 @@ export default function PartnershipHeroText() {
                 {/* Figma tags this line as Urbane Light; Urbane is SST's face and
                     is not licensed here, so it stays on the project's General Sans
                     at the same weight. */}
-                <p className="mt-4 sm:mt-6 max-w-[620px] text-sm sm:text-base font-light capitalize text-white tracking-[0.16px] leading-relaxed">
+                <p className="mt-4 sm:mt-6 max-w-[620px] text-sm sm:text-base font-light capitalize text-white  tracking-[0.16px] leading-relaxed">
                     We believe in the power of collaboration. Our partnership ecosystem brings together trusted
                     technology providers, channel partners and industry leaders to create lasting value for our clients.
                 </p>
