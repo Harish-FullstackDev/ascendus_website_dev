@@ -515,8 +515,8 @@ const Navbar = () => {
 
                   <li>
                     <Link
-                      href="/contact"
-                      className={`${navLinkClass} ${pathname === "/contact/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      href="/contact-us"
+                      className={`${navLinkClass} ${pathname === "/contact-us/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Contact
@@ -847,8 +847,8 @@ const Navbar = () => {
 
             <li>
               <Link
-                href="/contact"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/contact/"
+                href="/contact-us"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/contact-us/"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}

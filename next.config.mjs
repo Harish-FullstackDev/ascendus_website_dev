@@ -16,7 +16,9 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      { source: '/contact-us', destination: '/contact/', permanent: true },
+      // '/contact-us' used to 301 to '/contact/'. It is now a real page of its
+      // own (src/app/(application)/contact-us), so the redirect is gone — the
+      // old '/contact/' page is untouched and still reachable at its own URL.
       { source: '/bookacall', destination: '/book-a-consultation/', permanent: true },
       { source: '/termsOfService', destination: '/legal/terms/', permanent: true },
       { source: '/privacyPolicy', destination: '/legal/privacy/', permanent: true },

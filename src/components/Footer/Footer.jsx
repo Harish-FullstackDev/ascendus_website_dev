@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../assets/Brand/Ascendus_Logo_Secondary.png";
-import wordmark from "../../assets/Brand/Ascendus_Wordmark_OnDark.svg";
+import wordmark from "../../assets/Footer/Ascendus_Outline_Wordmark.svg";
 import InstagramIcon from "../../assets/Footer/Instagram_Icon.svg";
 import LinkedinIcon from "../../assets/Footer/LinkedIn_Icon.svg";
 import TwitterIcon from "../../assets/Footer/X_Icon.svg";
@@ -79,7 +79,7 @@ const columns = [
       { name: "About Us", href: "/who-we-are" },
       { name: "Partners", href: "/ascenduspartner" },
       { name: "Careers", href: "/careers" },
-      { name: "Contact", href: "/contact" },
+      { name: "Contact", href: "/contact-us" },
       { name: "Book a call", href: "/book-a-consultation" },
     ],
   },
@@ -168,16 +168,21 @@ const Footer = () => {
       {/* Bottom band. The wordmark sits behind this whole block as a faint
           backdrop, with the contact details, divider and legal lines on top. */}
       <div className="relative overflow-hidden pt-10 md:pt-14 pb-6 md:pb-8">
+        {/* Figma runs the outline wordmark the full width of the footer, flush
+            left, and lets it bleed off the bottom edge. The crop is measured off
+            node 62:749's footer, not 67:2850 — both draw the wordmark at the
+            same 1340px width, but 62:749 sits it 14px lower, cutting 40.8px of
+            the 190.8px glyph height (21.4%) against 67:2850's 26.8px (14.1%).
+            w-full against this padded content box is the closest match to the
+            design's width; the translate reproduces the crop, which the band's
+            own overflow-hidden performs. No opacity class here: the SVG already
+            carries the design's 0.32 on its stroke, so stacking another
+            multiplier on top would wash it out completely. */}
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-4 md:bottom-6 flex justify-center"
+          className="pointer-events-none absolute inset-x-0 bottom-0"
           aria-hidden="true"
         >
-          <Image
-            src={wordmark}
-            alt=""
-            className="opacity-[0.12]"
-            style={{ width: "70%", height: "auto" }}
-          />
+          <Image src={wordmark} alt="" className="w-full h-auto translate-y-[21.4%]" />
         </div>
 
         <div className="relative">

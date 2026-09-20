@@ -8,6 +8,7 @@ export const validRoutes = [
   "/book-a-consultation/",
   "/careers/",
   "/contact/",
+  "/contact-us/",
   "/legal/privacy/",
   "/ascenduserrors/",
   "/ascenduspartner/",

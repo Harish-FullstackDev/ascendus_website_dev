@@ -1,0 +1,63 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+import ctaBg from "@/assets/Contact-us/CTA_Bg.webp";
+import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
+
+// Same construction as the home page CTA (HomePage/ReadyToTransform): background
+// photo, a top-to-bottom black gradient, heading + supporting line on the left
+// and an outlined button on the right. Only the copy, the photo and this page's
+// own 64px/24px content inset differ.
+export default function ReadyToTurnYourVisionIntoAction({
+    title = "Ready to Turn Your Vision into Action?",
+    description = "Tell us where you are today, where you want to go, and what's standing in the way.",
+    buttonLabel = "Talk to an Expert",
+    bgImage = ctaBg,
+}) {
+    const [showCalendly, setShowCalendly] = useState(false);
+
+    return (
+        <>
+            <section className="relative z-0 w-full overflow-hidden">
+                <Image src={bgImage} alt="" fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/72 to-black/36" />
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-12 px-6 sm:px-[64px] pt-32 sm:pt-30 lg:pt-32 pb-16 sm:pb-24 lg:pb-32"
+                >
+                    <div className="flex flex-col w-full md:gap-12 sm:w-[60%]">
+                        <h2 className="text-xl sm:text-5xl font-semibold text-white">{title}</h2>
+
+                        <p className="text-base sm:text-2xl font-light text-white">{description}</p>
+                    </div>
+
+                    <button
+                        type="button"
+                        onClick={() => setShowCalendly(true)}
+                        className="shrink-0 rounded-[10px] border border-[#d0d0d0] px-6 sm:px-[24px] py-2 sm:py-[8px] text-lg font-light text-white transition-colors hover:bg-white hover:text-black"
+                    >
+                        {buttonLabel}
+                    </button>
+                </motion.div>
+            </section>
+
+            <CalendlyModal
+                isOpen={showCalendly}
+                onClose={() => setShowCalendly(false)}
+                calendlyUrl={process.env.NEXT_PUBLIC_CALENDLY_URL}
+                pageSettings={{
+                    backgroundColor: "ffffff",
+                    primaryColor: "#2d8ec5",
+                    textColor: "#003756",
+                }}
+            />
+        </>
+    );
+}
