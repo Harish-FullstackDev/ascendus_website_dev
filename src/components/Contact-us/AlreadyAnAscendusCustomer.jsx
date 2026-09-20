@@ -49,11 +49,11 @@ export default function AlreadyAnAscendusCustomer() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
             >
-                <p className="text-xs font-semibold uppercase tracking-[0.6px] text-[#2d8ec5]">Existing Customers</p>
-                <h2 className="mt-1 text-2xl sm:text-[32px] font-medium text-[#0a3a52] leading-[36px]">
+                <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.6px] text-[#2d8ec5] leading-4">Existing Customers</p>
+                <h2 className="mt-1 text-2xl sm:text-[32px] font-semibold text-[#0a3a52] leading-[36px]">
                     Already an Ascendus Customer?
                 </h2>
-                <p className="mt-2 text-sm sm:text-base text-[#64748b] leading-5">
+                <p className="mt-2 text-base sm:text-lg text-[#64748b] leading-5">
                     Access the right support channel for your service, operational or escalation requirements.
                 </p>
             </motion.div>
@@ -81,11 +81,11 @@ export default function AlreadyAnAscendusCustomer() {
                                     <Image src={card.icon} alt="" className="w-6 h-6" />
                                 </span>
 
-                                <h3 className="mt-4 text-sm font-semibold text-[#0a3a52] leading-5">{card.title}</h3>
-                                <p className="mt-2 text-xs text-[#64748b] leading-[19.5px]">{card.description}</p>
+                                <h3 className="mt-4 text-base sm:text-lg font-medium text-[#0a3a52] leading-5">{card.title}</h3>
+                                <p className="mt-2 text-sm sm:text-base text-[#64748b] leading-[19.5px]">{card.description}</p>
                             </div>
 
-                            <span className="mt-8 inline-flex items-center gap-1.5 text-xs font-semibold text-[#2d8ec5]">
+                            <span className="mt-8 inline-flex items-center gap-1.5 text-sm sm:text-base font-medium text-[#2d8ec5]">
                                 <span className="border-b-[0.5px] border-transparent transition-colors duration-300 group-hover:border-[#2d8ec5]">
                                     {card.linkLabel}
                                 </span>

@@ -32,13 +32,13 @@ export default function YourTrustedPartnerForLongTermSuccess() {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    <p className="text-xs font-semibold uppercase tracking-[0.55px] text-[#2d8ec5] leading-4">
+                    <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.55px] text-[#2d8ec5] leading-4">
                         Built for Enterprise Engagement
                     </p>
-                    <h2 className="mt-1 text-2xl sm:text-[32px] font-medium text-[#0a3a52] leading-[1.4]">
+                    <h2 className="mt-1 text-2xl sm:text-[32px] font-semibold text-[#0a3a52] leading-[1.4]">
                         Your Trusted Partner for Long Term Success
                     </h2>
-                    <p className="mt-2 text-sm sm:text-[15px] text-[#64748b] leading-[19.5px]">
+                    <p className="mt-2 text-base sm:text-lg text-[#64748b] leading-[19.5px]">
                         We bring deep expertise, a strong regional presence and a commitment to your business outcomes.
                     </p>
                 </motion.div>
@@ -55,7 +55,7 @@ export default function YourTrustedPartnerForLongTermSuccess() {
                             <span className="flex size-[30px] items-center justify-start">
                                 <Image src={pillar.icon} alt="" className="w-6 h-6" />
                             </span>
-                            <h3 className="mt-3 text-lg font-medium text-[#0a3a52] leading-6">{pillar.title}</h3>
+                            <h3 className="mt-3 text-xl sm:text-2xl font-semibold text-[#0a3a52] leading-6">{pillar.title}</h3>
                             <p className="mt-3 text-base sm:text-lg text-[#64748b] leading-[24.75px]">
                                 {pillar.description}
                             </p>

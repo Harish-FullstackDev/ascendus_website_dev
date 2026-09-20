@@ -42,20 +42,24 @@ export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospecti
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
             >
-                <p className="text-xs font-bold uppercase tracking-[0.6px] text-[#2d8ec5]">How can we help?</p>
-                <h2 className="mt-1 text-2xl sm:text-[32px] font-medium text-[#0a3a52] leading-[36px]">
+                <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.6px] text-[#2d8ec5] leading-4">How can we help?</p>
+                <h2 className="mt-1 text-2xl sm:text-[32px] font-semibold text-[#0a3a52] leading-[36px]">
                     Choose What Fits Your Need
                 </h2>
-                <p className="mt-2 text-sm sm:text-base text-[#64748b] leading-5">
+                <p className="mt-2 text-base sm:text-lg text-[#64748b] leading-5">
                     Select the option that best describes your enquiry. We&apos;ll connect you with the right team to
                     help you move forward.
                 </p>
             </motion.div>
 
+            {/* Two-up at every width: side by side the pair reads as a choice
+                between two options, which a stacked pair on phones did not. The
+                card interior turns into icon-over-text below md so the halved
+                column still fits the label and the description. */}
             <div
                 role="tablist"
                 aria-label="Choose what fits your need"
-                className="mt-10 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
+                className="mt-10 sm:mt-16 grid grid-cols-2 gap-3 sm:gap-8"
             >
                 {SEGMENTS.map((segment) => {
                     const isSelected = selected === segment.id;
@@ -76,7 +80,7 @@ export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospecti
                                 aria-controls={`segment-panel-${segment.id}`}
                                 onClick={() => onSelect?.(segment.id)}
                                 className={
-                                    "group flex h-full w-full items-start gap-6 rounded-[16px] border p-[25px] text-left transition-colors duration-300 " +
+                                    "group flex h-full w-full flex-col items-start gap-3 rounded-[16px] border p-4 text-left transition-colors duration-300 md:flex-row md:gap-6 md:p-[25px] " +
                                     (isSelected
                                         ? "border-[#c3e0f0] bg-[#0a3a52]"
                                         : "border-[#d3dae2] bg-white hover:border-[#c3e0f0]")
@@ -84,17 +88,17 @@ export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospecti
                             >
                                 <span
                                     className={
-                                        "flex size-12 shrink-0 items-center justify-center rounded-[10px] transition-colors duration-300 " +
+                                        "flex size-10 shrink-0 items-center justify-center rounded-[10px] transition-colors duration-300 md:size-12 " +
                                         (isSelected ? "bg-white" : "bg-[#e8f3ff]")
                                     }
                                 >
-                                    <Image src={segment.icon} alt="" className="w-6 h-6" />
+                                    <Image src={segment.icon} alt="" className="w-5 h-5 md:w-6 md:h-6" />
                                 </span>
 
-                                <span className="block">
+                                <span className="block min-w-0">
                                     <span
                                         className={
-                                            "block text-base font-medium leading-6 " +
+                                            "block text-base leading-5 font-semibold md:text-lg md:leading-6 " +
                                             (isSelected ? "text-white" : "text-[#0a3a52]")
                                         }
                                     >
@@ -102,7 +106,7 @@ export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospecti
                                     </span>
                                     <span
                                         className={
-                                            "mt-1 block max-w-[384px] text-xs leading-4 " +
+                                            "mt-1 block max-w-[384px] text-xs leading-[15px] md:text-sm md:leading-4 " +
                                             (isSelected ? "font-light text-white" : "text-[#64748b]")
                                         }
                                     >
@@ -115,7 +119,7 @@ export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospecti
                                         changes with selection. */}
                                     <span
                                         className={
-                                            "mt-3 inline-flex items-center gap-1 text-sm font-semibold " +
+                                            "mt-3 inline-flex items-start gap-1 text-sm font-semibold md:items-center md:text-base " +
                                             (isSelected ? "text-[#0061af]" : "text-[#2d8ec5]")
                                         }
                                     >
@@ -123,7 +127,7 @@ export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospecti
                                         <Image
                                             src={arrowRightIcon}
                                             alt=""
-                                            className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1"
+                                            className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1 md:w-6 md:h-6"
                                         />
                                     </span>
                                 </span>

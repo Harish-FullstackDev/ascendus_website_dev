@@ -36,20 +36,20 @@ export default function IsYourTechnologyLandscapeReady() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="lg:col-span-5"
                 >
-                    <p className="text-xs font-semibold uppercase tracking-[0.6px] text-[#2d8ec5]">
+                    <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.6px] text-[#2d8ec5] leading-4">
                         Solution Assessment
                     </p>
                     <h2 className="mt-4 text-2xl sm:text-[32px] font-semibold text-[#eaf3fa] leading-[1.4]">
                         Is Your Technology Landscape Ready for What&apos;s Next?
                     </h2>
-                    <p className="mt-4 max-w-[478px] text-sm sm:text-base text-[#d3dae2] leading-5">
+                    <p className="mt-4 max-w-[478px] text-base sm:text-lg font-normal text-[#d3dae2] leading-5">
                         Gain a clearer view of your current environment, identify gaps and explore opportunities for
                         modernization and transformation.
                     </p>
 
                     <Link
                         href="#tell-us-what-youre-looking-to-achieve"
-                        className="mt-6 inline-flex items-center rounded-[10px] bg-[#d3dae2] px-5 py-3 text-xs font-semibold text-[#1c5f85] transition-colors duration-300 hover:bg-white"
+                        className="mt-6 inline-flex items-center rounded-[10px] bg-[#d3dae2] px-5 py-3 text-sm sm:text-base font-semibold text-[#1c5f85] transition-colors duration-300 hover:bg-white"
                     >
                         Request an Assessment
                     </Link>

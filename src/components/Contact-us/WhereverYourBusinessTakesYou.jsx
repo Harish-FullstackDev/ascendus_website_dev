@@ -87,11 +87,11 @@ export default function WhereverYourBusinessTakesYou() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
             >
-                <p className="text-xs font-semibold uppercase tracking-[0.6px] text-[#2d8ec5]">Our Locations</p>
-                <h2 className="mt-1 text-2xl sm:text-[32px] font-medium text-[#0a3a52] leading-[36px]">
+                <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.6px] text-[#2d8ec5] leading-4">Our Locations</p>
+                <h2 className="mt-1 text-2xl sm:text-[32px] font-semibold text-[#0a3a52] leading-[36px]">
                     Wherever Your Business Takes You
                 </h2>
-                <p className="mt-2 text-sm text-[#64748b] leading-5">
+                <p className="mt-2 text-base sm:text-lg text-[#64748b] leading-5">
                     With a strong presence across key markets, we&apos;re always close to help you.
                 </p>
             </motion.div>

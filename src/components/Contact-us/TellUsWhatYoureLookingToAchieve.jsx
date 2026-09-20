@@ -66,7 +66,7 @@ const fieldClass =
 
 function Label({ children, htmlFor }) {
     return (
-        <label htmlFor={htmlFor} className="text-sm font-medium text-[#334155] leading-4">
+        <label htmlFor={htmlFor} className="text-sm sm:text-base font-medium text-[#334155] leading-4">
             {children} <span className="text-[#ef4444]">*</span>
         </label>
     );
@@ -169,11 +169,11 @@ export default function TellUsWhatYoureLookingToAchieve() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
             >
-                <p className="text-xs font-semibold uppercase tracking-[0.6px] text-[#2d8ec5]">General Enquiry</p>
-                <h2 className="mt-1 text-2xl sm:text-[32px] font-medium text-[#0a3a52] leading-[36px]">
+                <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.6px] text-[#2d8ec5] leading-4">General Enquiry</p>
+                <h2 className="mt-1 text-2xl sm:text-[32px] font-semibold text-[#0a3a52] leading-[36px]">
                     Tell Us What You&apos;re Looking to Achieve
                 </h2>
-                <p className="mt-2 text-sm text-[#64748b] leading-5">
+                <p className="mt-2 text-base sm:text-lg text-[#64748b] leading-5">
                     Have a question or need more information? Fill in the form and our team will get back to you.
                 </p>
             </motion.div>
@@ -296,10 +296,10 @@ export default function TellUsWhatYoureLookingToAchieve() {
                     >
                         <Image src={uploadIcon} alt="" className="ml-1 w-5 h-5 shrink-0" />
                         <div>
-                            <p className="text-xs font-medium text-[#334155] leading-4">
+                            <p className="text-sm sm:text-base font-medium text-[#334155] leading-4">
                                 {file ? file.name : "Attach File (Optional)"}
                             </p>
-                            <p className="mt-0.5 text-[11px] text-[#94a3b8] leading-4">
+                            <p className="mt-0.5 text-xs sm:text-sm text-[#94a3b8] leading-4">
                                 Drag and drop or click to upload (PDF, DOC, DOCX, Max 10MB)
                             </p>
                         </div>
@@ -353,16 +353,16 @@ export default function TellUsWhatYoureLookingToAchieve() {
                         {/* The revised design drops the headset icon that used to
                             sit beside this heading — the card leads with the
                             wordmark line alone. */}
-                        <h3 className="text-sm font-semibold uppercase tracking-[0.6px] text-white leading-4">
+                        <h3 className="text-base sm:text-lg font-semibold uppercase tracking-[0.6px] text-white leading-4">
                             Prefer to speak with us directly?
                         </h3>
 
-                        <p className="text-sm font-medium text-[#d3dae2] leading-4">Call us or email us at</p>
+                        <p className="text-sm sm:text-base font-medium text-[#d3dae2] leading-4">Call us or email us at</p>
 
                         <div className="flex flex-col gap-2 pt-1">
                             <a
                                 href="mailto:info@ascendus.com"
-                                className="flex items-center gap-2.5 text-sm font-light text-[#e2e8f0] transition-colors duration-200 hover:text-white"
+                                className="flex items-center gap-2.5 text-sm sm:text-base font-light text-[#e2e8f0] transition-colors duration-200 hover:text-white"
                             >
                                 <Image src={mailIcon} alt="" className="w-6 h-6" />
                                 info@ascendus.com
@@ -370,7 +370,7 @@ export default function TellUsWhatYoureLookingToAchieve() {
 
                             <a
                                 href="tel:+914412345678"
-                                className="flex items-center gap-2.5 text-sm font-light text-[#e2e8f0] transition-colors duration-200 hover:text-white"
+                                className="flex items-center gap-2.5 text-sm sm:text-base font-light text-[#e2e8f0] transition-colors duration-200 hover:text-white"
                             >
                                 <Image src={phoneIcon} alt="" className="w-6 h-6" />
                                 +91 44 1234 5678
