@@ -13,7 +13,7 @@ import indiaImg from "@/assets/Contact-us/India_Location.webp";
 // locking to 202px.
 const LOCATIONS = [
     {
-        href: "https://maps.google.com/?q=Ascendus+Riyadh+Saudi+Arabia",
+        href: "https://maps.app.goo.gl/r13crYbGJBBuQiSE7",
         image: ksaImg,
         name: "KSA",
     },
