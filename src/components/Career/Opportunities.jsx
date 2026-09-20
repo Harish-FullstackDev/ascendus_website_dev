@@ -217,7 +217,7 @@ const JobBoard = () => {
             id="mobile-filters-menu"
           >
             <div className="bg-white rounded-2xl p-4 sm:p-9 shadow-sm">
-              <h2 className="font-general-sans text-base sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
+              <h2 className="text-base sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
                 Filter
               </h2>
 

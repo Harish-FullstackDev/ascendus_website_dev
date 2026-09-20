@@ -7,18 +7,19 @@
 body {
   margin: 0;
   /* padding: 0 1rem; */
-  font-family: 'General Sans', sans-serif;
+  font-family: 'Switzer', sans-serif;
   /* background: linear-gradient(to right, #e6f0fa, #e6f0fa, #e6f0fa); */
 }
 
-/* Main section titles (h1/h2) use Houschka Pro; everything else — sub
-   headings, card titles, body copy — stays on General Sans via
-   inheritance from body. Use the .font-general-sans / .font-houschka-pro
-   utilities (see font.css) for the rare heading that needs to opt out
-   of, or in to, this default. */
+/* The whole site runs on Switzer now (previously General Sans for body,
+   Houschka Pro for h1/h2) — h1/h2 inherit the same family as body, just at
+   a heavier weight. Use the .font-general-sans / .font-houschka-pro
+   utilities (see font.css) for the rare heading that needs to opt out of
+   this default; both now resolve to Switzer too. */
 h1,
 h2 {
-  font-family: 'Houschka Pro', sans-serif;
+  font-family: 'Switzer', sans-serif;
+  font-weight: 600;
 }
 
 .primary-Button{
