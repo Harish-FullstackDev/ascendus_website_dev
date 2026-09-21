@@ -86,22 +86,22 @@ export default function ACollaborativeEcosystem() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="max-w-[805px]"
+                className="flex max-w-[811px] flex-col gap-3"
             >
-                <p className="text-sm font-semibold uppercase tracking-[0.6px] text-[#2d8ec5] leading-4">
+                <p className="text-sm font-semibold uppercase tracking-[0.7px] text-[#0061af] leading-4">
                     Our Industries
                 </p>
-                <h2 className="mt-3 text-2xl sm:text-[32px] font-semibold text-[#0a3a52] leading-[1.3]">
+                <h2 className="text-2xl sm:text-[32px] font-semibold text-[#0e2b4b] leading-[1.2]">
                     A Collaborative Ecosystem for Greater Possibilities
                 </h2>
-                <p className="mt-3 text-base font-normal text-[#64748b] leading-[1.4]">
+                <p className="pt-0.5 text-base font-normal text-[#415773] leading-[1.5]">
                     Our ecosystem includes strategic partners, technology leaders, and industry alliances that help us
                     deliver innovative solutions, expand capabilities and create greater value for our client.
                 </p>
             </motion.div>
 
-            {/* ~18px between columns and 32px between the two rows in Figma. */}
-            <div className="mt-10 sm:mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-6 lg:gap-x-[18px] lg:gap-y-8">
+            {/* ~13px between columns and 32px between the two rows in Figma. */}
+            <div className="mt-10 sm:mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-6 lg:gap-x-[13px] lg:gap-y-8">
                 {INDUSTRIES.map((industry) => (
                     <IndustryCard
                         key={industry.title}

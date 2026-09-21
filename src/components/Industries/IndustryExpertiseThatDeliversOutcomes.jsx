@@ -27,29 +27,32 @@ export default function IndustryExpertiseThatDeliversOutcomes() {
             id="why-it-matters"
             className="w-full scroll-mt-24 border-t border-[#f1f5f9] bg-[#00223d] px-6 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-16"
         >
-            {/* Figma: a 436px heading column beside an 834px card track with a
-                48px gutter. */}
-            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,436px)_minmax(0,1fr)] gap-10 lg:gap-12 lg:items-center">
+            {/* Figma 258:1349 — the heading column hugs its copy rather than
+                taking a fixed track, and the outcomes take everything left over
+                across a 48px gutter. */}
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-12">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="flex flex-col items-start gap-3 lg:shrink-0"
                 >
-                    <p className="text-sm font-semibold uppercase tracking-[0.6px] text-[#5189c5] leading-4">
+                    <p className="text-sm font-semibold uppercase tracking-[0.7px] text-[#68c2f2] leading-4">
                         Why It Matters
                     </p>
-                    <h2 className="mt-4 text-2xl sm:text-[32px] font-semibold text-[#f8f8f8] leading-[1.4]">
+                    <h2 className="text-2xl sm:text-[32px] font-semibold text-white leading-[1.2]">
                         Industry Expertise
                         <br className="hidden sm:inline" /> That Delivers Outcomes
                     </h2>
                 </motion.div>
 
-                {/* Hairline rules separate the four outcomes — a left rule on the
-                    track plus a right rule on each card. They only apply from lg
-                    up, where the four sit on one row; below that the cards stack
-                    and the rules would cut across the flow. */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:border-l lg:border-[#f8f8f8]/40">
+                {/* Hairline rules sit between the four outcomes, so every card but
+                    the last carries a right rule and the track carries none of
+                    its own. They only apply from lg up, where the four sit on one
+                    row; below that the cards stack and the rules would cut across
+                    the flow. */}
+                <div className="grid w-full grid-cols-2 lg:grid-cols-4 gap-8 lg:h-[149px] lg:gap-0 lg:items-center">
                     {OUTCOMES.map((outcome, index) => (
                         <motion.div
                             key={`${outcome.title}-${index}`}
@@ -57,13 +60,16 @@ export default function IndustryExpertiseThatDeliversOutcomes() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
-                            className="flex flex-col items-center justify-center gap-2 px-2 py-1.5 lg:border-r lg:border-[#f8f8f8]/40"
+                            className={
+                                "flex flex-col items-center justify-center gap-2 px-2 py-1.5 lg:h-[135px] " +
+                                (index < OUTCOMES.length - 1 ? "lg:border-r lg:border-[#f8f8f8]/40" : "")
+                            }
                         >
                             <span className="flex size-16 items-center justify-center rounded-[10px]">
                                 <Image src={outcome.icon} alt="" className="size-12" />
                             </span>
 
-                            <h3 className="max-w-[132px] pt-2 text-center text-base sm:text-lg font-normal text-[#f8f8f8] leading-[1.3]">
+                            <h3 className="w-full pt-2 text-center text-base font-normal text-white leading-[1.5]">
                                 {outcome.title}
                             </h3>
                         </motion.div>

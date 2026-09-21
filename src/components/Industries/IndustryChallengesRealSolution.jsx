@@ -6,8 +6,7 @@ import { motion } from "framer-motion";
 
 import IndustryCard from "./IndustryCard";
 
-import sectionBg from "@/assets/Industries/Solution_Bg.webp";
-import arrowIcon from "@/assets/Industries/icons/arrow-right-small.svg";
+import arrowIcon from "@/assets/Industries/icons/arrow-right-16.svg";
 import strategyImage from "@/assets/Industries/Healthcare_Life_Sciences.webp";
 import technologyImage from "@/assets/Industries/Technology_Media_Communications.webp";
 
@@ -34,46 +33,47 @@ const SOLUTIONS = [
     },
 ];
 
-// Sits between the dark outcomes band and the CTA photo, and carries its own
-// washed-out mountain backdrop — a background change on both edges, so the full
-// 64px top and bottom.
+// Sits between the dark outcomes band and the CTA photo. The washed-out
+// mountain backdrop this section used to carry is gone from the design — it is a
+// plain white band now. The background still changes on both edges, so it keeps
+// the full 64px top and bottom.
 export default function IndustryChallengesRealSolution() {
     return (
-        <section id="solution" className="relative w-full scroll-mt-24 overflow-hidden">
-            {/* The backdrop is almost entirely veiled by an 85% white wash in
-                Figma; it reads as texture behind the copy rather than a photo. */}
-            <Image src={sectionBg} alt="" fill className="object-cover" sizes="100vw" />
-            <div className="absolute inset-0 bg-white/85" />
-
-            <div className="relative px-6 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-16">
-                {/* Figma: a 434px copy column beside an 800px card track with a
-                    ~64px gutter. */}
-                <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,434px)_minmax(0,1fr)] gap-10 lg:gap-16 lg:items-center">
+        <section id="solution" className="w-full scroll-mt-24 bg-white">
+            <div className="px-6 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-16">
+                {/* Figma 258:1392 — a 448px copy column and an 800px card track
+                    pushed to either end of the row. */}
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="flex flex-col items-start"
+                        className="flex w-full flex-col items-start gap-6 lg:w-[448px] lg:shrink-0"
                     >
-                        <p className="text-sm font-semibold uppercase tracking-[0.6px] text-[#5189c5] leading-4">
-                            Solution
-                        </p>
+                        <div className="flex flex-col items-start gap-3">
+                            {/* Not the 14px eyebrow the other sections use —
+                                Figma sets this one at 18px regular with 1.8px of
+                                tracking (Hero_Eyebrow). */}
+                            <p className="flex h-8 items-center text-lg font-normal uppercase tracking-[1.8px] text-[#0061af] leading-[1.2]">
+                                Solution
+                            </p>
 
-                        <h2 className="mt-4 text-2xl sm:text-4xl font-bold tracking-[-0.9px] text-[#0d1b2e] leading-[1.08]">
-                            Industry Challenges
-                            <br />
-                            Real Solution
-                        </h2>
+                            <h2 className="text-2xl sm:text-[32px] font-semibold text-[#0d1b2e] leading-[1.2]">
+                                Industry Challenges
+                                <br />
+                                Real Solution
+                            </h2>
 
-                        <p className="mt-4 max-w-[448px] text-base text-[#4a5565] leading-[26px]">
-                            Let&apos;s explore how we can help you solve your industry&apos;s unique challenges and
-                            create new opportunities for growth.
-                        </p>
+                            <p className="text-base font-normal text-[#4a5565] leading-[1.5]">
+                                Let&apos;s explore how we can help you solve your industry&apos;s unique challenges and
+                                create new opportunities for growth.
+                            </p>
+                        </div>
 
                         <Link
                             href="/solutions/"
-                            className="group mt-8 inline-flex h-12 items-center gap-2.5 rounded-[4px] bg-[#0d1b2e] px-7 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#0a3a52]"
+                            className="group inline-flex h-12 items-center gap-2.5 rounded-[8px] bg-[#0061af] px-7 text-base font-normal text-white transition-colors duration-300 hover:bg-[#004c8a]"
                         >
                             Explore Solution
                             <Image
@@ -84,15 +84,16 @@ export default function IndustryChallengesRealSolution() {
                         </Link>
                     </motion.div>
 
-                    {/* 20px between the three cards (Figma 179:2621 — three
+                    {/* 20px between the three cards (Figma 258:1407 — three
                         253px cards across an 800px track). */}
-                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+                    <div className="grid w-full grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 lg:max-w-[800px]">
                         {SOLUTIONS.map((solution) => (
                             <IndustryCard
                                 key={solution.title}
                                 description={solution.description}
                                 image={solution.image}
                                 title={solution.title}
+                                variant="solution"
                             />
                         ))}
                     </div>

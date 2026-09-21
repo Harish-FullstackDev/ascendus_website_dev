@@ -101,7 +101,11 @@ export default function ACollaborativeEcosystem() {
                 {/* Two rows of four, 12px between tiles and 32px between rows
                     (Figma 232:345 / 232:369). Four across only from lg, where the
                     tiles still clear their 213px design width; below that they
-                    halve so a photo always sits beside the copy it belongs with. */}
+                    halve so a photo always sits beside the copy it belongs with.
+                    Figma fixes the tiles at 230px, but a half-width column on a
+                    phone cannot hold the same copy in that height — so it is a
+                    floor rather than a fixed height, and the photo beside a
+                    taller card stretches to match it. */}
                 <div className="grid w-full grid-cols-2 lg:grid-cols-4 gap-3 lg:max-w-[896px]">
                     {TILES.map((tile) =>
                         tile.photo ? (
@@ -111,7 +115,7 @@ export default function ACollaborativeEcosystem() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.2 }}
                                 transition={{ duration: 0.5, ease: "easeOut" }}
-                                className="relative h-[180px] sm:h-[230px] overflow-hidden rounded-[8px] border border-[#e2e8f0]"
+                                className="relative min-h-[180px] sm:min-h-[230px] overflow-hidden rounded-[8px] border border-[#e2e8f0]"
                             >
                                 <Image
                                     src={tile.photo}
@@ -132,7 +136,7 @@ export default function ACollaborativeEcosystem() {
                                 viewport={{ once: true, amount: 0.2 }}
                                 transition={{ duration: 0.5, ease: "easeOut" }}
                                 className={
-                                    "flex h-[180px] sm:h-[230px] flex-col justify-between rounded-[8px] border p-[17px] transition-shadow duration-300 hover:shadow-[0px_6px_18px_rgba(10,58,82,0.12)] " +
+                                    "flex min-h-[180px] sm:min-h-[230px] flex-col justify-between gap-2 rounded-[8px] border p-[17px] transition-shadow duration-300 hover:shadow-[0px_6px_18px_rgba(10,58,82,0.12)] " +
                                     TONES[tile.tone].card
                                 }
                             >
