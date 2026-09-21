@@ -29,22 +29,20 @@ export default function YourIndustryOurExpertise({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative z-10 flex flex-col items-start gap-7 px-6 sm:px-[64px] pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-24 lg:pb-32"
+                    className="relative z-10 flex flex-col items-start gap-6 px-6 sm:px-[64px] py-[64px]"
                 >
-                    <div className="flex w-full max-w-[935px] flex-col gap-4">
-                        <h2 className="text-2xl sm:text-5xl font-semibold text-white leading-tight">
-                            Your Industry.
-                            <br />
-                            Our Expertise.
+                    <div className="flex w-full max-w-[935px] flex-col gap-3">
+                        <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold text-white leading-[1.2]">
+                            Your Industry. Our Expertise.
                         </h2>
 
-                        <p className="max-w-[836px] text-base sm:text-2xl font-light text-white">{description}</p>
+                        <p className="max-w-[836px] text-base font-normal text-white leading-[1.5]">{description}</p>
                     </div>
 
                     <button
                         type="button"
                         onClick={() => setShowCalendly(true)}
-                        className="group inline-flex h-[51px] shrink-0 items-center gap-3 rounded-[12px] border border-[#e8ebef] px-6 text-lg font-light text-white transition-colors hover:bg-white hover:text-black"
+                        className="group inline-flex h-[51px] shrink-0 items-center gap-3 rounded-[12px] border border-[#e8ebef] px-3 text-base font-normal text-white transition-colors hover:bg-white hover:text-black"
                     >
                         {buttonLabel}
                         {/* The arrow ships with a white stroke, so it is inverted
