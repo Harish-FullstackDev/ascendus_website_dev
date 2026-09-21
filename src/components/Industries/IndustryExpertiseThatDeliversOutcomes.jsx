@@ -12,11 +12,16 @@ import teamsIcon from "@/assets/Industries/icons/user-multiple.svg";
 // Understanding") while giving them different icons — a target and a group of
 // people. That reads as a copy-paste slip in the fourth label, but the copy is
 // reproduced verbatim; flag it with the designer rather than inventing a title.
+//
+// Each label is carried as its two lines rather than one string. Figma sets all
+// four on two lines over a 211px column, and left to wrap on their own they
+// straighten out to a single line as soon as the track is wider than the 1440
+// frame — which is most desktops.
 const OUTCOMES = [
-    { icon: domainIcon, title: "Deeper Domain Understanding" },
-    { icon: experienceIcon, title: "Enhanced User Experience" },
-    { icon: collaborationIcon, title: "Cross-Functional Collaboration" },
-    { icon: teamsIcon, title: "Deeper Domain Understanding" },
+    { icon: domainIcon, lines: ["Deeper Domain", "Understanding"] },
+    { icon: experienceIcon, lines: ["Enhanced", "User Experience"] },
+    { icon: collaborationIcon, lines: ["Cross-Functional", "Collaboration"] },
+    { icon: teamsIcon, lines: ["Deeper Domain", "Understanding"] },
 ];
 
 // The one dark band on the page. Both neighbours are a different background, so
@@ -55,7 +60,7 @@ export default function IndustryExpertiseThatDeliversOutcomes() {
                 <div className="grid w-full grid-cols-2 lg:grid-cols-4 gap-8 lg:h-[149px] lg:gap-0 lg:items-center">
                     {OUTCOMES.map((outcome, index) => (
                         <motion.div
-                            key={`${outcome.title}-${index}`}
+                            key={`${outcome.lines.join(" ")}-${index}`}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.2 }}
@@ -69,8 +74,12 @@ export default function IndustryExpertiseThatDeliversOutcomes() {
                                 <Image src={outcome.icon} alt="" className="size-12" />
                             </span>
 
-                            <h3 className="w-full pt-2 text-center text-base font-normal text-white leading-[1.5]">
-                                {outcome.title}
+                            <h3 className="max-w-[211px] pt-2 text-center text-base font-normal text-white leading-[1.5]">
+                                {outcome.lines.map((line) => (
+                                    <span key={line} className="block">
+                                        {line}
+                                    </span>
+                                ))}
                             </h3>
                         </motion.div>
                     ))}
