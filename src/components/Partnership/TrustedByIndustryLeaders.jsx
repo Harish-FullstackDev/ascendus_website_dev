@@ -3,20 +3,28 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import adobeIcon from "@/assets/Partnership/icons/adobe.svg";
-import googleCloudIcon from "@/assets/Partnership/icons/google-cloud.svg";
+import sapLogo from "@/assets/HomePage/OurProudPartners/sap.png";
+import salesforceLogo from "@/assets/HomePage/OurProudPartners/salesforce.png";
+import awsLogo from "@/assets/HomePage/OurProudPartners/aws.png";
+import odooLogo from "@/assets/HomePage/OurProudPartners/odoo.png";
+import uipathLogo from "@/assets/HomePage/OurProudPartners/uipath.png";
+import sophosLogo from "@/assets/HomePage/OurProudPartners/sophos.png";
+import googleCloudLogo from "@/assets/HomePage/OurProudPartners/google-cloud.png";
+import databricksLogo from "@/assets/HomePage/OurProudPartners/databricks.png";
 
-// Figma draws these wordmarks as styled text rather than supplying the real
-// brand logos, so they are rendered the same way here: a `mark` describes the
-// glyph that sits beside the label, and the label carries the brand's own
-// colour and weight. Swap in licensed logo files when they are available.
+// Same partners, same artwork as the homepage's "Our Proud Partners" strip —
+// the real brand logo files rather than text and CSS shapes standing in for
+// them. The intrinsic sizes come from each file; the rendered height is
+// capped in the markup so the wordmarks sit on a common baseline.
 const PARTNERS = [
-    { label: "SAP", mark: "sap" },
-    { className: "text-lg font-semibold text-[#334155]", label: "Microsoft", mark: "microsoft" },
-    { className: "text-lg font-extrabold tracking-[-0.45px] text-[#0f172a]", icon: adobeIcon, label: "Adobe" },
-    { className: "text-xl font-extrabold tracking-[-0.5px] text-[#1e293b]", label: "aws" },
-    { className: "text-base font-medium text-[#334155]", icon: googleCloudIcon, label: "Google Cloud" },
-    { className: "text-xl font-bold tracking-[1px] text-[#e83e8c]", label: "tcs" },
+    { name: "SAP", logo: sapLogo, width: 48, height: 24 },
+    { name: "Salesforce", logo: salesforceLogo, width: 34, height: 24 },
+    { name: "AWS", logo: awsLogo, width: 37, height: 24 },
+    { name: "Odoo", logo: odooLogo, width: 58, height: 18 },
+    { name: "UiPath", logo: uipathLogo, width: 56, height: 18 },
+    { name: "Sophos", logo: sophosLogo, width: 92, height: 16 },
+    { name: "Google Cloud", logo: googleCloudLogo, width: 30, height: 24 },
+    { name: "Databricks", logo: databricksLogo, width: 123, height: 20 },
 ];
 
 // Centred block, white on white with "More Than a Partnership" above it: 32px on
@@ -57,34 +65,15 @@ export default function TrustedByIndustryLeaders() {
                 className="mt-9 flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-14"
             >
                 {PARTNERS.map((partner) => (
-                    <span key={partner.label} className="flex items-center gap-2">
-                        {partner.mark === "sap" ? (
-                            <span className="rounded-[4px] bg-[#0061af] px-2.5 py-1 text-xl font-extrabold text-white leading-7">
-                                SAP
-                            </span>
-                        ) : null}
-
-                        {/* The Microsoft mark is four coloured squares, which is
-                            geometry rather than artwork — drawn with a grid so it
-                            stays crisp at any density. */}
-                        {partner.mark === "microsoft" ? (
-                            <span className="grid size-4 grid-cols-2 gap-0.5">
-                                <span className="bg-[#f25022]" />
-                                <span className="bg-[#7fba00]" />
-                                <span className="bg-[#0061af]" />
-                                <span className="bg-[#ffb900]" />
-                            </span>
-                        ) : null}
-
-                        {partner.icon ? <Image src={partner.icon} alt="" className="size-5" /> : null}
-
-                        {partner.className ? (
-                            <span className={`${partner.className} leading-7`}>{partner.label}</span>
-                        ) : null}
-                    </span>
+                    <Image
+                        key={partner.name}
+                        src={partner.logo}
+                        alt={partner.name}
+                        width={partner.width}
+                        height={partner.height}
+                        className="w-auto h-4 sm:h-6 object-contain"
+                    />
                 ))}
-
-                <span className="text-xs font-normal text-[#94a3b8] leading-4">and more...</span>
             </motion.div>
         </section>
     );

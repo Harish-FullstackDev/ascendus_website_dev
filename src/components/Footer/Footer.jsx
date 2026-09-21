@@ -1,18 +1,23 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../assets/Brand/Ascendus_Logo_Secondary.png";
-import wordmark from "../../assets/Footer/Ascendus_Outline_Wordmark.svg";
+import logo from "../../assets/Brand/ASCENDUS.svg";
+import logoSecondary from "../../assets/Brand/Ascendus_Logo_Secondary.png";
 import InstagramIcon from "../../assets/Footer/Instagram_Icon.svg";
 import LinkedinIcon from "../../assets/Footer/LinkedIn_Icon.svg";
 import TwitterIcon from "../../assets/Footer/X_Icon.svg";
 
+// Height of the pinned wordmark band at the end of the footer. Its flow
+// space doubles as the window the reveal happens through.
+const revealHeight = "h-40 sm:h-48 lg:h-[200px]";
+
 const linkClass = "hover:text-white transition-colors duration-200";
 const labelClass = "text-gray-500 cursor-default";
 
-// One entry per footer column. The link row is a 7-column grid so every column
-// is the same width and the row can never wrap onto a second line; Industries
-// and Solutions each take two of those columns, the second carrying no heading.
+// One entry per footer column. Each renders as its own natural-width block
+// (not an equal-width grid cell), so a short list like Quick Links stays
+// narrow while Industries and Solutions — both full 10-item lists — take
+// the width their longest label needs.
 const columns = [
   {
     heading: "Industries",
@@ -23,11 +28,6 @@ const columns = [
       { name: "Government & Public Sector", href: "/industries" },
       { name: "Banking & Financial Services", href: "/industries" },
       { name: "Energy & Utilities", href: "/industries" },
-    ],
-  },
-  {
-    heading: null,
-    items: [
       { name: "Engineering & Construction", href: "/industries" },
       { name: "Healthcare & Life Sciences", href: "/industries" },
       { name: "Technology, Media & Communications", href: "/industries" },
@@ -43,11 +43,6 @@ const columns = [
       { name: "SAP SuccessFactors", href: "/solutions" },
       { name: "SAP BTP", href: "/solutions" },
       { name: "SAP Analytics", href: "/solutions" },
-    ],
-  },
-  {
-    heading: null,
-    items: [
       { name: "SAP Integration", href: "/solutions" },
       { name: "SAP EHS", href: "/solutions" },
       { name: "SAP CX", href: "/solutions" },
@@ -114,27 +109,26 @@ const legalLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-900 text-gray-400 px-8 pt-8 md:px-16 md:pt-16">
-      <div className="relative h-8 w-auto aspect-[4/1] mb-6 md:hidden">
-        <Image
-          src={logo}
-          alt="Ascendus Logo"
-          fill
-          style={{ objectFit: "contain", objectPosition: "left" }}
-        />
-      </div>
+    <footer className="relative bg-neutral-900 text-gray-400">
+      <div className="relative z-10 bg-neutral-900 px-8 py-8 md:px-16 md:pt-16 md:pb-9">
+        <div className="relative h-8 w-auto aspect-[4/1] mb-6 md:hidden">
+          <Image
+            src={logoSecondary}
+            alt="Ascendus Logo"
+            fill
+            style={{ objectFit: "contain", objectPosition: "left" }}
+          />
+        </div>
 
-      {/* Link row. Seven equal columns at md and up, so widths and gaps are
-          uniform and the row can never drop onto a second line. The resulting
-          column width is narrow enough that a long label such as
-          "Government & Public Sector" wraps its last word rather than
-          widening its column. */}
-      <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-7 md:gap-6 lg:gap-8 ">
-        {columns.map((column, index) => (
-          <div key={column.heading || "continued-" + index}>
-            {column.heading ? (
-              /* A heading links out only when its section has a page of its own
-                 (Industries does); the rest stay plain labels. */
+        {/* Main row: the five nav columns on the left, each its own natural
+          width, with the logo / registered-office / social block pinned to
+          the right via ml-auto. flex-wrap lets that right block drop below
+          the columns on narrow screens instead of squeezing them. */}
+        <div className="flex flex-wrap items-start gap-x-12 gap-y-10">
+          {columns.map((column) => (
+            <div key={column.heading} className="shrink-0">
+              {/* A heading links out only when its section has a page of its own
+                (Industries does); the rest stay plain labels. */}
               <h2 className="text-white text-base lg:text-lg font-semibold mb-4">
                 {column.headingHref ? (
                   <Link href={column.headingHref} className={linkClass}>
@@ -144,84 +138,55 @@ const Footer = () => {
                   column.heading
                 )}
               </h2>
-            ) : (
-              /* Continuation column: an invisible heading keeps its first item
-                 level with the first item of the column it continues. */
-              <h2
-                className="hidden md:block text-white text-base lg:text-lg font-semibold mb-4 invisible"
-                aria-hidden="true"
-              >
-                &nbsp;
-              </h2>
-            )}
 
-            <ul className="space-y-2 text-sm">
-              {column.items.map((item) => (
-                <li key={item.name}>
-                  {/* Entries with no page yet stay plain labels rather than
+              <ul className="space-y-2 text-sm">
+                {column.items.map((item) => (
+                  <li key={item.name}>
+                    {/* Entries with no page yet stay plain labels rather than
                       becoming links to nowhere. */}
-                  {item.href ? (
-                    <Link href={item.href} className={linkClass}>
-                      {item.name}
-                    </Link>
-                  ) : (
-                    <span className={labelClass}>{item.name}</span>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+                    {item.href ? (
+                      <Link href={item.href} className={linkClass}>
+                        {item.name}
+                      </Link>
+                    ) : (
+                      <span className={labelClass}>{item.name}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
-      {/* Bottom band. The wordmark sits behind this whole block as a faint
-          backdrop, with the contact details, divider and legal lines on top. */}
-      <div className="relative overflow-hidden pt-10 md:pt-14 pb-6 md:pb-8">
-        {/* Figma runs the outline wordmark the full width of the footer, flush
-            left, and lets it bleed off the bottom edge. The crop is measured off
-            node 62:749's footer, not 67:2850 — both draw the wordmark at the
-            same 1340px width, but 62:749 sits it 14px lower, cutting 40.8px of
-            the 190.8px glyph height (21.4%) against 67:2850's 26.8px (14.1%).
-            w-full against this padded content box is the closest match to the
-            design's width; the translate reproduces the crop, which the band's
-            own overflow-hidden performs. No opacity class here: the SVG already
-            carries the design's 0.32 on its stroke, so stacking another
-            multiplier on top would wash it out completely. */}
-        <div
-          className="pointer-events-none absolute inset-x-0 bottom-0"
-          aria-hidden="true"
-        >
-          <Image src={wordmark} alt="" className="w-full h-auto translate-y-[21.4%]" />
-        </div>
+          {/* Logo, registered-office address and socials — stacked, right
+            aligned on desktop (ml-auto pins the whole block to the row's
+            right edge); centred if it wraps onto its own line on mobile. */}
+          <div className="ml-auto shrink-0 flex flex-col items-center sm:items-end gap-6 text-center sm:text-right">
+            <div className="relative h-9 w-40 aspect-[4/1]">
+              <Image
+                src={logoSecondary}
+                alt="Ascendus Logo"
+                fill
+                style={{ objectFit: "contain", objectPosition: "right" }}
+              />
+            </div>
 
-        <div className="relative">
-          {/* Mobile: icons keep their own centred row above the address —
-              not enough width here to also right-align them on this line. */}
-          <div className="flex md:hidden justify-center gap-3 mb-8">
-            {socials.map((social) => (
+            <div className="text-sm space-y-1">
+              <p className="text-white text-lg font-medium">Registered office</p>
               <a
-                key={social.label}
-                href={social.href}
+                href="https://maps.app.goo.gl/r13crYbGJBBuQiSE7"
+                className={"block " + linkClass}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-                aria-label={social.label}
               >
-                <Image
-                  src={social.icon}
-                  alt={social.label}
-                  className="w-10 h-10"
-                  width={24}
-                  height={24}
-                />
+                7731 King Saud Ibn Abdulaziz Saud,<br />
+                2839 Al Murabba Dist., Riyadh 12624, KSA
               </a>
-            ))}
-          </div>
+              <a href="mailto:info@ascendus.sa" className={"block " + linkClass}>
+                info@ascendus.sa
+              </a>
+            </div>
 
-          {/* Desktop: icons sit right-aligned level with the email line,
-              directly above the legal-links divider. */}
-          <div className="relative flex items-end justify-center">
-            <div className="hidden md:flex absolute right-0 bottom-0 gap-3">
+            <div className="flex gap-3">
               {socials.map((social) => (
                 <a
                   key={social.label}
@@ -241,46 +206,44 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-
-            {/* Centred and centre-aligned, so the successively shorter lines
-                taper the way the address reads on paper. */}
-            <div className="text-center text-sm space-y-1">
-              <p className="text-white text-lg font-medium">Registered office</p>
-              <a
-                href="https://maps.app.goo.gl/r13crYbGJBBuQiSE7"
-                className={"block " + linkClass}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                7731 King Saud Ibn Abdulaziz Saud,<br /> 2839 Al Murabba Dist.,
-                <br />
-                Riyadh 12624, KSA
-              </a>
-              <a href="mailto:info@ascendus.sa" className={"block " + linkClass}>
-                info@ascendus.sa
-              </a>
-            </div>
-          </div>
-
-          <div className="border-t border-white/15 mt-8 pt-6 text-center text-sm">
-            <p className="text-white whitespace-nowrap overflow-x-auto">
-              {legalLinks.map((item, index) => (
-                <span key={item.href}>
-                  {index > 0 && " | "}
-                  <a
-                    href={item.href}
-                    className="hover:text-gray-300 transition-colors"
-                  >
-                    {item.name}
-                  </a>
-                </span>
-              ))}
-            </p>
-            <p className="text-white mt-3">
-              © 2026 Ascendus. All Rights Reserved.
-            </p>
           </div>
         </div>
+
+        {/* Legal row: one divider, legal links + copyright right-aligned
+          beneath it (centred on mobile). */}
+        <div className="border-t border-white/15 mt-8 pt-8 text-center sm:text-right text-sm">
+          <p className="text-white whitespace-nowrap overflow-x-auto">
+            {legalLinks.map((item, index) => (
+              <span key={item.href}>
+                {index > 0 && " | "}
+                <a href={item.href} className="hover:text-gray-300 transition-colors">
+                  {item.name}
+                </a>
+              </span>
+            ))}
+          </p>
+          <p className="text-white mt-3">© 2026 Ascendus. All Rights Reserved.</p>
+        </div>
+      </div>
+
+      {/* Pinned wordmark, and the last thing in the footer — its own flow
+          space is the window it gets revealed through. `sticky bottom-0`
+          keeps it pinned to the bottom of the viewport for as long as it
+          would otherwise sit below the fold (sticky-bottom pulls an element
+          *up*; it never pushes one down, which is why this sits at the end
+          of the footer rather than the start). The content block above is
+          opaque and on a higher layer, so it covers the pinned wordmark
+          until the last stretch of scrolling lifts its bottom edge clear —
+          uncovering the wordmark from the bottom up.
+
+          Not `fixed` + a negative z-index: that layer is painted underneath
+          the backgrounds of the page's own in-flow blocks, so it never
+          shows at all. */}
+      <div
+        className={`sticky bottom-0 z-0 flex items-end overflow-hidden ${revealHeight}`}
+        aria-hidden="true"
+      >
+        <Image src={logo} alt="" className="w-full h-auto" />
       </div>
     </footer>
   );
