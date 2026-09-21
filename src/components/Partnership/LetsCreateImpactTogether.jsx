@@ -5,12 +5,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import ctaBg from "@/assets/Partnership/CTA_Bg.webp";
+import arrowRightIcon from "@/assets/Partnership/icons/arrow-right.svg";
 import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
 
-// Same construction as the /contact-us/ CTA (ReadyToTurnYourVisionIntoAction):
-// background photo, a top-to-bottom black gradient, heading + supporting line on
-// the left and an outlined button on the right. Only the copy and the photo
-// differ.
+// Background photo under a top-to-bottom black gradient, with heading,
+// supporting line and button stacked down the left edge (Figma 232:492). The
+// button used to sit opposite the copy on the right; it now follows it in the
+// same column, so the whole band reads as one left-aligned block.
 export default function LetsCreateImpactTogether({
     title = "Let's Create Impact Together",
     description = "Whether you're a technology provider, consulting firm, or industry leader, we'd love to explore how we can collaborate.",
@@ -30,20 +31,29 @@ export default function LetsCreateImpactTogether({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-12 px-6 sm:px-[64px] pt-32 sm:pt-30 lg:pt-32 pb-16 sm:pb-24 lg:pb-32"
+                    className="relative z-10 flex flex-col items-start gap-6 px-6 sm:px-[64px] py-[64px]"
                 >
-                    <div className="flex flex-col w-full md:gap-12 sm:w-[60%]">
-                        <h2 className="text-xl sm:text-5xl font-semibold text-white">{title}</h2>
+                    {/* 16px between the heading and the line under it, 24px
+                        before the button (Figma 232:494 / 232:493). */}
+                    <div className="flex flex-col items-start gap-4">
+                        <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold text-white leading-[1.2]">
+                            {title}
+                        </h2>
 
-                        <p className="text-base sm:text-2xl font-light text-white">{description}</p>
+                        <p className="max-w-[836px] text-base font-normal text-white leading-[1.5]">{description}</p>
                     </div>
 
                     <button
                         type="button"
                         onClick={() => setShowCalendly(true)}
-                        className="shrink-0 rounded-[10px] border border-[#d0d0d0] px-6 sm:px-[24px] py-2 sm:py-[8px] text-lg font-light text-white transition-colors hover:bg-white hover:text-black"
+                        className="group inline-flex shrink-0 items-center gap-2 rounded-[8px] border border-[#f8f8f8] px-[13px] py-[9px] text-base font-normal text-white transition-colors duration-300 hover:bg-white hover:text-black"
                     >
                         {buttonLabel}
+                        <Image
+                            src={arrowRightIcon}
+                            alt=""
+                            className="size-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:brightness-0"
+                        />
                     </button>
                 </motion.div>
             </section>

@@ -33,6 +33,10 @@ const SEGMENTS = [
 // section below (Start a New Conversation / Already an Ascendus Customer),
 // which is why they are buttons and why the selected state is owned by the page
 // rather than by this component.
+//
+// Selection follows the pointer: hovering a card selects it and the selection
+// stays on the last card hovered after the pointer leaves. Click and keyboard
+// focus select too, so touch and keyboard users reach both panels.
 export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospective" }) {
     return (
         <section className="w-full bg-white px-6 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-8">
@@ -79,6 +83,8 @@ export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospecti
                                 aria-selected={isSelected}
                                 aria-controls={`segment-panel-${segment.id}`}
                                 onClick={() => onSelect?.(segment.id)}
+                                onMouseEnter={() => onSelect?.(segment.id)}
+                                onFocus={() => onSelect?.(segment.id)}
                                 className={
                                     "group flex h-full w-full flex-col items-start gap-3 rounded-[16px] border p-4 text-left transition-colors duration-300 md:flex-row md:gap-6 md:p-[25px] " +
                                     (isSelected
