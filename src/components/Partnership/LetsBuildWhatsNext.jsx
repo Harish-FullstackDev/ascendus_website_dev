@@ -48,28 +48,33 @@ export default function LetsBuildWhatsNext() {
             id="partner-with-us"
             className="w-full scroll-mt-24 border-y border-[rgba(226,232,240,0.8)] bg-[#f4f7fb] px-6 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-16"
         >
-            {/* Figma (232:576) gives the intro a 363px column and starts the card
-                row 15px later, so the cards own everything that is left. The
+            {/* Figma (232:576) gives the intro a 347px column and starts the card
+                row 31px later, so the cards own everything that is left. The
                 intro track is capped rather than fixed so the cards absorb the
                 extra width on wider screens. */}
-            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-4">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-[31px]">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex w-full flex-col items-start gap-3 lg:w-[363px] lg:shrink-0"
+                    className="flex w-full flex-col items-start gap-8 lg:w-[347px] lg:shrink-0"
                 >
-                    <p className="text-sm font-semibold uppercase tracking-[0.7px] text-[#0061af] leading-4">
-                        Partner With Us
-                    </p>
-                    <h2 className="text-2xl sm:text-[32px] font-semibold text-[#0e2b4b] leading-[1.2]">
-                        Let&apos;s Build What&apos;s Next
-                    </h2>
-                    <p className="pt-1 pb-3 text-base font-normal text-[#415773] leading-[1.5]">
-                        We&apos;re always looking for forward-thinking partners who share our vision. Explore the
-                        different ways to work with us and create new opportunities together.
-                    </p>
+                    {/* The three text blocks sit 12px apart and the button hangs
+                        32px below the group (Figma 232:577 / 264:1607), rather
+                        than sharing one rhythm with them. */}
+                    <div className="flex flex-col items-start gap-3">
+                        <p className="text-sm font-semibold uppercase tracking-[0.7px] text-[#0061af] leading-4">
+                            Partner With Us
+                        </p>
+                        <h2 className="text-2xl sm:text-[32px] font-semibold text-[#0e2b4b] leading-[1.2]">
+                            Let&apos;s Build What&apos;s Next
+                        </h2>
+                        <p className="pt-1 pb-3 text-base font-normal text-[#415773] leading-[1.5]">
+                            We&apos;re always looking for forward-thinking partners who share our vision. Explore the
+                            different ways to work with us and create new opportunities together.
+                        </p>
+                    </div>
 
                     {/* Figma 232:584 — 12px/8px padding around 16px copy, which is
                         what puts the button at its 40px height. */}
@@ -90,7 +95,7 @@ export default function LetsBuildWhatsNext() {
                     then two columns rather than shrinking below a readable width;
                     min-h holds the design's proportion without capping longer
                     copy. */}
-                <div className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-[10px]">
+                <div className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-[6.5px]">
                     {CARDS.map((card) => (
                         <motion.article
                             key={card.title}
