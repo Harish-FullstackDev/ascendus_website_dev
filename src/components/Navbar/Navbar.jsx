@@ -262,7 +262,7 @@ const Navbar = () => {
               </div> */}
 
               {/* Nav links start at the row's left edge, 64px in. */}
-              <div className="absolute left-0 pl-[64px]">
+              <div className="absolute left-0 pl-[52px]">
                 <ul className="flex items-center gap-3">
                   <Link
                     href="/"
@@ -531,7 +531,7 @@ const Navbar = () => {
               {/* Logo — pinned to the right edge; ml-auto keeps it there regardless of
                   the row's justify-between (the center menu is absolutely positioned,
                   so this is the only real flex child otherwise free to drift). */}
-              <div className="hidden lg:flex items-center gap-3 ml-auto pr-[64px]">
+              <div className="hidden lg:flex items-center gap-3 ml-auto pr-[52px]">
                 {/* <LanguageSelector isNavbarLight={isNavbarLight} /> */}
                 {/* <ContactUsButton /> */}
                 {/* <BookAcallButton
@@ -542,7 +542,7 @@ const Navbar = () => {
                   onClick={closeMenu}
                   className="group flex items-center overflow-hidden"
                 >
-                  <div className="relative z-10 flex-shrink-0">
+                  <div className="relative z-10 flex-shrink-0 px-[12px]">
                     <Image
                       src={isNavbarLight ? logo2 : logo}
                       alt="Ascendus Logo"
