@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import prospectiveIcon from "@/assets/Contact-us/icons/prospective-customers.svg";
 import existingIcon from "@/assets/Contact-us/icons/existing-customers.svg";
 import arrowRightIcon from "@/assets/Contact-us/icons/arrow-right.svg";
+import arrowRightOnDarkIcon from "@/assets/Contact-us/icons/arrow-right-on-dark.svg";
 
 const SEGMENTS = [
     {
@@ -21,9 +22,9 @@ const SEGMENTS = [
             "Access assistance, raise service requests or escalate critical matters through our dedicated support channels.",
         icon: existingIcon,
         id: "existing",
-        // Figma labels both cards "Explore Customer Engagement" (nodes 62:409 and
-        // 62:422). Kept verbatim; flag to the design team if the second card was
-        // meant to read "Access Customer Support" as it did in the first revision.
+        // Figma labels both cards "Explore Customer Engagement" (nodes 278:5340
+        // and 278:5355). Kept verbatim; flag to the design team if the second
+        // card was meant to read "Access Customer Support".
         linkLabel: "Explore Customer Engagement",
         title: "For Existing Customers",
     },
@@ -39,31 +40,39 @@ const SEGMENTS = [
 // focus select too, so touch and keyboard users reach both panels.
 export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospective" }) {
     return (
-        <section className="w-full bg-white px-6 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-8">
+        <section className="w-full bg-white px-6 sm:px-[64px] py-10 sm:py-[48px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
+                className="max-w-[811px]"
             >
-                <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.6px] text-[#2d8ec5] leading-4">How can we help?</p>
-                <h2 className="mt-1 text-2xl sm:text-[32px] font-semibold text-[#0a3a52] leading-[36px]">
+                <p className="text-[14px] font-normal uppercase tracking-[0.7px] text-[#0061af] leading-4">
+                    How can we help?
+                </p>
+                <h2 className="mt-4 text-[26px] sm:text-[32px] font-medium text-[#0e2b4b] leading-[1.2]">
                     Choose What Fits Your Need
                 </h2>
-                <p className="mt-2 text-base sm:text-lg text-[#64748b] leading-5">
-                    Select the option that best describes your enquiry. We&apos;ll connect you with the right team to
-                    help you move forward.
+                {/* Figma sets the supporting line in two measured lines
+                    (278:5326); the break is kept on desktop and released below
+                    sm so the sentence reflows on phones. */}
+                <p className="mt-3 pt-[2px] text-base font-normal text-[#415773] leading-[1.5]">
+                    Select the option that best describes your enquiry.
+                    <br className="hidden sm:block" />{" "}
+                    We&apos;ll connect you with the right team to help you move forward.
                 </p>
             </motion.div>
 
             {/* Two-up at every width: side by side the pair reads as a choice
                 between two options, which a stacked pair on phones did not. The
                 card interior turns into icon-over-text below md so the halved
-                column still fits the label and the description. */}
+                column still fits the label and the description. Figma sets each
+                card at 629 of a 1312 box, which is the 54px desktop gutter. */}
             <div
                 role="tablist"
                 aria-label="Choose what fits your need"
-                className="mt-10 sm:mt-16 grid grid-cols-2 gap-3 sm:gap-8"
+                className="mt-8 grid grid-cols-2 gap-3 sm:gap-8 lg:gap-[54px]"
             >
                 {SEGMENTS.map((segment) => {
                     const isSelected = selected === segment.id;
@@ -86,16 +95,18 @@ export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospecti
                                 onMouseEnter={() => onSelect?.(segment.id)}
                                 onFocus={() => onSelect?.(segment.id)}
                                 className={
-                                    "group flex h-full w-full flex-col items-start gap-3 rounded-[16px] border p-4 text-left transition-colors duration-300 md:flex-row md:gap-6 md:p-[25px] " +
+                                    "group flex h-full w-full flex-col items-start gap-3 border p-4 text-left transition-colors duration-300 md:flex-row md:gap-6 md:p-[25px] " +
                                     (isSelected
-                                        ? "border-[#c3e0f0] bg-[#0a3a52]"
-                                        : "border-[#d3dae2] bg-white hover:border-[#c3e0f0]")
+                                        ? "rounded-[12px] border-[#c3e0f0] bg-[#00223d]"
+                                        : "rounded-[16px] border-[#8695a7] bg-[#f8f8f8] hover:border-[#c3e0f0]")
                                 }
                             >
                                 <span
                                     className={
-                                        "flex size-10 shrink-0 items-center justify-center rounded-[10px] transition-colors duration-300 md:size-12 " +
-                                        (isSelected ? "bg-white" : "bg-[#e8f3ff]")
+                                        "flex size-10 shrink-0 items-center justify-center transition-colors duration-300 md:size-12 " +
+                                        (isSelected
+                                            ? "rounded-[10px] bg-white"
+                                            : "rounded-[8px] bg-[#d5e2f2]")
                                     }
                                 >
                                     <Image src={segment.icon} alt="" className="w-5 h-5 md:w-6 md:h-6" />
@@ -104,34 +115,34 @@ export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospecti
                                 <span className="block min-w-0">
                                     <span
                                         className={
-                                            "block text-base leading-5 font-semibold md:text-lg md:leading-6 " +
-                                            (isSelected ? "text-white" : "text-[#0a3a52]")
+                                            "block text-base leading-[1.2] font-medium md:text-lg " +
+                                            (isSelected ? "text-[#f8f8f8]" : "text-[#0e2b4b]")
                                         }
                                     >
                                         {segment.title}
                                     </span>
                                     <span
                                         className={
-                                            "mt-1 block max-w-[384px] text-xs leading-[15px] md:text-sm md:leading-4 " +
-                                            (isSelected ? "font-light text-white" : "text-[#64748b]")
+                                            "mt-2 block max-w-[384px] text-xs leading-[1.4] font-normal md:text-sm " +
+                                            (isSelected ? "text-[#f8f8f8]" : "text-[#415773]")
                                         }
                                     >
                                         {segment.description}
                                     </span>
 
                                     {/* Figma draws the arrow on the selected card only
-                                        (62:409 vs 62:422); treated as a design miss —
+                                        (278:5341 vs 278:5356); treated as a design miss —
                                         both states carry it, and only the accent colour
                                         changes with selection. */}
                                     <span
                                         className={
-                                            "mt-3 inline-flex items-start gap-1 text-sm font-semibold md:items-center md:text-base " +
-                                            (isSelected ? "text-[#0061af]" : "text-[#2d8ec5]")
+                                            "mt-3 inline-flex items-start gap-1 text-sm font-normal md:items-center md:text-base " +
+                                            (isSelected ? "text-[#68c2f2]" : "text-[#0061af]")
                                         }
                                     >
                                         {segment.linkLabel}
                                         <Image
-                                            src={arrowRightIcon}
+                                            src={isSelected ? arrowRightOnDarkIcon : arrowRightIcon}
                                             alt=""
                                             className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1 md:w-6 md:h-6"
                                         />

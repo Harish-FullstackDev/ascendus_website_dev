@@ -11,33 +11,50 @@ import channelIcon from "@/assets/Partnership/icons/channel-referral-partnership
 import jointIcon from "@/assets/Partnership/icons/joint-go-to-market.svg";
 import arrowRightIcon from "@/assets/Partnership/icons/arrow-right.svg";
 
+// Figma sets every line in these cards by hand (232:597 / 232:599 and their
+// siblings) rather than letting the 141px column wrap the copy, so the break
+// points are data. They are applied from xl up, where the cards are at their
+// designed width; narrower cards wrap the same strings naturally.
 const CARDS = [
     {
-        description: "Join our partner network and grow with us.",
+        descriptionLines: ["Join our partner", "network and grow", "with us."],
         icon: becomeIcon,
-        title: "Become a Partner",
+        titleLines: ["Become a", "Partner"],
     },
     {
-        description: "Collaborate on technology solutions and innovation.",
+        descriptionLines: ["Collaborate on", "technology solutions", "and innovation."],
         icon: technologyIcon,
-        title: "Technology Partnership",
+        titleLines: ["Technology", "Partnership"],
     },
     {
-        description: "Work together to deliver expertise and value.",
+        descriptionLines: ["Work together to", "deliver expertise and", "value."],
         icon: consultingIcon,
-        title: "Consulting Partnership",
+        titleLines: ["Consulting", "Partnership"],
     },
     {
-        description: "Refer opportunities and be rewarded.",
+        descriptionLines: ["Refer opportunities", "and be rewarded."],
         icon: channelIcon,
-        title: "Channel & Referral Partnership",
+        titleLines: ["Channel &", "Referral", "Partnership"],
     },
     {
-        description: "Co-create and execute successful market strategies.",
+        descriptionLines: ["Co-create and", "execute successful", "market strategies."],
         icon: jointIcon,
-        title: "Joint Go-To-Market",
+        titleLines: ["Joint", "Go-To-Market"],
     },
 ];
+
+// Renders the Figma line breaks as real breaks on wide viewports and as plain
+// spaces below xl, so a narrower card re-wraps instead of keeping a break that
+// no longer matches its width.
+function MeasuredLines({ lines }) {
+    return lines.map((line, index) => (
+        <span key={line}>
+            {index > 0 ? <br className="hidden xl:block" /> : null}
+            {index > 0 ? " " : null}
+            {line}
+        </span>
+    ));
+}
 
 // The one tinted band on the page (#f4f7fb). Because the background changes on
 // both edges, it pays the full 64px top and bottom rather than splitting with
@@ -46,33 +63,41 @@ export default function LetsBuildWhatsNext() {
     return (
         <section
             id="partner-with-us"
-            className="w-full scroll-mt-24 border-y border-[rgba(226,232,240,0.8)] bg-[#f4f7fb] px-6 sm:px-[64px] pt-10 pb-10 sm:pt-16 sm:pb-16"
+            className="w-full scroll-mt-24 border-y border-[rgba(226,232,240,0.8)] bg-[#f4f7fb] px-6 sm:px-[64px] pt-10 pb-10 sm:py-[49px]"
         >
             {/* Figma (232:576) gives the intro a 347px column and starts the card
                 row 31px later, so the cards own everything that is left. The
                 intro track is capped rather than fixed so the cards absorb the
                 extra width on wider screens. */}
-            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-[31px]">
+            <div className="flex flex-col xl:flex-row xl:items-center gap-10 xl:gap-[31px]">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex w-full flex-col items-start gap-8 lg:w-[347px] lg:shrink-0"
+                    className="flex w-full flex-col items-start gap-8 xl:w-[347px] xl:shrink-0"
                 >
                     {/* The three text blocks sit 12px apart and the button hangs
                         32px below the group (Figma 232:577 / 264:1607), rather
                         than sharing one rhythm with them. */}
                     <div className="flex flex-col items-start gap-3">
-                        <p className="text-sm font-semibold uppercase tracking-[0.7px] text-[#0061af] leading-4">
+                        <p className="text-[14px] font-normal uppercase tracking-[0.7px] text-[#0061af] leading-4">
                             Partner With Us
                         </p>
-                        <h2 className="text-2xl sm:text-[32px] font-semibold text-[#0e2b4b] leading-[1.2]">
-                            Let&apos;s Build What&apos;s Next
+                        {/* Figma breaks the heading after "What's" (232:581) so
+                            it sits over two lines beside the card row. */}
+                        <h2 className="text-2xl sm:text-[32px] font-medium text-[#0e2b4b] leading-[1.2]">
+                            Let&apos;s Build What&apos;s
+                            <br className="hidden lg:block" /> Next
                         </h2>
+                        {/* Four measured lines in Figma's 347px column (232:583):
+                            two authored breaks, then "new opportunities
+                            together." falls onto the fourth line. */}
                         <p className="pt-1 pb-3 text-base font-normal text-[#415773] leading-[1.5]">
-                            We&apos;re always looking for forward-thinking partners who share our vision. Explore the
-                            different ways to work with us and create new opportunities together.
+                            We&apos;re always looking for forward-thinking
+                            <br className="hidden lg:block" /> partners who share our vision. Explore the
+                            <br className="hidden lg:block" /> different ways to work with us and create
+                            <br className="hidden lg:block" /> new opportunities together.
                         </p>
                     </div>
 
@@ -91,19 +116,20 @@ export default function LetsBuildWhatsNext() {
                     </Link>
                 </motion.div>
 
-                {/* Five 183x210 cards across a single track. They fall to three and
-                    then two columns rather than shrinking below a readable width;
-                    min-h holds the design's proportion without capping longer
-                    copy. */}
-                <div className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-[6.5px]">
+                {/* Five 183x210 cards across a single track (Figma 232:589),
+                    which itself sits 32px inside the section band. They fall to
+                    three and then two columns rather than shrinking below a
+                    readable width — five across a 1280 viewport would leave each
+                    card narrower than its own heading. */}
+                <div className="grid w-full grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-4 xl:gap-[6.5px] xl:py-8">
                     {CARDS.map((card) => (
                         <motion.article
-                            key={card.title}
+                            key={card.titleLines.join(" ")}
                             initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ duration: 0.5, ease: "easeOut" }}
-                            className="flex h-full flex-col justify-between gap-4 rounded-[12px] border border-[rgba(226,232,240,0.8)] bg-white p-[21px] sm:min-h-[210px] transition-shadow duration-300 hover:shadow-[0px_6px_18px_rgba(10,58,82,0.1)]"
+                            className="flex h-full flex-col justify-between gap-4 rounded-[12px] border border-[rgba(226,232,240,0.8)] bg-white p-[21px] sm:min-h-[210px] xl:h-[210px] transition-shadow duration-300 hover:shadow-[0px_6px_18px_rgba(10,58,82,0.1)]"
                         >
                             {/* Figma alternates 40px/rounded-8 and 36px/rounded-12
                                 tiles across these five cards; normalised to one
@@ -115,8 +141,12 @@ export default function LetsBuildWhatsNext() {
                             </span>
 
                             <div className="flex flex-col gap-1">
-                                <p className="text-lg font-semibold text-[#0f172a] leading-[1.2]">{card.title}</p>
-                                <p className="text-sm font-normal text-[#64748b] leading-[1.4]">{card.description}</p>
+                                <p className="text-lg font-medium text-[#0f172a] leading-[1.2]">
+                                    <MeasuredLines lines={card.titleLines} />
+                                </p>
+                                <p className="text-sm font-normal text-[#64748b] leading-[1.4]">
+                                    <MeasuredLines lines={card.descriptionLines} />
+                                </p>
                             </div>
                         </motion.article>
                     ))}

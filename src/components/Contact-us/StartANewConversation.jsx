@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import rfpIcon from "@/assets/Contact-us/icons/rfp-proposal.svg";
-import expertIcon from "@/assets/Contact-us/icons/talk-to-expert.svg";
-import assessmentIcon from "@/assets/Contact-us/icons/solution-assessment.svg";
-import meetingIcon from "@/assets/Contact-us/icons/schedule-meeting.svg";
+import rfpIcon from "@/assets/Contact-us/icons/rfp-proposal-32.svg";
+import expertIcon from "@/assets/Contact-us/icons/talk-to-expert-32.svg";
+import assessmentIcon from "@/assets/Contact-us/icons/solution-assessment-32.svg";
+import meetingIcon from "@/assets/Contact-us/icons/schedule-meeting-32.svg";
 import arrowRightIcon from "@/assets/Contact-us/icons/arrow-right.svg";
 
 const CARDS = [
@@ -26,6 +26,9 @@ const CARDS = [
         title: "Talk to an Expert",
     },
     {
+        // Figma (278:5405 / 278:5408) pairs this card with the escalation copy
+        // and link that belong to the Existing Customers panel — kept as the
+        // assessment copy here and flagged to design.
         description: "Evaluate your current environment, identify gaps and explore opportunities for transformation.",
         href: "#is-your-technology-landscape-ready",
         icon: assessmentIcon,
@@ -42,37 +45,38 @@ const CARDS = [
 ];
 
 // Shown only while the "For Prospective Customers" segment is selected — see
-// ChooseWhatFitsYourNeed. It shares the white background of the section above,
-// so 32px at the top, and pays the full 64px at the bottom where the assessment
-// band changes the background.
+// ChooseWhatFitsYourNeed. The revised design lifts this panel off white onto a
+// barely-there slate tint with a hairline rule against the section above it.
 export default function StartANewConversation() {
     return (
         <section
             id="start-a-new-conversation"
-            className="w-full scroll-mt-24 bg-white px-6 sm:px-[64px] pt-10 pb-10 sm:pt-8 sm:pb-16"
+            className="w-full scroll-mt-24 border-t border-[#f1f5f9] bg-[rgba(248,250,252,0.4)] px-6 sm:px-[64px] py-10 sm:py-[48px]"
         >
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
+                className="max-w-[811px]"
             >
-                <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.6px] text-[#2d8ec5] leading-4">
+                <p className="text-[14px] font-normal uppercase tracking-[0.7px] text-[#0061af] leading-4">
                     For Prospective Customers
                 </p>
-                <h2 className="mt-1 text-2xl sm:text-[32px] font-semibold text-[#0a3a52] leading-[36px]">
+                <h2 className="mt-4 text-[26px] sm:text-[32px] font-medium text-[#0e2b4b] leading-[1.2]">
                     Start a New Conversation
                 </h2>
-                <p className="mt-2 text-base sm:text-lg text-[#64748b] leading-5">
-                    Explore solutions, discuss your business requirements, or connect with our experts to identify the
-                    right approach for your organization.
+                <p className="mt-3 pt-[2px] text-base font-normal text-[#415773] leading-[1.5]">
+                    Explore solutions, discuss your business requirements,
+                    <br className="hidden sm:block" />{" "}
+                    or connect with our experts to identify the right approach for your organization.
                 </p>
             </motion.div>
 
-            {/* 20px between cards (Figma 62:432). The three-card panel next to
-                this one uses a much wider gutter because it has one card fewer —
-                see AlreadyAnAscendusCustomer. */}
-            <div className="mt-10 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-5">
+            {/* 24px between cards (Figma 278:5368) — the same gutter the
+                three-card panel uses, so swapping segments doesn't change the
+                rhythm. */}
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {CARDS.map((card) => (
                     <motion.div
                         key={card.title}
@@ -84,21 +88,23 @@ export default function StartANewConversation() {
                     >
                         <Link
                             href={card.href}
-                            className="group flex h-full flex-col justify-between rounded-[16px] border border-[#d3dae2] bg-white p-[25px] shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-shadow duration-300 hover:shadow-[0px_6px_18px_rgba(10,58,82,0.12)]"
+                            className="group flex h-full min-h-[265px] flex-col justify-between rounded-[16px] border border-[#8695a7] bg-[#f8f8f8] p-[25px] shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-shadow duration-300 hover:shadow-[0px_6px_18px_rgba(10,58,82,0.12)]"
                         >
                             <div>
-                                <span className="flex size-10 items-center justify-center rounded-[10px] bg-[#eff6ff]">
-                                    <Image src={card.icon} alt="" className="w-6 h-6" />
+                                <span className="flex size-12 items-center justify-center rounded-[10px] bg-[#ecf2f9]">
+                                    <Image src={card.icon} alt="" className="w-8 h-8" />
                                 </span>
 
-                                <h3 className="mt-4 text-base sm:text-lg font-medium text-[#0a3a52] leading-5">{card.title}</h3>
-                                <p className="mt-2 text-sm sm:text-base text-[#64748b] leading-[19.5px]">{card.description}</p>
+                                <h3 className="mt-4 text-lg font-medium text-[#0a3a52] leading-[1.2]">{card.title}</h3>
+                                <p className="mt-2 text-base font-normal text-[#64748b] leading-[1.5]">
+                                    {card.description}
+                                </p>
                             </div>
 
                             {/* Figma shows the label underlined on one card only —
                                 that is the hover state, so it is bound to hover here
                                 rather than baked into a single card. */}
-                            <span className="mt-8 inline-flex items-center gap-1 text-sm sm:text-base font-medium text-[#2d8ec5]">
+                            <span className="mt-6 inline-flex items-center py-[2px] text-base font-normal text-[#0061af]">
                                 <span className="border-b-[0.5px] border-transparent transition-colors duration-300 group-hover:border-[#2d8ec5]">
                                     {card.linkLabel}
                                 </span>

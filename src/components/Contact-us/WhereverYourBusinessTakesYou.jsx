@@ -52,7 +52,7 @@ function LocationCard({ location }) {
             rel="noopener noreferrer"
             onMouseEnter={() => setState((s) => ({ key: s.key + 1, phase: "entering" }))}
             onMouseLeave={() => setState((s) => ({ key: s.key + 1, phase: "leaving" }))}
-            className="group relative flex w-full aspect-[600/202] min-h-[160px] flex-col justify-center overflow-hidden rounded-[16px] border border-[#f1f5f9] px-6 py-6 sm:px-9"
+            className="group relative flex w-full aspect-[600/202] min-h-[160px] flex-col justify-center overflow-hidden rounded-[16px] border border-[#f1f5f9] px-6 py-6 sm:pl-[36px] sm:pr-[25px]"
         >
             <Image
                 src={location.image}
@@ -65,7 +65,7 @@ function LocationCard({ location }) {
 
             <div className="relative">
                 <h3 className="text-base font-semibold uppercase text-white leading-6">{location.name}</h3>
-                <span className="relative mt-3 inline-block pb-0.5 text-xs font-semibold text-white">
+                <span className="relative mt-3 inline-block pb-0.5 text-xs font-semibold text-white leading-4">
                     View Location
                     <span
                         key={state.key}
@@ -77,26 +77,36 @@ function LocationCard({ location }) {
     );
 }
 
-// Sits between two white sections, so it carries 32px on both edges.
+// Opens the lower half of the page on the same slate tint the two customer
+// panels use, separated from the enquiry band above by a hairline rule.
 export default function WhereverYourBusinessTakesYou() {
     return (
-        <section id="our-locations" className="w-full scroll-mt-24 bg-white px-6 sm:px-[64px] pt-10 pb-10 sm:pt-8 sm:pb-8">
+        <section
+            id="our-locations"
+            className="w-full scroll-mt-24 border-t border-[#f1f5f9] bg-[rgba(248,250,252,0.4)] px-6 sm:px-[64px] pt-10 pb-10 sm:pt-[48px] sm:pb-[56px]"
+        >
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
+                className="max-w-[811px]"
             >
-                <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.6px] text-[#2d8ec5] leading-4">Our Locations</p>
-                <h2 className="mt-1 text-2xl sm:text-[32px] font-semibold text-[#0a3a52] leading-[36px]">
+                <p className="text-[14px] font-normal uppercase tracking-[0.7px] text-[#2d8ec5] leading-4">
+                    Our Locations
+                </p>
+                <h2 className="mt-4 text-[26px] sm:text-[32px] font-medium text-[#0a3a52] leading-[1.2]">
                     Wherever Your Business Takes You
                 </h2>
-                <p className="mt-2 text-base sm:text-lg text-[#64748b] leading-5">
-                    With a strong presence across key markets, we&apos;re always close to help you.
+                <p className="mt-3 pt-[2px] text-base font-normal text-[#415773] leading-[1.5]">
+                    With a strong presence across key markets,
+                    <br className="hidden sm:block" /> we&apos;re always close to help you.
                 </p>
             </motion.div>
 
-            <div className="mt-10 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            {/* Figma sets each card at 600 of a 1303 box — a 103px desktop
+                gutter that narrows with the viewport. */}
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-[103px]">
                 {LOCATIONS.map((location) => (
                     <motion.div
                         key={location.name}

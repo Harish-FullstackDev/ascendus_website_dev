@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import supportIcon from "@/assets/Contact-us/icons/customer-support.svg";
+import supportIcon from "@/assets/Contact-us/icons/customer-support-32.svg";
 import serviceRequestIcon from "@/assets/Contact-us/icons/service-request.svg";
-import escalationIcon from "@/assets/Contact-us/icons/escalation-reporting.svg";
+import escalationIcon from "@/assets/Contact-us/icons/escalation-reporting-32.svg";
 import arrowRightIcon from "@/assets/Contact-us/icons/arrow-right.svg";
 
 const CARDS = [
@@ -25,6 +25,9 @@ const CARDS = [
         title: "Service Request",
     },
     {
+        // Figma (278:5888) puts the "Request Assessment" link on this card,
+        // which belongs to the Prospective panel — kept as the escalation link
+        // here and flagged to design.
         description: "Raise critical service, SLA or engagement-related concerns.",
         href: "#tell-us-what-youre-looking-to-achieve",
         icon: escalationIcon,
@@ -34,35 +37,38 @@ const CARDS = [
 ];
 
 // The alternate panel to StartANewConversation: shown only while the "For
-// Existing Customers" segment is selected. Same white background and same
-// 32/64 vertical rhythm as that panel so swapping between them doesn't shift
+// Existing Customers" segment is selected. Same tinted band, same rule and the
+// same card treatment as that panel, so swapping between them doesn't shift
 // the sections around it.
 export default function AlreadyAnAscendusCustomer() {
     return (
         <section
             id="already-an-ascendus-customer"
-            className="w-full scroll-mt-24 bg-white px-6 sm:px-[64px] pt-10 pb-10 sm:pt-8 sm:pb-16"
+            className="w-full scroll-mt-24 border-t border-[#f1f5f9] bg-[rgba(248,250,252,0.4)] px-6 sm:px-[64px] py-10 sm:py-[48px]"
         >
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
+                className="max-w-[811px]"
             >
-                <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.6px] text-[#2d8ec5] leading-4">Existing Customers</p>
-                <h2 className="mt-1 text-2xl sm:text-[32px] font-semibold text-[#0a3a52] leading-[36px]">
+                <p className="text-[14px] font-normal uppercase tracking-[0.7px] text-[#0061af] leading-4">
+                    Existing Customers
+                </p>
+                <h2 className="mt-4 text-[26px] sm:text-[32px] font-medium text-[#0e2b4b] leading-[1.2]">
                     Already an Ascendus Customer?
                 </h2>
-                <p className="mt-2 text-base sm:text-lg text-[#64748b] leading-5">
-                    Access the right support channel for your service, operational or escalation requirements.
+                <p className="mt-3 pt-[2px] text-base font-normal text-[#415773] leading-[1.5]">
+                    Access the right support channel for your service,
+                    <br className="hidden sm:block" /> operational or escalation requirements.
                 </p>
             </motion.div>
 
-            {/* Wider gutter than the four-card panel: with one card fewer, Figma
-                (62:1530) spreads three cards across the same 64px-inset content
-                box, leaving ~84px between them instead of 20px. The outer 64px
-                inset is identical in both panels — only the inner gap changes. */}
-            <div className="mt-10 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-x-10 lg:gap-x-[84px] md:gap-y-8">
+            {/* Three cards now share the four-card panel's 24px gutter
+                (Figma 278:5848), so each card simply runs wider rather than the
+                row opening up. */}
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
                 {CARDS.map((card) => (
                     <motion.div
                         key={card.title}
@@ -74,18 +80,20 @@ export default function AlreadyAnAscendusCustomer() {
                     >
                         <Link
                             href={card.href}
-                            className="group flex h-full flex-col justify-between rounded-[16px] border border-[#d3dae2] bg-white p-[25px] shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-shadow duration-300 hover:shadow-[0px_6px_18px_rgba(10,58,82,0.12)]"
+                            className="group flex h-full min-h-[265px] flex-col justify-between rounded-[16px] border border-[#8695a7] bg-[#f8f8f8] p-[25px] shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-shadow duration-300 hover:shadow-[0px_6px_18px_rgba(10,58,82,0.12)]"
                         >
                             <div>
-                                <span className="flex size-10 items-center justify-center rounded-[10px] bg-[#eff6ff]">
-                                    <Image src={card.icon} alt="" className="w-6 h-6" />
+                                <span className="flex size-12 items-center justify-center rounded-[10px] bg-[#ecf2f9]">
+                                    <Image src={card.icon} alt="" className="w-8 h-8" />
                                 </span>
 
-                                <h3 className="mt-4 text-base sm:text-lg font-medium text-[#0a3a52] leading-5">{card.title}</h3>
-                                <p className="mt-2 text-sm sm:text-base text-[#64748b] leading-[19.5px]">{card.description}</p>
+                                <h3 className="mt-4 text-lg font-medium text-[#0a3a52] leading-[1.2]">{card.title}</h3>
+                                <p className="mt-2 text-base font-normal text-[#64748b] leading-[1.5]">
+                                    {card.description}
+                                </p>
                             </div>
 
-                            <span className="mt-8 inline-flex items-center gap-1.5 text-sm sm:text-base font-medium text-[#2d8ec5]">
+                            <span className="mt-6 inline-flex items-center py-[2px] text-base font-normal text-[#0061af]">
                                 <span className="border-b-[0.5px] border-transparent transition-colors duration-300 group-hover:border-[#2d8ec5]">
                                     {card.linkLabel}
                                 </span>
