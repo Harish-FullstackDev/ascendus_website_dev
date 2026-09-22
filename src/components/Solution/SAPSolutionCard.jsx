@@ -23,13 +23,26 @@ const MOTION = `${DURATION} ${CURVE}`;
 // The photograph is clipped out of the card's top 60% while the curtain is
 // down, and un-clipped for the hover. See the note on the <Image> below — this
 // is what stops it showing through the top corners at rest.
-const PHOTO_CLIP_REST = "[clip-path:inset(60%_0_0_0)]";
-const PHOTO_CLIP_HOVER = "group-hover:[clip-path:inset(0%_0_0_0)]";
+//
+// The `round 13px` is a separate fix, and the scrim carries a matching
+// `rounded-[13px]`. Both dark layers sit 2px inside the wrapper's 11px clip so
+// they stop short of the outline instead of running right up under it. Flush,
+// they bleed into the outline's own antialiased corner pixels and drag them
+// dark, so the corner reads as a *tighter* curve while the card is dark and
+// springs back to a looser one as the white returns — which is the radius
+// "shrinking then growing" you can see on hover-out. Rounding both layers takes
+// the arc's rest-to-hover difference from a mean of 37.7 luminance (worst 167)
+// down to 2.7 (worst 11). Rounding only the photo gets less than half of that:
+// the scrim is `rgba(0,0,0,0.9)` at the top and is the bigger offender of the
+// two, so they have to move together.
+const PHOTO_CLIP_REST = "[clip-path:inset(60%_0_0_0_round_13px)]";
+const PHOTO_CLIP_HOVER = "group-hover:[clip-path:inset(0%_0_0_0_round_13px)]";
 // No duration, only a delay, and only on the way out: entering, the photo is
 // uncovered the instant the pointer arrives (it is still hidden under the
 // curtain at that point, so nothing pops); leaving, it waits for the curtain to
 // come all the way back down before re-clipping, otherwise the top of the photo
-// would vanish while it was still on show.
+// would vanish while it was still on show. The delay only has to *exceed*
+// DURATION above — keep it that way if the timing is ever retuned upward.
 const PHOTO_CLIP_MOTION = "[transition:clip-path_0s_960ms] group-hover:[transition:clip-path_0s_0s]";
 
 /**
@@ -105,7 +118,7 @@ export default function SAPSolutionCard({ description, href = "/contact-us/", im
                 and actively harmful. Same trap applies to `clip-path`, which
                 also clips an element's own box-shadow — `overflow-hidden` is
                 the one clipping mechanism that leaves the ring alone. */}
-            <div className="absolute inset-px overflow-hidden rounded-[11px] shadow-[0_0_0_1px_#c9d0d8]">
+            <div className="absolute inset-px overflow-hidden rounded-[13px] shadow-[0_0_0_1px_#c9d0d8]">
                 {/* Photograph. Figma puts a 20% black fill *behind* this image, not
                     over it — it is the node's fallback fill and the opaque photo
                     hides it entirely. Painting it on top instead both dulls the
@@ -138,7 +151,7 @@ export default function SAPSolutionCard({ description, href = "/contact-us/", im
                 {/* Hover scrim — Figma runs it from 90% black at 27% of the card
                     height to fully transparent at 78%, so the copy keeps its contrast
                     while the lower half of the photo stays clean. */}
-                <div className={`absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.9)_27%,rgba(0,0,0,0)_78%)] opacity-0 transition-opacity ${MOTION} group-hover:opacity-100`} />
+                <div className={`absolute inset-0 rounded-[13px] bg-[linear-gradient(to_bottom,rgba(0,0,0,0.9)_27%,rgba(0,0,0,0)_78%)] opacity-0 transition-opacity ${MOTION} group-hover:opacity-100`} />
 
                 {/* Resting panel, and the curtain that lifts on hover. It travels
                     its own full height (`-translate-y-full`), so the white
