@@ -67,12 +67,13 @@ export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospecti
             {/* Two-up at every width: side by side the pair reads as a choice
                 between two options, which a stacked pair on phones did not. The
                 card interior turns into icon-over-text below md so the halved
-                column still fits the label and the description. Figma sets each
-                card at 629 of a 1312 box, which is the 54px desktop gutter. */}
+                column still fits the label and the description. Figma now sets
+                each card at 644 of a 1312 box (278:5807), a 24px gutter — the
+                same one the four- and three-card panels below use. */}
             <div
                 role="tablist"
                 aria-label="Choose what fits your need"
-                className="mt-8 grid grid-cols-2 gap-3 sm:gap-8 lg:gap-[54px]"
+                className="mt-8 grid grid-cols-2 gap-3 sm:gap-6"
             >
                 {SEGMENTS.map((segment) => {
                     const isSelected = selected === segment.id;
