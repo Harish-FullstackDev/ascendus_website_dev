@@ -359,9 +359,12 @@ const Navbar = () => {
                   </li>
 
                   <li className="relative group">
-                    <button
-                      type="button"
-                      className={`${navLinkClass} after:content-none flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
+                    {/* The trigger is a link, not a button: Solutions now has an
+                        overview page of its own, and the dropdown still opens on
+                        hover over the same element. */}
+                    <Link
+                      href="/solutions"
+                      className={`${navLinkClass} ${pathname === "/solutions/" ? activeLinkClass : inactiveLinkClass} flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Solutions
@@ -379,7 +382,7 @@ const Navbar = () => {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                    </button>
+                    </Link>
 
                     {/* Same hover-bridge/dropdown mechanics as the Services menu above,
                         two columns since there are 10 solutions. */}
@@ -701,14 +704,18 @@ const Navbar = () => {
                 className={`w-full flex items-center justify-between ${pathname.startsWith("/solutions") ? "bg-gray-100" : ""
                   }`}
               >
-                <div
-                  className={`flex-1 py-3 px-4 text-2xl sm:text-3xl font-medium rounded-lg ${pathname.startsWith("/solutions")
+                {/* Tapping the label opens the overview page; the chevron beside
+                    it still expands the per-solution list. */}
+                <Link
+                  href="/solutions"
+                  onClick={closeMenu}
+                  className={`flex-1 py-3 px-4 text-2xl sm:text-3xl font-medium rounded-lg transition-colors duration-300 ${pathname === "/solutions/"
                     ? "text-[#2d8ec5]"
-                    : "text-gray-800"
+                    : "text-gray-800 hover:text-[#2d8ec5]"
                     }`}
                 >
                   Solutions
-                </div>
+                </Link>
 
                 <button
                   onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}

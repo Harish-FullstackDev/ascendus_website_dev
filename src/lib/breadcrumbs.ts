@@ -21,6 +21,7 @@ export const ROUTE_LABELS: Record<string, string> = {
   "contact-us": "Contact Us",
   industries: "Industries",
   partnership: "Partnership",
+  solutions: "Solutions",
   legal: "Legal",
   terms: "Terms & Conditions",
   privacy: "Privacy Policy",

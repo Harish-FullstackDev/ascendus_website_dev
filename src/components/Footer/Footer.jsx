@@ -37,6 +37,7 @@ const columns = [
   },
   {
     heading: "Solutions",
+    headingHref: "/solutions",
     items: [
       { name: "SAP S/4HANA", href: "/solutions" },
       { name: "SAP Ariba", href: "/solutions" },
@@ -128,7 +129,7 @@ const Footer = () => {
           {columns.map((column) => (
             <div key={column.heading} className="shrink-0">
               {/* A heading links out only when its section has a page of its own
-                (Industries does); the rest stay plain labels. */}
+                (Industries and Solutions do); the rest stay plain labels. */}
               <h2 className="text-white text-base lg:text-lg font-semibold mb-4">
                 {column.headingHref ? (
                   <Link href={column.headingHref} className={linkClass}>
