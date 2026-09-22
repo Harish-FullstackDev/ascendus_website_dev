@@ -36,7 +36,7 @@ export default function LetsCreateImpactTogether({
                     {/* 16px between the heading and the line under it, 24px
                         before the button (Figma 232:494 / 232:493). */}
                     <div className="flex flex-col items-start gap-4">
-                        <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold text-white leading-[1.2]">
+                        <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-medium text-white leading-[1.2]">
                             {title}
                         </h2>
 

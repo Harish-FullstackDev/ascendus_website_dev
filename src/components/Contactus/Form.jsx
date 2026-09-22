@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 import { Snackbar, Alert, CircularProgress } from '@mui/material';
 
+// Default #8695A7 border / #5C7088 placeholder; focus and error states swap
+// the border color and darken the placeholder to #0E2B4B; disabled swaps to
+// #C9D0D8 border / #5C7088 placeholder on an #F8F9FA background.
+const getInputClasses = (hasError) =>
+  `w-full px-4 py-3 border rounded-none bg-gray-50 backdrop-blur-sm text-sm focus:outline-none focus:bg-white/80 transition-all duration-200 disabled:bg-[#F8F9FA] disabled:border-[#C9D0D8] disabled:placeholder-[#5C7088] ${hasError
+    ? 'border-[#D64545] placeholder-[#0E2B4B] focus:border-[#D64545] focus:placeholder-[#0E2B4B]'
+    : 'border-[#8695A7] placeholder-[#5C7088] focus:border-[#0061AF] focus:placeholder-[#0E2B4B]'
+  }`;
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -216,10 +225,7 @@ const ContactForm = () => {
                 value={formData.firstName}
                 onChange={handleChange}
                 placeholder="Exp. Hyra"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.firstName
-                  ? 'border-red-300 focus:ring-red-300'
-                  : 'focus:ring-blue-300'
-                  }`}
+                className={getInputClasses(!!errors.firstName)}
               />
               {errors.firstName && (
                 <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>
@@ -237,10 +243,7 @@ const ContactForm = () => {
                 value={formData.secondName}
                 onChange={handleChange}
                 placeholder="Exp. Banu"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.secondName
-                  ? 'border-red-300 focus:ring-red-300'
-                  : 'focus:ring-blue-300'
-                  }`}
+                className={getInputClasses(!!errors.secondName)}
               />
               {errors.secondName && (
                 <p className="text-red-500 text-xs mt-1">{errors.secondName}</p>
@@ -261,10 +264,7 @@ const ContactForm = () => {
                 value={formData.companyEmail}
                 onChange={handleChange}
                 placeholder="hyra@company.com"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.companyEmail
-                  ? 'border-red-300 focus:ring-red-300'
-                  : 'focus:ring-blue-300'
-                  }`}
+                className={getInputClasses(!!errors.companyEmail)}
               />
               {errors.companyEmail && (
                 <p className="text-red-500 text-xs mt-1">{errors.companyEmail}</p>
@@ -282,10 +282,7 @@ const ContactForm = () => {
                 value={formData.contactNumber}
                 onChange={handleChange}
                 placeholder="(+966) xx xxx xxxx"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.contactNumber
-                  ? 'border-red-300 focus:ring-red-300'
-                  : 'focus:ring-blue-300'
-                  }`}
+                className={getInputClasses(!!errors.contactNumber)}
               />
               {errors.contactNumber && (
                 <p className="text-red-500 text-xs mt-1">{errors.contactNumber}</p>
@@ -306,10 +303,7 @@ const ContactForm = () => {
                 value={formData.country}
                 onChange={handleChange}
                 placeholder="KSA"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.country
-                  ? 'border-red-300 focus:ring-red-300'
-                  : 'focus:ring-blue-300'
-                  }`}
+                className={getInputClasses(!!errors.country)}
               />
               {errors.country && (
                 <p className="text-red-500 text-xs mt-1">{errors.country}</p>
@@ -327,10 +321,7 @@ const ContactForm = () => {
                 value={formData.companyName}
                 onChange={handleChange}
                 placeholder="ABC Corporation"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.companyName
-                  ? 'border-red-300 focus:ring-red-300'
-                  : 'focus:ring-blue-300'
-                  }`}
+                className={getInputClasses(!!errors.companyName)}
               />
               {errors.companyName && (
                 <p className="text-red-500 text-xs mt-1">{errors.companyName}</p>
@@ -351,10 +342,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 rows={4}
                 placeholder="Please describe your enquiry in detail..."
-                className={`w-full px-4 py-3 border border-gray-200 rounded-none bg-gray-50 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-colors resize-none ${errors.enquiries
-                  ? 'border-red-300 focus:ring-red-300'
-                  : 'focus:ring-blue-300'
-                  }`}
+                className={`${getInputClasses(!!errors.enquiries)} resize-none`}
               />
               {errors.enquiries && (
                 <p className="text-red-500 text-xs mt-1">{errors.enquiries}</p>

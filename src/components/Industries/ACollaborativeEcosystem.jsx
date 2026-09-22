@@ -91,12 +91,12 @@ export default function ACollaborativeEcosystem() {
                 <p className="text-sm font-semibold uppercase tracking-[0.7px] text-[#0061af] leading-4">
                     Our Industries
                 </p>
-                <h2 className="text-2xl sm:text-[32px] font-semibold text-[#0e2b4b] leading-[1.2]">
+                <h2 className="text-2xl sm:text-[32px] font-medium text-[#0e2b4b] leading-[1.2]">
                     A Collaborative Ecosystem for Greater Possibilities
                 </h2>
                 <p className="pt-0.5 text-base font-normal text-[#415773] leading-[1.5]">
-                    Our ecosystem includes strategic partners, technology leaders, and industry alliances that help us
-                    deliver innovative solutions, expand capabilities and create greater value for our client.
+                    Our Ecosystem Includes Strategic Partners, Technology Leaders, And Industry Alliances That Help Us
+                    Deliver Innovative Solutions, Expand Capabilities And Create Greater Value For Our Client.
                 </p>
             </motion.div>
 

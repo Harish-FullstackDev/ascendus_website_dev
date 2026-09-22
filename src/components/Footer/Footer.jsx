@@ -1,15 +1,108 @@
 "use client"
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { animate, motion, useMotionValue, useMotionValueEvent, useScroll } from "framer-motion";
 import logo from "../../assets/Brand/ASCENDUS.svg";
 import logoSecondary from "../../assets/Brand/Ascendus_Logo_Secondary.png";
 import InstagramIcon from "../../assets/Footer/Instagram_Icon.svg";
 import LinkedinIcon from "../../assets/Footer/LinkedIn_Icon.svg";
 import TwitterIcon from "../../assets/Footer/X_Icon.svg";
 
-// Height of the pinned wordmark band at the end of the footer. Its flow
-// space doubles as the window the reveal happens through.
-const revealHeight = "h-40 sm:h-48 lg:h-[200px]";
+const HOLD_MS = 1800; // how long the wordmark stays out before it springs away
+const CLOSE_AT_PX = 4; // distance from the page bottom that counts as "at the end"
+const REARM_PX = 320; // scrolling back this far from the bottom re-arms the cycle
+
+const LOGO_RATIO = 169 / 1313; // ASCENDUS.svg intrinsic size — height per unit width
+
+// The elastic half of the effect: the band springs shut, it does not slide
+// shut on a fixed clock. Overshoot and settle are the whole point.
+const SNAP_BACK = { type: "spring", stiffness: 120, damping: 18, restDelta: 0.5 };
+const REOPEN = { duration: 0.35, ease: "easeOut" };
+
+// What collapses is the wordmark band's own height, so the footer box shrinks
+// with it. Nothing is translated and nothing is masked, which is what keeps a
+// dead strip from opening up at either end: when the band is at full height
+// the wordmark is simply there, and when it has collapsed to zero the footer
+// ends immediately below the legal row.
+//
+// Because the band is the last thing on the page, collapsing it shortens the
+// document. At the bottom of the page the browser clamps the scroll to match,
+// so the whole footer visibly travels down over the wordmark as the band
+// closes — the footer itself doing the covering, under its own momentum.
+//
+// The artwork is pinned to the band's bottom edge, so a shrinking band crops
+// it from the top and the footer above appears to descend across it.
+function useElasticFooter() {
+  const footerRef = useRef(null);
+  const height = useMotionValue(0);
+  const [openHeight, setOpenHeight] = useState(0);
+
+  const { scrollY } = useScroll();
+
+  const closed = useRef(false);
+  const timer = useRef(null);
+
+  // Derived from the footer's width rather than measured off the image: the
+  // band's own height is the thing being animated, so measuring it would feed
+  // back into itself.
+  useEffect(() => {
+    const footer = footerRef.current;
+    if (!footer) return undefined;
+
+    const measure = () => setOpenHeight(Math.round(footer.clientWidth * LOGO_RATIO));
+    measure();
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (openHeight && !closed.current) height.set(openHeight);
+  }, [openHeight, height]);
+
+  const sync = useCallback(() => {
+    if (!openHeight || typeof document === "undefined") return;
+
+    const fromBottom =
+      document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+
+    if (closed.current) {
+      if (fromBottom > REARM_PX) {
+        closed.current = false;
+        animate(height, openHeight, REOPEN);
+      }
+      return;
+    }
+
+    if (fromBottom <= CLOSE_AT_PX) {
+      if (!timer.current) {
+        timer.current = setTimeout(() => {
+          timer.current = null;
+          closed.current = true;
+          animate(height, 0, SNAP_BACK);
+        }, HOLD_MS);
+      }
+    } else if (timer.current) {
+      clearTimeout(timer.current);
+      timer.current = null;
+    }
+  }, [openHeight, height]);
+
+  useMotionValueEvent(scrollY, "change", sync);
+
+  // Covers landing straight at the bottom of the page, where no scroll event
+  // ever fires, and re-runs once the band has been measured.
+  useEffect(() => {
+    sync();
+    return () => {
+      if (timer.current) clearTimeout(timer.current);
+    };
+  }, [sync]);
+
+  return { footerRef, height };
+}
 
 const linkClass = "hover:text-white transition-colors duration-200";
 const labelClass = "text-gray-500 cursor-default";
@@ -108,8 +201,10 @@ const legalLinks = [
 ];
 
 const Footer = () => {
+  const { footerRef, height } = useElasticFooter();
+
   return (
-    <footer className="relative bg-neutral-900 text-gray-400">
+    <footer ref={footerRef} className="relative bg-neutral-900 text-gray-400">
       <div className="relative z-10 bg-neutral-900 px-8 py-8 md:px-16 md:pt-16 md:pb-9">
         <div className="relative h-8 w-auto aspect-[4/1] mb-6 md:hidden">
           <Image
@@ -226,25 +321,12 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Pinned wordmark, and the last thing in the footer — its own flow
-          space is the window it gets revealed through. `sticky bottom-0`
-          keeps it pinned to the bottom of the viewport for as long as it
-          would otherwise sit below the fold (sticky-bottom pulls an element
-          *up*; it never pushes one down, which is why this sits at the end
-          of the footer rather than the start). The content block above is
-          opaque and on a higher layer, so it covers the pinned wordmark
-          until the last stretch of scrolling lifts its bottom edge clear —
-          uncovering the wordmark from the bottom up.
-
-          Not `fixed` + a negative z-index: that layer is painted underneath
-          the backgrounds of the page's own in-flow blocks, so it never
-          shows at all. */}
-      <div
-        className={`sticky bottom-0 z-0 flex items-end overflow-hidden ${revealHeight}`}
-        aria-hidden="true"
-      >
-        <Image src={logo} alt="" className="w-full h-auto" />
-      </div>
+      {/* Last thing on the page, and the only thing whose height changes. The
+          artwork is pinned to its bottom edge so collapsing the band crops the
+          wordmark from the top rather than sliding it about. */}
+      <motion.div style={{ height }} className="relative overflow-hidden" aria-hidden="true">
+        <Image src={logo} alt="" className="absolute inset-x-0 bottom-0 block w-full h-auto" />
+      </motion.div>
     </footer>
   );
 };

@@ -60,7 +60,7 @@ export default function StartANewConversation() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="max-w-[811px]"
             >
-                <p className="text-[14px] font-normal uppercase tracking-[0.7px] text-[#0061af] leading-4">
+                <p className="text-[14px] font-semibold uppercase tracking-[0.7px] text-[#0061af] leading-4">
                     For Prospective Customers
                 </p>
                 <h2 className="mt-4 text-[26px] sm:text-[32px] font-medium text-[#0e2b4b] leading-[1.2]">

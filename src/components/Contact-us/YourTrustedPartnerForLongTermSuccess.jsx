@@ -34,7 +34,7 @@ export default function YourTrustedPartnerForLongTermSuccess() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="w-full lg:w-[446px] lg:shrink-0"
                 >
-                    <p className="text-[14px] font-normal uppercase tracking-[0.7px] text-[#2d8ec5] leading-4">
+                    <p className="text-[14px] font-semibold uppercase tracking-[0.7px] text-[#2d8ec5] leading-4">
                         Built for Enterprise Engagement
                     </p>
                     <h2 className="mt-4 text-[26px] sm:text-[32px] font-medium text-[#0a3a52] leading-[1.2]">

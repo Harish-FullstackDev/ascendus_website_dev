@@ -14,7 +14,13 @@ import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
 export default function YourIndustryOurExpertise({
     buttonLabel = "Talk to Our Experts",
     bgImage = ctaBg,
-    description = "Let's explore how we can help you solve your industry's unique challenges and create new opportunities for growth.",
+    description = (
+        <>
+            Let&apos;s Explore How We Can Help You Solve Your Industry&apos;s Unique Challenges
+            <br />
+            And Create New Opportunities For Growth.
+        </>
+    ),
 }) {
     const [showCalendly, setShowCalendly] = useState(false);
 
@@ -32,7 +38,7 @@ export default function YourIndustryOurExpertise({
                     className="relative z-10 flex flex-col items-start gap-6 px-6 sm:px-[64px] py-[64px]"
                 >
                     <div className="flex w-full max-w-[935px] flex-col gap-3">
-                        <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold text-white leading-[1.2]">
+                        <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-medium text-white leading-[1.2]">
                             Your Industry. Our Expertise.
                         </h2>
 

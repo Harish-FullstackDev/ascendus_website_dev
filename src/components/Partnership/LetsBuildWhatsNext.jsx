@@ -81,7 +81,7 @@ export default function LetsBuildWhatsNext() {
                         32px below the group (Figma 232:577 / 264:1607), rather
                         than sharing one rhythm with them. */}
                     <div className="flex flex-col items-start gap-3">
-                        <p className="text-[14px] font-normal uppercase tracking-[0.7px] text-[#0061af] leading-4">
+                        <p className="text-[14px] font-semibold uppercase tracking-[0.7px] text-[#0061af] leading-4">
                             Partner With Us
                         </p>
                         {/* Figma breaks the heading after "What's" (232:581) so

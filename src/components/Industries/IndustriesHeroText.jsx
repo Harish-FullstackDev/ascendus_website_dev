@@ -17,11 +17,11 @@ export default function IndustriesHeroText() {
                 {/* The eyebrow is Houschka Pro Light — it needs the utility
                     explicitly, since only h1/h2 pick Houschka up automatically and
                     everything else inherits General Sans. */}
-                <p className="font-houschka-pro text-white text-xs sm:text-base uppercase tracking-[1.2px] font-light">
+                <p className="font-houschka-pro text-white text-xs sm:text-base uppercase tracking-[1.2px] font-semibold">
                     Industries We Serve
                 </p>
 
-                <div className="mt-4 sm:mt-5 h-px w-full bg-white/40" />
+                <div className="mt-4 sm:mt-1 h-px w-full bg-white/40" />
 
                 {/* No letter-spacing here, despite Figma's 0.48px: any non-zero
                     letter-spacing makes Chrome position the glyphs at fractional
@@ -37,7 +37,7 @@ export default function IndustriesHeroText() {
                 {/* Figma tags this line as Urbane Light; Urbane is SST's face and
                     is not licensed here, so it stays on the project's General Sans
                     at the same weight. */}
-                <p className="mt-4 sm:mt-6 max-w-[760px] text-sm sm:text-base font-light capitalize text-white tracking-[0.16px] leading-relaxed">
+                <p className="mt-4 sm:mt-6 max-w-[760px] text-sm sm:text-base font-normal capitalize text-white tracking-[0.16px] leading-relaxed">
                     We bring deep industry understanding and technology expertise to help organizations solve complex
                     challenges, drive efficiency and create meaningful, long-term value.
                 </p>

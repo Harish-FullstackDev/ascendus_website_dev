@@ -89,7 +89,7 @@ export default function ACollaborativeEcosystem() {
                     <p className="text-sm font-semibold uppercase tracking-[0.7px] text-[#0061af] leading-4">
                         Our Ecosystem
                     </p>
-                    <h2 className="text-2xl sm:text-[32px] font-semibold text-[#10161d] leading-[1.2]">
+                    <h2 className="text-2xl sm:text-[32px] font-medium text-[#10161d] leading-[1.2]">
                         A Collaborative Ecosystem for Greater Possibilities
                     </h2>
                     <p className="pt-0.5 text-base font-normal text-[#415773] leading-[1.5]">
@@ -151,7 +151,7 @@ export default function ACollaborativeEcosystem() {
                                     )}
                                 </span>
 
-                                <p className={"pt-2 text-lg font-semibold leading-[1.2] " + TONES[tile.tone].title}>
+                                <p className={"pt-2 text-lg font-medium leading-[1.2] " + TONES[tile.tone].title}>
                                     {tile.title}
                                 </p>
                                 <p className={"text-sm font-normal leading-[1.4] " + TONES[tile.tone].body}>

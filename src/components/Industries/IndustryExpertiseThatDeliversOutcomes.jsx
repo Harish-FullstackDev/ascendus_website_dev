@@ -46,7 +46,7 @@ export default function IndustryExpertiseThatDeliversOutcomes() {
                     <p className="text-sm font-semibold uppercase tracking-[0.7px] text-[#68c2f2] leading-4">
                         Why It Matters
                     </p>
-                    <h2 className="text-2xl sm:text-[32px] font-semibold text-white leading-[1.2]">
+                    <h2 className="text-2xl sm:text-[32px] font-medium text-white leading-[1.2]">
                         Industry Expertise
                         <br className="hidden sm:inline" /> That Delivers Outcomes
                     </h2>
