@@ -1,56 +1,58 @@
 "use client"
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { animate, motion, useMotionValue, useMotionValueEvent, useScroll } from "framer-motion";
+import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import logo from "../../assets/Brand/ASCENDUS.svg";
 import logoSecondary from "../../assets/Brand/Ascendus_Logo_Secondary.png";
 import InstagramIcon from "../../assets/Footer/Instagram_Icon.svg";
 import LinkedinIcon from "../../assets/Footer/LinkedIn_Icon.svg";
 import TwitterIcon from "../../assets/Footer/X_Icon.svg";
 
-const HOLD_MS = 1800; // how long the wordmark stays out before it springs away
-const CLOSE_AT_PX = 4; // distance from the page bottom that counts as "at the end"
-const REARM_PX = 320; // scrolling back this far from the bottom re-arms the cycle
-
 const LOGO_RATIO = 169 / 1313; // ASCENDUS.svg intrinsic size — height per unit width
 
-// The elastic half of the effect: the band springs shut, it does not slide
-// shut on a fixed clock. Overshoot and settle are the whole point.
-const SNAP_BACK = { type: "spring", stiffness: 120, damping: 18, restDelta: 0.5 };
-const REOPEN = { duration: 0.35, ease: "easeOut" };
+const AT_END_PX = 2; // how close to the page bottom counts as being at the end
+const RESISTANCE = 0.45; // fraction of the gesture the pull actually travels
+const RELEASE_MS = 140; // wheel has no touchend, so a lull in events is the release
+const SNAP_BACK = { type: "spring", stiffness: 180, damping: 22, restDelta: 0.5 };
 
-// What collapses is the wordmark band's own height, so the footer box shrinks
-// with it. Nothing is translated and nothing is masked, which is what keeps a
-// dead strip from opening up at either end: when the band is at full height
-// the wordmark is simply there, and when it has collapsed to zero the footer
-// ends immediately below the legal row.
+// Elastic overflow scrolling, done by hand. Chrome on Windows has no native
+// rubber band, so the gesture is read off the wheel and touch directly: once
+// the page is already at its end, further downward input no longer scrolls
+// anything, and that leftover input is what opens the wordmark band.
 //
-// Because the band is the last thing on the page, collapsing it shortens the
-// document. At the bottom of the page the browser clamps the scroll to match,
-// so the whole footer visibly travels down over the wordmark as the band
-// closes — the footer itself doing the covering, under its own momentum.
+// What opens is the band's own height, growing below the footer panel, and
+// the view is held against the new page bottom as it grows. So the page
+// lifts under the gesture exactly as an overscroll would, while the footer
+// panel itself never moves: it cannot be clipped at its top, cannot ride up
+// over the section above it, and leaves no gap behind — all of which happen
+// the moment the panel is the thing being translated.
 //
-// The artwork is pinned to the band's bottom edge, so a shrinking band crops
-// it from the top and the footer above appears to descend across it.
-function useElasticFooter() {
+// At rest the band is zero-height, so there is no empty strip either. Letting
+// go shrinks it back, and since it is the last thing on the page the browser
+// clamps the scroll as the document shortens, carrying the footer back down
+// over the wordmark.
+//
+// Resistance makes it read as elastic rather than as a drawer — the pull
+// travels a fraction of the gesture, and the closer it gets to the limit the
+// less each additional pixel buys.
+function useElasticOverscroll() {
   const footerRef = useRef(null);
-  const height = useMotionValue(0);
-  const [openHeight, setOpenHeight] = useState(0);
+  const pull = useMotionValue(0);
+  const [maxPull, setMaxPull] = useState(0);
 
-  const { scrollY } = useScroll();
+  const current = useRef(0);
+  const release = useRef(null);
+  const touchY = useRef(null);
 
-  const closed = useRef(false);
-  const timer = useRef(null);
-
-  // Derived from the footer's width rather than measured off the image: the
-  // band's own height is the thing being animated, so measuring it would feed
-  // back into itself.
+  // The wordmark is `w-full h-auto`, so how far there is to pull is a function
+  // of width. Derived from the ratio rather than measured off the element,
+  // which keeps it stable while a transform is running.
   useEffect(() => {
     const footer = footerRef.current;
     if (!footer) return undefined;
 
-    const measure = () => setOpenHeight(Math.round(footer.clientWidth * LOGO_RATIO));
+    const measure = () => setMaxPull(Math.round(footer.clientWidth * LOGO_RATIO));
     measure();
 
     const observer = new ResizeObserver(measure);
@@ -59,49 +61,104 @@ function useElasticFooter() {
   }, []);
 
   useEffect(() => {
-    if (openHeight && !closed.current) height.set(openHeight);
-  }, [openHeight, height]);
+    if (!maxPull) return undefined;
 
-  const sync = useCallback(() => {
-    if (!openHeight || typeof document === "undefined") return;
+    const atEnd = () =>
+      document.documentElement.scrollHeight - (window.scrollY + window.innerHeight) <= AT_END_PX;
 
-    const fromBottom =
-      document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+    // Raw gesture distance accumulated since the pull began, before easing.
+    const applied = { raw: 0 };
 
-    if (closed.current) {
-      if (fromBottom > REARM_PX) {
-        closed.current = false;
-        animate(height, openHeight, REOPEN);
+    const letGo = () => {
+      if (release.current) {
+        clearTimeout(release.current);
+        release.current = null;
       }
-      return;
-    }
-
-    if (fromBottom <= CLOSE_AT_PX) {
-      if (!timer.current) {
-        timer.current = setTimeout(() => {
-          timer.current = null;
-          closed.current = true;
-          animate(height, 0, SNAP_BACK);
-        }, HOLD_MS);
-      }
-    } else if (timer.current) {
-      clearTimeout(timer.current);
-      timer.current = null;
-    }
-  }, [openHeight, height]);
-
-  useMotionValueEvent(scrollY, "change", sync);
-
-  // Covers landing straight at the bottom of the page, where no scroll event
-  // ever fires, and re-runs once the band has been measured.
-  useEffect(() => {
-    sync();
-    return () => {
-      if (timer.current) clearTimeout(timer.current);
+      applied.raw = 0;
+      if (current.current === 0) return;
+      current.current = 0;
+      animate(pull, 0, SNAP_BACK);
     };
-  }, [sync]);
 
-  return { footerRef, height };
+    // Past the limit each extra pixel buys less, so the band eases into its
+    // stop instead of hitting a wall.
+    const stretch = (amount) => {
+      const eased = maxPull * (1 - 1 / (amount / maxPull + 1));
+      return Math.min(maxPull, eased * 2);
+    };
+
+    // Growing the band lengthens the document, and the new space lands below
+    // the fold where it would never be seen. Riding the scroll down with it
+    // is what turns the growth into a visible pull.
+    const openTo = (amount) => {
+      current.current = amount;
+      pull.set(amount);
+      window.scrollTo(0, document.documentElement.scrollHeight);
+    };
+
+    const onWheel = (event) => {
+      if (event.deltaY <= 0) {
+        letGo();
+        return;
+      }
+      if (current.current === 0 && !atEnd()) {
+        applied.raw = 0;
+        return;
+      }
+
+      applied.raw += event.deltaY * RESISTANCE;
+      openTo(stretch(applied.raw));
+
+      if (release.current) clearTimeout(release.current);
+      release.current = setTimeout(letGo, RELEASE_MS);
+    };
+
+    const onTouchStart = (event) => {
+      touchY.current = event.touches[0].clientY;
+    };
+
+    const onTouchMove = (event) => {
+      if (touchY.current === null) return;
+
+      const delta = touchY.current - event.touches[0].clientY; // up-swipe is positive
+      touchY.current = event.touches[0].clientY;
+
+      if (delta <= 0 || (current.current === 0 && !atEnd())) {
+        if (current.current > 0 && delta < 0) letGo();
+        return;
+      }
+
+      applied.raw += delta * RESISTANCE;
+      openTo(stretch(applied.raw));
+    };
+
+    const onTouchEnd = () => {
+      touchY.current = null;
+      letGo();
+    };
+
+    window.addEventListener("wheel", onWheel, { passive: true });
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    window.addEventListener("touchmove", onTouchMove, { passive: true });
+    window.addEventListener("touchend", onTouchEnd, { passive: true });
+    window.addEventListener("touchcancel", onTouchEnd, { passive: true });
+
+    return () => {
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
+      window.removeEventListener("touchcancel", onTouchEnd);
+      if (release.current) clearTimeout(release.current);
+    };
+  }, [maxPull, pull]);
+
+  // The spring undershoots past zero on the way back. A negative height is
+  // not a value CSS will take, and an ignored declaration would strand the
+  // band at whatever it last held, so it is clamped.
+  const bandHeight = useTransform(pull, (value) => Math.max(0, value));
+
+  return { footerRef, bandHeight };
 }
 
 const linkClass = "hover:text-white transition-colors duration-200";
@@ -202,7 +259,7 @@ const legalLinks = [
 ];
 
 const Footer = () => {
-  const { footerRef, height } = useElasticFooter();
+  const { footerRef, bandHeight } = useElasticOverscroll();
 
   return (
     <footer ref={footerRef} className="relative bg-neutral-900 text-gray-400">
@@ -322,10 +379,11 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Last thing on the page, and the only thing whose height changes. The
-          artwork is pinned to its bottom edge so collapsing the band crops the
-          wordmark from the top rather than sliding it about. */}
-      <motion.div style={{ height }} className="relative overflow-hidden" aria-hidden="true">
+      {/* Zero-height at rest, so it costs the footer nothing and leaves no
+          empty strip. The pull grows it; the wordmark is pinned to its bottom
+          edge, which keeps the artwork against the page bottom and uncovers
+          it upward as the band opens. */}
+      <motion.div style={{ height: bandHeight }} className="relative overflow-hidden" aria-hidden="true">
         <Image src={logo} alt="" className="absolute inset-x-0 bottom-0 block w-full h-auto" />
       </motion.div>
     </footer>

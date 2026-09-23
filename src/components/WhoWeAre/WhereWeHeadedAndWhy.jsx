@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Hanken_Grotesk } from "next/font/google";
-import missionBg from "@/assets/WhoWeAre/mission_vision.webp";
+import missionBg from "@/assets/who_we_are_mission.webp";
 
 // AktivGrotesk (used in the Figma design) isn't a freely licensed font, so this
 // substitutes Hanken Grotesk, a similar neo-grotesque with matching thin/light weights.
