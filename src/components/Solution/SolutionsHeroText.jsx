@@ -15,7 +15,7 @@ export default function SolutionsHeroText() {
                 className="w-full max-w-[1056px]"
             >
                 <p className="text-white text-xs sm:text-base uppercase tracking-[1.2px] font-semibold">
-                    Industries We Serve
+                    Solutions
                 </p>
 
                 <div className="mt-4 sm:mt-5 h-px w-full bg-white/40" />

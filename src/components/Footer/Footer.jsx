@@ -214,7 +214,6 @@ const columns = [
     heading: "Insights",
     items: [
       { name: "Case Studies", href: "/case-studies" },
-      { name: "SAP Insights" },
       { name: "Industry Insights", href: "/industry-reports" },
       { name: "Blog", href: "/blog" },
       { name: "Whitepapers", href: "/whitepapers" },

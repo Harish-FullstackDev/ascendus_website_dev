@@ -15,6 +15,7 @@ export const validRoutes = [
   "/partnership/",
   "/industries/",
   "/solutions/",
+  "/services/",
   "/legal/terms/",
   "/trustcenter/",
   "/what-we-do/cybersecurity-digital-trust/",

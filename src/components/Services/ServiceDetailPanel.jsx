@@ -65,17 +65,25 @@ export default function ServiceDetailPanel({ service }) {
                             ))}
                         </ul>
 
-                        <Link
-                            href={service.ctaHref}
-                            className="group inline-flex h-12 w-fit items-center gap-2.5 rounded-[8px] bg-[#0061af] px-7 text-sm font-normal leading-[1.5] text-white transition-colors duration-300 hover:bg-[#005192] sm:text-base"
-                        >
-                            {service.ctaLabel}
-                            <Image
-                                src={arrowRight}
-                                alt=""
-                                className="h-4 w-[21px] transition-transform duration-300 group-hover:translate-x-1"
-                            />
-                        </Link>
+                        <div className="flex flex-col gap-3">
+                            {service.ctaEyebrow && (
+                                <p className="text-[14px] font-medium uppercase leading-4 tracking-[0.7px] text-[#0061af]">
+                                    {service.ctaEyebrow}
+                                </p>
+                            )}
+
+                            <Link
+                                href={service.ctaHref}
+                                className="group inline-flex h-12 w-fit items-center gap-2.5 rounded-[8px] bg-[#0061af] px-7 text-sm font-normal leading-[1.5] text-white transition-colors duration-300 hover:bg-[#005192] sm:text-base"
+                            >
+                                {service.ctaLabel}
+                                <Image
+                                    src={arrowRight}
+                                    alt=""
+                                    className="h-4 w-[21px] transition-transform duration-300 group-hover:translate-x-1"
+                                />
+                            </Link>
+                        </div>
                     </div>
                 </motion.div>
             </AnimatePresence>

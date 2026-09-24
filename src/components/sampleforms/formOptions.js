@@ -23,15 +23,6 @@ export const COUNTRY_OPTIONS = [
   "Other",
 ];
 
-export const HEARD_ABOUT_OPTIONS = [
-  "Search Engine",
-  "Social Media",
-  "Referral",
-  "Event / Conference",
-  "Advertisement",
-  "Other",
-];
-
 export const AREA_OF_INTEREST_OPTIONS = [
   "SAP Transformation",
   "Cloud Infrastructure",

@@ -11,12 +11,11 @@ export default function HeroText() {
                 transition={{ duration: 0.7, ease: "easeOut" }}
                 className="w-full max-w-[1057px]"
             >
-                <h1 className="text-white text-xl sm:text-4xl lg:text-5xl font-medium capitalize mt-6 sm:mt-8 leading-tight">
-
+                <h1 className="text-white text-sm sm:text-lg lg:text-xl tracking-wide font-light mt-6 sm:mt-8">
                     Blog
                 </h1>
                 <div className="mt-3 sm:mt-4 h-px w-full bg-white/40" />
-                <p className="text-white/90 text-xs sm:text-lg lg:text-xl  tracking-wide font-light">
+                <p className="text-white/90 text-xl sm:text-4xl lg:text-5xl font-medium capitalize leading-tight">
                     Ideas That Shape The Future Of Digital Enterprise Growth.
                 </p>
             </motion.div>
