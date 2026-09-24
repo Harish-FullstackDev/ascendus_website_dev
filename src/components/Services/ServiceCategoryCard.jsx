@@ -7,7 +7,7 @@ import Image from "next/image";
 // expressed as percentages of the card's own box so the gradient keeps the same
 // shape once the card becomes fluid below 1440.
 const ACTIVE_GRADIENT =
-    "radial-gradient(ellipse 108% 259% at 100% 0%, #0d3866 0%, #0a284b 37.5%, #061830 75%)";
+    "radial-gradient(ellipse 108% 259% at 100% 0%, #0061AF 0%, #003056 100%)";
 
 // One of the three category tabs in "Three Ways We Create Value". Figma only
 // draws two states — the dark active card and the light resting card — so a

@@ -78,7 +78,7 @@ const SAP_TRANSFORMATION_ITEMS = [
         ctaHref: "/contact-us",
         ctaLabel: "Talk to Our Support Team",
         eyebrow: "SAP Transformation",
-        heading: ["SAP AMS", "& Support"],
+        heading: ["SAP AMS & Support"],
         id: "sap-ams-support",
         image: imgS4HanaTransformation,
         outcomes: [
@@ -95,7 +95,7 @@ const SAP_TRANSFORMATION_ITEMS = [
         ctaHref: "/contact-us",
         ctaLabel: "Discuss Your Resource Needs",
         eyebrow: "SAP Transformation",
-        heading: ["SAP T&M", "Services"],
+        heading: ["SAP T&M Services"],
         id: "sap-tm-services",
         image: imgS4HanaTransformation,
         outcomes: [
@@ -160,7 +160,7 @@ const BUSINESS_TRANSFORMATION_ITEMS = buildItems("Business Transformation", [
     ],
     [
         "Spend Management",
-        ["Spend", "Management"],
+        ["Spend Management"],
         "Know exactly where your money goes, and control it.",
         "Bring spend data together, analyze it by category and supplier, and enforce compliance at purchase. Maverick spend drops and savings become measurable.",
         ["Gain Spend Visibility", "Enforce Compliance", "Cut Maverick Spend"],
@@ -223,7 +223,7 @@ const BUSINESS_TRANSFORMATION_ITEMS = buildItems("Business Transformation", [
 const DIGITAL_TECHNOLOGY_ITEMS = buildItems("Digital & Technology Transformation", [
     [
         "SAP BTP",
-        ["SAP", "BTP"],
+        ["SAP BTP"],
         "Extend SAP and connect everything around it.",
         "Build applications, integrate SAP and non-SAP systems and automate workflows on one platform, keeping your ERP core clean.",
         ["Extend Without Disruption", "Connect Every System", "Automate Workflows"],
