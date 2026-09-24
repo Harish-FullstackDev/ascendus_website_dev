@@ -40,7 +40,7 @@ export default function IsYourTechnologyLandscapeReady() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="w-full lg:w-[448px] lg:shrink-0"
                 >
-                    <p className="flex h-8 items-center text-[14px] font-normal uppercase tracking-[0.7px] text-[#68c2f2] leading-4">
+                    <p className="flex h-8 items-center text-[14px] font-semibold uppercase tracking-[0.7px] text-[#68c2f2] leading-4">
                         Solution
                     </p>
                     <h2 className="mt-3 text-[26px] sm:text-[32px] font-medium text-white leading-[1.2]">

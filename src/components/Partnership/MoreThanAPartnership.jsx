@@ -46,7 +46,7 @@ export default function MoreThanAPartnership() {
                     <p className="text-sm font-semibold uppercase tracking-[0.7px] text-[#0061af] leading-4">
                         Why Partner With Us
                     </p>
-                    <h2 className="text-2xl sm:text-[32px] font-semibold text-[#0f172a] leading-[1.2]">
+                    <h2 className="text-2xl sm:text-[32px] font-medium text-[#0f172a] leading-[1.2]">
                         More Than a Partnership.{" "}
                         {/* Figma sets this heading on two lines, breaking after
                             the first sentence. Forced only from lg up, where the
@@ -105,7 +105,7 @@ export default function MoreThanAPartnership() {
                     <div className="absolute inset-y-0 right-0 flex max-w-[320px] flex-col items-end justify-center gap-7 p-6 sm:p-10 text-right">
                         {STATS.map((stat) => (
                             <div key={stat.label} className="flex flex-col gap-0.5">
-                                <span className="text-2xl sm:text-[32px] font-semibold text-white leading-[1.2]">
+                                <span className="text-2xl sm:text-[32px] font-medium text-white leading-[1.2]">
                                     {stat.value}
                                 </span>
                                 <span className="text-sm sm:text-base font-normal text-[#cbd5e1] leading-[1.5]">

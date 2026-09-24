@@ -27,14 +27,13 @@ export default function IndustriesHeroStats() {
                 {STATS.map((stat, index) => (
                     <div
                         key={stat.label}
-                        className={`flex flex-col ${
-                            index === 0 ? "pr-3 sm:pr-6 lg:pr-[60px]" : "px-3 sm:px-6 lg:px-[60px]"
-                        } ${index < STATS.length - 1 ? "border-r border-[#5c7088]" : ""}`}
+                        className={`flex flex-col ${index === 0 ? "pr-3 sm:pr-6 lg:pr-[60px]" : "px-3 sm:px-6 lg:px-[60px]"
+                            } ${index < STATS.length - 1 ? "border-r border-[#5c7088]" : ""}`}
                     >
                         {/* Figures are white here, not the #0061AF the stat
                             counters elsewhere use — that token is for counters on
                             light backgrounds; these sit on a dark photo. */}
-                        <dd className="order-1 text-xl sm:text-2xl lg:text-[32px] font-extrabold text-[#f8f8f8] leading-tight">
+                        <dd className="order-1 text-xl sm:text-2xl lg:text-[32px] font-medium text-[#f8f8f8] leading-tight">
                             {stat.value}
                         </dd>
                         <dt className="order-2 mt-1 text-sm sm:text-base lg:text-[22px] text-[#c9d0d8] leading-snug">

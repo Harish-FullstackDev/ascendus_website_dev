@@ -14,11 +14,11 @@ export default function ContactUsHeroText() {
                 transition={{ duration: 0.7 }}
                 className="w-full max-w-[1056px]"
             >
-                <p className="text-white text-xs sm:text-base uppercase tracking-[1.2px] font-light">
+                <p className="text-white text-xs sm:text-[18px] uppercase tracking-[1.2px] font-semibold">
                     Let&apos;s Connect
                 </p>
 
-                <div className="mt-4 sm:mt-5 h-px w-full bg-white/40" />
+                <div className="mt-4 sm:mt-1 h-px w-full bg-white/40" />
 
                 {/* No letter-spacing here, despite Figma's 0.48px: any non-zero
                     letter-spacing makes Chrome position the glyphs at fractional
@@ -34,7 +34,7 @@ export default function ContactUsHeroText() {
                     it had before. Figma tags this line as Urbane Light; Urbane is
                     SST's face and is not licensed here, so it stays on the
                     project's Switzer at the same weight. */}
-                <p className="mt-4 sm:mt-6 max-w-[570px] text-sm sm:text-base font-light capitalize text-white tracking-[0.16px] leading-relaxed">
+                <p className="mt-4 sm:mt-6 max-w-[570px] text-sm sm:text-base font-normal capitalize text-white tracking-[0.16px] leading-relaxed">
                     Whether you&apos;re planning a transformation, evaluating a new solution, or need support for an
                     existing engagement, our team is ready to help.
                 </p>

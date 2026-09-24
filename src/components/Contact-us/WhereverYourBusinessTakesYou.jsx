@@ -64,8 +64,8 @@ function LocationCard({ location }) {
             <div className="absolute inset-0 bg-black/20" />
 
             <div className="relative">
-                <h3 className="text-base font-semibold uppercase text-white leading-6">{location.name}</h3>
-                <span className="relative mt-3 inline-block pb-0.5 text-xs font-semibold text-white leading-4">
+                <h3 className="text-base font-medium uppercase text-white leading-6">{location.name}</h3>
+                <span className="relative mt-3 inline-block pb-0.5 text-xs font-medium text-white leading-4">
                     View Location
                     <span
                         key={state.key}
@@ -92,7 +92,7 @@ export default function WhereverYourBusinessTakesYou() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="max-w-[811px]"
             >
-                <p className="text-[14px] font-normal uppercase tracking-[0.7px] text-[#2d8ec5] leading-4">
+                <p className="text-[14px] font-semibold uppercase tracking-[0.7px] text-[#2d8ec5] leading-4">
                     Our Locations
                 </p>
                 <h2 className="mt-4 text-[26px] sm:text-[32px] font-medium text-[#0a3a52] leading-[1.2]">

@@ -55,19 +55,18 @@ export default function IndustryChallengesRealSolution() {
                             {/* Not the 14px eyebrow the other sections use —
                                 Figma sets this one at 18px regular with 1.8px of
                                 tracking (Hero_Eyebrow). */}
-                            <p className="flex h-8 items-center text-lg font-normal uppercase tracking-[1.8px] text-[#0061af] leading-[1.2]">
+                            <p className="flex h-8 items-center text-lg font-semibold uppercase tracking-[1.8px] text-[#0061af] leading-[1.2]">
                                 Solution
                             </p>
 
-                            <h2 className="text-2xl sm:text-[32px] font-semibold text-[#0d1b2e] leading-[1.2]">
+                            <h2 className="text-2xl sm:text-[32px] font-medium text-[#0d1b2e] leading-[1.2]">
                                 Industry Challenges
                                 <br />
                                 Real Solution
                             </h2>
 
                             <p className="text-base font-normal text-[#4a5565] leading-[1.5]">
-                                Let&apos;s explore how we can help you solve your industry&apos;s unique challenges and
-                                create new opportunities for growth.
+                                Let&apos;s Explore How We Can Help You Solve Your Industry&apos;s Unique Challenges And Create New Opportunities For Growth.
                             </p>
                         </div>
 

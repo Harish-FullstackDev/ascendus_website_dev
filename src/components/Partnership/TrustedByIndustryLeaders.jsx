@@ -49,7 +49,7 @@ export default function TrustedByIndustryLeaders() {
                 </p>
                 {/* Figma sets this one at the 48px Title-1 size rather than the
                     32px used by the other section headings on this page. */}
-                <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold text-[#0f172a] leading-[1.2]">
+                <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-medium text-[#0f172a] leading-[1.2]">
                     Trusted by Industry Leaders
                 </h2>
                 <p className="max-w-[728px] text-base font-normal text-[#64748b] leading-[1.5]">
