@@ -11,9 +11,9 @@ import sapLogo from "@/assets/Services/icons/sap-logo.svg";
 import iconBusinessTransformation from "@/assets/Services/icons/business-transformation-24.svg";
 import iconDigitalTransformation from "@/assets/Services/icons/digital-technology-transformation-24.svg";
 
-import iconAccelerateBusinessValue from "@/assets/Services/icons/accelerate-business-value-32.svg";
-import iconSimplifyOperations from "@/assets/Services/icons/simplify-operations-32.svg";
-import iconEnableRealTimeInsights from "@/assets/Services/icons/enable-real-time-insights-32.svg";
+import iconAccelerateBusinessValue from "@/assets/Services/icons/accelerate-business-value-48.svg";
+import iconSimplifyOperations from "@/assets/Services/icons/simplify-operations-48.svg";
+import iconEnableRealTimeInsights from "@/assets/Services/icons/enable-real-time-insights-48.svg";
 
 import imgS4HanaTransformation from "@/assets/Services/SAP_S4HANA_Transformation.webp";
 

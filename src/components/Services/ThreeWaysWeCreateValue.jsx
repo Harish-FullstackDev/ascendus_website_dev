@@ -33,15 +33,21 @@ export default function ThreeWaysWeCreateValue({ activeCategoryId, onSelectCateg
                 </p>
             </motion.div>
 
-            {/* 3-up only from lg: Figma's cards are 429px wide, and three of them
-                across a 768px tablet leaves ~206px of content per card, which
-                crushes the two-line titles. */}
+            {/* Figma wraps all three cards in one outlined panel: the cards carry
+                no chrome of their own and only the sliding gradient marks the
+                selection. Geometry from 432:1668 — a 1311px panel with 12.5px
+                side padding, 17px top/bottom and three equal 400px cards 43px
+                apart. The cards are equal width in every state, so `flex-1` on
+                each reproduces it at any container width.
+
+                Side by side from lg only: three across a 768px tablet leaves
+                ~206px of content per card, which crushes the two-line titles. */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="mt-8 grid grid-cols-1 gap-3 lg:grid-cols-3"
+                className="mt-8 flex flex-col items-stretch gap-3 rounded-[12px] border-[0.5px] border-[rgba(0,34,61,0.24)] bg-white px-[12.5px] py-[17px] drop-shadow-[0px_2px_2px_rgba(0,0,0,0.13)] lg:flex-row lg:items-stretch lg:gap-[43px]"
             >
                 {SERVICE_CATEGORIES.map((category) => (
                     <ServiceCategoryCard
