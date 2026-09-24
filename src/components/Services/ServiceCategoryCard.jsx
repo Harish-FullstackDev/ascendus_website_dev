@@ -81,7 +81,8 @@ export default function ServiceCategoryCard({ category, isActive, onSelect }) {
                         <Image
                             src={icon}
                             alt=""
-                            className={iconIsLogo ? "h-[15px] w-[30px]" : "size-6"}
+                            className={`transition-[filter] ${FOREGROUND_TIMING} ${isActive && !iconIsLogo ? "brightness-0 invert" : ""} ${iconIsLogo ? "h-[15px] w-[30px]" : "size-6"
+                                }`}
                         />
                     </span>
 
