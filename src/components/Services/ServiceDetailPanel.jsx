@@ -47,19 +47,30 @@ export default function ServiceDetailPanel({ service }) {
                         </div>
                     </div>
 
-                    {/* Figma pins the outcomes row and the CTA to the bottom of the
-                        620px panel with space-between. `mt-auto` reproduces that at
-                        desktop and simply follows the copy once the panel stacks. */}
-                    <div className="mt-auto flex flex-col gap-10 pt-8">
-                        <ul className="flex max-w-[323px] items-start justify-between gap-4">
+                    {/* Figma (416:144) does NOT pin this block to the panel's
+                        bottom: it follows the copy on the same 17px rhythm as
+                        everything above, leaving ~37px of slack underneath. The
+                        first pass used `mt-auto`, which drove the button to the
+                        very bottom edge and opened a hole above the icons. */}
+                    <div className="flex flex-col gap-[47px]">
+                        {/* 0.5px #00223d hairlines between the three outcomes, per
+                            Figma's Line 6/7 — drawn with divide-* so they vanish
+                            cleanly if the row ever wraps. */}
+                        <ul className="flex w-full max-w-[372px] items-stretch justify-between divide-x-[0.5px] divide-[#00223d]">
                             {service.outcomes.map((outcome) => (
                                 <li
                                     key={outcome.label}
-                                    className="flex max-w-[96px] flex-col items-center gap-5 text-center"
+                                    className="flex flex-1 flex-col items-center gap-[25px] px-2 text-center first:pl-0 last:pr-0"
                                 >
-                                    <Image src={outcome.icon} alt="" className="size-8" />
+                                    <Image src={outcome.icon} alt="" className="size-12" />
+                                    {/* Non-breaking hyphens: the browser happily
+                                        breaks a line straight after a "-", turning
+                                        "Enable Real-Time Insights" into "Enable
+                                        Real-" / "Time Insights". Labels vary per
+                                        category, so no fixed column width fixes
+                                        this — stopping the break does. */}
                                     <span className="text-[14px] font-normal leading-[1.4] text-[#1e293b]">
-                                        {outcome.label}
+                                        {outcome.label.replace(/-/g, "‑")}
                                     </span>
                                 </li>
                             ))}

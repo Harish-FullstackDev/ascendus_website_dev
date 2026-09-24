@@ -42,8 +42,10 @@ export default function SAPTransformation({ activeCategoryId }) {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex w-full gap-8 max-lg:flex-col"
             >
-                {/* Left rail */}
-                <div className="flex flex-col gap-8 overflow-hidden rounded-[24px] border border-[#c9d0d8] bg-[#f1f3f5] px-6 py-10 sm:gap-[55px] sm:py-[64px] lg:h-[620px] lg:w-[430px] lg:shrink-0">
+                {/* Left rail. Figma (416:106) puts the header 49px down and the
+                    service list 50px below it, not the 64/55 the first pass used
+                    — that read as a hole between the logo and the list. */}
+                <div className="flex flex-col gap-8 overflow-hidden rounded-[24px] border border-[#c9d0d8] bg-[#f1f3f5] px-6 pb-10 pt-8 sm:gap-[50px] sm:pb-[64px] sm:pt-[49px] lg:h-[620px] lg:w-[430px] lg:shrink-0">
                     <div className="flex shrink-0 items-center gap-[14px]">
                         <span className="flex size-12 shrink-0 items-center justify-center rounded-[8px] p-1">
                             <Image src={category.icon} alt="" className="h-[23px] w-12" />
