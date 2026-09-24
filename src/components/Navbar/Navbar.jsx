@@ -273,9 +273,12 @@ const Navbar = () => {
                   </Link>
 
                   <li className="relative group">
-                    <button
-                      type="button"
-                      className={`${navLinkClass} after:content-none flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
+                    {/* The trigger is a link, not a button: Services now has an
+                        overview page of its own, and the dropdown still opens on
+                        hover over the same element. */}
+                    <Link
+                      href="/services"
+                      className={`${navLinkClass} ${pathname === "/services/" ? activeLinkClass : inactiveLinkClass} flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Services
@@ -293,7 +296,7 @@ const Navbar = () => {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                    </button>
+                    </Link>
 
                     {/* Dropdown — anchored to the trigger's left edge (not centered on
                         it) since the nav now starts near the viewport's left edge; a
@@ -638,14 +641,18 @@ const Navbar = () => {
                 className={`w-full flex items-center justify-between ${pathname.startsWith("/services") ? "bg-gray-100" : ""
                   }`}
               >
-                <div
-                  className={`flex-1 py-3 px-4 text-2xl sm:text-3xl font-medium rounded-lg ${pathname.startsWith("/services")
+                {/* Tapping the label opens the overview page; the chevron beside
+                    it still expands the per-service list. */}
+                <Link
+                  href="/services"
+                  onClick={closeMenu}
+                  className={`flex-1 py-3 px-4 text-2xl sm:text-3xl font-medium rounded-lg transition-colors duration-300 ${pathname === "/services/"
                     ? "text-[#2d8ec5]"
-                    : "text-gray-800"
+                    : "text-gray-800 hover:text-[#2d8ec5]"
                     }`}
                 >
                   Services
-                </div>
+                </Link>
 
                 <button
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
