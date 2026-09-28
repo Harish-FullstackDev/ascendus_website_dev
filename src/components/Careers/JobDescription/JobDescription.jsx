@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { X, Loader2, AlertCircle, Clock, Link2, Check } from "lucide-react";
-import locationIcon from "@/assets/career/icons/location.svg";
-import modeOfWorkIcon from "@/assets/career/icons/mode of work.svg";
-import typeOfWorkIcon from "@/assets/career/icons/type of work.svg";
-import shareIcon from "@/assets/career/icons/share.svg";
-import uploadIcon from "@/assets/career/icons/upload.svg";
+import locationIcon from "@/assets/Careers/icons/location.svg";
+import modeOfWorkIcon from "@/assets/Careers/icons/mode-of-work.svg";
+import typeOfWorkIcon from "@/assets/Careers/icons/type-of-work.svg";
+import shareIcon from "@/assets/Careers/icons/share.svg";
+import uploadIcon from "@/assets/Careers/icons/upload.svg";
 import ViewDetailsButton from "@/components/Careers/ViewDetailsButton";
 
 

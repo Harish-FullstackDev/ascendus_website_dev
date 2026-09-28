@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-// import heroBg from "@/assets/career/Hero Image.svg";
-import heroBg from "@/assets/career/webp/Careers_Hero.webp";
+import heroBg from "@/assets/Careers/careers-subpage-hero.webp";
 
 export default function CareersHero() {
     return (
