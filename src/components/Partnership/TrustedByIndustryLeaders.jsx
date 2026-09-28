@@ -3,14 +3,14 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import sapLogo from "@/assets/HomePage/OurProudPartners/sap.png";
-import salesforceLogo from "@/assets/HomePage/OurProudPartners/salesforce.png";
-import awsLogo from "@/assets/HomePage/OurProudPartners/aws.png";
-import odooLogo from "@/assets/HomePage/OurProudPartners/odoo.png";
-import uipathLogo from "@/assets/HomePage/OurProudPartners/uipath.png";
-import sophosLogo from "@/assets/HomePage/OurProudPartners/sophos.png";
-import googleCloudLogo from "@/assets/HomePage/OurProudPartners/google-cloud.png";
-import databricksLogo from "@/assets/HomePage/OurProudPartners/databricks.png";
+import sapLogo from "@/assets/Partnership/logos/sap.png";
+import salesforceLogo from "@/assets/Partnership/logos/salesforce.png";
+import awsLogo from "@/assets/Partnership/logos/aws.png";
+import odooLogo from "@/assets/Partnership/logos/odoo.png";
+import uipathLogo from "@/assets/Partnership/logos/uipath.png";
+import sophosLogo from "@/assets/Partnership/logos/sophos.png";
+import googleCloudLogo from "@/assets/Partnership/logos/google-cloud.png";
+import databricksLogo from "@/assets/Partnership/logos/databricks.png";
 
 // Same partners, same artwork as the homepage's "Our Proud Partners" strip —
 // the real brand logo files rather than text and CSS shapes standing in for

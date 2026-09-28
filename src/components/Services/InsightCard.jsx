@@ -15,9 +15,16 @@ import arrowRight from "@/assets/Services/icons/arrow-right-8.svg";
 // with the panel on the bottom 43.07% (stops at 56.93%) and 32px under the
 // copy. The Solutions frame also paints its 20% black *under* the photo (a
 // fallback fill the opaque image hides), so that variant has no scrim.
+// The content block is bottom-anchored (flex justify-end below), so its own
+// top padding buys nothing — the box just grows upward by the same amount and
+// the title lands in the same spot. The panel's Figma height leaves the
+// services variant only ~7px of slack above the tightly-packed text, which
+// reads as no gap at all. `calc(...+20px)` grows the panel itself by a fixed
+// pixel amount on top of its Figma percentage, and that extra height is what
+// actually pushes the title down, clear of the photo above it.
 const VARIANTS = {
-    services: { height: "h-[338px]", panel: "h-[34.2%]", padding: "pt-4 pb-3", scrim: true },
-    tall: { height: "h-[377px]", panel: "h-[43.07%]", padding: "pt-6 pb-8", scrim: false },
+    services: { height: "h-[338px]", panel: "h-[calc(34.2%+20px)]", padding: "pb-3", scrim: true },
+    tall: { height: "h-[377px]", panel: "h-[calc(43.07%+12px)]", padding: "pb-8", scrim: false },
 };
 
 export default function InsightCard({ ctaLabel = "Explore Now", description, href, image, title, variant = "services" }) {
