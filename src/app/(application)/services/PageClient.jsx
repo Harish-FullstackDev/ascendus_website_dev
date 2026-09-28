@@ -12,6 +12,7 @@ import MoreThanServices from "@/components/Services/MoreThanServices";
 import MoreThanExpertise from "@/components/Services/MoreThanExpertise";
 import AboutUsHighlights from "@/components/Services/AboutUsHighlights";
 import IdeasThatInspire from "@/components/Services/IdeasThatInspire";
+import PageCta from "@/components/CommonComponents/PageCta";
 import { SERVICE_CATEGORIES } from "@/components/Services/servicesData";
 
 // The hero is a plain full-bleed band, not the sticky curtain the what-we-do
@@ -41,6 +42,14 @@ const page = () => {
             <MoreThanExpertise />
             <AboutUsHighlights />
             <IdeasThatInspire />
+            <PageCta
+                title={["Partner With Us", "for a Stronger Tomorrow."]}
+                description={["Let's connect and explore how we can help you", "transform, innovate and grow."]}
+                ctaLabel="CONTACT US"
+                href="/contact-us/"
+                titleClassName="lg:w-[445.5px]"
+                descriptionClassName="lg:whitespace-nowrap"
+            />
 
             <Footer />
         </div>

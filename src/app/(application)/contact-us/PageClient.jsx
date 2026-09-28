@@ -14,7 +14,7 @@ import AlreadyAnAscendusCustomer from "@/components/Contact-us/AlreadyAnAscendus
 import TellUsWhatYoureLookingToAchieve from "@/components/Contact-us/TellUsWhatYoureLookingToAchieve";
 import WhereverYourBusinessTakesYou from "@/components/Contact-us/WhereverYourBusinessTakesYou";
 import YourTrustedPartnerForLongTermSuccess from "@/components/Contact-us/YourTrustedPartnerForLongTermSuccess";
-import ReadyToTurnYourVisionIntoAction from "@/components/Contact-us/ReadyToTurnYourVisionIntoAction";
+import PageCta from "@/components/CommonComponents/PageCta";
 
 // Rise-and-settle: the outgoing panel lifts and fades, the incoming one comes up
 // from below into place. The custom cubic-bezier is an ease-out-expo — most of
@@ -83,7 +83,16 @@ const page = () => {
             <TellUsWhatYoureLookingToAchieve />
             <WhereverYourBusinessTakesYou />
             <YourTrustedPartnerForLongTermSuccess />
-            <ReadyToTurnYourVisionIntoAction />
+            {/* Figma's CTA here is "Contact Us" on the contact page itself, so it
+                jumps to the enquiry form rather than reloading the route. */}
+            <PageCta
+                title={["Partner With Us", "for a Stronger Tomorrow."]}
+                description={["Let's connect and explore how we can help you", "transform, innovate and grow."]}
+                ctaLabel="CONTACT US"
+                href="#tell-us-what-youre-looking-to-achieve"
+                titleClassName="lg:w-[445.5px]"
+                descriptionClassName="lg:whitespace-nowrap"
+            />
 
             <Footer />
         </div>

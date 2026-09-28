@@ -8,7 +8,7 @@ import IndustriesHeroStats from "@/components/Industries/IndustriesHeroStats";
 import ACollaborativeEcosystem from "@/components/Industries/ACollaborativeEcosystem";
 import IndustryExpertiseThatDeliversOutcomes from "@/components/Industries/IndustryExpertiseThatDeliversOutcomes";
 import IndustryChallengesRealSolution from "@/components/Industries/IndustryChallengesRealSolution";
-import YourIndustryOurExpertise from "@/components/Industries/YourIndustryOurExpertise";
+import PageCta from "@/components/CommonComponents/PageCta";
 
 // The hero is a plain full-bleed band, not the sticky curtain the what-we-do
 // pages use — Figma shows the content starting straight under an 800px hero with
@@ -28,7 +28,13 @@ const page = () => {
             <ACollaborativeEcosystem />
             <IndustryExpertiseThatDeliversOutcomes />
             <IndustryChallengesRealSolution />
-            <YourIndustryOurExpertise />
+            <PageCta
+                title={["Your Industry.", "Our Expertise."]}
+                description="Let's explore how we can help you solve your industry's unique challenges and create new opportunities for growth."
+                ctaLabel="Talk to an Expert"
+                titleClassName="lg:w-[211.5px]"
+                descriptionClassName="lg:w-[376px]"
+            />
 
             <Footer />
         </div>

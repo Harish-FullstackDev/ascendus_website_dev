@@ -8,7 +8,7 @@ import ACollaborativeEcosystem from "@/components/Partnership/ACollaborativeEcos
 import LetsBuildWhatsNext from "@/components/Partnership/LetsBuildWhatsNext";
 import MoreThanAPartnership from "@/components/Partnership/MoreThanAPartnership";
 import TrustedByIndustryLeaders from "@/components/Partnership/TrustedByIndustryLeaders";
-import LetsCreateImpactTogether from "@/components/Partnership/LetsCreateImpactTogether";
+import PageCta from "@/components/CommonComponents/PageCta";
 
 // The hero is a plain full-bleed band, not the sticky curtain the what-we-do
 // pages use — Figma shows the content starting straight under an 800px hero with
@@ -28,7 +28,13 @@ const page = () => {
             <LetsBuildWhatsNext />
             <MoreThanAPartnership />
             <TrustedByIndustryLeaders />
-            <LetsCreateImpactTogether />
+            <PageCta
+                title={["Let's Create Impact", "Together"]}
+                description="Whether you're a technology provider, consulting firm, or industry leader, we'd love to explore how we can collaborate."
+                ctaLabel="Talk to an Expert"
+                titleClassName="lg:w-[300px]"
+                descriptionClassName="lg:w-[474px]"
+            />
 
             <Footer />
         </div>

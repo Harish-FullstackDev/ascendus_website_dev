@@ -6,7 +6,8 @@ import SolutionsHero from "@/components/Solution/SolutionsHero";
 import SolutionsHeroText from "@/components/Solution/SolutionsHeroText";
 import ComprehensiveSAPSolutions from "@/components/Solution/ComprehensiveSAPSolutions";
 import MoreThanImplementation from "@/components/Solution/MoreThanImplementation";
-import ReadyToUnlockMoreWithSAP from "@/components/Solution/ReadyToUnlockMoreWithSAP";
+import SolutionInsights from "@/components/Solution/SolutionInsights";
+import PageCta from "@/components/CommonComponents/PageCta";
 
 // The hero is a plain full-bleed band, not the sticky curtain the what-we-do
 // pages use — Figma shows the content starting straight under an 800px hero with
@@ -24,7 +25,14 @@ const page = () => {
 
             <ComprehensiveSAPSolutions />
             <MoreThanImplementation />
-            <ReadyToUnlockMoreWithSAP />
+            <SolutionInsights />
+            <PageCta
+                title={["Ready to Turn Your", "Vision into Action?"]}
+                description={["Tell us where you are today, where you want to go,", "and what's standing in the way."]}
+                ctaLabel="Talk to an Expert"
+                titleClassName="lg:w-[290px]"
+                descriptionClassName="lg:whitespace-nowrap"
+            />
 
             <Footer />
         </div>

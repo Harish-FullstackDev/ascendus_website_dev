@@ -11,7 +11,7 @@ import OurApproach from "@/components/About-us/OurApproach";
 import WhyAscendus from "@/components/About-us/WhyAscendus";
 import Leadership from "@/components/About-us/Leadership";
 import CareersCta from "@/components/About-us/CareersCta";
-import PartnerCta from "@/components/About-us/PartnerCta";
+import PageCta from "@/components/CommonComponents/PageCta";
 
 // The hero is a plain full-bleed band, the same pattern as /services/ and
 // /solutions/. The negative top margin lets the transparent navbar sit over it.
@@ -32,7 +32,14 @@ const page = () => {
       <WhyAscendus />
       <Leadership />
       <CareersCta />
-      <PartnerCta />
+      <PageCta
+        title={["Partner With Us", "for a Stronger Tomorrow."]}
+        description={["Let's connect and explore how we can help you", "transform, innovate and grow."]}
+        ctaLabel="CONTACT US"
+        href="/contact-us/"
+        titleClassName="lg:w-[445.5px]"
+        descriptionClassName="lg:whitespace-nowrap"
+      />
 
       <Footer />
     </div>
