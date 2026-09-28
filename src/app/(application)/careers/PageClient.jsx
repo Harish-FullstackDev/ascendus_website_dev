@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import PageCta from "@/components/CommonComponents/PageCta";
+import careersCtaBg from "@/assets/Careers/careers-cta-bg.webp";
 import CareersPageHero from "@/components/Careers/CareersPageHero";
 import CareersPageHeroText from "@/components/Careers/CareersPageHeroText";
 import CandidateLoginCard from "@/components/Careers/CandidateLoginCard";
@@ -45,6 +46,8 @@ const page = () => {
                 href="#open-positions"
                 titleClassName="lg:w-[445.5px]"
                 descriptionClassName="lg:whitespace-nowrap"
+                backgroundImage={careersCtaBg}
+                backgroundPositionClassName="object-center"
             />
 
             <Footer />
