@@ -22,7 +22,7 @@ const SIZES = {
         layer: "h-[560px] sm:h-[660px] lg:h-[800px]",
         content: "-mt-[560px] sm:-mt-[660px] lg:-mt-[800px]",
     },
-    // exactly one viewport — careers
+    // exactly one viewport — home, careers
     screen: {
         wrapper: "h-[200vh]",
         layer: "h-screen",
