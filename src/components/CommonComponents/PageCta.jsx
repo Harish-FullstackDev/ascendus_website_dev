@@ -26,8 +26,8 @@ import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
 // before this component existed.
 //
 // `backgroundImage` overrides the shared photo for a page whose Figma band
-// uses a different one (Careers); `backgroundPositionClassName` sets how that
-// photo is cropped.
+// uses a different one (About Us and Careers pass cta-bg-corridor.webp);
+// `backgroundPositionClassName` sets how that photo is cropped.
 export default function PageCta({
     title,
     description,

@@ -29,14 +29,21 @@ const Navbar = () => {
 
   const lightThemeRoutes = ["/legal/privacy/", "/ascenduserrors/", "/legal/terms/"];
 
+  // Every desktop link is a block with a whole-pixel line height, so all eight
+  // share one box (38px tall, 21px down the 80px bar) and the underline sits at
+  // y 60–62. On 125%/150% displays a line off that grid is drawn blurred on
+  // both edges and reads thinner once the hover animation hands it back from
+  // the GPU layer; Home/Services/Solutions/Industries used to sit 1px lower
+  // than the rest and showed exactly that.
   const navLinkClass = `
                           relative py-2 px-3
                           transition-colors duration-300
                           text-[clamp(0.9rem,1vw,1rem)]
+                          leading-[22px]
  
                           after:absolute
                           after:left-0
-                          after:-bottom-1
+                          after:-bottom-[3px]
                           after:h-[2px]
                           after:w-full
                           after:scale-x-0
@@ -495,7 +502,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/about-us"
-                      className={`${navLinkClass} ${pathname === "/about-us/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      className={`${navLinkClass} ${pathname === "/about-us/" ? activeLinkClass : inactiveLinkClass} block ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       About Us
@@ -505,7 +512,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/partnership"
-                      className={`${navLinkClass} ${pathname === "/partnership/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      className={`${navLinkClass} ${pathname === "/partnership/" ? activeLinkClass : inactiveLinkClass} block ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Partners
@@ -515,7 +522,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/careers"
-                      className={`${navLinkClass} ${pathname === "/careers/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      className={`${navLinkClass} ${pathname === "/careers/" ? activeLinkClass : inactiveLinkClass} block ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Careers
@@ -525,7 +532,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/contact-us"
-                      className={`${navLinkClass} ${pathname === "/contact-us/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      className={`${navLinkClass} ${pathname === "/contact-us/" ? activeLinkClass : inactiveLinkClass} block ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       Contact

@@ -12,6 +12,7 @@ import WhyAscendus from "@/components/About-us/WhyAscendus";
 import Leadership from "@/components/About-us/Leadership";
 import CareersCta from "@/components/About-us/CareersCta";
 import PageCta from "@/components/CommonComponents/PageCta";
+import ctaBgCorridor from "@/assets/CommonComponents/PageCta/cta-bg-corridor.webp";
 import StickyHero from "@/components/CommonComponents/StickyHero";
 
 // The hero is the shared sticky curtain, the same pattern as /services/ and
@@ -36,6 +37,8 @@ const page = () => {
           href="/contact-us/"
           titleClassName="lg:w-[445.5px]"
           descriptionClassName="lg:whitespace-nowrap"
+          backgroundImage={ctaBgCorridor}
+          backgroundPositionClassName="object-center"
         />
       </StickyHero>
 

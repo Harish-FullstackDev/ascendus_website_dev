@@ -17,7 +17,6 @@ const LEADERS = [
 ];
 
 const CARD_WIDTH = 210;
-const PEEK_WIDTH = CARD_WIDTH / 2;
 
 function LeaderCard({ leader }) {
     return (
@@ -49,25 +48,11 @@ function LeaderCard({ leader }) {
     );
 }
 
-// A half-width, overflow-hidden window onto a full-size card: `side="left"`
-// shifts the card left by its own half-width so the window's 0–105px range
-// shows the card's right half (the edge nearer the active card); `side="right"`
-// leaves it unshifted, so the same window shows the card's left half. Either
-// way the card renders at full size and in normal flow, so the window's height
-// is simply the card's own height — no fixed height to keep in sync by hand.
-function PeekCard({ leader, side }) {
-    return (
-        <div
-            aria-hidden="true"
-            className="shrink-0 overflow-hidden"
-            style={{ width: PEEK_WIDTH }}
-        >
-            <div style={{ width: CARD_WIDTH, marginLeft: side === "left" ? -PEEK_WIDTH : 0 }}>
-                <LeaderCard leader={leader} />
-            </div>
-        </div>
-    );
-}
+// Figma (607:2969) clips the three cards in a 500x360 window: the active card
+// centred, 36px gaps, and 109px of each neighbour showing.
+const CARD_GAP = 36;
+const WINDOW_WIDTH = 500;
+const WINDOW_HEIGHT = 360;
 
 // Section 7 — "Leadership". Copy on the left, an infinite-loop carousel on the
 // right: the active card sits full-size in the middle with the previous and
@@ -111,7 +96,7 @@ export default function Leadership() {
                     </div>
                 </div>
 
-                <div className="flex w-full flex-col items-end gap-[13px]">
+                <div className="flex w-full flex-col items-end gap-5">
                     <div className="flex items-center gap-2">
                         <button
                             type="button"
@@ -133,20 +118,33 @@ export default function Leadership() {
                         </button>
                     </div>
 
-                    <AnimatePresence mode="wait" initial={false}>
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.25, ease: "easeOut" }}
-                            className="flex items-center justify-center gap-6"
-                        >
-                            <PeekCard leader={LEADERS[prevIndex]} side="left" />
-                            <LeaderCard leader={LEADERS[index]} />
-                            <PeekCard leader={LEADERS[nextIndex]} side="right" />
-                        </motion.div>
-                    </AnimatePresence>
+                    {/* One clipping window, as in Figma: all three cards render full size
+                        and the window cuts the outer two. It is taller than the cards, so
+                        their shadows are not clipped. */}
+                    <div
+                        className="flex w-full items-center justify-center overflow-hidden"
+                        style={{ maxWidth: WINDOW_WIDTH, height: WINDOW_HEIGHT }}
+                    >
+                        <AnimatePresence mode="wait" initial={false}>
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.25, ease: "easeOut" }}
+                                className="flex shrink-0 items-center justify-center"
+                                style={{ gap: CARD_GAP }}
+                            >
+                                <div aria-hidden="true" className="shrink-0">
+                                    <LeaderCard leader={LEADERS[prevIndex]} />
+                                </div>
+                                <LeaderCard leader={LEADERS[index]} />
+                                <div aria-hidden="true" className="shrink-0">
+                                    <LeaderCard leader={LEADERS[nextIndex]} />
+                                </div>
+                            </motion.div>
+                        </AnimatePresence>
+                    </div>
                 </div>
             </motion.div>
         </section>

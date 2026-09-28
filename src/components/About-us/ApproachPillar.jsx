@@ -2,15 +2,13 @@
 
 import Image from "next/image";
 
-// The icon+title+description tile shared by "Our Approach" (light) and "Why
-// Ascendus" (dark) — identical geometry in Figma, only the stroke and text
-// colours change, so callers pass `tone`.
-export default function ApproachPillar({ icon, title, description, tone = "light", align = "center" }) {
+// The icon+title+description tile used by "Our Approach". `tone="dark"` gives
+// the light-on-dark colours.
+export default function ApproachPillar({ icon, title, description, tone = "light" }) {
     const isDark = tone === "dark";
-    const alignment = align === "start" ? "items-start text-left px-6 lg:px-8" : "items-center text-center px-3";
 
     return (
-        <div className={`flex flex-1 flex-col gap-2 py-1.5 ${alignment}`}>
+        <div className="flex flex-1 flex-col items-center gap-2 px-3 py-1.5 text-center">
             <span className="flex size-16 items-center justify-center rounded-[10px]">
                 <Image src={icon} alt="" className="size-12" />
             </span>

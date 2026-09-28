@@ -181,7 +181,7 @@ export default function OpenPositions() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex w-full flex-col gap-8 xl:flex-row xl:items-start xl:justify-between xl:gap-5"
             >
-                <div className="flex flex-col gap-[2px] xl:w-[315px] xl:shrink-0">
+                <div className="flex flex-col gap-3 xl:w-[315px] xl:shrink-0">
                     <p className="text-[14px] font-medium uppercase leading-4 tracking-[0.7px] text-[#0061af]">
                         Open Positions
                     </p>
