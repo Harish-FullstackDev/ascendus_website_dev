@@ -67,7 +67,7 @@ export default function WhyUs() {
                             one team to simplify complexity and accelerate growth.
                         </p>
                         <UnderlineArrowLink
-                            href="/who-we-are"
+                            href="/about-us"
                             label="Who We Are"
                             className="shrink-0 mt-2"
                         />

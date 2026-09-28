@@ -157,7 +157,7 @@ export default function TechnologyPartner() {
                                 simplify operations, stay compliant, and scale with confidence.
                             </p>
                             <Link
-                                href="/who-we-are"
+                                href="/about-us"
                                 className="self-start rounded-[54px] border border-[#0a3a52] px-8 py-3 text-lg font-light text-[#0a3a52] text-center transition-colors hover:bg-[#0a3a52] hover:text-white"
                             >
                                 See Who We Are

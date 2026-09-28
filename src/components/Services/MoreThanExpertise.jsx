@@ -40,7 +40,7 @@ export default function MoreThanExpertise() {
                     </div>
 
                     <Link
-                        href="/who-we-are"
+                        href="/about-us"
                         className="group inline-flex h-12 w-fit items-center gap-2.5 rounded-[8px] bg-[#0061af] px-7 text-sm font-normal leading-[1.5] text-white transition-colors duration-300 hover:bg-[#005192] sm:text-base"
                     >
                         Discover About Us

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import ctaBg from "@/assets/WhoWeAre/CTA_Bg.jpg";
+import ctaBg from "@/assets/WhatWeDo/ReadyToTransform_Bg.jpg";
 import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
 
 export default function ReadyToTransform({

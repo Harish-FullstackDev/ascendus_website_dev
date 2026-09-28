@@ -494,8 +494,8 @@ const Navbar = () => {
 
                   <li>
                     <Link
-                      href="/who-we-are"
-                      className={`${navLinkClass} ${pathname === "/who-we-are/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      href="/about-us"
+                      className={`${navLinkClass} ${pathname === "/about-us/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       About Us
@@ -834,8 +834,8 @@ const Navbar = () => {
 
             <li>
               <Link
-                href="/who-we-are"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/who-we-are/"
+                href="/about-us"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/about-us/"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}

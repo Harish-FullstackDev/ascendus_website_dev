@@ -2,7 +2,7 @@
 
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
+import FutureFocusedInsights from "@/components/WhatWeDo/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
 import customBg from "@/assets/WhatWeDo/Intelligent Automation/webp/Intelligent_CTA.webp";
 

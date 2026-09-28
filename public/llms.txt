@@ -6,7 +6,7 @@ Ascendus helps organizations modernize through SAP-led transformation, cloud and
 
 ## Company
 
-- [Who We Are](https://www.ascendus.sa/who-we-are): Company overview, principles, and delivery approach.
+- [About Us](https://www.ascendus.sa/about-us): Company overview, principles, and delivery approach.
 - [Careers](https://www.ascendus.sa/careers): Open roles and hiring process.
 - [Contact](https://www.ascendus.sa/contact): Get in touch with Ascendus.
 - [Book a Consultation](https://www.ascendus.sa/book-a-consultation): Schedule a call with the team.

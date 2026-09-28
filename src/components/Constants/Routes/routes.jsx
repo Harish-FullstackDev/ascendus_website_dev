@@ -4,7 +4,7 @@ export const validRoutes = [
   "/case-studies/",
   "/whitepapers/",
   "/industry-reports/",
-  "/who-we-are/",
+  "/about-us/",
   "/book-a-consultation/",
   "/careers/",
   "/contact/",

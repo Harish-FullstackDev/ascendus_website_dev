@@ -3,13 +3,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-// Home-page-only variant of WhoWeAre/FutureFocusedInsights.jsx — that
+// Home-page-only variant of WhatWeDo/FutureFocusedInsights.jsx — that
 // component is shared by 16 other pages, so this new "Articles" layout (left
 // -aligned header, 3-up grid, circular Read More arrow) lives here instead of
 // changing the shared one.
-import article1Img from "@/assets/WhoWeAre/webp/Who_We_Are_Blog_1.webp";
-import article2Img from "@/assets/WhoWeAre/webp/Who_We_Are_Blog_2.webp";
-import article3Img from "@/assets/WhoWeAre/webp/Who_We_Are_Blog_3.webp";
+import article1Img from "@/assets/Insights/Blog/Insights_Blog_1.webp";
+import article2Img from "@/assets/Insights/Blog/Insights_Blog_2.webp";
+import article3Img from "@/assets/Insights/Blog/Insights_Blog_3.webp";
 
 const ARTICLES = [
     {

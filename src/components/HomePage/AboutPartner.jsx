@@ -25,7 +25,7 @@ export default function AboutPartner() {
                         Most enterprise programs are not lost on strategy. They are lost in the handoffs: between the firm that designed the architecture and the firm that built it, between the project that went live and the team that has to run it, between a compliance requirement and the system that was already in production when it arrived. Ascendus keeps design, build and run under one accountable team, so architecture context is not re-learned at every stage.
                     </p>
                     <UnderlineArrowLink
-                        href="/who-we-are"
+                        href="/about-us"
                         label="Who We Are"
                         className="mt-6 self-start"
                     />

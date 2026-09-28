@@ -223,7 +223,7 @@ const columns = [
     heading: "Quick Links",
     items: [
       { name: "Home", href: "/" },
-      { name: "About Us", href: "/who-we-are" },
+      { name: "About Us", href: "/about-us" },
       { name: "Partners", href: "/partnership" },
       { name: "Careers", href: "/careers" },
       { name: "Contact", href: "/contact-us" },

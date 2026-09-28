@@ -30,7 +30,7 @@ const PANEL_MOTION = {
 };
 
 // The hero is a plain full-bleed band here, not the sticky curtain the
-// what-we-do / who-we-are pages use — this page's Figma frame shows the content
+// what-we-do / about-us pages use — this page's Figma frame shows the content
 // starting straight under an 800px hero, with nothing pinned behind it. The
 // negative top margin is the shared offset that lets the transparent navbar sit
 // over the hero image.

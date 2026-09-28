@@ -253,7 +253,7 @@ export default function Industries() {
                         </p>
 
                         {/* Prev/next controls — the Figma frame for this section links to a
-                            "Find Your Solution" button that always resolves to /who-we-are (no
+                            "Find Your Solution" button that always resolves to /about-us (no
                             solutions page exists to point it at), so it's removed rather than
                             shipping a link that lies about its destination. Figma has no arrow
                             control on this section, but does use this exact white-pill,

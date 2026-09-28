@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
-import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
+import FutureFocusedInsights from "@/components/WhatWeDo/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
 import customBg from "@/assets/WhatWeDo/Experience Design/webp/Experience_CTA.webp";
 import Hero from "@/components/WhatWeDo/ExperienceDesign/Hero";

@@ -18,6 +18,7 @@ export const ROUTE_LABELS: Record<string, string> = {
   "managed-services": "Managed Services",
   "business-advisory": "Business Advisory",
   "book-a-consultation": "Book a Consultation",
+  "about-us": "About Us",
   "contact-us": "Contact Us",
   industries: "Industries",
   partnership: "Partnership",
