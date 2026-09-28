@@ -8,17 +8,17 @@ import technologyIcon from "@/assets/Partnership/icons/ecosystem-technology-on-d
 import allianceIcon from "@/assets/Partnership/icons/ecosystem-alliance.svg";
 import sapLogo from "@/assets/Partnership/icons/sap.svg";
 
-import handsTogetherPhoto from "@/assets/Partnership/partnership_card_4.png";
+import handsTogetherPhoto from "@/assets/Partnership/partnership_card_1.png";
 import teamHighFivePhoto from "@/assets/Partnership/partnership_card_2.png";
 import deskCollaborationPhoto from "@/assets/Partnership/partnership_card_3.png";
-import handshakePhoto from "@/assets/Partnership/partnership_card_1.png";
+import handshakePhoto from "@/assets/Partnership/partnership_card_4.png";
 
 // Figma (232:344) lays the right-hand block out as two rows of four 213x230
 // tiles that alternate photo / copy like a checkerboard: photo, copy, photo,
 // copy on the first row and copy, photo, copy, photo on the second. The order
 // below is read left-to-right, row by row, so the array is the layout.
 const TILES = [
-    { alt: "Two colleagues in discussion at a desk", photo: handsTogetherPhoto },
+    { alt: "Two people shaking hands", photo: handsTogetherPhoto },
     {
         description: "Building long-term relationships for mutual growth and success.",
         icon: strategicIcon,
@@ -45,7 +45,7 @@ const TILES = [
         title: "Alliance & Ecosystem",
         tone: "light",
     },
-    { alt: "Two people shaking hands", photo: handshakePhoto },
+    { alt: "Two colleagues in discussion at a desk", photo: handshakePhoto },
 ];
 
 // Figma colours the four copy tiles three different ways; the border and the

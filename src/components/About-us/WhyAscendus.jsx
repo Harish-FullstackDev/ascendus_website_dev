@@ -22,7 +22,7 @@ const PILLARS = [
 // fade so the copy and pillars on the left stay legible over the lit Earth.
 export default function WhyAscendus() {
     return (
-        <section className="relative w-full overflow-hidden bg-[#00223d] px-6 py-10 sm:px-[64px] sm:py-16">
+        <section className="relative w-full overflow-hidden bg-[#00223d] px-6 py-10 sm:px-[64px] sm:py-[48px]">
             <Image src={bandBg} alt="" fill className="object-cover" />
             <div
                 aria-hidden
@@ -35,9 +35,9 @@ export default function WhyAscendus() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative flex w-full flex-col gap-10 sm:gap-12"
+                className="relative flex w-full flex-col items-start gap-10 lg:flex-row lg:items-center lg:gap-12"
             >
-                <div className="flex flex-col gap-3 lg:max-w-[409px]">
+                <div className="flex w-full flex-col gap-3 lg:max-w-[409px] lg:shrink-0">
                     <p className="text-[14px] font-semibold uppercase tracking-[0.7px] text-[#68c2f2] leading-4">
                         Why Ascendus
                     </p>
@@ -52,7 +52,7 @@ export default function WhyAscendus() {
                     </p>
                 </div>
 
-                <div className="grid w-full grid-cols-2 gap-y-8 lg:flex lg:w-[800px] lg:grid-cols-none lg:gap-y-0 lg:divide-x lg:divide-[#f8f8f8]">
+                <div className="grid w-full grid-cols-2 gap-y-8 sm:flex sm:flex-1 sm:grid-cols-none sm:gap-y-0 sm:divide-x sm:divide-[#f8f8f8]/40">
                     {PILLARS.map((pillar) => (
                         <ApproachPillar key={pillar.title} tone="dark" align="start" {...pillar} />
                     ))}

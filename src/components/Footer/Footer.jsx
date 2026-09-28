@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { animate, useMotionValue } from "framer-motion";
 import logo from "../../assets/Brand/ASCENDUS.svg";
 import logoSecondary from "../../assets/Brand/Ascendus_Logo_Secondary.png";
 import InstagramIcon from "../../assets/Footer/Instagram_Icon.svg";
@@ -12,9 +11,13 @@ import TwitterIcon from "../../assets/Footer/X_Icon.svg";
 const LOGO_RATIO = 169 / 1313; // ASCENDUS.svg intrinsic size — height per unit width
 
 const AT_END_PX = 2; // how close to the page bottom counts as being at the end
-const RESISTANCE = 0.45; // fraction of the gesture the pull actually travels
-const RELEASE_MS = 140; // wheel has no touchend, so a lull in events is the release
-const SNAP_BACK = { type: "spring", stiffness: 180, damping: 22, restDelta: 0.5 };
+const RESISTANCE = 0.5; // fraction of the gesture the pull actually travels
+const INPUT_EASE_PER_SEC = 28; // input is fed in over a few frames, so wheel ticks glide instead of jump
+const HOLD_MS = 70; // the band holds while pushes keep arriving within this window
+const MIN_HOLD_DELTA = 6; // wheel deltas below this are momentum coasting, not a push
+const SPRING_OMEGA = 11; // critically damped return: higher is snappier, never overshoots
+const GESTURE_GAP_MS = 180; // a lull this long between wheel events starts a new gesture
+const LINE_PX = 16; // Firefox reports wheel deltas in lines
 
 // Elastic overflow scrolling, done by hand. Chrome on Windows has no native
 // rubber band, so the gesture is read off the wheel and touch directly: once
@@ -35,11 +38,15 @@ const SNAP_BACK = { type: "spring", stiffness: 180, damping: 22, restDelta: 0.5 
 //
 // Resistance makes it read as elastic rather than as a drawer — the pull
 // travels a fraction of the gesture, and the closer it gets to the limit the
-// less each additional pixel buys.
+// less each additional pixel buys. Input is eased in over a few frames rather
+// than applied per event, so a mouse wheel's discrete ticks glide. Once pushes
+// stop arriving the band returns on a critically damped spring: it starts
+// from rest, gathers speed, and settles without overshooting — so it neither
+// snaps shut nor bounces twice. A repeat swipe mid-return just grabs the band
+// where it is and keeps pulling.
 function useElasticOverscroll() {
   const footerRef = useRef(null);
   const bandRef = useRef(null);
-  const pull = useMotionValue(0);
   const [maxPull, setMaxPull] = useState(0);
   const [inView, setInView] = useState(false);
 
@@ -67,87 +74,140 @@ function useElasticOverscroll() {
     };
   }, []);
 
-  // Height is written straight to the element, synchronously with the motion
-  // value. Going through React/framer styles applied it a frame late, so the
-  // follow-up scroll read a stale document height and the pull stuttered.
-  // The spring undershoots past zero on the way back, hence the clamp.
-  useEffect(
-    () =>
-      pull.on("change", (value) => {
-        if (bandRef.current) bandRef.current.style.height = `${Math.max(0, value)}px`;
-      }),
-    [pull]
-  );
-
   useEffect(() => {
-    if (!maxPull || !inView) return undefined;
+    const band = bandRef.current;
+    if (!maxPull || !inView || !band) return undefined;
 
     const root = document.documentElement;
     const atEnd = () => root.scrollHeight - Math.ceil(window.scrollY + window.innerHeight) <= AT_END_PX;
 
-    let open = false;
-    let settling = false; // snap-back in flight: ignore input until it lands
-    let raw = 0; // gesture distance since the pull began, before easing
-    let releaseTimer = null;
+    let height = 0; // what is currently drawn
+    let velocity = 0; // of the return spring, px/s
+    let pending = 0; // input received but not yet eased into the height
+    let lastPushAt = 0;
+    let frame = null;
+    let lastFrameAt = 0;
+    let touching = false;
     let touchY = null;
 
-    const letGo = () => {
-      clearTimeout(releaseTimer);
-      releaseTimer = null;
-      raw = 0;
-      if (!open) return;
-      open = false;
-      settling = true;
-      animate(pull, 0, {
-        ...SNAP_BACK,
-        onComplete: () => {
-          settling = false;
-        },
-      });
+    // A pull only counts if the gesture *started* at the page end. A scroll
+    // that arrives from further up is still moving when it hits the bottom,
+    // and none of that stream — momentum included — may open the band. For
+    // touch the stream starts at touchstart; the wheel has no start event, so
+    // it is the first event after a lull. Starting the clock now means a
+    // stream already in flight when the footer scrolls into view is treated
+    // as a continuation, not a fresh push.
+    let armed = false;
+    let lastWheelAt = performance.now();
+
+    // Height is written straight to the element each frame. Going through
+    // React styles applied it a frame late, so the pin-to-bottom scroll read
+    // a stale document height and the pull stuttered.
+    const tick = (now) => {
+      const dt = Math.min(0.05, (now - lastFrameAt) / 1000);
+      lastFrameAt = now;
+
+      let next = height;
+
+      if (Math.abs(pending) > 0.1) {
+        const step = pending * (1 - Math.exp(-INPUT_EASE_PER_SEC * dt));
+        pending -= step;
+        // Pulling further gets harder towards the limit; giving it back does not.
+        const give = step > 0 ? (1 - next / maxPull) ** 2 : 1;
+        next = Math.min(maxPull, Math.max(0, next + step * give));
+      } else {
+        pending = 0;
+      }
+
+      const held = touching || now - lastPushAt < HOLD_MS || pending > 0.5;
+      if (held) {
+        velocity = 0;
+      } else {
+        const accel = -SPRING_OMEGA * SPRING_OMEGA * next - 2 * SPRING_OMEGA * velocity;
+        velocity += accel * dt;
+        next = Math.max(0, next + velocity * dt);
+        if (next < 0.5 && Math.abs(velocity) < 20) {
+          next = 0;
+          velocity = 0;
+        }
+      }
+
+      const grew = next > height;
+      height = next;
+      band.style.height = `${height}px`;
+
+      // Growing the band lengthens the document below the fold; riding the
+      // scroll down with it is what turns the growth into a visible pull.
+      // Shrinking needs nothing — the browser clamps the scroll as the page
+      // shortens. `instant`, because <html> carries scroll-smooth, which
+      // would turn every pin into an animated scroll that lags the band.
+      if (grew) window.scrollTo({ top: root.scrollHeight, left: 0, behavior: "instant" });
+
+      if (height === 0 && pending <= 0 && !touching) {
+        pending = 0;
+        frame = null;
+        return;
+      }
+      frame = requestAnimationFrame(tick);
     };
 
-    // Past the limit each extra pixel buys less, so the band eases into its
-    // stop instead of hitting a wall.
-    const stretch = (amount) => Math.min(maxPull, 2 * maxPull * (1 - 1 / (amount / maxPull + 1)));
+    const wake = () => {
+      if (frame !== null) return;
+      lastFrameAt = performance.now();
+      frame = requestAnimationFrame(tick);
+    };
 
-    // Growing the band lengthens the document below the fold; riding the
-    // scroll down with it is what turns the growth into a visible pull.
-    const pullBy = (delta) => {
-      if (settling || (!open && !atEnd())) return false;
-      pull.stop();
-      open = true;
-      raw += delta * RESISTANCE;
-      pull.set(stretch(raw));
-      window.scrollTo(0, root.scrollHeight);
-      return true;
+    const feed = (delta) => {
+      pending += delta * RESISTANCE;
+      wake();
     };
 
     const onWheel = (event) => {
-      if (event.deltaY <= 0) {
-        letGo();
+      const now = performance.now();
+      if (now - lastWheelAt > GESTURE_GAP_MS) armed = height > 0 || atEnd();
+      lastWheelAt = now;
+
+      const delta = event.deltaMode === 1 ? event.deltaY * LINE_PX : event.deltaY;
+      if (delta < 0) {
+        // Scrolling back up hands the page straight back to the browser.
+        armed = false;
+        pending = 0;
+        lastPushAt = 0;
+        if (height > 0) wake();
         return;
       }
-      if (!pullBy(event.deltaY)) return;
-      clearTimeout(releaseTimer);
-      releaseTimer = setTimeout(letGo, RELEASE_MS);
+      if (!armed || delta === 0) return;
+      // A trackpad's momentum tail still stretches the band a little, but only
+      // a real push holds it open — so it lets go when the swipe ends.
+      if (delta >= MIN_HOLD_DELTA) lastPushAt = now;
+      feed(delta);
     };
 
     const onTouchStart = (event) => {
+      touching = true;
       touchY = event.touches[0].clientY;
+      armed = height > 0 || atEnd();
     };
 
+    // While a finger is down the band tracks it like a drag, and dragging back
+    // down gives the distance back until the page takes over again.
     const onTouchMove = (event) => {
-      if (touchY === null) return;
+      if (touchY === null || !armed) return;
       const y = event.touches[0].clientY;
       const delta = touchY - y; // up-swipe is positive
       touchY = y;
-      if (delta < 0) letGo();
-      else if (delta > 0) pullBy(delta);
+      feed(delta);
+      if (height + pending <= 0) {
+        pending = 0;
+        armed = false;
+      }
     };
 
     const onTouchEnd = () => {
+      touching = false;
       touchY = null;
-      letGo();
+      armed = false;
+      if (height > 0) wake();
     };
 
     const options = { passive: true };
@@ -163,12 +223,11 @@ function useElasticOverscroll() {
       window.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("touchend", onTouchEnd);
       window.removeEventListener("touchcancel", onTouchEnd);
-      clearTimeout(releaseTimer);
+      if (frame !== null) cancelAnimationFrame(frame);
       // Leaving view mid-pull must not strand the band open.
-      pull.stop();
-      pull.set(0);
+      band.style.height = "0px";
     };
-  }, [maxPull, inView, pull]);
+  }, [maxPull, inView]);
 
   return { footerRef, bandRef };
 }
@@ -226,6 +285,7 @@ const columns = [
     heading: "Insights",
     items: [
       { name: "Case Studies", href: "/case-studies" },
+      { name: "SAP Insights" },
       { name: "Industry Insights", href: "/industry-reports" },
       { name: "Blog", href: "/blog" },
       { name: "Whitepapers", href: "/whitepapers" },
