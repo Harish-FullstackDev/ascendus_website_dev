@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 // section above, matching Figma's border-t on this frame.
 export default function OurPurpose() {
     return (
-        <section className="w-full border-t border-[#f1f5f9] bg-white px-6 py-10 sm:px-[64px] sm:pb-16 sm:pt-8">
+        <section className="w-full border-t border-[#f1f5f9] bg-white px-6 py-10 sm:px-[64px] sm:pb-8 sm:pt-8">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
