@@ -113,7 +113,8 @@ function FaqItem({ faq, open, onToggle, id }) {
 // independently (Figma's left column opens its first item without pushing the
 // right column down).
 export default function CareersFaq() {
-    const [openIndex, setOpenIndex] = useState(0);
+    // Every item starts closed; opening one closes whichever was open.
+    const [openIndex, setOpenIndex] = useState(null);
     const half = FAQS.length / 2;
     const columns = [FAQS.slice(0, half), FAQS.slice(half)];
 

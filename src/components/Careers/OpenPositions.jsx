@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -15,7 +15,8 @@ import iconArrow from "@/assets/Careers/icons/arrow-right-16-primary.svg";
 import { OPEN_POSITION_FILTERS } from "./openPositionsFilters";
 
 // Figma (602:2153) shows four rows in a fixed-height panel. The live list can
-// be longer, so the first four show and the rest sit behind a "show all".
+// be longer, so the list is capped at the height of its first four rows and
+// scrolls past that.
 const INITIAL_VISIBLE = 4;
 
 const EMPTY_FILTERS = Object.fromEntries(OPEN_POSITION_FILTERS.map((filter) => [filter.key, ""]));
@@ -102,7 +103,8 @@ export default function OpenPositions() {
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
     const [filters, setFilters] = useState(EMPTY_FILTERS);
-    const [showAll, setShowAll] = useState(false);
+    const listRef = useRef(null);
+    const [listMaxHeight, setListMaxHeight] = useState(null);
 
     useEffect(() => {
         let isMounted = true;
@@ -137,13 +139,33 @@ export default function OpenPositions() {
         });
     }, [jobs, search, filters]);
 
-    useEffect(() => {
-        setShowAll(false);
-    }, [search, filters]);
-
     const hasActiveFilters = search !== "" || Object.values(filters).some(Boolean);
-    const visibleJobs = showAll ? filteredJobs : filteredJobs.slice(0, INITIAL_VISIBLE);
-    const hiddenCount = filteredJobs.length - visibleJobs.length;
+    const isScrollable = filteredJobs.length > INITIAL_VISIBLE;
+
+    // Rows change height with the viewport (they stack on phones), so the cap
+    // is measured from the bottom of the fourth row rather than hard-coded.
+    useLayoutEffect(() => {
+        const list = listRef.current;
+        if (!list || !isScrollable) {
+            setListMaxHeight(null);
+            return undefined;
+        }
+
+        const measure = () => {
+            const fourth = list.children[INITIAL_VISIBLE - 1];
+            if (fourth) setListMaxHeight(fourth.offsetTop + fourth.offsetHeight);
+        };
+
+        measure();
+        const observer = new ResizeObserver(measure);
+        observer.observe(list);
+        return () => observer.disconnect();
+    }, [isScrollable, filteredJobs]);
+
+    // A new search or filter starts the list back at the top.
+    useEffect(() => {
+        if (listRef.current) listRef.current.scrollTop = 0;
+    }, [search, filters]);
 
     const reset = () => {
         setSearch("");
@@ -226,20 +248,18 @@ export default function OpenPositions() {
                             </p>
                         </div>
                     ) : (
-                        <div className="flex flex-col gap-4">
-                            {visibleJobs.map((job) => (
+                        <div
+                            ref={listRef}
+                            style={listMaxHeight ? { maxHeight: listMaxHeight } : undefined}
+                            className={`relative flex flex-col gap-4 ${
+                                isScrollable
+                                    ? "-mr-3 overflow-y-auto overscroll-contain pr-3 [scrollbar-color:#8695a7_transparent] [scrollbar-width:thin]"
+                                    : ""
+                            }`}
+                        >
+                            {filteredJobs.map((job) => (
                                 <JobRow key={job.slug} job={job} />
                             ))}
-
-                            {hiddenCount > 0 ? (
-                                <button
-                                    type="button"
-                                    onClick={() => setShowAll(true)}
-                                    className="self-center text-[14px] leading-[1.4] text-[#0061af] hover:underline"
-                                >
-                                    Show all {filteredJobs.length} roles
-                                </button>
-                            ) : null}
                         </div>
                     )}
                 </div>

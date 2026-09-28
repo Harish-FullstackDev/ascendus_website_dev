@@ -24,6 +24,10 @@ import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
 // Button action: pass `href` to link somewhere; leave it out and the button
 // opens the Calendly scheduler, which is what the "Talk to an Expert" CTAs did
 // before this component existed.
+//
+// `backgroundImage` overrides the shared photo for a page whose Figma band
+// uses a different one (Careers); `backgroundPositionClassName` sets how that
+// photo is cropped.
 export default function PageCta({
     title,
     description,
@@ -31,6 +35,8 @@ export default function PageCta({
     href,
     titleClassName = "",
     descriptionClassName = "",
+    backgroundImage = ctaBg,
+    backgroundPositionClassName = "object-bottom",
 }) {
     const [showCalendly, setShowCalendly] = useState(false);
 
@@ -54,7 +60,7 @@ export default function PageCta({
     return (
         <>
             <section className="relative flex w-full items-center overflow-hidden px-6 py-10 sm:px-[64px] lg:min-h-[222px]">
-                <Image src={ctaBg} alt="" fill sizes="100vw" className="object-cover object-bottom" />
+                <Image src={backgroundImage} alt="" fill sizes="100vw" className={`object-cover ${backgroundPositionClassName}`} />
                 <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-black/72 to-black/36" />
 
                 <motion.div
