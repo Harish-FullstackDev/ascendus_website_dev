@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import ksaImg from "@/assets/Contact-us/KSA_Location.webp";
-import indiaImg from "@/assets/Contact-us/India_Location.webp";
+import ksaImg from "@/assets/Contact-us/contact_KSA.webp";
+import indiaImg from "@/assets/Contact-us/contact_India.webp";
 
 // Figma draws both cards at 600x202 inside a 1232 container — a ~3:1 band that
 // is kept as an aspect ratio so the photos scale with the column instead of

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import heroBg from "@/assets/Partnership/Partnership_Hero.webp";
+import heroBg from "@/assets/Partnership/partnership_hero.webp";
 
 // Background layer only — the copy lives in PartnershipHeroText so the text can
 // be stacked above this image without inheriting its overflow clipping. Same

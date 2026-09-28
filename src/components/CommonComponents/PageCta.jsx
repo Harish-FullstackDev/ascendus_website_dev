@@ -54,7 +54,7 @@ export default function PageCta({
     return (
         <>
             <section className="relative flex w-full items-center overflow-hidden px-6 py-10 sm:px-[64px] lg:min-h-[222px]">
-                <Image src={ctaBg} alt="" fill sizes="100vw" className="object-cover" />
+                <Image src={ctaBg} alt="" fill sizes="100vw" className="object-cover object-bottom" />
                 <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-black/72 to-black/36" />
 
                 <motion.div
