@@ -123,18 +123,18 @@ export default function InsightDetail({ item, basePath, backLabel }) {
 
     if (!item) {
         return (
-            <div className="min-h-screen bg-slate-50 dark:bg-neutral-950 flex flex-col font-sans">
+            <div className="min-h-screen bg-white flex flex-col font-sans">
                 <Navbar />
                 <div className="flex-grow flex flex-col items-center justify-center py-40 px-6 text-center">
-                    <h1 className="text-4xl font-black text-slate-800 dark:text-white mb-4">
+                    <h1 className="text-4xl font-medium text-[#0e2b4b] mb-4">
                         Not Found
                     </h1>
-                    <p className="text-[#55595E] mb-8 max-w-md">
+                    <p className="text-[#415773] mb-8 max-w-md">
                         The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.
                     </p>
                     <Link
                         href={basePath}
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-2xl transition-all shadow-md"
+                        className="inline-flex items-center gap-2 rounded-[8px] bg-[#0061af] px-6 py-3 font-medium text-white shadow-md transition-colors hover:bg-[#00509a]"
                     >
                         <ArrowLeft className="w-5 h-5" /> {backLabel}
                     </Link>
@@ -150,27 +150,27 @@ export default function InsightDetail({ item, basePath, backLabel }) {
     const readingTime = getReadingTime(sections);
 
     return (
-        <div className="min-h-screen bg-slate-50 flex flex-col font-sans relative">
+        <div className="min-h-screen bg-white flex flex-col font-sans relative">
             <Navbar />
 
             {/* Header / Hero Section */}
             <header className="w-full px-8 sm:px-16 pt-12 md:pt-20">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pb-12 md:border-b md:border-slate-200 md:dark:border-neutral-800">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pb-12 md:border-b md:border-[#e2e8f0]">
 
                     {/* Left: Meta Details */}
                     <div className="lg:col-span-6 flex flex-col justify-center space-y-4 lg:pl-4">
                         <Link
                             href={basePath}
-                            className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-500 hover:text-blue-500 transition-colors mb-2 self-start"
+                            className="inline-flex items-center gap-1.5 text-sm font-medium text-[#415773] hover:text-[#0061af] transition-colors mb-2 self-start"
                         >
                             <ArrowLeft className="w-4 h-4" /> {backLabel}
                         </Link>
 
-                        <span className="inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 text-[11px] font-bold uppercase tracking-wider">
+                        <span className="inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full bg-[#0061af]/10 text-[#0061af] text-[11px] font-semibold uppercase tracking-wider">
                             {item.type}
                         </span>
 
-                        <h2 className="text-[#2E3033] text-xl font-semibold">
+                        <h2 className="text-[#0e2b4b] text-[32px] leading-[1.2] font-medium">
                             {item.title}
                         </h2>
 
@@ -179,7 +179,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                 {item.tags.map((tag) => (
                                     <span
                                         key={tag}
-                                        className="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-neutral-800 text-slate-600 dark:text-neutral-300 text-xs font-semibold"
+                                        className="px-2.5 py-1 rounded-full bg-[#f1f5f9] text-[#415773] text-xs font-semibold"
                                     >
                                         {tag}
                                     </span>
@@ -187,23 +187,23 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                             </div>
                         )}
 
-                        <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-slate-100 dark:border-neutral-850 mt-6 text-slate-500 dark:text-neutral-400">
+                        <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-[#e2e8f0] mt-6 text-[#415773]">
                             <div className="flex items-center gap-2">
-                                <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
+                                <div className="w-10 h-10 rounded-full bg-[#0061af]/10 flex items-center justify-center text-[#0061af]">
                                     <User className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <span className="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Author</span>
-                                    <span className="font-normal text-slate-800 text-sm">{item.author}</span>
+                                    <span className="block text-[10px] uppercase tracking-wider text-[#7c8a9c] font-semibold">Author</span>
+                                    <span className="font-normal text-[#0e2b4b] text-sm">{item.author}</span>
                                 </div>
                             </div>
                             <div className="flex items-center gap-2">
-                                <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
+                                <div className="w-10 h-10 rounded-full bg-[#0061af]/10 flex items-center justify-center text-[#0061af]">
                                     <Calendar className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <span className="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Published</span>
-                                    <span className="font-normal text-slate-800 text-sm">
+                                    <span className="block text-[10px] uppercase tracking-wider text-[#7c8a9c] font-semibold">Published</span>
+                                    <span className="font-normal text-[#0e2b4b] text-sm">
                                         {new Date(item.publish_date).toLocaleDateString("en-US", {
                                             year: "numeric",
                                             month: "long",
@@ -213,12 +213,12 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                 </div>
                             </div>
                             <div className="flex items-center gap-2">
-                                <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
+                                <div className="w-10 h-10 rounded-full bg-[#0061af]/10 flex items-center justify-center text-[#0061af]">
                                     <Clock className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <span className="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Read Time</span>
-                                    <span className="font-normal text-slate-800 text-sm">{readingTime} min read</span>
+                                    <span className="block text-[10px] uppercase tracking-wider text-[#7c8a9c] font-semibold">Read Time</span>
+                                    <span className="font-normal text-[#0e2b4b] text-sm">{readingTime} min read</span>
                                 </div>
                             </div>
                         </div>
@@ -238,21 +238,21 @@ export default function InsightDetail({ item, basePath, backLabel }) {
 
                         {/* Share Section */}
                         <div className="flex items-center gap-4 pt-2">
-                            <span className="text-sm font-bold text-slate-500 dark:text-neutral-400">
+                            <span className="text-sm font-medium text-[#415773]">
                                 Share:
                             </span>
                             <div className="flex items-center gap-2.5">
                                 <button
                                     onClick={handleShareEmail}
                                     aria-label="Share via Email"
-                                    className="w-9 h-9 rounded-full bg-slate-100 hover:bg-blue-500 hover:text-white text-slate-600 dark:bg-neutral-800 dark:text-neutral-300 flex items-center justify-center transition-colors cursor-pointer"
+                                    className="w-9 h-9 rounded-full bg-[#f1f5f9] hover:bg-[#0061af] hover:text-white text-[#415773] flex items-center justify-center transition-colors cursor-pointer"
                                 >
                                     <Mail className="w-4 h-4" />
                                 </button>
                                 <button
                                     onClick={handleShareWhatsApp}
                                     aria-label="Share on WhatsApp"
-                                    className="w-9 h-9 rounded-full bg-slate-100 hover:bg-blue-500 hover:text-white text-slate-600 dark:bg-neutral-800 dark:text-neutral-300 flex items-center justify-center transition-colors cursor-pointer"
+                                    className="w-9 h-9 rounded-full bg-[#f1f5f9] hover:bg-[#0061af] hover:text-white text-[#415773] flex items-center justify-center transition-colors cursor-pointer"
                                 >
                                     <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true">
                                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
@@ -262,7 +262,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                 <button
                                     onClick={handleShareLinkedIn}
                                     aria-label="Share on LinkedIn"
-                                    className="w-9 h-9 rounded-full bg-slate-100 hover:bg-blue-500 hover:text-white text-slate-600 dark:bg-neutral-800 dark:text-neutral-300 flex items-center justify-center transition-colors cursor-pointer"
+                                    className="w-9 h-9 rounded-full bg-[#f1f5f9] hover:bg-[#0061af] hover:text-white text-[#415773] flex items-center justify-center transition-colors cursor-pointer"
                                 >
                                     <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true">
                                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.94v5.666H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.56V9h3.554v11.452z" />
@@ -271,7 +271,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                 <button
                                     onClick={handleShare}
                                     aria-label="Copy link"
-                                    className="relative w-9 h-9 rounded-full bg-slate-100 hover:bg-blue-500 hover:text-white text-slate-600 dark:bg-neutral-800 dark:text-neutral-300 flex items-center justify-center transition-colors cursor-pointer"
+                                    className="relative w-9 h-9 rounded-full bg-[#f1f5f9] hover:bg-[#0061af] hover:text-white text-[#415773] flex items-center justify-center transition-colors cursor-pointer"
                                 >
                                     {copied ? <Check className="w-4 h-4" /> : <Link2 className="w-4 h-4" />}
                                 </button>
@@ -281,11 +281,11 @@ export default function InsightDetail({ item, basePath, backLabel }) {
 
                     {/* Right: Cover Image */}
                     <div className="lg:col-span-6 flex justify-center">
-                        <div className="inline-flex rounded-none overflow-hidden shadow-lg bg-neutral-100">
+                        <div className="inline-flex rounded-[12px] overflow-hidden border border-[#c9d0d8] shadow-lg bg-[#f1f5f9]">
                             <img
                                 src={item.cover_image}
                                 alt={item.title}
-                                className="block max-h-[250px] md:max-h-[400px] w-auto object-contain rounded-none"
+                                className="block max-h-[250px] md:max-h-[400px] w-auto object-contain"
                             />
                         </div>
                     </div>
@@ -308,14 +308,14 @@ export default function InsightDetail({ item, basePath, backLabel }) {
             </header>
 
             {/* Mobile Sticky TOC Dropdown Bar */}
-            <div className={`lg:hidden sticky z-40 transition-all duration-300 ${scrollDirection === 'down' ? 'top-0' : 'top-[64px]'} border-b border-slate-200 dark:border-neutral-850 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md shadow-sm`}>
+            <div className={`lg:hidden sticky z-40 transition-all duration-300 ${scrollDirection === 'down' ? 'top-0' : 'top-[64px]'} border-b border-[#e2e8f0] bg-white/95 backdrop-blur-md shadow-sm`}>
                 <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center relative">
                     <button
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                        className="w-full flex justify-between items-center text-sm font-bold text-slate-800 dark:text-white cursor-pointer"
+                        className="w-full flex justify-between items-center text-sm font-medium text-[#0e2b4b] cursor-pointer"
                     >
                         <span className="flex items-center gap-2">
-                            <span className="text-blue-500 font-semibold">📑</span>
+                            <span className="text-[#0061af] font-semibold">📑</span>
                             {activeHeadingName || "Table of Contents"}
                         </span>
                         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`} />
@@ -327,7 +327,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -10 }}
-                                className="absolute top-full left-0 right-0 bg-white border-b border-slate-200 dark:border-neutral-850 shadow-xl overflow-hidden py-3 z-50 flex flex-col gap-1 max-h-[300px] overflow-y-auto"
+                                className="absolute top-full left-0 right-0 bg-white border-b border-[#e2e8f0] shadow-xl overflow-hidden py-3 z-50 flex flex-col gap-1 max-h-[300px] overflow-y-auto"
                             >
                                 {sections.map((sec, idx) => {
                                     const targetId = `section-${idx}`;
@@ -339,13 +339,13 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                                 scrollToSection(targetId);
                                                 setIsDropdownOpen(false);
                                             }}
-                                            className={`flex items-center justify-between px-6 py-2.5 text-left text-sm  transition-colors cursor-pointer ${isActive
-                                                ? "text-[#0061AF] bg-blue-50/50 dark:bg-blue-900/10 font-bold"
-                                                : "text-slate-655 dark:text-slate-350 hover:bg-slate-50 dark:hover:bg-neutral-800"
+                                            className={`flex items-center justify-between px-6 py-2.5 text-left text-sm transition-colors cursor-pointer ${isActive
+                                                ? "text-[#0061af] bg-[#0061af]/5 font-semibold"
+                                                : "text-[#415773] hover:bg-[#f8fafc]"
                                                 }`}
                                         >
                                             <span>{sec.heading}</span>
-                                            {isActive && <Check className="w-4 h-4 text-[#0061AF]" />}
+                                            {isActive && <Check className="w-4 h-4 text-[#0061af]" />}
                                         </button>
                                     );
                                 })}
@@ -362,10 +362,10 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                     {/* Left Sticky Sidebar (Desktop only) */}
                     <aside className="hidden lg:block lg:col-span-3">
                         <div className="sticky top-28 space-y-6">
-                            <h3 className="text-xs uppercase tracking-wider text-slate-400">
+                            <h3 className="text-xs uppercase tracking-wider text-[#7c8a9c]">
                                 Table of Contents
                             </h3>
-                            <ul className="relative border-l border-slate-300 ml-2">
+                            <ul className="relative border-l border-[#c9d0d8] ml-2">
                                 {sections.map((sec, idx) => {
                                     const targetId = `section-${idx}`;
                                     const isActive = activeSectionId === targetId;
@@ -375,14 +375,14 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                             <button
                                                 onClick={() => scrollToSection(targetId)}
                                                 className={`relative w-full pl-6 pr-2 py-4 text-left transition-colors duration-200 ${isActive
-                                                    ? "text-[#0061AF] font-semibold"
-                                                    : "text-slate-700 hover:text-slate-900"
+                                                    ? "text-[#0061af] font-semibold"
+                                                    : "text-[#415773] hover:text-[#0e2b4b]"
                                                     }`}
                                             >
                                                 {isActive && (
                                                     <motion.span
                                                         layoutId="toc-indicator"
-                                                        className="absolute left-[-2px] top-0 h-full w-[3px] rounded-full bg-[#0061AF]"
+                                                        className="absolute left-[-2px] top-0 h-full w-[3px] rounded-full bg-[#0061af]"
                                                         transition={{
                                                             type: "spring",
                                                             stiffness: 450,
@@ -412,30 +412,30 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                     {/* Right Main Content */}
                     <div className="lg:col-span-9 space-y-12">
                         {sections.map((sec, idx) => (
-                            <section key={idx} className="space-y-4 border-b border-slate-100 pb-8 last:border-none last:pb-0">
+                            <section key={idx} className="space-y-4 border-b border-[#e2e8f0] pb-8 last:border-none last:pb-0">
                                 <h2
                                     id={`section-${idx}`}
-                                    className="text-[#2E3033] text-xl font-semibold  pt-2"
+                                    className="text-[#0e2b4b] text-xl font-medium pt-2"
                                 >
                                     {sec.heading}
                                 </h2>
-                                <div className="text-[#55595E] text-base md:text-lg leading-relaxed whitespace-pre-wrap font-light">
+                                <div className="text-[#415773] text-base md:text-lg leading-relaxed whitespace-pre-wrap font-normal">
                                     {sec.content}
                                 </div>
 
                                 {sec.image && (
                                     <div className="my-6 space-y-2">
                                         <div className="flex justify-center">
-                                            <div className="inline-flex rounded-none overflow-hidden border border-slate-200 shadow-md bg-neutral-100 p-2.5">
+                                            <div className="inline-flex rounded-[12px] overflow-hidden border border-[#c9d0d8] shadow-md bg-[#f1f5f9] p-2.5">
                                                 <img
                                                     src={sec.image}
                                                     alt={sec.caption || sec.heading}
-                                                    className="block max-h-[350px] w-auto object-contain rounded-none"
+                                                    className="block max-h-[350px] w-auto object-contain"
                                                 />
                                             </div>
                                         </div>
                                         {sec.caption && (
-                                            <p className="text-center text-xs md:text-sm text-[#55595E] italic">
+                                            <p className="text-center text-xs md:text-sm text-[#415773] italic">
                                                 {sec.caption}
                                             </p>
                                         )}
@@ -448,31 +448,31 @@ export default function InsightDetail({ item, basePath, backLabel }) {
 
                 {/* Author Section - Outside Grid */}
                 <div className="lg:ml-[25%] lg:w-[75%] mt-12">
-                    <div className="border-t border-slate-200 pt-8">
+                    <div className="border-t border-[#e2e8f0] pt-8">
                         <div className="flex flex-wrap items-center gap-8">
                             <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <div className="w-12 h-12 rounded-full bg-[#0061af]/10 flex items-center justify-center text-[#0061af]">
                                     <User className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <p className="text-xs font-normal tracking-wide text-[#55595E]">
+                                    <p className="text-xs font-normal tracking-wide text-[#415773]">
                                         Author
                                     </p>
-                                    <p className="font-light text-[#2E3033]">
+                                    <p className="font-normal text-[#0e2b4b]">
                                         {item.author}
                                     </p>
                                 </div>
                             </div>
 
                             <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <div className="w-12 h-12 rounded-full bg-[#0061af]/10 flex items-center justify-center text-[#0061af]">
                                     <Calendar className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <p className="text-xs font-normal tracking-wide text-[#55595E]">
+                                    <p className="text-xs font-normal tracking-wide text-[#415773]">
                                         Published
                                     </p>
-                                    <p className="font-light text-[#2E3033]">
+                                    <p className="font-normal text-[#0e2b4b]">
                                         {new Date(item.publish_date).toLocaleDateString("en-US", {
                                             year: "numeric",
                                             month: "long",
@@ -483,14 +483,14 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                             </div>
 
                             <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <div className="w-12 h-12 rounded-full bg-[#0061af]/10 flex items-center justify-center text-[#0061af]">
                                     <Clock className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <h2 className="text-xs font-normal tracking-wide text-[#55595E]">
+                                    <h2 className="text-xs font-normal tracking-wide text-[#415773]">
                                         Read Time
                                     </h2>
-                                    <p className="font-light text-[#2E3033]">
+                                    <p className="font-normal text-[#0e2b4b]">
                                         {readingTime} min read
                                     </p>
                                 </div>

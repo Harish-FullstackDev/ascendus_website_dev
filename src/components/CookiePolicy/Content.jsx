@@ -5,12 +5,12 @@ import { sections, sectionContent } from "./cookieData";
 
 function Paragraph({ item }) {
   if (typeof item === "string") {
-    return <p className="text-black font-light leading-[19px] mb-4">{item}</p>;
+    return <p className="text-[#415773] font-normal leading-[19px] mb-4">{item}</p>;
   }
 
   if (item.parts) {
     return (
-      <p className="text-black font-light leading-[19px] mb-4">
+      <p className="text-[#415773] font-normal leading-[19px] mb-4">
         {item.parts.map((part, index) =>
           typeof part === "string" ? (
             <React.Fragment key={index}>{part}</React.Fragment>
@@ -42,19 +42,19 @@ function SectionBody({ data }) {
 
       {data.table && (
         <div className="overflow-x-auto mb-4">
-          <table className="w-full border-collapse border border-[#b3b3b3] text-sm">
+          <table className="w-full border-collapse border border-[#e2e8f0] text-sm">
             <thead>
               <tr className="bg-gray-50">
-                <th className="border border-[#b3b3b3] px-3 py-2 text-left font-semibold text-black">
+                <th className="border border-[#e2e8f0] px-3 py-2 text-left font-semibold text-[#0e2b4b]">
                   Cookie
                 </th>
-                <th className="border border-[#b3b3b3] px-3 py-2 text-left font-semibold text-black">
+                <th className="border border-[#e2e8f0] px-3 py-2 text-left font-semibold text-[#0e2b4b]">
                   Provider
                 </th>
-                <th className="border border-[#b3b3b3] px-3 py-2 text-left font-semibold text-black">
+                <th className="border border-[#e2e8f0] px-3 py-2 text-left font-semibold text-[#0e2b4b]">
                   Purpose
                 </th>
-                <th className="border border-[#b3b3b3] px-3 py-2 text-left font-semibold text-black">
+                <th className="border border-[#e2e8f0] px-3 py-2 text-left font-semibold text-[#0e2b4b]">
                   Duration
                 </th>
               </tr>
@@ -62,16 +62,16 @@ function SectionBody({ data }) {
             <tbody>
               {data.table.map((row) => (
                 <tr key={row.name}>
-                  <td className="border border-[#b3b3b3] px-3 py-2 align-top font-medium text-black">
+                  <td className="border border-[#e2e8f0] px-3 py-2 align-top font-medium text-[#0e2b4b]">
                     {row.name}
                   </td>
-                  <td className="border border-[#b3b3b3] px-3 py-2 align-top text-black font-light">
+                  <td className="border border-[#e2e8f0] px-3 py-2 align-top text-[#415773] font-normal">
                     {row.provider}
                   </td>
-                  <td className="border border-[#b3b3b3] px-3 py-2 align-top text-black font-light">
+                  <td className="border border-[#e2e8f0] px-3 py-2 align-top text-[#415773] font-normal">
                     {row.purpose}
                   </td>
-                  <td className="border border-[#b3b3b3] px-3 py-2 align-top text-black font-light">
+                  <td className="border border-[#e2e8f0] px-3 py-2 align-top text-[#415773] font-normal">
                     {row.duration}
                   </td>
                 </tr>
@@ -84,7 +84,7 @@ function SectionBody({ data }) {
       {data.contacts && (
         <ul className="space-y-3 mb-4">
           {data.contacts.map((contact) => (
-            <li key={contact.label} className="text-black font-light leading-[19px]">
+            <li key={contact.label} className="text-[#415773] font-normal leading-[19px]">
               <span className="font-semibold">{contact.label}: </span>
               <a
                 href={contact.href}
@@ -141,15 +141,15 @@ export default function CookiePolicy() {
     <div className="relative w-full bg-white">
       <div className="flex flex-col md:ml-7 md:flex-row">
         {/* Sidebar Navigation - in-content quick nav, stretches full column height */}
-        <div className="hidden md:block w-[269px] shrink-0 border-r border-[#b3b3b3]">
+        <div className="hidden md:block w-[269px] shrink-0 border-r border-[#e2e8f0]">
           <nav className="sticky top-20 py-10 px-6 space-y-1">
             {sections.map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
                 className={`w-full cursor-pointer text-left px-4 py-2.5 rounded-md text-sm font-medium transition-colors ${activeSection === section
-                  ? "bg-[#0061AF] text-white"
-                  : "text-black hover:bg-gray-100"
+                  ? "bg-[#0061af] text-white"
+                  : "text-[#415773] hover:bg-[#f1f5f9] hover:text-[#0061af]"
                   }`}
               >
                 {section}
@@ -163,10 +163,10 @@ export default function CookiePolicy() {
           {/* Title Banner */}
           <div
             ref={(el) => (sectionRefs.current["Introduction"] = el)}
-            className="bg-[#eaeaea] px-8 sm:px-[66px] py-[62px]"
+            className="bg-[#f1f5f9] px-8 sm:px-[66px] py-[62px]"
           >
             <div className="flex flex-col gap-[42px] max-w-[848px]">
-              <h1 className="text-xl font-semibold text-black">{intro.title}</h1>
+              <h1 className="text-xl font-medium text-[#0e2b4b]">{intro.title}</h1>
               <div>
                 {intro.paragraphs.map((item, index) => (
                   <Paragraph key={index} item={item} />
@@ -182,7 +182,7 @@ export default function CookiePolicy() {
                 key={section}
                 ref={(el) => (sectionRefs.current[section] = el)}
               >
-                <h2 className="text-xl font-semibold text-black mb-[42px]">
+                <h2 className="text-xl font-medium text-[#0e2b4b] mb-[42px]">
                   {sectionContent[section].title}
                 </h2>
                 <SectionBody data={sectionContent[section]} />
@@ -192,8 +192,8 @@ export default function CookiePolicy() {
         </div>
       </div>
       {/* Version / Last Updated Bar */}
-      <div className="bg-[#dadada] px-[59px] py-[38px]">
-        <div className="max-w-[1280px] mx-auto flex flex-col gap-[7px] text-black">
+      <div className="bg-[#f1f5f9] px-[59px] py-[38px]">
+        <div className="max-w-[1280px] mx-auto flex flex-col gap-[7px] text-[#0e2b4b]">
           <p className="font-medium">Label Version: 2.0</p>
           <p className="font-normal">Last updated on: 20th July 2026</p>
         </div>

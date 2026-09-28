@@ -4,6 +4,7 @@ export const validRoutes = [
   "/case-studies/",
   "/whitepapers/",
   "/industry-reports/",
+  "/sap-insights/",
   "/about-us/",
   "/book-a-consultation/",
   "/careers/",
