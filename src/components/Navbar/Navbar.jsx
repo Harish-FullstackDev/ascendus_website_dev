@@ -161,8 +161,8 @@ const Navbar = () => {
   ];
 
   const industryColumns = [
-    servicesMenu.industries.slice(0, 6),
-    servicesMenu.industries.slice(6),
+    servicesMenu.industries.slice(0, 5),
+    servicesMenu.industries.slice(5),
   ];
 
   const solutionsColumns = [

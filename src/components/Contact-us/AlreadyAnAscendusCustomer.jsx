@@ -87,7 +87,7 @@ export default function AlreadyAnAscendusCustomer() {
                                     <Image src={card.icon} alt="" className="w-8 h-8" />
                                 </span>
 
-                                <h3 className="mt-4 text-lg font-medium text-[#0a3a52] leading-[1.2]">{card.title}</h3>
+                                <h3 className="mt-4 text-lg font-medium text-[#0061af] leading-[1.2]">{card.title}</h3>
                                 <p className="mt-2 text-base font-normal text-[#64748b] leading-[1.5]">
                                     {card.description}
                                 </p>
