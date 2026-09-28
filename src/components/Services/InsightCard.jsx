@@ -16,8 +16,8 @@ import arrowRight from "@/assets/Services/icons/arrow-right-8.svg";
 // copy. The Solutions frame also paints its 20% black *under* the photo (a
 // fallback fill the opaque image hides), so that variant has no scrim.
 const VARIANTS = {
-    services: { height: "h-[338px]", panel: "h-[34.2%]", padding: "pb-3", scrim: true },
-    tall: { height: "h-[377px]", panel: "h-[43.07%]", padding: "pb-8", scrim: false },
+    services: { height: "h-[338px]", panel: "h-[34.2%]", padding: "pt-4 pb-3", scrim: true },
+    tall: { height: "h-[377px]", panel: "h-[43.07%]", padding: "pt-6 pb-8", scrim: false },
 };
 
 export default function InsightCard({ ctaLabel = "Explore Now", description, href, image, title, variant = "services" }) {

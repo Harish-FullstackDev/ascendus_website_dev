@@ -64,7 +64,7 @@ function LocationCard({ location }) {
             <div className="absolute inset-0 bg-black/20" />
 
             <div className="relative">
-                <h3 className="text-base sm:text-[32px] font-medium uppercase text-white leading-6 sm:leading-[1.2]">{location.name}</h3>
+                <h3 className="text-[24px] font-medium uppercase text-white leading-[1.2]">{location.name}</h3>
                 <span className="relative mt-3 inline-block pb-0.5 text-xs sm:text-[18px] font-medium text-white leading-4">
                     View Location
                     <span

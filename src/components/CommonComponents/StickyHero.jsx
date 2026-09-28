@@ -7,27 +7,20 @@
 // up by one hero-height to start where the hero ends, and sits above both
 // layers so it covers the image as it rises.
 //
-// Tailwind needs literal class names, hence one preset per hero height rather
-// than a computed height.
+// Every hero is one full viewport tall, same as /careers/ — "default" and
+// "tall" are kept as distinct names only so each page's intent still reads at
+// the call site (tall = industries, which carries a stats row under its copy),
+// but both resolve to the same screen-height box as "screen" (careers) itself.
+const SCREEN = {
+    wrapper: "h-[200vh]",
+    layer: "h-screen",
+    content: "-mt-[100vh]",
+};
+
 const SIZES = {
-    // 520 / 620 / 800 — services, solutions, about-us, partnership, contact-us
-    default: {
-        wrapper: "h-[1040px] sm:h-[1240px] lg:h-[1600px]",
-        layer: "h-[520px] sm:h-[620px] lg:h-[800px]",
-        content: "-mt-[520px] sm:-mt-[620px] lg:-mt-[800px]",
-    },
-    // 560 / 660 / 800 — industries, which carries a stats row under its copy
-    tall: {
-        wrapper: "h-[1120px] sm:h-[1320px] lg:h-[1600px]",
-        layer: "h-[560px] sm:h-[660px] lg:h-[800px]",
-        content: "-mt-[560px] sm:-mt-[660px] lg:-mt-[800px]",
-    },
-    // exactly one viewport — careers
-    screen: {
-        wrapper: "h-[200vh]",
-        layer: "h-screen",
-        content: "-mt-[100vh]",
-    },
+    default: SCREEN, // services, solutions, about-us, partnership, contact-us
+    tall: SCREEN, // industries
+    screen: SCREEN, // careers
 };
 
 export default function StickyHero({ background, overlay, size = "default", children }) {
