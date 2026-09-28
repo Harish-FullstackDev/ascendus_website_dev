@@ -1,93 +1,66 @@
 "use client";
 
-import { ArrowRight, Plus } from "lucide-react";
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { ArrowRight } from "lucide-react";
 
+// Same card tokens as InsightsListing: rounded-[12px] corners, the
+// #0061af / #0e2b4b / #415773 palette, font-medium headings.
 export default function BlogCardGrid({ blogs, loading, onCardClick, onWriteFirstPost }) {
     if (loading) {
         return (
             <div className="flex items-center justify-center py-40">
-                <div className="w-12 h-12 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" />
+                <div className="size-12 animate-spin rounded-full border-4 border-[#0061af]/20 border-t-[#0061af]" />
             </div>
         );
     }
 
     if (blogs.length === 0) {
         return (
-            <div className="text-center py-40 border border-dashed border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 bg-white">
-                <p className="text-[#55595E] font-light text-base sm:text-lg mb-6">
-                    No blog posts found. Due too techenical issue
+            <div className="rounded-[12px] border border-dashed border-[#c9d0d8] bg-white p-8 py-40 text-center">
+                <p className="text-base text-[#415773] sm:text-lg">
+                    No blog posts found. Please check back soon.
                 </p>
-                {/* <button
-                    onClick={onWriteFirstPost}
-                    className="inline-flex items-center gap-2 px-5 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl transition-colors"
-                >
-                    <Plus className="w-5 h-5" />
-                    Write First Post
-                </button> */}
             </div>
         );
     }
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {blogs.map((blog) => (
-                <div
+                <article
                     key={blog.id}
                     onClick={() => onCardClick(blog)}
-                    className="cursor-pointer h-full"
+                    className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-[12px] border border-[#c9d0d8] bg-white transition-shadow duration-300 hover:shadow-[0px_12px_30px_rgba(10,58,82,0.12)]"
                 >
-                    <CardContainer
-                        className="inter-var h-[491px]"
-                        containerClassName="h-full py-0"
-                    >
-                        <CardBody className="bg-[#F5F6F6] p-6 border shadow-md hover:shadow-2xl flex flex-col h-full">
+                    <div className="relative h-56 w-full overflow-hidden">
+                        <img
+                            src={blog.cover_image}
+                            alt={blog.title}
+                            className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                        />
+                    </div>
 
-                            <div className="flex-1 my-7">
-                                <div className="h-52 overflow-hidden">
-                                    <img
-                                        src={blog.cover_image}
-                                        alt={blog.title}
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
+                    <div className="flex flex-1 flex-col gap-2 p-6">
+                        <p className="text-xs font-semibold uppercase tracking-[0.7px] text-[#0061af]">
+                            By {blog.author}
+                        </p>
+                        <h3 className="line-clamp-2 min-h-[42px] text-lg font-medium leading-[1.2] text-[#0e2b4b]">
+                            {blog.title}
+                        </h3>
 
-                                <CardItem
-                                    translateZ="0"
-                                    className="mt-4 text-lg font-semibold text-[#2E3033] line-clamp-2 min-h-[56px]"
-                                >
-                                    {blog.title}
-                                </CardItem>
-
-                                <CardItem
-                                    translateZ="0"
-                                    className="mt-3 text-xs uppercase tracking-wider text-[#0A3A52]"
-                                >
-                                    By {blog.author}
-                                </CardItem>
-                            </div>
-
-                            <div className="mt-auto flex items-center justify-between border-t pt-4">
-                                <CardItem translateZ={20} className="text-xs text-neutral-500">
-                                    {new Date(blog.publish_date).toLocaleDateString("en-US", {
-                                        year: "numeric",
-                                        month: "short",
-                                        day: "numeric",
-                                    })}
-                                </CardItem>
-
-                                <CardItem
-                                    translateZ={20}
-                                    as="div"
-                                    className="w-8 h-8 rounded-full border border-black bg-[#F5F6F6] flex items-center justify-center"
-                                >
-                                    <ArrowRight className="w-4 h-4" />
-                                </CardItem>
-                            </div>
-
-                        </CardBody>
-                    </CardContainer>
-                </div>
+                        <div className="mt-4 mt-auto flex items-center justify-between border-t border-[#e2e8f0] pt-4">
+                            <span className="text-xs text-[#7c8a9c]">
+                                {new Date(blog.publish_date).toLocaleDateString("en-US", {
+                                    year: "numeric",
+                                    month: "short",
+                                    day: "numeric",
+                                })}
+                            </span>
+                            <span className="flex size-8 items-center justify-center rounded-full border border-[#0061af] text-[#0061af] transition-transform duration-300 group-hover:translate-x-0.5">
+                                <ArrowRight className="size-4" />
+                            </span>
+                        </div>
+                    </div>
+                </article>
             ))}
         </div>
     );

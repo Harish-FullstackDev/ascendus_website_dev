@@ -6,11 +6,13 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { supabase } from "@/lib/supabaseClient";
 import AuthorsSection from "@/components/blog/author";
-import Hero from "@/components/blog/Hero";
-import HeroText from "@/components/blog/HeroText";
+import StickyHero from "@/components/CommonComponents/StickyHero";
+import Hero from "@/components/Insights/Hero";
+import HeroText from "@/components/Insights/HeroText";
 import BlogCardGrid from "@/components/blog/BlogCardGrid";
 import BlogCreationModal from "@/components/blog/BlogCreationModal";
 import { staticBlogsData } from "@/data/blogsData";
+import backgroundImage from "@/assets/Insights/Blogs_Hero.webp";
 
 export default function BlogPage() {
     const router = useRouter();
@@ -181,20 +183,20 @@ export default function BlogPage() {
     };
 
     return (
-        <div className="min-h-screen flex flex-col font-sans">
+        <div className="min-h-screen flex flex-col font-sans bg-white">
             <Navbar />
-            <div className="relative -mt-[64px] lg:-mt-[88px] h-[680px] sm:h-[200vh]">
-                <div className="sticky top-0 h-[340px] sm:h-screen z-0">
-                    <Hero />
-                </div>
 
-                <div className="absolute inset-x-0 top-0 h-[340px] sm:h-screen z-[5]">
-                    <HeroText />
-                </div>
-            </div>
-
-            <div className="relative z-10 -mt-[340px] sm:-mt-[80vh] bg-white">
-                <main className="flex-grow max-w-7xl w-full mx-auto px-8 py-12 md:py-20">
+            <StickyHero
+                background={<Hero backgroundImage={backgroundImage} />}
+                overlay={
+                    <HeroText
+                        subtitle="Insights"
+                        title="Blog"
+                        description="Ideas that shape the future of digital enterprise growth."
+                    />
+                }
+            >
+                <main className="w-full px-6 py-10 sm:px-[64px] sm:py-16">
                     <BlogCardGrid
                         blogs={blogs}
                         loading={loading}
@@ -202,7 +204,7 @@ export default function BlogPage() {
                         onWriteFirstPost={() => setIsFormOpen(true)}
                     />
                 </main>
-            </div>
+            </StickyHero>
 
             <BlogCreationModal
                 isOpen={isFormOpen}

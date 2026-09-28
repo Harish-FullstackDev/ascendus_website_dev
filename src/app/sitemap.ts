@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { supabase } from '@/lib/supabaseClient';
 import { industryReportsData } from '@/data/industryReportsData';
+import { sapInsightsData } from '@/data/sapInsightsData';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.ascendus.sa';
@@ -24,6 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/blog',
     '/case-studies',
     '/industry-reports',
+    '/sap-insights',
     '/whitepapers',
     '/legal/privacy',
     '/legal/terms',
@@ -55,6 +57,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 3. Industry reports — static data
   const industryReportRoutes: MetadataRoute.Sitemap = industryReportsData.map((report) => ({
     url: `${baseUrl}/industry-reports/${report.slug}/`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  // 3b. SAP insights — static data
+  const sapInsightRoutes: MetadataRoute.Sitemap = sapInsightsData.map((insight) => ({
+    url: `${baseUrl}/sap-insights/${insight.slug}/`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.6,
@@ -119,5 +129,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error('Sitemap: jobs fetch failed', error);
   }
 
-  return [...staticRoutes, ...industryReportRoutes, ...dynamicRoutes];
+  return [...staticRoutes, ...industryReportRoutes, ...sapInsightRoutes, ...dynamicRoutes];
 }

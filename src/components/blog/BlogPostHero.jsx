@@ -16,7 +16,7 @@ export default function BlogPostHero({ blog, copied, onShare, onShareEmail, onSh
                     >
                         <ArrowLeft className="w-4 h-4" /> Back to Blogs
                     </Link>
-                    <h2 className="text-[#2E3033] text-xl md:text-2xl font-semibold sm:w-[93%]">
+                    <h2 className="text-[#2E3033] text-[32px] leading-[1.2] font-semibold sm:w-[93%]">
                         {blog.title}
                     </h2>
                     <div className="flex items-center gap-6 pt-6 border-t border-slate-100 dark:border-neutral-850 mt-6 text-slate-500 dark:text-neutral-400">

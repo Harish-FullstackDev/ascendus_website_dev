@@ -5,12 +5,12 @@ import { sections, sectionContent } from "./termsData";
 
 function Paragraph({ item }) {
   if (typeof item === "string") {
-    return <p className="text-black font-light leading-[19px] mb-4">{item}</p>;
+    return <p className="text-[#415773] font-normal leading-[19px] mb-4">{item}</p>;
   }
 
   if (item.parts) {
     return (
-      <p className="text-black font-light leading-[19px] mb-4">
+      <p className="text-[#415773] font-normal leading-[19px] mb-4">
         {item.parts.map((part, index) =>
           typeof part === "string" ? (
             <React.Fragment key={index}>{part}</React.Fragment>
@@ -41,7 +41,7 @@ function SectionBody({ data }) {
       ))}
 
       {data.bullets && (
-        <ul className="list-disc pl-6 space-y-2 text-black font-light mb-4">
+        <ul className="list-disc pl-6 space-y-2 text-[#415773] font-normal mb-4">
           {data.bullets.map((item, index) => (
             <li key={index} className="leading-[19px]">
               {item}
@@ -92,15 +92,15 @@ export default function TermsContent() {
     <div className="relative w-full bg-white">
       <div className="flex flex-col md:ml-7 md:flex-row">
         {/* Sidebar Navigation - in-content quick nav, stretches full column height */}
-        <div className="hidden md:block w-[269px] shrink-0 border-r border-[#b3b3b3]">
+        <div className="hidden md:block w-[269px] shrink-0 border-r border-[#e2e8f0]">
           <nav className="sticky top-20 py-10 px-6 space-y-1">
             {sections.map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
                 className={`w-full cursor-pointer text-left px-4 py-2.5 rounded-md text-sm font-medium transition-colors ${activeSection === section
-                  ? "bg-[#0061AF] text-white"
-                  : "text-black hover:bg-gray-100"
+                  ? "bg-[#0061af] text-white"
+                  : "text-[#415773] hover:bg-[#f1f5f9] hover:text-[#0061af]"
                   }`}
               >
                 {section}
@@ -114,10 +114,10 @@ export default function TermsContent() {
           {/* Title Banner */}
           <div
             ref={(el) => (sectionRefs.current["Summary"] = el)}
-            className="bg-[#eaeaea] px-8 sm:px-[66px] py-[62px]"
+            className="bg-[#f1f5f9] px-8 sm:px-[66px] py-[62px]"
           >
             <div className="flex flex-col gap-[42px] ">
-              <h1 className="text-xl font-semibold text-black">
+              <h1 className="text-xl font-medium text-[#0e2b4b]">
                 {summary.title}
               </h1>
               <div>
@@ -134,7 +134,7 @@ export default function TermsContent() {
                 key={section}
                 ref={(el) => (sectionRefs.current[section] = el)}
               >
-                <h2 className="text-xl font-semibold text-black mb-[42px]">
+                <h2 className="text-xl font-medium text-[#0e2b4b] mb-[42px]">
                   {sectionContent[section].title}
                 </h2>
                 <SectionBody data={sectionContent[section]} />
@@ -144,8 +144,8 @@ export default function TermsContent() {
         </div>
       </div>
       {/* Version / Last Updated Bar */}
-      <div className="bg-[#dadada] px-[59px] py-[38px]">
-        <div className="max-w-[1280px] mx-auto flex flex-col gap-[7px] text-black">
+      <div className="bg-[#f1f5f9] px-[59px] py-[38px]">
+        <div className="max-w-[1280px] mx-auto flex flex-col gap-[7px] text-[#0e2b4b]">
           <p className="font-medium">Label Version: 2.0</p>
           <p className="font-normal">Last updated on: 20th July 2026</p>
         </div>
