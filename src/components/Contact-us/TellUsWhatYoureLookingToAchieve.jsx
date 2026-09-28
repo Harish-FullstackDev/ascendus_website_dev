@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import meetingRoomImg from "@/assets/Contact-us/Meeting_Room.webp";
+import meetingRoomImg from "@/assets/Contact-us/contact_general_enquiry.webp";
 import chevronDownIcon from "@/assets/Contact-us/icons/chevron-down-15.svg";
 import uploadIcon from "@/assets/Contact-us/icons/upload.svg";
 import arrowButtonIcon from "@/assets/Contact-us/icons/arrow-button-16.svg";

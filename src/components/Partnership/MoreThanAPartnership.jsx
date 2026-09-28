@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import summitImage from "@/assets/Partnership/Team_Climbing_Mountain.webp";
+import summitImage from "@/assets/Partnership/partnership_why_partner.png";
 import checkIcon from "@/assets/Partnership/icons/check.svg";
 import arrowRightBlueIcon from "@/assets/Partnership/icons/arrow-right-blue.svg";
 

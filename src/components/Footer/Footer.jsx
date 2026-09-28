@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { animate, motion, useMotionValue, useTransform } from "framer-motion";
+import { animate, useMotionValue } from "framer-motion";
 import logo from "../../assets/Brand/ASCENDUS.svg";
 import logoSecondary from "../../assets/Brand/Ascendus_Logo_Secondary.png";
 import InstagramIcon from "../../assets/Footer/Instagram_Icon.svg";
@@ -38,16 +38,14 @@ const SNAP_BACK = { type: "spring", stiffness: 180, damping: 22, restDelta: 0.5 
 // less each additional pixel buys.
 function useElasticOverscroll() {
   const footerRef = useRef(null);
+  const bandRef = useRef(null);
   const pull = useMotionValue(0);
   const [maxPull, setMaxPull] = useState(0);
-
-  const current = useRef(0);
-  const release = useRef(null);
-  const touchY = useRef(null);
+  const [inView, setInView] = useState(false);
 
   // The wordmark is `w-full h-auto`, so how far there is to pull is a function
   // of width. Derived from the ratio rather than measured off the element,
-  // which keeps it stable while a transform is running.
+  // which keeps it stable while the band is resizing.
   useEffect(() => {
     const footer = footerRef.current;
     if (!footer) return undefined;
@@ -55,45 +53,73 @@ function useElasticOverscroll() {
     const measure = () => setMaxPull(Math.round(footer.clientWidth * LOGO_RATIO));
     measure();
 
-    const observer = new ResizeObserver(measure);
-    observer.observe(footer);
-    return () => observer.disconnect();
+    const resize = new ResizeObserver(measure);
+    resize.observe(footer);
+
+    // The gesture listeners only matter once the footer is on screen, so they
+    // are not left reading layout on every wheel tick anywhere on the site.
+    const visibility = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting));
+    visibility.observe(footer);
+
+    return () => {
+      resize.disconnect();
+      visibility.disconnect();
+    };
   }, []);
 
+  // Height is written straight to the element, synchronously with the motion
+  // value. Going through React/framer styles applied it a frame late, so the
+  // follow-up scroll read a stale document height and the pull stuttered.
+  // The spring undershoots past zero on the way back, hence the clamp.
+  useEffect(
+    () =>
+      pull.on("change", (value) => {
+        if (bandRef.current) bandRef.current.style.height = `${Math.max(0, value)}px`;
+      }),
+    [pull]
+  );
+
   useEffect(() => {
-    if (!maxPull) return undefined;
+    if (!maxPull || !inView) return undefined;
 
-    const atEnd = () =>
-      document.documentElement.scrollHeight - (window.scrollY + window.innerHeight) <= AT_END_PX;
+    const root = document.documentElement;
+    const atEnd = () => root.scrollHeight - Math.ceil(window.scrollY + window.innerHeight) <= AT_END_PX;
 
-    // Raw gesture distance accumulated since the pull began, before easing.
-    const applied = { raw: 0 };
+    let open = false;
+    let settling = false; // snap-back in flight: ignore input until it lands
+    let raw = 0; // gesture distance since the pull began, before easing
+    let releaseTimer = null;
+    let touchY = null;
 
     const letGo = () => {
-      if (release.current) {
-        clearTimeout(release.current);
-        release.current = null;
-      }
-      applied.raw = 0;
-      if (current.current === 0) return;
-      current.current = 0;
-      animate(pull, 0, SNAP_BACK);
+      clearTimeout(releaseTimer);
+      releaseTimer = null;
+      raw = 0;
+      if (!open) return;
+      open = false;
+      settling = true;
+      animate(pull, 0, {
+        ...SNAP_BACK,
+        onComplete: () => {
+          settling = false;
+        },
+      });
     };
 
     // Past the limit each extra pixel buys less, so the band eases into its
     // stop instead of hitting a wall.
-    const stretch = (amount) => {
-      const eased = maxPull * (1 - 1 / (amount / maxPull + 1));
-      return Math.min(maxPull, eased * 2);
-    };
+    const stretch = (amount) => Math.min(maxPull, 2 * maxPull * (1 - 1 / (amount / maxPull + 1)));
 
-    // Growing the band lengthens the document, and the new space lands below
-    // the fold where it would never be seen. Riding the scroll down with it
-    // is what turns the growth into a visible pull.
-    const openTo = (amount) => {
-      current.current = amount;
-      pull.set(amount);
-      window.scrollTo(0, document.documentElement.scrollHeight);
+    // Growing the band lengthens the document below the fold; riding the
+    // scroll down with it is what turns the growth into a visible pull.
+    const pullBy = (delta) => {
+      if (settling || (!open && !atEnd())) return false;
+      pull.stop();
+      open = true;
+      raw += delta * RESISTANCE;
+      pull.set(stretch(raw));
+      window.scrollTo(0, root.scrollHeight);
+      return true;
     };
 
     const onWheel = (event) => {
@@ -101,47 +127,35 @@ function useElasticOverscroll() {
         letGo();
         return;
       }
-      if (current.current === 0 && !atEnd()) {
-        applied.raw = 0;
-        return;
-      }
-
-      applied.raw += event.deltaY * RESISTANCE;
-      openTo(stretch(applied.raw));
-
-      if (release.current) clearTimeout(release.current);
-      release.current = setTimeout(letGo, RELEASE_MS);
+      if (!pullBy(event.deltaY)) return;
+      clearTimeout(releaseTimer);
+      releaseTimer = setTimeout(letGo, RELEASE_MS);
     };
 
     const onTouchStart = (event) => {
-      touchY.current = event.touches[0].clientY;
+      touchY = event.touches[0].clientY;
     };
 
     const onTouchMove = (event) => {
-      if (touchY.current === null) return;
-
-      const delta = touchY.current - event.touches[0].clientY; // up-swipe is positive
-      touchY.current = event.touches[0].clientY;
-
-      if (delta <= 0 || (current.current === 0 && !atEnd())) {
-        if (current.current > 0 && delta < 0) letGo();
-        return;
-      }
-
-      applied.raw += delta * RESISTANCE;
-      openTo(stretch(applied.raw));
+      if (touchY === null) return;
+      const y = event.touches[0].clientY;
+      const delta = touchY - y; // up-swipe is positive
+      touchY = y;
+      if (delta < 0) letGo();
+      else if (delta > 0) pullBy(delta);
     };
 
     const onTouchEnd = () => {
-      touchY.current = null;
+      touchY = null;
       letGo();
     };
 
-    window.addEventListener("wheel", onWheel, { passive: true });
-    window.addEventListener("touchstart", onTouchStart, { passive: true });
-    window.addEventListener("touchmove", onTouchMove, { passive: true });
-    window.addEventListener("touchend", onTouchEnd, { passive: true });
-    window.addEventListener("touchcancel", onTouchEnd, { passive: true });
+    const options = { passive: true };
+    window.addEventListener("wheel", onWheel, options);
+    window.addEventListener("touchstart", onTouchStart, options);
+    window.addEventListener("touchmove", onTouchMove, options);
+    window.addEventListener("touchend", onTouchEnd, options);
+    window.addEventListener("touchcancel", onTouchEnd, options);
 
     return () => {
       window.removeEventListener("wheel", onWheel);
@@ -149,16 +163,14 @@ function useElasticOverscroll() {
       window.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("touchend", onTouchEnd);
       window.removeEventListener("touchcancel", onTouchEnd);
-      if (release.current) clearTimeout(release.current);
+      clearTimeout(releaseTimer);
+      // Leaving view mid-pull must not strand the band open.
+      pull.stop();
+      pull.set(0);
     };
-  }, [maxPull, pull]);
+  }, [maxPull, inView, pull]);
 
-  // The spring undershoots past zero on the way back. A negative height is
-  // not a value CSS will take, and an ignored declaration would strand the
-  // band at whatever it last held, so it is clamped.
-  const bandHeight = useTransform(pull, (value) => Math.max(0, value));
-
-  return { footerRef, bandHeight };
+  return { footerRef, bandRef };
 }
 
 const linkClass = "hover:text-white transition-colors duration-200";
@@ -259,7 +271,7 @@ const legalLinks = [
 ];
 
 const Footer = () => {
-  const { footerRef, bandHeight } = useElasticOverscroll();
+  const { footerRef, bandRef } = useElasticOverscroll();
 
   return (
     <footer ref={footerRef} className="relative bg-neutral-900 text-gray-400">
@@ -383,9 +395,9 @@ const Footer = () => {
           empty strip. The pull grows it; the wordmark is pinned to its bottom
           edge, which keeps the artwork against the page bottom and uncovers
           it upward as the band opens. */}
-      <motion.div style={{ height: bandHeight }} className="relative overflow-hidden" aria-hidden="true">
+      <div ref={bandRef} style={{ height: 0 }} className="relative overflow-hidden" aria-hidden="true">
         <Image src={logo} alt="" className="absolute inset-x-0 bottom-0 block w-full h-auto" />
-      </motion.div>
+      </div>
     </footer>
   );
 };
