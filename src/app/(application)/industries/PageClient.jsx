@@ -9,32 +9,36 @@ import ACollaborativeEcosystem from "@/components/Industries/ACollaborativeEcosy
 import IndustryExpertiseThatDeliversOutcomes from "@/components/Industries/IndustryExpertiseThatDeliversOutcomes";
 import IndustryChallengesRealSolution from "@/components/Industries/IndustryChallengesRealSolution";
 import PageCta from "@/components/CommonComponents/PageCta";
+import StickyHero from "@/components/CommonComponents/StickyHero";
 
-// The hero is a plain full-bleed band, not the sticky curtain the what-we-do
-// pages use — Figma shows the content starting straight under an 800px hero with
-// nothing pinned behind it. The negative top margin is the shared offset that
-// lets the transparent navbar sit over the hero image.
+// The hero is the shared sticky curtain: the image stays put while the page
+// content slides up over it. The stats row scrolls away with the hero copy.
 const page = () => {
     return (
         <div className="min-h-screen bg-white flex flex-col font-sans">
             <Navbar />
 
-            <div className="relative -mt-[64px] lg:-mt-[68px] w-full h-[560px] sm:h-[660px] lg:h-[800px]">
-                <IndustriesHero />
-                <IndustriesHeroText />
-                <IndustriesHeroStats />
-            </div>
-
-            <ACollaborativeEcosystem />
-            <IndustryExpertiseThatDeliversOutcomes />
-            <IndustryChallengesRealSolution />
-            <PageCta
-                title={["Your Industry.", "Our Expertise."]}
-                description="Let's explore how we can help you solve your industry's unique challenges and create new opportunities for growth."
-                ctaLabel="Talk to an Expert"
-                titleClassName="lg:w-[211.5px]"
-                descriptionClassName="lg:w-[376px]"
-            />
+            <StickyHero
+                size="tall"
+                background={<IndustriesHero />}
+                overlay={
+                    <>
+                        <IndustriesHeroText />
+                        <IndustriesHeroStats />
+                    </>
+                }
+            >
+                <ACollaborativeEcosystem />
+                <IndustryExpertiseThatDeliversOutcomes />
+                <IndustryChallengesRealSolution />
+                <PageCta
+                    title={["Your Industry.", "Our Expertise."]}
+                    description="Let's explore how we can help you solve your industry's unique challenges and create new opportunities for growth."
+                    ctaLabel="Talk to an Expert"
+                    titleClassName="lg:w-[211.5px]"
+                    descriptionClassName="lg:w-[376px]"
+                />
+            </StickyHero>
 
             <Footer />
         </div>

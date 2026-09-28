@@ -15,6 +15,7 @@ import TellUsWhatYoureLookingToAchieve from "@/components/Contact-us/TellUsWhatY
 import WhereverYourBusinessTakesYou from "@/components/Contact-us/WhereverYourBusinessTakesYou";
 import YourTrustedPartnerForLongTermSuccess from "@/components/Contact-us/YourTrustedPartnerForLongTermSuccess";
 import PageCta from "@/components/CommonComponents/PageCta";
+import StickyHero from "@/components/CommonComponents/StickyHero";
 
 // Rise-and-settle: the outgoing panel lifts and fades, the incoming one comes up
 // from below into place. The custom cubic-bezier is an ease-out-expo — most of
@@ -29,11 +30,8 @@ const PANEL_MOTION = {
     transition: PANEL_TRANSITION,
 };
 
-// The hero is a plain full-bleed band here, not the sticky curtain the
-// what-we-do / about-us pages use — this page's Figma frame shows the content
-// starting straight under an 800px hero, with nothing pinned behind it. The
-// negative top margin is the shared offset that lets the transparent navbar sit
-// over the hero image.
+// The hero is the shared sticky curtain: the image stays put while the page
+// content slides up over it.
 const page = () => {
     // "Choose What Fits Your Need" is a segmented control: exactly one of the two
     // panels below it is mounted at a time, with Prospective selected on load.
@@ -43,56 +41,53 @@ const page = () => {
         <div className="min-h-screen bg-white flex flex-col font-sans">
             <Navbar />
 
-            <div className="relative -mt-[64px] lg:-mt-[68px] w-full h-[520px] sm:h-[620px] lg:h-[800px]">
-                <ContactUsHero />
-                <ContactUsHeroText />
-            </div>
+            <StickyHero background={<ContactUsHero />} overlay={<ContactUsHeroText />}>
+                <ChooseWhatFitsYourNeed selected={segment} onSelect={setSegment} />
 
-            <ChooseWhatFitsYourNeed selected={segment} onSelect={setSegment} />
+                {/* popLayout takes the outgoing panel out of the flow the moment the
+                    swap starts, so the incoming panel drives the page height straight
+                    away instead of the sections below collapsing and re-expanding.
+                    initial={false} keeps the default panel from animating on first
+                    paint — it should already be there when the page loads. */}
+                <AnimatePresence mode="popLayout" initial={false}>
+                    {segment === "prospective" ? (
+                        <motion.div
+                            key="prospective"
+                            id="segment-panel-prospective"
+                            role="tabpanel"
+                            aria-label="For prospective customers"
+                            {...PANEL_MOTION}
+                        >
+                            <StartANewConversation />
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            key="existing"
+                            id="segment-panel-existing"
+                            role="tabpanel"
+                            aria-label="For existing customers"
+                            {...PANEL_MOTION}
+                        >
+                            <AlreadyAnAscendusCustomer />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
-            {/* popLayout takes the outgoing panel out of the flow the moment the
-                swap starts, so the incoming panel drives the page height straight
-                away instead of the sections below collapsing and re-expanding.
-                initial={false} keeps the default panel from animating on first
-                paint — it should already be there when the page loads. */}
-            <AnimatePresence mode="popLayout" initial={false}>
-                {segment === "prospective" ? (
-                    <motion.div
-                        key="prospective"
-                        id="segment-panel-prospective"
-                        role="tabpanel"
-                        aria-label="For prospective customers"
-                        {...PANEL_MOTION}
-                    >
-                        <StartANewConversation />
-                    </motion.div>
-                ) : (
-                    <motion.div
-                        key="existing"
-                        id="segment-panel-existing"
-                        role="tabpanel"
-                        aria-label="For existing customers"
-                        {...PANEL_MOTION}
-                    >
-                        <AlreadyAnAscendusCustomer />
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
-            <IsYourTechnologyLandscapeReady />
-            <TellUsWhatYoureLookingToAchieve />
-            <WhereverYourBusinessTakesYou />
-            <YourTrustedPartnerForLongTermSuccess />
-            {/* Figma's CTA here is "Contact Us" on the contact page itself, so it
-                jumps to the enquiry form rather than reloading the route. */}
-            <PageCta
-                title={["Partner With Us", "for a Stronger Tomorrow."]}
-                description={["Let's connect and explore how we can help you", "transform, innovate and grow."]}
-                ctaLabel="CONTACT US"
-                href="#tell-us-what-youre-looking-to-achieve"
-                titleClassName="lg:w-[445.5px]"
-                descriptionClassName="lg:whitespace-nowrap"
-            />
+                <IsYourTechnologyLandscapeReady />
+                <TellUsWhatYoureLookingToAchieve />
+                <WhereverYourBusinessTakesYou />
+                <YourTrustedPartnerForLongTermSuccess />
+                {/* Figma's CTA here is "Contact Us" on the contact page itself, so it
+                    jumps to the enquiry form rather than reloading the route. */}
+                <PageCta
+                    title={["Partner With Us", "for a Stronger Tomorrow."]}
+                    description={["Let's connect and explore how we can help you", "transform, innovate and grow."]}
+                    ctaLabel="CONTACT US"
+                    href="#tell-us-what-youre-looking-to-achieve"
+                    titleClassName="lg:w-[445.5px]"
+                    descriptionClassName="lg:whitespace-nowrap"
+                />
+            </StickyHero>
 
             <Footer />
         </div>

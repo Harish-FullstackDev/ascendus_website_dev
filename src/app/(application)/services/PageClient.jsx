@@ -13,11 +13,11 @@ import MoreThanExpertise from "@/components/Services/MoreThanExpertise";
 import AboutUsHighlights from "@/components/Services/AboutUsHighlights";
 import IdeasThatInspire from "@/components/Services/IdeasThatInspire";
 import PageCta from "@/components/CommonComponents/PageCta";
+import StickyHero from "@/components/CommonComponents/StickyHero";
 import { SERVICE_CATEGORIES } from "@/components/Services/servicesData";
 
-// The hero is a plain full-bleed band, not the sticky curtain the what-we-do
-// pages use. The negative top margin is the shared offset that lets the
-// transparent navbar sit over the hero image.
+// The hero is the shared sticky curtain: the image stays put while the page
+// content slides up over it.
 //
 // The active category is owned here rather than inside either section because
 // the three cards in section 2 select which rail section 3 renders.
@@ -28,28 +28,25 @@ const page = () => {
         <div className="min-h-screen bg-white flex flex-col font-sans">
             <Navbar />
 
-            <div className="relative -mt-[64px] lg:-mt-[68px] w-full h-[520px] sm:h-[620px] lg:h-[800px]">
-                <ServicesHero />
-                <ServicesHeroText />
-            </div>
-
-            <ThreeWaysWeCreateValue
-                activeCategoryId={activeCategoryId}
-                onSelectCategory={setActiveCategoryId}
-            />
-            <SAPTransformation activeCategoryId={activeCategoryId} />
-            <MoreThanServices />
-            <MoreThanExpertise />
-            <AboutUsHighlights />
-            <IdeasThatInspire />
-            <PageCta
-                title={["Partner With Us", "for a Stronger Tomorrow."]}
-                description={["Let's connect and explore how we can help you", "transform, innovate and grow."]}
-                ctaLabel="CONTACT US"
-                href="/contact-us/"
-                titleClassName="lg:w-[445.5px]"
-                descriptionClassName="lg:whitespace-nowrap"
-            />
+            <StickyHero background={<ServicesHero />} overlay={<ServicesHeroText />}>
+                <ThreeWaysWeCreateValue
+                    activeCategoryId={activeCategoryId}
+                    onSelectCategory={setActiveCategoryId}
+                />
+                <SAPTransformation activeCategoryId={activeCategoryId} />
+                <MoreThanServices />
+                <MoreThanExpertise />
+                <AboutUsHighlights />
+                <IdeasThatInspire />
+                <PageCta
+                    title={["Partner With Us", "for a Stronger Tomorrow."]}
+                    description={["Let's connect and explore how we can help you", "transform, innovate and grow."]}
+                    ctaLabel="CONTACT US"
+                    href="/contact-us/"
+                    titleClassName="lg:w-[445.5px]"
+                    descriptionClassName="lg:whitespace-nowrap"
+                />
+            </StickyHero>
 
             <Footer />
         </div>

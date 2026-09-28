@@ -8,31 +8,27 @@ import ComprehensiveSAPSolutions from "@/components/Solution/ComprehensiveSAPSol
 import MoreThanImplementation from "@/components/Solution/MoreThanImplementation";
 import SolutionInsights from "@/components/Solution/SolutionInsights";
 import PageCta from "@/components/CommonComponents/PageCta";
+import StickyHero from "@/components/CommonComponents/StickyHero";
 
-// The hero is a plain full-bleed band, not the sticky curtain the what-we-do
-// pages use — Figma shows the content starting straight under an 800px hero with
-// nothing pinned behind it. The negative top margin is the shared offset that
-// lets the transparent navbar sit over the hero image.
+// The hero is the shared sticky curtain: the image stays put while the page
+// content slides up over it.
 const page = () => {
     return (
         <div className="min-h-screen bg-white flex flex-col font-sans">
             <Navbar />
 
-            <div className="relative -mt-[64px] lg:-mt-[68px] w-full h-[520px] sm:h-[620px] lg:h-[800px]">
-                <SolutionsHero />
-                <SolutionsHeroText />
-            </div>
-
-            <ComprehensiveSAPSolutions />
-            <MoreThanImplementation />
-            <SolutionInsights />
-            <PageCta
-                title={["Ready to Turn Your", "Vision into Action?"]}
-                description={["Tell us where you are today, where you want to go,", "and what's standing in the way."]}
-                ctaLabel="Talk to an Expert"
-                titleClassName="lg:w-[290px]"
-                descriptionClassName="lg:whitespace-nowrap"
-            />
+            <StickyHero background={<SolutionsHero />} overlay={<SolutionsHeroText />}>
+                <ComprehensiveSAPSolutions />
+                <MoreThanImplementation />
+                <SolutionInsights />
+                <PageCta
+                    title={["Ready to Turn Your", "Vision into Action?"]}
+                    description={["Tell us where you are today, where you want to go,", "and what's standing in the way."]}
+                    ctaLabel="Talk to an Expert"
+                    titleClassName="lg:w-[290px]"
+                    descriptionClassName="lg:whitespace-nowrap"
+                />
+            </StickyHero>
 
             <Footer />
         </div>
