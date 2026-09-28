@@ -99,7 +99,7 @@ export default function SAPTransformation({ activeCategoryId }) {
                                                 }`}
                                         />
                                         <span
-                                            className={`relative text-[18px] font-medium leading-[1.2] transition-colors ${RAIL_FOREGROUND_TIMING} ${isActive ? "text-white" : "text-[#0e2b4b]"
+                                            className={`relative text-[16px] font-medium leading-[1.2] transition-colors ${RAIL_FOREGROUND_TIMING} ${isActive ? "text-white" : "text-[#0e2b4b]"
                                                 }`}
                                         >
                                             {item.title}

@@ -2,44 +2,37 @@
 
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import WhoWeAreHero from "@/components/WhoWeAre/WhoWeAreHero";
-import WhoWeAreHeroText from "@/components/WhoWeAre/WhoWeAreHeroText";
-import StartedAroundGapNotProduct from "@/components/WhoWeAre/StartedAroundGapNotProduct";
-import WhatShapesHowWeDeliver from "@/components/WhoWeAre/WhatShapesHowWeDeliver";
-import TrustedByBand from "@/components/WhoWeAre/TrustedByBand";
-import DiscoverWhatSetsUsApart from "@/components/WhoWeAre/DiscoverWhatSetsUsApart";
-import WhereWeHeadedAndWhy from "@/components/WhoWeAre/WhereWeHeadedAndWhy";
-import OurStrength from "@/components/WhoWeAre/OurStrength";
-import ClientTestimonials from "@/components/WhoWeAre/ClientTestimonials";
-import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
-import ReadyToTransform from "@/components/WhoWeAre/ReadyToTransform";
+import AboutUsHero from "@/components/AboutUs/AboutUsHero";
+import AboutUsHeroText from "@/components/AboutUs/AboutUsHeroText";
+import WhoWeAreIntro from "@/components/AboutUs/WhoWeAreIntro";
+import OurPurpose from "@/components/AboutUs/OurPurpose";
+import VisionMissionBand from "@/components/AboutUs/VisionMissionBand";
+import OurApproach from "@/components/AboutUs/OurApproach";
+import WhyAscendus from "@/components/AboutUs/WhyAscendus";
+import Leadership from "@/components/AboutUs/Leadership";
+import CareersCta from "@/components/AboutUs/CareersCta";
+import PartnerCta from "@/components/AboutUs/PartnerCta";
 
+// The hero is a plain full-bleed band, the same pattern as /services/ and
+// /solutions/. The negative top margin lets the transparent navbar sit over it.
 const page = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans">
       <Navbar />
 
-      <div className="relative -mt-[64px] lg:-mt-[68px] h-[680px] sm:h-[200vh]">
-        <div className="sticky top-0 h-[340px] sm:h-screen z-0">
-          <WhoWeAreHero />
-        </div>
-
-        <div className="absolute inset-x-0 top-0 h-[340px] sm:h-screen z-[5]">
-          <WhoWeAreHeroText />
-        </div>
+      <div className="relative -mt-[64px] lg:-mt-[68px] w-full h-[520px] sm:h-[620px] lg:h-[800px]">
+        <AboutUsHero />
+        <AboutUsHeroText />
       </div>
 
-      <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
-        <StartedAroundGapNotProduct />
-        <WhatShapesHowWeDeliver />
-        <TrustedByBand />
-        <DiscoverWhatSetsUsApart />
-        <WhereWeHeadedAndWhy />
-        <OurStrength />
-        <ClientTestimonials />
-        {/* <FutureFocusedInsights /> */}
-        <ReadyToTransform />
-      </div>
+      <WhoWeAreIntro />
+      <OurPurpose />
+      <VisionMissionBand />
+      <OurApproach />
+      <WhyAscendus />
+      <Leadership />
+      <CareersCta />
+      <PartnerCta />
 
       <Footer />
     </div>
