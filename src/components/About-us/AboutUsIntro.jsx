@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import officePhoto from "@/assets/About-us/office.jpg";
-import statDivider from "@/assets/About-us/icons/stat-divider.svg";
 
 const STATS = [
     { value: "5+", label: ["Years of", "Industry Experience"] },
@@ -53,16 +52,13 @@ export default function AboutUsIntro() {
                         justify-between. Each value is left-aligned to its
                         column while the two-line label is centred under it. */}
                     <div className="flex w-full max-w-[493px] items-start justify-between">
-                        {STATS.map((stat, index) => (
+                        {/* Dividers are plain 1px rules, not the rotated 70x1 SVG export:
+                    rotating that image lands it on a half pixel and Chrome paints
+                    nothing. */}
+                {STATS.map((stat, index) => (
                             <Fragment key={stat.value}>
                                 {index > 0 ? (
-                                    <div aria-hidden className="relative h-[70px] w-px shrink-0">
-                                        <Image
-                                            src={statDivider}
-                                            alt=""
-                                            className="absolute left-1/2 top-1/2 h-px w-[70px] max-w-none -translate-x-1/2 -translate-y-1/2 -rotate-90"
-                                        />
-                                    </div>
+                                    <div aria-hidden className="h-[70px] w-px shrink-0 bg-black" />
                                 ) : null}
                                 <div className="flex flex-col items-center gap-[10px]">
                                     <p className="self-stretch text-left text-[clamp(1.5rem,3vw,2rem)] font-medium leading-[1.2] text-[#0e2b4b]">
