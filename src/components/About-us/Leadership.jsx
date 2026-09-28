@@ -16,9 +16,12 @@ const LEADERS = [
     { name: "Krishnakumar", role: "CEO", photo: photoKrishnakumar, linkedin: null },
 ];
 
+const CARD_WIDTH = 210;
+const PEEK_WIDTH = CARD_WIDTH / 2;
+
 function LeaderCard({ leader }) {
     return (
-        <div className="w-[210px] overflow-hidden rounded-[8px] bg-white pb-4 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
+        <div className="w-[210px] shrink-0 overflow-hidden rounded-[8px] bg-white pb-4 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
             <div className="relative h-[228px] w-full bg-[#e2e8f0]">
                 <Image src={leader.photo} alt={leader.name} fill sizes="210px" className="object-cover" />
             </div>
@@ -46,12 +49,39 @@ function LeaderCard({ leader }) {
     );
 }
 
-// Section 7 — "Leadership". Copy on the left, a one-card carousel on the right.
+// A half-width, overflow-hidden window onto a full-size card: `side="left"`
+// shifts the card left by its own half-width so the window's 0–105px range
+// shows the card's right half (the edge nearer the active card); `side="right"`
+// leaves it unshifted, so the same window shows the card's left half. Either
+// way the card renders at full size and in normal flow, so the window's height
+// is simply the card's own height — no fixed height to keep in sync by hand.
+function PeekCard({ leader, side }) {
+    return (
+        <div
+            aria-hidden="true"
+            className="shrink-0 overflow-hidden"
+            style={{ width: PEEK_WIDTH }}
+        >
+            <div style={{ width: CARD_WIDTH, marginLeft: side === "left" ? -PEEK_WIDTH : 0 }}>
+                <LeaderCard leader={leader} />
+            </div>
+        </div>
+    );
+}
+
+// Section 7 — "Leadership". Copy on the left, an infinite-loop carousel on the
+// right: the active card sits full-size in the middle with the previous and
+// next leader half-visible at either edge, the way a physical card carousel
+// would spill past the frame. Wraps at both ends rather than stopping, so with
+// only one leader in LEADERS both edges simply peek the same card again —
+// exactly what the design shows before the rest of the team is added.
 export default function Leadership() {
     const [index, setIndex] = useState(0);
     const canPage = LEADERS.length > 1;
 
     const step = (delta) => setIndex((current) => (current + delta + LEADERS.length) % LEADERS.length);
+    const prevIndex = (index - 1 + LEADERS.length) % LEADERS.length;
+    const nextIndex = (index + 1) % LEADERS.length;
 
     return (
         <section className="w-full bg-white px-6 py-10 sm:px-[64px] sm:py-16">
@@ -60,9 +90,9 @@ export default function Leadership() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex w-full flex-col items-start gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-[73px]"
+                className="flex w-full flex-col items-start gap-10 lg:flex-row lg:items-center lg:gap-12"
             >
-                <div className="flex w-full flex-col gap-6 lg:max-w-[664px]">
+                <div className="flex w-full flex-col gap-6 lg:max-w-[460px] lg:shrink-0">
                     <p className="text-[14px] font-semibold uppercase tracking-[0.7px] text-[#0061af] leading-4">
                         Leadership
                     </p>
@@ -81,7 +111,7 @@ export default function Leadership() {
                     </div>
                 </div>
 
-                <div className="flex w-[210px] shrink-0 flex-col items-end gap-[13px] max-lg:self-center lg:mr-[77px]">
+                <div className="flex w-full flex-col items-end gap-[13px]">
                     <div className="flex items-center gap-2">
                         <button
                             type="button"
@@ -105,13 +135,16 @@ export default function Leadership() {
 
                     <AnimatePresence mode="wait" initial={false}>
                         <motion.div
-                            key={LEADERS[index].name}
-                            initial={{ opacity: 0, x: 16 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -16 }}
-                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            key={index}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.25, ease: "easeOut" }}
+                            className="flex items-center justify-center gap-6"
                         >
+                            <PeekCard leader={LEADERS[prevIndex]} side="left" />
                             <LeaderCard leader={LEADERS[index]} />
+                            <PeekCard leader={LEADERS[nextIndex]} side="right" />
                         </motion.div>
                     </AnimatePresence>
                 </div>

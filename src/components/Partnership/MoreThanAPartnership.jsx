@@ -96,19 +96,15 @@ export default function MoreThanAPartnership() {
                 >
                     <Image src={summitImage} alt="" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 60vw" />
 
-                    {/* Left-to-right wash so the right-hand stats stay legible
-                        over the photo. */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[rgba(6,24,51,0)] via-[rgba(6,24,51,0.4)] to-[rgba(7,25,50,0.95)]" />
-
                     {/* Figma 232:435 — a 320px column padded 40px all round, with
                         28px between each stat. */}
                     <div className="absolute inset-y-0 right-0 flex max-w-[320px] flex-col items-end justify-center gap-7 p-6 sm:p-10 text-right">
                         {STATS.map((stat) => (
                             <div key={stat.label} className="flex flex-col gap-0.5">
-                                <span className="text-2xl sm:text-[32px] font-medium text-white leading-[1.2]">
+                                <span className="text-2xl sm:text-[32px] font-medium text-[#000000] leading-[1.2]">
                                     {stat.value}
                                 </span>
-                                <span className="text-sm sm:text-base font-normal text-[#cbd5e1] leading-[1.5]">
+                                <span className="text-sm sm:text-base font-normal text-[#000000] leading-[1.5]">
                                     {stat.label}
                                 </span>
                             </div>
