@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 import iconPrev from "@/assets/About-us/icons/carousel-prev.svg";
 import iconNext from "@/assets/About-us/icons/carousel-next.svg";
@@ -63,19 +63,35 @@ function LeaderCard({ leader }) {
 const CARD_GAP = 36;
 const WINDOW_WIDTH = 500;
 const WINDOW_HEIGHT = 360;
+const STEP = CARD_WIDTH + CARD_GAP;
+
+// Three cards either side of the active one: one peeking at each edge, and
+// spares waiting outside the window so a card is already there to slide in,
+// even when a quick double click leaves the track a card behind.
+const SLOT_OFFSETS = [-3, -2, -1, 0, 1, 2, 3];
+
+const SLIDE = { duration: 0.55, ease: [0.4, 0, 0.2, 1] };
+
+const leaderAt = (slot) => LEADERS[((slot % LEADERS.length) + LEADERS.length) % LEADERS.length];
 
 // Section 7 — "Leadership". Copy on the left, an infinite-loop carousel on the
 // right: the active card sits full-size in the middle with the previous and
 // next leader half-visible at either edge, the way a physical card carousel
 // would spill past the frame. Wraps at both ends rather than stopping, so the
 // first and last leaders are always each other's neighbours.
+//
+// The cards sit on an endless track that slides one card width per click.
+// `position` counts clicks and never wraps; each slot on the track shows the
+// leader at that position modulo the team size. Slots are keyed by position,
+// not by leader, so a card that leaves one edge never flies back across the
+// window to reappear at the other: a fresh slot mounts outside the clip
+// instead. Clicking again mid-slide carries on from wherever the track is.
 export default function Leadership() {
-    const [index, setIndex] = useState(INITIAL_INDEX);
+    const [position, setPosition] = useState(INITIAL_INDEX);
+    const reduceMotion = useReducedMotion();
     const canPage = LEADERS.length > 1;
 
-    const step = (delta) => setIndex((current) => (current + delta + LEADERS.length) % LEADERS.length);
-    const prevIndex = (index - 1 + LEADERS.length) % LEADERS.length;
-    const nextIndex = (index + 1) % LEADERS.length;
+    const step = (delta) => setPosition((current) => current + delta);
 
     return (
         <section className="w-full bg-white px-6 py-10 sm:px-[64px] sm:py-16">
@@ -134,32 +150,33 @@ export default function Leadership() {
                         </button>
                     </div>
 
-                    {/* One clipping window, as in Figma: all three cards render full size
-                        and the window cuts the outer two. It is taller than the cards, so
+                    {/* One clipping window, as in Figma: the cards render full size and
+                        the window cuts the outer two. It is taller than the cards, so
                         their shadows are not clipped. */}
                     <div
-                        className="flex w-full items-center justify-center overflow-hidden"
+                        className="relative w-full overflow-hidden"
                         style={{ maxWidth: WINDOW_WIDTH, height: WINDOW_HEIGHT }}
                     >
-                        <AnimatePresence mode="wait" initial={false}>
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.25, ease: "easeOut" }}
-                                className="flex shrink-0 items-center justify-center"
-                                style={{ gap: CARD_GAP }}
-                            >
-                                <div aria-hidden="true" className="shrink-0">
-                                    <LeaderCard leader={LEADERS[prevIndex]} />
-                                </div>
-                                <LeaderCard leader={LEADERS[index]} />
-                                <div aria-hidden="true" className="shrink-0">
-                                    <LeaderCard leader={LEADERS[nextIndex]} />
-                                </div>
-                            </motion.div>
-                        </AnimatePresence>
+                        <motion.div
+                            className="absolute inset-y-0 left-1/2"
+                            initial={false}
+                            animate={{ x: -position * STEP }}
+                            transition={reduceMotion ? { duration: 0 } : SLIDE}
+                        >
+                            {SLOT_OFFSETS.map((offset) => {
+                                const slot = position + offset;
+                                return (
+                                    <div
+                                        key={slot}
+                                        aria-hidden={offset !== 0 ? "true" : undefined}
+                                        className="absolute top-1/2 -translate-y-1/2"
+                                        style={{ left: slot * STEP - CARD_WIDTH / 2 }}
+                                    >
+                                        <LeaderCard leader={leaderAt(slot)} />
+                                    </div>
+                                );
+                            })}
+                        </motion.div>
                     </div>
                 </div>
             </motion.div>
