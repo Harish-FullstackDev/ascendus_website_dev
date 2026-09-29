@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import arrowOnPrimary from "@/assets/Solution/icons/arrow-right-on-primary.svg";
-import arrowOnLight from "@/assets/Solution/icons/arrow-right-on-light.svg";
 
 // One shared timing for the whole card, so every layer moves as a single
 // gesture instead of several elements each doing their own thing.
@@ -179,32 +178,21 @@ export default function SAPSolutionCard({ description, href = "/contact-us/", im
                 <div className={`absolute -left-px -right-px -top-px h-[71%] transform-gpu bg-[#f8f8f8] transition-[translate,opacity] ${MOTION} group-hover:-translate-y-full group-hover:opacity-0`} />
             </div>
 
-            {/* The copy block is a fixed 154px tall and sits at the top of the
-                card rather than filling it, which is what keeps the arrow button
-                inside the resting panel instead of drifting onto the photo. */}
-            <div className="relative flex min-h-[154px] w-full flex-col justify-between">
-                <div className="flex flex-col gap-3">
-                    <p className={`text-[14px] leading-[1.4] text-[#0061af] transition-colors ${MOTION} group-hover:text-white`}>
-                        {title}
-                    </p>
-                    <p className={`text-[14px] sm:text-base font-normal leading-[1.5] text-[#0e2b4b] transition-colors ${MOTION} group-hover:text-white`}>
-                        {description}
-                    </p>
-                </div>
-
-                <span className={`relative flex size-6 items-center justify-center rounded-full bg-[#0061af] transition-colors ${MOTION} group-hover:bg-white`}>
-                    <Image
-                        src={arrowOnPrimary}
-                        alt=""
-                        className={`absolute size-4 transition-opacity ${MOTION} group-hover:opacity-0`}
-                    />
-                    <Image
-                        src={arrowOnLight}
-                        alt=""
-                        className={`absolute size-4 opacity-0 transition-opacity ${MOTION} group-hover:opacity-100`}
-                    />
-                </span>
+            {/* Copy block sits at the top of the card. */}
+            <div className="relative flex w-full flex-col gap-3">
+                <p className={`text-[14px] leading-[1.4] text-[#0061af] transition-colors ${MOTION} group-hover:text-white`}>
+                    {title}
+                </p>
+                <p className={`text-[14px] sm:text-base font-normal leading-[1.5] text-[#0e2b4b] transition-colors ${MOTION} group-hover:text-white`}>
+                    {description}
+                </p>
             </div>
+
+            {/* Arrow button pinned to the card's own bottom-left corner, 24px
+                in from both edges. */}
+            <span className="absolute bottom-6 left-6 flex size-6 items-center justify-center rounded-full bg-[#0061af]">
+                <Image src={arrowOnPrimary} alt="" className="size-4" />
+            </span>
         </Link>
     );
 }
