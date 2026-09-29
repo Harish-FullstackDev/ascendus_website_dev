@@ -93,8 +93,10 @@ function ChallengeCard({ challenge, active, onSelect }) {
             />
             <div aria-hidden className="absolute inset-0" style={{ backgroundImage: challenge.scrim }} />
 
-            {/* Figma's green tab behind the label, flush with the card's left edge. */}
-            <div aria-hidden className="absolute bottom-[32px] left-0 hidden h-[81px] w-[124px] bg-[#004b2f] lg:block" />
+            {/* Figma's primary/700 tab behind the label, flush with the card's
+                left edge. Its top edge (32 + 81 = 113 from the bottom) is the
+                line the open icon straddles. */}
+            <div aria-hidden className="absolute bottom-[32px] left-0 hidden h-[81px] w-[124px] bg-[#004174] lg:block" />
 
             {/* Closed state: the label reads bottom to top from lg up, and runs
                 along the bottom of the slim bar below that. */}
@@ -118,9 +120,12 @@ function ChallengeCard({ challenge, active, onSelect }) {
             </p>
 
             {/* Open state. Its width is fixed so it does not reflow while the
-                card is still growing; the card's own overflow clips it. */}
+                card is still growing; the card's own overflow clips it. From lg
+                up it sits 56 from the bottom so the 48px icon's centre lands on
+                the tab's top edge (56 + 81 - 24 = 113), half on the photo and
+                half on the tab, and the title sits inside the tab. */}
             <div
-                className={`absolute bottom-[31px] left-6 flex h-[81px] w-[calc(100%-48px)] flex-col justify-between transition-[opacity,translate] lg:left-8 lg:w-[357px] ${
+                className={`absolute bottom-[31px] left-6 lg:bottom-[56px] flex h-[81px] w-[calc(100%-48px)] flex-col justify-between transition-[opacity,translate] lg:left-8 lg:w-[357px] ${
                     active
                         ? "translate-y-0 opacity-100 delay-500 duration-500"
                         : "pointer-events-none translate-y-2 opacity-0 duration-150"

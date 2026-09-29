@@ -181,14 +181,21 @@ export default function OpenPositions() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex w-full flex-col gap-8 xl:flex-row xl:items-start xl:justify-between xl:gap-5"
             >
-                <div className="flex flex-col gap-3 xl:w-[315px] xl:shrink-0">
-                    <p className="text-[14px] font-medium uppercase leading-4 tracking-[0.7px] text-[#0061af]">
-                        Open Positions
+                <div className="flex flex-col gap-1 xl:w-[315px] xl:shrink-0">
+                    <div className="flex flex-col gap-3">
+                        <p className="text-[14px] font-medium uppercase leading-4 tracking-[0.7px] text-[#0061af]">
+                            Open Positions
+                        </p>
+                        <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-medium leading-[1.2] text-[#0e2b4b] xl:whitespace-nowrap">
+                            Find the Right Role
+                            <br className="hidden sm:block" /> for Your Next Chapter.
+                        </h2>
+                    </div>
+                    {/* Figma (633:5214) sets this body copy in Title Case. */}
+                    <p className="max-w-[560px] text-base capitalize leading-[1.5] text-[#415773]">
+                        Explore opportunities that match your skills, experience, and goals.
+                        <br /> Take the next step toward a career where you can grow and make an impact.
                     </p>
-                    <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-medium leading-[1.2] text-[#0e2b4b] xl:whitespace-nowrap">
-                        Find the Right Role
-                        <br className="hidden sm:block" /> for Your Next Chapter.
-                    </h2>
                 </div>
 
                 <div className="flex w-full flex-col gap-4 rounded-[12px] bg-[#f1f3f5] px-4 pb-6 sm:px-8 sm:pb-8 xl:max-w-[977px]">

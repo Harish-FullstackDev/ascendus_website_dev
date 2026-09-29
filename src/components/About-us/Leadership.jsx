@@ -8,13 +8,23 @@ import iconPrev from "@/assets/About-us/icons/carousel-prev.svg";
 import iconNext from "@/assets/About-us/icons/carousel-next.svg";
 import iconLinkedIn from "@/assets/About-us/icons/linkedin.svg";
 import photoKrishnakumar from "@/assets/About-us/leadership/krishnakumar.jpg";
+import photoBhuvaneshwari from "@/assets/About-us/leadership/bhuvaneshwari.jpg";
+import photoPlaceholder from "@/assets/About-us/leadership/leader-placeholder.jpg";
 
-// Figma only draws one executive card. Add the rest of the team here; the
-// arrows enable themselves once there is more than one entry. Set `linkedin`
-// to a profile URL to turn the icon into a link.
+// Figma (607:2969) draws three executives, in carousel order: the left card,
+// the active centre card and the right card. The left card repeats the centre
+// card's "Krishnakumar / CEO" label on a different photo, which looks like a
+// copy slip; it is kept as drawn until the real name is supplied. The photos
+// are Figma's own and low resolution (about 480px on the long side). Set
+// `linkedin` to a profile URL to turn the icon into a link.
 const LEADERS = [
-    { name: "Krishnakumar", role: "CEO", photo: photoKrishnakumar, linkedin: null },
+    { id: "leader-left", name: "Krishnakumar", role: "CEO", photo: photoPlaceholder, linkedin: null },
+    { id: "krishnakumar", name: "Krishnakumar", role: "CEO", photo: photoKrishnakumar, linkedin: null },
+    { id: "bhuvaneshwari", name: "Bhuvaneshwari", role: "CHRO", photo: photoBhuvaneshwari, linkedin: null },
 ];
+
+// The centre card is the one Figma shows active.
+const INITIAL_INDEX = 1;
 
 const CARD_WIDTH = 210;
 
@@ -57,11 +67,10 @@ const WINDOW_HEIGHT = 360;
 // Section 7 — "Leadership". Copy on the left, an infinite-loop carousel on the
 // right: the active card sits full-size in the middle with the previous and
 // next leader half-visible at either edge, the way a physical card carousel
-// would spill past the frame. Wraps at both ends rather than stopping, so with
-// only one leader in LEADERS both edges simply peek the same card again —
-// exactly what the design shows before the rest of the team is added.
+// would spill past the frame. Wraps at both ends rather than stopping, so the
+// first and last leaders are always each other's neighbours.
 export default function Leadership() {
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(INITIAL_INDEX);
     const canPage = LEADERS.length > 1;
 
     const step = (delta) => setIndex((current) => (current + delta + LEADERS.length) % LEADERS.length);
@@ -75,9 +84,9 @@ export default function Leadership() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex w-full flex-col items-start gap-10 lg:flex-row lg:items-center lg:gap-12"
+                className="flex w-full flex-col items-start gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-8"
             >
-                <div className="flex w-full flex-col gap-6 lg:max-w-[460px] lg:shrink-0">
+                <div className="flex w-full min-w-0 flex-col gap-6 lg:max-w-[664px] lg:flex-1">
                     <p className="text-[14px] font-semibold uppercase tracking-[0.7px] text-[#0061af] leading-4">
                         Leadership
                     </p>
@@ -89,14 +98,21 @@ export default function Leadership() {
                             United by a Shared Purpose.
                         </h2>
 
-                        <p className="pt-[2px] text-sm font-normal leading-[1.5] text-[#415773] sm:text-base">
-                            Our leadership brings together deep industry knowledge, strategic insight and a shared
-                            commitment to building a more efficient and connected future.
+                        {/* Figma (495:219) sets four sentences, one per line, in Title
+                            Case. The line breaks only hold where the column is wide. */}
+                        <p className="pt-[2px] text-sm font-normal capitalize leading-[1.5] text-[#415773] sm:text-base">
+                            Our leadership brings together deep expertise and diverse perspectives.
+                            <br className="hidden xl:block" /> We are united by a shared vision and a clear sense of
+                            purpose.
+                            <br className="hidden xl:block" /> Together, we inspire innovation, build trust, and drive
+                            meaningful progress.
+                            <br className="hidden xl:block" /> Our focus remains on creating lasting value for our
+                            clients and people.
                         </p>
                     </div>
                 </div>
 
-                <div className="flex w-full flex-col items-end gap-5">
+                <div className="flex w-full flex-col items-end gap-5 lg:w-[500px] lg:shrink-0">
                     <div className="flex items-center gap-2">
                         <button
                             type="button"
