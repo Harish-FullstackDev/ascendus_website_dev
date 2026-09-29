@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import PageCta from "@/components/CommonComponents/PageCta";
 import StickyHero from "@/components/CommonComponents/StickyHero";
-import ctaBgCorridor from "@/assets/CommonComponents/PageCta/cta-bg-corridor.webp";
 import HomeHero from "@/components/HomePage/HomeHero";
 import HomeHeroText from "@/components/HomePage/HomeHeroText";
 import ComplexBusinessRealities from "@/components/HomePage/ComplexBusinessRealities";
@@ -34,8 +33,6 @@ const page = () => {
                     ctaLabel="Talk to an Expert"
                     titleClassName="lg:w-[369px]"
                     descriptionClassName="lg:w-[314px]"
-                    backgroundImage={ctaBgCorridor}
-                    backgroundPositionClassName="object-center"
                 />
             </StickyHero>
 
