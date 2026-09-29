@@ -360,7 +360,19 @@ export default function TellUsWhatYoureLookingToAchieve() {
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-4 rounded-[16px] bg-[#00223d] p-6">
+                    {/* Figma (278:5553) lights the card with a cyan glow on navy: a
+                        radial gradient centred at 88.7% / 32.5% of the 519x186 card,
+                        with radii of ~399 x 816px (77% / 439% of the box, so it scales
+                        with the card). Figma tilts the ellipse about 15deg, which CSS
+                        radial-gradient cannot do; unrotated it reads the same. Past
+                        the last stop (68%) the card holds #00223d. */}
+                    <div
+                        className="flex flex-col gap-4 rounded-[16px] bg-[#00223d] p-6"
+                        style={{
+                            backgroundImage:
+                                "radial-gradient(ellipse 76.8% 438.9% at 88.7% 32.5%, #006B9A 0%, #00476C 34%, #003454 51%, #00223D 68%)",
+                        }}
+                    >
                         {/* The revised design drops the headset icon that used to
                             sit beside this heading — the card leads with the
                             wordmark line alone. */}

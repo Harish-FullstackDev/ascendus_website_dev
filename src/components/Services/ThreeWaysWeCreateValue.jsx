@@ -39,7 +39,11 @@ export default function ThreeWaysWeCreateValue({ activeCategoryId, onSelectCateg
                 selection. Geometry from 432:1668 — a 1311px panel with 12.5px
                 side padding, 17px top/bottom and three equal 400px cards 43px
                 apart. The cards are equal width in every state, so `flex-1` on
-                each reproduces it at any container width.
+                each reproduces it at any container width. The 43px belongs to the
+                divider slot (the rule sits in its middle), not to a flex gap: a gap
+                would land on both sides of each rule and squeeze the cards to
+                ~371px. Figma (681:1403) drops the rule on either side of the
+                selected card, so it fades out as the highlight arrives.
 
                 Side by side from lg only: three across a 768px tablet leaves
                 ~206px of content per card, which crushes the two-line titles. */}
@@ -48,12 +52,26 @@ export default function ThreeWaysWeCreateValue({ activeCategoryId, onSelectCateg
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="mt-8 flex flex-col items-stretch gap-3 rounded-[12px] border-[0.5px] border-[rgba(0,34,61,0.24)] bg-white px-[12.5px] py-[17px] drop-shadow-[0px_2px_2px_rgba(0,0,0,0.13)] lg:flex-row lg:items-stretch lg:gap-[43px]"
+                className="mt-8 flex flex-col items-stretch gap-3 rounded-[12px] border-[0.5px] border-[rgba(0,34,61,0.24)] bg-white px-[12.5px] py-[17px] drop-shadow-[0px_2px_2px_rgba(0,0,0,0.13)] lg:flex-row lg:items-stretch lg:gap-0"
             >
                 {SERVICE_CATEGORIES.map((category, index) => (
                     <Fragment key={category.id}>
                         {index > 0 ? (
-                            <div aria-hidden className="hidden w-px shrink-0 self-stretch bg-[#8695a7] lg:block" />
+                            // Figma's rule (419:453, "Line 12") is 0.5px #8695a7 and
+                            // 158px long, centred on the 160px card. A 1px rule scaled
+                            // to half width reproduces it as a half-tone hairline. A
+                            // plain w-[0.5px] does not: Chrome rounds it up to a
+                            // full-strength 1px rule, which reads too dark and thick.
+                            <div aria-hidden className="hidden w-[43px] shrink-0 items-center justify-center lg:flex">
+                                <div
+                                    className={`h-[158px] w-px origin-center scale-x-50 bg-[#8695a7] transition-opacity duration-[250ms] delay-[60ms] ${
+                                        category.id === activeCategoryId ||
+                                        SERVICE_CATEGORIES[index - 1].id === activeCategoryId
+                                            ? "opacity-0"
+                                            : "opacity-100"
+                                    }`}
+                                />
+                            </div>
                         ) : null}
                         <ServiceCategoryCard
                             category={category}

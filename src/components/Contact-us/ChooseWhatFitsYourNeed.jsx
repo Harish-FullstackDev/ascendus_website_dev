@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 import prospectiveIcon from "@/assets/Contact-us/icons/prospective-customers.svg";
 import existingIcon from "@/assets/Contact-us/icons/existing-customers.svg";
-import arrowRightIcon from "@/assets/Contact-us/icons/arrow-right-primary.svg";
-import arrowRightOnDarkIcon from "@/assets/Contact-us/icons/arrow-right-on-dark.svg";
+import arrowOnDark from "@/assets/Services/icons/arrow-circle-on-dark-13.svg";
+import arrowMuted from "@/assets/Contact-us/icons/arrow-circle-muted-13.svg";
 
 const SEGMENTS = [
     {
@@ -14,7 +14,6 @@ const SEGMENTS = [
             "Explore solutions, discuss your business requirements, or connect with our experts to identify the right approach.",
         icon: prospectiveIcon,
         id: "prospective",
-        linkLabel: "Explore Customer Engagement",
         title: "For Prospective Customers",
     },
     {
@@ -22,19 +21,18 @@ const SEGMENTS = [
             "Access assistance, raise service requests or escalate critical matters through our dedicated support channels.",
         icon: existingIcon,
         id: "existing",
-        // Figma labels both cards "Explore Customer Engagement" (nodes 278:5340
-        // and 278:5355). Kept verbatim; flag to the design team if the second
-        // card was meant to read "Access Customer Support".
-        linkLabel: "Explore Customer Engagement",
         title: "For Existing Customers",
     },
 ];
 
-// Figma's active card (681:2033) paints a radial gradient anchored on its
-// top-right corner: 698x414px radii on a 644x160 card. The radii are given as
-// percentages of the card's own box so the shape holds once the card is fluid.
+// Figma's active card (681:2033) uses the same cyan-glow-on-navy as the
+// "Prefer to speak with us directly?" card: a radial gradient centred near the
+// top-right corner (96.2% / 18.1% of the 624x132 card), radii ~518 x 716px
+// (83% / 543% of the box, so it scales with the card). Figma tilts the
+// ellipse, which CSS cannot; unrotated it reads the same. Past the last stop
+// (54%) the card holds #00223d.
 const ACTIVE_GRADIENT =
-    "radial-gradient(ellipse 108% 259% at 100% 0%, #0D3866 0%, #0A284B 37.5%, #061830 75%)";
+    "radial-gradient(ellipse 83% 542.7% at 96.2% 18.1%, #006B9A 0%, #00476C 27%, #003454 40.6%, #00223D 54.1%)";
 
 // Same sliding highlight as the Services category cards: one shared layoutId,
 // so framer-motion moves the dark card across the panel instead of
@@ -83,7 +81,7 @@ export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospecti
             <div
                 role="tablist"
                 aria-label="Choose what fits your need"
-                className="mt-8 grid grid-cols-2 gap-2 rounded-[12px] border-[0.5px] border-[rgba(0,34,61,0.24)] bg-white p-2 drop-shadow-[0px_2px_2px_rgba(0,0,0,0.13)] sm:gap-3 sm:p-3"
+                className="mt-8 grid grid-cols-2 gap-2 rounded-[12px] border-[0.5px] border-[rgba(0,34,61,0.24)] bg-white p-2 drop-shadow-[0px_2px_2px_rgba(0,0,0,0.13)] sm:gap-6 sm:p-3"
             >
                 {SEGMENTS.map((segment) => {
                     const isSelected = selected === segment.id;
@@ -96,13 +94,18 @@ export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospecti
                             aria-selected={isSelected}
                             aria-controls={`segment-panel-${segment.id}`}
                             onClick={() => onSelect?.(segment.id)}
-                            className="group relative flex h-full min-h-[160px] w-full cursor-pointer flex-col items-start gap-3 p-4 text-left md:flex-row md:gap-6 md:p-[25px]"
+                            className="group relative flex h-full min-h-[132px] w-full cursor-pointer flex-col items-start gap-3 p-4 text-left md:flex-row md:items-end md:gap-6 md:p-[25px]"
                         >
                             {/* Explicit layers, because the cards share one stacking
-                                context: grey fill (0) < sliding highlight (1) < copy (2).
-                                Left to DOM order, the second card's fill would paint over
-                                the highlight while it slides back into the first card. */}
-                            <span aria-hidden className="absolute inset-0 z-0 rounded-[16px] bg-[#f8f8f8]" />
+                                context: resting card (0) < sliding highlight (1) < copy (2).
+                                Left to DOM order, the second card would paint over the
+                                highlight while it slides back into the first card. Figma
+                                (702:404) draws the resting card white with the same
+                                outline as the selected one. */}
+                            <span
+                                aria-hidden
+                                className="absolute inset-0 z-0 rounded-[12px] border border-[rgba(30,58,138,0.6)] bg-white"
+                            />
                             {isSelected ? (
                                 <motion.span
                                     aria-hidden
@@ -114,14 +117,14 @@ export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospecti
                             ) : null}
 
                             <span
-                                className={`relative z-[2] flex size-10 shrink-0 items-center justify-center transition-colors md:size-12 ${FOREGROUND_TIMING} ${
-                                    isSelected ? "rounded-[10px] bg-white" : "rounded-[8px] bg-[#d5e2f2]"
+                                className={`relative z-[2] flex size-10 shrink-0 items-center justify-center self-start rounded-[10px] transition-colors md:size-12 ${FOREGROUND_TIMING} ${
+                                    isSelected ? "bg-white" : "bg-[#ecf2f9]"
                                 }`}
                             >
                                 <Image src={segment.icon} alt="" className="h-5 w-5 md:h-6 md:w-6" />
                             </span>
 
-                            <span className="relative z-[2] block min-w-0">
+                            <span className="relative z-[2] block min-w-0 md:flex-1 md:self-stretch">
                                 <span
                                     className={`block text-base font-medium leading-[1.2] transition-colors md:text-lg ${FOREGROUND_TIMING} ${
                                         isSelected ? "text-[#f8f8f8]" : "text-[#0e2b4b]"
@@ -130,38 +133,38 @@ export default function ChooseWhatFitsYourNeed({ onSelect, selected = "prospecti
                                     {segment.title}
                                 </span>
                                 <span
-                                    className={`mt-2 block max-w-[440px] text-xs font-normal leading-[1.4] transition-colors md:mt-3 md:text-sm ${FOREGROUND_TIMING} ${
-                                        isSelected ? "text-[#f8f8f8]" : "text-[#415773]"
+                                    className={`mt-2 block max-w-[399px] text-xs font-normal leading-[1.4] transition-colors md:mt-3 md:text-sm ${FOREGROUND_TIMING} ${
+                                        isSelected ? "text-[#f8f8f8]" : "text-[#0e2b4b]"
                                     }`}
                                 >
                                     {segment.description}
                                 </span>
+                            </span>
 
-                                <span
-                                    className={`mt-3 inline-flex items-start gap-1 text-sm font-normal leading-[1.5] transition-colors md:items-center md:text-base ${FOREGROUND_TIMING} ${
-                                        isSelected ? "text-[#68c2f2]" : "text-[#0061af]"
+                            {/* The Services category cards' ring (702:361): a 30px disc
+                                with a 13px arrow, white on the highlight and #5c7088 at
+                                rest. The two arrow exports differ only in stroke colour,
+                                so they cross-fade with the copy. */}
+                            <span
+                                aria-hidden
+                                className={`relative z-[2] hidden size-[30px] shrink-0 items-center justify-center rounded-full border-[0.8px] transition-colors md:flex ${FOREGROUND_TIMING} ${
+                                    isSelected ? "border-white" : "border-[#5c7088]"
+                                }`}
+                            >
+                                <Image
+                                    src={arrowOnDark}
+                                    alt=""
+                                    className={`absolute size-[13px] transition-opacity ${FOREGROUND_TIMING} ${
+                                        isSelected ? "opacity-100" : "opacity-0"
                                     }`}
-                                >
-                                    {segment.linkLabel}
-                                    {/* The two arrow exports differ only in stroke colour,
-                                        so they cross-fade with the text. */}
-                                    <span className="relative size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1 md:size-6">
-                                        <Image
-                                            src={arrowRightOnDarkIcon}
-                                            alt=""
-                                            className={`absolute inset-0 size-full transition-opacity ${FOREGROUND_TIMING} ${
-                                                isSelected ? "opacity-100" : "opacity-0"
-                                            }`}
-                                        />
-                                        <Image
-                                            src={arrowRightIcon}
-                                            alt=""
-                                            className={`absolute inset-0 size-full transition-opacity ${FOREGROUND_TIMING} ${
-                                                isSelected ? "opacity-0" : "opacity-100"
-                                            }`}
-                                        />
-                                    </span>
-                                </span>
+                                />
+                                <Image
+                                    src={arrowMuted}
+                                    alt=""
+                                    className={`absolute size-[13px] transition-opacity ${FOREGROUND_TIMING} ${
+                                        isSelected ? "opacity-0" : "opacity-100"
+                                    }`}
+                                />
                             </span>
                         </button>
                     );

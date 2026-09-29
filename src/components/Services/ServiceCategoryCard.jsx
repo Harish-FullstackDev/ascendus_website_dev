@@ -6,12 +6,14 @@ import { motion } from "framer-motion";
 import arrowOnDark from "@/assets/Services/icons/arrow-circle-on-dark-13.svg";
 import arrowOnLight from "@/assets/Services/icons/arrow-circle-on-light-13.svg";
 
-// Figma's active card (416:60) paints a radial gradient anchored on the card's
-// top-right corner: 514x414px radii on a 474x160 card. Those radii are
-// expressed as percentages of the card's own box so the gradient keeps the same
-// shape once the card becomes fluid below 1440.
+// The same cyan-glow-on-navy as the Contact Us "How can we help?" and "Prefer
+// to speak with us directly?" cards (Figma 681:2033 / 278:5553), at the user's
+// request. The Contact Us card's ellipse (83% x 543% at 96.2% / 18.1% of a
+// 624x132 card) is scaled uniformly onto this 400x160 card so the glow keeps
+// its shape: ~332 x 459px radii centred ~15px below the top-right corner.
+// Past the last stop (54%) the card holds #00223d.
 const ACTIVE_GRADIENT =
-    "radial-gradient(ellipse 108% 259% at 100% 0%, #0061AF 0%, #003056 100%)";
+    "radial-gradient(ellipse 83% 287% at 96.2% 9.6%, #006B9A 0%, #00476C 27%, #003454 40.6%, #00223D 54.1%)";
 
 // One shared layoutId means framer-motion treats the highlight on the old card
 // and the highlight on the new one as the same element, so it slides across the
@@ -57,12 +59,15 @@ export default function ServiceCategoryCard({ category, isActive, onSelect }) {
             className={`relative flex min-h-[160px] min-w-0 flex-1 flex-col items-start gap-[22px] rounded-[12px] border border-transparent p-6 text-left ${available ? "cursor-pointer" : "cursor-default"
                 }`}
         >
+            {/* -inset-px: the button's own 1px transparent border would otherwise
+                inset the highlight to 398x158; Figma's gradient card is the full
+                400x160. */}
             {isActive ? (
                 <motion.span
                     aria-hidden
                     layoutId={HIGHLIGHT_LAYOUT_ID}
                     transition={SLIDE}
-                    className="absolute inset-0 rounded-[12px] border border-[rgba(30,58,138,0.6)] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)]"
+                    className="absolute -inset-px rounded-[12px] border border-[rgba(30,58,138,0.6)] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)]"
                     style={{ backgroundImage: ACTIVE_GRADIENT }}
                 />
             ) : null}
