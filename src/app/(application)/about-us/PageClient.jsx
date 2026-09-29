@@ -11,6 +11,7 @@ import OurApproach from "@/components/About-us/OurApproach";
 import WhyAscendus from "@/components/About-us/WhyAscendus";
 import Leadership from "@/components/About-us/Leadership";
 import CareersCta from "@/components/About-us/CareersCta";
+import AboutUsInsights from "@/components/About-us/AboutUsInsights";
 import PageCta from "@/components/CommonComponents/PageCta";
 import StickyHero from "@/components/CommonComponents/StickyHero";
 
@@ -29,6 +30,7 @@ const page = () => {
         <WhyAscendus />
         <Leadership />
         <CareersCta />
+        <AboutUsInsights />
         <PageCta
           title={["Partner With Us", "for a Stronger Tomorrow."]}
           description={["Let's connect and explore how we can help you", "transform, innovate and grow."]}
