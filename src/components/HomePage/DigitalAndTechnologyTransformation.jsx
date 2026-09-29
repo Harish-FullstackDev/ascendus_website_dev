@@ -43,8 +43,8 @@ export default function DigitalAndTechnologyTransformation() {
                             Digital &amp; Technology Transformation
                         </p>
                         <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-medium leading-[1.2] text-white">
-                            End-to-end transformation
-                            <br /> capabilities.
+                            End-To-End Transformation
+                            <br /> Capabilities.
                         </h2>
                     </div>
 

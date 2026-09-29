@@ -25,8 +25,6 @@ const page = () => {
                 <ModernizeMigrateRunSmarter />
                 <DigitalAndTechnologyTransformation />
                 <IndustryExpertiseForRealWorldImpact />
-                {/* No href: "Talk to an Expert" opens the Calendly scheduler, like
-                    the other "Talk to an Expert" CTAs. */}
                 <PageCta
                     title={["Ready to Transform Your", "Enterprise?"]}
                     description="Talk to our experts and explore how Ascendus can help your organization simplify, modernize and grow."

@@ -80,9 +80,8 @@ function ChallengeCard({ challenge, active, onSelect }) {
             onClick={onSelect}
             aria-expanded={active}
             aria-label={active ? undefined : challenge.title}
-            className={`relative w-full shrink-0 overflow-hidden rounded-[16px] bg-[#614141] text-left transition-[flex-grow,height] duration-700 ${OPEN_EASE} lg:h-full lg:w-auto lg:min-w-0 lg:basis-0 ${
-                active ? "h-[320px] lg:grow-[421]" : "h-[72px] cursor-pointer lg:grow-[162]"
-            }`}
+            className={`relative w-full shrink-0 overflow-hidden rounded-[16px] bg-[#614141] text-left transition-[flex-grow,height] duration-700 ${OPEN_EASE} lg:h-full lg:w-auto lg:min-w-0 lg:basis-0 ${active ? "h-[320px] lg:grow-[421]" : "h-[72px] cursor-pointer lg:grow-[162]"
+                }`}
         >
             <Image
                 src={challenge.image}
@@ -102,9 +101,8 @@ function ChallengeCard({ challenge, active, onSelect }) {
                 along the bottom of the slim bar below that. */}
             <p
                 aria-hidden
-                className={`absolute bottom-[40px] left-1/2 hidden -translate-x-1/2 rotate-180 whitespace-nowrap text-2xl font-medium capitalize leading-[1.2] text-white [writing-mode:vertical-rl] lg:block transition-opacity ${
-                    active ? "opacity-0 duration-150" : "opacity-100 delay-500 duration-300"
-                }`}
+                className={`absolute bottom-[40px] left-1/2 hidden -translate-x-1/2 rotate-180 whitespace-nowrap text-2xl font-medium capitalize leading-[1.2] text-white [writing-mode:vertical-rl] lg:block transition-opacity ${active ? "opacity-0 duration-150" : "opacity-100 delay-500 duration-300"
+                    }`}
             >
                 {challenge.closedLines[0]}
                 <br />
@@ -112,9 +110,8 @@ function ChallengeCard({ challenge, active, onSelect }) {
             </p>
             <p
                 aria-hidden
-                className={`absolute inset-x-6 bottom-1/2 translate-y-1/2 truncate text-lg font-medium capitalize leading-[1.2] text-white transition-opacity lg:hidden ${
-                    active ? "opacity-0 duration-150" : "opacity-100 delay-500 duration-300"
-                }`}
+                className={`absolute inset-x-6 bottom-1/2 translate-y-1/2 truncate text-lg font-medium capitalize leading-[1.2] text-white transition-opacity lg:hidden ${active ? "opacity-0 duration-150" : "opacity-100 delay-500 duration-300"
+                    }`}
             >
                 {challenge.title}
             </p>
@@ -125,11 +122,10 @@ function ChallengeCard({ challenge, active, onSelect }) {
                 the tab's top edge (56 + 81 - 24 = 113), half on the photo and
                 half on the tab, and the title sits inside the tab. */}
             <div
-                className={`absolute bottom-[31px] left-6 lg:bottom-[56px] flex h-[81px] w-[calc(100%-48px)] flex-col justify-between transition-[opacity,translate] lg:left-8 lg:w-[357px] ${
-                    active
+                className={`absolute bottom-[31px] left-6 lg:bottom-[56px] flex h-[81px] w-[calc(100%-48px)] flex-col justify-between transition-[opacity,translate] lg:left-8 lg:w-[357px] ${active
                         ? "translate-y-0 opacity-100 delay-500 duration-500"
                         : "pointer-events-none translate-y-2 opacity-0 duration-150"
-                }`}
+                    }`}
             >
                 <span className="flex size-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-[6px]">
                     <Image src={challenge.icon} alt="" className="size-6" />
@@ -167,8 +163,8 @@ export default function ComplexBusinessRealities() {
 
                         <div className="flex flex-col gap-3 md:flex-row">
                             <h2 className="flex-1 text-[clamp(1.5rem,3vw,2rem)] font-medium leading-[1.2] text-[#0e2b4b]">
-                                Complex business realities.
-                                <br /> Greater expectations.
+                                Complex Business Realities.
+                                <br /> Greater Expectations.
                             </h2>
                             <p className="flex-1 pt-[2px] text-sm font-normal capitalize leading-[1.5] text-[#415773] sm:text-base">
                                 Enterprises today face growing complexity, increasing pressure to modernize and the need

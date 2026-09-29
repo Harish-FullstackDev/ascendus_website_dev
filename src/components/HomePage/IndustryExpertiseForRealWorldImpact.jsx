@@ -134,8 +134,8 @@ export default function IndustryExpertiseForRealWorldImpact() {
                             Industries
                         </p>
                         <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-medium leading-[1.2] text-[#0f172a]">
-                            Industry expertise
-                            <br /> for real-world impact.
+                            Industry Expertise
+                            <br /> For Real-World Impact.
                         </h2>
                     </div>
 

@@ -37,11 +37,10 @@ function ServiceTile({ service }) {
     return (
         <Link
             href={SAP_SERVICES_HREF}
-            className={`group flex h-[99px] items-center justify-between gap-3 rounded-[12px] border p-[17px] transition-colors duration-300 ${
-                featured
+            className={`group flex h-[99px] items-center justify-between gap-3 rounded-[12px] border p-[17px] transition-colors duration-300 ${featured
                     ? "border-white bg-[#003056] text-[#f8f8f8] hover:bg-[#003d6b]"
                     : "border-[#c9d0d8] bg-white text-[#111827] hover:border-[#0061af]"
-            }`}
+                }`}
         >
             <Image src={service.icon} alt="" className={`${service.iconSize} shrink-0`} />
             <span className="text-center text-[14px] leading-[1.4]">
@@ -78,7 +77,7 @@ export default function ModernizeMigrateRunSmarter() {
                             SAP Transformation
                         </p>
                         <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-medium leading-[1.2] text-[#0f172a]">
-                            Modernize. Migrate. Run smarter.
+                            Modernize. Migrate. Run Smarter.
                         </h2>
                     </div>
 
