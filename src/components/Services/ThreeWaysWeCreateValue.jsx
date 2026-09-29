@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import { motion } from "framer-motion";
 
 import ServiceCategoryCard from "./ServiceCategoryCard";
@@ -49,13 +50,17 @@ export default function ThreeWaysWeCreateValue({ activeCategoryId, onSelectCateg
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="mt-8 flex flex-col items-stretch gap-3 rounded-[12px] border-[0.5px] border-[rgba(0,34,61,0.24)] bg-white px-[12.5px] py-[17px] drop-shadow-[0px_2px_2px_rgba(0,0,0,0.13)] lg:flex-row lg:items-stretch lg:gap-[43px]"
             >
-                {SERVICE_CATEGORIES.map((category) => (
-                    <ServiceCategoryCard
-                        key={category.id}
-                        category={category}
-                        isActive={category.id === activeCategoryId}
-                        onSelect={() => onSelectCategory(category.id)}
-                    />
+                {SERVICE_CATEGORIES.map((category, index) => (
+                    <Fragment key={category.id}>
+                        {index > 0 ? (
+                            <div aria-hidden className="hidden w-px shrink-0 self-stretch bg-[#8695a7] lg:block" />
+                        ) : null}
+                        <ServiceCategoryCard
+                            category={category}
+                            isActive={category.id === activeCategoryId}
+                            onSelect={() => onSelectCategory(category.id)}
+                        />
+                    </Fragment>
                 ))}
             </motion.div>
         </section>

@@ -24,8 +24,9 @@ const CAPABILITIES = [
 
 // Section 5 — dark band, full 64 on both edges. Figma (633:5008) repeats the
 // "Our Approach" heading, body and button here word for word; kept as drawn
-// and flagged. The five 229px cards spread across the row with
-// justify-between, so the gutters grow with the viewport as in Figma.
+// and flagged. Figma spreads five 229px cards across its 1312px row, leaving
+// 41.75px gutters. Here the gutter stays at that 42px and the cards share the
+// row, so wider viewports widen the cards instead of the gaps.
 export default function DigitalAndTechnologyTransformation() {
     return (
         <section className="w-full bg-[#00223d] px-6 py-10 sm:px-[64px] sm:py-16">
@@ -66,7 +67,7 @@ export default function DigitalAndTechnologyTransformation() {
                     </div>
                 </div>
 
-                <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[repeat(5,229px)] xl:justify-between xl:gap-x-0">
+                <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-[42px]">
                     {CAPABILITIES.map((capability) => (
                         <div
                             key={capability.title}

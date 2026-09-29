@@ -18,14 +18,14 @@ import CareersFaq from "@/components/Careers/CareersFaq";
 // stays put while the page content slides up over it.
 // Figma (602:2045) floats the candidate login card over the hero; that only
 // fits from lg up, so below lg the same card renders in its own band under
-// the hero.
+// the hero, on a dark band because the card is dark glass with white text.
 const page = () => {
     return (
         <div className="min-h-screen bg-white flex flex-col font-sans">
             <Navbar />
 
             <StickyHero size="screen" background={<CareersPageHero />} overlay={<CareersPageHeroText />}>
-                <div className="w-full bg-[#f1f3f5] px-6 py-10 sm:px-[64px] lg:hidden">
+                <div className="w-full bg-[#00223d] px-6 py-10 sm:px-[64px] lg:hidden">
                     <CandidateLoginCard className="mx-auto max-w-[438px]" />
                 </div>
 

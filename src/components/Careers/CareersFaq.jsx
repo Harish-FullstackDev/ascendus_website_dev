@@ -50,19 +50,26 @@ const FAQS = [
     },
 ];
 
-// Figma's glyph is a 32px #ecf2f9 disc with a #0061af plus. It is drawn with
-// two bars rather than the exported SVG so the vertical bar can turn to make
-// the minus — the site's +/− toggle pattern, never a rotating "×".
+// Figma's icon (602:2395): a 32px #ecf2f9 disc with a 12px #0061af plus in a
+// 1px round-capped stroke. Figma's export puts the horizontal bar at y=16.25,
+// so its 1px stroke straddles two pixel rows and looks twice as thick as the
+// vertical one. Both bars sit on y/x=16.5 here, and crispEdges snaps them to
+// whole pixels, so they stay 1px wide wherever a card lands. The vertical bar
+// turns to make the minus: the site's +/− toggle pattern, never a rotating "×".
 function ToggleIcon({ open }) {
     return (
-        <span aria-hidden className="relative flex size-8 shrink-0 items-center justify-center rounded-full bg-[#ecf2f9]">
-            <span className="absolute h-px w-3 rounded-full bg-[#0061af]" />
-            <span
-                className={`absolute h-3 w-px rounded-full bg-[#0061af] transition-transform duration-300 ease-out ${
-                    open ? "rotate-90" : "rotate-0"
-                }`}
-            />
-        </span>
+        <svg aria-hidden width="32" height="32" viewBox="0 0 32 32" fill="none" className="shrink-0">
+            <rect width="32" height="32" rx="16" fill="#ECF2F9" />
+            <g stroke="#0061AF" strokeLinecap="round" shapeRendering="crispEdges">
+                <path d="M10.5 16.5H22.5" />
+                <path
+                    d="M16.5 10.5V22.5"
+                    className={`origin-center transition-transform duration-300 ease-out [transform-box:fill-box] ${
+                        open ? "rotate-90" : "rotate-0"
+                    }`}
+                />
+            </g>
+        </svg>
     );
 }
 
