@@ -189,6 +189,10 @@ export default function OpenPositions() {
                         Find the Right Role
                         <br className="hidden sm:block" /> for Your Next Chapter.
                     </h2>
+                    <p className="text-base leading-[1.5] text-[#415773]">
+                        Explore opportunities that match your skills, experience, and goals. Take the next step
+                        toward a career where you can grow and make an impact.
+                    </p>
                 </div>
 
                 <div className="flex w-full flex-col gap-4 rounded-[12px] bg-[#f1f3f5] px-4 pb-6 sm:px-8 sm:pb-8 xl:max-w-[977px]">

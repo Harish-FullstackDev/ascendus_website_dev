@@ -28,7 +28,7 @@ const page = () => {
                 {/* No href: "Talk to an Expert" opens the Calendly scheduler, like
                     the other "Talk to an Expert" CTAs. */}
                 <PageCta
-                    title={["Ready to transform your", "enterprise?"]}
+                    title={["Ready to Transform Your", "Enterprise?"]}
                     description="Talk to our experts and explore how Ascendus can help your organization simplify, modernize and grow."
                     ctaLabel="Talk to an Expert"
                     titleClassName="lg:w-[369px]"

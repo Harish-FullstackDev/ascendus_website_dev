@@ -90,8 +90,10 @@ export default function Leadership() {
                         </h2>
 
                         <p className="pt-[2px] text-sm font-normal leading-[1.5] text-[#415773] sm:text-base">
-                            Our leadership brings together deep industry knowledge, strategic insight and a shared
-                            commitment to building a more efficient and connected future.
+                            Our leadership brings together deep expertise and diverse perspectives. We are united by
+                            a shared vision and a clear sense of purpose. Together, we inspire innovation, build
+                            trust, and drive meaningful progress. Our focus remains on creating lasting value for
+                            our clients and people.
                         </p>
                     </div>
                 </div>

@@ -27,7 +27,7 @@ const STATS = [
 // lg up; below that the PageClient renders it under the hero.
 export default function CareersPageHeroText() {
     return (
-        <div className="absolute inset-0 flex flex-col px-6 pb-8 pt-[64px] sm:px-[64px] lg:pb-[33px] lg:pt-[68px]">
+        <div className="absolute inset-0 flex flex-col px-6 pb-10 pt-[64px] sm:px-[64px] lg:pb-[clamp(40px,15vh,120px)] lg:pt-[68px]">
             <div className="flex flex-1 items-center py-6 lg:pb-[clamp(24px,calc(100vh_-_747px),53px)] lg:pt-[76px]">
                 <div className="flex w-full items-start justify-between gap-10">
                     <motion.div
