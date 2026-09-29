@@ -25,7 +25,8 @@ export default function PartnershipHeroText() {
                     offsets, which visibly blunts the sharp diagonal joints of
                     Switzer's A, W, V, X and M. */}
                 <h1 className="mt-6 text-2xl sm:text-4xl lg:text-5xl font-medium capitalize text-white leading-tight">
-                    Stronger Together for Greater Impact
+                    Stronger Together for
+                    <br className="hidden lg:block" /> Greater Impact
                 </h1>
 
                 {/* Figma tags this line as Urbane Light; Urbane is SST's face and
