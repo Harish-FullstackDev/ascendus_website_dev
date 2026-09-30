@@ -10,9 +10,9 @@ import iconCultureValues from "@/assets/About-us/icons/culture-values.svg";
 import iconCsr from "@/assets/About-us/icons/csr.svg";
 
 // Copy, per-card text widths and colours are Figma's (495:81) verbatim. The
-// designer gave "Our Vision" an #ecf2f9 title and the CSR card white body copy
-// while the rest use white / #c9d0d8 — kept as drawn. The widths are what set
-// each description's line breaks, so they are carried as max-widths.
+// designer gave "Our Vision" an #ecf2f9 title; all four body descriptions use
+// #c9d0d8. The widths are what set each description's line breaks, so they
+// are carried as max-widths.
 const CARDS = [
     {
         icon: iconVision,
@@ -46,7 +46,7 @@ const CARDS = [
         icon: iconCsr,
         title: "CSR",
         titleColor: "text-white",
-        bodyColor: "text-white",
+        bodyColor: "text-[#c9d0d8]",
         bodyWidth: "max-w-[248px]",
         description:
             "We believe business success goes hand in hand with social responsibility. Through ethical practices, environmental awareness, community engagement, and sustainable initiatives, we strive to create a positive impact for society and future generations.",
