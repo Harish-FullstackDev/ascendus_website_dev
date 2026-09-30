@@ -28,8 +28,8 @@ const SAP_OUTCOMES = [
 const SAP_TRANSFORMATION_ITEMS = [
     {
         body: "We help you unlock the full potential of SAP S/4HANA with a structured, value-driven approach enabling real time insights, simplified processes and a resilient, future-ready business.",
-        ctaHref: "/contact-us",
-        ctaLabel: "Talk to Our SAP Experts",
+        ctaHref: "/sap-s4hana-transformation/",
+        ctaLabel: "View In Detail",
         eyebrow: "SAP Transformation",
         heading: ["SAP S/4HANA", "Transformation"],
         id: "sap-s4hana-transformation",

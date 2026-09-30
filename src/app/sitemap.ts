@@ -21,6 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/partnership',
     '/industries',
     '/services',
+    '/sap-s4hana-transformation',
     '/solutions',
     '/blog',
     '/case-studies',

@@ -25,6 +25,7 @@ export const ROUTE_LABELS: Record<string, string> = {
   partnership: "Partnership",
   services: "Services",
   solutions: "Solutions",
+  "sap-s4hana-transformation": "SAP S/4HANA Transformation",
   legal: "Legal",
   terms: "Terms & Conditions",
   privacy: "Privacy Policy",
