@@ -382,6 +382,7 @@ const Footer = () => {
             </div>
           ))}
 
+
           {/* Logo, registered-office address and socials — stacked, right
             aligned on desktop (ml-auto pins the whole block to the row's
             right edge); centred if it wraps onto its own line on mobile. */}
