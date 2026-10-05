@@ -259,7 +259,7 @@ export default function OpenPositions() {
                             ref={listRef}
                             style={listMaxHeight ? { maxHeight: listMaxHeight } : undefined}
                             className={`relative flex flex-col gap-4 ${isScrollable
-                                    ? "-mr-3 overflow-y-auto overscroll-contain pr-3 [scrollbar-color:#8695a7_transparent] [scrollbar-width:thin]"
+                                    ? "-mr-3 overflow-y-auto pr-3 [scrollbar-color:#8695a7_transparent] [scrollbar-width:thin]"
                                     : ""
                                 }`}
                         >
