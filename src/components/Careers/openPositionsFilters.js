@@ -1,4 +1,4 @@
-// Placeholder filter categories for the Open Positions section.
+// Placeholder filter categories for the job search on /careers/open-positions/ (JobSearch).
 //
 // These are dummy values until the categories are managed from the admin
 // panel. The job rows themselves already come live from the `jobs` table

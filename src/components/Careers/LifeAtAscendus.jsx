@@ -32,11 +32,11 @@ const ROWS = [
     },
 ];
 
-// Section 2 — white band under the hero (full 64 top) with the white Open
-// Positions section below it (32 bottom).
+// White band between the white Great Transformations intro (32 top) and the
+// dark Build Skills band (full 64 bottom).
 export default function LifeAtAscendus() {
     return (
-        <section className="w-full bg-white px-6 py-10 sm:px-[64px] sm:pb-8 sm:pt-16">
+        <section className="w-full bg-white px-6 py-10 sm:px-[64px] sm:pb-16 sm:pt-8">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
