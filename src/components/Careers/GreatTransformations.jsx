@@ -10,7 +10,8 @@ import iconArrow from "@/assets/Careers/icons/arrow-right-21.svg";
 // that used to sit on /careers/. Built as its own page next.
 export const OPEN_ROLES_HREF = "/careers/open-positions/";
 
-// Figma 1486:7707 — centered intro band right under the hero. Figma draws it
+// Figma 1619:10954 — centered intro band right under the hero. Heading and
+// body each sit on one line at 1440 (text boxes 1098 / 970 wide). Figma draws it
 // 48 top / 32 bottom; it borders the hero curtain, so it keeps the full 64 on
 // top, and the white Life at Ascendus band below shares the 32/32 split.
 export default function GreatTransformations() {
@@ -23,18 +24,18 @@ export default function GreatTransformations() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex w-full flex-col items-center text-center"
             >
-                <h2 className="max-w-[538px] text-[clamp(2rem,3.4vw,3rem)] font-medium capitalize leading-[1.2] text-[#0e2b4b]">
+                <h2 className="max-w-[1098px] text-[clamp(2rem,3.4vw,3rem)] font-medium capitalize leading-[1.2] text-[#0e2b4b]">
                     Great Transformations Start With Great People
                 </h2>
 
-                <p className="mt-6 max-w-[688px] pt-[2px] text-sm font-normal capitalize leading-[1.5] text-[#415773] sm:text-base">
+                <p className="mt-[18px] max-w-[970px] pt-[2px] text-sm font-normal capitalize leading-[1.5] text-[#415773] sm:text-base">
                     We hire curious, accountable professionals and give them meaningful work from day one. See which
                     roles match your experience.
                 </p>
 
                 <Link
                     href={OPEN_ROLES_HREF}
-                    className="group mt-5 inline-flex h-12 items-center justify-center gap-[10px] rounded-[8px] bg-[#0061af] px-7 text-base font-normal capitalize leading-[1.5] text-white transition-colors duration-300 hover:bg-[#005192]"
+                    className="group mt-[35px] inline-flex h-12 items-center justify-center gap-[10px] rounded-[8px] bg-[#0061af] px-7 text-base font-normal capitalize leading-[1.5] text-white transition-colors duration-300 hover:bg-[#005192]"
                 >
                     Search Open Roles
                     <Image

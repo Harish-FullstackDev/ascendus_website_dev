@@ -9,17 +9,16 @@ import JobDetailHero from "@/components/Careers/JobDetailHero";
 import JobDetailBody from "@/components/Careers/JobDetailBody";
 import { OPEN_ROLES_HREF } from "@/components/Careers/GreatTransformations";
 
-// Figma 1487:10571. Same shell as the listing page: a navy band behind the
-// fixed navbar (pulled up over its 64/68 spacer), the candidate tabs, then
-// the job banner and body.
+// Figma 1619:11778. Same shell as the listing page: the light navbar, the
+// candidate tabs, then the job banner and body.
 const PageClient = ({ job, otherJobs }) => {
     return (
         <div className="min-h-screen bg-white flex flex-col font-sans">
             <Navbar />
 
-            <div aria-hidden className="-mt-[64px] h-16 w-full shrink-0 bg-[#00223d] lg:-mt-[68px] lg:h-20" />
-
-            <main className="flex-grow">
+            {/* The desktop navbar is 80 tall but its own spacer is 68, so the
+                tabs would tuck 12px under it. */}
+            <main className="flex-grow lg:pt-3">
                 <CareersSubNav />
 
                 {job ? (
