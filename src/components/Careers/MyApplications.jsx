@@ -154,7 +154,6 @@ function ApplicationCard({ application, job, onWithdraw }) {
         ? `${job.location}${job.modeOfWork ? ` (${job.modeOfWork})` : ""}`
         : null;
     const department = job?.categories?.[0];
-    const hasSubmitted = application.resumeName || application.portfolio;
 
     return (
         <article className="flex flex-col gap-4 rounded-[12px] border border-[#e6e9ee] bg-white p-6 shadow-[0px_1px_3px_rgba(14,43,75,0.06)] sm:px-8">
@@ -213,28 +212,26 @@ function ApplicationCard({ application, job, onWithdraw }) {
                     {active && application.interview && <InterviewPanel interview={application.interview} />}
                     {active && <ProgressPanel stageIndex={stageIndex} />}
 
-                    {hasSubmitted && (
-                        <div className="flex flex-wrap items-center gap-2 border-t border-[#e6e9ee] pt-4 text-[14px] leading-[1.4] text-[#415773]">
-                            <span className="mr-1">Submitted:</span>
-                            {application.resumeName && (
-                                <span className={chipClass}>
-                                    <FileIcon />
-                                    {application.resumeName}
-                                </span>
-                            )}
-                            {application.portfolio && (
-                                <a
-                                    href={application.portfolio}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`${chipClass} transition-colors hover:bg-[#e6e9ee]`}
-                                >
-                                    <LinkIcon />
-                                    Portfolio
-                                </a>
-                            )}
-                        </div>
-                    )}
+                    {/* A resume is required to apply, so the row always shows;
+                        entries saved before file names were recorded read "Resume". */}
+                    <div className="flex flex-wrap items-center gap-2 border-t border-[#e6e9ee] pt-4 text-[14px] leading-[1.4] text-[#415773]">
+                        <span className="mr-1">Submitted:</span>
+                        <span className={chipClass}>
+                            <FileIcon />
+                            {application.resumeName || "Resume"}
+                        </span>
+                        {application.portfolio && (
+                            <a
+                                href={application.portfolio}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`${chipClass} transition-colors hover:bg-[#e6e9ee]`}
+                            >
+                                <LinkIcon />
+                                Portfolio
+                            </a>
+                        )}
+                    </div>
                 </div>
             )}
 

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 
 import heroBg from "@/assets/Careers/job-hero-bg.webp";
 import iconArrow from "@/assets/Careers/icons/arrow-right-21-dark.svg";
@@ -9,6 +8,8 @@ import iconBookmark from "@/assets/Careers/icons/bookmarks-24-light.svg";
 import iconBookmarkFilled from "@/assets/Careers/icons/bookmarks-filled-24-light.svg";
 
 import useSavedJob from "./useSavedJob";
+
+const HRMS_PORTAL_URL = "https://hrmsportal-virid.vercel.app/";
 
 // Figma 1619:11895 — full-bleed banner (269 at 1440: 32 + 205 + 32) under
 // the candidate tabs: title, chips 16 below, then the action row 32 under
@@ -45,8 +46,9 @@ export default function JobDetailHero({ job }) {
                 </div>
 
                 <div className="flex flex-wrap items-start gap-4">
-                    <Link
-                        href={`/careers/apply?position=${encodeURIComponent(job.title)}`}
+                    {/* Applications are taken on the external HRMS portal. */}
+                    <a
+                        href={HRMS_PORTAL_URL}
                         className="group flex h-11 w-[264px] items-center justify-center gap-1 rounded-[8px] bg-[#f8f8f8] text-[18px] font-medium leading-[1.2] text-[#0e2b4b] drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-colors hover:bg-white"
                     >
                         Apply for this Position
@@ -55,7 +57,7 @@ export default function JobDetailHero({ job }) {
                             alt=""
                             className="h-4 w-[21px] transition-transform duration-300 group-hover:translate-x-1"
                         />
-                    </Link>
+                    </a>
 
                     <button
                         type="button"

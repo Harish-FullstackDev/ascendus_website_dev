@@ -27,8 +27,8 @@ export default function JobCard({ job, className = "", summaryLines = "line-clam
     return (
         <Link href={`/careers/${job.slug}`} className={`group flex flex-col gap-4 ${className}`}>
             <div className="flex items-start justify-between gap-4 border-b-[0.5px] border-[#8695a7] pb-2">
-                <div className="flex flex-col gap-[6px] capitalize text-[#0061af]">
-                    <h3 className="text-2xl font-medium leading-[1.2]">{job.title}</h3>
+                <div className="flex flex-col gap-[6px] capitalize text-[#0e2b4b]">
+                    <h3 className="text-[18px] font-medium leading-[1.2]">{job.title}</h3>
                     {subtitle && <p className="text-base leading-[1.5]">{subtitle}</p>}
                 </div>
 
@@ -43,18 +43,19 @@ export default function JobCard({ job, className = "", summaryLines = "line-clam
             </div>
 
             {job.aboutJob && (
-                <p className={`${summaryLines} text-base capitalize leading-[1.5] text-[#415773]`}>{job.aboutJob}</p>
+                <p className={`${summaryLines} text-[14px] capitalize leading-[1.5] text-[#415773]`}>{job.aboutJob}</p>
             )}
 
-            <JobMeta job={job} />
+            <JobMeta job={job} textClass="text-[14px]" />
         </Link>
     );
 }
 
 // Location / experience / work type row, shared with JobListingCard.
-export function JobMeta({ job }) {
+// `textClass` sets the type size: 16px on the listing, 14px on similar jobs.
+export function JobMeta({ job, textClass = "text-base" }) {
     return (
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-base capitalize leading-[1.5] text-[#0e2b4b]">
+        <div className={`flex flex-wrap items-center gap-x-6 gap-y-2 ${textClass} capitalize leading-[1.5] text-[#0e2b4b]`}>
             {job.location && (
                 <Meta
                     icon={
