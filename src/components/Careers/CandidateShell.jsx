@@ -5,16 +5,16 @@ import Footer from "@/components/Footer/Footer";
 import CareersSubNav from "./CareersSubNav";
 
 // Shared frame of the candidate pages (Search Jobs, My Application, Saved
-// Jobs): a navy band behind the fixed navbar, pulled up over its 64/68
-// spacer like StickyHero does, then the candidate tabs.
+// Jobs): the navbar (light from the top on careers routes, see
+// Constants/Routes/routes.js), then the candidate tabs.
 export default function CandidateShell({ children }) {
     return (
         <div className="min-h-screen bg-white flex flex-col font-sans">
             <Navbar />
 
-            <div aria-hidden className="-mt-[64px] h-16 w-full shrink-0 bg-[#00223d] lg:-mt-[68px] lg:h-20" />
-
-            <main className="flex-grow">
+            {/* The desktop navbar is 80 tall but its own spacer is 68, so the
+                tabs would tuck 12px under it. */}
+            <main className="flex-grow lg:pt-3">
                 <CareersSubNav />
                 {children}
             </main>

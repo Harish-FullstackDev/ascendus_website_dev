@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,26 +8,7 @@ import iconArrow from "@/assets/Careers/icons/arrow-right-21-dark.svg";
 import iconBookmark from "@/assets/Careers/icons/bookmarks-24-light.svg";
 import iconBookmarkFilled from "@/assets/Careers/icons/bookmarks-filled-24-light.svg";
 
-import { getSavedJobSlugs, setJobSaved } from "@/lib/candidateStorage";
-
-// Saved jobs live in this browser until the candidate account has a backend;
-// the Saved Jobs tab reads the same list.
-function useSavedJob(slug) {
-    const [saved, setSaved] = useState(false);
-
-    useEffect(() => {
-        setSaved(getSavedJobSlugs().includes(slug));
-    }, [slug]);
-
-    const toggle = () => {
-        setSaved((was) => {
-            setJobSaved(slug, !was);
-            return !was;
-        });
-    };
-
-    return [saved, toggle];
-}
+import useSavedJob from "./useSavedJob";
 
 // Figma 1619:11895 — full-bleed banner (269 at 1440: 32 + 205 + 32) under
 // the candidate tabs: title, chips 16 below, then the action row 32 under

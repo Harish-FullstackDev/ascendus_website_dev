@@ -18,9 +18,9 @@ function Meta({ icon, children }) {
 // Figma 1524:415 — title block over a 0.5px rule, a two-line summary, then
 // location / experience / work type. Figma's subtitle reads "Full Time",
 // which repeats the work type in the meta row, so it shows the department.
-// `className` lets a page box the card: the listing (Figma 1619:11404) sets it
-// on a #f7f7f7 panel. `summaryLines` is the summary's line clamp: 2 on the
-// wide listing cards, 3 in the narrow similar-jobs column (Figma 1619:11950).
+// Used for similar jobs and saved jobs; the listing has its own row card
+// (JobListingCard). `className` lets a page box the card (similar jobs sets a
+// #f7f7f7 panel, Figma 1619:11950) and `summaryLines` sets the summary clamp.
 export default function JobCard({ job, className = "", summaryLines = "line-clamp-2" }) {
     const subtitle = job.categories[0] ?? job.typeOfWork;
 
@@ -46,25 +46,32 @@ export default function JobCard({ job, className = "", summaryLines = "line-clam
                 <p className={`${summaryLines} text-base capitalize leading-[1.5] text-[#415773]`}>{job.aboutJob}</p>
             )}
 
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-base capitalize leading-[1.5] text-[#0e2b4b]">
-                {job.location && (
-                    <Meta
-                        icon={
-                            <span className="flex size-6 items-center justify-center">
-                                <Image src={iconLocation} alt="" width={17} height={21} />
-                            </span>
-                        }
-                    >
-                        {job.location}
-                    </Meta>
-                )}
-                {job.experienceLevel && (
-                    <Meta icon={<Image src={iconBriefcase} alt="" width={24} height={24} />}>{job.experienceLevel}</Meta>
-                )}
-                {job.typeOfWork && (
-                    <Meta icon={<Image src={iconClock} alt="" width={24} height={24} />}>{job.typeOfWork}</Meta>
-                )}
-            </div>
+            <JobMeta job={job} />
         </Link>
+    );
+}
+
+// Location / experience / work type row, shared with JobListingCard.
+export function JobMeta({ job }) {
+    return (
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-base capitalize leading-[1.5] text-[#0e2b4b]">
+            {job.location && (
+                <Meta
+                    icon={
+                        <span className="flex size-6 items-center justify-center">
+                            <Image src={iconLocation} alt="" width={17} height={21} />
+                        </span>
+                    }
+                >
+                    {job.location}
+                </Meta>
+            )}
+            {job.experienceLevel && (
+                <Meta icon={<Image src={iconBriefcase} alt="" width={24} height={24} />}>{job.experienceLevel}</Meta>
+            )}
+            {job.typeOfWork && (
+                <Meta icon={<Image src={iconClock} alt="" width={24} height={24} />}>{job.typeOfWork}</Meta>
+            )}
+        </div>
     );
 }

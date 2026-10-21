@@ -40,7 +40,8 @@ const BENEFITS = [
 // Figma 1486:7799 — same section as the HRMS portal's job details page
 // (Hrmsportal JobDetails/BenefitsSection), kept identical: neutral band,
 // heading block, then four 262×353 white cards spread edge to edge
-// (space-between). Each card keeps the icon at the top and pins the title +
+// (space-between), each with 8px corners (Figma 1641:13585). Each card keeps
+// the icon at the top and pins the title +
 // body group to the bottom. Two columns below xl, one on phones.
 export default function CareersBenefits() {
     return (
@@ -66,7 +67,7 @@ export default function CareersBenefits() {
                     {BENEFITS.map(({ icon, title, body }) => (
                         <li
                             key={title}
-                            className="flex flex-col justify-between gap-6 bg-white px-6 py-8 xl:h-[353px] xl:gap-0"
+                            className="flex flex-col justify-between gap-6 rounded-[8px] bg-white px-6 py-8 xl:h-[353px] xl:gap-0"
                         >
                             {icon}
                             <div className="flex flex-col gap-4">
