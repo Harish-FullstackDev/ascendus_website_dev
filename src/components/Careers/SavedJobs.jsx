@@ -47,7 +47,7 @@ function SavedJobCard({ job, onUnsave }) {
                 <div className="flex shrink-0 items-center gap-7">
                     <Link
                         href={`/careers/${job.slug}/`}
-                        className="inline-flex h-8 items-center rounded-[2px] bg-[#0061af] px-7 text-[14px] leading-[1.4] text-white transition-colors hover:bg-[#005192]"
+                        className="inline-flex h-8 items-center rounded-[8px] bg-[#0061af] px-7 text-[14px] leading-[1.4] text-white transition-colors hover:bg-[#005192]"
                     >
                         View More
                     </Link>
