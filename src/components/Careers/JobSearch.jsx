@@ -7,7 +7,7 @@ import { getAllJobs } from "@/lib/jobs";
 import iconSearch from "@/assets/Careers/icons/search-16.svg";
 import iconChevron from "@/assets/Careers/icons/chevron-down-18.svg";
 import iconReset from "@/assets/Careers/icons/reset-24.svg";
-import JobCard from "./JobCard";
+import JobListingCard from "./JobListingCard";
 import { OPEN_POSITION_FILTERS } from "./openPositionsFilters";
 
 const EMPTY_FILTERS = Object.fromEntries(OPEN_POSITION_FILTERS.map((filter) => [filter.key, ""]));
@@ -49,10 +49,9 @@ function FilterSelect({ label, value, options, onChange, width }) {
     );
 }
 
-// Figma 1619:11365 — no neutral panel any more: the heading, search controls
-// and a two-column grid of boxed job cards (#f7f7f7, 24 padding, 12 radius)
-// sit straight on the white page, all on the same 1264 column (88 in from
-// each edge at 1440). Cards sit 33 apart across and 28 down.
+// Figma 1487:8463 — the heading, search controls and a single column of
+// full-width job rows sit straight on the white page, all on the same 1264
+// column (88 in from each edge at 1440). Rows sit 28 apart.
 export default function JobSearch() {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -151,9 +150,9 @@ export default function JobSearch() {
 
                 <div className="mt-7">
                     {loading ? (
-                        <ul className="grid gap-7 lg:grid-cols-2 lg:gap-x-[33px]" aria-busy="true">
+                        <ul className="flex flex-col gap-7" aria-busy="true">
                             {Array.from({ length: 4 }).map((_, index) => (
-                                <li key={index} className="h-[234px] animate-pulse rounded-[12px] bg-[#f7f7f7]" />
+                                <li key={index} className="h-[188px] animate-pulse rounded-[12px] bg-[#f7f7f7]" />
                             ))}
                         </ul>
                     ) : filteredJobs.length === 0 ? (
@@ -163,10 +162,10 @@ export default function JobSearch() {
                                 : "No roles match your search. Try clearing a filter."}
                         </p>
                     ) : (
-                        <ul className="grid gap-7 lg:grid-cols-2 lg:gap-x-[33px]">
+                        <ul className="flex flex-col gap-7">
                             {filteredJobs.map((job) => (
                                 <li key={job.slug}>
-                                    <JobCard job={job} className="h-full rounded-[12px] bg-[#f7f7f7] p-6" />
+                                    <JobListingCard job={job} />
                                 </li>
                             ))}
                         </ul>

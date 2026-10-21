@@ -55,7 +55,7 @@ export default function LifeAtAscendusHighlights() {
 
                 <ul className="grid gap-8 lg:grid-cols-3 xl:grid-cols-[repeat(3,399px)] xl:justify-between">
                     {CARDS.map((card) => (
-                        <li key={card.title} className="flex flex-col">
+                        <li key={card.title} className="flex flex-col overflow-hidden rounded-[8px]">
                             <div className="relative aspect-[399/176.5] w-full overflow-hidden bg-[#f1f3f5]">
                                 <Image
                                     src={card.image}
