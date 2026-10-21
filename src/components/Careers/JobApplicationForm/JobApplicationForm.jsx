@@ -295,7 +295,12 @@ export default function JobApplicationForm() {
                 throw new Error(result.error || "Failed to submit application.");
             }
 
-            recordApplication(formData.position);
+            recordApplication({
+                id: result.data?.id,
+                position: formData.position,
+                resumeName: resumeFile.name,
+                portfolio: formData.portfolio,
+            });
             setStatus("success");
         } catch (err) {
             console.error(err);

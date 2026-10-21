@@ -20,6 +20,7 @@ function formatPostedAgo(dateString) {
 function mapJob(row) {
     return {
         slug: row.slug,
+        jobCode: row.job_code ?? null,
         title: row.title,
         company: row.company,
         location: row.location,

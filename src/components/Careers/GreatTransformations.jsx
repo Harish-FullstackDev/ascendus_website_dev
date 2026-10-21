@@ -24,11 +24,11 @@ export default function GreatTransformations() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex w-full flex-col items-center text-center"
             >
-                <h2 className="max-w-[1098px] text-[clamp(2rem,3.4vw,3rem)] font-medium capitalize leading-[1.2] text-[#0e2b4b]">
+                <h2 className=" text-[clamp(2rem,3.4vw,3rem)] font-medium capitalize leading-[1.2] text-[#0e2b4b]">
                     Great Transformations Start With Great People
                 </h2>
 
-                <p className="mt-[18px] max-w-[970px] pt-[2px] text-sm font-normal capitalize leading-[1.5] text-[#415773] sm:text-base">
+                <p className="mt-6  pt-[2px] text-sm font-normal capitalize leading-[1.5] text-[#415773] sm:text-base">
                     We hire curious, accountable professionals and give them meaningful work from day one. See which
                     roles match your experience.
                 </p>
