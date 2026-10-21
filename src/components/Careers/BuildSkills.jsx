@@ -51,10 +51,6 @@ export default function BuildSkills() {
                 className="flex w-full flex-col gap-10 xl:flex-row xl:items-center xl:gap-12"
             >
                 <div className="flex flex-col gap-3 xl:w-[390px] xl:shrink-0">
-                    <p className="flex h-8 items-center text-[14px] font-medium uppercase leading-4 tracking-[0.7px] text-[#68c2f2]">
-                        Solution
-                    </p>
-
                     <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-medium leading-[1.2] text-white">
                         Build Skills.
                         <br /> Gain Experience.

@@ -7,10 +7,10 @@ import { getAllJobs } from "@/lib/jobs";
 import { getSavedJobSlugs } from "@/lib/candidateStorage";
 import JobCard from "./JobCard";
 
-// Ref "saved jobs.png" — a "Saved Jobs" heading over a two-column grid of
-// job cards, centered at 1011 wide (169 in from each edge at 1440) with the
-// columns 113 apart. Saved slugs whose job has closed are dropped, since
-// getAllJobs only returns open roles.
+// Two-column grid of job cards, each on its own neutral panel, running the
+// full content width (64 in from each edge) with the columns 80 apart. The
+// heading is kept for screen readers only. Saved slugs whose job has closed
+// are dropped, since getAllJobs only returns open roles.
 export default function SavedJobs() {
     const [jobs, setJobs] = useState(null);
 
@@ -38,14 +38,14 @@ export default function SavedJobs() {
     }, []);
 
     return (
-        <section className="w-full bg-white px-6 py-10 sm:px-[64px] sm:pb-[88px] sm:pt-12">
-            <div className="mx-auto flex w-full max-w-[1011px] flex-col gap-6">
-                <h1 className="text-[18px] font-medium leading-[1.2] text-[#0e2b4b]">Saved Jobs</h1>
+        <section className="w-full bg-white px-6 py-10 sm:px-[64px] sm:pb-[88px] sm:pt-14">
+            <div className="flex w-full flex-col">
+                <h1 className="sr-only">Saved Jobs</h1>
 
                 {jobs === null ? (
-                    <ul className="grid gap-y-14 lg:grid-cols-2 lg:gap-x-[113px]" aria-busy="true">
+                    <ul className="grid gap-6 lg:grid-cols-2 lg:gap-x-20 lg:gap-y-10" aria-busy="true">
                         {Array.from({ length: 2 }).map((_, index) => (
-                            <li key={index} className="h-[171px] animate-pulse rounded-[8px] bg-[#f1f3f5]" />
+                            <li key={index} className="h-[219px] animate-pulse rounded-[12px] bg-[#f1f3f5]" />
                         ))}
                     </ul>
                 ) : jobs.length === 0 ? (
@@ -61,9 +61,12 @@ export default function SavedJobs() {
                         </Link>
                     </div>
                 ) : (
-                    <ul className="grid gap-y-14 lg:grid-cols-2 lg:gap-x-[113px] lg:gap-y-16">
+                    <ul className="grid gap-6 lg:grid-cols-2 lg:gap-x-20 lg:gap-y-10">
                         {jobs.map((job) => (
-                            <li key={job.slug}>
+                            <li
+                                key={job.slug}
+                                className="rounded-[12px] bg-[#f1f3f5] p-6 transition-shadow duration-300 hover:shadow-[0px_8px_20px_-8px_rgba(0,48,86,0.25)]"
+                            >
                                 <JobCard job={job} />
                             </li>
                         ))}

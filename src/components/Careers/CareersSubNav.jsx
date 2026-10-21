@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 // Figma 1505:12417 — candidate tabs under the navbar. A job detail page
 // (/careers/<slug>) sits under Search Jobs, so that tab stays underlined there.
 const TABS = [
-    { label: "My Application", href: "/careers/my-applications/" },
     { label: "Search Jobs", href: "/careers/open-positions/" },
     { label: "Saved Jobs", href: "/careers/saved-jobs/" },
+    { label: "My Application", href: "/careers/my-applications/" },
 ];
 
 export default function CareersSubNav() {
