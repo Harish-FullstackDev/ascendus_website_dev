@@ -33,8 +33,8 @@ function useSavedJob(slug) {
 // Figma 1619:11895 — full-bleed banner (269 at 1440: 32 + 205 + 32) under
 // the candidate tabs: title, chips 16 below, then the action row 32 under
 // the chips. Both buttons have 8px corners and Save Job carries a 24px
-// bookmark. Figma also prints a "Job ID" line under the title; the jobs table
-// has no human-readable ID (only a UUID), so that line is left out.
+// bookmark. The "Job ID" line under the title shows jobs.job_code, and is
+// skipped until that column exists.
 export default function JobDetailHero({ job }) {
     const [saved, toggleSaved] = useSavedJob(job.slug);
     const department = job.categories[0];
@@ -49,7 +49,12 @@ export default function JobDetailHero({ job }) {
             <Image src={heroBg} alt="" fill priority sizes="100vw" className="-z-10 object-cover object-center" />
             <div className="flex w-full flex-col gap-8 px-6 py-8 sm:px-[64px]">
                 <div className="flex flex-col gap-4">
-                    <h1 className="text-[32px] font-medium capitalize leading-[1.2] text-white">{job.title}</h1>
+                    <div className="flex flex-col gap-2">
+                        <h1 className="text-[32px] font-medium capitalize leading-[1.2] text-white">{job.title}</h1>
+                        {job.jobCode && (
+                            <p className="text-[14px] leading-[1.4] text-[#afc9e6]">Job ID: {job.jobCode}</p>
+                        )}
+                    </div>
                     <ul className="flex flex-wrap items-center gap-3 text-[14px] leading-[1.4] text-white">
                         {tags.map((tag) => (
                             <li key={tag} className="rounded-[6px] bg-[rgba(221,241,253,0.1)] p-[6px]">

@@ -32,12 +32,34 @@ export function setJobSaved(slug, saved) {
     writeList(SAVED_JOBS_KEY, saved ? [...list, slug] : list);
 }
 
-// Newest first. Each entry: { position, appliedAt (ISO), status }.
+// Newest first. Each entry: { id, position, appliedAt (ISO), status,
+// resumeName, portfolio }. Entries saved before ids existed fall back to
+// appliedAt as their key.
 export function getApplications() {
     return readList(APPLICATIONS_KEY);
 }
 
-export function recordApplication(position) {
-    const entry = { position, appliedAt: new Date().toISOString(), status: "Application Received" };
+export function applicationKey(application) {
+    return application.id ?? application.appliedAt;
+}
+
+export function recordApplication({ id, position, resumeName, portfolio }) {
+    const entry = {
+        id,
+        position,
+        appliedAt: new Date().toISOString(),
+        status: "Application Received",
+        resumeName,
+        portfolio,
+    };
     writeList(APPLICATIONS_KEY, [entry, ...readList(APPLICATIONS_KEY)]);
+}
+
+// Withdrawing only marks the entry, so it moves to the Inactive tab.
+export function withdrawApplication(key) {
+    const list = readList(APPLICATIONS_KEY).map((application) =>
+        applicationKey(application) === key ? { ...application, status: "Withdrawn" } : application
+    );
+    writeList(APPLICATIONS_KEY, list);
+    return list;
 }
