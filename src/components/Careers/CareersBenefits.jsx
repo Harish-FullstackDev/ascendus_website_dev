@@ -63,11 +63,14 @@ export default function CareersBenefits() {
                     </p>
                 </div>
 
-                <ul className="grid gap-8 sm:grid-cols-2 xl:grid-cols-[repeat(4,262px)] xl:justify-between">
+                {/* Figma: four 262×353 cards 88 apart on the 1312 row. The gap is kept
+                    as that share of the row (6.71%) and the cards keep their
+                    262:353 shape, so they scale with the viewport. */}
+                <ul className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 xl:gap-x-[6.71%]">
                     {BENEFITS.map(({ icon, title, body }) => (
                         <li
                             key={title}
-                            className="flex flex-col justify-between gap-6 rounded-[8px] bg-white px-6 py-8 xl:h-[353px] xl:gap-0"
+                            className="flex flex-col justify-between gap-6 rounded-[8px] bg-white px-6 py-8 xl:aspect-[262/353] xl:gap-0"
                         >
                             {icon}
                             <div className="flex flex-col gap-4">

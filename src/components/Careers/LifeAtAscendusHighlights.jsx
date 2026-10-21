@@ -30,7 +30,7 @@ const CARDS = [
 ];
 
 // Figma 1619:11027 — heading block over three 399×353 cards spread edge to
-// edge (space-between). Each card is half photo, half neutral text panel.
+// edge. Each card is half photo, half neutral text panel.
 // Sits between the dark Build Skills band and the neutral benefits band, so
 // it keeps the full 64 on both edges. Three columns from lg, one below.
 // Figma's heading now reads just "Ascendus"; kept as drawn and flagged.
@@ -53,9 +53,14 @@ export default function LifeAtAscendusHighlights() {
                     </p>
                 </div>
 
-                <ul className="grid gap-8 lg:grid-cols-3 xl:grid-cols-[repeat(3,399px)] xl:justify-between">
+                {/* Figma: three 399×353 cards 62.5 apart on a 1322 row. The gap is kept as
+                    that share of the row (4.73%) and the cards keep their 399:353
+                    shape, so they scale with the viewport instead of the gaps
+                    growing on wide screens. Content taller than the ratio still
+                    grows the card. */}
+                <ul className="grid gap-8 lg:grid-cols-3 lg:gap-x-[4.73%]">
                     {CARDS.map((card) => (
-                        <li key={card.title} className="flex flex-col overflow-hidden rounded-[8px]">
+                        <li key={card.title} className="flex flex-col overflow-hidden rounded-[8px] lg:aspect-[399/353]">
                             <div className="relative aspect-[399/176.5] w-full overflow-hidden bg-[#f1f3f5]">
                                 <Image
                                     src={card.image}
@@ -66,7 +71,7 @@ export default function LifeAtAscendusHighlights() {
                                 />
                             </div>
 
-                            <div className="flex flex-1 flex-col gap-5 bg-[#f1f3f5] px-6 py-8 xl:min-h-[176.5px]">
+                            <div className="flex flex-1 flex-col gap-5 bg-[#f1f3f5] px-6 py-8">
                                 <h3 className="text-2xl font-medium capitalize leading-[1.2] text-[#0e2b4b]">
                                     {card.title}
                                 </h3>
