@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { CheckCircle, Loader2, AlertCircle, FileText } from "lucide-react";
 import dropdownIcon from "@/assets/Careers/icons/dropdown.svg";
 import uploadIcon from "@/assets/Careers/icons/upload.svg";
+import { recordApplication } from "@/lib/candidateStorage";
 
 const inputClass =
     "w-full h-9 bg-[#f3f3f5] px-3 text-sm text-slate-900 placeholder:text-[#717182] border border-transparent outline-none focus:ring-2 focus:ring-blue-500/30 transition-all duration-300";
@@ -294,6 +295,7 @@ export default function JobApplicationForm() {
                 throw new Error(result.error || "Failed to submit application.");
             }
 
+            recordApplication(formData.position);
             setStatus("success");
         } catch (err) {
             console.error(err);

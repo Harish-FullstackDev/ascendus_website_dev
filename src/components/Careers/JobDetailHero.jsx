@@ -9,29 +9,20 @@ import iconArrow from "@/assets/Careers/icons/arrow-right-21-dark.svg";
 import iconBookmark from "@/assets/Careers/icons/bookmark-16-white.svg";
 import iconBookmarkFilled from "@/assets/Careers/icons/bookmark-filled-16-white.svg";
 
-const SAVED_JOBS_KEY = "ascendus:savedJobs";
+import { getSavedJobSlugs, setJobSaved } from "@/lib/candidateStorage";
 
-// Saved jobs belong to the candidate account, which has no backend yet, so
-// they live in this browser until the Saved Jobs tab can read them.
+// Saved jobs live in this browser until the candidate account has a backend;
+// the Saved Jobs tab reads the same list.
 function useSavedJob(slug) {
     const [saved, setSaved] = useState(false);
 
     useEffect(() => {
-        try {
-            setSaved(JSON.parse(localStorage.getItem(SAVED_JOBS_KEY) ?? "[]").includes(slug));
-        } catch {
-            setSaved(false);
-        }
+        setSaved(getSavedJobSlugs().includes(slug));
     }, [slug]);
 
     const toggle = () => {
         setSaved((was) => {
-            try {
-                const list = JSON.parse(localStorage.getItem(SAVED_JOBS_KEY) ?? "[]").filter((s) => s !== slug);
-                localStorage.setItem(SAVED_JOBS_KEY, JSON.stringify(was ? list : [...list, slug]));
-            } catch {
-                // Storage blocked: the toggle still works for this visit.
-            }
+            setJobSaved(slug, !was);
             return !was;
         });
     };

@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 // Figma (633:4996) uses the same team photograph as the Careers "Don't See a
 // Matching Role?" section, so it is imported from there.
 import teamPhoto from "@/assets/Careers/dont-see-a-matching-role.webp";
-import iconS4hana from "@/assets/HomePage/icons/s4hana-implementation-24.svg";
+import iconS4hana from "@/assets/HomePage/icons/s4hana-implementation-24-dark.svg";
 import iconMigration from "@/assets/HomePage/icons/migration-conversion-32.svg";
 import iconApplication from "@/assets/HomePage/icons/application-management-32.svg";
 import iconRise from "@/assets/HomePage/icons/rise-with-sap-32.svg";
@@ -19,11 +19,8 @@ import iconBannerArrow from "@/assets/HomePage/icons/arrow-right-38.svg";
 
 const SAP_SERVICES_HREF = "/what-we-do/enterprise-transformation/sap-transformation/";
 
-// Figma draws the first tile in the dark, highlighted treatment and the rest
-// light; its icon is the only one exported in white (and at 24px rather than
-// 32px), so the highlight stays on that tile.
 const SERVICES = [
-    { label: ["S/4HANA", "Implementation"], icon: iconS4hana, iconSize: "size-6", featured: true },
+    { label: ["S/4HANA", "Implementation"], icon: iconS4hana, iconSize: "size-6" },
     { label: ["Migration &", "Conversion"], icon: iconMigration, iconSize: "size-8" },
     { label: ["Application", "Management"], icon: iconApplication, iconSize: "size-8" },
     { label: ["RISE with SAP"], icon: iconRise, iconSize: "size-8" },
@@ -32,17 +29,12 @@ const SERVICES = [
 ];
 
 function ServiceTile({ service }) {
-    const featured = Boolean(service.featured);
-
     return (
         <Link
             href={SAP_SERVICES_HREF}
-            className={`group flex h-[99px] items-center justify-between gap-3 rounded-[12px] border p-[17px] transition-colors duration-300 ${featured
-                    ? "border-white bg-[#003056] text-[#f8f8f8] hover:bg-[#003d6b]"
-                    : "border-[#c9d0d8] bg-white text-[#111827] hover:border-[#0061af]"
-                }`}
+            className="group flex h-[99px] items-center justify-between gap-3 rounded-[12px] border border-[#c9d0d8] bg-white p-[17px] text-[#111827] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#0061af] hover:bg-[#003056] hover:text-[#f8f8f8] hover:shadow-[0px_12px_24px_-8px_rgba(0,48,86,0.35)]"
         >
-            <Image src={service.icon} alt="" className={`${service.iconSize} shrink-0`} />
+            <Image src={service.icon} alt="" className={`${service.iconSize} shrink-0 transition-[filter] duration-300 group-hover:brightness-0 group-hover:invert`} />
             <span className="text-center text-[14px] leading-[1.4]">
                 {service.label.map((line) => (
                     <span key={line} className="block">
@@ -50,11 +42,18 @@ function ServiceTile({ service }) {
                     </span>
                 ))}
             </span>
-            <Image
-                src={featured ? iconArrowLight : iconArrowDark}
-                alt=""
-                className="h-4 w-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
-            />
+            <span className="relative h-4 w-5 shrink-0">
+                <Image
+                    src={iconArrowDark}
+                    alt=""
+                    className="absolute inset-0 h-4 w-5 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-0"
+                />
+                <Image
+                    src={iconArrowLight}
+                    alt=""
+                    className="absolute inset-0 h-4 w-5 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+                />
+            </span>
         </Link>
     );
 }
