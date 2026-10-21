@@ -54,13 +54,13 @@ export default function LifeAtAscendusHighlights() {
                 </div>
 
                 {/* Figma: three 399×353 cards 62.5 apart on a 1322 row. The gap is kept as
-                    that share of the row (4.73%) and the cards keep their 399:353
-                    shape, so they scale with the viewport instead of the gaps
-                    growing on wide screens. Content taller than the ratio still
-                    grows the card. */}
+                    that share of the row (4.73%) and the cards get a min height
+                    equal to their 399:353 shape (26.7vw - 34.2px), so they scale
+                    with the viewport instead of the gaps growing on wide screens.
+                    The row stretches them to one height when text needs more. */}
                 <ul className="grid gap-8 lg:grid-cols-3 lg:gap-x-[4.73%]">
                     {CARDS.map((card) => (
-                        <li key={card.title} className="flex flex-col overflow-hidden rounded-[8px] lg:aspect-[399/353]">
+                        <li key={card.title} className="flex flex-col overflow-hidden rounded-[8px] lg:min-h-[calc(26.7vw_-_34.2px)]">
                             <div className="relative aspect-[399/176.5] w-full overflow-hidden bg-[#f1f3f5]">
                                 <Image
                                     src={card.image}

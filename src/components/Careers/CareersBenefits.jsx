@@ -63,14 +63,19 @@ export default function CareersBenefits() {
                     </p>
                 </div>
 
-                {/* Figma: four 262×353 cards 88 apart on the 1312 row. The gap is kept
-                    as that share of the row (6.71%) and the cards keep their
-                    262:353 shape, so they scale with the viewport. */}
-                <ul className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 xl:gap-x-[6.71%]">
+                {/* Figma: four 262×353 cards 88 apart on the 1312 row. One row of four
+                    from lg. The gap is the smaller of Figma's share of the row
+                    (6.71%) and a line from 24px at a 896 row (lg) to 88px at
+                    1312, so it matches Figma from 1440 up and narrows on smaller
+                    laptops to keep the cards wide enough for their titles. The
+                    cards get a min height that equals the 262:353 shape at the
+                    Figma gap (26.9vw - 34.4px), and the row stretches them to
+                    one height when the text needs more. */}
+                <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-[min(6.71%,calc(15.38%_-_113.8px))]">
                     {BENEFITS.map(({ icon, title, body }) => (
                         <li
                             key={title}
-                            className="flex flex-col justify-between gap-6 rounded-[8px] bg-white px-6 py-8 xl:aspect-[262/353] xl:gap-0"
+                            className="flex flex-col justify-between gap-6 rounded-[8px] bg-white px-6 py-8 lg:min-h-[calc(26.9vw_-_34.4px)] lg:gap-0"
                         >
                             {icon}
                             <div className="flex flex-col gap-4">
