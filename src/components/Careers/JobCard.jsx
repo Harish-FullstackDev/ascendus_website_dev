@@ -18,11 +18,14 @@ function Meta({ icon, children }) {
 // Figma 1524:415 — title block over a 0.5px rule, a two-line summary, then
 // location / experience / work type. Figma's subtitle reads "Full Time",
 // which repeats the work type in the meta row, so it shows the department.
-export default function JobCard({ job }) {
+// `className` lets a page box the card: the listing (Figma 1619:11404) sets it
+// on a #f7f7f7 panel. `summaryLines` is the summary's line clamp: 2 on the
+// wide listing cards, 3 in the narrow similar-jobs column (Figma 1619:11950).
+export default function JobCard({ job, className = "", summaryLines = "line-clamp-2" }) {
     const subtitle = job.categories[0] ?? job.typeOfWork;
 
     return (
-        <Link href={`/careers/${job.slug}`} className="group flex flex-col gap-4">
+        <Link href={`/careers/${job.slug}`} className={`group flex flex-col gap-4 ${className}`}>
             <div className="flex items-start justify-between gap-4 border-b-[0.5px] border-[#8695a7] pb-2">
                 <div className="flex flex-col gap-[6px] capitalize text-[#0061af]">
                     <h3 className="text-2xl font-medium leading-[1.2]">{job.title}</h3>
@@ -40,7 +43,7 @@ export default function JobCard({ job }) {
             </div>
 
             {job.aboutJob && (
-                <p className="line-clamp-2 text-base capitalize leading-[1.5] text-[#415773]">{job.aboutJob}</p>
+                <p className={`${summaryLines} text-base capitalize leading-[1.5] text-[#415773]`}>{job.aboutJob}</p>
             )}
 
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-base capitalize leading-[1.5] text-[#0e2b4b]">

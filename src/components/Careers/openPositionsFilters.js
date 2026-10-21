@@ -8,22 +8,9 @@
 // panel owns the categories.
 //
 // `field` is the key on a mapped job (see mapJob in src/lib/jobs.js) that the
-// filter matches against. `width` is the dropdown width from Figma (602:2153).
+// filter matches against. `width` is the dropdown width from Figma (1619:11378), plus 10px (see
+// FilterSelect). Figma 1619:11248 dropped the Department filter.
 export const OPEN_POSITION_FILTERS = [
-    {
-        key: "department",
-        label: "Department",
-        field: "categories",
-        width: "w-[143px]",
-        options: [
-            "SAP Consulting & Delivery",
-            "Engineering & Technology",
-            "Data Analysis",
-            "Design",
-            "Marketing",
-            "Sales & Business Development",
-        ],
-    },
     {
         key: "location",
         label: "Location",

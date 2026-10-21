@@ -2,53 +2,34 @@
 
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import PageCta from "@/components/CommonComponents/PageCta";
 import StickyHero from "@/components/CommonComponents/StickyHero";
 import CareersPageHero from "@/components/Careers/CareersPageHero";
 import CareersPageHeroText from "@/components/Careers/CareersPageHeroText";
-import CandidateLoginCard from "@/components/Careers/CandidateLoginCard";
-import GreatTransformations, { OPEN_ROLES_HREF } from "@/components/Careers/GreatTransformations";
+import GreatTransformations from "@/components/Careers/GreatTransformations";
 import LifeAtAscendus from "@/components/Careers/LifeAtAscendus";
 import BuildSkills from "@/components/Careers/BuildSkills";
 import LifeAtAscendusHighlights from "@/components/Careers/LifeAtAscendusHighlights";
-import BenefitsAtAGlance from "@/components/Careers/BenefitsAtAGlance";
 import CareersBenefits from "@/components/Careers/CareersBenefits";
 import StayUpdated from "@/components/Careers/StayUpdated";
 import CareersFaq from "@/components/Careers/CareersFaq";
 
 // The hero is the shared sticky curtain, exactly one viewport tall: the image
 // stays put while the page content slides up over it.
-// Section order follows Figma 1486:7704. The job listing moved off this page
-// to its own route (OPEN_ROLES_HREF).
-// Figma (602:2045) floats the candidate login card over the hero; that only
-// fits from lg up, so below lg the same card renders in its own band under
-// the hero, on a dark band because the card is dark glass with white text.
+// Section order follows Figma 1619:10951: the login card, the benefits
+// at-a-glance band and the closing CTA are gone, so the FAQ meets the footer.
 const page = () => {
     return (
         <div className="min-h-screen bg-white flex flex-col font-sans">
             <Navbar />
 
             <StickyHero size="screen" background={<CareersPageHero />} overlay={<CareersPageHeroText />}>
-                <div className="w-full bg-[#00223d] px-6 py-10 sm:px-[64px] lg:hidden">
-                    <CandidateLoginCard className="mx-auto max-w-[438px]" />
-                </div>
-
                 <GreatTransformations />
                 <LifeAtAscendus />
                 <BuildSkills />
                 <LifeAtAscendusHighlights />
-                <BenefitsAtAGlance />
                 <CareersBenefits />
                 <StayUpdated />
                 <CareersFaq />
-                <PageCta
-                    title={["Let's Build a Better Tomorrow.", "Together."]}
-                    description={["Explore opportunities, share your resume or connect", "with us to start your journey at Ascendus."]}
-                    ctaLabel="Explore Opportunities"
-                    href={OPEN_ROLES_HREF}
-                    titleClassName="lg:w-[445.5px]"
-                    descriptionClassName="lg:whitespace-nowrap"
-                />
             </StickyHero>
 
             <Footer />

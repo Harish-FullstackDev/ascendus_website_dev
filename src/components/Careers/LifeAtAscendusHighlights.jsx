@@ -29,13 +29,14 @@ const CARDS = [
     },
 ];
 
-// Figma 1486:7774 — heading block over three 399×353 cards spread edge to
+// Figma 1619:11027 — heading block over three 399×353 cards spread edge to
 // edge (space-between). Each card is half photo, half neutral text panel.
-// Comes after the dark Build Skills band (full 64 top) and before the white
-// benefits band (32 bottom). Three columns from lg, one below.
+// Sits between the dark Build Skills band and the neutral benefits band, so
+// it keeps the full 64 on both edges. Three columns from lg, one below.
+// Figma's heading now reads just "Ascendus"; kept as drawn and flagged.
 export default function LifeAtAscendusHighlights() {
     return (
-        <section className="w-full border-t border-[#8695a7] bg-white px-6 py-10 sm:px-[64px] sm:pb-8 sm:pt-16">
+        <section className="w-full border-t border-[#8695a7] bg-white px-6 py-10 sm:px-[64px] sm:py-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +45,7 @@ export default function LifeAtAscendusHighlights() {
                 className="flex w-full flex-col gap-8"
             >
                 <div className="flex max-w-[873px] flex-col gap-2">
-                    <h2 className="text-2xl font-medium capitalize leading-[1.2] text-[#0e2b4b]">Life at Ascendus</h2>
+                    <h2 className="text-2xl font-medium capitalize leading-[1.2] text-[#0e2b4b]">Ascendus</h2>
                     <p className="text-sm leading-[1.4] text-[#415773]">
                         At Ascendus, we believe great work happens when people feel valued, inspired, and empowered. We
                         foster a collaborative environment where ideas are welcomed, creativity is encouraged, and every

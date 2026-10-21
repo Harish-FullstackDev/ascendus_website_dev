@@ -19,9 +19,9 @@ function jobMatches(job, field, selected) {
     return values.some((value) => value?.toLowerCase() === selected.toLowerCase());
 }
 
-// Figma gives each dropdown its own fixed width (133/112/176/127); each is
-// 10px wider here because Switzer renders the labels a touch wider than
-// Figma and "Department" / "Location" would otherwise truncate. A native
+// Figma gives each dropdown its own fixed width (112/176/127); each is 10px
+// wider here because Switzer renders the labels a touch wider than Figma and
+// "Location" would otherwise truncate. A native
 // select otherwise sizes itself to its longest option, so the widths are set
 // explicitly and a long selected value truncates.
 function FilterSelect({ label, value, options, onChange, width }) {
@@ -49,11 +49,10 @@ function FilterSelect({ label, value, options, onChange, width }) {
     );
 }
 
-// Figma 1487:8463 — one centered neutral panel (1227 wide, 106.5 in from
-// each edge at 1440) holding the search controls and a two-column grid of
-// live jobs. Figma insets the search block 16px more than the cards (1030 vs
-// 1063); both share the card width here so the left edges line up. Cards sit
-// 165 apart (15.5% of the 1063 row) and their content rows 81 apart.
+// Figma 1619:11365 — no neutral panel any more: the heading, search controls
+// and a two-column grid of boxed job cards (#f7f7f7, 24 padding, 12 radius)
+// sit straight on the white page, all on the same 1264 column (88 in from
+// each edge at 1440). Cards sit 33 apart across and 28 down.
 export default function JobSearch() {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -101,10 +100,12 @@ export default function JobSearch() {
     };
 
     return (
-        <section className="w-full bg-white px-6 py-8 sm:px-[64px]">
-            <div className="mx-auto w-full max-w-[1227px] rounded-[12px] bg-[#f1f3f5] px-4 py-8 sm:px-8 lg:px-[82px]">
-                <div className="flex w-full flex-col gap-8">
-                    <h1 className="text-[18px] font-medium leading-[1.2] text-[#0061af]">Find Your Next Opportunity</h1>
+        <section className="w-full bg-white px-6 py-10 sm:px-[88px] sm:py-16">
+            <div className="w-full">
+                <div className="flex w-full flex-col gap-4">
+                    <h1 className="text-2xl font-medium capitalize leading-[1.2] text-[#0061af]">
+                        Find Your Next Opportunity
+                    </h1>
 
                     <div className="flex flex-col gap-3 py-4">
                         <label className="relative block">
@@ -148,11 +149,11 @@ export default function JobSearch() {
                     </div>
                 </div>
 
-                <div className="mt-[57px]">
+                <div className="mt-7">
                     {loading ? (
-                        <ul className="grid gap-y-[81px] lg:grid-cols-2 lg:gap-x-[15.5%]" aria-busy="true">
+                        <ul className="grid gap-7 lg:grid-cols-2 lg:gap-x-[33px]" aria-busy="true">
                             {Array.from({ length: 4 }).map((_, index) => (
-                                <li key={index} className="h-[171px] animate-pulse rounded-[8px] bg-white/70" />
+                                <li key={index} className="h-[234px] animate-pulse rounded-[12px] bg-[#f7f7f7]" />
                             ))}
                         </ul>
                     ) : filteredJobs.length === 0 ? (
@@ -162,10 +163,10 @@ export default function JobSearch() {
                                 : "No roles match your search. Try clearing a filter."}
                         </p>
                     ) : (
-                        <ul className="grid gap-y-14 lg:grid-cols-2 lg:gap-x-[15.5%] lg:gap-y-[81px]">
+                        <ul className="grid gap-7 lg:grid-cols-2 lg:gap-x-[33px]">
                             {filteredJobs.map((job) => (
                                 <li key={job.slug}>
-                                    <JobCard job={job} />
+                                    <JobCard job={job} className="h-full rounded-[12px] bg-[#f7f7f7] p-6" />
                                 </li>
                             ))}
                         </ul>

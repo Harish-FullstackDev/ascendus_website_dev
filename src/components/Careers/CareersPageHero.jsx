@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 
-// Figma (602:2046) uses the exact same photograph as the About Us hero, so it
-// is imported from there rather than shipped twice. On this page the login
-// card sits over the right-hand side of the photo.
+// Figma (1619:10952) uses the exact same photograph as the About Us hero, so
+// it is imported from there rather than shipped twice.
 import heroBg from "@/assets/About-us/hero.jpg";
 
 export default function CareersPageHero() {

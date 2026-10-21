@@ -41,7 +41,7 @@ export default function StayUpdated() {
                     href="/careers/open-positions/"
                     className="group inline-flex h-12 shrink-0 items-center gap-2 rounded-[8px] border border-[#0061af] bg-[#0061af] px-[13px] text-base font-normal capitalize leading-[1.5] text-white transition-colors duration-300 hover:bg-[#005192]"
                 >
-                    Join Our Talent Network
+                    Join Our Network
                     <Image
                         src={iconArrow}
                         alt=""
