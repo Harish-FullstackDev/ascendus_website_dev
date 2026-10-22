@@ -7,9 +7,9 @@ import iconArrow from "@/assets/Careers/icons/arrow-right-21-dark.svg";
 import iconBookmark from "@/assets/Careers/icons/bookmarks-24-light.svg";
 import iconBookmarkFilled from "@/assets/Careers/icons/bookmarks-filled-24-light.svg";
 
-import useSavedJob from "./useSavedJob";
+import { HRMS_PORTAL_URL } from "@/lib/hrmsPortal";
 
-const HRMS_PORTAL_URL = "https://hrmsportal-virid.vercel.app";
+import useSavedJob from "./useSavedJob";
 
 // Figma 1619:11895 — full-bleed banner (269 at 1440: 32 + 205 + 32) under
 // the candidate tabs: title, chips 16 below, then the action row 32 under
