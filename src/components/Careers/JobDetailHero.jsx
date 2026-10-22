@@ -9,7 +9,7 @@ import iconBookmarkFilled from "@/assets/Careers/icons/bookmarks-filled-24-light
 
 import useSavedJob from "./useSavedJob";
 
-const HRMS_PORTAL_URL = "https://hrmsportal-virid.vercel.app/";
+const HRMS_PORTAL_URL = "https://hrmsportal-virid.vercel.app";
 
 // Figma 1619:11895 — full-bleed banner (269 at 1440: 32 + 205 + 32) under
 // the candidate tabs: title, chips 16 below, then the action row 32 under
@@ -46,9 +46,10 @@ export default function JobDetailHero({ job }) {
                 </div>
 
                 <div className="flex flex-wrap items-start gap-4">
-                    {/* Applications are taken on the external HRMS portal. */}
+                    {/* Applications are taken on the external HRMS portal, which
+                        looks the job up by its slug and handles sign-in itself. */}
                     <a
-                        href={HRMS_PORTAL_URL}
+                        href={`${HRMS_PORTAL_URL}/jobs/${encodeURIComponent(job.slug)}/apply`}
                         className="group flex h-11 w-[264px] items-center justify-center gap-1 rounded-[8px] bg-[#f8f8f8] text-[18px] font-medium leading-[1.2] text-[#0e2b4b] drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-colors hover:bg-white"
                     >
                         Apply for this Position

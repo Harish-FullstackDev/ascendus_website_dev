@@ -11,13 +11,13 @@ import balanceIcon from "@/assets/Careers/icons/work-life-balance-48.svg";
 const BENEFITS = [
     {
         icon: <Image src={financialIcon} alt="" width={48} height={48} />,
-        // Figma breaks this title onto two lines by hand.
+        // Every title is broken onto two lines by hand (whitespace-pre-line).
         title: "Financial\nwellbeing",
         body: "We regularly review market data to ensure compensation reflects the value you bring. Your benefits extend beyond pay and may include retirement plans, financial education, etc.",
     },
     {
         icon: <Image src={healthIcon} alt="" width={48} height={48} />,
-        title: "Health and wellness",
+        title: "Health and\nwellness",
         body: "Our comprehensive health plans support your physical and mental well-being, including access to fitness programs, counseling services, and wellness resources.",
     },
     {
@@ -27,12 +27,12 @@ const BENEFITS = [
                 <Image src={briefcaseIcon} alt="" width={38.4} height={40.8} className="absolute left-[10%] top-[5%]" />
             </span>
         ),
-        title: "Professional development",
+        title: "Professional\ndevelopment",
         body: "We provide opportunities for growth through workshops, mentorship programs, and funding for courses that align with your career goals.",
     },
     {
         icon: <Image src={balanceIcon} alt="" width={48} height={48} />,
-        title: "Work-life balance",
+        title: "Work-life\nbalance",
         body: "We promote a flexible work environment that includes remote work options, generous paid time off, and family leave to help you maintain a healthy balance.",
     },
 ];
@@ -70,20 +70,21 @@ export default function CareersBenefits() {
                     laptops to keep the cards wide enough for their titles. The
                     cards get a min height that equals the 262:353 shape at the
                     Figma gap (26.9vw - 34.4px), and the row stretches them to
-                    one height when the text needs more. */}
-                <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-[min(6.71%,calc(15.38%_-_113.8px))]">
+                    one height when the text needs more. Each card is a 3-row subgrid
+                    (icon / title / body) so titles and bodies share rows across
+                    the cards and start at the same height; the 1fr icon row takes
+                    the spare height, keeping the text pinned to the bottom. */}
+                <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-[1fr_auto_auto] lg:gap-x-[min(6.71%,calc(15.38%_-_113.8px))]">
                     {BENEFITS.map(({ icon, title, body }) => (
                         <li
                             key={title}
-                            className="flex flex-col justify-between gap-6 rounded-[8px] bg-white px-6 py-8 lg:min-h-[calc(26.9vw_-_34.4px)] lg:gap-0"
+                            className="row-span-3 grid grid-rows-subgrid gap-y-0 rounded-[8px] bg-white px-6 py-8 lg:min-h-[calc(26.9vw_-_34.4px)]"
                         >
-                            {icon}
-                            <div className="flex flex-col gap-4">
-                                <h3 className="whitespace-pre-line text-2xl font-medium capitalize leading-[1.2] text-[#0e2b4b]">
-                                    {title}
-                                </h3>
-                                <p className="text-sm leading-5 text-[#415773]">{body}</p>
-                            </div>
+                            <div className="mb-8">{icon}</div>
+                            <h3 className="mb-6 whitespace-pre-line text-2xl font-medium capitalize leading-[1.2] text-[#0e2b4b]">
+                                {title}
+                            </h3>
+                            <p className="text-sm leading-5 text-[#415773]">{body}</p>
                         </li>
                     ))}
                 </ul>
